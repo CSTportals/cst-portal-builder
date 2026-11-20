@@ -548,7 +548,9 @@ def build_index_v2(p, s, out, filename="index.html"):
                  # Casey, 11 Oct 2026: the one-page Pricing Strategy is the
                  # print deliverable now, not the nine-page Roadmap.
                  pdf=(f"{pre}_Pricing_Strategy_Summary.pdf",
-                      f"{summary_name(p)} (PDF)", True, "Start here"))]
+                      f"{summary_name(p)} (PDF)"))]
+                 # Casey, 20 Nov 2026: sellers were opening the Summary instead of
+                 # the Roadmap -- the button goes back to tan, no "Start here".
 
     # Casey, 10 Oct 2026: the home's own Buyer Portal sits ABOVE the example,
     # and the luxury track record comes straight after the example. So the
@@ -586,8 +588,8 @@ def build_index_v2(p, s, out, filename="index.html"):
                      # example home's Buyer Pricing Report, which ships inside
                      # the portal folder.
                      pdf=(EXAMPLE_BUYER_PDF,
-                          f"{EXAMPLE_BUYER_HOME} Buyer Pricing Report (PDF)",
-                          True)))
+                          f"{EXAMPLE_BUYER_HOME} Buyer Pricing Report (PDF)")))
+                     # Casey, 20 Nov 2026: back to tan as well.
 
     _own_pdf = (f"{pre}_Buyer_Report.pdf", "Printable Buyer Pricing (PDF)")
     if bp:
