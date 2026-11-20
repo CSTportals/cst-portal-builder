@@ -1,0 +1,236 @@
+{
+  "address": "12901 Popes Head Rd",
+  "city": "Clifton",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "county": "Fairfax County",
+  "zip": "20124",
+  "prefix": "12901_Popes_Head",
+  "report_date": "Tuesday, October 13, 2026",
+  "asset_dir": "assets/12901_Popes_Head",
+  "hero_photo": "12901_Popes_Head_front.png",
+  "agent": {
+    "lookup": "Casey Samson",
+    "display": "Casey Samson",
+    "phone": "703-508-2535",
+    "email": "casey@caseysamson.com"
+  },
+  "subject": {
+    "built": 1995,
+    "sf": 6038,
+    "lot": 217000,
+    "assessment": 1923000
+  },
+  "values": {
+    "dated": 2062769,
+    "customary": 2291966,
+    "customary_list": 2302533,
+    "premium": 0,
+    "upgrades": 600000
+  },
+  "market": {
+    "name": "Clifton Luxury Market",
+    "slug": null,
+    "stats": null,
+    "absorption": null
+  },
+  "comps": {
+    "rows": [
+      [
+        "11324 Chapel Rd",
+        2009,
+        8887,
+        217800,
+        2164840,
+        2288500
+      ],
+      [
+        "11604 Fairfax St",
+        2000,
+        5962,
+        352400,
+        1959210,
+        2290000
+      ],
+      [
+        "7211 Twelve Oaks",
+        1995,
+        6352,
+        217804,
+        2020690,
+        2180000
+      ],
+      [
+        "10608 Kilcorman",
+        1988,
+        4896,
+        217800,
+        1507990,
+        1820000
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        2002,
+        7620,
+        217802,
+        2092765,
+        2234250
+      ],
+      [
+        "Price Range Average",
+        1994,
+        5737,
+        262668,
+        1829297,
+        2096667
+      ]
+    ]
+  },
+  "competition": [
+    {
+      "status": "Active",
+      "address": "11540 Quailwood",
+      "dom": 68,
+      "built": 1987,
+      "sf": 4840,
+      "lot": 217800,
+      "list": 1750000,
+      "assessment": 1553470
+    },
+    {
+      "status": "Active Under Contract",
+      "address": "7725 Wyckland",
+      "dom": 6,
+      "built": 1990,
+      "sf": 5691,
+      "lot": 217804,
+      "list": 1899000,
+      "assessment": 1557820
+    }
+  ],
+  "include_tracker": true,
+  "track_record": "Track_Record_Over_3500",
+  "team_stats_title": "The Casey Samson Team &mdash; Homes Sold Over 3,500 SF",
+  "market_local": {
+    "label": "Vienna Market &mdash; 175 sales over 3,500 SF",
+    "cells": [
+      [
+        "14.2",
+        "Avg days on market (best 90%, 158 of 175)"
+      ],
+      [
+        "98.3%",
+        "Of original list price"
+      ],
+      [
+        "45%",
+        "Sold in the first week (78 of 175)"
+      ],
+      [
+        "36%",
+        "Sold above list price (63 of 175)"
+      ]
+    ],
+    "source": "MLS Bright, every closed Vienna sale over 3,500 SF, Jan 2025 to Oct 2026, Casey Samson listings excluded. Clifton has no export of its own yet, so this is a benchmark, not Clifton's own market."
+  },
+  "buyer_portal": {
+    "live": true,
+    "display_address": "12901 Popes Head Road",
+    "list_price": 2249999,
+    "asset_dir": "assets/12901_Popes_Head",
+    "hero_photo": "12901_Popes_Head_front.png",
+    "pricing_pdf": "12901_Popes_Head_Buyer_Report.pdf",
+    "headline": "4.98 acres in Clifton.",
+    "facts": [
+      [
+        "1995",
+        "Year built"
+      ],
+      [
+        "6,038",
+        "Above grade SF"
+      ],
+      [
+        "4.98",
+        "Acre lot"
+      ],
+      [
+        "Clifton",
+        "Fairfax County"
+      ]
+    ],
+    "contacts": {
+      "photo": "PH_agents.jpg",
+      "names": "Morgan Samson &amp; Colby Smyth",
+      "team": "The Casey Samson Team &middot; Samson Properties",
+      "lines": [
+        [
+          "Morgan Samson",
+          "703-609-1745",
+          "morgan@caseysamson.com"
+        ],
+        [
+          "Colby Smyth",
+          "703-597-2428",
+          "colbysmyth@gmail.com"
+        ]
+      ],
+      "office": "Samson Properties, 14291 Park Meadow Dr, Suite 500, Chantilly, VA 20151"
+    },
+    "offer_terms": [
+      [
+        "Contract deadlines",
+        "Contact the co-listing agent"
+      ],
+      [
+        "Submit to",
+        "morgan@caseysamson.com and colbysmyth@gmail.com"
+      ],
+      [
+        "Format",
+        "All documents combined in one PDF"
+      ],
+      [
+        "Escalation clauses",
+        "Please, none"
+      ],
+      [
+        "Preferred settlement",
+        "30 days, no rent back needed"
+      ],
+      [
+        "Preferred title",
+        "Cardinal Title Group"
+      ],
+      [
+        "Preferred lender",
+        "Mike Filan, CrossCountry Mortgage &mdash; 703-899-8720"
+      ],
+      [
+        "Lender letter",
+        "Must be current with the lender&rsquo;s direct phone and email"
+      ]
+    ],
+    "offer_summary": [
+      "Buyer name",
+      "Agent name",
+      "Lender",
+      "Title",
+      "Settlement date",
+      "Down payment",
+      "Deposit",
+      "Home sale contingency",
+      "Offer price",
+      "Buyer commissions",
+      "Other concessions and terms"
+    ],
+    "disclosures": {
+      "items": [],
+      "pending": true
+    },
+    "documents": [],
+    "gallery": []
+  }
+}

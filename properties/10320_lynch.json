@@ -1,0 +1,42 @@
+{
+  "address": "10320 Lynch Ct", "city": "Oakton", "state": "Virginia",
+  "state_abbr": "VA", "zip": "", "county": "Fairfax County",
+  "congestion_fees": true,
+  "report_date": "Tuesday, September 22, 2026",
+  "prefix": "10320_Lynch", "listing_url": "10320Lynch.com",
+  "portal_url": "https://10320lynch.netlify.app",
+  "include_tracker": true,
+  "asset_dir": "assets/10320_Lynch",
+  "hero_photo": "10320_Lynch_front.png",
+  "photos": ["10320_Lynch_front.png"],
+  "agent": { "lookup": "Casey C Samson", "display": "Casey Samson",
+             "phone": "703-508-2535", "email": "Casey@caseysamson.com" },
+  "agent_page": "casey-c-samson.html",
+  "subject": { "built": 2013, "sf": 4403, "lot": 18400, "assessment": 1948000 },
+  "values": { "dated": 1944037, "customary": 2160041, "customary_list": 2200733, "premium": 2332844 },
+  "comps": {
+    "rows": [
+      ["3557 Orchid Pond", 2023, 4240,     0, 2043990, 2050000],
+      ["2961 Wilson Ave",  2004, 4745,     0, 1833750, 1936860],
+      ["11042 Heathland",  2003, 6257, 38479, 1859290, 1994960],
+      ["2954 Bonds Ridge", 2000, 4970, 49516, 1817700, 2060000]
+    ],
+    "summary": [
+      ["Age &amp; Size Average", 2004, 4745, 37984, 1833750, 1975000],
+      ["Price Range Average",    2007, 5598, 55020, 1865425, 2057490]
+    ]
+  },
+  "market": {
+    "name": "Oakton Luxury Market", "slug": "Oakton_Luxury_Market_Snapshot",
+    "subhead": "Every home that sold in this segment sold successfully, but only a small share of the market is under contract &mdash; buyers are selective and patient.",
+    "stats": null, "absorption": null
+  },
+  "competition": [
+    { "status": "Active", "address": "11040 Heathland", "dom": 138, "built": 2004, "sf": 0, "lot": 39245, "list": 2149000 },
+    { "status": "Active Under Contract", "address": "2785 Marshall",   "dom": 11, "built": 2001, "sf": 5600, "lot": 79814, "list": 2195000 },
+    { "status": "Active Under Contract", "address": "10101 Copper Ct", "dom": 1,  "built": 1998, "sf": 4128, "lot": 21678, "list": 1900000 },
+    { "status": "Pending", "address": "11102 Prince Edward", "dom": 129, "built": 1991, "sf": 7312, "lot": 76756, "list": 2349900 },
+    { "status": "Pending", "address": "3454 Virginia",       "dom": 94,  "built": 2000, "sf": 3834, "lot": 37462, "list": 2099000 }
+  ],
+  "notes": [], "premium_rating": null
+}

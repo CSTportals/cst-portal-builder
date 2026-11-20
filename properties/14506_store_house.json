@@ -1,0 +1,161 @@
+{
+  "address": "14506 Store House Dr",
+  "city": "Centreville",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "",
+  "county": "Fairfax County",
+  "congestion_fees": true,
+  "report_date": "Monday, September 14, 2026",
+  "prefix": "14506_Store_House",
+  "listing_url": "14506StoreHouse.com",
+  "portal_url": "https://14506storehouse.netlify.app",
+  "include_tracker": true,
+  "agent": {
+    "lookup": "Casey C Samson",
+    "display": "Casey Samson",
+    "phone": "703-508-2535",
+    "email": "Casey@caseysamson.com"
+  },
+  "subject": {
+    "built": 1992,
+    "sf": 1736,
+    "lot": 11600,
+    "assessment": 813000
+  },
+  "values": {
+    "dated": 766800,
+    "customary": 852000,
+    "customary_list": 851974,
+    "premium": 920160
+  },
+  "comps": {
+    "rows": [
+      [
+        "6547 Creek Run Dr",
+        1993,
+        1582,
+        4501,
+        761440,
+        780098
+      ],
+      [
+        "5715 Flagler Dr",
+        1996,
+        1818,
+        8910,
+        697970,
+        769900
+      ],
+      [
+        "5835 Stone Ridge Dr",
+        1987,
+        1896,
+        14005,
+        753140,
+        800000
+      ],
+      [
+        "14404 Haystack Ct",
+        1985,
+        1800,
+        8500,
+        760470,
+        883026
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        1992,
+        1822,
+        9394,
+        748104,
+        777700
+      ],
+      [
+        "Price Range Average",
+        1991,
+        1837,
+        10824,
+        761610,
+        796249
+      ]
+    ]
+  },
+  "market": {
+    "name": "Centreville Family Market",
+    "slug": "Centreville_Family_Market_Snapshot",
+    "subhead": "Under-contract activity sits at 29% while every home that sold, sold successfully &mdash; buyers are selective, but well-prepared homes are still moving.",
+    "stats": null,
+    "absorption": null
+  },
+  "competition": [
+    {
+      "status": "Active",
+      "address": "6171 Otter Run Ct",
+      "dom": 18,
+      "built": 1987,
+      "sf": 2092,
+      "lot": 10216,
+      "list": 928000
+    },
+    {
+      "status": "Active",
+      "address": "6414 Bromfield Trce",
+      "dom": 2,
+      "built": 1988,
+      "sf": 2050,
+      "lot": 13724,
+      "list": 894900
+    },
+    {
+      "status": "Active",
+      "address": "5559 Sequoia Farms Dr",
+      "dom": 8,
+      "built": 1985,
+      "sf": 1948,
+      "lot": 8712,
+      "list": 819900
+    },
+    {
+      "status": "Active",
+      "address": "13985 Cabells Mill Dr",
+      "dom": 5,
+      "built": 1984,
+      "sf": 1782,
+      "lot": 0,
+      "list": 799900
+    },
+    {
+      "status": "Active",
+      "address": "5534 Shipley Ct",
+      "dom": 32,
+      "built": 1985,
+      "sf": 1800,
+      "lot": 8563,
+      "list": 769000
+    },
+    {
+      "status": "Active Under Contract",
+      "address": "14514 Awbrey Patent Dr",
+      "dom": 4,
+      "built": 1985,
+      "sf": 1850,
+      "lot": 7895,
+      "list": 700000
+    },
+    {
+      "status": "Pending",
+      "address": "5722 Rocky Run Dr",
+      "dom": 14,
+      "built": 1985,
+      "sf": 1758,
+      "lot": 10173,
+      "list": 779900
+    }
+  ],
+  "notes": [],
+  "photos": [],
+  "premium_rating": null
+}

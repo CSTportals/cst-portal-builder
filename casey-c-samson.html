@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Casey C Samson — Performance Summary</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Lora:wght@400;600&display=swap');
+  :root {
+    --bg: #F7F3E9; --card: #FFFFFF; --ink: #2B2620; --muted: #7A7264;
+    --gold-deep: #8A6A2E; --gold-line: #D9C79A; --rule: #E4DCC8; --banner: #F3EAD3;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:'Lora',Georgia,serif;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 32px;}
+  header{background:var(--banner); border-bottom:1px solid var(--gold-line); padding:40px 0 30px; text-align:center;}
+  .company-line{font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-deep); margin:0 0 10px;}
+  h1{font-family:'Playfair Display',Georgia,serif; font-size:32px; font-weight:700; margin:0 0 8px;}
+  .subtitle{font-size:14px; color:var(--muted); font-style:italic; margin:0;}
+  .source-line{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin:10px 0 0;}
+  .score-band{background:var(--card); border:1px solid var(--gold-line); border-radius:10px; margin:28px 0; padding:22px 24px; display:flex; justify-content:space-around; text-align:center; align-items:center; flex-wrap:wrap; gap:10px;}
+  .score-item .num{font-family:'Playfair Display',Georgia,serif; font-size:24px; font-weight:700; color:var(--gold-deep); display:block;}
+  .score-item .lbl{font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin-top:2px;}
+  .grade-big{display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:50%; font-family:'Playfair Display',Georgia,serif; font-weight:900; font-size:26px;}
+  .email-btn{display:inline-block; margin-top:16px; padding:10px 24px; background:var(--gold-deep); color:#fff; text-decoration:none; border-radius:20px; font-size:13px; font-weight:700; letter-spacing:.02em;}
+  .email-btn:hover{opacity:0.9;}
+  .formula-box{background:var(--banner); border:1px solid var(--gold-line); border-radius:8px; padding:14px 20px; margin-bottom:24px; font-size:12px; color:var(--muted); text-align:center; line-height:1.6;}
+  table{width:100%; border-collapse:collapse; margin-bottom:24px; font-size:12px;}
+  thead th{background:var(--banner); border-bottom:2px solid var(--gold-line); border-top:1px solid var(--gold-line); padding:8px; text-align:left; font-size:9.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); font-weight:700; cursor:pointer; user-select:none;}
+  thead th:hover{background:var(--gold-line);}
+  thead th.sorted-asc::after{content:" \25B2"; font-size:9px;}
+  thead th.sorted-desc::after{content:" \25BC"; font-size:9px;}
+  tbody td{padding:7px 8px; border-bottom:1px solid var(--rule);}
+  tbody tr:nth-child(even){background:#FCFAF4;}
+  tbody tr.avg-row{background:var(--banner); font-weight:700; border-top:2px solid var(--gold-line);}
+  tbody tr.avg-row td{border-bottom:none;}
+  td.addr-cell{font-weight:700;}
+  td.num{text-align:right; font-variant-numeric:tabular-nums;}
+  .status-cell{text-align:center;}
+  .status-badge{display:inline-block; padding:3px 8px; border-radius:12px; font-size:9.5px; font-weight:700; white-space:nowrap;}
+  footer{background:var(--banner); border-top:1px solid var(--gold-line); padding:24px 0; text-align:center; font-size:12px; color:var(--muted); margin-top:30px;}
+</style></head><body>
+<header>
+  <h1>Casey C Samson</h1>
+  <div class="company-line">Samson Properties</div>
+  <p class="subtitle">Performance Summary &mdash; Last 365 Days</p>
+  <p class="source-line">Source: MLS Bright</p>
+</header>
+<div class="wrap">
+  <div class="score-band">
+    <div class="score-item"><span class="num">37</span><span class="lbl">Listings Taken</span></div>
+    <div class="score-item"><span class="num">100%</span><span class="lbl">Sold/Listed</span></div>
+    <div class="score-item"><span class="num">6.3</span><span class="lbl">Trimmed DOM</span></div>
+    <div class="score-item"><span class="num">$1,472,356</span><span class="lbl">Avg Sale Price</span></div>
+    <div class="score-item"><span class="num">224</span><span class="lbl">Score</span></div>
+    <div class="grade-big" style="background:#DCEEDD; color:#1E7A32;">A</div>
+  </div>
+  <div style="text-align:center; margin-bottom:24px;"><a href="mailto:casey@caseysamson.com?subject=Email%20from%20A%20Listers&amp;body=https%3A//alisters.netlify.app" class="email-btn">Email Casey</a></div>
+  <div class="formula-box">
+    <b>Metric 1:</b> Sold/Listed &nbsp;&mdash;&nbsp; <b>Metric 2:</b> 100 &minus; Trimmed Avg DOM &nbsp;&mdash;&nbsp; <b>Metric 3:</b> Volume Bonus (capped at 30)<br>
+    Grading: <b>A</b>=180+, <b>B</b>=160&ndash;180, <b>C</b>=140&ndash;160, <b>D</b>=120&ndash;140, <b>F</b>=under 120<br>
+    *Trimmed average excludes this agent's own worst 20% of individual listing DOM values.
+  </div>
+  <table>
+    <thead>
+      <tr><th>Status</th><th>Address</th><th>City</th><th style="text-align:right;">DOM</th><th style="text-align:right;">Original List Price</th><th style="text-align:right;">Sale Price</th><th style="text-align:right;">SP &minus; LP</th></tr>
+    </thead>
+    <tbody><tr>
+      <td class="status-cell"><span class="status-badge" style="background:#E8ECE1; color:#5C6B4A;">Pending</span></td>
+      <td class="addr-cell">502 Spring St SE</td>
+      <td>Vienna</td>
+      <td class="num">0</td>
+      <td class="num">$2,150,000</td>
+      <td class="num">—</td>
+      <td class="num">—</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#E8ECE1; color:#5C6B4A;">Pending</span></td>
+      <td class="addr-cell">9932 Clearfield Ave</td>
+      <td>Vienna</td>
+      <td class="num">7</td>
+      <td class="num">$2,149,900</td>
+      <td class="num">—</td>
+      <td class="num">—</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#E8ECE1; color:#5C6B4A;">Active Under Contract</span></td>
+      <td class="addr-cell">10855 Weisiger Ln</td>
+      <td>Oakton</td>
+      <td class="num">7</td>
+      <td class="num">$1,450,000</td>
+      <td class="num">—</td>
+      <td class="num">—</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">1221 Riley Preserve Ct</td>
+      <td>Great Falls</td>
+      <td class="num">61</td>
+      <td class="num">$3,500,000</td>
+      <td class="num">$3,300,000</td>
+      <td class="num">$-200,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">900 Park St SE</td>
+      <td>Vienna</td>
+      <td class="num">78</td>
+      <td class="num">$3,000,000</td>
+      <td class="num">$3,000,000</td>
+      <td class="num">+$0</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">1114 Ware St SW</td>
+      <td>Vienna</td>
+      <td class="num">31</td>
+      <td class="num">$1,999,999</td>
+      <td class="num">$2,126,100</td>
+      <td class="num">+$126,101</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">9222 Brian Dr</td>
+      <td>Vienna</td>
+      <td class="num">9</td>
+      <td class="num">$1,999,000</td>
+      <td class="num">$2,050,000</td>
+      <td class="num">+$51,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">1105 Lakewood Dr SW</td>
+      <td>Vienna</td>
+      <td class="num">22</td>
+      <td class="num">$1,999,999</td>
+      <td class="num">$1,950,000</td>
+      <td class="num">$-49,999</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">8404 Stonewall Dr</td>
+      <td>Vienna</td>
+      <td class="num">8</td>
+      <td class="num">$1,799,000</td>
+      <td class="num">$1,830,000</td>
+      <td class="num">+$31,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">3300 Lauren Oaks Ct</td>
+      <td>Oak Hill</td>
+      <td class="num">6</td>
+      <td class="num">$1,750,000</td>
+      <td class="num">$1,830,000</td>
+      <td class="num">+$80,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">2953 Bonds Ridge Ct</td>
+      <td>Oakton</td>
+      <td class="num">4</td>
+      <td class="num">$1,750,000</td>
+      <td class="num">$1,750,000</td>
+      <td class="num">+$0</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">1424 Wynhurst Ln</td>
+      <td>Vienna</td>
+      <td class="num">7</td>
+      <td class="num">$1,699,000</td>
+      <td class="num">$1,730,000</td>
+      <td class="num">+$31,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">11689 Heinz Ct</td>
+      <td>Oakton</td>
+      <td class="num">3</td>
+      <td class="num">$1,699,000</td>
+      <td class="num">$1,700,000</td>
+      <td class="num">+$1,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">1507 Night Shade Ct</td>
+      <td>Vienna</td>
+      <td class="num">6</td>
+      <td class="num">$1,450,000</td>
+      <td class="num">$1,675,000</td>
+      <td class="num">+$225,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">3501 Birdsboro Dr</td>
+      <td>Fairfax</td>
+      <td class="num">5</td>
+      <td class="num">$1,650,000</td>
+      <td class="num">$1,635,000</td>
+      <td class="num">$-15,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">10215 Martinhoe Dr</td>
+      <td>Vienna</td>
+      <td class="num">2</td>
+      <td class="num">$1,499,000</td>
+      <td class="num">$1,625,000</td>
+      <td class="num">+$126,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">11732 Saddle Crescent Cir</td>
+      <td>Oakton</td>
+      <td class="num">5</td>
+      <td class="num">$1,500,000</td>
+      <td class="num">$1,530,000</td>
+      <td class="num">+$30,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">930 Park St SE</td>
+      <td>Vienna</td>
+      <td class="num">6</td>
+      <td class="num">$1,450,000</td>
+      <td class="num">$1,505,000</td>
+      <td class="num">+$55,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">11416 Vale Rd</td>
+      <td>Oakton</td>
+      <td class="num">11</td>
+      <td class="num">$1,399,000</td>
+      <td class="num">$1,475,000</td>
+      <td class="num">+$76,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">4909 Fox Creek Ct</td>
+      <td>Chantilly</td>
+      <td class="num">5</td>
+      <td class="num">$1,350,000</td>
+      <td class="num">$1,470,000</td>
+      <td class="num">+$120,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">1504 Night Shade Ct</td>
+      <td>Vienna</td>
+      <td class="num">15</td>
+      <td class="num">$1,450,000</td>
+      <td class="num">$1,450,000</td>
+      <td class="num">+$0</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">1702 Landon Hill Rd</td>
+      <td>Vienna</td>
+      <td class="num">5</td>
+      <td class="num">$1,450,000</td>
+      <td class="num">$1,430,000</td>
+      <td class="num">$-20,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">3272 History Dr</td>
+      <td>Oakton</td>
+      <td class="num">3</td>
+      <td class="num">$1,350,000</td>
+      <td class="num">$1,415,000</td>
+      <td class="num">+$65,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">2503 Easie St</td>
+      <td>Oakton</td>
+      <td class="num">207</td>
+      <td class="num">$1,549,900</td>
+      <td class="num">$1,300,000</td>
+      <td class="num">$-249,900</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">6303 Rockbridge Pl</td>
+      <td>Centreville</td>
+      <td class="num">6</td>
+      <td class="num">$999,998</td>
+      <td class="num">$1,230,000</td>
+      <td class="num">+$230,002</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">2501 Easie St</td>
+      <td>Oakton</td>
+      <td class="num">6</td>
+      <td class="num">$1,150,000</td>
+      <td class="num">$1,225,000</td>
+      <td class="num">+$75,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">15197 Wetherburn Dr</td>
+      <td>Centreville</td>
+      <td class="num">6</td>
+      <td class="num">$1,099,999</td>
+      <td class="num">$1,160,000</td>
+      <td class="num">+$60,001</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">411 Center St N</td>
+      <td>Vienna</td>
+      <td class="num">5</td>
+      <td class="num">$1,100,000</td>
+      <td class="num">$1,130,000</td>
+      <td class="num">+$30,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">1109 Hillcrest Dr SW</td>
+      <td>Vienna</td>
+      <td class="num">14</td>
+      <td class="num">$1,000,000</td>
+      <td class="num">$1,010,000</td>
+      <td class="num">+$10,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">8612 Cottage St</td>
+      <td>Vienna</td>
+      <td class="num">126</td>
+      <td class="num">$1,150,000</td>
+      <td class="num">$975,000</td>
+      <td class="num">$-175,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">606 Meadow Ln SW</td>
+      <td>Vienna</td>
+      <td class="num">7</td>
+      <td class="num">$899,000</td>
+      <td class="num">$959,000</td>
+      <td class="num">+$60,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">8905 Side Saddle Rd</td>
+      <td>Springfield</td>
+      <td class="num">5</td>
+      <td class="num">$799,900</td>
+      <td class="num">$835,000</td>
+      <td class="num">+$35,100</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">603 3rd St</td>
+      <td>Herndon</td>
+      <td class="num">6</td>
+      <td class="num">$799,000</td>
+      <td class="num">$799,000</td>
+      <td class="num">+$0</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">20173 Broad Run Dr</td>
+      <td>Sterling</td>
+      <td class="num">5</td>
+      <td class="num">$750,000</td>
+      <td class="num">$786,000</td>
+      <td class="num">+$36,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">8612 Cottage St SW</td>
+      <td>Vienna</td>
+      <td class="num">9</td>
+      <td class="num">$799,000</td>
+      <td class="num">$775,000</td>
+      <td class="num">$-24,000</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">750 S 20th St</td>
+      <td>Purcellville</td>
+      <td class="num">16</td>
+      <td class="num">$750,000</td>
+      <td class="num">$750,000</td>
+      <td class="num">+$0</td>
+    </tr>
+<tr>
+      <td class="status-cell"><span class="status-badge" style="background:#DCEEDD; color:#1E7A32;">Closed</span></td>
+      <td class="addr-cell">2950 Rosemary Ln</td>
+      <td>Falls Church</td>
+      <td class="num">5</td>
+      <td class="num">$500,000</td>
+      <td class="num">$650,000</td>
+      <td class="num">+$150,000</td>
+    </tr>
+<tr class="avg-row">
+      <td></td>
+      <td colspan="2">34 Sales &mdash; Averages</td>
+      <td></td>
+      <td class="num">$1,443,847</td>
+      <td class="num">$1,472,356</td>
+      <td class="num">+$28,509</td>
+    </tr></tbody>
+  </table>
+</div>
+<footer>The Casey Samson Team &middot; Casey Samson &middot; 703-508-2535 &middot; Casey@caseysamson.com<br>&copy; 2026 The Casey Samson Team LLC. All Rights Reserved.</footer>
+
+<script>
+function sortTable(table, colIndex, type) {
+  const tbody = table.querySelector('tbody');
+  const rows = Array.from(tbody.querySelectorAll('tr:not(.avg-row)'));
+  const avgRow = tbody.querySelector('.avg-row');
+  const th = table.querySelectorAll('thead th')[colIndex];
+  const asc = !th.classList.contains('sorted-asc');
+  table.querySelectorAll('thead th').forEach(h => h.classList.remove('sorted-asc','sorted-desc'));
+  th.classList.add(asc ? 'sorted-asc' : 'sorted-desc');
+  rows.sort((a, b) => {
+    let av = a.children[colIndex].innerText.trim();
+    let bv = b.children[colIndex].innerText.trim();
+    if (type === 'num') {
+      av = parseFloat(av.replace(/[^0-9.\-]/g, '')) || 0;
+      bv = parseFloat(bv.replace(/[^0-9.\-]/g, '')) || 0;
+      return asc ? av - bv : bv - av;
+    } else {
+      return asc ? av.localeCompare(bv) : bv.localeCompare(av);
+    }
+  });
+  rows.forEach(r => tbody.appendChild(r));
+  if (avgRow) tbody.appendChild(avgRow);
+}
+document.querySelectorAll('table').forEach(table => {
+  const headers = table.querySelectorAll('thead th');
+  headers.forEach((th, idx) => {
+    const isNum = idx >= 3;
+    th.addEventListener('click', () => sortTable(table, idx, isNum ? 'num' : 'text'));
+  });
+});
+</script>
+
+</body></html>

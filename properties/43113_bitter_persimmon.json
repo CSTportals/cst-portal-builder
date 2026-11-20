@@ -1,0 +1,177 @@
+{
+  "address": "43113 Bitter Persimmon Ct",
+  "city": "Centreville",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "",
+  "county": "Fairfax County",
+  "congestion_fees": true,
+  "report_date": "Friday, September 18, 2026",
+  "prefix": "43113_Bitter_Persimmon",
+  "listing_url": "43113BitterPersimmon.com",
+  "portal_url": "https://43113bitterpersimmon.netlify.app",
+  "include_tracker": true,
+  "subject": {
+    "built": 2022,
+    "sf": 5178,
+    "lot": 52708,
+    "assessment": 1553000
+  },
+  "values": {
+    "dated": 1703577,
+    "customary": 1892863,
+    "customary_list": 1884248,
+    "premium": 2044292
+  },
+  "comps": {
+    "rows": [
+      [
+        "43176 Bitter Persimmon Ct",
+        2022,
+        5196,
+        34848,
+        1532870,
+        1899900
+      ],
+      [
+        "26829 Beech Bend",
+        2022,
+        4882,
+        50539,
+        1554290,
+        1975000
+      ],
+      [
+        "42886 Iron Bit",
+        2005,
+        5304,
+        143748,
+        1712110,
+        1925000
+      ],
+      [
+        "42294 Iron Bit",
+        2005,
+        5092,
+        131116,
+        1788990,
+        1882450
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        2022,
+        4917,
+        34848,
+        1559857,
+        1879967
+      ],
+      [
+        "Price Range Average",
+        2012,
+        5106,
+        75446,
+        1599034,
+        1911470
+      ]
+    ]
+  },
+  "market": {
+    "name": "Centreville Luxury Market",
+    "slug": "Centreville_Luxury_Market_Snapshot",
+    "subhead": "A 25% under-contract rate against a 100% success rate &mdash; buyers are selective, but every home that sold in this segment sold.",
+    "stats": null,
+    "absorption": null
+  },
+  "competition": [
+    {
+      "status": "Active",
+      "address": "5340 Chandley",
+      "dom": 443,
+      "built": 1993,
+      "sf": 5520,
+      "lot": 428979,
+      "list": 2295000
+    },
+    {
+      "status": "Active",
+      "address": "26596 Morgan",
+      "dom": 30,
+      "built": 2020,
+      "sf": 4841,
+      "lot": 52272,
+      "list": 2000000
+    },
+    {
+      "status": "Pending",
+      "address": "42537 Iron Bit",
+      "dom": 12,
+      "built": 2006,
+      "sf": 5962,
+      "lot": 135907,
+      "list": 1999980
+    }
+  ],
+  "notes": [
+    "<b>43176 Bitter Persimmon Ct is the best comp</b> &mdash; same street, same year built, within 18 square feet &mdash; and it listed and sold at <b>$1,899,900</b>. That home was purchased in 2022 for <b>$1,491,000</b>. A sales price of <b>$1.85M</b> reflects the area&rsquo;s 24% appreciation since that purchase."
+  ],
+  "photos": [
+    "43113_Bitter_Persimmon_front.png"
+  ],
+  "premium_rating": [
+    [
+      {
+        "label": "Top Features",
+        "items": [
+          "7,566 square feet of living space across three levels",
+          "1.21-acre homesite in the Reserve at Holly Springs",
+          "Grand foyer opening to formal and casual living spaces",
+          "Formal dining room and sitting room",
+          "Expansive living room with fireplace",
+          "Family room flowing into the kitchen and breakfast space",
+          "Private main-level bedroom with full bath",
+          "Mudroom with access to the attached garage"
+        ]
+      },
+      {
+        "label": "Kitchen",
+        "items": [
+          "Chef-inspired gourmet kitchen with oversized quartz island",
+          "Custom cabinetry with illuminated display cabinets",
+          "Premium stainless steel appliances",
+          "Walk-in pantry and sun-filled breakfast nook"
+        ]
+      }
+    ],
+    [
+      {
+        "label": "Upper Level",
+        "items": [
+          "Spacious loft as a secondary gathering space",
+          "Four generously sized bedrooms, each with its own bathroom and closet",
+          "Primary suite with spa-inspired bath, dual vanities, oversized walk-in shower and soaking tub",
+          "Expansive walk-in closet"
+        ]
+      },
+      {
+        "label": "Lower Level",
+        "items": [
+          "Large recreation area with abundant storage",
+          "Room to customize for fitness, hobbies, media or additional living space"
+        ]
+      },
+      {
+        "label": "Location",
+        "items": [
+          "Beautifully landscaped, private 1.21-acre grounds",
+          "Convenient to Route 50, Route 28, I-66 and the Dulles Corridor",
+          "Close to shopping and dining in Centreville, Chantilly, South Riding and Stone Ridge",
+          "Short drive to Washington Dulles International Airport"
+        ]
+      }
+    ]
+  ],
+  "asset_dir": "assets/43113_Bitter_Persimmon",
+  "hero_photo": "43113_Bitter_Persimmon_front.png"
+}

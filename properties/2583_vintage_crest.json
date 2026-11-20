@@ -1,0 +1,486 @@
+{
+ "address": "2583 Vintage Crest Ln",
+ "city": "Oakton",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "",
+ "county": "Fairfax County",
+ "congestion_fees": true,
+ "report_date": "Saturday, October 10, 2026",
+ "prefix": "2583_Vintage_Crest",
+ "listing_url": "2583VintageCrest.com",
+ "portal_url": "https://2583vintagecrest.netlify.app",
+ "include_tracker": true,
+ "asset_dir": "assets/2583_Vintage_Crest",
+ "hero_photo": "2583_Vintage_Crest_twilight.jpg",
+ "photos": [
+  "2583_Vintage_Crest_twilight.jpg"
+ ],
+ "subject": {
+  "built": 2005,
+  "sf": 6872,
+  "lot": 75000,
+  "assessment": 2228630
+ },
+ "values": {
+  "dated": 2385301,
+  "customary": 2650335,
+  "customary_list": 2698006,
+  "premium": 2862361,
+  "upgrades": 0
+ },
+ "comps": {
+  "rows": [
+   [
+    "2006 Lord Fairfax Rd",
+    2000,
+    5800,
+    22910,
+    2233570,
+    2420000
+   ],
+   [
+    "10301 Forest Maple Rd",
+    1997,
+    5716,
+    76370,
+    1836270,
+    2179200
+   ],
+   [
+    "2207 Aryness Dr",
+    1996,
+    5674,
+    75000,
+    1852280,
+    2160000
+   ],
+   [
+    "3703 Waples Crest Ct",
+    2001,
+    6923,
+    96069,
+    1740720,
+    2125000
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    2001,
+    6249,
+    64820,
+    1993122,
+    2263832
+   ],
+   [
+    "Price Range Average",
+    1999,
+    6028,
+    67587,
+    1915710,
+    2221050
+   ]
+  ]
+ },
+ "market": {
+  "name": "Oakton Luxury Market",
+  "slug": "Oakton_Luxury_Market_Snapshot",
+  "subhead": "Nothing is currently under contract in this segment, yet every home that sold, sold successfully &mdash; and only one competitor remains active.",
+  "stats": null,
+  "absorption": null
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "11040 Heathland Dr",
+   "dom": 155,
+   "built": 2004,
+   "sf": 5150,
+   "lot": 39245,
+   "list": 2149000,
+   "assessment": 1405570
+  },
+  {
+   "status": "Pending",
+   "address": "2785 Marshall Lake Dr",
+   "dom": 11,
+   "built": 2001,
+   "sf": 5600,
+   "lot": 79814,
+   "list": 2195000,
+   "assessment": 1922640
+  }
+ ],
+ "notes": [],
+ "premium_rating": null,
+ "buyer_portal": {
+  "display_address": "2583 Vintage Crest Ln",
+  "site": "2583VintageCrest.com",
+  "url": "https://buyvintage.netlify.app",
+  "deploy_to": "https://buyvintage.netlify.app",
+  "live": true,
+  "list_price": 2650000,
+  "status_line": "Active",
+  "headline": "Totally renovated &mdash; 9,372 total finished square feet, 6,872 above grade, on 1.72 private wooded acres in Oakton.",
+  "facts": [
+   [
+    "6",
+    "Bedrooms"
+   ],
+   [
+    "5 full, 2 half",
+    "Bathrooms"
+   ],
+   [
+    "9,372",
+    "Total finished SF"
+   ],
+   [
+    "6,872",
+    "Above grade SF"
+   ],
+   [
+    "1.72",
+    "Acre lot"
+   ],
+   [
+    "3",
+    "Car garage"
+   ],
+   [
+    "2005",
+    "Year built"
+   ]
+  ],
+  "amenities_lede": "A private acre and a half with the Silver Line seven minutes north, Reston Town Center ten, and Dulles closer than Tysons.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Wiehle-Reston East Metro",
+      "Silver Line",
+      3.02
+     ],
+     [
+      "Vienna/Fairfax-GMU Metro",
+      "Orange Line",
+      5.6
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      8.48
+     ],
+     [
+      "Washington, DC",
+      "Downtown",
+      20.99
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      21.52
+     ]
+    ]
+   },
+   {
+    "title": "Every Day",
+    "items": [
+     [
+      "Oakton Community Park",
+      "Trails and playing fields",
+      3.49
+     ],
+     [
+      "Oakton Library",
+      "Fairfax County Public Library",
+      3.64
+     ],
+     [
+      "Oakton Shopping Center",
+      "Grocery, dining and services",
+      3.75
+     ],
+     [
+      "Reston Town Center",
+      "Shopping, dining and cinema",
+      4.27
+     ],
+     [
+      "Tysons Corner Center",
+      "Shopping and offices",
+      7.99
+     ]
+    ]
+   },
+   {
+    "title": "Schools",
+    "items": [
+     [
+      "James Madison High School",
+      "Fairfax County Public Schools",
+      4.36
+     ],
+     [
+      "Thoreau Middle School",
+      "Fairfax County Public Schools",
+      6.82
+     ]
+    ]
+   }
+  ],
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "A cul-de-sac of five homes on 1.7-acre lots, with the Silver Line and Reston Town Center to the north and Oakton&rsquo;s shops and library to the south. The arrows point to everything past the edge of the map.",
+   "center": {
+    "lat": 38.9142,
+    "lng": -77.3371,
+    "label": "2583 Vintage Crest Ln"
+   },
+   "pins": [
+    {
+     "name": "Wiehle-Reston East Metro",
+     "sub": "Silver Line",
+     "lat": 38.947749,
+     "lng": -77.340075
+    },
+    {
+     "name": "Oakton Community Park",
+     "sub": "Trails and playing fields",
+     "lat": 38.887871,
+     "lng": -77.300394
+    },
+    {
+     "name": "Oakton Library",
+     "sub": "Fairfax County Public Library",
+     "lat": 38.8839576,
+     "lng": -77.3025467
+    },
+    {
+     "name": "Oakton Shopping Center",
+     "sub": "Grocery, dining and services",
+     "lat": 38.883974,
+     "lng": -77.300151
+    },
+    {
+     "name": "Reston Town Center",
+     "sub": "Shopping, dining and cinema",
+     "lat": 38.958821,
+     "lng": -77.358146
+    },
+    {
+     "name": "James Madison High School",
+     "sub": "Fairfax County Public Schools",
+     "lat": 38.895891,
+     "lng": -77.279336
+    },
+    {
+     "name": "Vienna/Fairfax-GMU Metro",
+     "sub": "Orange Line",
+     "lat": 38.877601,
+     "lng": -77.272288
+    }
+   ],
+   "arrows": [
+    [
+     294.2,
+     [
+      "Dulles International",
+      "IAD &middot; 15 min"
+     ]
+    ],
+    [
+     87.8,
+     [
+      "Tysons Corner",
+      "14 min"
+     ]
+    ],
+    [
+     91.6,
+     [
+      "Washington, DC",
+      "36 min"
+     ]
+    ]
+   ]
+  },
+  "contacts": {
+   "names": "Kelly Samson &amp; Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Kelly Samson",
+     "703-609-4582",
+     "kellysamson.sp@gmail.com"
+    ],
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "pricing_pdf": "2583_Vintage_Crest_Buyer_Report.pdf",
+  "listing_page_url": "https://caseysamson.com/listing/2583-vintage-crest-ln-oakton-virginia/",
+  "site_url": "https://caseysamson.com/listing/2583-vintage-crest-ln-oakton-virginia/",
+  "highlights": [
+   "Totally renovated",
+   "6 bedrooms",
+   "9,372 finished SF",
+   "1.72 wooded acres"
+  ],
+  "description": "An exceptional custom luxury home on 1.72 private, wooded acres. Custom 8&prime; double iron entry doors open to a grand foyer under a 23&prime; ceiling, with handblown chandeliers in the foyer, dining room and rear staircase and custom stained maple hardwood floors throughout the main level. Formal living and dining rooms sit off the foyer; the two-story family room carries custom molding and a fireplace, and the morning room a double-sided fireplace of its own. The gourmet kitchen is finished in Calcutta Gold marble with Wolf and Sub-Zero appliances, a large center island, butler&rsquo;s pantry and breakfast room. A private home office and a mudroom with custom built-ins and lockers complete the level. Upstairs, the owner&rsquo;s suite has a private sitting room, dual custom walk-in closets and a renovated spa bath with soaking tub and walk-in shower. The finished walkout lower level adds a large recreation room, wet bar, media room, two bedrooms, a full bath and storage, with new luxury vinyl plank flooring in 2026. Outside: an expansive deck, stone patio, outdoor kitchen, fire pit, a 9&times;10 hot tub and extensive professional hardscaping.",
+  "features": {
+   "Top Features": [
+    "6 bedrooms, 5 full and 2 half baths &mdash; 9,372 total finished square feet, 6,872 of them above grade",
+    "1.72 private, wooded acres with a circular driveway",
+    "Grand foyer under a 23&prime; ceiling, custom 8&prime; double iron entry doors",
+    "Two-story family room with custom molding and fireplace",
+    "Morning room with a double-sided fireplace",
+    "Private home office off the main level"
+   ],
+   "Kitchen &amp; Interior": [
+    "Calcutta Gold marble countertops",
+    "Wolf and Sub-Zero appliances",
+    "Large center island, butler&rsquo;s pantry and breakfast room",
+    "Custom stained maple hardwood floors on the main level",
+    "Handblown chandeliers in the foyer, dining room and rear staircase",
+    "Mudroom with custom built-ins and lockers"
+   ],
+   "Owner&rsquo;s Suite &amp; Lower Level": [
+    "Private sitting room off the owner&rsquo;s suite",
+    "Dual custom walk-in closets",
+    "Renovated spa bath with soaking tub and walk-in shower",
+    "Walkout lower level &mdash; recreation room, wet bar and media room",
+    "Two more bedrooms, a full bath and storage below grade"
+   ],
+   "Outdoor Living": [
+    "Expansive deck and stone patio",
+    "Outdoor kitchen and fire pit",
+    "9&times;10 hot tub",
+    "Extensive professional hardscaping",
+    "Private wooded setting on 1.72 acres"
+   ],
+   "Garage &amp; Parking": [
+    "Three-car garage with custom insulated aluminum doors",
+    "Circular driveway",
+    "Second washer and dryer in the garage",
+    "Fairfax Water, Washington Gas, Dominion Energy, Verizon Fios"
+   ],
+   "The Property": [
+    "Ceilings &mdash; 23&prime; foyer and family room, 10&prime; main, 9&prime; upper and lower",
+    "Three-zone HVAC",
+    "New luxury vinyl plank flooring in the lower level (2026)",
+    "Roof approximately 21 years old; original windows"
+   ]
+  },
+  "feature_headlines": [
+   {
+    "head": "Totally Renovated",
+    "sub": [
+     "Gourmet kitchen &mdash; Calcutta Gold marble, Wolf and Sub-Zero",
+     "Renovated spa bath in the owner&rsquo;s suite",
+     "New luxury vinyl plank in the lower level, 2026"
+    ]
+   },
+   {
+    "head": "A Gourmet Kitchen Built for the House",
+    "sub": [
+     "Calcutta Gold marble countertops",
+     "Wolf and Sub-Zero appliances",
+     "Large center island and butler&rsquo;s pantry",
+     "Breakfast room off the morning room"
+    ]
+   },
+   {
+    "head": "Owner&rsquo;s Suite with a Private Sitting Room",
+    "sub": [
+     "Dual custom walk-in closets",
+     "Renovated spa bath, soaking tub and walk-in shower",
+     "Four more bedrooms above grade"
+    ]
+   },
+   {
+    "head": "Finished Walkout Lower Level",
+    "sub": [
+     "Recreation room and wet bar",
+     "Media room",
+     "Two bedrooms and a full bath",
+     "New luxury vinyl plank flooring, 2026"
+    ]
+   },
+   {
+    "head": "Outdoor Living on 1.72 Wooded Acres",
+    "sub": [
+     "Expansive deck and stone patio",
+     "Outdoor kitchen and fire pit",
+     "9&times;10 hot tub",
+     "Extensive professional hardscaping"
+    ]
+   }
+  ],
+  "schools": [
+   "Flint Hill Elementary School",
+   "Thoreau Middle School",
+   "James Madison High School"
+  ],
+  "utilities": "Fairfax Water, Washington Gas, Dominion Energy and Verizon Fios.",
+  "asset_dir": "assets/2583_Vintage_Crest/buyer",
+  "gallery": [
+   [
+    "2583_Vintage_Crest_front.jpg",
+    "Brick elevation with a balconied entry portico and circular drive"
+   ],
+   [
+    "2583_Vintage_Crest_foyer.jpg",
+    "Grand foyer under the 23&prime; ceiling, with a curved staircase"
+   ],
+   [
+    "2583_Vintage_Crest_family.jpg",
+    "Two-story family room with custom molding and a fireplace"
+   ],
+   [
+    "2583_Vintage_Crest_kitchen.jpg",
+    "Gourmet kitchen &mdash; Calcutta Gold marble, Wolf and Sub-Zero, and a large center island"
+   ],
+   [
+    "2583_Vintage_Crest_primary.jpg",
+    "Owner&rsquo;s suite with a private sitting room beyond the columns"
+   ],
+   [
+    "2583_Vintage_Crest_rear.jpg",
+    "Deck, walkout patio and outdoor kitchen on 1.72 wooded acres"
+   ]
+  ]
+ },
+ "seller_names": "Courtnie",
+ "excellent_condition": true,
+ "track_record": "Track_Record_Over_3500",
+ "team_stats_title": "The Casey Samson Team &mdash; Homes Sold Over 3,500 SF",
+ "market_local": {
+  "label": "Vienna Market &mdash; 175 sales over 3,500 SF",
+  "cells": [
+   [
+    "14.2",
+    "Avg days on market (best 90%, 158 of 175)"
+   ],
+   [
+    "98.3%",
+    "Of original list price"
+   ],
+   [
+    "45%",
+    "Sold in the first week (78 of 175)"
+   ],
+   [
+    "36%",
+    "Sold above list price (63 of 175)"
+   ]
+  ],
+  "source": "MLS Bright, every closed Vienna sale in the size band, Jan 2025 to Oct 2026, Casey Samson listings excluded. Over-asking measured from the ORIGINAL list price; days on market averaged after dropping the slowest 10% of sales on both sides."
+ }
+}

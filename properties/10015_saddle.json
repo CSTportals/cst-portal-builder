@@ -1,0 +1,524 @@
+{
+  "address": "10015 Saddle Rd",
+  "city": "Vienna",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "",
+  "county": "Fairfax County",
+  "congestion_fees": true,
+  "report_date": "Tuesday, October 13, 2026",
+  "prefix": "10015_Saddle",
+  "listing_url": "10015Saddle.com",
+  "include_tracker": true,
+  "asset_dir": "assets/10015_Saddle",
+  "hero_photo": "10015_Saddle_Rd_front.png",
+  "photos": [
+    "10015_Saddle_Rd_front.png"
+  ],
+  "agent": {
+    "lookup": "Kelly Samson",
+    "display": "Kelly Samson",
+    "phone": "703-609-4582",
+    "email": "kellysamson.sp@gmail.com"
+  },
+  "subject": {
+    "built": 1965,
+    "sf": 2838,
+    "lot": 48000,
+    "assessment": 1386000
+  },
+  "values": {
+    "dated": 1414891,
+    "customary": 1572101,
+    "customary_list": 1619386,
+    "premium": 1697869,
+    "upgrades": 0
+  },
+  "comps": {
+    "rows": [
+      [
+        "2068 Kedge Dr",
+        1978,
+        2677,
+        15758,
+        1343350,
+        1535000
+      ],
+      [
+        "1651 Lozano Dr",
+        1979,
+        2536,
+        20000,
+        1117650,
+        1375000
+      ],
+      [
+        "9614 Percussion Way",
+        1970,
+        2332,
+        15150,
+        1237210,
+        1335000
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        1975,
+        2407,
+        20172,
+        1191405,
+        1330000
+      ],
+      [
+        "Price Range Average",
+        1976,
+        2515,
+        16969,
+        1232737,
+        1415000
+      ]
+    ]
+  },
+  "market": {
+    "name": "Vienna Family Market",
+    "slug": "Vienna_Family_Market_Snapshot",
+    "subhead": "Nothing in this segment is currently under contract, yet every home that sold, sold successfully &mdash; a market that rewards correct entry pricing and punishes overreach.",
+    "stats": null,
+    "absorption": null
+  },
+  "competition": [
+    {
+      "status": "Active",
+      "address": "10227 Lawyers Rd",
+      "dom": 256,
+      "built": 1976,
+      "sf": 2785,
+      "lot": 92395,
+      "list": 1575000
+    },
+    {
+      "status": "Active",
+      "address": "10315 Mountington Ct",
+      "dom": 6,
+      "built": 1972,
+      "sf": 3215,
+      "lot": 20002,
+      "list": 1500000
+    },
+    {
+      "status": "Active",
+      "address": "1923 Saybrook Ct",
+      "dom": 5,
+      "built": 1972,
+      "sf": 2456,
+      "lot": 13630,
+      "list": 1499000
+    }
+  ],
+  "notes": [],
+  "premium_rating": [
+    [
+      {
+        "label": "Top Features",
+        "items": [
+          "Timeless all-brick colonial on a private corner lot in one of Vienna&rsquo;s most coveted neighborhoods",
+          "Approximately 1.1 acres with mature tree canopy, deep setback and curving driveway",
+          "4 bedrooms with two versatile office/flex spaces",
+          "Beautiful hardwood floors throughout",
+          "Two wood-burning fireplaces on the main level",
+          "Dedicated home office and updated laundry room",
+          "2-car garage"
+        ]
+      },
+      {
+        "label": "Kitchen",
+        "items": [
+          "Chef&rsquo;s kitchen with center island",
+          "5-burner cooktop and stainless steel appliances",
+          "Soft-close, custom-detailed cabinetry"
+        ]
+      },
+      {
+        "label": "Upper Level",
+        "items": [
+          "Primary bedroom with renovated ensuite bathroom",
+          "Three additional generous bedrooms",
+          "Fully renovated hall bath with double vanity"
+        ]
+      },
+      {
+        "label": "Property Details",
+        "items": [
+          "Built 1965",
+          "2,838 finished square feet",
+          "Approximately 1.1-acre corner lot"
+        ]
+      }
+    ],
+    [
+      {
+        "label": "Lower Level",
+        "items": [
+          "Walkout lower level, fully modernized",
+          "Bonus room / potential fifth bedroom with renovated full bath",
+          "Ideal as an in-law or au pair suite",
+          "Custom bar with built-ins",
+          "Dedicated gym / workout room",
+          "Custom built-in media wall",
+          "French doors opening to the outdoor living spaces"
+        ]
+      },
+      {
+        "label": "Outdoor Living",
+        "items": [
+          "Multiple custom-designed brick porches, terraces and expansive patios",
+          "Covered brick veranda with masonry wood-burning fireplace",
+          "Hot tub, built-in barbecue grill and outdoor TV area",
+          "Professionally landscaped grounds with brick walkway",
+          "Newer storage shed and pet electric fence"
+        ]
+      },
+      {
+        "label": "Location",
+        "items": [
+          "Minutes from Tysons Corner and the Silver Line Metro",
+          "Quick access to I-66",
+          "Close to the shops and restaurants of downtown Vienna"
+        ]
+      }
+    ]
+  ],
+  "portal_url": "https://10015saddle.netlify.app",
+  "track_record": "Track_Record_Under_3500",
+  "team_stats_title": "The Casey Samson Team &mdash; Homes Sold Under 3,500 SF",
+  "market_local": {
+    "label": "Vienna Family Market &mdash; 527 sales under 3,500 SF",
+    "cells": [
+      [
+        "9.5",
+        "Avg days on market (best 90%, 474 of 527)"
+      ],
+      [
+        "100.7%",
+        "Of original list price"
+      ],
+      [
+        "56%",
+        "Sold in the first week (297 of 527)"
+      ],
+      [
+        "50%",
+        "Sold above list price (261 of 527)"
+      ]
+    ],
+    "source": "MLS Bright, every closed Vienna sale under 3,500 SF, Jan 2025 to Oct 2026, Casey Samson listings excluded. Over-asking from the ORIGINAL list price; days on market averaged after dropping the slowest 10% on both sides."
+  },
+  "buyer_portal": {
+    "live": true,
+    "display_address": "10015 Saddle Road",
+    "list_price": 1750000,
+    "asset_dir": "assets/10015_Saddle/buyer",
+    "hero_photo": "SD_exterior_front.png",
+    "pricing_pdf": "10015_Saddle_Buyer_Report.pdf",
+    "open_house": {
+      "when": "Saturday 10/17 &amp; Sunday 10/18, 2&ndash;4 PM",
+      "note": "See it in person &mdash; move-in ready"
+    },
+    "headline": "Every room touched, on 1.11 acres in Carriage Hill.",
+    "description": "A traditional Colonial on a beautiful 1.11-acre lot in Carriage Hill, one of Vienna&rsquo;s most sought-after neighborhoods &mdash; thoughtfully and beautifully updated throughout, blending timeless character with modern finishes. Hardwood flooring spans all three finished levels. The main level is anchored by an updated, open eat-in kitchen with a cozy family room and fireplace on one side and an elegant dining room on the other, with a formal living room, private office, powder room, and a mudroom with laundry and access to the oversized two-car garage. Upstairs are four generously sized bedrooms, including a primary suite with a completely modernized en-suite bath; bedrooms two, three and four share a separate, beautifully updated full hall bath. The walkout lower level was made for entertaining &mdash; a spacious recreation room with a game area, bar and full bath, a large fitness room and a fifth bedroom. Every room has been refreshed, with an extensive list of improvements inside and out: the work has already been done.",
+    "facts": [
+      [
+        "5",
+        "Bedrooms"
+      ],
+      [
+        "3.5",
+        "Bathrooms"
+      ],
+      [
+        "2,838",
+        "Above grade SF"
+      ],
+      [
+        "3",
+        "Finished levels"
+      ],
+      [
+        "1.11",
+        "Acre lot"
+      ],
+      [
+        "2",
+        "Car garage"
+      ],
+      [
+        "1965",
+        "Year built"
+      ]
+    ],
+    "highlights": [
+      "Every room thoughtfully refreshed",
+      "Hardwood across all three finished levels",
+      "Walkout lower level built for entertaining",
+      "1.11 acres backing to Carriage Hill"
+    ],
+    "feature_headlines": [
+      {
+        "head": "Knock-Your-Socks-Off from the Moment You Arrive",
+        "sub": [
+          "No detail has been spared and every room has been touched. Hardwood flooring spans all three finished levels, and the warmth and quality are immediately apparent as you step from the covered front porch into the welcoming foyer."
+        ]
+      },
+      {
+        "head": "An Open Eat-In Kitchen at the Centre of the Main Level",
+        "sub": [
+          "A cozy family room and fireplace on one side, an elegant dining room on the other, plus a formal living room, private office, powder room and a mudroom with laundry and tons of storage."
+        ]
+      },
+      {
+        "head": "A Walkout Lower Level Made for Entertaining",
+        "sub": [
+          "A spacious recreation room with a game area, bar and full bath, a large fitness room, a fifth bedroom and tons of storage."
+        ]
+      },
+      {
+        "head": "Two Covered Brick Patios and a High-End Jacuzzi",
+        "sub": [
+          "An upper patio directly off the kitchen with a built-in gas grill, and a large Jacuzzi just outside the walkout lower level. The brick was selected to match the home."
+        ]
+      }
+    ],
+    "features": {
+      "Inside": [
+        "Hardwood flooring across all three finished levels",
+        "Updated open eat-in kitchen",
+        "Family room with fireplace",
+        "Elegant dining room and formal living room",
+        "Private office",
+        "Mudroom with laundry and tons of storage",
+        "Primary suite with completely modernized en-suite bath",
+        "Separate updated full hall bath for bedrooms two, three and four",
+        "Recreation room with game area, bar and full bath",
+        "Large fitness room and fifth bedroom on the lower level"
+      ],
+      "Outside &amp; Systems": [
+        "1.11-acre lot in Carriage Hill",
+        "Covered front porch",
+        "Two covered brick patios, brick selected to match the home",
+        "Upper patio off the kitchen with a built-in gas grill",
+        "Large, high-end Jacuzzi off the walkout lower level",
+        "Oversized two-car garage"
+      ]
+    },
+    "loves": [
+      "The land and the neighborhood",
+      "That the work is already done",
+      "Entertaining on the lower level and the patios",
+      "Walking to Clarks Crossing Park and the W&amp;OD Trail"
+    ],
+    "schools": [
+      "Flint Hill Elementary School",
+      "Thoreau Middle School",
+      "Madison High School"
+    ],
+    "contacts": {
+      "photo": "SD_agents.jpg",
+      "names": "Kelly Samson",
+      "team": "The Casey Samson Team &middot; Samson Properties",
+      "lines": [
+        [
+          "Kelly Samson",
+          "703-609-4582",
+          "kellysamson.sp@gmail.com"
+        ]
+      ],
+      "office": "Samson Properties, 14291 Park Meadow Dr, Suite 500, Chantilly, VA 20151"
+    },
+    "offer_terms": [
+      [
+        "Contract deadlines",
+        "Contact the co-listing agent"
+      ],
+      [
+        "Submit to",
+        "morgan@caseysamson.com and colbysmyth@gmail.com"
+      ],
+      [
+        "Format",
+        "All documents combined in one PDF"
+      ],
+      [
+        "Escalation clauses",
+        "Please, none"
+      ],
+      [
+        "Preferred settlement",
+        "30 days, no rent back needed"
+      ],
+      [
+        "Preferred title",
+        "Cardinal Title Group"
+      ],
+      [
+        "Preferred lender",
+        "Mike Filan, CrossCountry Mortgage &mdash; 703-899-8720"
+      ],
+      [
+        "Lender letter",
+        "Must be current with the lender&rsquo;s direct phone and email"
+      ]
+    ],
+    "offer_summary": [
+      "Buyer name",
+      "Agent name",
+      "Lender",
+      "Title",
+      "Settlement date",
+      "Down payment",
+      "Deposit",
+      "Home sale contingency",
+      "Offer price",
+      "Buyer commissions",
+      "Other concessions and terms"
+    ],
+    "disclosures": {
+      "items": [],
+      "pending": true
+    },
+    "documents": [],
+    "gallery": [],
+    "locator_map": {
+      "title": "The Neighborhood",
+      "lede": "Downtown Vienna&rsquo;s restaurants, coffee and the Town Green are a few minutes south, with Madison High just beyond them. The arrow points to everything past the edge of the map.",
+      "center": {
+        "lat": 38.9184896,
+        "lng": -77.2927599,
+        "label": "10015 Saddle Rd"
+      },
+      "pins": [
+        {
+          "name": "James Madison High School",
+          "sub": "Fairfax County Public Schools",
+          "lat": 38.8961219,
+          "lng": -77.2788162
+        },
+        {
+          "name": "Evelyn Rose",
+          "sub": "Tasting menu on Church St NW",
+          "lat": 38.9020805,
+          "lng": -77.2670056
+        },
+        {
+          "name": "Caff&egrave; Amouri",
+          "sub": "Coffee roaster on Church St",
+          "lat": 38.9024734,
+          "lng": -77.2657028
+        },
+        {
+          "name": "Vienna Town Green",
+          "sub": "Concerts, markets, Viva Vienna",
+          "lat": 38.902941,
+          "lng": -77.2641239
+        },
+        {
+          "name": "Vienna Inn",
+          "sub": "The 1960 town institution",
+          "lat": 38.9022013,
+          "lng": -77.2647713
+        },
+        {
+          "name": "Whole Foods",
+          "sub": "143 Maple Ave E",
+          "lat": 38.9022469,
+          "lng": -77.2626957
+        },
+        {
+          "name": "Giant Food",
+          "sub": "359 Maple Ave E",
+          "lat": 38.9053633,
+          "lng": -77.2580414
+        },
+        {
+          "name": "Vienna Community Center",
+          "sub": "Classes, gym and programs",
+          "lat": 38.9008267,
+          "lng": -77.2603307
+        }
+      ],
+      "arrows": [
+        [
+          158.9,
+          [
+            "Vienna Metro",
+            "Orange Line &middot; 9 min"
+          ]
+        ]
+      ]
+    },
+    "amenities_lede": "Downtown Vienna is a short drive south, and Madison High is on the way there.",
+    "amenities": [
+      {
+        "title": "Downtown Vienna",
+        "items": [
+          [
+            "Evelyn Rose",
+            "Tasting menu on Church St NW",
+            2.33
+          ],
+          [
+            "Caff&egrave; Amouri",
+            "Coffee roaster on Church St",
+            2.38
+          ],
+          [
+            "Vienna Town Green",
+            "Concerts, markets, Viva Vienna",
+            2.44
+          ],
+          [
+            "Vienna Inn",
+            "The 1960 town institution",
+            2.44
+          ]
+        ]
+      },
+      {
+        "title": "Every Day",
+        "items": [
+          [
+            "Whole Foods",
+            "143 Maple Ave E",
+            2.56
+          ],
+          [
+            "Giant Food",
+            "359 Maple Ave E",
+            2.7
+          ],
+          [
+            "Vienna Community Center",
+            "Classes, gym and programs",
+            2.77
+          ]
+        ]
+      },
+      {
+        "title": "Schools and Parks",
+        "items": [
+          [
+            "James Madison High School",
+            "Fairfax County Public Schools",
+            2.23
+          ]
+        ]
+      }
+    ],
+    "listed_by": "Compass",
+    "buyer_agent": {
+      "name": "Kelly Samson",
+      "phone": "703-609-4582",
+      "email": "kellysamson.sp@gmail.com"
+    }
+  }
+}

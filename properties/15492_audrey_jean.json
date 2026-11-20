@@ -1,0 +1,132 @@
+{
+  "address": "15492 Audrey Jean Dr",
+  "city": "Waterford",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "",
+  "county": "Loudoun County",
+  "congestion_fees": false,
+  "report_date": "Tuesday, September 15, 2026",
+  "prefix": "15492_Audrey_Jean",
+  "listing_url": "15492AudreyJean.com",
+  "portal_url": "https://15492audreyjean.netlify.app",
+  "include_tracker": true,
+  "subject": {
+    "built": 2022,
+    "sf": 4696,
+    "lot": 130680,
+    "assessment": 1635750
+  },
+  "values": {
+    "dated": 1633362,
+    "customary": 1814847,
+    "customary_list": 1870798,
+    "premium": 1960034
+  },
+  "comps": {
+    "rows": [
+      [
+        "39803 Charles Henry Pl",
+        2016,
+        4328,
+        154202,
+        1507510,
+        1525000
+      ],
+      [
+        "16064 Waterford Creek Cir",
+        2011,
+        4709,
+        131116,
+        1571650,
+        1800000
+      ],
+      [
+        "15718 Old Waterford Rd",
+        2006,
+        4241,
+        381586,
+        1405070,
+        1800000
+      ],
+      [
+        "38565 Piggott Bottom",
+        2005,
+        5042,
+        133294,
+        1351350,
+        1650000
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        2014,
+        4519,
+        142659,
+        1539580,
+        1662500
+      ],
+      [
+        "Price Range Average",
+        2008,
+        4949,
+        176926,
+        1489803,
+        1669367
+      ]
+    ]
+  },
+  "market": {
+    "name": "Leesburg Luxury Market",
+    "slug": "Leesburg_Luxury_Market_Snapshot",
+    "subhead": "Nothing in this segment is currently under contract, yet every home that sold, sold successfully &mdash; the gap between those two facts is entry pricing.",
+    "stats": null,
+    "absorption": null
+  },
+  "competition": [
+    {
+      "status": "Active",
+      "address": "38149 John Wolford Rd",
+      "dom": 74,
+      "built": 2023,
+      "sf": 4693,
+      "lot": 743569,
+      "list": 2100000
+    },
+    {
+      "status": "Active",
+      "address": "15064 Barlow Dr",
+      "dom": 109,
+      "built": 2006,
+      "sf": 5589,
+      "lot": 133294,
+      "list": 1750000
+    },
+    {
+      "status": "Active",
+      "address": "39260 Charles Town Pike",
+      "dom": 100,
+      "built": 2006,
+      "sf": 6600,
+      "lot": 143748,
+      "list": 1600000
+    },
+    {
+      "status": "Active",
+      "address": "15058 Bankfield Dr",
+      "dom": 22,
+      "built": 2005,
+      "sf": 5598,
+      "lot": 142877,
+      "list": 1550000
+    }
+  ],
+  "notes": [],
+  "photos": [
+    "15492_Audrey_Jean_front.png"
+  ],
+  "premium_rating": null,
+  "asset_dir": "assets/15492_Audrey_Jean",
+  "hero_photo": "15492_Audrey_Jean_front.png"
+}

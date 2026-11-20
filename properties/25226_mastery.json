@@ -1,0 +1,114 @@
+{
+ "address": "25226 Mastery Place",
+ "city": "Aldie",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "20105",
+ "county": "Loudoun County",
+ "congestion_fees": false,
+ "report_date": "Tuesday, September 8, 2026",
+ "prefix": "25226_Mastery",
+ "listing_url": "25226Mastery.com",
+ "agent": {
+  "lookup": "Ferris B Eways",
+  "display": "Ferris B Eways",
+  "email": "feways01@yahoo.com"
+ },
+ "subject": {
+  "built": 2005,
+  "sf": 2450,
+  "lot": 6534,
+  "assessment": 881000
+ },
+ "values": {
+  "dated": 848895,
+  "customary": 943216,
+  "customary_list": 971826,
+  "premium": 1018674
+ },
+ "comps": {
+  "rows": [
+   [
+    "25230 Mastery Pl",
+    2005,
+    2312,
+    6534,
+    858920,
+    893188
+   ],
+   [
+    "41929 Visionary Ct",
+    2005,
+    2555,
+    6970,
+    936490,
+    1065000
+   ],
+   [
+    "25407 Vacation Pl",
+    2004,
+    2260,
+    6098,
+    848540,
+    877794
+   ],
+   [
+    "25505 Balagat Pl",
+    2007,
+    2148,
+    6098,
+    707570,
+    804666
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    2010,
+    2543,
+    6425,
+    862685,
+    970500
+   ],
+   [
+    "Price Range Average",
+    2008,
+    2734,
+    7841,
+    941956,
+    989000
+   ]
+  ]
+ },
+ "market": {
+  "name": "Aldie Family Market",
+  "slug": "Aldie_Family_Market_Snapshot",
+  "subhead": "Every qualifying competitor in the neighborhood is already under contract, leaving no active competition for a well-prepared home.",
+  "stats": null,
+  "absorption": null
+ },
+ "competition": [
+  {
+   "status": "Active Under Contract",
+   "address": "42071 Pepperbush Pl",
+   "dom": 75,
+   "built": 2004,
+   "sf": 2562,
+   "lot": 6970,
+   "list": 960000
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "25010 Mineral Springs Cir",
+   "dom": 2,
+   "built": 2005,
+   "sf": 2592,
+   "lot": 5663,
+   "list": 929900
+  }
+ ],
+ "notes": [],
+ "photos": [],
+ "premium_rating": null,
+ "portal_url": "https://25226mastery.netlify.app"
+}

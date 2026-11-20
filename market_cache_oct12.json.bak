@@ -1,0 +1,844 @@
+{
+ "Aldie_Family_Market_Snapshot": {
+  "stats": {
+   "market": "Aldie",
+   "uc_30": "40%",
+   "under_contract": "34%",
+   "avg_dom": "46",
+   "uc_14": "30%",
+   "success_rate": "72%",
+   "control": "Buyer's"
+  },
+  "conditions": {
+   "flags": 1,
+   "flag_color": "red",
+   "flag_hex": "#D42A21",
+   "headline": "Buyers Control the Aldie Family Market",
+   "headline_figure": "34%",
+   "sub": "34% of Aldie family listings are under contract and the homes on the market have been listed an average of 46 days. 40% of the homes listed over the last 30 days went under contract, and 30% went under contract in the last 14 days.",
+   "stats": [
+    [
+     "72%",
+     "Success rate"
+    ],
+    [
+     "34%",
+     "Under contract"
+    ],
+    [
+     "46",
+     "Days on market, active and pending"
+    ],
+    [
+     "40%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "30%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "capsule": "BUYER’S MARKET — RED FLAG",
+   "read": "40% of the homes listed in the last 30 days went under contract, and 30% of the listings here went under contract in the last 14 days.",
+   "meta": "ALDIE · FAMILY HOMES · AS OF OCTOBER 12, 2026",
+   "update": "34% of Aldie family listings are under contract and the homes on the market have been listed an average of 46 days. 40% of the homes listed over the last 30 days went under contract, and 30% went under contract in the last 14 days.",
+   "strength": "3.4",
+   "momentum": null
+  },
+  "absorption": null,
+  "headline": "Buyers Control the Aldie Family Market",
+  "subheadline": "34% of Aldie family listings are under contract and the homes on the market have been listed an average of 46 days. 40% of the homes listed over the last 30 days went under contract, and 30% went under contract in the last 14 days.",
+  "keystats": "Buyer's Market",
+  "week_of": "As of October 12, 2026"
+ },
+ "Centreville_Family_Market_Snapshot": {
+  "stats": {
+   "market": "Centreville",
+   "uc_30": "54%",
+   "under_contract": "34%",
+   "avg_dom": "24",
+   "uc_14": "16%",
+   "success_rate": "84%",
+   "control": "Neutral"
+  },
+  "conditions": {
+   "flags": 1,
+   "flag_color": "yellow",
+   "flag_hex": "#F2C117",
+   "headline": "Neither Side Controls the Centreville Family Market",
+   "headline_figure": "34%",
+   "sub": "34% of Centreville family listings are under contract and the homes on the market have been listed an average of 24 days. 54% of the homes listed over the last 30 days went under contract, and 16% went under contract in the last 14 days.",
+   "stats": [
+    [
+     "84%",
+     "Success rate"
+    ],
+    [
+     "34%",
+     "Under contract"
+    ],
+    [
+     "24",
+     "Days on market, active and pending"
+    ],
+    [
+     "54%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "16%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "capsule": "NEUTRAL MARKET — YELLOW FLAG",
+   "read": "54% of the homes listed in the last 30 days went under contract, and 16% of the listings here went under contract in the last 14 days.",
+   "meta": "CENTREVILLE · FAMILY HOMES · AS OF OCTOBER 12, 2026",
+   "update": "34% of Centreville family listings are under contract and the homes on the market have been listed an average of 24 days. 54% of the homes listed over the last 30 days went under contract, and 16% went under contract in the last 14 days.",
+   "strength": "5.4",
+   "momentum": null
+  },
+  "absorption": null,
+  "headline": "Neither Side Controls the Centreville Family Market",
+  "subheadline": "34% of Centreville family listings are under contract and the homes on the market have been listed an average of 24 days. 54% of the homes listed over the last 30 days went under contract, and 16% went under contract in the last 14 days.",
+  "keystats": "Neutral Market",
+  "week_of": "As of October 12, 2026"
+ },
+ "McLean_Luxury_Market_Snapshot": {
+  "stats": {
+   "market": "McLean",
+   "uc_30": "13%",
+   "under_contract": "14%",
+   "avg_dom": "47",
+   "uc_14": "1%",
+   "success_rate": "53%",
+   "control": "Buyer's"
+  },
+  "conditions": {
+   "flags": 2,
+   "flag_color": "red",
+   "flag_hex": "#D42A21",
+   "headline": "Buyers Control the McLean Luxury Market",
+   "headline_figure": "14%",
+   "sub": "14% of McLean luxury listings are under contract and the homes on the market have been listed an average of 47 days. 13% of the homes listed over the last 30 days went under contract, and 1% went under contract in the last 14 days.",
+   "stats": [
+    [
+     "53%",
+     "Success rate"
+    ],
+    [
+     "14%",
+     "Under contract"
+    ],
+    [
+     "47",
+     "Days on market, active and pending"
+    ],
+    [
+     "13%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "1%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "capsule": "BUYER’S MARKET — DOUBLE RED FLAG",
+   "read": "13% of the homes listed in the last 30 days went under contract, and 1% of the listings here went under contract in the last 14 days.",
+   "meta": "MCLEAN · LUXURY HOMES · AS OF OCTOBER 12, 2026",
+   "update": "14% of McLean luxury listings are under contract and the homes on the market have been listed an average of 47 days. 13% of the homes listed over the last 30 days went under contract, and 1% went under contract in the last 14 days.",
+   "strength": "1.4",
+   "momentum": null
+  },
+  "absorption": null,
+  "headline": "Buyers Control the McLean Luxury Market",
+  "subheadline": "14% of McLean luxury listings are under contract and the homes on the market have been listed an average of 47 days. 13% of the homes listed over the last 30 days went under contract, and 1% went under contract in the last 14 days.",
+  "keystats": "Buyer's Market",
+  "week_of": "As of October 12, 2026"
+ },
+ "Vienna_Family_Market_Snapshot": {
+  "stats": {
+   "market": "Vienna",
+   "uc_30": "36%",
+   "under_contract": "29%",
+   "avg_dom": "15",
+   "uc_14": "11%",
+   "success_rate": "78%",
+   "control": "Neutral"
+  },
+  "conditions": {
+   "flags": 1,
+   "flag_color": "yellow",
+   "flag_hex": "#F2C117",
+   "headline": "Neither Side Controls the Vienna Family Market",
+   "headline_figure": "29%",
+   "sub": "29% of Vienna family listings are under contract and the homes on the market have been listed an average of 15 days. 36% of the homes listed over the last 30 days went under contract, and 11% went under contract in the last 14 days.",
+   "stats": [
+    [
+     "78%",
+     "Success rate"
+    ],
+    [
+     "29%",
+     "Under contract"
+    ],
+    [
+     "15",
+     "Days on market, active and pending"
+    ],
+    [
+     "36%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "11%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "capsule": "NEUTRAL MARKET — YELLOW FLAG",
+   "read": "36% of the homes listed in the last 30 days went under contract, and 11% of the listings here went under contract in the last 14 days.",
+   "meta": "VIENNA · FAMILY HOMES · AS OF OCTOBER 12, 2026",
+   "update": "29% of Vienna family listings are under contract and the homes on the market have been listed an average of 15 days. 36% of the homes listed over the last 30 days went under contract, and 11% went under contract in the last 14 days.",
+   "strength": "5.3",
+   "momentum": null
+  },
+  "absorption": null,
+  "headline": "Neither Side Controls the Vienna Family Market",
+  "subheadline": "29% of Vienna family listings are under contract and the homes on the market have been listed an average of 15 days. 36% of the homes listed over the last 30 days went under contract, and 11% went under contract in the last 14 days.",
+  "keystats": "Neutral Market",
+  "week_of": "As of October 12, 2026"
+ },
+ "Vienna_Luxury_Market_Snapshot": {
+  "stats": {
+   "market": "Vienna",
+   "uc_30": "40%",
+   "under_contract": "25%",
+   "avg_dom": "42",
+   "uc_14": "7%",
+   "success_rate": "61%",
+   "control": "Buyer's"
+  },
+  "conditions": {
+   "flags": 2,
+   "flag_color": "red",
+   "flag_hex": "#D42A21",
+   "headline": "Buyers Control the Vienna Luxury Market",
+   "headline_figure": "25%",
+   "sub": "25% of Vienna luxury listings are under contract and the homes on the market have been listed an average of 42 days. 40% of the homes listed over the last 30 days went under contract, and 7% went under contract in the last 14 days.",
+   "stats": [
+    [
+     "61%",
+     "Success rate"
+    ],
+    [
+     "25%",
+     "Under contract"
+    ],
+    [
+     "42",
+     "Days on market, active and pending"
+    ],
+    [
+     "40%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "7%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "capsule": "BUYER’S MARKET — DOUBLE RED FLAG",
+   "read": "40% of the homes listed in the last 30 days went under contract, and 7% of the listings here went under contract in the last 14 days.",
+   "meta": "VIENNA · LUXURY HOMES · AS OF OCTOBER 12, 2026",
+   "update": "25% of Vienna luxury listings are under contract and the homes on the market have been listed an average of 42 days. 40% of the homes listed over the last 30 days went under contract, and 7% went under contract in the last 14 days.",
+   "strength": "2.6",
+   "momentum": null
+  },
+  "absorption": null,
+  "headline": "Buyers Control the Vienna Luxury Market",
+  "subheadline": "25% of Vienna luxury listings are under contract and the homes on the market have been listed an average of 42 days. 40% of the homes listed over the last 30 days went under contract, and 7% went under contract in the last 14 days.",
+  "keystats": "Buyer's Market",
+  "week_of": "As of October 12, 2026"
+ },
+ "Fairfax_City_Luxury_Market_Snapshot": {
+  "stats": {
+   "market": "Fairfax",
+   "uc_30": "44%",
+   "under_contract": "20%",
+   "avg_dom": "24",
+   "uc_14": "5%",
+   "success_rate": "70%",
+   "control": "Neutral"
+  },
+  "conditions": {
+   "flags": 1,
+   "flag_color": "yellow",
+   "flag_hex": "#F2C117",
+   "headline": "Neither Side Controls the Fairfax Luxury Market",
+   "headline_figure": "20%",
+   "sub": "20% of Fairfax luxury listings are under contract and the homes on the market have been listed an average of 24 days. 44% of the homes listed over the last 30 days went under contract, and 5% went under contract in the last 14 days.",
+   "stats": [
+    [
+     "70%",
+     "Success rate"
+    ],
+    [
+     "20%",
+     "Under contract"
+    ],
+    [
+     "24",
+     "Days on market, active and pending"
+    ],
+    [
+     "44%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "5%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "capsule": "NEUTRAL MARKET — YELLOW FLAG",
+   "read": "44% of the homes listed in the last 30 days went under contract, and 5% of the listings here went under contract in the last 14 days.",
+   "meta": "FAIRFAX · LUXURY HOMES · AS OF OCTOBER 12, 2026",
+   "update": "20% of Fairfax luxury listings are under contract and the homes on the market have been listed an average of 24 days. 44% of the homes listed over the last 30 days went under contract, and 5% went under contract in the last 14 days.",
+   "strength": "4.0",
+   "momentum": null
+  },
+  "absorption": null,
+  "headline": "Neither Side Controls the Fairfax Luxury Market",
+  "subheadline": "20% of Fairfax luxury listings are under contract and the homes on the market have been listed an average of 24 days. 44% of the homes listed over the last 30 days went under contract, and 5% went under contract in the last 14 days.",
+  "keystats": "Neutral Market",
+  "week_of": "As of October 12, 2026"
+ },
+ "Reston_Family_Market_Snapshot": {
+  "stats": {
+   "market": "Reston",
+   "uc_30": "45%",
+   "under_contract": "30%",
+   "avg_dom": "18",
+   "uc_14": "11%",
+   "success_rate": "72%",
+   "control": "Neutral"
+  },
+  "conditions": {
+   "flags": 1,
+   "flag_color": "yellow",
+   "flag_hex": "#F2C117",
+   "headline": "Neither Side Controls the Reston Family Market",
+   "headline_figure": "30%",
+   "sub": "30% of Reston family listings are under contract and the homes on the market have been listed an average of 18 days. 45% of the homes listed over the last 30 days went under contract, and 11% went under contract in the last 14 days.",
+   "stats": [
+    [
+     "72%",
+     "Success rate"
+    ],
+    [
+     "30%",
+     "Under contract"
+    ],
+    [
+     "18",
+     "Days on market, active and pending"
+    ],
+    [
+     "45%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "11%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "capsule": "NEUTRAL MARKET — YELLOW FLAG",
+   "read": "45% of the homes listed in the last 30 days went under contract, and 11% of the listings here went under contract in the last 14 days.",
+   "meta": "RESTON · FAMILY HOMES · AS OF OCTOBER 12, 2026",
+   "update": "30% of Reston family listings are under contract and the homes on the market have been listed an average of 18 days. 45% of the homes listed over the last 30 days went under contract, and 11% went under contract in the last 14 days.",
+   "strength": "4.8",
+   "momentum": null
+  },
+  "absorption": null,
+  "headline": "Neither Side Controls the Reston Family Market",
+  "subheadline": "30% of Reston family listings are under contract and the homes on the market have been listed an average of 18 days. 45% of the homes listed over the last 30 days went under contract, and 11% went under contract in the last 14 days.",
+  "keystats": "Neutral Market",
+  "week_of": "As of October 12, 2026"
+ },
+ "Willowsford_Family_Market_Snapshot": {
+  "stats": {
+   "market": "Willowsford*",
+   "inventory": "100%",
+   "contracts": "—",
+   "under_contract": "14%",
+   "uc_14": "0%",
+   "success_rate": "53%",
+   "control": "Buyer's"
+  },
+  "conditions": {
+   "flags": 0,
+   "flag_color": null,
+   "headline": "Willowsford* Family Inventory Surges 100% as the Market Remains Strongly (14%) in Control of Buyers",
+   "headline_figure": null,
+   "sub": "Last 14 days, buyer activity is quiet. This week is not a good time for sellers to bring homes on the market.",
+   "stats": [
+    [
+     "100%",
+     "30 Day Inv"
+    ],
+    [
+     "—",
+     "30 Day Sales"
+    ],
+    [
+     "14%",
+     "%UC"
+    ]
+   ],
+   "update": "Willowsford*'s inventory is at 100% while contracts sit at flat, with the 14% under-contract rate keeping this market in Buyer's territory. Last 14 days, buyer activity is quiet. This week is not a good time for sellers to bring homes on the market."
+  },
+  "absorption": {
+   "rate": "0%",
+   "zone": "No Go Zone",
+   "note": "Last 14 days, buyer activity is quiet. This week is not a good time for sellers to bring homes on the market."
+  },
+  "headline": "Willowsford* Family Inventory Surges 100% as the Market Remains Strongly (14%) in Control of Buyers",
+  "subheadline": "Last 14 days, buyer activity is quiet. This week is not a good time for sellers to bring homes on the market.",
+  "keystats": "Contracts — &middot; 14% Under Contract &middot; Buyer's Market",
+  "week_of": "Week of October 1, 2026"
+ },
+ "Leesburg_Luxury_Market_Snapshot": {
+  "stats": {
+   "market": "Leesburg",
+   "uc_30": "29%",
+   "under_contract": "21%",
+   "avg_dom": "36",
+   "uc_14": "7%",
+   "success_rate": "65%",
+   "control": "Buyer's"
+  },
+  "conditions": {
+   "flags": 1,
+   "flag_color": "red",
+   "flag_hex": "#D42A21",
+   "headline": "Buyers Control the Leesburg* Luxury Market",
+   "headline_figure": "21%",
+   "sub": "21% of Leesburg* luxury listings are under contract and the homes on the market have been listed an average of 36 days. 29% of the homes listed over the last 30 days went under contract, and 7% went under contract in the last 14 days.",
+   "stats": [
+    [
+     "65%",
+     "Success rate"
+    ],
+    [
+     "21%",
+     "Under contract"
+    ],
+    [
+     "36",
+     "Days on market, active and pending"
+    ],
+    [
+     "29%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "7%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "capsule": "BUYER’S MARKET — RED FLAG",
+   "read": "29% of the homes listed in the last 30 days went under contract, and 7% of the listings here went under contract in the last 14 days.",
+   "meta": "LEESBURG · LUXURY HOMES · AS OF OCTOBER 12, 2026",
+   "update": "21% of Leesburg* luxury listings are under contract and the homes on the market have been listed an average of 36 days. 29% of the homes listed over the last 30 days went under contract, and 7% went under contract in the last 14 days.",
+   "strength": "3.0",
+   "momentum": null
+  },
+  "absorption": null,
+  "headline": "Buyers Control the Leesburg* Luxury Market",
+  "subheadline": "21% of Leesburg* luxury listings are under contract and the homes on the market have been listed an average of 36 days. 29% of the homes listed over the last 30 days went under contract, and 7% went under contract in the last 14 days.",
+  "keystats": "Buyer's Market",
+  "week_of": "As of October 12, 2026"
+ },
+ "Oakton_Luxury_Market_Snapshot": {
+  "stats": {
+   "market": "Oakton",
+   "uc_30": "33%",
+   "under_contract": "18%",
+   "avg_dom": "51",
+   "uc_14": "15%",
+   "success_rate": "67%",
+   "control": "Buyer's"
+  },
+  "conditions": {
+   "flags": 2,
+   "flag_color": "red",
+   "flag_hex": "#D42A21",
+   "headline": "Buyers Control the Oakton Luxury Market",
+   "headline_figure": "18%",
+   "sub": "18% of Oakton luxury listings are under contract and the homes on the market have been listed an average of 51 days. 33% of the homes listed over the last 30 days went under contract, and 15% went under contract in the last 14 days.",
+   "stats": [
+    [
+     "67%",
+     "Success rate"
+    ],
+    [
+     "18%",
+     "Under contract"
+    ],
+    [
+     "51",
+     "Days on market, active and pending"
+    ],
+    [
+     "33%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "15%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "capsule": "BUYER’S MARKET — DOUBLE RED FLAG",
+   "read": "33% of the homes listed in the last 30 days went under contract, and 15% of the listings here went under contract in the last 14 days.",
+   "meta": "OAKTON · LUXURY HOMES · AS OF OCTOBER 12, 2026",
+   "update": "18% of Oakton luxury listings are under contract and the homes on the market have been listed an average of 51 days. 33% of the homes listed over the last 30 days went under contract, and 15% went under contract in the last 14 days.",
+   "strength": "2.2",
+   "momentum": null
+  },
+  "absorption": null,
+  "headline": "Buyers Control the Oakton Luxury Market",
+  "subheadline": "18% of Oakton luxury listings are under contract and the homes on the market have been listed an average of 51 days. 33% of the homes listed over the last 30 days went under contract, and 15% went under contract in the last 14 days.",
+  "keystats": "Buyer's Market",
+  "week_of": "As of October 12, 2026"
+ },
+ "Great_Falls_Luxury_Market_Snapshot": {
+  "stats": {
+   "market": "Great",
+   "inventory": "9%",
+   "contracts": "-11%",
+   "under_contract": "18%",
+   "uc_14": "7%",
+   "success_rate": "52%",
+   "control": "Buyer's"
+  },
+  "absorption": {
+   "rate": "7%",
+   "zone": "No Go Zone",
+   "note": "Last 14 days, buyer activity is quiet. This week is not a good time for sellers to bring homes on the market."
+  },
+  "headline": "Great Falls Luxury Contracts Fall 11% as the Market Remains Strongly (18%) in Control of Buyers",
+  "subheadline": "Last 14 days, buyer activity is quiet. This week is not a good time for sellers to bring homes on the market.",
+  "keystats": "Contracts down 11% &middot; 18% Under Contract &middot; Buyer's Market",
+  "week_of": "Week of October 1, 2026"
+ },
+ "Centreville_Luxury_Market_Snapshot": {
+  "stats": {
+   "market": "Centreville",
+   "uc_30": "33%",
+   "under_contract": "34%",
+   "avg_dom": "19",
+   "uc_14": "0%",
+   "success_rate": "33%",
+   "control": "Neutral"
+  },
+  "conditions": {
+   "flags": 1,
+   "flag_color": "red",
+   "flag_hex": "#D42A21",
+   "headline": "Neither Side Controls the Centreville Luxury Market",
+   "headline_figure": "34%",
+   "sub": "34% of Centreville luxury listings are under contract and the homes on the market have been listed an average of 19 days. 33% of the homes listed over the last 30 days went under contract, and none went under contract in the last 14 days.",
+   "stats": [
+    [
+     "33%",
+     "Success rate"
+    ],
+    [
+     "34%",
+     "Under contract"
+    ],
+    [
+     "19",
+     "Days on market, active and pending"
+    ],
+    [
+     "33%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "0%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "capsule": "NEUTRAL MARKET — RED FLAG",
+   "read": "33% of the homes listed in the last 30 days went under contract, and none of the listings here went under contract in the last 14 days.",
+   "meta": "CENTREVILLE · LUXURY HOMES · AS OF OCTOBER 12, 2026",
+   "update": "34% of Centreville luxury listings are under contract and the homes on the market have been listed an average of 19 days. 33% of the homes listed over the last 30 days went under contract, and none went under contract in the last 14 days.",
+   "strength": "3.4",
+   "momentum": null
+  },
+  "absorption": null,
+  "headline": "Neither Side Controls the Centreville Luxury Market",
+  "subheadline": "34% of Centreville luxury listings are under contract and the homes on the market have been listed an average of 19 days. 33% of the homes listed over the last 30 days went under contract, and none went under contract in the last 14 days.",
+  "keystats": "Neutral Market",
+  "week_of": "As of October 12, 2026"
+ },
+ "Winchester_Family_Market_Snapshot": {
+  "stats": {
+   "market": "Winchester",
+   "uc_30": "29%",
+   "under_contract": "17%",
+   "avg_dom": "38",
+   "uc_14": "10%",
+   "success_rate": "66%",
+   "control": "Buyer's"
+  },
+  "conditions": {
+   "flags": 2,
+   "flag_color": "red",
+   "flag_hex": "#D42A21",
+   "headline": "Buyers Control the Winchester Family Market",
+   "headline_figure": "17%",
+   "sub": "17% of Winchester family listings are under contract and the homes on the market have been listed an average of 38 days. 29% of the homes listed over the last 30 days went under contract, and 10% went under contract in the last 14 days.",
+   "stats": [
+    [
+     "66%",
+     "Success rate"
+    ],
+    [
+     "17%",
+     "Under contract"
+    ],
+    [
+     "38",
+     "Days on market, active and pending"
+    ],
+    [
+     "29%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "10%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "capsule": "BUYER’S MARKET — DOUBLE RED FLAG",
+   "read": "29% of the homes listed in the last 30 days went under contract, and 10% of the listings here went under contract in the last 14 days.",
+   "meta": "WINCHESTER · FAMILY HOMES · AS OF OCTOBER 12, 2026",
+   "update": "17% of Winchester family listings are under contract and the homes on the market have been listed an average of 38 days. 29% of the homes listed over the last 30 days went under contract, and 10% went under contract in the last 14 days.",
+   "strength": "2.9",
+   "momentum": null
+  },
+  "absorption": null,
+  "headline": "Buyers Control the Winchester Family Market",
+  "subheadline": "17% of Winchester family listings are under contract and the homes on the market have been listed an average of 38 days. 29% of the homes listed over the last 30 days went under contract, and 10% went under contract in the last 14 days.",
+  "keystats": "Buyer's Market",
+  "week_of": "As of October 12, 2026"
+ },
+ "Haymarket_Luxury_Market_Snapshot": {
+  "stats": {
+   "market": "Haymarket",
+   "uc_30": "45%",
+   "under_contract": "24%",
+   "avg_dom": "33",
+   "uc_14": "15%",
+   "success_rate": "57%",
+   "control": "Buyer's"
+  },
+  "conditions": {
+   "flags": 2,
+   "flag_color": "red",
+   "flag_hex": "#D42A21",
+   "headline": "Buyers Control the Haymarket Luxury Market",
+   "headline_figure": "24%",
+   "sub": "24% of Haymarket luxury listings are under contract and the homes on the market have been listed an average of 33 days. 45% of the homes listed over the last 30 days went under contract, and 15% went under contract in the last 14 days.",
+   "stats": [
+    [
+     "57%",
+     "Success rate"
+    ],
+    [
+     "24%",
+     "Under contract"
+    ],
+    [
+     "33",
+     "Days on market, active and pending"
+    ],
+    [
+     "45%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "15%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "capsule": "BUYER’S MARKET — DOUBLE RED FLAG",
+   "read": "45% of the homes listed in the last 30 days went under contract, and 15% of the listings here went under contract in the last 14 days.",
+   "meta": "HAYMARKET · LUXURY HOMES · AS OF OCTOBER 12, 2026",
+   "update": "24% of Haymarket luxury listings are under contract and the homes on the market have been listed an average of 33 days. 45% of the homes listed over the last 30 days went under contract, and 15% went under contract in the last 14 days.",
+   "strength": "2.8",
+   "momentum": null
+  },
+  "absorption": null,
+  "headline": "Buyers Control the Haymarket Luxury Market",
+  "subheadline": "24% of Haymarket luxury listings are under contract and the homes on the market have been listed an average of 33 days. 45% of the homes listed over the last 30 days went under contract, and 15% went under contract in the last 14 days.",
+  "keystats": "Buyer's Market",
+  "week_of": "As of October 12, 2026"
+ },
+ "Haymarket_Family_Market_Snapshot": {
+  "stats": {
+   "market": "Haymarket",
+   "uc_30": "39%",
+   "under_contract": "14%",
+   "avg_dom": "32",
+   "uc_14": "3%",
+   "success_rate": "68%",
+   "control": "Buyer's"
+  },
+  "conditions": {
+   "flags": 1,
+   "flag_color": "red",
+   "flag_hex": "#D42A21",
+   "headline": "Buyers Control the Haymarket Family Market",
+   "headline_figure": "14%",
+   "sub": "14% of Haymarket family listings are under contract and the homes on the market have been listed an average of 32 days. 39% of the homes listed over the last 30 days went under contract, and 3% went under contract in the last 14 days.",
+   "stats": [
+    [
+     "68%",
+     "Success rate"
+    ],
+    [
+     "14%",
+     "Under contract"
+    ],
+    [
+     "32",
+     "Days on market, active and pending"
+    ],
+    [
+     "39%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "3%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "capsule": "BUYER’S MARKET — RED FLAG",
+   "read": "39% of the homes listed in the last 30 days went under contract, and 3% of the listings here went under contract in the last 14 days.",
+   "meta": "HAYMARKET · FAMILY HOMES · AS OF OCTOBER 12, 2026",
+   "update": "14% of Haymarket family listings are under contract and the homes on the market have been listed an average of 32 days. 39% of the homes listed over the last 30 days went under contract, and 3% went under contract in the last 14 days.",
+   "strength": "3.2",
+   "momentum": null
+  },
+  "absorption": null,
+  "headline": "Buyers Control the Haymarket Family Market",
+  "subheadline": "14% of Haymarket family listings are under contract and the homes on the market have been listed an average of 32 days. 39% of the homes listed over the last 30 days went under contract, and 3% went under contract in the last 14 days.",
+  "keystats": "Buyer's Market",
+  "week_of": "As of October 12, 2026"
+ },
+ "Aldie_Luxury_Market_Snapshot": {
+  "stats": {
+   "market": "Aldie",
+   "uc_30": "75%",
+   "under_contract": "42%",
+   "avg_dom": "25",
+   "uc_14": "33%",
+   "success_rate": "76%",
+   "control": "Neutral"
+  },
+  "conditions": {
+   "flags": 1,
+   "flag_color": "yellow",
+   "flag_hex": "#F2C117",
+   "headline": "Neither Side Controls the Aldie Luxury Market",
+   "headline_figure": "42%",
+   "sub": "42% of Aldie luxury listings are under contract and the homes on the market have been listed an average of 25 days. 75% of the homes listed over the last 30 days went under contract, and 33% went under contract in the last 14 days.",
+   "stats": [
+    [
+     "76%",
+     "Success rate"
+    ],
+    [
+     "42%",
+     "Under contract"
+    ],
+    [
+     "25",
+     "Days on market, active and pending"
+    ],
+    [
+     "75%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "33%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "capsule": "NEUTRAL MARKET — YELLOW FLAG",
+   "read": "75% of the homes listed in the last 30 days went under contract, and 33% of the listings here went under contract in the last 14 days.",
+   "meta": "ALDIE · LUXURY HOMES · AS OF OCTOBER 12, 2026",
+   "update": "42% of Aldie luxury listings are under contract and the homes on the market have been listed an average of 25 days. 75% of the homes listed over the last 30 days went under contract, and 33% went under contract in the last 14 days.",
+   "strength": "5.1",
+   "momentum": null
+  },
+  "absorption": null,
+  "headline": "Neither Side Controls the Aldie Luxury Market",
+  "subheadline": "42% of Aldie luxury listings are under contract and the homes on the market have been listed an average of 25 days. 75% of the homes listed over the last 30 days went under contract, and 33% went under contract in the last 14 days.",
+  "keystats": "Neutral Market",
+  "week_of": "As of October 12, 2026"
+ },
+ "Leesburg_Family_Market_Snapshot": {
+  "stats": {
+   "market": "Leesburg",
+   "uc_30": "28%",
+   "under_contract": "20%",
+   "avg_dom": "25",
+   "uc_14": "12%",
+   "success_rate": "68%",
+   "control": "Buyer's"
+  },
+  "conditions": {
+   "flags": 1,
+   "flag_color": "red",
+   "flag_hex": "#D42A21",
+   "headline": "Buyers Control the Leesburg* Family Market",
+   "headline_figure": "20%",
+   "sub": "20% of Leesburg* family listings are under contract and the homes on the market have been listed an average of 25 days. 28% of the homes listed over the last 30 days went under contract, and 12% went under contract in the last 14 days.",
+   "stats": [
+    [
+     "68%",
+     "Success rate"
+    ],
+    [
+     "20%",
+     "Under contract"
+    ],
+    [
+     "25",
+     "Days on market, active and pending"
+    ],
+    [
+     "28%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "12%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "capsule": "BUYER’S MARKET — RED FLAG",
+   "read": "28% of the homes listed in the last 30 days went under contract, and 12% of the listings here went under contract in the last 14 days.",
+   "meta": "LEESBURG · FAMILY HOMES · AS OF OCTOBER 12, 2026",
+   "update": "20% of Leesburg* family listings are under contract and the homes on the market have been listed an average of 25 days. 28% of the homes listed over the last 30 days went under contract, and 12% went under contract in the last 14 days.",
+   "strength": "3.8",
+   "momentum": null
+  },
+  "absorption": null,
+  "headline": "Buyers Control the Leesburg* Family Market",
+  "subheadline": "20% of Leesburg* family listings are under contract and the homes on the market have been listed an average of 25 days. 28% of the homes listed over the last 30 days went under contract, and 12% went under contract in the last 14 days.",
+  "keystats": "Buyer's Market",
+  "week_of": "As of October 12, 2026"
+ }
+}

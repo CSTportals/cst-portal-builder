@@ -1,0 +1,817 @@
+{
+  "address": "502 MacArthur Ave NE",
+  "city": "Vienna",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "22180",
+  "county": "Town of Vienna, Fairfax County",
+  "congestion_fees": true,
+  "report_date": "Thursday, September 17, 2026",
+  "prefix": "502_MacArthur",
+  "listing_url": "502MacArthur.com",
+  "agent": {
+    "lookup": "Casey C Samson",
+    "display": "Casey Samson",
+    "phone": "703-508-2535",
+    "email": "Casey@caseysamson.com"
+  },
+  "subject": {
+    "built": 2007,
+    "sf": 3854,
+    "lot": 13400,
+    "assessment": 2068000
+  },
+  "values": {
+    "dated": 2019881,
+    "customary": 2244313,
+    "customary_list": 2238213,
+    "premium": 2423858
+  },
+  "comps": {
+    "rows": [
+      [
+        "118 Oak St SW",
+        2020,
+        4060,
+        12721,
+        2039470,
+        2399999
+      ],
+      [
+        "1712 Abbey Oak Dr",
+        2015,
+        3777,
+        30492,
+        1649780,
+        2370000
+      ],
+      [
+        "204 Battle St SW",
+        2018,
+        3687,
+        10792,
+        1900270,
+        2349000
+      ],
+      [
+        "121 Tapawingo Rd SW",
+        2016,
+        3740,
+        10150,
+        1822380,
+        2275000
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        2015,
+        3832,
+        13970,
+        1820328,
+        2112872
+      ],
+      [
+        "Price Range Average",
+        2016,
+        3775,
+        13280,
+        1879690,
+        2299750
+      ]
+    ]
+  },
+  "market": {
+    "name": "Vienna Luxury Market",
+    "slug": "Vienna_Luxury_Market_Snapshot",
+    "subhead": "A 19% under-contract rate against a 70% success rate &mdash; buyers are selective, but homes that are properly prepared and priced are still selling.",
+    "stats": null,
+    "absorption": null
+  },
+  "competition": [
+    {
+      "status": "Active",
+      "address": "513 John Marshall Dr NE",
+      "dom": 42,
+      "built": 2007,
+      "sf": 4312,
+      "lot": 15776,
+      "list": 2250000
+    },
+    {
+      "status": "Active",
+      "address": "9311 Talisman Dr",
+      "dom": 68,
+      "built": 2014,
+      "sf": 4162,
+      "lot": 10890,
+      "list": 2175000
+    },
+    {
+      "status": "Active",
+      "address": "605 Meadow Ln SW",
+      "dom": 29,
+      "built": 2019,
+      "sf": 3609,
+      "lot": 14519,
+      "list": 2099900
+    },
+    {
+      "status": "Active",
+      "address": "1489 Broadstone Pl",
+      "dom": 91,
+      "built": 2001,
+      "sf": 4049,
+      "lot": 15200,
+      "list": 2074000
+    },
+    {
+      "status": "Pending",
+      "address": "9932 Clearfield Ave",
+      "dom": 7,
+      "built": 2021,
+      "sf": 3543,
+      "lot": 21782,
+      "list": 2149900
+    }
+  ],
+  "notes": [
+    "513 John Marshall Dr NE comps out at <b>$2.33 million</b> but has sat on the market for <b>42 days at $2,250,000</b> and presents as very dated. It is the clearest evidence in this segment that a strong comparable value does not carry a home on its own &mdash; condition and entry price are what move buyers. It also sits at the same $2.25 million level as the recommended Coming Soon Price, which makes presentation the deciding difference between the two homes."
+  ],
+  "photos": [
+    "502_MacArthur_front.jpg",
+    "502_MacArthur_kitchen.png",
+    "502_MacArthur_primary_bath.png",
+    "502_MacArthur_deck.png"
+  ],
+  "premium_rating": [
+    [
+      {
+        "label": "Top Features",
+        "items": [
+          "Immaculate home in the desirable Ayr Hill Heights community",
+          "6 bedrooms and 4.5 bathrooms on 3 levels",
+          "2 car garage",
+          "Open floor plan",
+          "Gourmet kitchen with large center island",
+          "Main level owner&rsquo;s suite with sitting area",
+          "Walkable access to Town of Vienna amenities, nearby parks, and the W&amp;OD Trail"
+        ]
+      },
+      {
+        "label": "Schools",
+        "items": [
+          "Wolf Trap Elementary School",
+          "Thoreau Middle School",
+          "Madison High School"
+        ]
+      }
+    ],
+    [
+      {
+        "label": "Features",
+        "items": [
+          "No HOA",
+          "Hot water 2023",
+          "Paint (interior and exterior) 2022",
+          "Baths 2022",
+          "Kitchen fridge 2022",
+          "Furnace 2022",
+          "Complete home remodel 2021&ndash;2022",
+          "Flooring &mdash; hardwoods on main level, carpet upstairs, LVP basement 2021",
+          "Kitchen ovens and microwave 2017",
+          "Dishwasher 2016",
+          "Roof 2007",
+          "Siding 2007",
+          "Windows 2007",
+          "Sump pump 2007",
+          "Public sewer, public water",
+          "4,754 finished square feet",
+          "0.31 acre lot"
+        ]
+      }
+    ]
+  ],
+  "portal_url": "https://502macarthur.netlify.app",
+  "asset_dir": "assets/502_MacArthur",
+  "hero_photo": "502_MacArthur_front.jpg",
+  "premium_rating_headline": "Over $600,000 in improvements!",
+  "listing_page_url": "https://caseysamson.com/listing/502-macarthur-ave-ne-vienna-virginia/",
+  "buyer_portal": {
+    "display_address": "502 MacArthur Ave NE",
+    "site": "502MacArthurAve.com",
+    "site_url": "https://caseysamson.com/listing/502-macarthur-ave-ne-vienna-virginia/",
+    "listing_page_url": "https://caseysamson.com/listing/502-macarthur-ave-ne-vienna-virginia/",
+    "url": "https://buymacarthur.netlify.app",
+    "list_price": 2150000,
+    "asset_dir": "assets/502_MacArthur/buyer",
+    "hero_photo": "MC_exterior_front.jpg",
+    "facts": [
+      [
+        "6",
+        "Bedrooms"
+      ],
+      [
+        "4.5",
+        "Bathrooms"
+      ],
+      [
+        "4,754",
+        "Finished SF"
+      ],
+      [
+        "3",
+        "Levels"
+      ],
+      [
+        "0.31",
+        "Acre lot"
+      ],
+      [
+        "2007",
+        "Year built"
+      ],
+      [
+        "2",
+        "Car garage"
+      ],
+      [
+        "None",
+        "HOA"
+      ]
+    ],
+    "description": "Immaculate home in the desirable Ayr Hill Heights community. A welcoming foyer opens to formal living and dining rooms, and the family room showcases a fireplace. The gourmet kitchen features modern white cabinetry, quartz countertops, premium stainless appliances and an oversized center island. An office, mudroom and half bath complete the main level. Upstairs, the owner&rsquo;s suite is a private retreat with a sitting area, walk-in closet and en suite bath, joined by four additional bedrooms, two full baths and the laundry room. The finished lower level offers a recreation room, two bedrooms and a full bath. Outside, a large deck, fire pit, mature landscaping and an expansive level yard give you room to entertain and relax, while a welcoming front porch, two-car side-loading garage and driveway complete the picture.",
+    "builder_line": "Completely remodelled in 2021&ndash;2022.",
+    "gallery": [
+      [
+        "MC_kitchen.jpg",
+        "Gourmet kitchen with oversized quartz island"
+      ],
+      [
+        "MC_kitchen_2.jpg",
+        "Premium stainless appliances and white cabinetry"
+      ],
+      [
+        "MC_office.jpg",
+        "Main level office with built-ins"
+      ],
+      [
+        "MC_suite.jpg",
+        "Owner&rsquo;s suite with sitting area"
+      ],
+      [
+        "MC_primary_bath.jpg",
+        "En suite bath with double vanity"
+      ],
+      [
+        "MC_primary_bath_2.jpg",
+        "Freestanding soaking tub and glass shower"
+      ],
+      [
+        "MC_media.jpg",
+        "Lower level media room"
+      ],
+      [
+        "MC_rec.jpg",
+        "Lower level recreation room"
+      ],
+      [
+        "MC_flex.jpg",
+        "Flexible lower level space"
+      ],
+      [
+        "MC_deck.jpg",
+        "Large deck overlooking the yard"
+      ],
+      [
+        "MC_rear.jpg",
+        "Rear exterior and deck"
+      ],
+      [
+        "MC_yard.jpg",
+        "Expansive level, private yard"
+      ],
+      [
+        "MC_front_twilight.jpg",
+        "Front porch and curb appeal at twilight"
+      ]
+    ],
+    "features": {
+      "Top Features": [
+        "Immaculate home in the desirable Ayr Hill Heights community",
+        "6 bedrooms and 4.5 bathrooms on 3 levels",
+        "Open floor plan with a gourmet kitchen and large center island",
+        "Upper level owner&rsquo;s suite with sitting area and walk-in closet",
+        "Finished lower level with recreation room, two bedrooms and full bath",
+        "Two-car side-loading garage and driveway",
+        "Walkable to Town of Vienna amenities, parks and the W&amp;OD Trail",
+        "No HOA"
+      ],
+      "Updates &amp; Improvements": [
+        "Complete home remodel (2021&ndash;2022)",
+        "Hot water heater (2023)",
+        "Interior and exterior paint (2022)",
+        "Bathrooms (2022)",
+        "Kitchen refrigerator (2022)",
+        "Furnace (2022)",
+        "Flooring &mdash; hardwoods on the main level, carpet upstairs, LVP in the basement (2021)",
+        "Kitchen ovens and microwave (2017); dishwasher (2016)",
+        "Roof, siding, windows and sump pump (2007)"
+      ]
+    },
+    "loves": [
+      "Quiet neighborhood with an annual block party and access to the W&amp;OD Trail",
+      "Private backyard",
+      "Walk to Wolf Trap Elementary, Glyndon Park and Northside Park",
+      "Walkable to Historic Church Street and Town of Vienna events &mdash; the Halloween Parade, Chillin&rsquo; on Church, Oktoberfest, Viva Vienna, Concerts on the Green and the Church Street Stroll",
+      "No hassles with parking",
+      "Less than a mile to Maple Avenue restaurants, grocery, pharmacy and gas",
+      "Close to Tysons shopping, Metro stations and Capital One Hall",
+      "Easy access to Route 66, the Dulles Toll Road and the airports",
+      "Five minutes from Wolf Trap National Park for the Performing Arts"
+    ],
+    "schools": [
+      "Wolf Trap Elementary School",
+      "Kilmer Middle School",
+      "Madison High School"
+    ],
+    "hoa_includes": "No HOA &mdash; no dues and no covenants.",
+    "utilities": "Public water and public sewer.",
+    "documents": [
+      [
+        "MC_Brochure.pdf",
+        "Property Brochure",
+        "Full-colour brochure with photography and features"
+      ],
+      [
+        "MC_Flyer.pdf",
+        "Property Flyer",
+        "One-page summary of the home"
+      ],
+      [
+        "MC_Hot_Sheet.pdf",
+        "Hot Sheet",
+        "Top features, updates, schools and what the owners love"
+      ],
+      [
+        "MC_Conveyances.pdf",
+        "Conveyances",
+        "Personal property, fixtures and utilities that convey"
+      ],
+      [
+        "MC_Offer_Instructions.pdf",
+        "Offer Instructions",
+        "Deadline, delivery, preferred terms and vendors"
+      ],
+      [
+        "MC_Disclosures.html",
+        "Seller Disclosures",
+        "What is disclosed, and how to get the signed packet"
+      ]
+    ],
+    "disclosures": {
+      "pending": true,
+      "items": [
+        [
+          "Virginia Residential Property Disclosure Statement",
+          "The statement required by &sect;55.1-703 of the Code of Virginia, signed by the sellers."
+        ],
+        [
+          "Conveyances",
+          "Personal property and fixtures that convey, listed on the Conveyances sheet."
+        ],
+        [
+          "Homeowners&rsquo; Association",
+          "Not applicable &mdash; there is no HOA."
+        ],
+        [
+          "Lead-Based Paint",
+          "Not applicable &mdash; the home was built in 2007, after the 1978 threshold."
+        ],
+        [
+          "Septic and Well",
+          "Not applicable &mdash; the home is on public water and public sewer."
+        ]
+      ]
+    },
+    "offer_terms": [
+      [
+        "Contract deadlines",
+        "Contact the co-listing agent"
+      ],
+      [
+        "Submit to",
+        "morgan@caseysamson.com and colbysmyth@gmail.com"
+      ],
+      [
+        "Format",
+        "All documents combined in one PDF"
+      ],
+      [
+        "Escalation clauses",
+        "Please, none"
+      ],
+      [
+        "Preferred settlement",
+        "30 days to close, with a rent back of 60 days or more"
+      ],
+      [
+        "Preferred title",
+        "Cardinal Title Group"
+      ],
+      [
+        "Preferred lender",
+        "Mike Filan, CrossCountry Mortgage &mdash; 703-899-8720"
+      ],
+      [
+        "Lender letter",
+        "Must be current with the lender&rsquo;s direct phone and email"
+      ]
+    ],
+    "offer_summary": [
+      "Buyer name",
+      "Agent name",
+      "Lender",
+      "Title",
+      "Settlement date",
+      "Down payment",
+      "Deposit",
+      "Home sale contingency",
+      "Offer price",
+      "Buyer commissions",
+      "Other concessions and terms"
+    ],
+    "contacts": {
+      "photo": "MC_agents.jpg",
+      "names": "Morgan Samson &amp; Colby Smyth",
+      "team": "The Casey Samson Team &middot; Samson Properties",
+      "lines": [
+        [
+          "Morgan Samson",
+          "703-609-1745",
+          "morgan@caseysamson.com"
+        ],
+        [
+          "Colby Smyth",
+          "703-597-2428",
+          "colbysmyth@gmail.com"
+        ]
+      ],
+      "office": "Samson Properties, 14291 Park Meadow Dr, Suite 500, Chantilly, VA 20151"
+    },
+    "headline": "Ayr Hill Heights, remodeled top to bottom, and a short walk to Church Street.",
+    "highlights": [
+      "6 bedrooms",
+      "Remodeled 2021&ndash;22",
+      "Walk to Vienna",
+      "No HOA"
+    ],
+    "feature_headlines": [
+      {
+        "head": "Remodeled Top to Bottom, 2021&ndash;22",
+        "sub": [
+          "Kitchen, baths, flooring and paint",
+          "Quartz counters and an oversized island",
+          "Premium stainless appliances",
+          "Furnace 2022, hot water 2023"
+        ]
+      },
+      {
+        "head": "Owner&rsquo;s Suite with a Sitting Area",
+        "sub": [
+          "Walk-in closet and en suite bath",
+          "Four more bedrooms and two full baths upstairs",
+          "Laundry on the bedroom level"
+        ]
+      },
+      {
+        "head": "Finished Lower Level, Two More Bedrooms",
+        "sub": [
+          "Recreation room",
+          "Full bath",
+          "Storage",
+          "Six bedrooms and 4.5 baths in all"
+        ]
+      },
+      {
+        "head": "Ayr Hill Heights, Walk to Church Street",
+        "sub": [
+          "0.31 acre, level and private",
+          "Large deck, fire pit, mature landscaping",
+          "Two-car side-loading garage",
+          "No HOA"
+        ]
+      }
+    ],
+    "pricing_pdf": "502_MacArthur_Buyer_Report.pdf",
+    "amenities_lede": "Vienna's town centre is a mile away; Tysons, the Beltway and two airports are a short drive.",
+    "amenities": [
+      {
+        "title": "Dining",
+        "items": [
+          [
+            "Cafe Renaissance",
+            "Fine dining &middot; French",
+            "1.0 mi"
+          ],
+          [
+            "Evelyn Rose",
+            "Fine dining &middot; Tasting menu",
+            "1.0 mi"
+          ],
+          [
+            "Vienna Inn",
+            "Family &middot; Since 1960",
+            "1.0 mi"
+          ],
+          [
+            "Bear Branch Tavern",
+            "Family &middot; Tavern",
+            "1.1 mi"
+          ],
+          [
+            "Caff&egrave; Amouri",
+            "Coffee &middot; Local roaster",
+            "1.0 mi"
+          ],
+          [
+            "Starbucks",
+            "Coffee &middot; Maple Ave E",
+            "0.8 mi"
+          ]
+        ]
+      },
+      {
+        "title": "Shopping",
+        "items": [
+          [
+            "Tysons Galleria",
+            "Saks, Neiman Marcus, luxury brands",
+            "3.0 mi"
+          ],
+          [
+            "Tysons Corner Center",
+            "The region&rsquo;s largest centre",
+            "3.2 mi"
+          ],
+          [
+            "Mosaic District",
+            "Open-air shops, cinema, dining",
+            "4.5 mi"
+          ],
+          [
+            "Whole Foods",
+            "Maple Ave E",
+            "1.1 mi"
+          ],
+          [
+            "Giant Food",
+            "Maple Ave E",
+            "1.0 mi"
+          ],
+          [
+            "Safeway",
+            "Nutley Street",
+            "3.8 mi"
+          ]
+        ]
+      },
+      {
+        "title": "Getting Around",
+        "items": [
+          [
+            "I-66",
+            "Nutley Street interchange",
+            "2.3 mi"
+          ],
+          [
+            "Dulles Toll Road",
+            "Route 123 interchange",
+            "3.1 mi"
+          ],
+          [
+            "Capital Beltway, I-495",
+            "Route 123 interchange",
+            "3.4 mi"
+          ],
+          [
+            "Vienna Metro",
+            "Orange Line",
+            "3.3 mi"
+          ],
+          [
+            "Dulles International",
+            "IAD",
+            "13.8 mi"
+          ],
+          [
+            "Reagan National",
+            "DCA",
+            "16.9 mi"
+          ]
+        ]
+      }
+    ],
+    "locator_map": {
+      "title": "The Neighborhood",
+      "lede": "Every numbered stop is inside a mile of the front door &mdash; the Wolftrap school, Glyndon Park and Caboose are an easy walk, and the whole of old town Vienna is three minutes by car. The arrows point to everything beyond.",
+      "center": {
+        "lat": 38.9137624,
+        "lng": -77.2666062,
+        "label": "502 MacArthur Ave NE"
+      },
+      "pins": [
+        {
+          "name": "Wolftrap Elementary",
+          "sub": "Top-rated Wolftrap pyramid",
+          "lat": 38.9175151,
+          "lng": -77.2663853,
+          "min": 7,
+          "mode": "walk"
+        },
+        {
+          "name": "Glyndon Park",
+          "sub": "Ball fields, courts, playground",
+          "lat": 38.90885,
+          "lng": -77.2635884,
+          "min": 10,
+          "mode": "walk"
+        },
+        {
+          "name": "Caboose Brewing",
+          "sub": "Tavern on the W&amp;OD Trail",
+          "lat": 38.9076431,
+          "lng": -77.270593,
+          "min": 12,
+          "mode": "walk"
+        },
+        {
+          "name": "Starbucks",
+          "sub": "362 Maple Ave E",
+          "lat": 38.9065879,
+          "lng": -77.2595751,
+          "min": 2,
+          "mode": "drive"
+        },
+        {
+          "name": "Cafe Renaissance",
+          "sub": "Fine dining &middot; French",
+          "lat": 38.9041085,
+          "lng": -77.2604861,
+          "min": 3,
+          "mode": "drive"
+        },
+        {
+          "name": "Giant Food",
+          "sub": "359 Maple Ave E",
+          "lat": 38.9053633,
+          "lng": -77.2580414,
+          "min": 3,
+          "mode": "drive"
+        },
+        {
+          "name": "Bear Branch Tavern",
+          "sub": "Tavern on Maple Ave E",
+          "lat": 38.9020863,
+          "lng": -77.2637567,
+          "min": 3,
+          "mode": "drive"
+        },
+        {
+          "name": "Town Green",
+          "sub": "Concerts, markets, Viva Vienna",
+          "lat": 38.902941,
+          "lng": -77.2641239,
+          "min": 3,
+          "mode": "drive"
+        },
+        {
+          "name": "Whole Foods",
+          "sub": "143 Maple Ave E",
+          "lat": 38.9022469,
+          "lng": -77.2626957,
+          "min": 3,
+          "mode": "drive"
+        },
+        {
+          "name": "Vienna Inn",
+          "sub": "The 1960 town institution",
+          "lat": 38.9022013,
+          "lng": -77.2647713,
+          "min": 3,
+          "mode": "drive"
+        },
+        {
+          "name": "Caff&egrave; Amouri",
+          "sub": "Coffee roaster on Church St",
+          "lat": 38.9024734,
+          "lng": -77.2657028,
+          "min": 3,
+          "mode": "drive"
+        },
+        {
+          "name": "Evelyn Rose",
+          "sub": "Tasting menu on Church St NW",
+          "lat": 38.9020805,
+          "lng": -77.2670056,
+          "min": 3,
+          "mode": "drive"
+        }
+      ],
+      "arrows": [
+        [
+          3.5,
+          [
+            "Wolf Trap Park",
+            "5 min"
+          ]
+        ],
+        [
+          71.6,
+          [
+            "Tysons Corner",
+            "7 min"
+          ]
+        ],
+        [
+          109.5,
+          [
+            "Reagan National",
+            "DCA · 29 min"
+          ]
+        ],
+        [
+          186.5,
+          [
+            "Vienna Metro",
+            "8 min"
+          ]
+        ],
+        [
+          285.0,
+          [
+            "Dulles Intl",
+            "IAD · 24 min"
+          ]
+        ]
+      ]
+    },
+    "deploy_to": "https://buymacarthur.netlify.app",
+    "live": true,
+    "stamp": [
+      "Pending",
+      "Between Customary and Premium Value",
+      "In 4 days"
+    ]
+  },
+  "local_snapshot": {
+    "pull": "market_pulls/502_MacArthur.txt",
+    "ref": "2026-10-18",
+    "bands": [
+      [
+        0,
+        2.3,
+        "Under $2.3M"
+      ],
+      [
+        2.3,
+        3.0,
+        "$2.3M &ndash; $3.0M"
+      ],
+      [
+        3.0,
+        999,
+        "$3.0M and up"
+      ]
+    ],
+    "buyer_url": "https://buymacarthur.netlify.app"
+  },
+  "market_local": {
+    "label": "Rest of the Vienna Market &mdash; $2M+, 90 days",
+    "source": "data/Vienna_2M_plus.tsv",
+    "cells": [
+      [
+        "55%",
+        "Success rate (6 of 11 listings)"
+      ],
+      [
+        "70.1",
+        "Avg days on market (10 homes now listed)"
+      ],
+      [
+        "100.0%",
+        "Of original list price"
+      ],
+      [
+        "67%",
+        "Sold in the first week (4 of 6)"
+      ],
+      [
+        "33%",
+        "Sold above list price (2 of 6)"
+      ]
+    ],
+    "dom_basis": "Days so far for the 10 homes currently on the market (ACT, A/C, PND), including 502 MacArthur's own 5 days. Not days to contract on sold homes."
+  },
+  "sample": true
+}

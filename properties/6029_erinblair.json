@@ -1,0 +1,352 @@
+{
+ "address": "6029 Erinblair Loop",
+ "city": "Haymarket",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "20169",
+ "county": "Prince William County",
+ "congestion_fees": false,
+ "report_date": "Monday, October 19, 2026",
+ "prefix": "6029_Erinblair",
+ "include_tracker": true,
+ "listing_status": "new",
+ "subject": {
+  "built": 2001,
+  "sf": 4086,
+  "lot": 12196,
+  "assessment": 1046000
+ },
+ "values": {
+  "dated": 995596,
+  "customary": 1106218,
+  "customary_list": 1108027,
+  "premium": 1194716,
+  "upgrades": 0
+ },
+ "comps": {
+  "rows": [
+   [
+    "5028 Signature Ct",
+    2002,
+    3078,
+    23674,
+    981900,
+    1110000
+   ],
+   [
+    "5779 Coachview Ct",
+    2001,
+    3788,
+    9840,
+    990900,
+    1100000
+   ],
+   [
+    "6518 Debhill Ln",
+    2006,
+    4010,
+    17153,
+    1005000,
+    1073500
+   ],
+   [
+    "5775 Coachview Ct",
+    2001,
+    3522,
+    9857,
+    966900,
+    1048000
+   ],
+   [
+    "14345 Chalfont Dr",
+    2001,
+    3169,
+    9687,
+    981900,
+    999000
+   ],
+   [
+    "14959 Paloma Ct",
+    2003,
+    3065,
+    7069,
+    908900,
+    985000
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average &mdash; 4 sales",
+    2004,
+    3764,
+    14348,
+    1013825,
+    1092875
+   ],
+   [
+    "Price Range Average &mdash; 4 sales",
+    2002,
+    3622,
+    11634,
+    986175,
+    1055125
+   ]
+  ]
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "13188 Piedmont Vista Dr",
+   "dom": 40,
+   "built": 2001,
+   "sf": 3744,
+   "lot": 21784,
+   "list": 1245000,
+   "assessment": 1190800
+  },
+  {
+   "status": "Active",
+   "address": "13621 Piedmont Vista Dr",
+   "dom": 75,
+   "built": 2002,
+   "sf": 4142,
+   "lot": 12092,
+   "list": 1194900,
+   "assessment": 1066900
+  },
+  {
+   "status": "Active",
+   "address": "14093 Burnley Glen Ct",
+   "dom": 106,
+   "built": 2003,
+   "sf": 4234,
+   "lot": 35536,
+   "list": 1099900,
+   "assessment": 1225900
+  },
+  {
+   "status": "Active",
+   "address": "14339 Chalfont Dr",
+   "dom": 61,
+   "built": 2002,
+   "sf": 3032,
+   "lot": 9016,
+   "list": 1024900,
+   "assessment": 920300
+  },
+  {
+   "status": "Active",
+   "address": "6032 Erinblair Loop",
+   "dom": 12,
+   "built": 2000,
+   "sf": 4291,
+   "lot": 8137,
+   "list": 999900,
+   "assessment": 1049300
+  },
+  {
+   "status": "Active",
+   "address": "6148 Michener Dr",
+   "dom": 49,
+   "built": 2002,
+   "sf": 3030,
+   "lot": 9975,
+   "list": 950000,
+   "assessment": 858200
+  },
+  {
+   "status": "Contract/Show",
+   "address": "14970 Paloma Ct",
+   "dom": 0,
+   "built": 2003,
+   "sf": 3162,
+   "lot": 9679,
+   "list": 985000,
+   "assessment": 921400
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "14232 Snickersville Dr",
+   "dom": 8,
+   "built": 2004,
+   "sf": 3144,
+   "lot": 20055,
+   "list": 1025000,
+   "assessment": 826500
+  },
+  {
+   "status": "Pending",
+   "address": "5905 Flynnsbrooke Ter",
+   "dom": 32,
+   "built": 2002,
+   "sf": 3792,
+   "lot": 50094,
+   "list": 1249900,
+   "assessment": 1146900
+  }
+ ],
+ "notes": [],
+ "market": {
+  "name": "Haymarket Luxury Market",
+  "slug": "Haymarket_Luxury_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "asset_dir": "assets/6029_Erinblair",
+ "hero_photo": "6029_Erinblair_front.png",
+ "photos": [
+  "6029_Erinblair_front.png",
+  "6029_Erinblair_entry.png",
+  "6029_Erinblair_kitchen.png"
+ ],
+ "premium_rating": [
+  [
+   {
+    "label": "Top Features",
+    "items": [
+     "All-brick front elevation with a columned, arched portico",
+     "Two-story entry under a Palladian window",
+     "Gourmet kitchen &mdash; oversized island, granite, cherry cabinetry",
+     "Stainless appliances including double wall ovens and a gas cooktop",
+     "Mosaic tile backsplash and a glass-front display wall",
+     "Hardwood floors through the main level",
+     "Rear staircase off the kitchen"
+    ]
+   },
+   {
+    "label": "Property Details",
+    "items": [
+     "Built 2001",
+     "4,086 above grade square feet",
+     "12,196 SF lot"
+    ]
+   }
+  ],
+  [
+   {
+    "label": "Piedmont",
+    "items": [
+     "Gated golf community off Heathcote Boulevard",
+     "Piedmont Golf Club &mdash; 18-hole championship course",
+     "Clubhouse, pools and tennis",
+     "Minutes to I-66 at US-15"
+    ]
+   },
+   {
+    "label": "Location",
+    "items": [
+     "Piedmont, Haymarket",
+     "Prince William County"
+    ]
+   }
+  ]
+ ],
+ "buyer_portal": {
+  "display_address": "6029 Erinblair Loop",
+  "status_line": "Coming Soon",
+  "headline": "A 2001 brick colonial in Piedmont &mdash; 4,086 square feet, a gourmet kitchen, and the golf club at the end of the street.",
+  "highlights": [
+   "Built 2001",
+   "4,086 above grade sq ft",
+   "Gourmet kitchen",
+   "Piedmont golf community"
+  ],
+  "facts": [
+   [
+    "2001",
+    "Year built"
+   ],
+   [
+    "4,086",
+    "Above grade square feet"
+   ],
+   [
+    "12,196",
+    "Lot size (sq ft)"
+   ],
+   [
+    "Haymarket",
+    "Prince William County"
+   ]
+  ],
+  "feature_headlines": [
+   {
+    "head": "Built in Brick",
+    "sub": [
+     "All-brick front with a columned portico",
+     "Two-story entry under a Palladian window",
+     "2001 construction, 4,086 square feet above grade"
+    ]
+   },
+   {
+    "head": "The Kitchen Is the Room",
+    "sub": [
+     "Oversized island with seating and open shelving",
+     "Granite counters, cherry cabinetry, mosaic backsplash",
+     "Double wall ovens, gas cooktop, glass-front display wall"
+    ]
+   },
+   {
+    "head": "Piedmont",
+    "sub": [
+     "Gated golf community off Heathcote Boulevard",
+     "18-hole championship course and clubhouse",
+     "Minutes to I-66 at US-15"
+    ]
+   }
+  ],
+  "features": {
+   "The Home": [
+    "Built 2001 &mdash; all-brick front elevation",
+    "4,086 above grade square feet",
+    "Columned, arched portico over the entry",
+    "Two-story foyer under a Palladian window",
+    "Gourmet kitchen with an oversized island",
+    "Granite counters, cherry cabinetry, mosaic tile backsplash",
+    "Stainless appliances &mdash; double wall ovens, gas cooktop",
+    "Hardwood floors through the main level",
+    "Rear staircase off the kitchen"
+   ],
+   "Piedmont": [
+    "Gated golf community off Heathcote Boulevard",
+    "Piedmont Golf Club &mdash; 18-hole championship course",
+    "Clubhouse, pools and tennis",
+    "Minutes to I-66 at US-15",
+    "Town of Haymarket inside ten minutes"
+   ]
+  },
+  "gallery": [
+   [
+    "6029_Erinblair_entry.png",
+    "The portico and the front door"
+   ],
+   [
+    "6029_Erinblair_kitchen.png",
+    "The kitchen, open to the back staircase"
+   ]
+  ],
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "pricing_pdf": "6029_Erinblair_Buyer_Report.pdf"
+ },
+ "agent": {
+  "lookup": "Casey Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "casey@caseysamson.com"
+ },
+ "overrides": {
+  "buyer_url": "https://buyerinblair2.netlify.app",
+  "buyer_deploy": "https://buyerinblair2.netlify.app"
+ }
+}

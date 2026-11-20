@@ -1,0 +1,510 @@
+{
+ "address": "403 John Marshall Dr NE",
+ "city": "Vienna",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "22180",
+ "county": "Fairfax County",
+ "congestion_fees": true,
+ "report_date": "Tuesday, October 13, 2026",
+ "prefix": "403_John_Marshall",
+ "listing_url": "403JohnMarshall.com",
+ "portal_url": "https://403johnmarshall.netlify.app",
+ "include_tracker": true,
+ "listing_status": "new",
+ "asset_dir": "assets/403_John_Marshall",
+ "hero_photo": "403_John_Marshall_front_twilight.jpg",
+ "photos": [
+  "403_John_Marshall_front_twilight.jpg",
+  "403_John_Marshall_kitchen.jpg",
+  "403_John_Marshall_living.jpg",
+  "403_John_Marshall_primary.jpg",
+  "403_John_Marshall_back.jpg",
+  "403_John_Marshall_entry.jpg",
+  "403_John_Marshall_living_2.jpg"
+ ],
+ "subject": {
+  "built": 1959,
+  "sf": 1992,
+  "lot": 12700,
+  "assessment": 1195000
+ },
+ "values": {
+  "dated": 1209003,
+  "customary": 1343336,
+  "customary_list": 1337978,
+  "premium": 1450803,
+  "upgrades": 0
+ },
+ "comps": {
+  "rows": [
+   [
+    "1703 Palm Springs Dr",
+    1966,
+    1560,
+    12823,
+    953280,
+    1105000
+   ],
+   [
+    "9509 Mandolin Ct",
+    1970,
+    1750,
+    18141,
+    1122800,
+    1375000
+   ],
+   [
+    "2332 Addison St",
+    1952,
+    2071,
+    22000,
+    1043610,
+    1346747
+   ],
+   [
+    "408 Holloway Ct NE",
+    1969,
+    2408,
+    16117,
+    1011110,
+    1270000
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    1966,
+    1560,
+    12823,
+    953280,
+    1105000
+   ],
+   [
+    "Price Range Average",
+    1964,
+    2076,
+    18753,
+    1059173,
+    1330582
+   ]
+  ]
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "2836 Cedar Ln",
+   "dom": 36,
+   "built": 1952,
+   "sf": 2000,
+   "lot": 15600,
+   "list": 1275000,
+   "assessment": 940000
+  },
+  {
+   "status": "Active",
+   "address": "1107 Hillcrest Dr SW",
+   "dom": 9,
+   "built": 1959,
+   "sf": 1750,
+   "lot": 12224,
+   "list": 1150000,
+   "assessment": 890010
+  },
+  {
+   "status": "Active",
+   "address": "1843 Foxstone Dr",
+   "dom": 43,
+   "built": 1969,
+   "sf": 1670,
+   "lot": 10579,
+   "list": 1025000,
+   "assessment": 1061940
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "8215 Bucknell Dr",
+   "dom": 13,
+   "built": 1963,
+   "sf": 1992,
+   "lot": 10631,
+   "list": 1289900,
+   "assessment": 917870
+  },
+  {
+   "status": "Pending",
+   "address": "2210 Loch Lomond Dr",
+   "dom": 4,
+   "built": 1969,
+   "sf": 2066,
+   "lot": 15400,
+   "list": 1150000,
+   "assessment": 1161610
+  },
+  {
+   "status": "Pending",
+   "address": "508 Roberts Dr NW",
+   "dom": 11,
+   "built": 1960,
+   "sf": 1534,
+   "lot": 16187,
+   "list": 1100000,
+   "assessment": 1007360
+  },
+  {
+   "status": "Pending",
+   "address": "511 Malcolm Rd NW",
+   "dom": 103,
+   "built": 1965,
+   "sf": 2340,
+   "lot": 21170,
+   "list": 1300000,
+   "assessment": 1145510
+  }
+ ],
+ "notes": [],
+ "market": {
+  "name": "Vienna Family Market",
+  "slug": "Vienna_Family_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "agent": {
+  "lookup": "Casey Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "casey@caseysamson.com"
+ },
+ "buyer_portal": {
+  "display_address": "403 John Marshall Dr NE",
+  "site": "403JohnMarshall.com",
+  "live": true,
+  "status_line": "Coming Soon",
+  "facts": [
+   [
+    "1959",
+    "Year built"
+   ],
+   [
+    "3,092",
+    "Finished square feet"
+   ],
+   [
+    "3 / 3",
+    "Bedrooms / baths"
+   ],
+   [
+    "0.29",
+    "Acres"
+   ]
+  ],
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "pricing_pdf": "403_John_Marshall_Buyer_Report.pdf",
+  "list_price": 1299999,
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Wolftrap Elementary is a few streets away and the W&amp;OD Trail is a short walk south; downtown Vienna, the Town Green and Maple Avenue sit just beyond it. The arrows point to everything past the edge of the map.",
+   "center": {
+    "lat": 38.9128,
+    "lng": -77.26903,
+    "label": "403 John Marshall Dr NE"
+   },
+   "pins": [
+    {
+     "name": "Wolftrap Elementary School",
+     "sub": "Fairfax County Public Schools",
+     "lat": 38.9175151,
+     "lng": -77.2663853
+    },
+    {
+     "name": "Glyndon Park",
+     "sub": "Ballfields, tennis and playground",
+     "lat": 38.90885,
+     "lng": -77.2635884
+    },
+    {
+     "name": "Kilmer Middle School",
+     "sub": "Fairfax County Public Schools",
+     "lat": 38.9041263,
+     "lng": -77.225247
+    },
+    {
+     "name": "James Madison High School",
+     "sub": "Fairfax County Public Schools",
+     "lat": 38.8961219,
+     "lng": -77.2788162
+    },
+    {
+     "name": "W&amp;OD Trail",
+     "sub": "Trail access at Mill St NE",
+     "lat": 38.9076431,
+     "lng": -77.270593
+    },
+    {
+     "name": "Vienna Town Green",
+     "sub": "Concerts, markets, Viva Vienna",
+     "lat": 38.902941,
+     "lng": -77.2641239
+    },
+    {
+     "name": "Giant Food",
+     "sub": "359 Maple Ave E",
+     "lat": 38.9053633,
+     "lng": -77.2580414
+    },
+    {
+     "name": "Vienna Community Center",
+     "sub": "Courts, classes, town events",
+     "lat": 38.9008267,
+     "lng": -77.2603307
+    },
+    {
+     "name": "Vienna Metro",
+     "sub": "Orange Line terminus",
+     "lat": 38.877579,
+     "lng": -77.272461
+    }
+   ],
+   "arrows": [
+    [
+     132.6,
+     [
+      "Dunn Loring Metro",
+      "Orange Line &middot; 9 min"
+     ]
+    ],
+    [
+     191.3,
+     [
+      "Nottoway Park",
+      "Fairfax County park &middot; 6 min"
+     ]
+    ]
+   ]
+  },
+  "amenities_lede": "The schools are close, the trail is closer, and downtown Vienna is a walk rather than a drive.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Vienna Metro",
+      "Orange Line terminus",
+      3.17
+     ]
+    ]
+   },
+   {
+    "title": "Every Day",
+    "items": [
+     [
+      "W&amp;OD Trail",
+      "Trail access at Mill St NE",
+      "10 min walk"
+     ],
+     [
+      "Vienna Town Green",
+      "Concerts, markets, Viva Vienna",
+      0.95
+     ],
+     [
+      "Giant Food",
+      "359 Maple Ave E",
+      1.02
+     ],
+     [
+      "Vienna Community Center",
+      "Courts, classes, town events",
+      1.24
+     ]
+    ]
+   },
+   {
+    "title": "Schools and Parks",
+    "items": [
+     [
+      "Wolftrap Elementary School",
+      "Fairfax County Public Schools",
+      "9 min walk"
+     ],
+     [
+      "Glyndon Park",
+      "Ballfields, tennis and playground",
+      "10 min walk"
+     ],
+     [
+      "James Madison High School",
+      "Fairfax County Public Schools",
+      1.65
+     ],
+     [
+      "Kilmer Middle School",
+      "Fairfax County Public Schools",
+      3.16
+     ]
+    ]
+   }
+  ],
+  "headline": "Totally renovated &mdash; a brick home in Ayr Hill Heights with three bedrooms on the main level, two wood-burning fireplaces, and a vaulted screened porch over the flagstone patio, one block from the W&amp;OD.",
+  "highlights": [
+   "Totally renovated",
+   "3 BR / 3 BA on 0.29 acre",
+   "3,092 finished sq ft",
+   "No HOA"
+  ],
+  "schools": [
+   "Wolftrap Elementary School",
+   "Thoreau Middle School",
+   "Madison High School"
+  ],
+  "owner_favorites": [
+   "Screened porch",
+   "The backyard",
+   "Heated floors in the primary bath",
+   "The primary shower",
+   "A block from the W&amp;OD Trail",
+   "Walk to school, dining and pickleball",
+   "Lots of storage",
+   "Close to 66 and 495",
+   "Great neighborhood",
+   "Very low maintenance"
+  ],
+  "feature_headlines": [
+   {
+    "head": "Totally Renovated",
+    "sub": [
+     "Kitchen &mdash; white shaker cabinetry, soapstone, commercial gas range",
+     "Primary bath with heated floors and a spacious shower",
+     "Hardwood flooring throughout the main level"
+    ]
+   },
+   {
+    "head": "Three Bedrooms, All on the Main Level",
+    "sub": [
+     "Owner&rsquo;s suite with exposed beams",
+     "Two more bedrooms and a full bath on the same level",
+     "Finished lower level with family room, full bath and bonus room"
+    ]
+   },
+   {
+    "head": "The Porch, the Patio and the Yard",
+    "sub": [
+     "Vaulted screened porch with skylights",
+     "Opens to a large flagstone patio",
+     "Private fenced backyard, mature landscaping, low maintenance"
+    ]
+   },
+   {
+    "head": "Ayr Hill Heights",
+    "sub": [
+     "About one block to the W&amp;OD Trail, and close to Northside Park",
+     "Downtown Vienna, Church Street dining and shops",
+     "Wolftrap, Thoreau and Madison pyramid &mdash; and no HOA"
+    ]
+   }
+  ],
+  "features": {
+   "The Home": [
+    "Renovated brick home &mdash; solid brick on block construction, 3,092 finished square feet",
+    "3 bedrooms and 3 full baths, all three bedrooms on the main level",
+    "Owner&rsquo;s suite with exposed beams, heated floors in the bath and a spacious primary shower",
+    "Spacious living room with an oversized wood-burning fireplace",
+    "Kitchen with white shaker cabinetry, soapstone countertops and a commercial gas range",
+    "Hardwood flooring throughout the main level",
+    "Screened porch with vaulted ceilings and skylights, opening to a large flagstone patio",
+    "Finished lower level &mdash; family room, a second wood-burning fireplace, full bath and a versatile bonus room",
+    "Ample storage throughout and zoned heating and cooling"
+   ],
+   "The Property and the Neighborhood": [
+    "Private 0.29 acre lot &mdash; fenced backyard, mature landscaping, low-maintenance outdoor spaces",
+    "No HOA",
+    "Ayr Hill Heights, Vienna",
+    "Approximately one block to the W&amp;OD Trail, and close to Northside Park",
+    "Downtown Vienna, Church Street dining and shops",
+    "Major commuter routes &mdash; I-66 and I-495",
+    "Wolftrap Elementary, Thoreau Middle, Madison High"
+   ]
+  },
+  "gallery": [
+   [
+    "403_John_Marshall_kitchen.jpg",
+    "White shaker cabinetry, soapstone and a commercial gas range"
+   ],
+   [
+    "403_John_Marshall_living.jpg",
+    "The living room and its oversized wood-burning fireplace"
+   ],
+   [
+    "403_John_Marshall_primary.jpg",
+    "The owner&rsquo;s suite, on the main level"
+   ],
+   [
+    "403_John_Marshall_back.jpg",
+    "The vaulted screened porch, flagstone patio and fenced yard"
+   ],
+   [
+    "403_John_Marshall_entry.jpg",
+    "The entry, open through to the kitchen"
+   ],
+   [
+    "403_John_Marshall_living_2.jpg",
+    "Living room, from the other side"
+   ]
+  ],
+  "documents": [
+   [
+    "JM_Hot_Sheet.pdf",
+    "Hot Sheet",
+    "Top features, what the owners love, schools and systems"
+   ],
+   [
+    "JM_Offer_Instructions.pdf",
+    "Offer Instructions",
+    "Deadline, how to submit, preferred terms and title company"
+   ]
+  ]
+ },
+ "market_local": {
+  "label": "Vienna Family Market &mdash; 527 sales under 3,500 SF",
+  "cells": [
+   [
+    "9.5",
+    "Avg days on market (best 90%, 474 of 527)"
+   ],
+   [
+    "100.7%",
+    "Of original list price"
+   ],
+   [
+    "56%",
+    "Sold in the first week (297 of 527)"
+   ],
+   [
+    "50%",
+    "Sold above list price (261 of 527)"
+   ]
+  ],
+  "source": "MLS Bright, every closed Vienna sale in the size band, Jan 2025 to Oct 2026, Casey Samson listings excluded. Over-asking measured from the ORIGINAL list price; days on market averaged after dropping the slowest 10% of sales on both sides."
+ },
+ "track_record": "Track_Record_Under_3500",
+ "team_stats_title": "The Casey Samson Team &mdash; Homes Sold Under 3,500 SF",
+ "local_snapshot": {
+  "ref": "2026-10-18",
+  "pull": "market_pulls/403_John_Marshall.txt"
+ },
+ "overrides": {
+  "coming_soon": 1299999
+ },
+ "seller_names": "Lance and Toria"
+}

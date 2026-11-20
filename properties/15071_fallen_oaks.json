@@ -1,0 +1,364 @@
+{
+  "address": "15071 Fallen Oaks Pl",
+  "city": "Gainesville",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "county": "Prince William",
+  "zip": "",
+  "prefix": "15071_Fallen_Oaks",
+  "report_date": "Wednesday, October 14, 2026",
+  "asset_dir": "assets/15071_Fallen_Oaks",
+  "hero_photo": "15071_Fallen_Oaks_aerial.png",
+  "agent": {
+    "lookup": "Casey Samson",
+    "display": "Casey Samson",
+    "phone": "703-508-2535",
+    "email": "casey@caseysamson.com"
+  },
+  "subject": {
+    "built": 2024,
+    "sf": 3200,
+    "lot": 124000,
+    "assessment": 1195000
+  },
+  "values": {
+    "dated": 1146586,
+    "customary": 1273984,
+    "customary_list": 1273504,
+    "premium": 1375903,
+    "upgrades": 0
+  },
+  "market": {
+    "name": "Gainesville Market",
+    "slug": null,
+    "stats": null,
+    "absorption": null
+  },
+  "comps": {
+    "rows": [
+      [
+        "15055 Fallen Oaks",
+        2023,
+        3956,
+        125692,
+        1241800,
+        1351000
+      ],
+      [
+        "15059 Fallen Oaks",
+        2023,
+        2732,
+        103071,
+        1251900,
+        1299980
+      ],
+      [
+        "3375 Greenwood",
+        2019,
+        3513,
+        435691,
+        1191700,
+        1550000
+      ],
+      [
+        "4549 Geyser",
+        2019,
+        3606,
+        9391,
+        1053200,
+        1200000
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        2023,
+        3344,
+        114382,
+        1246850,
+        1325490
+      ],
+      [
+        "Price Range Average",
+        2023,
+        3344,
+        114382,
+        1246850,
+        1325490
+      ]
+    ]
+  },
+  "competition": [
+    {
+      "status": "Active",
+      "address": "15049 Fallen Oaks",
+      "dom": 34,
+      "built": 2023,
+      "sf": 3348,
+      "lot": 108033,
+      "list": 1199980,
+      "assessment": 1067000
+    },
+    {
+      "status": "Active",
+      "address": "7301 Sugar Maple",
+      "dom": 43,
+      "built": 2022,
+      "sf": 3882,
+      "lot": 21915,
+      "list": 1250000,
+      "assessment": 1148900
+    },
+    {
+      "status": "Active",
+      "address": "15609 Thoroughbred",
+      "dom": 160,
+      "built": 2022,
+      "sf": 3842,
+      "lot": 41329,
+      "list": 1150000,
+      "assessment": 1107900
+    },
+    {
+      "status": "Active",
+      "address": "14972 Walter",
+      "dom": 267,
+      "built": 2023,
+      "sf": 3182,
+      "lot": 12453,
+      "list": 1123000,
+      "assessment": 886900
+    },
+    {
+      "status": "Active",
+      "address": "4632 Pilton Pl",
+      "dom": 34,
+      "built": 2018,
+      "sf": 3082,
+      "lot": 9722,
+      "list": 1095000,
+      "assessment": 1009100
+    },
+    {
+      "status": "Pending",
+      "address": "13723 Long Ridge",
+      "dom": 18,
+      "built": 2018,
+      "sf": 3264,
+      "lot": 12959,
+      "list": 1110000,
+      "assessment": 937600
+    }
+  ],
+  "include_tracker": true,
+  "track_record": "Track_Record_Under_3500",
+  "team_stats_title": "The Casey Samson Team &mdash; Homes Sold Under 3,500 SF",
+  "buyer_portal": {
+    "live": false,
+    "display_address": "15071 Fallen Oaks Place",
+    "list_price": 1273504,
+    "asset_dir": "assets/15071_Fallen_Oaks",
+    "hero_photo": "15071_Fallen_Oaks_aerial.png",
+    "pricing_pdf": "15071_Fallen_Oaks_Buyer_Report.pdf",
+    "facts": [
+      [
+        "2024",
+        "Year built"
+      ],
+      [
+        "3,200",
+        "Above grade SF"
+      ],
+      [
+        "2.85",
+        "Acre lot"
+      ],
+      [
+        "Gainesville",
+        "Prince William County"
+      ]
+    ]
+  },
+  "portal_url": "https://15071fallenoaks.netlify.app",
+  "local_snapshot": {
+    "ref": "2026-10-14",
+    "rows": [
+      {
+        "status": "ACT",
+        "address": "7301 Sugar Maple",
+        "dom": 43,
+        "built": 2022,
+        "sf": 3882,
+        "lot": 21915,
+        "assessment": 1148900,
+        "list": 1250000,
+        "sale": null
+      },
+      {
+        "status": "ACT",
+        "address": "15609 Thoroughbred",
+        "dom": 160,
+        "built": 2022,
+        "sf": 3842,
+        "lot": 41329,
+        "assessment": 1107900,
+        "list": 1150000,
+        "sale": null
+      },
+      {
+        "status": "ACT",
+        "address": "14972 Walter",
+        "dom": 267,
+        "built": 2023,
+        "sf": 3182,
+        "lot": 12453,
+        "assessment": 886900,
+        "list": 1123000,
+        "sale": null
+      },
+      {
+        "status": "ACT",
+        "address": "15049 Fallen Oaks",
+        "dom": 34,
+        "built": 2023,
+        "sf": 3348,
+        "lot": 108033,
+        "assessment": 1067000,
+        "list": 1199980,
+        "sale": null
+      },
+      {
+        "status": "ACT",
+        "address": "4632 Pilton Pl",
+        "dom": 34,
+        "built": 2018,
+        "sf": 3082,
+        "lot": 9722,
+        "assessment": 1009100,
+        "list": 1095000,
+        "sale": null
+      },
+      {
+        "status": "PND",
+        "address": "13723 Long Ridge",
+        "dom": 18,
+        "built": 2018,
+        "sf": 3264,
+        "lot": 12959,
+        "assessment": 937600,
+        "list": 1110000,
+        "sale": null
+      },
+      {
+        "status": "CLS",
+        "address": "3375 Greenwood",
+        "dom": 0,
+        "built": 2019,
+        "sf": 3513,
+        "lot": 435691,
+        "assessment": 1191700,
+        "list": 1500000,
+        "sale": 1550000
+      },
+      {
+        "status": "CLS",
+        "address": "15055 Fallen Oaks",
+        "dom": 7,
+        "built": 2023,
+        "sf": 3956,
+        "lot": 125692,
+        "assessment": 1241800,
+        "list": 1350000,
+        "sale": 1351000
+      },
+      {
+        "status": "CLS",
+        "address": "15059 Fallen Oaks",
+        "dom": 20,
+        "built": 2023,
+        "sf": 2732,
+        "lot": 103071,
+        "assessment": 1251900,
+        "list": 1299980,
+        "sale": 1299980
+      },
+      {
+        "status": "CLS",
+        "address": "4549 Geyser",
+        "dom": 4,
+        "built": 2019,
+        "sf": 3606,
+        "lot": 9391,
+        "assessment": 1053200,
+        "list": 1189000,
+        "sale": 1200000
+      },
+      {
+        "status": "CLS",
+        "address": "15322 Cutler",
+        "dom": 12,
+        "built": 2019,
+        "sf": 3363,
+        "lot": null,
+        "assessment": 1023100,
+        "list": 1225000,
+        "sale": 1185000
+      },
+      {
+        "status": "CLS",
+        "address": "6165 Chancell",
+        "dom": 3,
+        "built": 2020,
+        "sf": 2947,
+        "lot": null,
+        "assessment": 1081600,
+        "list": 1100000,
+        "sale": 1181807
+      },
+      {
+        "status": "CLS",
+        "address": "6202 Chancell",
+        "dom": 46,
+        "built": 2019,
+        "sf": null,
+        "lot": null,
+        "assessment": 955900,
+        "list": 1125000,
+        "sale": 1156023
+      },
+      {
+        "status": "EXP",
+        "address": "6838 Northbourne",
+        "dom": 12,
+        "built": 2020,
+        "sf": 3260,
+        "lot": 17158,
+        "assessment": 997600,
+        "list": 1150000,
+        "sale": null
+      },
+      {
+        "status": "CNL",
+        "address": "7301 Sugar Maple",
+        "dom": 43,
+        "built": 2022,
+        "sf": 3882,
+        "lot": 21915,
+        "assessment": 1148900,
+        "list": 1300000,
+        "sale": null
+      },
+      {
+        "status": "CNL",
+        "address": "7301 Sugar Maple",
+        "dom": 43,
+        "built": 2022,
+        "sf": 3882,
+        "lot": 21915,
+        "assessment": 1148900,
+        "list": 1350000,
+        "sale": null
+      }
+    ]
+  }
+}

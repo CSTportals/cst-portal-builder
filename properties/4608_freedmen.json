@@ -1,0 +1,551 @@
+{
+ "address": "4608 Freedmen Ln",
+ "city": "Haymarket",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "20169",
+ "county": "Prince William County",
+ "subdivision": "Dominion Valley Country Club",
+ "prefix": "4608_Freedmen",
+ "report_date": "Thursday, November 19, 2026",
+ "asset_dir": "assets/4608_Freedmen",
+ "hero_photo": "4608_Freedmen_front.jpg",
+ "photos": [
+  "4608_Freedmen_front.jpg",
+  "4608_Freedmen_kitchen.jpg",
+  "4608_Freedmen_dining.jpg"
+ ],
+ "track_record": "Track_Record_Under_3500",
+ "values": {
+  "dated": 865542,
+  "customary": 961713,
+  "customary_list": 993576,
+  "premium": 1038650,
+  "upgrades": 0,
+  "worksheet_note": "19 Nov 2026 CST worksheet. Price Range average (4 sales) = Glass Mountain, Admiral Baker, Waterloo Bridge, Yorktown Run."
+ },
+ "subject": {
+  "built": 2016,
+  "sf": 2912,
+  "lot": 8520,
+  "assessment": 922000
+ },
+ "comps": {
+  "rows": [
+   [
+    "15777 Parkers Ford Ct",
+    2007,
+    3467,
+    10711,
+    994500,
+    1090000
+   ],
+   [
+    "4664 Glass Mountain Way",
+    2013,
+    3266,
+    10066,
+    978100,
+    1017500
+   ],
+   [
+    "15418 Admiral Baker Cir",
+    2014,
+    2975,
+    8777,
+    934100,
+    981800
+   ],
+   [
+    "5777 Waterloo Bridge Cir",
+    2007,
+    3396,
+    11360,
+    976400,
+    958000
+   ],
+   [
+    "5359 Yorktown Run Ct",
+    2006,
+    3070,
+    10402,
+    863200,
+    928750
+   ]
+  ],
+  "dom": {
+   "15777 Parkers Ford Ct": 5,
+   "4664 Glass Mountain Way": 63,
+   "15418 Admiral Baker Cir": 12,
+   "5777 Waterloo Bridge Cir": 41,
+   "5359 Yorktown Run Ct": 40
+  },
+  "list": {
+   "15777 Parkers Ford Ct": 1085000,
+   "4664 Glass Mountain Way": 1050000,
+   "15418 Admiral Baker Cir": 999999,
+   "5777 Waterloo Bridge Cir": 999900,
+   "5359 Yorktown Run Ct": 964900
+  },
+  "orig_list": {
+   "15777 Parkers Ford Ct": 1085000,
+   "4664 Glass Mountain Way": 1050000,
+   "15418 Admiral Baker Cir": 999999,
+   "5777 Waterloo Bridge Cir": 999900,
+   "5359 Yorktown Run Ct": 964900
+  },
+  "summary": [
+   [
+    "Age and Size &mdash; 4 sales",
+    2011,
+    3096,
+    9054,
+    929675,
+    945575
+   ],
+   [
+    "Price Range &mdash; 4 sales",
+    2010,
+    3177,
+    10151,
+    937950,
+    971513
+   ]
+  ],
+  "summary_ppsf": {
+   "Age and Size &mdash; 4 sales": {
+    "ppsf": 327
+   },
+   "Price Range &mdash; 4 sales": {
+    "ppsf": 334
+   }
+  },
+  "subject_value": 961713
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "4632 Pilton Pl",
+   "dom": 70,
+   "built": 2018,
+   "sf": 3082,
+   "lot": null,
+   "assessment": 1009100,
+   "list": 1049000
+  },
+  {
+   "status": "Active",
+   "address": "15039 Gaines Mill Cir",
+   "dom": 98,
+   "built": 2006,
+   "sf": null,
+   "lot": null,
+   "assessment": 910300,
+   "list": 909000
+  }
+ ],
+ "market": {
+  "name": "Haymarket Family Market",
+  "slug": "Haymarket_Family_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "portal_url": "https://4608freedman.netlify.app",
+ "agent": {
+  "lookup": "Vivian Li-Verdino",
+  "display": "Vivian Li-Verdino",
+  "phone": "703-727-7737",
+  "email": "vivianliverdino@gmail.com"
+ },
+ "seller_names": "Xue and Shen",
+ "private_label": {
+  "name": "Vivian Li-Verdino",
+  "title": "REALTOR&reg; &middot; Licensed in VA",
+  "office": "Samson Properties",
+  "address": "14291 Park Meadow Drive, Suite 500, Chantilly, VA 20151",
+  "phone": "703-727-7737",
+  "office_phone": "703-378-8810",
+  "email": "vivianliverdino@gmail.com",
+  "website": "www.vivianliverdino.com",
+  "extra": "WeChat (&#24494;&#20449;): Vivian-Realtor"
+ },
+ "market_map": {
+  "subject": [
+   38.8569847,
+   -77.641149
+  ],
+  "subject_dir": "left",
+  "subject_dir_solds": "right",
+  "solds": [
+   {
+    "address": "15777 Parkers Ford Ct",
+    "sale": 1090000,
+    "list": 1085000,
+    "orig_list": 1085000,
+    "dom": 5,
+    "status": "Sold",
+    "lat": 38.8378544,
+    "lng": -77.6582513
+   },
+   {
+    "address": "4664 Glass Mountain Way",
+    "sale": 1017500,
+    "list": 1050000,
+    "orig_list": 1050000,
+    "dom": 63,
+    "status": "Sold",
+    "lat": 38.8566193,
+    "lng": -77.6453982
+   },
+   {
+    "address": "15418 Admiral Baker Cir",
+    "sale": 981800,
+    "list": 999999,
+    "orig_list": 999999,
+    "dom": 12,
+    "status": "Sold",
+    "lat": 38.8559212,
+    "lng": -77.6386769
+   },
+   {
+    "address": "5777 Waterloo Bridge Cir",
+    "sale": 958000,
+    "list": 999900,
+    "orig_list": 999900,
+    "dom": 41,
+    "status": "Sold",
+    "lat": 38.8380267,
+    "lng": -77.6593859
+   },
+   {
+    "address": "5359 Yorktown Run Ct",
+    "sale": 928750,
+    "list": 964900,
+    "orig_list": 964900,
+    "dom": 40,
+    "status": "Sold",
+    "lat": 38.8428923,
+    "lng": -77.6346621
+   }
+  ],
+  "listings": [
+   {
+    "address": "4632 Pilton Pl",
+    "status": "Active",
+    "list": 1049000,
+    "dom": 70,
+    "lat": 38.8594295,
+    "lng": -77.6516313
+   },
+   {
+    "address": "15039 Gaines Mill Cir",
+    "status": "Active",
+    "list": 909000,
+    "dom": 98,
+    "lat": 38.8400079,
+    "lng": -77.6339578
+   }
+  ]
+ },
+ "market_snapshot": {
+  "label": "Dominion Valley Competition",
+  "source": "Bright MLS, Nov 19, 2026."
+ },
+ "model_unsold": [
+  {
+   "status": "EXP",
+   "address": "5520 Blackburns Ford Ct",
+   "dom": 15,
+   "list": 1099900
+  },
+  {
+   "status": "EXP",
+   "address": "5359 Yorktown Run Ct",
+   "dom": 40,
+   "list": 985000
+  },
+  {
+   "status": "EXP",
+   "address": "5416 Zoysia Ct",
+   "dom": 131,
+   "list": 875000
+  }
+ ],
+ "premium_rating": [
+  [
+   {
+    "label": "Top Features",
+    "items": [
+     "Toll Brothers Irvine model, built 2016",
+     "4 bedrooms, 3.5 baths",
+     "2,912 SF above grade plus a finished lower level",
+     "Covered front porch and two-car garage"
+    ]
+   },
+   {
+    "label": "Kitchen &amp; Living",
+    "items": [
+     "Granite island and counters",
+     "White cabinetry, stainless appliances, gas cooktop",
+     "Breakfast area opening to the deck",
+     "Family room with gas fireplace"
+    ]
+   }
+  ],
+  [
+   {
+    "label": "Community",
+    "items": [
+     "Dominion Valley Country Club",
+     "Golf, pools and fitness",
+     "Minutes to Haymarket and I-66"
+    ]
+   },
+   {
+    "label": "Property Details",
+    "items": [
+     "Built 2016",
+     "8,520 SF lot",
+     "Assessment $922,000"
+    ]
+   }
+  ]
+ ],
+ "buyer_portal": {
+  "display_address": "4608 Freedmen Ln",
+  "asset_dir": "assets/4608_Freedmen/buyer",
+  "hero_photo": "4608_Freedmen_front.jpg",
+  "deploy_to": "https://buyfreedmen.netlify.app",
+  "url": "https://buyfreedmen.netlify.app",
+  "live": true,
+  "status_line": "Coming Soon",
+  "headline": "A 2016 Toll Brothers home in Dominion Valley Country Club.",
+  "facts": [
+   [
+    "4",
+    "Bedrooms"
+   ],
+   [
+    "3.5",
+    "Bathrooms"
+   ],
+   [
+    "2,912",
+    "Above grade SF"
+   ],
+   [
+    "2016",
+    "Year built"
+   ],
+   [
+    "8,520",
+    "SF lot"
+   ],
+   [
+    "DVCC",
+    "Community"
+   ]
+  ],
+  "gallery": [
+   [
+    "4608_Freedmen_front.jpg",
+    "Stone-front Toll Brothers home with a covered front porch"
+   ],
+   [
+    "4608_Freedmen_kitchen.jpg",
+    "Kitchen with granite island, white cabinetry and gas cooktop"
+   ],
+   [
+    "4608_Freedmen_dining.jpg",
+    "Breakfast area opening to the deck and the family room fireplace"
+   ]
+  ],
+  "pricing_pdf": "4608_Freedmen_Buyer_Report.pdf",
+  "snapshot": {
+   "title": "Market Snapshot",
+   "lede": "Every home 4608 Freedmen Ln is competing with, and what each one is asking.",
+   "rows": [
+    [
+     "ACT",
+     "4632 Pilton Pl",
+     70,
+     2018,
+     3082,
+     null,
+     1009100,
+     1049000
+    ],
+    [
+     "ACT",
+     "15039 Gaines Mill Cir",
+     98,
+     2006,
+     null,
+     null,
+     910300,
+     909000
+    ]
+   ]
+  },
+  "contacts": {
+   "names": "Vivian Li-Verdino",
+   "team": "Vivian Li-Verdino &middot; Samson Properties",
+   "lines": [
+    [
+     "Vivian Li-Verdino",
+     "703-727-7737",
+     "vivianliverdino@gmail.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Chantilly, VA"
+  },
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Dominion Valley Country Club, with the club and golf course a short drive south and Haymarket, Gainesville and I-66 minutes away. The arrows point to everything past the edge of the map.",
+   "center": {
+    "lat": 38.8569847,
+    "lng": -77.641149,
+    "label": "4608 Freedmen Ln"
+   },
+   "pins": [
+    {
+     "name": "Dominion Valley Country Club",
+     "sub": "Golf, pools and fitness",
+     "lat": 38.840535,
+     "lng": -77.6419155
+    },
+    {
+     "name": "Battlefield High School",
+     "sub": "Prince William County Public Schools",
+     "lat": 38.8453326,
+     "lng": -77.6298068
+    },
+    {
+     "name": "UVA Health Haymarket Medical Center",
+     "sub": "Hospital and ER",
+     "lat": 38.820752,
+     "lng": -77.6425481
+    },
+    {
+     "name": "Town of Haymarket",
+     "sub": "Historic town center",
+     "lat": 38.8127387,
+     "lng": -77.6365857
+    }
+   ],
+   "arrows": [
+    [
+     154.9,
+     [
+      "Harris Teeter",
+      "Gainesville &middot; 12 min"
+     ]
+    ],
+    [
+     187.4,
+     [
+      "Wegmans",
+      "Gainesville &middot; 11 min"
+     ]
+    ],
+    [
+     156.6,
+     [
+      "Virginia Gateway",
+      "Shopping and dining &middot; 10 min"
+     ]
+    ],
+    [
+     104.1,
+     [
+      "The Winery at Bull Run",
+      "Centreville &middot; 18 min"
+     ]
+    ],
+    [
+     56.2,
+     [
+      "Dulles International",
+      "IAD &middot; 26 min"
+     ]
+    ],
+    [
+     85.1,
+     [
+      "Washington, DC",
+      "Union Station &middot; 59 min"
+     ]
+    ]
+   ]
+  },
+  "amenities_lede": "The Dominion Valley club, golf and pools close by, groceries and shopping in Haymarket and Gainesville, and I-66 and Dulles for the commute.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Dulles International",
+      "IAD",
+      15.4
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      42.11
+     ],
+     [
+      "Washington, DC",
+      "Union Station",
+      44.55
+     ]
+    ]
+   },
+   {
+    "title": "Family Dining",
+    "items": [
+     [
+      "Virginia Gateway restaurants",
+      "Gainesville",
+      6.08
+     ]
+    ]
+   },
+   {
+    "title": "Shopping",
+    "items": [
+     [
+      "Harris Teeter",
+      "Gainesville",
+      4.88
+     ],
+     [
+      "Virginia Gateway",
+      "Shopping and dining",
+      6.08
+     ],
+     [
+      "Wegmans",
+      "Gainesville",
+      6.58
+     ]
+    ]
+   },
+   {
+    "title": "Parks and Recreation",
+    "items": [
+     [
+      "Dominion Valley Country Club",
+      "Golf, pools and fitness",
+      1.48
+     ],
+     [
+      "The Winery at Bull Run",
+      "Centreville",
+      10.31
+     ]
+    ]
+   }
+  ]
+ },
+ "meeting": "Saturday at 11"
+}

@@ -1,0 +1,97 @@
+{
+  "address": "2420 Kentucky Springs",
+  "city": "Bumpass",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "23024",
+  "county": "Louisa County",
+  "congestion_fees": false,
+  "report_date": "Friday, September 18, 2026",
+  "prefix": "2420_Kentucky_Springs",
+  "listing_url": "2420KentuckySprings.com",
+  "portal_url": "https://2420kentuckysprings.netlify.app",
+  "include_tracker": true,
+  "subject": {
+    "built": 1988,
+    "sf": 1912,
+    "lot": 40900,
+    "assessment": 928000
+  },
+  "values": {
+    "dated": 1200886,
+    "customary": 1334318,
+    "customary_list": 1378889,
+    "premium": 1441064
+  },
+  "comps": {
+    "rows": [
+      [
+        "2723 Moody Town Rd",
+        1988,
+        1896,
+        40075,
+        873100,
+        1262500
+      ],
+      [
+        "367 Longway Dr",
+        1998,
+        1912,
+        48613,
+        657300,
+        1110000
+      ],
+      [
+        "2325 Waterside Dr",
+        1999,
+        1921,
+        47480,
+        706900,
+        1285000
+      ],
+      [
+        "476 Wilson St",
+        2003,
+        1906,
+        42123,
+        1541000,
+        1430000
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        1988,
+        1948,
+        41208,
+        933533,
+        1457083
+      ],
+      [
+        "Price Range Average",
+        1994,
+        2009,
+        43705,
+        828333,
+        1304750
+      ]
+    ]
+  },
+  "market": {
+    "name": "Lake Anna Waterfront",
+    "slug": null,
+    "subhead": "Every waterfront home that sold in this segment sold successfully, and nothing is currently on the market &mdash; there is no active competition.",
+    "stats": null,
+    "absorption": null
+  },
+  "competition": [],
+  "notes": [
+    "Every comparable used here is <b>Lake Anna waterfront</b>. 2723 Moody Town Rd is the closest read on this property &mdash; built the same year, within 16 square feet, on a comparable lot &mdash; and it sold in <b>4 days at $1,262,500</b>. 2325 Waterside Dr sold in <b>6 days</b>. The two that lingered, 476 Wilson St at 257 days and 367 Longway Dr at 133, are the exceptions that prove where the entry price matters."
+  ],
+  "photos": [
+    "2420_Kentucky_Springs_interiors.png"
+  ],
+  "premium_rating": null,
+  "asset_dir": "assets/2420_Kentucky_Springs",
+  "hero_photo": "2420_Kentucky_Springs_interiors.png"
+}

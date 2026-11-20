@@ -1,0 +1,461 @@
+{
+  "address": "512 Seneca Green Way",
+  "city": "Great Falls",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "22066",
+  "county": "Fairfax County",
+  "congestion_fees": true,
+  "report_date": "Tuesday, October 6, 2026",
+  "prefix": "512_Seneca_Green",
+  "listing_url": "512SenecaGreen.com",
+  "portal_url": "https://512senecagreen.netlify.app",
+  "include_tracker": true,
+  "subject": {
+    "built": 1995,
+    "sf": 5092,
+    "lot": 75000,
+    "assessment": 1744000
+  },
+  "values": {
+    "dated": 1765474,
+    "customary": 1965859,
+    "customary_list": 2025068,
+    "premium": 0,
+    "upgrades": 600000
+  },
+  "comps": {
+    "rows": [
+      [
+        "11500 Great Falls Way",
+        1993,
+        4852,
+        93836,
+        1551590,
+        1900000
+      ],
+      [
+        "11514 Seneca Woods Ct",
+        2000,
+        5220,
+        36018,
+        1798320,
+        1885000
+      ]
+    ],
+    "summary": [
+      [
+        "Price Range Average",
+        1997,
+        5036,
+        64927,
+        1674955,
+        1892500
+      ]
+    ]
+  },
+  "market": {
+    "name": "McLean Luxury Market",
+    "slug": "McLean_Luxury_Market_Snapshot",
+    "subhead": "Under-contract activity sits at 29% against a 100% success rate &mdash; buyers are selective, but every home that sold, sold.",
+    "stats": null,
+    "absorption": null
+  },
+  "competition": [
+    {
+      "status": "Active",
+      "address": "615 Nalls Farm Way",
+      "dom": 100,
+      "built": 1994,
+      "sf": 5467,
+      "lot": 78000,
+      "list": 1999900,
+      "assessment": 1760780
+    },
+    {
+      "status": "Active",
+      "address": "904 Falls Bridge Ln",
+      "dom": 128,
+      "built": 1990,
+      "sf": 4661,
+      "lot": 36000,
+      "list": 1995000,
+      "assessment": 1700870
+    },
+    {
+      "status": "Active",
+      "address": "700 Running Brook Dr",
+      "dom": 109,
+      "built": 1985,
+      "sf": 5209,
+      "lot": 217800,
+      "list": 1950000,
+      "assessment": 1981860
+    },
+    {
+      "status": "Active",
+      "address": "813 Blacks Hill Rd",
+      "dom": 101,
+      "built": 1997,
+      "sf": 5041,
+      "lot": 130680,
+      "list": 1910000,
+      "assessment": 1706450
+    },
+    {
+      "status": "Active",
+      "address": "10900 Woodleaf Ln",
+      "dom": 50,
+      "built": 1985,
+      "sf": 5960,
+      "lot": 89856,
+      "list": 1899900,
+      "assessment": 1536070
+    },
+    {
+      "status": "Active Under Contract",
+      "address": "10875 Patowmack Dr",
+      "dom": 4,
+      "built": 1988,
+      "sf": 4668,
+      "lot": 75111,
+      "list": 2150000,
+      "assessment": 1930930
+    },
+    {
+      "status": "Active Under Contract",
+      "address": "11329 Stonehouse Pl",
+      "dom": 63,
+      "built": 2000,
+      "sf": 4429,
+      "lot": 24829,
+      "list": 1825000,
+      "assessment": 1680670
+    }
+  ],
+  "notes": [],
+  "photos": [
+    "512_Seneca_Green_front.png"
+  ],
+  "premium_rating": [
+    [
+      {
+        "label": "Top Features",
+        "items": [
+          "Award-winning renovation on a heavily wooded, nearly two-acre cul-de-sac lot",
+          "Approximately 6,300 finished square feet",
+          "Public water and sewer &mdash; and no HOA",
+          "Oversized three-car garage with circular driveway",
+          "Generously sized au pair or guest wing",
+          "Grand two-story entry"
+        ]
+      },
+      {
+        "label": "Interior",
+        "items": [
+          "Wide plank hardwood floors on the main level, installed 2022",
+          "Gourmet kitchen with center island and designer cabinetry",
+          "Separate dining room",
+          "Family room with French doors opening to the deck",
+          "Four bedrooms up, including a primary suite with spa-like bath",
+          "Fully finished lower level with fifth bedroom and workout area",
+          "Billiards room with mini bar",
+          "Fresh neutral paint and new carpeting on the upper level"
+        ]
+      }
+    ],
+    [
+      {
+        "label": "Renovation &amp; Exterior",
+        "items": [
+          "James Hardie siding with stone water tables and a stone accent wall",
+          "New portico and seam metal overhangs above the garage doors",
+          "Three-season screened porch with TV",
+          "Expanded deck connecting seamlessly to the porch",
+          "Widened lower rear entrance for improved access",
+          "Stone grilling area off the family room"
+        ]
+      },
+      {
+        "label": "Systems",
+        "items": [
+          "New roof",
+          "Whole-house backup generator",
+          "Irrigation system"
+        ]
+      },
+      {
+        "label": "Grounds",
+        "items": [
+          "Tree-lined private backyard",
+          "Stone fire pit and patio",
+          "Professionally designed landscaping",
+          "Room to add a pool"
+        ]
+      },
+      {
+        "label": "Location",
+        "items": [
+          "Great Falls, in the Langley High School district",
+          "One mile walk to Great Falls Plaza, Food Lion, coffee shops and restaurants"
+        ]
+      }
+    ]
+  ],
+  "asset_dir": "assets/512_Seneca_Green",
+  "hero_photo": "512_Seneca_Green_front.png",
+  "listing_status": "recovery",
+  "current_list": 2249900,
+  "buyer_portal": {
+    "display_address": "512 Seneca Green Way",
+    "site": "512SenecaGreen.com",
+    "url": "https://caseysamson.com/market-snapshot/buyseneca",
+    "deploy_to": "https://buyseneca.netlify.app",
+    "live": false,
+    "list_price": 2149999,
+    "status_line": "Coming Soon",
+    "facts": [
+      [
+        "$600,000",
+        "In extraordinary upgrades"
+      ],
+      [
+        "5,092",
+        "Above grade sq ft"
+      ],
+      [
+        "1.72",
+        "Acre lot"
+      ],
+      [
+        "5 / 4.5",
+        "Bedrooms / baths"
+      ]
+    ],
+    "feature_headlines": [
+      {
+        "head": "$600,000 in Extraordinary Upgrades",
+        "sub": [
+          "An award-winning renovation",
+          "Gourmet kitchen with center island",
+          "Spa-like primary bath"
+        ]
+      },
+      {
+        "head": "6,292 Finished Square Feet",
+        "sub": [
+          "5,092 sq ft above grade",
+          "1,200 sq ft finished lower level",
+          "5 bedrooms &middot; 4 full and 1 half bath"
+        ]
+      },
+      {
+        "head": "A Park-Like 1.72 Acres",
+        "sub": [
+          "Screened porches",
+          "Expanded outdoor living space",
+          "Irrigation system"
+        ]
+      },
+      {
+        "head": "The Systems Are Done",
+        "sub": [
+          "New roof",
+          "Backup generator",
+          "Hardwood floors throughout"
+        ]
+      }
+    ],
+    "features": {
+      "Inside": [
+        "$600,000 in extraordinary upgrades",
+        "Award-winning renovation",
+        "Gourmet kitchen with center island",
+        "Spa-like primary bath",
+        "Modernised bathrooms",
+        "Hardwood floors",
+        "Billiards room",
+        "Finished lower level &mdash; 1,200 sq ft"
+      ],
+      "Grounds and Systems": [
+        "1.72 acre park-like setting",
+        "Screened porches",
+        "Expanded outdoor living spaces",
+        "New roof",
+        "Backup generator",
+        "Irrigation system"
+      ],
+      "Schools": [
+        "Forestville Elementary School",
+        "Cooper Middle School",
+        "Langley High School"
+      ]
+    },
+    "locator_map": {
+      "title": "The Neighborhood",
+      "lede": "Seneca Green sits in the quiet north-west corner of Great Falls. The arrows point to everything beyond the map.",
+      "center": {
+        "lat": 39.03518,
+        "lng": -77.34934,
+        "label": "512 Seneca Green Way"
+      },
+      "pins": [
+        {
+          "name": "Forestville Elementary School",
+          "sub": "Fairfax County Public Schools",
+          "lat": 39.0146,
+          "lng": -77.3146
+        },
+        {
+          "name": "Great Falls Village Centre",
+          "sub": "Shops, dining and services",
+          "lat": 38.9975,
+          "lng": -77.2873
+        },
+        {
+          "name": "Reston Town Center",
+          "sub": "Dining, cinema and offices",
+          "lat": 38.9586,
+          "lng": -77.357
+        },
+        {
+          "name": "Riverbend Park",
+          "sub": "Potomac trails and boat launch",
+          "lat": 39.0218,
+          "lng": -77.247
+        },
+        {
+          "name": "Great Falls Park",
+          "sub": "National Park Service &middot; the Falls",
+          "lat": 38.9971,
+          "lng": -77.254
+        }
+      ],
+      "arrows": [
+        [
+          225.5,
+          [
+            "Dulles International",
+            "IAD &middot; 18 min"
+          ]
+        ],
+        [
+          124.5,
+          [
+            "Langley High School",
+            "21 min"
+          ]
+        ],
+        [
+          140.1,
+          [
+            "Tysons Corner Center",
+            "24 min"
+          ]
+        ],
+        [
+          119.4,
+          [
+            "Washington, DC",
+            "33 min"
+          ]
+        ]
+      ]
+    },
+    "amenities_lede": "Great Falls at its quietest end, with Reston and Dulles the closest things of size and Tysons a half-hour out.",
+    "amenities": [
+      {
+        "title": "Getting Around",
+        "items": [
+          [
+            "Dulles International",
+            "IAD",
+            10.5
+          ],
+          [
+            "Tysons Corner Center",
+            "Shopping and offices",
+            13.8
+          ],
+          [
+            "Washington, DC",
+            "Downtown",
+            25.1
+          ],
+          [
+            "Reagan National",
+            "DCA",
+            27.2
+          ]
+        ]
+      },
+      {
+        "title": "Every Day",
+        "items": [
+          [
+            "Great Falls Village Centre",
+            "Shops, dining and services",
+            5.5
+          ],
+          [
+            "Reston Town Center",
+            "Dining, cinema and offices",
+            6.9
+          ],
+          [
+            "Riverbend Park",
+            "Potomac trails and boat launch",
+            7.24
+          ],
+          [
+            "Great Falls Park",
+            "National Park Service",
+            7.48
+          ]
+        ]
+      },
+      {
+        "title": "Schools",
+        "items": [
+          [
+            "Forestville Elementary School",
+            "Fairfax County Public Schools",
+            3.05
+          ],
+          [
+            "Cooper Middle School",
+            "Fairfax County Public Schools",
+            11.8
+          ],
+          [
+            "Langley High School",
+            "Fairfax County Public Schools",
+            12.12
+          ]
+        ]
+      }
+    ],
+    "contacts": {
+      "names": "Casey Samson",
+      "team": "The Casey Samson Team &middot; Samson Properties",
+      "lines": [
+        [
+          "Casey Samson",
+          "703-508-2535",
+          "Casey@caseysamson.com"
+        ]
+      ],
+      "office": "Samson Properties &middot; Northern Virginia"
+    },
+    "pricing_pdf": "512_Seneca_Green_Buyer_Report.pdf"
+  },
+  "recovery": {
+    "buyer_pool": 2000000,
+    "buyer_pool_label": "Under $2,000,000",
+    "hard_note": "That is where the pool is &mdash; roughly three times the buyers of the band above it.",
+    "email_note": ", where the pool is roughly three times the size"
+  },
+  "local_snapshot": {
+    "ref": "2026-10-15"
+  }
+}

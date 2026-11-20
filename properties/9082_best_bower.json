@@ -1,0 +1,779 @@
+{
+ "address": "9082 Best Bower",
+ "city": "Vienna",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "",
+ "county": "Fairfax County",
+ "congestion_fees": true,
+ "report_date": "Thursday, September 24, 2026",
+ "prefix": "9082_Best_Bower",
+ "listing_url": "9082BestBower.com",
+ "include_tracker": true,
+ "asset_dir": "assets/9082_Best_Bower",
+ "hero_photo": "9082_Best_Bower_front.png",
+ "photos": [
+  "9082_Best_Bower_front.png"
+ ],
+ "agent": {
+  "lookup": "Casey C Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "Casey@caseysamson.com"
+ },
+ "subject": {
+  "built": 2000,
+  "sf": 3920,
+  "lot": 15400,
+  "assessment": 1834000
+ },
+ "values": {
+  "dated": 1714500,
+  "customary": 1905000,
+  "customary_list": null,
+  "premium": 2057400
+ },
+ "comps": {
+  "rows": [
+   [
+    "961 Nicholas Ct",
+    2004,
+    3938,
+    16553,
+    1651180,
+    2011116
+   ],
+   [
+    "2628 Five Oaks",
+    2001,
+    4643,
+    26481,
+    1627660,
+    2024351
+   ],
+   [
+    "9153 Riesley Ln",
+    2003,
+    4895,
+    11419,
+    1663490,
+    2050000
+   ],
+   [
+    "8228 Westchester",
+    2005,
+    4301,
+    0,
+    1648390,
+    2045000
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    1996,
+    3859,
+    21133,
+    1574244,
+    1770600
+   ],
+   [
+    "Price Range Average",
+    2009,
+    4118,
+    16183,
+    1749853,
+    2141376
+   ]
+  ]
+ },
+ "market": {
+  "name": "Vienna Luxury Market",
+  "slug": "Vienna_Luxury_Market_Snapshot",
+  "subhead": "Five homes are active and several more are under contract &mdash; this is a deep field, and entry pricing is what separates the two groups.",
+  "stats": null,
+  "absorption": null
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "513 John Marshall",
+   "dom": 69,
+   "built": 2007,
+   "sf": 4312,
+   "lot": 15776,
+   "list": 2250000
+  },
+  {
+   "status": "Active",
+   "address": "9311 Talisman",
+   "dom": 95,
+   "built": 2014,
+   "sf": 4162,
+   "lot": 10890,
+   "list": 2099900
+  },
+  {
+   "status": "Active",
+   "address": "1489 Broadstone",
+   "dom": 118,
+   "built": 2001,
+   "sf": 4049,
+   "lot": 15200,
+   "list": 2074000
+  },
+  {
+   "status": "Active",
+   "address": "303 Talahi Rd S",
+   "dom": 105,
+   "built": 2001,
+   "sf": 4091,
+   "lot": 10000,
+   "list": 1985000
+  },
+  {
+   "status": "Active",
+   "address": "2053 George Washington",
+   "dom": 18,
+   "built": 1995,
+   "sf": 3532,
+   "lot": 10443,
+   "list": 1875000
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "8421 Falcone Pl",
+   "dom": 40,
+   "built": 2007,
+   "sf": 4790,
+   "lot": 6466,
+   "list": 1850000
+  }
+ ],
+ "notes": [],
+ "premium_rating": [
+  [
+   {
+    "label": "2026 Updates",
+    "items": [
+     "Whole interior painting (Aug 2026)",
+     "Updated wet bar in basement (Aug 2026)",
+     "Replaced carpet in basement (Aug 2026)",
+     "Updated exterior lights (Aug 2026)",
+     "Exterior deck painting (Aug 2026)",
+     "Updated front landscaping (Sept 2026)"
+    ]
+   },
+   {
+    "label": "2025 Updates",
+    "items": [
+     "Replaced roof (Sept 2025)",
+     "Replaced water heater (Nov 2025)",
+     "Replaced garage door openers (Jul 2025)"
+    ]
+   }
+  ],
+  [
+   {
+    "label": "2021 Updates",
+    "items": [
+     "Kitchen remodeling with new Thermador appliances &mdash; double oven with convection, steam oven and rotisserie, plus microwave and dishwasher",
+     "Sub-Zero refrigerator",
+     "Avalon wine refrigerator"
+    ]
+   },
+   {
+    "label": "2019 Updates",
+    "items": [
+     "Replaced attic HVAC (Jul 2019)",
+     "New LG washer and dryer (Feb 2019)"
+    ]
+   },
+   {
+    "label": "2018 Updates",
+    "items": [
+     "Primary bathroom remodeling",
+     "New Fabrica carpet in the family room and upstairs bedrooms (Feb 2018)"
+    ]
+   },
+   {
+    "label": "Additional Features",
+    "items": [
+     "Second wine refrigerator (GE Monogram) in the basement wet bar",
+     "Hunter Douglas blinds throughout &mdash; a mix of original vertical blinds and horizontal blinds replaced more than 10 years ago"
+    ]
+   }
+  ]
+ ],
+ "seller_names": "Patrick and Aloysius",
+ "portal_url": "https://9082bestbower.netlify.app",
+ "buyer_portal": {
+  "site": "9082BestBower.com",
+  "site_url": "https://caseysamson.com/listing/9082-best-bower-court-vienna-virginia/",
+  "list_price": 1850000,
+  "asset_dir": "assets/9082_Best_Bower/buyer",
+  "hero_photo": "BB_exterior_front.jpg",
+  "status_line": "Active",
+  "open_house": {
+   "when": "Sunday, October 4th &middot; 2:00&ndash;4:00 PM",
+   "note": "Stop by, or call for a private showing."
+  },
+  "facts": [
+   [
+    "5",
+    "Bedrooms"
+   ],
+   [
+    "4.5",
+    "Bathrooms"
+   ],
+   [
+    "5,862",
+    "Finished SF"
+   ],
+   [
+    "3",
+    "Levels"
+   ],
+   [
+    "0.36",
+    "Acre lot"
+   ],
+   [
+    "2000",
+    "Year built"
+   ],
+   [
+    "2",
+    "Car garage"
+   ],
+   [
+    "$1,100",
+    "HOA, annually"
+   ]
+  ],
+  "description": "Gorgeous move-in ready colonial in the highly desirable Wolf Trap Downs community, nestled in a lovely cul-de-sac. A welcoming two-story foyer opens to formal living and dining rooms and a private office. The gourmet kitchen showcases quartz countertops, stainless appliances and a large center island with cooktop, with easy access to the breakfast room. The family room is highlighted by a floor-to-ceiling stone fireplace. Upstairs, a spacious owner&rsquo;s suite with sitting area is joined by three additional bedrooms, two full baths and the laundry room. The finished walk-out lower level offers a large recreation room with fireplace and wet bar, a fifth bedroom, full bath, storage and access to a covered patio. Outside, a spacious deck overlooks the private, tree-lined, fully fenced backyard.",
+  "builder_line": "Custom designed by Keystone &mdash; the Greenwood Italianate model.",
+  "videos": [
+   {
+    "file": "BB_Reel.mp4",
+    "poster": "BB_Reel_poster.jpg",
+    "label": "Video Tour"
+   },
+   {
+    "file": "BB_Tour.mp4",
+    "poster": "BB_Tour_poster.jpg",
+    "label": "Walkthrough"
+   }
+  ],
+  "gallery": [
+   [
+    "BB_kitchen.jpg",
+    "Gourmet kitchen with quartz island and cooktop"
+   ],
+   [
+    "BB_family_room.jpg",
+    "Family room with floor-to-ceiling stone fireplace"
+   ],
+   [
+    "BB_foyer.jpg",
+    "Two-story foyer and formal living room"
+   ],
+   [
+    "BB_kitchen_2.jpg",
+    "Thermador double oven with convection, steam and rotisserie"
+   ],
+   [
+    "BB_suite_sitting.jpg",
+    "Owner&rsquo;s suite sitting area"
+   ],
+   [
+    "BB_suite.jpg",
+    "Owner&rsquo;s suite"
+   ],
+   [
+    "BB_primary_bath.jpg",
+    "Spa-inspired primary bath"
+   ],
+   [
+    "BB_primary_bath_2.jpg",
+    "Soaking tub and glass shower"
+   ],
+   [
+    "BB_lower_bar.jpg",
+    "Lower level wet bar and fireplace"
+   ],
+   [
+    "BB_lower_rec.jpg",
+    "Walk-out lower level recreation room"
+   ],
+   [
+    "BB_deck.jpg",
+    "Deck overlooking the fenced rear yard"
+   ],
+   [
+    "BB_patio.jpg",
+    "Covered patio off the lower level"
+   ],
+   [
+    "BB_rear.jpg",
+    "Rear exterior"
+   ],
+   [
+    "BB_yard.jpg",
+    "Private, tree-lined fenced backyard"
+   ]
+  ],
+  "features": {
+   "Top Features": [
+    "Move-in ready colonial on a desirable cul-de-sac",
+    "5 bedrooms and 4.5 bathrooms on 3 levels",
+    "Open floor plan with two-story foyer and family room",
+    "Owner&rsquo;s suite with sitting area and spa-inspired bath",
+    "Walk-out lower level with fireplace, wet bar and full bath",
+    "Two-car front-loading garage",
+    "Prime Vienna location with easy access to Tysons"
+   ],
+   "Updates &amp; Improvements": [
+    "Basement carpet replaced and wet bar upgraded (2026)",
+    "Whole interior painting and exterior deck painting (2026)",
+    "Front landscaping updated (2026)",
+    "Roof replaced (2025)",
+    "Water heater and garage door openers replaced (2025)",
+    "Kitchen remodel &mdash; Thermador appliances with convection, steam oven and rotisserie, Sub-Zero refrigerator, Avalon wine refrigerator (2021)",
+    "Hardwood floors refinished (2021)",
+    "Upper level HVAC replaced (2019); LG washer and dryer (2019)",
+    "Primary bathroom remodeled and carpet replaced (2018)"
+   ]
+  },
+  "loves": [
+   "Quiet neighborhood with great neighbors",
+   "Great school pyramid",
+   "Close to Tysons and the beltway",
+   "In Vienna but just outside town limits &mdash; no Vienna property tax",
+   "Vibrant restaurant and shopping scene",
+   "Close to Capital One Hall, Wolf Trap and Dulles airport",
+   "Southern exposure with plenty of sunlight",
+   "Easy access to Whole Foods, Wegmans, Giant, Harris Teeter and Safeway",
+   "Easy access to multiple gyms and yoga studios"
+  ],
+  "schools": [
+   "Westbriar Elementary School",
+   "Kilmer Middle School",
+   "Marshall High School"
+  ],
+  "hoa_includes": "Trash, common area landscaping and mowing, and street snow removal.",
+  "utilities": "Public water, public sewer and gas. Gas heat and hot water; electric central air.",
+  "showing_note": "The owners ask that shoes be removed during showings.",
+  "documents": [
+   [
+    "BB_Brochure.pdf",
+    "Property Brochure",
+    "Full-colour brochure with photography and features"
+   ],
+   [
+    "BB_Flyer.pdf",
+    "Property Flyer",
+    "One-page summary of the home"
+   ],
+   [
+    "BB_Hot_Sheet.pdf",
+    "Hot Sheet",
+    "Top features, updates, schools and what the owners love"
+   ],
+   [
+    "BB_Conveyances.pdf",
+    "Conveyances",
+    "Personal property, fixtures and utilities that convey"
+   ],
+   [
+    "BB_Offer_Instructions.pdf",
+    "Offer Instructions",
+    "Deadline, delivery, preferred terms and vendors"
+   ],
+   [
+    "BB_Disclosures.html",
+    "Seller Disclosures",
+    "What is disclosed, and how to get the signed packet"
+   ]
+  ],
+  "offer_terms": [
+   [
+    "Contract deadlines",
+    "Contact the co-listing agent"
+   ],
+   [
+    "Submit to",
+    "morgan@caseysamson.com and colbysmyth@gmail.com"
+   ],
+   [
+    "Format",
+    "All documents combined in one PDF"
+   ],
+   [
+    "Escalation clauses",
+    "Please, none"
+   ],
+   [
+    "Preferred settlement",
+    "30 days, no rent back needed"
+   ],
+   [
+    "Preferred title",
+    "Cardinal Title Group"
+   ],
+   [
+    "Preferred lender",
+    "Mike Filan, CrossCountry Mortgage &mdash; 703-899-8720"
+   ],
+   [
+    "Lender letter",
+    "Must be current with the lender&rsquo;s direct phone and email"
+   ]
+  ],
+  "offer_summary": [
+   "Buyer name",
+   "Agent name",
+   "Lender",
+   "Title",
+   "Settlement date",
+   "Down payment",
+   "Deposit",
+   "Home sale contingency",
+   "Offer price",
+   "Buyer commissions",
+   "Other concessions and terms"
+  ],
+  "contacts": {
+   "photo": "BB_agents.jpg",
+   "names": "Morgan Samson &amp; Colby Smyth",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Morgan Samson",
+     "703-609-1745",
+     "morgan@caseysamson.com"
+    ],
+    [
+     "Colby Smyth",
+     "703-597-2428",
+     "colbysmyth@gmail.com"
+    ]
+   ],
+   "office": "Samson Properties, 14291 Park Meadow Dr, Suite 500, Chantilly, VA 20151"
+  },
+  "display_address": "9082 Best Bower Court",
+  "listing_page_url": "https://caseysamson.com/listing/9082-best-bower-court-vienna-virginia/",
+  "disclosures": {
+   "pending": true,
+   "items": [
+    [
+     "Virginia Residential Property Disclosure Statement",
+     "The statement required by &sect;55.1-703 of the Code of Virginia, signed by the sellers."
+    ],
+    [
+     "Homeowners&rsquo; Association Disclosure Packet",
+     "The Wolf Trap Downs HOA packet, ordered at the seller&rsquo;s expense and delivered on ratification."
+    ],
+    [
+     "Conveyances",
+     "Personal property and fixtures that convey, listed on the Conveyances sheet."
+    ],
+    [
+     "Lead-Based Paint",
+     "Not applicable &mdash; the home was built in 2000, after the 1978 threshold."
+    ],
+    [
+     "Septic and Well",
+     "Not applicable &mdash; the home is on public water and public sewer."
+    ]
+   ]
+  },
+  "url": "https://caseysamson.com/market-snapshot/buybest",
+  "headline": "A cul-de-sac in Wolf Trap Downs, a two-story stone fireplace, and a kitchen rebuilt around Thermador and Sub-Zero.",
+  "highlights": [
+   "5,862 finished SF",
+   "Cul-de-sac",
+   "Walk-out lower level",
+   "Two-story family room"
+  ],
+  "feature_headlines": [
+   {
+    "head": "A Kitchen Rebuilt Around Thermador and Sub-Zero",
+    "sub": [
+     "Double oven with convection, steam and rotisserie",
+     "Sub-Zero refrigerator",
+     "Avalon wine refrigerator",
+     "Quartz counters and a large center island"
+    ]
+   },
+   {
+    "head": "Two-Story Family Room, Stone Fireplace",
+    "sub": [
+     "Floor-to-ceiling stone",
+     "A wall of windows to the trees",
+     "Opens off the breakfast room"
+    ]
+   },
+   {
+    "head": "Walk-Out Lower Level Built for Company",
+    "sub": [
+     "Recreation room with a second fireplace",
+     "Wet bar upgraded 2026",
+     "Fifth bedroom and full bath",
+     "Covered patio off the back"
+    ]
+   },
+   {
+    "head": "Cul-de-Sac in Wolf Trap Downs",
+    "sub": [
+     "0.36 acre, tree-lined and fully fenced",
+     "Spacious deck",
+     "Roof 2025, HVAC 2019, water heater 2025",
+     "Repainted inside and out, 2026"
+    ]
+   }
+  ],
+  "pricing_pdf": "9082_Best_Bower_Buyer_Report.pdf",
+  "amenities_lede": "Tysons is minutes away and the Dulles Toll Road is the closest ramp; Vienna's town centre is a five-minute drive.",
+  "amenities": [
+   {
+    "title": "Dining",
+    "items": [
+     [
+      "Cafe Renaissance",
+      "Fine dining &middot; French",
+      "1.9 mi"
+     ],
+     [
+      "Evelyn Rose",
+      "Fine dining &middot; Tasting menu",
+      "2.2 mi"
+     ],
+     [
+      "Vienna Inn",
+      "Family &middot; Since 1960",
+      "2.1 mi"
+     ],
+     [
+      "Bear Branch Tavern",
+      "Family &middot; Tavern",
+      "2.1 mi"
+     ],
+     [
+      "Starbucks",
+      "Coffee &middot; Maple Ave E",
+      "1.7 mi"
+     ],
+     [
+      "Caff&egrave; Amouri",
+      "Coffee &middot; Local roaster",
+      "2.1 mi"
+     ]
+    ]
+   },
+   {
+    "title": "Shopping",
+    "items": [
+     [
+      "Tysons Galleria",
+      "Saks, Neiman Marcus, luxury brands",
+      "2.4 mi"
+     ],
+     [
+      "Tysons Corner Center",
+      "The region&rsquo;s largest centre",
+      "2.8 mi"
+     ],
+     [
+      "Mosaic District",
+      "Open-air shops, cinema, dining",
+      "5.2 mi"
+     ],
+     [
+      "Giant Food",
+      "Maple Ave E",
+      "1.8 mi"
+     ],
+     [
+      "Whole Foods",
+      "Maple Ave E",
+      "2.1 mi"
+     ],
+     [
+      "Wegmans",
+      "Tysons",
+      "3.4 mi"
+     ]
+    ]
+   },
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Dulles Toll Road",
+      "Route 123 interchange",
+      "2.3 mi"
+     ],
+     [
+      "Capital Beltway, I-495",
+      "Route 123 interchange",
+      "2.8 mi"
+     ],
+     [
+      "I-66",
+      "Nutley Street interchange",
+      "3.4 mi"
+     ],
+     [
+      "Vienna Metro",
+      "Orange Line",
+      "4.4 mi"
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      "14.1 mi"
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      "16.8 mi"
+     ]
+    ]
+   }
+  ],
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Wolf Trap and the Wolftrap school are minutes away, and Tysons, the Boro and old town Vienna are all inside ten minutes by car. The arrows point to everything beyond.",
+   "center": {
+    "lat": 38.925306,
+    "lng": -77.2593098,
+    "label": "9082 Best Bower"
+   },
+   "pins": [
+    {
+     "name": "Wolftrap Elementary",
+     "sub": "Top-rated Wolftrap pyramid",
+     "lat": 38.9175151,
+     "lng": -77.2663853,
+     "min": 3,
+     "mode": "drive"
+    },
+    {
+     "name": "Wolf Trap National Park",
+     "sub": "Filene Center concerts and trails",
+     "lat": 38.9383676,
+     "lng": -77.264695,
+     "min": 4,
+     "mode": "drive"
+    },
+    {
+     "name": "Whole Foods, The Boro",
+     "sub": "Shops, dining and cinema",
+     "lat": 38.924755,
+     "lng": -77.2334584,
+     "min": 4,
+     "mode": "drive"
+    },
+    {
+     "name": "Tysons Galleria",
+     "sub": "Saks, Neiman Marcus, luxury brands",
+     "lat": 38.9243808,
+     "lng": -77.2256557,
+     "min": 6,
+     "mode": "drive"
+    },
+    {
+     "name": "Tysons Corner Center",
+     "sub": "The region&rsquo;s largest centre",
+     "lat": 38.9162905,
+     "lng": -77.2213857,
+     "min": 7,
+     "mode": "drive"
+    },
+    {
+     "name": "Wegmans",
+     "sub": "Capital One Center",
+     "lat": 38.925605,
+     "lng": -77.210107,
+     "min": 8,
+     "mode": "drive"
+    },
+    {
+     "name": "Town Green",
+     "sub": "Concerts, markets, Viva Vienna",
+     "lat": 38.902941,
+     "lng": -77.2641239,
+     "min": 5,
+     "mode": "drive"
+    },
+    {
+     "name": "Vienna Inn",
+     "sub": "The 1960 town institution",
+     "lat": 38.9022013,
+     "lng": -77.2647713,
+     "min": 5,
+     "mode": "drive"
+    },
+    {
+     "name": "Caff&egrave; Amouri",
+     "sub": "Coffee roaster on Church St",
+     "lat": 38.9024734,
+     "lng": -77.2657028,
+     "min": 5,
+     "mode": "drive"
+    },
+    {
+     "name": "Evelyn Rose",
+     "sub": "Tasting menu on Church St NW",
+     "lat": 38.9020805,
+     "lng": -77.2670056,
+     "min": 5,
+     "mode": "drive"
+    },
+    {
+     "name": "Giant Food",
+     "sub": "359 Maple Ave E",
+     "lat": 38.9053633,
+     "lng": -77.2580414,
+     "min": 4,
+     "mode": "drive"
+    },
+    {
+     "name": "Starbucks",
+     "sub": "362 Maple Ave E",
+     "lat": 38.9065879,
+     "lng": -77.2595751,
+     "min": 4,
+     "mode": "drive"
+    }
+   ],
+   "arrows": [
+    [
+     113.4,
+     [
+      "Reagan National",
+      "DCA · 29 min"
+     ]
+    ],
+    [
+     191.7,
+     [
+      "Vienna Metro",
+      "10 min"
+     ]
+    ],
+    [
+     280.3,
+     [
+      "Dulles Intl",
+      "IAD · 24 min"
+     ]
+    ]
+   ]
+  },
+  "deploy_to": "https://buybest.netlify.app"
+ },
+ "band_color": "#000000"
+}

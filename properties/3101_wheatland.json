@@ -1,0 +1,556 @@
+{
+  "address": "3101 Wheatland Farms",
+  "city": "Oakton",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "",
+  "county": "Fairfax County",
+  "prefix": "3101_Wheatland",
+  "report_date": "Saturday, October 17, 2026",
+  "asset_dir": "assets/3101_Wheatland",
+  "hero_photo": "3101_Wheatland_front.jpg",
+  "portal_url": "https://3101wheatlandfarms.netlify.app",
+  "track_record": null,
+  "excellent_condition": true,
+  "values": {
+    "dated": 3265956,
+    "customary": 3628840,
+    "customary_list": 3639369,
+    "premium": 3919147,
+    "upgrades": 0,
+    "fallback_override": 3499999,
+    "deep_override": 3399999
+  },
+  "subject": {
+    "built": 1997,
+    "sf": 6034,
+    "lot": 64500,
+    "assessment": 2908000
+  },
+  "comps": {
+    "rows": [
+      [
+        "2619 Sledding H",
+        2000,
+        6512,
+        218388,
+        2843070,
+        3400000
+      ],
+      [
+        "11050 Heathlan",
+        2004,
+        5830,
+        52765,
+        1882140,
+        2610000
+      ],
+      [
+        "11317 Walnut C",
+        2002,
+        5372,
+        54383,
+        1793140,
+        2610000
+      ],
+      [
+        "10507 Oakton",
+        2005,
+        6550,
+        90274,
+        2295760,
+        2600000
+      ],
+      [
+        "3003 Weber Pl",
+        2014,
+        4352,
+        45109,
+        1563320,
+        2520000
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        2002,
+        6018,
+        76579,
+        2026886,
+        2415000
+      ],
+      [
+        "Price Range Average",
+        2006,
+        5526,
+        59383,
+        1883590,
+        2585000
+      ]
+    ]
+  },
+  "competition": [
+    {
+      "status": "Coming Soon",
+      "address": "10500 Dalkeith",
+      "dom": 0,
+      "built": 1997,
+      "sf": 6544,
+      "lot": 222092,
+      "list": 3199888,
+      "assessment": 2635930
+    },
+    {
+      "status": "Coming Soon",
+      "address": "2583 Vintage Crest",
+      "dom": 0,
+      "built": 2005,
+      "sf": 6872,
+      "lot": 75000,
+      "list": 2650000,
+      "assessment": 2228630
+    },
+    {
+      "status": "Active",
+      "address": "3109 Whimbrell",
+      "dom": 51,
+      "built": 2013,
+      "sf": 6473,
+      "lot": 38384,
+      "list": 3699500,
+      "assessment": 3804240
+    },
+    {
+      "status": "Active",
+      "address": "3002 Apple Brc",
+      "dom": 37,
+      "built": 2005,
+      "sf": 7337,
+      "lot": 49859,
+      "list": 3825000,
+      "assessment": 2783130
+    },
+    {
+      "status": "Withdrawn",
+      "address": "11561 Stuart Mi",
+      "dom": 161,
+      "built": 2014,
+      "sf": 7260,
+      "lot": 218259,
+      "list": 3599000,
+      "assessment": 3377330
+    }
+  ],
+  "market": {
+    "name": "Oakton Luxury Market",
+    "slug": "Oakton_Luxury_Market_Snapshot",
+    "stats": null,
+    "absorption": null
+  },
+  "local_snapshot": {
+    "rows": [
+      {
+        "status": "ACT",
+        "address": "3109 Whimbrell",
+        "dom": 51,
+        "built": 2013,
+        "sf": 6473,
+        "lot": 38384,
+        "assessment": 3804240,
+        "list": 3699500,
+        "entry": "08/27/2026"
+      },
+      {
+        "status": "ACT",
+        "address": "3002 Apple Brc",
+        "dom": 37,
+        "built": 2005,
+        "sf": 7337,
+        "lot": 49859,
+        "assessment": 2783130,
+        "list": 3825000,
+        "entry": "09/10/2026"
+      }
+    ],
+    "conditions": "market"
+  },
+  "buyer_portal": {
+    "display_address": "3101 Wheatland Farms",
+    "asset_dir": "assets/3101_Wheatland/buyer",
+    "hero_photo": "3101_Wheatland_front.jpg",
+    "deploy_to": "https://buywheatlandfarms.netlify.app",
+    "url": "https://buywheatlandfarms.netlify.app",
+    "live": true,
+    "list_price": 3639369,
+    "status_line": "Coming Soon",
+    "headline": "Just over 6,000 square feet on an acre and a half in Oakton, built 1997.",
+    "facts": [
+      [
+        "1997",
+        "Year built"
+      ],
+      [
+        "6,034",
+        "Above grade SF"
+      ],
+      [
+        "1.48",
+        "Acre lot"
+      ],
+      [
+        "Oakton",
+        "Fairfax County"
+      ]
+    ],
+    "pricing_pdf": "3101_Wheatland_Buyer_Report.pdf",
+    "snapshot": {
+      "title": "Market Snapshot",
+      "lede": "Every home 3101 Wheatland Farms is competing with, and what each one is asking.",
+      "rows": [
+        [
+          "C/S",
+          "10500 Dalkeith",
+          0,
+          1997,
+          6544,
+          222092,
+          2635930,
+          3199888
+        ],
+        [
+          "C/S",
+          "2583 Vintage Crest",
+          0,
+          2005,
+          6872,
+          75000,
+          2228630,
+          2650000
+        ],
+        [
+          "ACT",
+          "3109 Whimbrell",
+          51,
+          2013,
+          6473,
+          38384,
+          3804240,
+          3699500
+        ],
+        [
+          "ACT",
+          "3002 Apple Brc",
+          37,
+          2005,
+          7337,
+          49859,
+          2783130,
+          3825000
+        ],
+        [
+          "WTH",
+          "11561 Stuart Mi",
+          161,
+          2014,
+          7260,
+          218259,
+          3377330,
+          3599000
+        ]
+      ]
+    },
+    "contacts": {
+      "names": "Casey Samson",
+      "team": "The Casey Samson Team &middot; Samson Properties",
+      "lines": [
+        [
+          "Casey Samson",
+          "703-508-2535",
+          "Casey@caseysamson.com"
+        ]
+      ],
+      "office": "Samson Properties &middot; Northern Virginia"
+    },
+    "amenities_lede": "An acre and a half off Chain Bridge Road &mdash; Oakton&rsquo;s shops and Giant five minutes out, Vienna&rsquo;s Maple Avenue and the Orange Line Metro close behind, and Tysons and Fair Oaks either side.",
+    "amenities": [
+      {
+        "title": "Dining",
+        "items": [
+          [
+            "Clarity",
+            "Fine dining on Maple Avenue, Vienna",
+            4.26
+          ],
+          [
+            "Evelyn Rose",
+            "Chef&rsquo;s tasting menu on Church Street",
+            3.53
+          ],
+          [
+            "Luciano Italian Restaurant",
+            "Family Italian on Chain Bridge Road",
+            1.38
+          ],
+          [
+            "Famous Dave&rsquo;s Bar-B-Que",
+            "Family barbecue at Oakton Shopping Center",
+            1.54
+          ],
+          [
+            "Caf&eacute; de Vienna",
+            "Coffee and pastry on Church Street",
+            3.49
+          ],
+          [
+            "Haraz Coffee House",
+            "Coffee house on Main Street, Fairfax",
+            2.09
+          ]
+        ]
+      },
+      {
+        "title": "Shopping",
+        "items": [
+          [
+            "Oakton Shopping Center",
+            "The closest everyday retail",
+            1.49
+          ],
+          [
+            "Fair Oaks Mall",
+            "Enclosed regional mall",
+            2.16
+          ],
+          [
+            "Tysons Corner Center",
+            "Shopping and offices",
+            6.12
+          ],
+          [
+            "Giant Food",
+            "Grocery at Oakton Shopping Center",
+            1.49
+          ],
+          [
+            "Whole Foods Market",
+            "Maple Avenue, Vienna",
+            3.75
+          ],
+          [
+            "Whole Foods Market",
+            "Fair Lakes, Fairfax",
+            3.18
+          ]
+        ]
+      },
+      {
+        "title": "Getting Around",
+        "items": [
+          [
+            "Vienna/Fairfax-GMU Metro",
+            "Orange Line",
+            3.01
+          ],
+          [
+            "Wiehle-Reston East Metro",
+            "Silver Line",
+            4.57
+          ],
+          [
+            "Dulles Toll Road",
+            "Nearest plaza, McLean",
+            6.02
+          ],
+          [
+            "Dulles International",
+            "IAD",
+            8.1
+          ],
+          [
+            "Reagan National",
+            "DCA",
+            15.67
+          ]
+        ]
+      }
+    ],
+    "schools": [
+      "Oakton Elementary School",
+      "Thoreau Middle School",
+      "Oakton High School"
+    ],
+    "locator_map": {
+      "title": "The Neighborhood",
+      "lede": "Wheatland Farms, off Chain Bridge Road in Oakton. The arrows point to everything past the edge of the map.",
+      "center": {
+        "lat": 38.8823117,
+        "lng": -77.3275934,
+        "label": "3101 Wheatland Farms"
+      },
+      "pins": [
+        {
+          "name": "Clarity",
+          "sub": "Fine dining on Maple Avenue, Vienna",
+          "lat": 38.9094889,
+          "lng": -77.2564857,
+          "min": 9,
+          "mode": "drive"
+        },
+        {
+          "name": "Evelyn Rose",
+          "sub": "Chef&rsquo;s tasting menu on Church Street",
+          "lat": 38.9020805,
+          "lng": -77.2670056,
+          "min": 11,
+          "mode": "drive"
+        },
+        {
+          "name": "Luciano Italian Restaurant",
+          "sub": "Family Italian on Chain Bridge Road",
+          "lat": 38.881201,
+          "lng": -77.3020175,
+          "min": 4,
+          "mode": "drive"
+        },
+        {
+          "name": "Famous Dave&rsquo;s Bar-B-Que",
+          "sub": "Family barbecue at Oakton Shopping Center",
+          "lat": 38.8824768,
+          "lng": -77.298907,
+          "min": 5,
+          "mode": "drive"
+        },
+        {
+          "name": "Caf&eacute; de Vienna",
+          "sub": "Coffee and pastry on Church Street",
+          "lat": 38.9015901,
+          "lng": -77.2675829,
+          "min": 11,
+          "mode": "drive"
+        },
+        {
+          "name": "Haraz Coffee House",
+          "sub": "Coffee house on Main Street, Fairfax",
+          "lat": 38.852036,
+          "lng": -77.325509,
+          "min": 7,
+          "mode": "drive"
+        },
+        {
+          "name": "Oakton Shopping Center",
+          "sub": "The closest everyday retail",
+          "lat": 38.883081,
+          "lng": -77.2998168,
+          "min": 5,
+          "mode": "drive"
+        },
+        {
+          "name": "Fair Oaks Mall",
+          "sub": "Enclosed regional mall",
+          "lat": 38.862801,
+          "lng": -77.358874,
+          "min": 7,
+          "mode": "drive"
+        },
+        {
+          "name": "Giant Food",
+          "sub": "Grocery at Oakton Shopping Center",
+          "lat": 38.8839845,
+          "lng": -77.3000541,
+          "min": 5,
+          "mode": "drive"
+        },
+        {
+          "name": "Whole Foods Market",
+          "sub": "Maple Avenue, Vienna",
+          "lat": 38.9022469,
+          "lng": -77.2626957,
+          "min": 12,
+          "mode": "drive"
+        },
+        {
+          "name": "Whole Foods Market",
+          "sub": "Fair Lakes, Fairfax",
+          "lat": 38.8578497,
+          "lng": -77.377751,
+          "min": 10,
+          "mode": "drive"
+        },
+        {
+          "name": "Vienna/Fairfax-GMU Metro",
+          "sub": "Orange Line",
+          "lat": 38.8783642,
+          "lng": -77.2718132,
+          "min": 9,
+          "mode": "drive"
+        },
+        {
+          "name": "Wiehle-Reston East Metro",
+          "sub": "Silver Line",
+          "lat": 38.947749,
+          "lng": -77.340075,
+          "min": 10,
+          "mode": "drive"
+        }
+      ],
+      "arrows": [
+        [
+          66.9,
+          [
+            "Tysons Corner Center",
+            "14 min"
+          ]
+        ],
+        [
+          52.6,
+          [
+            "Dulles Toll Road",
+            "13 min"
+          ]
+        ],
+        [
+          306.6,
+          [
+            "Dulles International",
+            "18 min"
+          ]
+        ],
+        [
+          98.1,
+          [
+            "Reagan National",
+            "35 min"
+          ]
+        ]
+      ]
+    }
+  },
+  "market_local": {
+    "label": "Rest of the Oakton Market &mdash; over 2,500 SF, 90 days",
+    "source": "data/Oakton_over_2500.csv",
+    "cells": [
+      [
+        "44%",
+        "Success rate (4 of 9 listings)"
+      ],
+      [
+        "145.8",
+        "Avg days on market (4 homes now listed)"
+      ],
+      [
+        "98.2%",
+        "Of original list price"
+      ],
+      [
+        "50%",
+        "Sold in the first week (2 of 4)"
+      ],
+      [
+        "25%",
+        "Sold above list price (1 of 4)"
+      ]
+    ],
+    "dom_basis": "Days so far for the 4 Oakton homes over 2,500 SF currently on the market (38, 52, 81, 412). Not days to contract on sold homes."
+  },
+  "sample": true
+}

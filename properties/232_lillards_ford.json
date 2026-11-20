@@ -1,0 +1,107 @@
+{
+ "address": "232 Lillards Ford",
+ "city": "Madison",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "",
+ "county": "Madison County",
+ "congestion_fees": false,
+ "report_date": "Saturday, October 10, 2026",
+ "prefix": "232_Lillards_Ford",
+ "listing_url": "232LillardsFord.com",
+ "portal_url": "https://232lillardsford.netlify.app",
+ "include_tracker": true,
+ "listing_status": "new",
+ "subject": {
+  "built": 2022,
+  "sf": 2378,
+  "lot": 6553000,
+  "assessment": 1882000
+ },
+ "values": {
+  "dated": 1848413,
+  "customary": 2053792,
+  "customary_list": 2120758,
+  "premium": 2218095,
+  "upgrades": 0,
+  "preview_override": 2500000,
+  "coming_soon_override": 2250000,
+  "fallback_override": 2150000,
+  "deep_override": 2000000
+ },
+ "comps": {
+  "rows": [],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    2006,
+    5372,
+    5270760,
+    1414250,
+    2384500
+   ],
+   [
+    "Price Range Average",
+    2006,
+    5372,
+    5270760,
+    1414250,
+    2384500
+   ]
+  ]
+ },
+ "competition": [],
+ "market": {
+  "name": "Madison County",
+  "slug": null,
+  "avg_dom": 231,
+  "stats": null,
+  "absorption": null
+ },
+ "agent": {
+  "lookup": "Casey Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "casey@caseysamson.com"
+ },
+ "buyer_portal": {
+  "display_address": "232 Lillards Ford",
+  "site": "232LillardsFord.com",
+  "live": true,
+  "list_price": 2250000,
+  "status_line": "Coming Soon",
+  "facts": [
+   [
+    "2022",
+    "Year built"
+   ],
+   [
+    "2,378",
+    "Finished SF"
+   ],
+   [
+    "150.4",
+    "Acres"
+   ],
+   [
+    "Madison",
+    "Madison County"
+   ]
+  ],
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "pricing_pdf": "232_Lillards_Ford_Buyer_Report.pdf",
+  "url": "https://buylillards.netlify.app",
+  "deploy_to": "https://buylillards.netlify.app"
+ }
+}

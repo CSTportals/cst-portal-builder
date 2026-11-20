@@ -1,0 +1,621 @@
+{
+ "address": "1316 Alps Dr",
+ "city": "McLean",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "22102",
+ "county": "Fairfax",
+ "congestion_fees": false,
+ "report_date": "Saturday, October 3, 2026",
+ "prefix": "1316_Alps",
+ "listing_url": "1316Alps.com",
+ "portal_url": "https://1316alps.netlify.app",
+ "include_tracker": true,
+ "listing_status": "relaunch",
+ "subject": {
+  "built": 1980,
+  "sf": 3800,
+  "lot": 49000,
+  "assessment": 1550000
+ },
+ "values": {
+  "dated": 1627674,
+  "customary": 1808527,
+  "customary_list": 1882611,
+  "premium": 1953209,
+  "upgrades": 0
+ },
+ "comps": {
+  "rows": [
+   [
+    "10101 Windy Kn",
+    1977,
+    3240,
+    217800,
+    1662910,
+    1965000
+   ],
+   [
+    "1077 Spring Hill",
+    1979,
+    3588,
+    23417,
+    1687590,
+    1678000
+   ],
+   [
+    "1289 Middleton",
+    1989,
+    3962,
+    20011,
+    1533940,
+    1677000
+   ],
+   [
+    "9200 Ripple Bro",
+    1979,
+    2770,
+    87120,
+    1584860,
+    1625000
+   ],
+   [
+    "9501 Brian Jac",
+    1978,
+    5149,
+    46678,
+    1695150,
+    1451125
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    1982,
+    3597,
+    87076,
+    1628147,
+    1773333
+   ],
+   [
+    "Price Range Average",
+    1982,
+    3440,
+    43516,
+    1602130,
+    1660000
+   ]
+  ]
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "8354 Old Dominion",
+   "dom": 43,
+   "built": 1973,
+   "sf": 4349,
+   "lot": 24642,
+   "list": 1899000
+  },
+  {
+   "status": "Active",
+   "address": "9082 Best Bower",
+   "dom": 2,
+   "built": 2000,
+   "sf": 3920,
+   "lot": 15468,
+   "list": 1850000
+  },
+  {
+   "status": "Active",
+   "address": "911 Rail Ct",
+   "dom": 130,
+   "built": 1969,
+   "sf": 3360,
+   "lot": 20395,
+   "list": 1799000
+  },
+  {
+   "status": "Active",
+   "address": "1416 Rosewood",
+   "dom": 92,
+   "built": 1979,
+   "sf": 2636,
+   "lot": 23958,
+   "list": 1689000
+  },
+  {
+   "status": "Active",
+   "address": "9022 Trailridge",
+   "dom": 24,
+   "built": 1975,
+   "sf": 0,
+   "lot": 21263,
+   "list": 1500000
+  },
+  {
+   "status": "Active under contract",
+   "address": "8122 Birnam Wood",
+   "dom": 6,
+   "built": 1968,
+   "sf": 2781,
+   "lot": 15681,
+   "list": 1675000
+  },
+  {
+   "status": "Active under contract",
+   "address": "8006 Birnam Wood",
+   "dom": 14,
+   "built": 1966,
+   "sf": 1624,
+   "lot": 15246,
+   "list": 1600000
+  },
+  {
+   "status": "Contract/Show",
+   "address": "1683 Drewlaine",
+   "dom": 0,
+   "built": 2000,
+   "sf": 3959,
+   "lot": 0,
+   "list": 1999999
+  },
+  {
+   "status": "Contract/Show",
+   "address": "1770 Beulah",
+   "dom": 0,
+   "built": 1987,
+   "sf": 0,
+   "lot": 0,
+   "list": 1600000
+  },
+  {
+   "status": "Pending",
+   "address": "1751 Wexford",
+   "dom": 1,
+   "built": 1981,
+   "sf": 3304,
+   "lot": 14242,
+   "list": 1500000
+  }
+ ],
+ "market": {
+  "name": "McLean Luxury Market",
+  "slug": "McLean_Luxury_Market_Snapshot",
+  "subhead": "A 19% under-contract rate against a 61% success rate &mdash; contracts are down 47%, so position and preparation are what separate the homes that sell.",
+  "stats": null,
+  "absorption": null
+ },
+ "agent": {
+  "lookup": "Casey Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "casey@caseysamson.com"
+ },
+ "asset_dir": "assets/1316_Alps",
+ "hero_photo": "1316_Alps_front.jpg",
+ "photos": [
+  "1316_Alps_front.jpg"
+ ],
+ "buyer_portal": {
+  "display_address": "1316 Alps Dr",
+  "site": "1316Alps.com",
+  "url": "https://caseysamson.com/market-snapshot/buyalps",
+  "list_price": 1799999,
+  "status_line": "Coming Soon",
+  "headline": "A secluded contemporary on 1.1 acres in Smith Farm &mdash; vaulted ceilings, a main level owner&rsquo;s suite and no HOA.",
+  "facts": [
+   [
+    "5",
+    "Bedrooms"
+   ],
+   [
+    "4",
+    "Bathrooms"
+   ],
+   [
+    "4,511",
+    "Finished SF"
+   ],
+   [
+    "1980",
+    "Year built"
+   ],
+   [
+    "3",
+    "Car garage"
+   ],
+   [
+    "1.1",
+    "Acres"
+   ]
+  ],
+  "amenities_lede": "Wolf Trap is a mile away, the Silver Line five minutes, and all of Tysons sits just east.",
+  "amenities": [
+   {
+    "title": "Dining",
+    "items": [
+     [
+      "801 Chophouse",
+      "Fine dining &middot; Steak, Westpark Dr",
+      "2.3 mi"
+     ],
+     [
+      "The Palm",
+      "Fine dining &middot; Tysons Blvd",
+      "3.0 mi"
+     ],
+     [
+      "Clyde&rsquo;s of Tysons",
+      "Family &middot; American, all day",
+      "2.9 mi"
+     ],
+     [
+      "Silver Diner",
+      "Family &middot; Breakfast all day",
+      "3.4 mi"
+     ],
+     [
+      "Starbucks",
+      "Coffee &middot; Leesburg Pike",
+      "2.0 mi"
+     ],
+     [
+      "Roots Cafe",
+      "Coffee &middot; Old Dominion Dr",
+      "2.1 mi"
+     ]
+    ]
+   },
+   {
+    "title": "Shopping",
+    "items": [
+     [
+      "The Boro",
+      "Shops, dining and cinema",
+      "2.5 mi"
+     ],
+     [
+      "Tysons Galleria",
+      "Saks, Neiman Marcus, luxury boutiques",
+      "2.9 mi"
+     ],
+     [
+      "Tysons Corner Center",
+      "Virginia&rsquo;s largest mall",
+      "3.6 mi"
+     ],
+     [
+      "Whole Foods Market",
+      "The Boro",
+      "2.5 mi"
+     ],
+     [
+      "Wegmans",
+      "Capital One Center",
+      "3.7 mi"
+     ],
+     [
+      "Safeway",
+      "Anderson Rd, Tysons",
+      "4.3 mi"
+     ]
+    ]
+   },
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Wolf Trap",
+      "Filene Center concerts and trails",
+      "1.0 mi"
+     ],
+     [
+      "Spring Hill Metro",
+      "Silver Line",
+      "1.9 mi"
+     ],
+     [
+      "Route 7",
+      "Leesburg Pike, Tysons",
+      "2.0 mi"
+     ],
+     [
+      "I-495 Capital Beltway",
+      "At Route 7",
+      "3.2 mi"
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      "14.1 mi"
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      "17.3 mi"
+     ]
+    ]
+   }
+  ],
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "feature_headlines": [
+   {
+    "head": "Modern Open Concept Under Vaulted Ceilings",
+    "sub": [
+     "Separate dining and living areas, each with its own fireplace",
+     "Great room added in 2012",
+     "Custom built-in cubbies make a true mudroom"
+    ]
+   },
+   {
+    "head": "A Main Level Owner&rsquo;s Suite",
+    "sub": [
+     "Vaulted ceilings and a private deck",
+     "Sitting room and walk-in closet",
+     "Walk-in shower and a separate soaking tub"
+    ]
+   },
+   {
+    "head": "Lower Level Built for Entertaining",
+    "sub": [
+     "Large recreation room with a custom bar",
+     "Fireplace and wood stove",
+     "Fifth bedroom and a full bathroom"
+    ]
+   },
+   {
+    "head": "1.1 Private Acres, No HOA",
+    "sub": [
+     "Deck, patio, fire pit and hot tub",
+     "Side-yard bamboo forest for privacy",
+     "3-car garage and expanded driveway"
+    ]
+   }
+  ],
+  "loves": [
+   "New great room added in 2012",
+   "High-efficiency geothermal heat pump system",
+   "The basement bar",
+   "Lots of daylight",
+   "Large patio with the hot tub",
+   "Large side-yard bamboo forest for privacy"
+  ],
+  "schools": [
+   "Spring Hill Elementary School",
+   "Cooper Middle School",
+   "Langley High School"
+  ],
+  "gallery": [
+   [
+    "1316_Alps_great_room.jpg",
+    "Great room with stone fireplace under vaulted ceilings"
+   ],
+   [
+    "1316_Alps_kitchen.jpg",
+    "Gourmet kitchen with granite counters and a large island"
+   ],
+   [
+    "1316_Alps_owners_suite.jpg",
+    "Main level owner&rsquo;s suite with a private deck"
+   ],
+   [
+    "1316_Alps_owners_bath.jpg",
+    "En suite bath &mdash; walk-in shower and soaking tub"
+   ],
+   [
+    "1316_Alps_lower_level.jpg",
+    "Lower level recreation room with the custom bar"
+   ],
+   [
+    "1316_Alps_patio.jpg",
+    "Patio, fire pit and hot tub on 1.1 private acres"
+   ]
+  ],
+  "features": {
+   "Top Features": [
+    "Exquisite luxury home tucked away in sought-after Smith Farm",
+    "5 bedrooms and 4 bathrooms across 4,511 finished square feet on 3 levels",
+    "Modern open-concept layout with gorgeous vaulted ceilings throughout",
+    "Separate dining and living areas, each with its own fireplace",
+    "Gourmet kitchen with granite counters, ample counter space and a large island",
+    "Main level owner&rsquo;s suite with private deck, sitting room and walk-in closet",
+    "En suite bath with a walk-in shower and a separate soaking tub",
+    "Lower level recreation room with custom bar, fireplace, fifth bedroom and full bath",
+    "Custom built-in cubbies create a functional mudroom",
+    "1.1-acre lot with deck, patio, fire pit and hot tub &mdash; no HOA",
+    "3-car garage and expanded driveway",
+    "Close to Tysons, Vienna and McLean attractions and commuter routes"
+   ],
+   "Updates &amp; Improvements": [
+    "Interior and exterior paint &mdash; 2026",
+    "Great room flooring &mdash; 2026",
+    "Sump pump installed &mdash; 2025",
+    "Windows &mdash; 2012 to 2025",
+    "Hot water heater &mdash; 2023",
+    "Bathrooms &mdash; 2022",
+    "Roof &mdash; 2020",
+    "Patio &mdash; 2015",
+    "High-efficiency geothermal heat pump system &mdash; 2012",
+    "Siding and furnace &mdash; 2012",
+    "Expanded driveway &mdash; 2011",
+    "Kitchen and appliances &mdash; 2011",
+    "Main level reclaimed hardwood &mdash; 2011"
+   ]
+  },
+  "pricing_pdf": "1316_Alps_Buyer_Report.pdf",
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Wolf Trap is three minutes from the end of the street and the Silver Line is four; all of Tysons sits just east. The arrows point to the airports.",
+   "center": {
+    "lat": 38.94695,
+    "lng": -77.254564,
+    "label": "1316 Alps Dr"
+   },
+   "pins": [
+    {
+     "name": "Wolf Trap National Park",
+     "sub": "Filene Center concerts and trails",
+     "lat": 38.9383676,
+     "lng": -77.264695,
+     "min": 3,
+     "mode": "drive"
+    },
+    {
+     "name": "Spring Hill Metro",
+     "sub": "Silver Line",
+     "lat": 38.928776,
+     "lng": -77.241455,
+     "min": 4,
+     "mode": "drive"
+    },
+    {
+     "name": "Starbucks",
+     "sub": "Coffee &middot; Leesburg Pike",
+     "lat": 38.92832,
+     "lng": -77.23927,
+     "min": 5,
+     "mode": "drive"
+    },
+    {
+     "name": "Roots Cafe",
+     "sub": "Coffee &middot; 8100 Old Dominion Dr",
+     "lat": 38.9523465,
+     "lng": -77.2246768,
+     "min": 5,
+     "mode": "drive"
+    },
+    {
+     "name": "801 Chophouse",
+     "sub": "Fine dining &middot; Westpark Dr",
+     "lat": 38.9248753,
+     "lng": -77.2366864,
+     "min": 6,
+     "mode": "drive"
+    },
+    {
+     "name": "Whole Foods, The Boro",
+     "sub": "Shops, dining and cinema",
+     "lat": 38.924755,
+     "lng": -77.2334584,
+     "min": 6,
+     "mode": "drive"
+    },
+    {
+     "name": "Tysons Galleria",
+     "sub": "Saks, Neiman Marcus, luxury brands",
+     "lat": 38.9243808,
+     "lng": -77.2256557,
+     "min": 7,
+     "mode": "drive"
+    },
+    {
+     "name": "Clyde&rsquo;s of Tysons",
+     "sub": "Family &middot; American, all day",
+     "lat": 38.920869,
+     "lng": -77.230905,
+     "min": 7,
+     "mode": "drive"
+    },
+    {
+     "name": "The Palm",
+     "sub": "Fine dining &middot; Tysons Blvd",
+     "lat": 38.9239957,
+     "lng": -77.2228515,
+     "min": 7,
+     "mode": "drive"
+    },
+    {
+     "name": "Silver Diner",
+     "sub": "Family &middot; Breakfast all day",
+     "lat": 38.9168351,
+     "lng": -77.2260924,
+     "min": 8,
+     "mode": "drive"
+    },
+    {
+     "name": "Tysons Corner Center",
+     "sub": "Virginia&rsquo;s largest mall",
+     "lat": 38.9162905,
+     "lng": -77.2213857,
+     "min": 9,
+     "mode": "drive"
+    },
+    {
+     "name": "Wegmans",
+     "sub": "Capital One Center",
+     "lat": 38.925605,
+     "lng": -77.210107,
+     "min": 9,
+     "mode": "drive"
+    }
+   ],
+   "arrows": [
+    [
+     119.8,
+     [
+      "Reagan National",
+      "DCA \u00b7 30 min"
+     ]
+    ],
+    [
+     272.3,
+     [
+      "Dulles Intl",
+      "IAD \u00b7 24 min"
+     ]
+    ]
+   ]
+  },
+  "deploy_to": "https://buyalps.netlify.app"
+ },
+ "seller_names": "Eric and Christine Oliver",
+ "premium_rating_headline": "Secluded contemporary in Smith Farm &mdash; 1.1 acres, no HOA.",
+ "premium_rating": [
+  [
+   {
+    "label": "Top features",
+    "items": [
+     "5 bedrooms and 4 bathrooms across 4,511 finished square feet on three levels",
+     "Modern open-concept layout with vaulted ceilings and two fireplaces",
+     "Main level owner&rsquo;s suite with private deck, sitting room and walk-in closet",
+     "En suite bath with walk-in shower and separate soaking tub",
+     "Gourmet kitchen with granite counters and a large island",
+     "Lower level recreation room with custom bar, fireplace, fifth bedroom and full bath",
+     "Great room added in 2012",
+     "Custom built-in cubbies create a functional mudroom",
+     "1.1-acre lot with deck, patio, fire pit and hot tub &mdash; no HOA",
+     "Side-yard bamboo forest for privacy; 3-car garage and expanded driveway"
+    ]
+   },
+   {
+    "label": "Other upgrades",
+    "items": [
+     "Interior and exterior paint 2026",
+     "Great room flooring 2026",
+     "Sump pump installed 2025",
+     "Windows replaced 2012&ndash;2025",
+     "Hot water heater 2023",
+     "Bathrooms 2022",
+     "Roof 2020",
+     "Patio 2015",
+     "High-efficiency geothermal heat pump system, siding and furnace 2012",
+     "Expanded driveway 2011",
+     "Kitchen and appliances 2011",
+     "Main level reclaimed hardwood 2011"
+    ]
+   }
+  ]
+ ]
+}

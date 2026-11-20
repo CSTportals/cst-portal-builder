@@ -1,0 +1,655 @@
+{
+ "address": "3106 Whimbrell Ct",
+ "city": "Oakton",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "22124",
+ "county": "Fairfax County",
+ "subdivision": "Willow Creek Estates",
+ "prefix": "3106_Whimbrell",
+ "report_date": "Friday, November 20, 2026",
+ "asset_dir": "assets/3106_Whimbrell",
+ "hero_photo": "3106_Whimbrell_front.jpg",
+ "photos": [
+  "3106_Whimbrell_front.jpg",
+  "3106_Whimbrell_pool.jpg",
+  "3106_Whimbrell_terrace.jpg",
+  "3106_Whimbrell_fireplace.jpg",
+  "3106_Whimbrell_foyer.jpg",
+  "3106_Whimbrell_kitchen.jpg",
+  "3106_Whimbrell_sunroom.jpg",
+  "3106_Whimbrell_family.jpg",
+  "3106_Whimbrell_dining.jpg",
+  "3106_Whimbrell_living.jpg",
+  "3106_Whimbrell_primarybath.jpg",
+  "3106_Whimbrell_primarybath2.jpg",
+  "3106_Whimbrell_billiards.jpg",
+  "3106_Whimbrell_theater.jpg",
+  "3106_Whimbrell_bath.jpg"
+ ],
+ "track_record": "CST_Resales",
+ "seller_names": "Chad",
+ "values": {
+  "dated": 2470613,
+  "customary_unadjusted": 2470613,
+  "customary": 2620613,
+  "customary_list": 2620613,
+  "premium": 2710613,
+  "upgrades": 0,
+  "significant_upgrades": 600000,
+  "upgrade_labels": [
+   "25% Return of Upgrades",
+   "33% Return of Upgrades"
+  ],
+  "coming_soon_override": 2650000,
+  "preview_override": 2750000,
+  "fallback_override": 2500000,
+  "worksheet_note": "20 Nov 2026 worksheet: Customary $2,470,613; 25% return $2,620,613; '33%' return $2,710,613 (= +$240,000, 40% of $600,000); Fall Back $2,500,000, Coming Soon $2,650,000, Preview $2,750,000. Casey: emphasis on Neighborhood Renaissance homes."
+ },
+ "subject": {
+  "built": 1998,
+  "sf": 5241,
+  "lot": 51900,
+  "assessment": 2053000
+ },
+ "comps": {
+  "rows": [
+   [
+    "10507 Oakton Ridge Ct",
+    2005,
+    6550,
+    90274,
+    2295760,
+    2600000
+   ],
+   [
+    "2608 Hunter Mill Rd",
+    1999,
+    4332,
+    172376,
+    1575090,
+    2150000
+   ],
+   [
+    "3703 Waples Crest Ct",
+    2001,
+    6923,
+    0,
+    1740720,
+    2125000
+   ],
+   [
+    "11102 Prince Edward Ct",
+    1991,
+    7312,
+    76756,
+    1934230,
+    2243000
+   ],
+   [
+    "2402 Oakmont Ct",
+    1988,
+    6990,
+    77238,
+    1571670,
+    2747700
+   ]
+  ],
+  "dom": {
+   "10507 Oakton Ridge Ct": 5,
+   "2608 Hunter Mill Rd": 66,
+   "3703 Waples Crest Ct": 56,
+   "11102 Prince Edward Ct": 148,
+   "2402 Oakmont Ct": 18
+  },
+  "list": {
+   "10507 Oakton Ridge Ct": 2600000,
+   "2608 Hunter Mill Rd": 2249000,
+   "3703 Waples Crest Ct": 2250000,
+   "11102 Prince Edward Ct": 2275000,
+   "2402 Oakmont Ct": 2850000
+  },
+  "orig_list": {
+   "10507 Oakton Ridge Ct": 2600000,
+   "2608 Hunter Mill Rd": 2249000,
+   "3703 Waples Crest Ct": 2250000,
+   "11102 Prince Edward Ct": 2275000,
+   "2402 Oakmont Ct": 2850000
+  },
+  "summary": [
+   [
+    "Age and Size &mdash; 3 sales",
+    2002,
+    5494,
+    114155,
+    1931163,
+    2350000
+   ],
+   [
+    "Price Range &mdash; 3 sales",
+    2002,
+    5935,
+    119573,
+    1870523,
+    2291667
+   ]
+  ],
+  "summary_ppsf": {
+   "Age and Size &mdash; 3 sales": {
+    "ppsf": 471
+   },
+   "Price Range &mdash; 3 sales": {
+    "ppsf": 472
+   }
+  },
+  "subject_value": 2470613
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "2713 Silkwood Ct",
+   "dom": 32,
+   "built": 1988,
+   "sf": 5055,
+   "lot": null,
+   "assessment": 1582490,
+   "list": 2499000
+  },
+  {
+   "status": "Active",
+   "address": "2583 Vintage Crest Ln",
+   "dom": 24,
+   "built": 2005,
+   "sf": null,
+   "lot": null,
+   "assessment": 2228630,
+   "list": 2499000
+  }
+ ],
+ "market": {
+  "name": "Oakton Luxury Market",
+  "slug": "Oakton_Luxury_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "portal_url": "https://3106whimbrell.netlify.app",
+ "agent": {
+  "lookup": "Casey Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "casey@caseysamson.com",
+  "title": "REALTOR&reg;"
+ },
+ "notes": [
+  "<b>Renaissance neighborhood.</b> 3106 Whimbrell Ct is a 1998 Renaissance &ldquo;Grand Monet&rdquo; in Willow Creek Estates. Neighbors are always the most disputed comps, so they carry the most weight: 3014 Apple Brook Ln sold for $2,250,000 in Dec 2025 (1998, no pool), and 10807 Tradewind Dr sold for $2,450,000 in Oct 2024 (1998, pool). Whimbrell adds what neither had &mdash; a 2021&ndash;22 resort pool, terraces and heated sunroom, renovated primary and guest baths, and a finished lower level. 3109 Whimbrell Ct, on the same court and much larger, is active at $3,699,500. (Neighborhood sales from the seller&rsquo;s packet; confirm in Bright MLS.)"
+ ],
+ "engine": {
+  "7": "Willow Creek Estates (Windsong Creek HOA): a 1998 Renaissance &ldquo;Grand Monet,&rdquo; county quality grade E20 (Excellent), on 1.19 acres at the end of the cul-de-sac. The neighborhood&rsquo;s own Renaissance-era homes set the standard buyers compare against: 3014 Apple Brook Ln sold $2,250,000 (Dec 2025, 1998, no pool); 10807 Tradewind Dr sold $2,450,000 (Oct 2024, 1998, pool); and 3109 Whimbrell Ct, on the same court, is active at $3,699,500.",
+  "7_firing": true,
+  "9": "$600,000 of extraordinary upgrades credited (of about $1.08M documented since 2008, including the 2021&ndash;22 pool, terraces and sunroom): buyers return 25% ($150,000) to the top value ($240,000).",
+  "9_firing": true
+ },
+ "market_map": {
+  "subject": [
+   38.8863007,
+   -77.3240967
+  ],
+  "subject_dir": "left",
+  "subject_dir_solds": "right",
+  "solds": [
+   {
+    "address": "10507 Oakton Ridge Ct",
+    "sale": 2600000,
+    "list": 2600000,
+    "orig_list": 2600000,
+    "dom": 5,
+    "status": "Sold",
+    "lat": 38.888023,
+    "lng": -77.311763
+   },
+   {
+    "address": "2608 Hunter Mill Rd",
+    "sale": 2150000,
+    "list": 2249000,
+    "orig_list": 2249000,
+    "dom": 66,
+    "status": "Sold",
+    "lat": 38.8976083,
+    "lng": -77.30625
+   },
+   {
+    "address": "3703 Waples Crest Ct",
+    "sale": 2125000,
+    "list": 2250000,
+    "orig_list": 2250000,
+    "dom": 56,
+    "status": "Sold",
+    "lat": 38.8735988,
+    "lng": -77.3499964
+   },
+   {
+    "address": "11102 Prince Edward Ct",
+    "sale": 2243000,
+    "list": 2275000,
+    "orig_list": 2275000,
+    "dom": 148,
+    "status": "Sold",
+    "lat": 38.9058541,
+    "lng": -77.3308399
+   },
+   {
+    "address": "2402 Oakmont Ct",
+    "sale": 2747700,
+    "list": 2850000,
+    "orig_list": 2850000,
+    "dom": 18,
+    "status": "Sold",
+    "lat": 38.9187454,
+    "lng": -77.33248
+   }
+  ],
+  "listings": [
+   {
+    "address": "2713 Silkwood Ct",
+    "status": "Active",
+    "list": 2499000,
+    "dom": 32,
+    "lat": 38.8974894,
+    "lng": -77.3315415
+   },
+   {
+    "address": "2583 Vintage Crest Ln",
+    "status": "Active",
+    "list": 2499000,
+    "dom": 24,
+    "lat": 38.9141958,
+    "lng": -77.3371131
+   }
+  ]
+ },
+ "market_snapshot": {
+  "label": "Oakton Competition",
+  "source": "Bright MLS, Nov 20, 2026."
+ },
+ "premium_rating": [
+  [
+   {
+    "label": "Top Features",
+    "items": [
+     "1998 Renaissance &ldquo;Grand Monet,&rdquo; Willow Creek Estates",
+     "1.19 acres at the end of a cul-de-sac",
+     "5 bedrooms, 4 full and 1 half baths, all renovated",
+     "Three-car side-load garage"
+    ]
+   },
+   {
+    "label": "Outdoor Living",
+    "items": [
+     "Gunite 15&times;30 pool, salt system, heater, auto cover (2021)",
+     "Travertine terraces, stone walls, wood-burning fireplace",
+     "Heated sunroom with Andersen windows (2021&ndash;22)",
+     "Outdoor kitchen with Coyote grill (2022)"
+    ]
+   }
+  ],
+  [
+   {
+    "label": "Schools",
+    "items": [
+     "Waples Mill Elementary School",
+     "Franklin Middle School",
+     "Oakton High School"
+    ]
+   },
+   {
+    "label": "Systems",
+    "items": [
+     "Roof 2020, HVAC 2022&ndash;23, water heater 2025",
+     "Generac 22 kW whole-house generator",
+     "Moen Flo leak detection"
+    ]
+   }
+  ]
+ ],
+ "buyer_portal": {
+  "display_address": "3106 Whimbrell Ct",
+  "asset_dir": "assets/3106_Whimbrell/buyer",
+  "hero_photo": "3106_Whimbrell_front.jpg",
+  "deploy_to": "https://buywhimbrell.netlify.app",
+  "url": "https://buywhimbrell.netlify.app",
+  "live": true,
+  "status_line": "Coming Soon",
+  "headline": "A renovated 1998 Renaissance &ldquo;Grand Monet&rdquo; on 1.19 acres in Willow Creek Estates.",
+  "facts": [
+   [
+    "5",
+    "Bedrooms"
+   ],
+   [
+    "4.5",
+    "Bathrooms"
+   ],
+   [
+    "5,241",
+    "Above grade SF"
+   ],
+   [
+    "1.19",
+    "Acres"
+   ],
+   [
+    "1998",
+    "Year built"
+   ],
+   [
+    "Over $600K",
+    "In upgrades"
+   ]
+  ],
+  "highlights": [
+   "Resort pool, terraces and heated sunroom (2021&ndash;22)",
+   "All baths renovated; steam-shower primary",
+   "Finished walkout: theater, gym, billiards",
+   "Waples Mill, Franklin, Oakton High"
+  ],
+  "feature_headlines": [
+   {
+    "head": "Renovated Inside and Out",
+    "sub": [
+     "About $1.08 million of documented work since 2008 &mdash; every bath renovated, a remodeled kitchen, refinished lower level, new roof, HVAC and generator, and a 2021&ndash;22 resort outdoor living package."
+    ]
+   },
+   {
+    "head": "A Resort in the Back Yard",
+    "sub": [
+     "A gunite pool, multi-level travertine terraces, a wood-burning stone fireplace, outdoor kitchen and a heated sunroom, built 2021&ndash;22."
+    ]
+   },
+   {
+    "head": "Every Bath Renovated",
+    "sub": [
+     "A primary bath with ThermaSol steam shower, heated floor and freestanding tub; the Jack-and-Jill and guest baths redone with heated floors."
+    ]
+   },
+   {
+    "head": "A Lower Level Made for Entertaining",
+    "sub": [
+     "A walkout with a theater, gym, billiards and wet bar, plus a bedroom and full bath for guests."
+    ]
+   },
+   {
+    "head": "A Renaissance Home on 1.19 Acres",
+    "sub": [
+     "A 1998 Renaissance &ldquo;Grand Monet&rdquo; at the end of a cul-de-sac in Willow Creek Estates, with mature trees on every rear boundary."
+    ]
+   }
+  ],
+  "features": {
+   "Inside": [
+    "Two-story foyer, Brazilian cherry floors",
+    "Kitchen open to the breakfast room",
+    "Two-story family room",
+    "Primary bath with steam shower and heated floor",
+    "Finished walkout lower level"
+   ],
+   "Outside": [
+    "Gunite pool with salt system and auto cover",
+    "Travertine terraces and stone walls",
+    "Wood-burning stone fireplace",
+    "Heated sunroom",
+    "Outdoor kitchen",
+    "Three-car side-load garage"
+   ]
+  },
+  "gallery": [
+   [
+    "3106_Whimbrell_front.jpg",
+    "Brick colonial at the end of the cul-de-sac on 1.19 acres"
+   ],
+   [
+    "3106_Whimbrell_pool.jpg",
+    "Gunite pool, travertine terraces and the heated sunroom at dusk"
+   ],
+   [
+    "3106_Whimbrell_terrace.jpg",
+    "Multi-level travertine terraces and composite deck"
+   ],
+   [
+    "3106_Whimbrell_fireplace.jpg",
+    "Wood-burning stone fireplace on the pool terrace"
+   ],
+   [
+    "3106_Whimbrell_foyer.jpg",
+    "Two-story foyer with Brazilian cherry floors"
+   ],
+   [
+    "3106_Whimbrell_kitchen.jpg",
+    "Kitchen open to the breakfast room"
+   ],
+   [
+    "3106_Whimbrell_sunroom.jpg",
+    "Heated sunroom with Andersen windows and sliding doors"
+   ],
+   [
+    "3106_Whimbrell_family.jpg",
+    "Two-story family room with arched windows"
+   ],
+   [
+    "3106_Whimbrell_dining.jpg",
+    "Dining room with shadow-box trim"
+   ],
+   [
+    "3106_Whimbrell_living.jpg",
+    "Living room"
+   ],
+   [
+    "3106_Whimbrell_primarybath.jpg",
+    "Primary bath: steam shower, heated floor, freestanding tub"
+   ],
+   [
+    "3106_Whimbrell_primarybath2.jpg",
+    "Primary bath soaking tub"
+   ],
+   [
+    "3106_Whimbrell_billiards.jpg",
+    "Lower-level billiards and game room"
+   ],
+   [
+    "3106_Whimbrell_theater.jpg",
+    "Lower-level theater"
+   ],
+   [
+    "3106_Whimbrell_bath.jpg",
+    "Renovated guest bath with heated floor"
+   ]
+  ],
+  "pricing_pdf": "3106_Whimbrell_Buyer_Report.pdf",
+  "snapshot": {
+   "title": "Market Snapshot",
+   "lede": "Every home 3106 Whimbrell Ct is competing with, and what each one is asking.",
+   "rows": [
+    [
+     "ACT",
+     "2713 Silkwood Ct",
+     32,
+     1988,
+     5055,
+     null,
+     1582490,
+     2499000
+    ],
+    [
+     "ACT",
+     "2583 Vintage Crest Ln",
+     24,
+     2005,
+     null,
+     null,
+     2228630,
+     2499000
+    ]
+   ]
+  },
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Willow Creek Estates in Oakton, with Flint Hill School a mile away, the Oakton schools close by, and Fairfax Corner, Mosaic and Tysons a short drive. The arrows point to everything past the edge of the map.",
+   "center": {
+    "lat": 38.8863007,
+    "lng": -77.3240967,
+    "label": "3106 Whimbrell Ct"
+   },
+   "pins": [
+    {
+     "name": "Flint Hill School",
+     "sub": "Private JK&ndash;12, about a mile",
+     "lat": 38.8702797,
+     "lng": -77.3197133
+    },
+    {
+     "name": "Waples Mill Elementary School",
+     "sub": "Fairfax County Public Schools",
+     "lat": 38.8762924,
+     "lng": -77.3447978
+    },
+    {
+     "name": "Oakton High School",
+     "sub": "Fairfax County Public Schools",
+     "lat": 38.8774554,
+     "lng": -77.2822231
+    },
+    {
+     "name": "Vienna/Fairfax-GMU Metro",
+     "sub": "Orange Line",
+     "lat": 38.87782,
+     "lng": -77.2713545
+    }
+   ],
+   "arrows": [
+    [
+     223.4,
+     [
+      "Fairfax Corner",
+      "Dining and shopping &middot; 9 min"
+     ]
+    ],
+    [
+     207.6,
+     [
+      "Wegmans",
+      "Fairfax &middot; 9 min"
+     ]
+    ],
+    [
+     100.4,
+     [
+      "Mosaic District",
+      "Dining and shopping &middot; 12 min"
+     ]
+    ],
+    [
+     68.7,
+     [
+      "Tysons Corner Center",
+      "Shopping &middot; 13 min"
+     ]
+    ],
+    [
+     302.4,
+     [
+      "Dulles International",
+      "IAD &middot; 19 min"
+     ]
+    ],
+    [
+     87.3,
+     [
+      "Washington, DC",
+      "Union Station &middot; 38 min"
+     ]
+    ]
+   ]
+  },
+  "amenities_lede": "Waples Mill Elementary and Flint Hill School nearby, Fairfax Corner and Wegmans for dining and groceries, and the Vienna Metro and I-66 for the commute.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Vienna/Fairfax-GMU Metro",
+      "Orange Line",
+      3.77
+     ],
+     [
+      "Vienna/Fairfax-GMU Metro",
+      "Orange Line",
+      3.77
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      11.07
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      20.19
+     ],
+     [
+      "Washington, DC",
+      "Union Station",
+      22.25
+     ]
+    ]
+   },
+   {
+    "title": "Fine Dining",
+    "items": [
+     [
+      "Mosaic District",
+      "Restaurants",
+      6.73
+     ]
+    ]
+   },
+   {
+    "title": "Shopping",
+    "items": [
+     [
+      "Fairfax Corner",
+      "Dining and shopping",
+      3.55
+     ],
+     [
+      "Wegmans",
+      "Fairfax",
+      3.57
+     ],
+     [
+      "Tysons Corner Center",
+      "Shopping",
+      7.6
+     ]
+    ]
+   }
+  ],
+  "schools": [
+   "Waples Mill Elementary School",
+   "Franklin Middle School",
+   "Oakton High School",
+   "AAP centers: Hunters Woods Elementary, Carson Middle",
+   "Flint Hill School (private, JK&ndash;12) about a mile away"
+  ]
+ }
+}

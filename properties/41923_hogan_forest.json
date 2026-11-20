@@ -1,0 +1,265 @@
+{
+  "address": "41923 Hogan Forest Ter",
+  "city": "Aldie",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "20105",
+  "county": "Loudoun",
+  "congestion_fees": false,
+  "report_date": "Wednesday, October 14, 2026",
+  "prefix": "41923_Hogan_Forest",
+  "listing_url": "41923HoganForest.com",
+  "portal_url": "https://41923hoganforest.netlify.app",
+  "include_tracker": true,
+  "listing_status": "new",
+  "subject": {
+    "built": 2024,
+    "sf": 2298,
+    "lot": 3500,
+    "assessment": 659000
+  },
+  "values": {
+    "dated": 608016,
+    "customary": 675573,
+    "customary_list": 689602,
+    "premium": 729619,
+    "upgrades": 0
+  },
+  "comps": {
+    "rows": [
+      [
+        "41907 Hogan Forest Ter",
+        2024,
+        2290,
+        2614,
+        657620,
+        705000
+      ],
+      [
+        "41919 Poplar Meadow Ter",
+        2024,
+        2330,
+        2178,
+        669870,
+        700000
+      ],
+      [
+        "41917 Hogan Forest Ter",
+        2024,
+        2290,
+        2614,
+        680750,
+        660000
+      ],
+      [
+        "41916 Hogan Forest Ter",
+        2024,
+        2298,
+        2614,
+        667450,
+        658680
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        2024,
+        2302,
+        2505,
+        668923,
+        680920
+      ]
+    ]
+  },
+  "competition": [],
+  "agent": {
+    "lookup": "Casey Samson",
+    "display": "Casey Samson",
+    "phone": "703-508-2535",
+    "email": "casey@caseysamson.com"
+  },
+  "buyer_portal": {
+    "display_address": "41923 Hogan Forest Ter",
+    "site": "41923HoganForest.com",
+    "live": true,
+    "list_price": 649999,
+    "status_line": "Coming Soon",
+    "facts": [
+      [
+        "2024",
+        "Year built"
+      ],
+      [
+        "2,298",
+        "Finished square feet"
+      ],
+      [
+        "3,500",
+        "Lot size (sq ft)"
+      ],
+      [
+        "Aldie",
+        "Loudoun County"
+      ]
+    ],
+    "contacts": {
+      "names": "Casey Samson",
+      "team": "The Casey Samson Team &middot; Samson Properties",
+      "lines": [
+        [
+          "Casey Samson",
+          "703-508-2535",
+          "Casey@caseysamson.com"
+        ]
+      ],
+      "office": "Samson Properties &middot; Northern Virginia",
+      "photo": "HF_agents.jpg"
+    },
+    "pricing_pdf": "41923_Hogan_Forest_Buyer_Report.pdf",
+    "locator_map": {
+      "title": "The Neighborhood",
+      "lede": "South 620 sits off Braddock Road with Pinebrook Elementary at the end of the street. The Stone Ridge village centre, the library and the commuter lot are all about two miles north. The arrows point to everything beyond the map.",
+      "center": {
+        "lat": 38.910752,
+        "lng": -77.553768,
+        "label": "41923 Hogan Forest Ter"
+      },
+      "pins": [
+        {
+          "name": "Pinebrook Elementary School",
+          "sub": "Loudoun County Public Schools",
+          "lat": 38.912398,
+          "lng": -77.556211
+        },
+        {
+          "name": "Gum Spring Middle School",
+          "sub": "Loudoun County Public Schools",
+          "lat": 38.924784,
+          "lng": -77.546945
+        },
+        {
+          "name": "John Champe High School",
+          "sub": "Loudoun County Public Schools",
+          "lat": 38.932283,
+          "lng": -77.565883
+        },
+        {
+          "name": "Conklin Community Park",
+          "sub": "Fields, tennis and bike trails",
+          "lat": 38.908428,
+          "lng": -77.524504
+        },
+        {
+          "name": "Gum Spring Library",
+          "sub": "Loudoun County Public Library",
+          "lat": 38.937533,
+          "lng": -77.545641
+        },
+        {
+          "name": "Harris Teeter",
+          "sub": "Stone Ridge Village Center",
+          "lat": 38.939354,
+          "lng": -77.549094
+        },
+        {
+          "name": "Dulles South Park &amp; Ride",
+          "sub": "Commuter bus to DC and Tysons",
+          "lat": 38.938442,
+          "lng": -77.55003
+        },
+        {
+          "name": "Hal &amp; Berni Hanson Regional Park",
+          "sub": "Regional park and trails",
+          "lat": 38.971819,
+          "lng": -77.548977
+        }
+      ],
+      "arrows": [
+        [
+          63.1,
+          [
+            "Dulles International",
+            "IAD &middot; 14 min"
+          ]
+        ],
+        [
+          27.2,
+          [
+            "Ashburn Metro",
+            "Silver Line &middot; 16 min"
+          ]
+        ]
+      ]
+    },
+    "amenities_lede": "Pinebrook Elementary is a walk from the door and everything else is inside ten minutes.",
+    "amenities": [
+      {
+        "title": "Getting Around",
+        "items": [
+          [
+            "Dulles South Park &amp; Ride",
+            "Commuter bus to DC and Tysons",
+            2.5
+          ]
+        ]
+      },
+      {
+        "title": "Every Day",
+        "items": [
+          [
+            "Gum Spring Library",
+            "Loudoun County Public Library",
+            2.47
+          ],
+          [
+            "Harris Teeter",
+            "Stone Ridge Village Center",
+            2.59
+          ]
+        ]
+      },
+      {
+        "title": "Schools and Parks",
+        "items": [
+          [
+            "Pinebrook Elementary School",
+            "Loudoun County Public Schools",
+            "5 min walk"
+          ],
+          [
+            "Gum Spring Middle School",
+            "Loudoun County Public Schools",
+            1.35
+          ],
+          [
+            "Conklin Community Park",
+            "Fields, tennis and bike trails",
+            2.06
+          ],
+          [
+            "John Champe High School",
+            "Loudoun County Public Schools",
+            2.11
+          ],
+          [
+            "Hal &amp; Berni Hanson Regional Park",
+            "Regional park and trails",
+            5.5
+          ]
+        ]
+      }
+    ],
+    "asset_dir": "assets/41923_Hogan_Forest/buyer",
+    "hero_photo": "HF_interior.png"
+  },
+  "asset_dir": "assets/41923_Hogan_Forest",
+  "hero_photo": "HF_interior.png",
+  "track_record": "Track_Record_Under_3500",
+  "team_stats_title": "The Casey Samson Team &mdash; Homes Sold Under 3,500 SF",
+  "market": {
+    "name": "Aldie Family Market",
+    "slug": "Aldie_Family_Market_Snapshot",
+    "stats": null,
+    "absorption": null
+  }
+}

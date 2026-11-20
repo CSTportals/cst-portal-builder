@@ -1,0 +1,112 @@
+{
+ "address": "19598 Youngs Cliff Rd",
+ "city": "Sterling",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "",
+ "county": "Loudoun County",
+ "congestion_fees": false,
+ "report_date": "Wednesday, September 9, 2026",
+ "prefix": "19598_Youngs_Cliff",
+ "listing_url": "19598YoungsCliff.com",
+ "agent": {
+  "lookup": "Casey C Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "Casey@caseysamson.com"
+ },
+ "subject": {
+  "built": 1969,
+  "sf": 1574,
+  "lot": 50094,
+  "assessment": 808020
+ },
+ "values": {
+  "dated": 766800,
+  "customary": 852000,
+  "customary_list": 881582,
+  "premium": 920160
+ },
+ "comps": {
+  "rows": [
+   [
+    "45383 Persimmon Ln",
+    1966,
+    2313,
+    40075,
+    892440,
+    892500
+   ],
+   [
+    "19540 Smith Cir",
+    1962,
+    1390,
+    55757,
+    749190,
+    850000
+   ],
+   [
+    "45448 Mallard St",
+    1962,
+    2328,
+    24829,
+    711310,
+    720000
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    1964,
+    2321,
+    32452,
+    801875,
+    806250
+   ],
+   [
+    "Price Range Average",
+    1963,
+    2010,
+    40220,
+    784313,
+    820833
+   ]
+  ]
+ },
+ "market": {
+  "name": "Loudoun Family Market",
+  "slug": "Loudoun_Family_Market_Snapshot",
+  "subhead": "Nothing in this segment is currently under contract, while every home that has sold has sold successfully &mdash; a market that rewards correct entry pricing and punishes everything else.",
+  "stats": null,
+  "absorption": null
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "19141 Youngs Cliff Rd",
+   "dom": 120,
+   "built": 1973,
+   "sf": 1999,
+   "lot": 40511,
+   "list": 1100000
+  },
+  {
+   "status": "Active",
+   "address": "19955 Youngs Cliff Rd",
+   "dom": 82,
+   "built": 1974,
+   "sf": 1560,
+   "lot": 52708,
+   "list": 1099900
+  }
+ ],
+ "notes": [
+  "Both competing homes are on Youngs Cliff Rd itself, both listed at roughly <b>$1.1 million</b>, and both have stalled &mdash; <b>120 and 82 days on market</b> with <b>nothing under contract in the segment</b>. Neither is supported by the comparable sales, which top out at $892,500. They are not competition for a correctly priced home so much as evidence of what happens without a pricing strategy: two neighbours anchored well above the market, sitting.",
+  "The three closed sales tell the opposite story &mdash; <b>26, 1 and 9 days on market</b> at or above list. In this segment homes either sell almost immediately or do not sell at all."
+ ],
+ "photos": [],
+ "premium_rating": null,
+ "hero_photo": null,
+ "include_tracker": true,
+ "portal_url": "https://19598youngscliff.netlify.app"
+}

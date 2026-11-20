@@ -1,0 +1,361 @@
+{
+ "address": "24938 Dahlia Manor Pl",
+ "city": "Aldie",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "20105",
+ "county": "Loudoun",
+ "congestion_fees": false,
+ "report_date": "Thursday, October 8, 2026",
+ "prefix": "24938_Dahlia_Manor",
+ "listing_url": "24938DahliaManor.com",
+ "portal_url": "https://24938dahliamanor.netlify.app",
+ "include_tracker": true,
+ "listing_status": "new",
+ "subject": {
+  "built": 2017,
+  "sf": 3775,
+  "lot": 21344,
+  "assessment": 1478000
+ },
+ "values": {
+  "dated": 1405963,
+  "customary": 1562181,
+  "customary_list": 1544915,
+  "premium": 1687156,
+  "upgrades": 0
+ },
+ "comps": {
+  "rows": [
+   [
+    "24886 Dahlia Manor Pl",
+    2017,
+    3437,
+    39640,
+    1452450,
+    1600000
+   ],
+   [
+    "24385 White Elm Pl",
+    2021,
+    3952,
+    11326,
+    1405400,
+    1585000
+   ],
+   [
+    "41356 Lavender Breeze Cir",
+    2018,
+    4272,
+    14375,
+    1581410,
+    1575000
+   ],
+   [
+    "25970 Liquidambar",
+    2019,
+    3624,
+    16117,
+    1402150,
+    1575000
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    2018,
+    4064,
+    11652,
+    1289510,
+    1340800
+   ],
+   [
+    "Price Range Average",
+    2019,
+    3821,
+    20365,
+    1460353,
+    1583750
+   ]
+  ]
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "24584 Buckwheat Ln",
+   "dom": 25,
+   "built": 2017,
+   "sf": 3100,
+   "lot": 24829,
+   "list": 1495000,
+   "assessment": 1340710
+  },
+  {
+   "status": "Active",
+   "address": "24590 Lenah Crossing Dr",
+   "dom": 43,
+   "built": 2019,
+   "sf": 4115,
+   "lot": 10454,
+   "list": 1499999,
+   "assessment": 1420540
+  },
+  {
+   "status": "Active",
+   "address": "41116 Hickory Hedge Pl",
+   "dom": 64,
+   "built": 2018,
+   "sf": 3367,
+   "lot": 14375,
+   "list": 1425000,
+   "assessment": 1328390
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "24138 Bryce Ridge Ct",
+   "dom": 8,
+   "built": 2018,
+   "sf": 3972,
+   "lot": 9148,
+   "list": 1499980,
+   "assessment": 1285430
+  },
+  {
+   "status": "Pending",
+   "address": "25707 House Martin Ln",
+   "dom": 93,
+   "built": 2018,
+   "sf": 3708,
+   "lot": 9583,
+   "list": 1449990,
+   "assessment": 1396330
+  },
+  {
+   "status": "Pending",
+   "address": "40452 Windyhill Farms Dr",
+   "dom": 160,
+   "built": 2024,
+   "sf": 4332,
+   "lot": 67954,
+   "list": 1449900,
+   "assessment": 1550360
+  }
+ ],
+ "market": {
+  "name": "Aldie Luxury Market",
+  "slug": "Aldie_Luxury_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "agent": {
+  "lookup": "Casey Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "casey@caseysamson.com"
+ },
+ "buyer_portal": {
+  "display_address": "24938 Dahlia Manor Pl",
+  "site": "24938DahliaManor.com",
+  "url": "https://caseysamson.com/market-snapshot/buydahlia",
+  "deploy_to": "https://buydahlia.netlify.app",
+  "live": false,
+  "list_price": 1499999,
+  "status_line": "Coming Soon",
+  "headline": "A 2017 build on half an acre in Lenah Mill &mdash; Willard Middle two minutes out, Dulles under twenty.",
+  "facts": [
+   [
+    "2017",
+    "Year built"
+   ],
+   [
+    "3,775",
+    "Finished square feet"
+   ],
+   [
+    "21,344",
+    "Lot size (sq ft)"
+   ],
+   [
+    "Aldie",
+    "Loudoun County"
+   ]
+  ],
+  "amenities_lede": "Three Loudoun schools inside two miles, Willowsford&rsquo;s lake and trails about the same, and Dulles closer than the Beltway.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Dulles South Park &amp; Ride",
+      "Commuter bus to DC and Tysons",
+      3.64
+     ],
+     [
+      "Ashburn Metro",
+      "Silver Line terminus",
+      10.23
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      10.89
+     ],
+     [
+      "Washington, DC",
+      "Downtown",
+      39.45
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      39.81
+     ]
+    ]
+   },
+   {
+    "title": "Every Day",
+    "items": [
+     [
+      "The Lodge at Willow Lake",
+      "Willowsford amenity center",
+      1.26
+     ],
+     [
+      "Gum Spring Library",
+      "Loudoun County Public Library",
+      3.91
+     ],
+     [
+      "Brambleton Library",
+      "Loudoun County Public Library",
+      6.72
+     ],
+     [
+      "One Loudoun",
+      "Shopping, dining and cinema",
+      15.04
+     ],
+     [
+      "Inova Loudoun Hospital",
+      "Leesburg",
+      15.62
+     ]
+    ]
+   },
+   {
+    "title": "Schools and Parks",
+    "items": [
+     [
+      "Willard Middle School",
+      "Loudoun County Public Schools",
+      0.8
+     ],
+     [
+      "Willowsford Community Park",
+      "Trails and open space",
+      1.15
+     ],
+     [
+      "Lightridge High School",
+      "Loudoun County Public Schools",
+      1.25
+     ],
+     [
+      "Hovatter Elementary School",
+      "Loudoun County Public Schools",
+      1.55
+     ]
+    ]
+   }
+  ],
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Lenah Mill sits off Braddock Road, with Willard Middle under a mile and Willowsford&rsquo;s lake and trails just beyond. The arrows point to everything past the edge of the map.",
+   "center": {
+    "lat": 38.9293265,
+    "lng": -77.600636,
+    "label": "24938 Dahlia Manor Pl"
+   },
+   "pins": [
+    {
+     "name": "Willard Middle School",
+     "sub": "Loudoun County Public Schools",
+     "lat": 38.927219,
+     "lng": -77.58944
+    },
+    {
+     "name": "Willowsford Community Park",
+     "sub": "Trails and open space",
+     "lat": 38.924944,
+     "lng": -77.585212
+    },
+    {
+     "name": "Lightridge High School",
+     "sub": "Loudoun County Public Schools",
+     "lat": 38.921223,
+     "lng": -77.586114
+    },
+    {
+     "name": "The Lodge at Willow Lake",
+     "sub": "Willowsford amenity center",
+     "lat": 38.925852,
+     "lng": -77.583151
+    },
+    {
+     "name": "Hovatter Elementary School",
+     "sub": "Loudoun County Public Schools",
+     "lat": 38.922151,
+     "lng": -77.58041
+    },
+    {
+     "name": "Dulles South Park &amp; Ride",
+     "sub": "Commuter bus to DC and Tysons",
+     "lat": 38.938516,
+     "lng": -77.549954
+    },
+    {
+     "name": "Gum Spring Library",
+     "sub": "Loudoun County Public Library",
+     "lat": 38.937744,
+     "lng": -77.545799
+    }
+   ],
+   "arrows": [
+    [
+     78.7,
+     [
+      "Dulles International",
+      "IAD &middot; 19 min"
+     ]
+    ],
+    [
+     48.3,
+     [
+      "Ashburn Metro",
+      "Silver Line &middot; 18 min"
+     ]
+    ],
+    [
+     92.7,
+     [
+      "Washington, DC",
+      "53 min"
+     ]
+    ]
+   ]
+  },
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "pricing_pdf": "24938_Dahlia_Manor_Buyer_Report.pdf"
+ }
+}

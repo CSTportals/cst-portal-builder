@@ -1,0 +1,32 @@
+{
+  "address": "513 Kramer Dr", "city": "Vienna", "state": "Virginia",
+  "state_abbr": "VA", "zip": "", "county": "Fairfax County",
+  "congestion_fees": true,
+  "report_date": "Monday, September 21, 2026",
+  "prefix": "513_Kramer", "listing_url": "513Kramer.com",
+  "portal_url": "https://513kramer.netlify.app",
+  "include_tracker": true,
+  "subject": { "built": 2000, "sf": 3052, "lot": 16000, "assessment": 1159000 },
+  "values": { "dated": 1179396, "customary": 1310440, "customary_list": 1255142, "premium": 1415275 },
+  "comps": {
+    "rows": [
+      ["10223 Cedar Pond",  1985, 2924, 40542, 1466250, 1432200],
+      ["1311 Tulip Poplar", 1981, 3255, 22216, 1321040, 1551500],
+      ["8401 Cardinal",     1986, 2644,  9148, 1237750, 1440000],
+      ["1808 Batten Hollow",1981, 2682, 21503, 1291640, 1550000]
+    ],
+    "summary": [
+      ["Age &amp; Size Average", 1988, 2785, 16918, 1279436, 1437540],
+      ["Price Range Average",    1990, 2810, 15772, 1276385, 1409425]
+    ]
+  },
+  "market": {
+    "name": "Vienna Family Market", "slug": "Vienna_Family_Market_Snapshot",
+    "subhead": "Every home that sold in this segment sold successfully, and only one competitor is currently active.",
+    "stats": null, "absorption": null
+  },
+  "competition": [
+    { "status": "Active", "address": "9830 Faust Dr", "dom": 10, "built": 1985, "sf": 2840, "lot": 43301, "list": 1400000 }
+  ],
+  "notes": [], "photos": [], "premium_rating": null
+}

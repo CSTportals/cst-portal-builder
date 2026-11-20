@@ -1,0 +1,155 @@
+{
+  "address": "14513 Spotswood Furnace Rd",
+  "city": "Fredericksburg",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "",
+  "county": "Spotsylvania County",
+  "congestion_fees": false,
+  "report_date": "Wednesday, September 23, 2026",
+  "prefix": "14513_Spotswood",
+  "listing_url": "14513SpotswoodFurnace.com",
+  "portal_url": "https://14513spotswoodfurnace.netlify.app",
+  "include_tracker": true,
+  "asset_dir": "assets/14513_Spotswood",
+  "hero_photo": "14513_Spotswood_front.png",
+  "photos": [
+    "14513_Spotswood_front.png"
+  ],
+  "agent": {
+    "lookup": "Casey C Samson",
+    "display": "Casey Samson",
+    "phone": "703-508-2535",
+    "email": "Casey@caseysamson.com"
+  },
+  "agent_page": "casey-c-samson.html",
+  "subject": {
+    "built": 1981,
+    "sf": 2088,
+    "lot": 142000,
+    "assessment": 499000
+  },
+  "values": {
+    "dated": 584278,
+    "customary": 649198,
+    "customary_list": 659421,
+    "premium": 701134
+  },
+  "comps": {
+    "rows": [
+      [
+        "13355 Golden C",
+        1989,
+        2080,
+        0,
+        372200,
+        550000
+      ],
+      [
+        "13612 Perimeter",
+        2000,
+        2110,
+        94525,
+        480100,
+        699500
+      ],
+      [
+        "10 Ridgeview Ci",
+        1977,
+        1628,
+        101037,
+        427500,
+        579110
+      ],
+      [
+        "10006 Elys Ford",
+        1998,
+        1558,
+        242194,
+        435400,
+        610000
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        1986,
+        1783,
+        96552,
+        391833,
+        527248
+      ],
+      [
+        "Price Range Average",
+        1993,
+        2020,
+        138952,
+        467980,
+        627912
+      ]
+    ]
+  },
+  "market": {
+    "name": null,
+    "slug": null,
+    "subhead": "Two homes make up the current competition, with everything else in the segment already sold.",
+    "stats": null,
+    "absorption": null
+  },
+  "competition": [
+    {
+      "status": "Active",
+      "address": "13600 S General",
+      "dom": 98,
+      "built": 1998,
+      "sf": 2342,
+      "lot": 133294,
+      "list": 719000
+    },
+    {
+      "status": "Active Under Contract",
+      "address": "37 Koval Ln",
+      "dom": 4,
+      "built": 1988,
+      "sf": 1654,
+      "lot": 490703,
+      "list": 610000
+    }
+  ],
+  "notes": [],
+  "premium_rating": [
+    [
+      {
+        "label": "Top Features",
+        "items": [
+          "Private 3.26-acre lot in a peaceful setting",
+          "Large carport",
+          "Expansive deck and gazebo for relaxing or entertaining",
+          "Hardwood flooring throughout",
+          "Renovated kitchen &mdash; white cabinetry, stainless steel appliances and granite countertops",
+          "Three bedrooms, two full and two half bathrooms",
+          "Spacious main-level primary bedroom"
+        ]
+      }
+    ],
+    [
+      {
+        "label": "Lower Level",
+        "items": [
+          "Finished walkout basement",
+          "Full bathroom",
+          "Bonus room for a home office, gym, hobby space or additional living area",
+          "Direct access to the side yard"
+        ]
+      },
+      {
+        "label": "Location",
+        "items": [
+          "Over three acres of privacy and country living",
+          "Easy access to Fredericksburg, shopping and dining",
+          "Convenient to major commuter routes"
+        ]
+      }
+    ]
+  ]
+}

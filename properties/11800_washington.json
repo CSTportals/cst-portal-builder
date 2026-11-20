@@ -1,0 +1,114 @@
+{
+  "address": "11800 Washington Street",
+  "city": "Fairfax",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "",
+  "county": "Fairfax County",
+  "congestion_fees": true,
+  "report_date": "Monday, September 14, 2026",
+  "prefix": "11800_Washington",
+  "listing_url": "11800Washington.com",
+  "portal_url": "https://11800washington.netlify.app",
+  "include_tracker": true,
+  "subject": {
+    "built": 2006,
+    "sf": 6336,
+    "lot": 122000,
+    "assessment": 1893000
+  },
+  "values": {
+    "dated": 1958866,
+    "customary": 2176517,
+    "customary_list": 2299091,
+    "premium": 2350639
+  },
+  "comps": {
+    "rows": [
+      [
+        "5026 Huntwood Manor Dr",
+        2001,
+        8458,
+        218135,
+        2329210,
+        2950000
+      ],
+      [
+        "5800 Fox Chapel Estates Dr",
+        2017,
+        5984,
+        217827,
+        1937560,
+        2276625
+      ],
+      [
+        "3407 Barkley Dr",
+        2019,
+        4296,
+        42203,
+        1743560,
+        1975000
+      ],
+      [
+        "8605 Cherry Dr",
+        1993,
+        4187,
+        134165,
+        1378790,
+        1854500
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        1997,
+        5117,
+        151985,
+        1653752,
+        1844320
+      ],
+      [
+        "Price Range Average",
+        2010,
+        4822,
+        131398,
+        1686637,
+        2035375
+      ]
+    ]
+  },
+  "market": {
+    "name": "Fairfax Luxury Market",
+    "slug": "Fairfax_City_Luxury_Market_Snapshot",
+    "subhead": "Half the segment is under contract, but only a third of the homes that listed have sold &mdash; the gap between the two is what pricing discipline decides.",
+    "stats": null,
+    "absorption": null
+  },
+  "competition": [
+    {
+      "status": "Active",
+      "address": "3617 Chain Bridge Rd",
+      "dom": 42,
+      "built": 2016,
+      "sf": 9531,
+      "lot": 47219,
+      "list": 4450000
+    },
+    {
+      "status": "Pending",
+      "address": "13110 Thompson Rd",
+      "dom": 1,
+      "built": 1965,
+      "sf": 1720,
+      "lot": 278784,
+      "list": 2000000
+    }
+  ],
+  "notes": [],
+  "photos": [
+    "11800_Washington_front.png"
+  ],
+  "premium_rating": null,
+  "asset_dir": "assets/11800_Washington",
+  "hero_photo": "11800_Washington_front.png"
+}

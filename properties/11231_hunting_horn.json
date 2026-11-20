@@ -1,0 +1,132 @@
+{
+  "address": "11231 Hunting Horn Ln",
+  "city": "Reston",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "",
+  "county": "Fairfax County",
+  "congestion_fees": true,
+  "report_date": "Monday, September 14, 2026",
+  "prefix": "11231_Hunting_Horn",
+  "listing_url": "11231HuntingHorn.com",
+  "portal_url": "https://11231huntinghorn.netlify.app",
+  "include_tracker": true,
+  "asset_dir": "assets/11231_Hunting_Horn",
+  "hero_photo": "11231_Hunting_Horn_front.png",
+  "photos": [
+    "11231_Hunting_Horn_front.png"
+  ],
+  "subject": {
+    "built": 1971,
+    "sf": 2352,
+    "lot": 18500,
+    "assessment": 956000
+  },
+  "values": {
+    "dated": 906445,
+    "customary": 1007162,
+    "customary_list": 1002000,
+    "premium": 1087735
+  },
+  "comps": {
+    "rows": [
+      [
+        "11609 Sourwood Ln",
+        1968,
+        2443,
+        39655,
+        944740,
+        1085718
+      ],
+      [
+        "11814 Blue Spruce Rd",
+        1973,
+        2805,
+        16994,
+        961800,
+        1033071
+      ],
+      [
+        "11488 Bingham Ter",
+        1975,
+        2728,
+        13504,
+        1057970,
+        1055000
+      ],
+      [
+        "11311 Handlebar Rd",
+        1971,
+        2930,
+        16334,
+        809200,
+        948807
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        1971,
+        2359,
+        27478,
+        956557,
+        1024573
+      ],
+      [
+        "Price Range Average",
+        1976,
+        2670,
+        19312,
+        1004405,
+        1063305
+      ]
+    ]
+  },
+  "market": {
+    "name": "Reston Family Market",
+    "slug": "Reston_Family_Market_Snapshot",
+    "subhead": "Half the segment is under contract and every home that sold, sold successfully &mdash; buyers are active for homes that are priced and presented correctly.",
+    "stats": null,
+    "absorption": null
+  },
+  "competition": [
+    {
+      "status": "Active",
+      "address": "2526 Spanish Moss Ct",
+      "dom": 4,
+      "built": 1973,
+      "sf": 2805,
+      "lot": 20377,
+      "list": 1090000
+    },
+    {
+      "status": "Active",
+      "address": "12012 Canter Ln",
+      "dom": 138,
+      "built": 1967,
+      "sf": 1794,
+      "lot": 24578,
+      "list": 999000
+    },
+    {
+      "status": "Active Under Contract",
+      "address": "10811 Midsummer Dr",
+      "dom": 32,
+      "built": 1978,
+      "sf": 2511,
+      "lot": 17199,
+      "list": 1175000
+    },
+    {
+      "status": "Active Under Contract",
+      "address": "11801 Riders Ln",
+      "dom": 21,
+      "built": 1972,
+      "sf": 2700,
+      "lot": 16988,
+      "list": 1100000
+    }
+  ],
+  "notes": [],
+  "premium_rating": null
+}

@@ -1,0 +1,299 @@
+{
+ "address": "39014 Hughesville Rd",
+ "city": "Leesburg",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "20175",
+ "county": "Loudoun",
+ "congestion_fees": false,
+ "report_date": "Monday, October 19, 2026",
+ "prefix": "39014_Hughesville",
+ "include_tracker": true,
+ "sample": true,
+ "listing_status": "recovery",
+ "current_list": 699000,
+ "days_on_market": 29,
+ "subject": {
+  "built": 1923,
+  "sf": 1260,
+  "lot": 141570,
+  "assessment": 690560
+ },
+ "values": {
+  "dated": 606240,
+  "customary": 673600,
+  "customary_list": 665241,
+  "premium": 727488,
+  "upgrades": 0
+ },
+ "recovery": {
+  "buyer_pool": 675000,
+  "buyer_pool_label": "Under $675,000",
+  "hard_note": "Of the four homes that closed, the three that went under contract inside five days were listed at $646,000, $650,000 and $685,000. The one that sold above $700,000 &mdash; 40246 Thomas Mill Rd at $722,500 &mdash; took 68 days and is a larger home on five acres.",
+  "email_note": ", which is where every quick sale in this pool happened"
+ },
+ "comps": {
+  "rows": [
+   [
+    "40246 Thomas Mill Rd",
+    1978,
+    1621,
+    216929,
+    775960,
+    722500
+   ],
+   [
+    "114 Governors Dr",
+    1971,
+    1144,
+    10019,
+    605750,
+    685000
+   ],
+   [
+    "102 Phillips Ct",
+    1930,
+    1136,
+    13504,
+    624120,
+    682500
+   ],
+   [
+    "119 Prospect Dr",
+    1973,
+    1305,
+    10890,
+    604080,
+    650000
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average &mdash; 3 sales",
+    1950,
+    1218,
+    105561,
+    665950,
+    716917
+   ],
+   [
+    "Price Range Average &mdash; 4 sales",
+    1963,
+    1302,
+    62836,
+    652478,
+    685000
+   ]
+  ]
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "245 W Market St",
+   "dom": 193,
+   "built": 1910,
+   "sf": 1418,
+   "lot": 13504,
+   "list": 695000,
+   "assessment": 690960
+  },
+  {
+   "status": "Active",
+   "address": "204 Ayr St NW",
+   "dom": 106,
+   "built": 1970,
+   "sf": 1260,
+   "lot": 10454,
+   "list": 635000,
+   "assessment": 635640
+  },
+  {
+   "status": "Active",
+   "address": "221 South St SE",
+   "dom": 31,
+   "built": 1920,
+   "sf": 1160,
+   "lot": 4792,
+   "list": 600000,
+   "assessment": 528230
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "1205 Bradfield Dr",
+   "dom": 62,
+   "built": 1973,
+   "sf": 2000,
+   "lot": 10890,
+   "list": 724950,
+   "assessment": 704900
+  }
+ ],
+ "notes": [],
+ "market": {
+  "name": "Leesburg Family Market",
+  "slug": "Leesburg_Family_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "asset_dir": "assets/39014_Hughesville",
+ "hero_photo": "39014_Hughesville_front.png",
+ "photos": [
+  "39014_Hughesville_front.png",
+  "39014_Hughesville_porch.png",
+  "39014_Hughesville_kitchen.png",
+  "39014_Hughesville_living.png"
+ ],
+ "premium_rating": [
+  [
+   {
+    "label": "Top Features",
+    "items": [
+     "3.25 acres &mdash; roughly fifteen times the land under any competing listing in town",
+     "Full-width covered front porch with a pastoral valley view",
+     "1923 farmhouse character &mdash; dormered upper level, standing-seam metal roof",
+     "Brand-new septic system",
+     "New front porch flooring and fresh paint throughout",
+     "Granite counters, maple cabinetry and stainless appliances",
+     "Hardwood floors"
+    ]
+   },
+   {
+    "label": "Property Details",
+    "items": [
+     "Built 1923",
+     "1,260 finished square feet",
+     "3.25 acres (141,570 SF)"
+    ]
+   }
+  ],
+  [
+   {
+    "label": "The Setting",
+    "items": [
+     "Minutes from downtown Hamilton",
+     "Minutes from historic downtown Leesburg",
+     "Open pasture and woodland views from the porch",
+     "Country living without being far from anything"
+    ]
+   },
+   {
+    "label": "Location",
+    "items": [
+     "Hughesville Rd, Loudoun County",
+     "Between Hamilton and Leesburg"
+    ]
+   }
+  ]
+ ],
+ "buyer_portal": {
+  "display_address": "39014 Hughesville Rd",
+  "status_line": "Active",
+  "list_price": 699000,
+  "headline": "A 1923 farmhouse on 3.25 acres &mdash; a full-width porch over open pasture, minutes from downtown Hamilton and Leesburg.",
+  "highlights": [
+   "Built 1923",
+   "1,260 finished sq ft",
+   "3.25 acres",
+   "New septic system"
+  ],
+  "facts": [
+   [
+    "1923",
+    "Year built"
+   ],
+   [
+    "1,260",
+    "Finished square feet"
+   ],
+   [
+    "3.25",
+    "Acres"
+   ],
+   [
+    "Leesburg",
+    "Loudoun County"
+   ]
+  ],
+  "feature_headlines": [
+   {
+    "head": "The Land Is the Premium",
+    "sub": [
+     "3.25 acres &mdash; 141,570 square feet",
+     "Open pasture and woodland from the porch",
+     "No competing listing in town comes close"
+    ]
+   },
+   {
+    "head": "A Porch You Actually Use",
+    "sub": [
+     "Full width of the house, under the deep roof",
+     "New porch flooring",
+     "The valley view is the reason to sit there"
+    ]
+   },
+   {
+    "head": "Updated Where It Counts",
+    "sub": [
+     "Brand-new septic system",
+     "Fresh paint throughout",
+     "Granite, maple cabinetry, stainless appliances"
+    ]
+   }
+  ],
+  "features": {
+   "The Home": [
+    "Built 1923 &mdash; classic farmhouse character",
+    "1,260 finished square feet",
+    "Dormered upper level under a standing-seam metal roof",
+    "Full-width covered front porch, newly refloored",
+    "Granite counters with maple cabinetry and stainless appliances",
+    "Hardwood floors",
+    "Fresh paint throughout"
+   ],
+   "The Land": [
+    "3.25 acres &mdash; 141,570 square feet",
+    "Open pasture and woodland views",
+    "Brand-new septic system",
+    "Minutes from downtown Hamilton",
+    "Minutes from historic downtown Leesburg"
+   ]
+  },
+  "gallery": [
+   [
+    "39014_Hughesville_porch.png",
+    "The porch, and the reason for it"
+   ],
+   [
+    "39014_Hughesville_kitchen.png",
+    "Granite, maple cabinetry, stainless appliances"
+   ],
+   [
+    "39014_Hughesville_living.png",
+    "Hardwood floors throughout"
+   ]
+  ],
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "pricing_pdf": "39014_Hughesville_Buyer_Report.pdf"
+ },
+ "agent": {
+  "lookup": "Casey Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "casey@caseysamson.com"
+ },
+ "overrides": {
+  "recovery.soft": 675000,
+  "recovery.hard": 650000
+ }
+}

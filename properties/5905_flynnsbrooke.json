@@ -1,0 +1,548 @@
+{
+ "address": "5905 Flynnsbrooke Ter",
+ "city": "Haymarket",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "20169",
+ "county": "Prince William",
+ "congestion_fees": false,
+ "report_date": "Saturday, October 3, 2026",
+ "prefix": "5905_Flynnsbrooke",
+ "listing_url": "5905Flynnsbrooke.com",
+ "portal_url": "https://5905flynnsbrooke.netlify.app",
+ "include_tracker": true,
+ "listing_status": "relaunch",
+ "subject": {
+  "built": 2002,
+  "sf": 3792,
+  "lot": 49800,
+  "assessment": 1146000
+ },
+ "values": {
+  "dated": 1135032,
+  "customary": 1261146,
+  "customary_list": 1282211,
+  "premium": 1426146,
+  "upgrades": 500000
+ },
+ "comps": {
+  "rows": [
+   [
+    "15055 Fallen Oak",
+    2023,
+    3956,
+    125692,
+    1241800,
+    1351000
+   ],
+   [
+    "5393 Emmys Mill",
+    2006,
+    3950,
+    17358,
+    1165700,
+    1280000
+   ],
+   [
+    "15043 Gaines Mill",
+    2006,
+    3247,
+    9644,
+    954100,
+    1155000
+   ],
+   [
+    "5028 Signature",
+    2002,
+    3078,
+    23674,
+    981900,
+    1110000
+   ],
+   [
+    "6165 Chancellor",
+    2020,
+    2947,
+    7178,
+    1081600,
+    1100000
+   ],
+   [
+    "6010 Trotters",
+    2020,
+    3969,
+    0,
+    947000,
+    1181674
+   ],
+   [
+    "6202 Chancellor",
+    2019,
+    0,
+    0,
+    955900,
+    1156294
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    2002,
+    3405,
+    12198,
+    893675,
+    1006500
+   ],
+   [
+    "Price Range Average",
+    2011,
+    3438,
+    13168,
+    1026060,
+    1143500
+   ]
+  ]
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "5397 Cedarville",
+   "dom": 82,
+   "built": 2006,
+   "sf": 4474,
+   "lot": 20603,
+   "list": 1300000
+  },
+  {
+   "status": "Active",
+   "address": "5404 Emmys Mill",
+   "dom": 24,
+   "built": 2006,
+   "sf": 3915,
+   "lot": 29621,
+   "list": 1300000
+  },
+  {
+   "status": "Active",
+   "address": "13188 Piedmont",
+   "dom": 24,
+   "built": 2001,
+   "sf": 3744,
+   "lot": 21784,
+   "list": 1299000
+  },
+  {
+   "status": "Active",
+   "address": "13621 Piedmont",
+   "dom": 64,
+   "built": 2002,
+   "sf": 4142,
+   "lot": 12092,
+   "list": 1199900
+  },
+  {
+   "status": "Active",
+   "address": "14093 Burnley",
+   "dom": 90,
+   "built": 2003,
+   "sf": 4234,
+   "lot": 35536,
+   "list": 1124800
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "14562 Stoney Creek",
+   "dom": 133,
+   "built": 2008,
+   "sf": 3736,
+   "lot": 20542,
+   "list": 1175000
+  },
+  {
+   "status": "Pending",
+   "address": "5356 Mortons",
+   "dom": 2,
+   "built": 2008,
+   "sf": 3629,
+   "lot": 18438,
+   "list": 1219900
+  }
+ ],
+ "market": {
+  "name": "Haymarket Luxury Market",
+  "slug": "Haymarket_Luxury_Market_Snapshot",
+  "subhead": "A 14% under-contract rate against a 60% success rate &mdash; inventory is up 78%, so position and preparation are what separate the homes that sell.",
+  "stats": null,
+  "absorption": null
+ },
+ "premium_rating_headline": "Piedmont&rsquo;s Estate Section &mdash; first time on the market.",
+ "premium_rating": [
+  [
+   {
+    "label": "Top features",
+    "items": [
+     "5 bedrooms, 4.5 bathrooms and a 3-car garage across approximately 6,000 finished square feet",
+     "Private 1.14-acre wooded cul-de-sac lot in Piedmont&rsquo;s Estate Section",
+     "Fully remodelled 2024 designer kitchen with a 10-foot quartz island seating six",
+     "Two-staircase design &mdash; grand front staircase and private rear owner&rsquo;s staircase",
+     "Owner&rsquo;s retreat with tray ceilings, dual walk-in closets and a spa-inspired bath",
+     "Finished lower level with 9-foot ceilings, media room and 5.1 surround sound"
+    ]
+   },
+   {
+    "label": "Other upgrades",
+    "items": [
+     "Pre-listing inspection completed July 2026, available to buyers",
+     "New 9-inch luxury vinyl plank flooring throughout (2025)",
+     "Fresh interior paint (2024) and updated LED lighting throughout",
+     "Double oven, new gas cooktop, coffee bar with wine and beverage refrigerator",
+     "Morning room, sunroom and family room with gas fireplace",
+     "Embassy-sized dining room, formal living room and study with double French doors",
+     "Princess suite with private bath among the four secondary bedrooms",
+     "Expansive stone patio with outdoor fountain that conveys",
+     "New Craftsman garage door openers (2025) and new sump pump (2026)",
+     "Irrigation, alarm system and exterior landscape lighting package",
+     "Gated golf community: 18-hole championship course, clubhouse, pools, fitness centre, tennis and pickleball"
+    ]
+   }
+  ]
+ ],
+ "buyer_portal": {
+  "display_address": "5905 Flynnsbrooke Terrace",
+  "site": "5905Flynnsbrooke.com",
+  "url": "https://caseysamson.com/market-snapshot/buyflynnsbrooke",
+  "list_price": 1249900,
+  "status_line": "Active",
+  "headline": "Piedmont&rsquo;s Estate Section &mdash; first time on the market",
+  "facts": [
+   [
+    "5",
+    "Bedrooms"
+   ],
+   [
+    "4.5",
+    "Bathrooms"
+   ],
+   [
+    "6,000",
+    "Finished SF"
+   ],
+   [
+    "2002",
+    "Year Built"
+   ],
+   [
+    "3",
+    "Car Garage"
+   ],
+   [
+    "1.14",
+    "Acres"
+   ],
+   [
+    "Yes",
+    "Gated Golf"
+   ],
+   [
+    "2024",
+    "Kitchen"
+   ]
+  ],
+  "feature_headlines": [
+   {
+    "head": "A 2024 Designer Kitchen Built Around a 10-Foot Island",
+    "sub": [
+     "Quartz island seating six",
+     "White cabinetry, subway tile, upgraded hardware",
+     "Double oven and new gas cooktop",
+     "Coffee bar with wine and beverage refrigerator",
+     "Light-filled morning room"
+    ]
+   },
+   {
+    "head": "A Private 1.14-Acre Wooded Cul-de-Sac Lot",
+    "sub": [
+     "Piedmont&rsquo;s Estate Section",
+     "Expansive stone patio",
+     "Outdoor fountain conveys",
+     "Irrigation and exterior landscape lighting"
+    ]
+   },
+   {
+    "head": "Two Staircases, Five Bedrooms, 4.5 Baths",
+    "sub": [
+     "Grand front staircase and private rear owner&rsquo;s staircase",
+     "Owner&rsquo;s retreat with tray ceilings and dual walk-in closets",
+     "Spa-inspired bath with dual vanities",
+     "Princess suite with private bath"
+    ]
+   },
+   {
+    "head": "A Lower Level With 9-Foot Ceilings",
+    "sub": [
+     "Expansive recreation room",
+     "Media room with built-in 5.1 surround sound",
+     "Hobby room or second home office",
+     "Full bath and abundant storage"
+    ]
+   }
+  ],
+  "description": "First time on the market. The original owners are selling a home they built their life in: approximately 6,000 finished square feet on a private 1.14-acre wooded cul-de-sac lot in Piedmont&rsquo;s Estate Section, one of Northern Virginia&rsquo;s premier gated golf course communities. A comprehensive pre-listing inspection completed July 2026 is available to buyers.",
+  "amenities_lede": "Historic Haymarket is five minutes out, Route 66 is four, and the gated community&rsquo;s own golf, pools and courts are at the door.",
+  "amenities": [
+   {
+    "title": "Dining",
+    "items": [
+     [
+      "Giuseppe&rsquo;s",
+      "Fine dining &middot; Italian",
+      "1.9 mi"
+     ],
+     [
+      "Himalayan Grill",
+      "Fine dining &middot; Indian and Nepali",
+      "1.9 mi"
+     ],
+     [
+      "Hidden Julles",
+      "Family &middot; All day",
+      "1.9 mi"
+     ],
+     [
+      "Foster&rsquo;s Grille",
+      "Family &middot; Burgers",
+      "2.0 mi"
+     ],
+     [
+      "1971 Coffee Shop",
+      "Coffee &middot; Washington St",
+      "2.0 mi"
+     ],
+     [
+      "Roast-n-Toast",
+      "Coffee &middot; Roaster, Gainesville",
+      "3.3 mi"
+     ]
+    ]
+   },
+   {
+    "title": "Shopping",
+    "items": [
+     [
+      "Historic Haymarket",
+      "Washington Street shops and dining",
+      "1.9 mi"
+     ],
+     [
+      "Virginia Gateway",
+      "Open-air shops, cinema, dining",
+      "3.3 mi"
+     ],
+     [
+      "Heathcote Marketplace",
+      "Everyday shopping and services",
+      "1.4 mi"
+     ],
+     [
+      "Sprouts Farmers Market",
+      "Heathcote Blvd",
+      "1.4 mi"
+     ],
+     [
+      "Giant Food",
+      "Merchants View Square",
+      "1.8 mi"
+     ],
+     [
+      "Harris Teeter",
+      "Heathcote Blvd, Gainesville",
+      "2.1 mi"
+     ]
+    ]
+   },
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "I-66",
+      "Route 15 interchange",
+      "1.5 mi"
+     ],
+     [
+      "Route 29",
+      "Gainesville",
+      "3.1 mi"
+     ],
+     [
+      "Manassas Regional",
+      "HEF",
+      "12.2 mi"
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      "15.8 mi"
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      "40.8 mi"
+     ],
+     [
+      "Piedmont Club",
+      "Golf, pools, fitness, tennis and pickleball",
+      "0.5 mi"
+     ]
+    ]
+   }
+  ],
+  "contacts": {
+   "names": "John Grzejka &amp; Christian Grzejka",
+   "team": "Samson Properties &middot; NOVA Home Sales",
+   "lines": [
+    [
+     "John Grzejka",
+     "703-926-8412",
+     "john@novahomesales.net"
+    ],
+    [
+     "Christian Grzejka",
+     "571-229-0886",
+     "christian@novahomesales.net"
+    ]
+   ],
+   "office": "Samson Properties, 13575 Heathcote Blvd, Ste 340 &amp; 310, Gainesville, VA 20155 &middot; 703-935-2308"
+  },
+  "gallery": [
+   [
+    "5905_Flynnsbrooke_foyer.jpg",
+    "Two-story foyer with wainscoting and wide-plank floors"
+   ],
+   [
+    "5905_Flynnsbrooke_kitchen.jpg",
+    "Renovated kitchen \u2014 quartz, oversized island, beverage center"
+   ],
+   [
+    "5905_Flynnsbrooke_family.jpg",
+    "Family room open to the kitchen and sunroom"
+   ],
+   [
+    "5905_Flynnsbrooke_lower.jpg",
+    "Finished lower level with walk-up to the back yard"
+   ],
+   [
+    "5905_Flynnsbrooke_rear.jpg",
+    "Level, fenced back yard and stone patio at dusk"
+   ]
+  ],
+  "pricing_pdf": "5905_Flynnsbrooke_Buyer_Report.pdf",
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "The Piedmont Club is a walk from the door and historic Haymarket is five minutes. The arrows point to the airports.",
+   "center": {
+    "lat": 38.8298431,
+    "lng": -77.6210522,
+    "label": "5905 Flynnsbrooke Ter"
+   },
+   "pins": [
+    {
+     "name": "Piedmont Club",
+     "sub": "Golf, pools, fitness, tennis and pickleball",
+     "lat": 38.8257547,
+     "lng": -77.6270664,
+     "min": 11,
+     "mode": "walk"
+    },
+    {
+     "name": "Sprouts Farmers Market",
+     "sub": "Heathcote Blvd",
+     "lat": 38.819409,
+     "lng": -77.63575,
+     "min": 4,
+     "mode": "drive"
+    },
+    {
+     "name": "Giuseppe&rsquo;s",
+     "sub": "Italian &middot; Washington St",
+     "lat": 38.813343,
+     "lng": -77.6381454,
+     "min": 5,
+     "mode": "drive"
+    },
+    {
+     "name": "Historic Haymarket",
+     "sub": "Washington St shops and dining",
+     "lat": 38.812385,
+     "lng": -77.63732,
+     "min": 5,
+     "mode": "drive"
+    },
+    {
+     "name": "Foster&rsquo;s Grille",
+     "sub": "Family &middot; Burgers",
+     "lat": 38.8138008,
+     "lng": -77.640335,
+     "min": 5,
+     "mode": "drive"
+    },
+    {
+     "name": "Harris Teeter",
+     "sub": "Heathcote Blvd, Gainesville",
+     "lat": 38.807738,
+     "lng": -77.611557,
+     "min": 5,
+     "mode": "drive"
+    },
+    {
+     "name": "Virginia Gateway",
+     "sub": "Open-air shops, cinema, dining",
+     "lat": 38.7948622,
+     "lng": -77.6067255,
+     "min": 8,
+     "mode": "drive"
+    }
+   ],
+   "arrows": [
+    [
+     46.0,
+     [
+      "Dulles Intl",
+      "IAD \u00b7 27 min"
+     ]
+    ],
+    [
+     87.1,
+     [
+      "Reagan National",
+      "DCA \u00b7 54 min"
+     ]
+    ],
+    [
+     142.6,
+     [
+      "Manassas Regional",
+      "HEF \u00b7 21 min"
+     ]
+    ]
+   ]
+  },
+  "deploy_to": "https://buyflynnsbrooke.netlify.app"
+ },
+ "agent": {
+  "lookup": "John E Grzejka",
+  "display": "John Grzejka",
+  "phone": "703-926-8412",
+  "email": "john@novahomesales.net"
+ },
+ "agent_page": "john-e-grzejka.html",
+ "asset_dir": "assets/5905_Flynnsbrooke",
+ "hero_photo": "5905_Flynnsbrooke_front.jpg",
+ "photos": [
+  "5905_Flynnsbrooke_front.jpg",
+  "5905_Flynnsbrooke_foyer.jpg",
+  "5905_Flynnsbrooke_kitchen.jpg",
+  "5905_Flynnsbrooke_family.jpg",
+  "5905_Flynnsbrooke_lower.jpg",
+  "5905_Flynnsbrooke_rear.jpg"
+ ]
+}

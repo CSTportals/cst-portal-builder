@@ -1,0 +1,197 @@
+{
+  "address": "3203 Wheatland Farms",
+  "city": "Oakton",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "",
+  "county": "Fairfax County",
+  "congestion_fees": true,
+  "report_date": "Wednesday, September 23, 2026",
+  "prefix": "3203_Wheatland",
+  "listing_url": "3203WheatlandFarms.com",
+  "portal_url": "https://3203wheatlandfarms.netlify.app",
+  "include_tracker": true,
+  "asset_dir": "assets/3203_Wheatland",
+  "hero_photo": "3203_Wheatland_front.png",
+  "photos": [
+    "3203_Wheatland_front.png"
+  ],
+  "agent": {
+    "lookup": "Casey C Samson",
+    "display": "Casey Samson",
+    "phone": "703-508-2535",
+    "email": "Casey@caseysamson.com"
+  },
+  "agent_page": "casey-c-samson.html",
+  "subject": {
+    "built": 1996,
+    "sf": 4402,
+    "lot": 37000,
+    "assessment": 1769000
+  },
+  "values": {
+    "dated": 1749575,
+    "customary": 1943973,
+    "customary_list": 1940391,
+    "premium": 2099491
+  },
+  "comps": {
+    "rows": [
+      [
+        "12309 Blair Ridge",
+        1990,
+        4330,
+        46609,
+        1710160,
+        1935000
+      ],
+      [
+        "2608 Hunter Mill",
+        1999,
+        4332,
+        172376,
+        1575090,
+        2150000
+      ],
+      [
+        "2954 Bonds Ridge",
+        2000,
+        4970,
+        49516,
+        1817700,
+        2060000
+      ],
+      [
+        "2961 Wilson Ave",
+        2004,
+        4745,
+        37984,
+        1833750,
+        1975000
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        2000,
+        4560,
+        49814,
+        1698988,
+        1881404
+      ],
+      [
+        "Price Range Average",
+        1998,
+        4682,
+        44703,
+        1787203,
+        1990000
+      ]
+    ]
+  },
+  "market": {
+    "name": "Oakton Luxury Market",
+    "slug": "Oakton_Luxury_Market_Snapshot",
+    "subhead": "Nothing is currently active in this segment &mdash; every home that sold, sold successfully, and the only competition is already under contract.",
+    "stats": null,
+    "absorption": null
+  },
+  "competition": [
+    {
+      "status": "Pending",
+      "address": "3454 Virginia",
+      "dom": 94,
+      "built": 2000,
+      "sf": 3834,
+      "lot": 37462,
+      "list": 2099000
+    },
+    {
+      "status": "Active Under Contract",
+      "address": "10101 Copper Ct",
+      "dom": 1,
+      "built": 1998,
+      "sf": 4128,
+      "lot": 21678,
+      "list": 1900000
+    }
+  ],
+  "notes": [
+    "<b>Local context on the two nearby sales.</b> 3206 Wheatland Farms Dr sold recently <b>as-is</b>, on a markedly inferior lot with little updating. 3204 Wheatland Farms Dr sold for <b>$1,828,000 in May 2024</b>, and is neither a flat nor a private lot. Neither one carries this home&rsquo;s lot or its level of improvement."
+  ],
+  "premium_rating": [
+    [
+      {
+        "label": "Layout &amp; Setting",
+        "items": [
+          "5 bedrooms plus a bonus room, 4.5 baths and an office",
+          "Sunroom with palladium windows",
+          "Approximately 5,800 finished square feet",
+          ".84 acre flat, premium lot",
+          "Private setting with professional landscaping, decks and a patio",
+          "Waples Mill School Pyramid"
+        ]
+      },
+      {
+        "label": "Unique History",
+        "items": [
+          "Built 1998 and sold off-market to a friend of a friend",
+          "Purchased the same way in 2012 &mdash; both buyers were the first to see it, and both agreed to buy right away"
+        ]
+      },
+      {
+        "label": "Likely Inclusions",
+        "items": [
+          "4 refrigerators plus 2 wine and beverage refrigerators",
+          "Patio furniture and gas grill",
+          "Built-in sound systems on the first floor and in the basement",
+          "Steel storage racks"
+        ]
+      }
+    ],
+    [
+      {
+        "label": "HVAC &amp; Systems",
+        "items": [
+          "New HVAC systems (2026, 2023, 2021)",
+          "New State-Pro premium hot water heater (2026)",
+          "New sump pumps (2026) and main water valve (2024)",
+          "New roof with full warranty and workmanship guarantee (2021)"
+        ]
+      },
+      {
+        "label": "Interior &amp; Exterior",
+        "items": [
+          "New Stainmaster PetProtect carpet and flooring across all three floors, with luxury vinyl in the basement (2026)",
+          "New interior and exterior neutral paint &mdash; garage, basement, trim, doors and mailbox (2025&ndash;2026)",
+          "New exterior light fixtures (2026)"
+        ]
+      },
+      {
+        "label": "Electrical",
+        "items": [
+          "Main electric panel updated to code (2026)",
+          "All electric smoke and CO detectors replaced (2026)"
+        ]
+      },
+      {
+        "label": "Kitchen &amp; Baths",
+        "items": [
+          "New Bosch kitchen appliances (2024)",
+          "New and updated bathrooms with Kohler toilets (2026, 2022&ndash;2023)",
+          "Jacuzzi spa",
+          "New garbage disposal (2026)"
+        ]
+      },
+      {
+        "label": "Grounds",
+        "items": [
+          "New sprinkler heads (2026)",
+          "Driveway freshly sealed (2026)"
+        ]
+      }
+    ]
+  ],
+  "premium_rating_headline": "Never on the open market &mdash; in 28 years.",
+  "seller_names": "Ed and Kathy"
+}

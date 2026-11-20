@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- CST-FP 2026-10-01 a0188944 (c) The Casey Samson Team LLC -->
+
+<head>
+<meta name="cst-fp" content="2026-10-01.a0188944">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Market Snapshot™ &mdash; The Casey Samson Team</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+  :root{
+    --bg:#FAF7F0; --card:#FFFFFF; --banner:#F1EBDA; --ink:#221C14;
+    --muted:#71695A; --muted-2:#968972; --gold:#A5813B; --gold-deep:#8A6A2E;
+    --gold-line:#D3B978; --rule:#E4DCC8; --buyer:#8A6A2E; --neutral:#5C6B4A;
+    --row-alt:#FBF8F1;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:'Lora',Georgia,serif; line-height:1.55; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:820px; margin:0 auto; padding:0 28px;}
+  .back{
+    display:block; padding:14px 0; font-size:13px; color:var(--muted);
+    text-decoration:none; border-bottom:1px solid var(--rule); background:var(--card);
+  }
+  .back:hover{color:var(--gold-deep);}
+  header.masthead{background:var(--banner); border-bottom:1px solid var(--gold-line); padding:36px 0 30px;}
+  .seal{width:56px; height:56px; margin:0 auto 14px;}
+  .brandline{text-align:center; letter-spacing:.22em; font-size:11.5px; font-weight:600; color:var(--gold-deep); text-transform:uppercase; margin-bottom:8px;}
+  h1.title{font-family:'Playfair Display',Georgia,serif; text-align:center; font-size:clamp(24px,3.6vw,36px); font-weight:700; margin:0 0 6px;}
+  .subtitle{text-align:center; font-style:italic; color:var(--gold-deep); font-size:15px; margin:0;}
+  section{padding:48px 0;}
+  section + section{border-top:1px solid var(--rule);}
+  .eyebrow{text-align:center; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted-2); font-style:italic; margin-bottom:14px;}
+  h2.headline{font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:clamp(21px,3vw,28px); text-align:center; line-height:1.3; margin:0 0 12px; max-width:720px; margin-left:auto; margin-right:auto;}
+  p.subhead{text-align:center; font-style:italic; color:var(--muted); font-size:15.5px; max-width:600px; margin:0 auto 32px;}
+  .keystats{display:flex; justify-content:center; gap:clamp(20px,6vw,60px); flex-wrap:wrap; margin-bottom:36px;}
+  .keystat{text-align:center;}
+  .keystat .num{font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:clamp(24px,3.2vw,30px); color:var(--gold-deep); line-height:1;}
+  .keystat .lbl{margin-top:5px; font-size:11.5px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--muted);}
+  .narrative{max-width:660px; margin:0 auto; font-size:15px; color:#3a352b; background:var(--banner); border-left:3px solid var(--gold); padding:16px 20px; border-radius:2px;}
+  .narrative b{color:var(--ink);}
+  .chart-card{background:var(--card); border:1px solid var(--rule); border-radius:4px; padding:30px clamp(20px,4vw,40px); margin:0 auto; max-width:640px;}
+  .chart-title{text-align:center; font-family:'Playfair Display',serif; font-weight:600; font-size:19px; margin:0 0 22px;}
+  .chart-cols{display:grid; grid-template-columns:1fr 1fr; gap:0 32px;}
+  .chart-col + .chart-col{border-left:1px solid var(--rule); padding-left:32px;}
+  .chart-col-h{font-style:italic; font-weight:600; color:var(--gold-deep); font-size:14px; margin:0 0 10px;}
+  .chart-col-h.second{margin-top:18px;}
+  .row{display:flex; justify-content:space-between; align-items:baseline; font-size:14px; padding:6px 0; border-bottom:1px dotted var(--rule);}
+  .row:last-child{border-bottom:none;}
+  .row .v{font-weight:600; color:var(--gold-deep); font-variant-numeric:tabular-nums;}
+  @media (max-width:560px){.chart-cols{grid-template-columns:1fr; gap:24px 0;} .chart-col + .chart-col{border-left:none; padding-left:0; border-top:1px solid var(--rule); padding-top:20px;}}
+  .table-wrap{max-width:780px; margin:0 auto 30px; overflow-x:auto; border:1px solid var(--rule); border-radius:4px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:560px;}
+  thead th{background:var(--banner); text-align:center; font-weight:600; font-size:11px; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); padding:11px 13px; border-bottom:1px solid var(--gold-line);}
+  thead th.num, td.num{text-align:center;}
+  tbody td{padding:10px 13px; border-bottom:1px solid var(--rule); font-variant-numeric:tabular-nums; text-align:center;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr.self{background:#F4EEDA;}
+  tbody tr.avgrow{background:#EFE7D3; font-weight:700; border-top:2px solid var(--gold-line);}
+  tbody tr.avgrow td{border-bottom:none;}
+  td.market{font-weight:600; text-align:left;}
+  thead th:first-child, tbody td:first-child{text-align:center;}
+  .badge{display:inline-block; font-size:10.5px; font-weight:700; padding:2px 8px; border-radius:20px;}
+  .badge.buyer{background:#EFE7D3; color:var(--buyer);}
+  .badge.neutral{background:#E8ECE1; color:var(--neutral);}
+  .up{color:var(--neutral);} .down{color:#8C4A3B;}
+  footer{text-align:center; padding:40px 0 56px; background:var(--banner); border-top:1px solid var(--gold-line);}
+  .strategy-banner{
+    max-width:640px; margin:0 auto 32px; text-align:center;
+    background:var(--card); border:1px solid var(--gold-line); border-radius:10px;
+    padding:20px 28px;
+  }
+  .strategy-banner p{
+    font-size:18px; font-style:normal; color:var(--ink); margin:0; line-height:1.5; font-weight:600;
+  }
+  .strategy-banner a{color:#1E5FDE; font-weight:700; text-decoration:none;}
+  .strategy-banner a:hover{text-decoration:underline;}
+  footer .produced{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  footer .contact-line{font-weight:700; font-size:13.5px; margin-bottom:12px;}
+  footer .contact-line a{color:inherit; text-decoration:none;}
+  footer .contact-line a:hover{text-decoration:underline;}
+  footer .contact-line .sep{font-weight:400; color:var(--muted-2); margin:0 8px;}
+  footer .copy{font-size:12px; color:var(--muted);}
+  .zone-strip{
+    max-width:520px; margin:0 auto 30px;
+    display:flex; align-items:center; justify-content:center; gap:18px;
+    background:var(--card); border:1px solid var(--rule); border-radius:8px;
+    padding:16px 26px;
+  }
+  .zone-strip .zone-num{font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:26px; color:var(--gold-deep); line-height:1;}
+  .zone-strip .zone-lbl{font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); margin-top:3px;}
+  .zone-strip .zone-divider{width:1px; height:34px; background:var(--rule);}
+  .zone-pill{
+    font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    padding:6px 14px; border-radius:20px;
+  }
+  .zone-pill.nogo{background:#F3E3DE; color:#8C4A3B;}
+  .zone-pill.slowgo{background:#F3EAD3; color:#8A6A2E;}
+  .zone-pill.gogo{background:#E8ECE1; color:#5C6B4A;} .zone-pill.nodata{background:#ECE9E3; color:#6B6257;}
+  .seller-promo{
+    max-width:700px; margin:0 auto; text-align:center;
+    background:linear-gradient(135deg, #F1EBDA 0%, #EDE0BC 100%);
+    border:1px solid var(--gold-line); border-radius:12px;
+    padding:32px 30px;
+  }
+  .seller-promo .promo-eyebrow{
+    font-size:13.5px; letter-spacing:.2px; text-transform:none; color:var(--gold-deep);
+    font-weight:700; font-style:italic; margin-bottom:12px; max-width:520px; margin-left:auto; margin-right:auto;
+  }
+  .seller-promo h3{
+    font-family:'Playfair Display',Georgia,serif; font-size:22px; font-weight:700;
+    margin:0 0 10px; color:var(--ink);
+  }
+  .seller-promo p{
+    font-size:14.5px; color:#4a4436; max-width:520px; margin:0 auto 20px;
+  }
+  .promo-cta{
+    display:inline-block; background:var(--gold-deep); color:#FFFFFF !important;
+    font-weight:700; font-size:14px; padding:12px 28px; border-radius:30px;
+    text-decoration:none; letter-spacing:.02em;
+  }
+  .promo-cta:hover{background:#725720;}
+
+  .weekof{display:table; font-size:11.5px; font-weight:700; letter-spacing:.03em; background:var(--card); border:1px solid var(--gold-line); color:var(--gold-deep); padding:5px 14px; border-radius:20px; margin:8px auto 0;}
+/* mss-table-treatment */
+  :root{--dot-good:#1FA352; --dot-weak:#D93A2B;}
+  td.num.up, td.num.down{color:var(--ink); white-space:nowrap;}
+  td.num.up::before, td.num.down::before{
+    content:""; display:inline-block; width:11px; height:11px;
+    border-radius:50%; margin-right:7px; vertical-align:-1px;}
+  td.num.up::before{
+    background:radial-gradient(circle at 34% 30%, #6FDD97 0%, var(--dot-good) 62%);}
+  td.num.down::before{
+    background:radial-gradient(circle at 34% 30%, #F58274 0%, var(--dot-weak) 62%);}
+  tbody td{padding-top:12px; padding-bottom:12px;}
+  tbody tr.self td{background:var(--banner);}
+  tbody tr.avgrow td{background:var(--row-alt); font-weight:700; color:var(--gold-deep);}
+  @media (max-width:520px){
+    td.num.up::before, td.num.down::before{width:9px; height:9px; margin-right:5px;}
+  }
+      /* mss-wow-markers */
+  .wow{display:inline-block; width:12px; height:12px; border-radius:50%;
+    margin-right:6px; vertical-align:-1px; position:relative;}
+  .wow::after{content:""; position:absolute; left:50%; top:50%;
+    transform:translate(-50%,-50%); border-left:3px solid transparent;
+    border-right:3px solid transparent;}
+  .wow-up{background:radial-gradient(circle at 34% 30%, #6FDD97 0%, #1FA352 62%);}
+  .wow-up::after{border-bottom:4px solid #fff; margin-top:-1px;}
+  .wow-down{background:radial-gradient(circle at 34% 30%, #F58274 0%, #D93A2B 62%);}
+  .wow-down::after{border-top:4px solid #fff; margin-top:1px;}
+  @media (max-width:520px){.wow{width:10px; height:10px; margin-right:4px;}}
+        /* mss-footer */
+  footer{text-align:center; padding:40px 0 56px; background:var(--banner);
+    border-top:1px solid var(--gold-line); margin-top:44px;}
+  footer .wrap{max-width:860px; margin:0 auto; padding:0 18px;}
+  .strategy-banner{max-width:640px; margin:0 auto 32px; text-align:center;
+    background:var(--card); border:1px solid var(--gold-line);
+    border-radius:10px; padding:20px 28px;}
+  .strategy-banner p{font-size:18px; font-style:normal; color:var(--ink);
+    margin:0; line-height:1.5; font-weight:600;}
+  .strategy-banner a{color:#1E5FDE; font-weight:700; text-decoration:none;}
+  .strategy-banner a:hover{text-decoration:underline;}
+  .strategy-banner .strategy-second{margin-top:14px; padding-top:14px;
+    border-top:1px solid var(--gold-line); font-size:15.5px; font-weight:600;}
+  footer .cta{margin-bottom:14px;}
+  footer .cta-ask{font-family:'Playfair Display',Georgia,serif;
+    font-size:21px; font-weight:700; color:var(--ink); margin:0 0 6px;}
+  footer .cta-reach{font-size:15px; margin:0 0 8px; line-height:1.6;}
+  footer .cta-reach a{color:var(--gold-deep); font-weight:700;
+    text-decoration:none; white-space:nowrap;}
+  footer .cta-reach a:hover{text-decoration:underline;}
+  footer .cta-team{font-weight:700; font-size:14.5px; margin:0;}
+  footer .copy{font-size:12px; color:var(--muted); margin-top:14px;}
+  /* end mss-footer */
+        /* mss-backbar */
+  .backbar{display:flex; justify-content:space-between; align-items:center;
+    gap:12px; flex-wrap:wrap; background:var(--card);
+    border-bottom:1px solid var(--rule); padding:0 16px;}
+  .backbar .back{border-bottom:none; background:none; padding:14px 0;
+    display:inline-block;}
+  .backbar .ew-link{color:var(--gold-deep); font-weight:700;}
+  .backbar .ew-link:hover{text-decoration:underline;}
+  /* end mss-backbar */
+                                                    /* mss-city-ew */
+  .city-flag{display:inline-flex; vertical-align:-5px; margin-right:9px;}
+  .city-flag .flagset{display:inline-flex; gap:4px; align-items:flex-start;}
+  .headline .num{color:var(--gold-deep);}
+  /* end mss-city-ew */
+    /* mss-pulse-title */
+  .zone-strip{flex-direction:column; gap:12px;}
+  .zone-strip .pulse-title{font-family:'Playfair Display',Georgia,serif;
+    font-size:15px; font-weight:600; color:var(--gold-deep); margin:0;
+    text-align:center;}
+  .zone-row{display:flex; align-items:center; justify-content:center; gap:22px;}
+  @media (max-width:520px){.zone-strip .pulse-title{font-size:14px;}}
+  /* end mss-pulse-title */
+</style>
+</head>
+<body>
+<div class="backbar"><a class="back" href="502_Macarthur_Ave_Nav.html">&larr; Back to Your Portal</a><a class="back ew-link" href="https://cstmarketupdate.netlify.app/Early_Warning_Luxury.html">Look Before You Launch &rarr;</a></div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="seal" aria-hidden="true">
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="32" r="30" stroke="#A5813B" stroke-width="1.4"/>
+        <circle cx="32" cy="32" r="25" stroke="#D3B978" stroke-width="1"/>
+        <path d="M32 44c-6-5-9-11-9-17 3 1 6 3 9 7 3-4 6-6 9-7 0 6-3 12-9 17z" fill="#A5813B"/>
+      </svg>
+    </div>
+    <div class="brandline">The Casey Samson Team</div>
+    <h1 class="title">Local Market Snapshot&trade;</h1>
+    <p class="subtitle">502 Macarthur Ave NE</p>
+    <p class="subtitle" style="font-size:13px; margin-top:2px">Vienna &nbsp;&middot;&nbsp; 3,609&ndash;8,113 SF &nbsp;&middot;&nbsp; Built 1975&ndash;2027 &nbsp;&middot;&nbsp; $2.1M&ndash;$4.5M</p>
+    <span class="weekof">As of October 14, 2026</span>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Current Market Conditions</div>
+    <h2 class="headline"><span class="city-flag"><span class="flagset"><svg width="17" height="22" viewBox="0 0 21 27" aria-hidden="true" style="display:block"><rect x="1.5" y="0" width="1.8" height="27" rx=".9" fill="#5E5345"/><path d="M3.3 1.6 C8 0.2 13 3.4 18.6 1.8 L18.6 11.4 C13 13 8 9.8 3.3 11.2 Z" fill="#1B9E4B"/></svg></span></span>This Local Market Is Flying a Green Flag with <span class="num">43%</span> of Listed Homes in the Past 30 Days Going Under Contract</h2>
+    <p class="subhead">14% went under contract in the last 14 days &mdash; this market is retreating.</p>
+    <div class="keystats">
+      <div class="keystat"><div class="num">43%</div>
+        <div class="lbl">Went Under in 30 Days</div></div>
+      <div class="keystat"><div class="num">14%</div>
+        <div class="lbl">Went Under in 14 Days</div></div>
+      <div class="keystat"><div class="num">23%</div>
+        <div class="lbl">Of All Inventory Under Contract</div></div>
+    </div>
+    <p class="narrative"><b>Market Update:</b> 3 of the 7
+      homes in this local market listed over the last 30 days are under
+      contract. Across the whole standing inventory, 5 of 22
+      homes are under contract, and the 17 still for sale have been
+      on the market a median of 99 days. Not one of the
+      5 homes under contract had ever cut its price, while
+      10 of the 17 still for sale have cut by an average
+      of 6.6% and are still sitting.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="chart-card">
+      <p class="chart-title">The Local Market</p>
+      <div class="chart-cols">
+        <div class="chart-col">
+          <p class="chart-col-h">Went Under Contract</p>
+          <div class="row"><span>Homes</span><span class="v">5</span></div>
+          <div class="row"><span>Median List Price</span>
+            <span class="v">$2.15M</span></div>
+          <div class="row"><span>Cut Their Price First</span>
+            <span class="v">0 of 5</span></div>
+          <div class="row"><span>Contracts Within 5 Days</span>
+            <span class="v">3 of 5</span></div>
+          <div class="row"><span>Price Per Square Foot</span>
+            <span class="v">$566</span></div>
+          <div class="row"><span>Asking vs Assessed</span>
+            <span class="v">1.15x</span></div>
+        </div>
+        <div class="chart-col">
+          <p class="chart-col-h">For Sale Past 90 Days</p>
+          <div class="row"><span>Homes</span>
+            <span class="v">9 of 17</span></div>
+          <div class="row"><span>Median List Price</span>
+            <span class="v">$2.86M</span></div>
+          <div class="row"><span>Have Cut Their Price</span>
+            <span class="v">10 of 17</span></div>
+          <div class="row"><span>Average Reduction</span>
+            <span class="v">6.6%</span></div>
+          <div class="row"><span>Price Per Square Foot</span>
+            <span class="v">$506</span></div>
+          <div class="row"><span>Asking vs Assessed</span>
+            <span class="v">1.30x</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Price Band</th><th class="num">Listings</th>
+          <th class="num">Under Contract</th><th class="num">% UC</th>
+          <th class="num">Median Days</th><th class="num">Supply</th></tr></thead>
+        <tbody>
+          <tr><td class="market" style="white-space:nowrap">Under $2.3M</td><td class="num">9</td><td class="num">4</td><td class="num up">44%</td><td class="num">52</td><td class="num">1.2 mo</td></tr>
+          <tr><td class="market" style="white-space:nowrap">$2.3M &ndash; $3.0M</td><td class="num">4</td><td class="num">0</td><td class="num ">0%</td><td class="num">33</td><td class="num">&mdash;</td></tr>
+          <tr><td class="market" style="white-space:nowrap">$3.0M and up</td><td class="num">9</td><td class="num">1</td><td class="num down">11%</td><td class="num">195</td><td class="num">8.0 mo</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="narrative">The homes going under contract ask a <i>higher</i>
+      price per square foot &mdash; $566 against
+      $506 for those past 90 days &mdash; so buyers here
+      are capped on total dollars, not on value. Asking price against
+      assessed says the same: 1.15x sells,
+      1.30x sits.</p>
+    <p class="narrative">This pull covers active and pending listings only,
+      with no closed sales and none withdrawn or expired, so it reads lower
+      than the public Market Snapshot for the same area. At 7
+      homes in the 30-day group, one more contract would read
+      57% and one fewer
+      29%, so the price bands are
+      the dependable finding.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="strategy-banner">
+      <p>Selling Homes is About Strategy, not Price.<br><a href="https://502macarthur.netlify.app">Casey Samson Team Strategy</a></p>
+      <p class="strategy-second"><a href="https://buymacarthur.netlify.app">What buyers must see regardless of market conditions</a></p>
+    </div>
+    <div class="cta">
+      <p class="cta-ask">Looking to list your home?</p>
+      <p class="cta-reach">Call Casey at <a href="tel:+17035082535">703-508-2535</a> or email <a href="mailto:Casey@caseysamson.com">Casey@caseysamson.com</a></p>
+      <p class="cta-team">The Casey Samson Team</p>
+    </div>
+    <div class="copy">&copy; 2026 The Casey Samson Team LLC. All Rights Reserved.</div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,526 @@
+{
+  "address": "13581 Smallwood Ln",
+  "city": "Chantilly",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "",
+  "county": "Fairfax County",
+  "prefix": "13581_Smallwood",
+  "report_date": "Friday, October 16, 2026",
+  "asset_dir": "assets/13581_Smallwood",
+  "hero_photo": "13581_Smallwood_front.jpg",
+  "track_record": "Track_Record_Over_3500",
+  "excellent_condition": true,
+  "values": {
+    "dated": 1420312,
+    "customary": 1578124,
+    "customary_list": 1492643,
+    "premium": 1704374,
+    "upgrades": 0
+  },
+  "subject": {
+    "built": 2023,
+    "sf": 4225,
+    "lot": 9318,
+    "assessment": 1366810
+  },
+  "comps": {
+    "rows": [
+      [
+        "13754 Royal Re",
+        2000,
+        3920,
+        13757,
+        1309200,
+        1610000
+      ],
+      [
+        "3961 Woodberry",
+        2011,
+        3937,
+        9583,
+        1473770,
+        1575000
+      ],
+      [
+        "13633 Birch Dr",
+        1995,
+        3479,
+        23963,
+        1210340,
+        1552330
+      ],
+      [
+        "13711 Black Spr",
+        2000,
+        3474,
+        15246,
+        1289040,
+        1525000
+      ],
+      [
+        "4909 Fox Creek",
+        1994,
+        3712,
+        9154,
+        1214100,
+        1470000
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        2001,
+        3884,
+        11024,
+        1299113,
+        1481250
+      ],
+      [
+        "Price Range Average",
+        2000,
+        3704,
+        14341,
+        1299290,
+        1546466
+      ]
+    ]
+  },
+  "competition": [
+    {
+      "status": "Coming Soon",
+      "address": "4774 Sun Orcha",
+      "dom": 0,
+      "built": 2000,
+      "sf": 3436,
+      "lot": 13586,
+      "list": 1550000,
+      "assessment": 1232810
+    },
+    {
+      "status": "Active",
+      "address": "5045 Worthingt",
+      "dom": 51,
+      "built": 2000,
+      "sf": 3502,
+      "lot": 11446,
+      "list": 1350000,
+      "assessment": 1271160
+    },
+    {
+      "status": "Pending",
+      "address": "13803 Cutleaf C",
+      "dom": 4,
+      "built": 2000,
+      "sf": 4162,
+      "lot": 14707,
+      "list": 1475000,
+      "assessment": 1352370
+    },
+    {
+      "status": "Pending",
+      "address": "13770 Henry Po",
+      "dom": 4,
+      "built": 2003,
+      "sf": 4248,
+      "lot": 13693,
+      "list": 1500000,
+      "assessment": 1466080
+    },
+    {
+      "status": "Withdrawn",
+      "address": "13757 Royal Re",
+      "dom": 13,
+      "built": 1999,
+      "sf": 3862,
+      "lot": 13844,
+      "list": 1500000,
+      "assessment": 1327990
+    }
+  ],
+  "market": {
+    "name": "Chantilly Market",
+    "slug": null,
+    "stats": null,
+    "absorption": null
+  },
+  "local_snapshot": {
+    "rows": [
+      {
+        "status": "ACT",
+        "address": "5045 Worthingt",
+        "dom": 51,
+        "built": 2000,
+        "sf": 3502,
+        "lot": 11446,
+        "assessment": 1271160,
+        "list": 1350000,
+        "entry": "08/26/2026"
+      },
+      {
+        "status": "A/C",
+        "address": "13803 Cutleaf C",
+        "dom": 4,
+        "built": 2000,
+        "sf": 4162,
+        "lot": 14707,
+        "assessment": 1352370,
+        "list": 1475000,
+        "entry": "10/12/2026"
+      },
+      {
+        "status": "PND",
+        "address": "13770 Henry Po",
+        "dom": 4,
+        "built": 2003,
+        "sf": 4248,
+        "lot": 13693,
+        "assessment": 1466080,
+        "list": 1500000,
+        "entry": "10/12/2026"
+      }
+    ]
+  },
+  "buyer_portal": {
+    "display_address": "13581 Smallwood Ln",
+    "asset_dir": "assets/13581_Smallwood/buyer",
+    "hero_photo": "13581_Smallwood_front.jpg",
+    "deploy_to": "https://buysmallwood.netlify.app",
+    "url": "https://buysmallwood.netlify.app",
+    "live": true,
+    "list_price": 1492643,
+    "status_line": "Coming Soon",
+    "headline": "Built 2023 &mdash; 4,225 finished square feet on a quarter acre in Chantilly.",
+    "facts": [
+      [
+        "2023",
+        "Year built"
+      ],
+      [
+        "4,225",
+        "Above grade SF"
+      ],
+      [
+        "9,318",
+        "SF lot"
+      ],
+      [
+        "Chantilly",
+        "Fairfax County"
+      ]
+    ],
+    "pricing_pdf": "13581_Smallwood_Buyer_Report.pdf",
+    "snapshot": {
+      "title": "Market Snapshot",
+      "lede": "Every home 13581 Smallwood Ln is competing with, and what each one is asking.",
+      "rows": [
+        [
+          "C/S",
+          "4774 Sun Orcha",
+          0,
+          2000,
+          3436,
+          13586,
+          1232810,
+          1550000
+        ],
+        [
+          "ACT",
+          "5045 Worthingt",
+          51,
+          2000,
+          3502,
+          11446,
+          1271160,
+          1350000
+        ],
+        [
+          "A/C",
+          "13803 Cutleaf C",
+          4,
+          2000,
+          4162,
+          14707,
+          1352370,
+          1475000
+        ],
+        [
+          "PND",
+          "13770 Henry Po",
+          4,
+          2003,
+          4248,
+          13693,
+          1466080,
+          1500000
+        ],
+        [
+          "WTH",
+          "13757 Royal Re",
+          13,
+          1999,
+          3862,
+          13844,
+          1327990,
+          1500000
+        ]
+      ]
+    },
+    "contacts": {
+      "names": "Casey Samson",
+      "team": "The Casey Samson Team &middot; Samson Properties",
+      "lines": [
+        [
+          "Casey Samson",
+          "703-508-2535",
+          "Casey@caseysamson.com"
+        ]
+      ],
+      "office": "Samson Properties &middot; Northern Virginia"
+    },
+    "amenities_lede": "Just south of Route 50 in Chantilly &mdash; a quarter mile from Rocky Run Middle School, under two miles from the Sully Place and Wegmans retail corridor, and about six miles from Dulles.",
+    "amenities": [
+      {
+        "title": "Dining",
+        "items": [
+          [
+            "The Capital Grille",
+            "Fine dining steakhouse at Fair Lakes",
+            2.8
+          ],
+          [
+            "Bourbon Boulevard Steakhouse",
+            "Upscale steakhouse and cocktail bar",
+            1.7
+          ],
+          [
+            "Lazy Dog Restaurant &amp; Bar",
+            "Family American on Newbrook Dr",
+            1.45
+          ],
+          [
+            "Backyard Grill",
+            "Casual American and brunch on Metrotech Dr",
+            1.59
+          ],
+          [
+            "Starbucks",
+            "Drive-thru coffee on Chantilly Lace Ct",
+            1.81
+          ],
+          [
+            "Loud&rsquo;n Roasted Coffee Roasters",
+            "Local roaster on Sullyfield Cir",
+            1.71
+          ]
+        ]
+      },
+      {
+        "title": "Shopping",
+        "items": [
+          [
+            "Sully Place Shopping Center",
+            "The closest large retail center",
+            1.39
+          ],
+          [
+            "Chantilly Crossing",
+            "Target and Costco anchors",
+            2.15
+          ],
+          [
+            "Fair Oaks Mall",
+            "Enclosed regional mall in Fairfax",
+            3.11
+          ],
+          [
+            "Wegmans",
+            "Full-service grocery on Newbrook Dr",
+            1.6
+          ],
+          [
+            "ALDI",
+            "Value grocery on the Route 50 service road",
+            1.47
+          ],
+          [
+            "Lidl",
+            "Grocery at Chantilly Crossing",
+            2.28
+          ]
+        ]
+      },
+      {
+        "title": "Getting Around",
+        "items": [
+          [
+            "Route 50",
+            "Nearest access at Stringfellow Rd",
+            0.77
+          ],
+          [
+            "Route 28",
+            "North-south arterial toward Dulles",
+            1.61
+          ],
+          [
+            "Interstate 66",
+            "Corridor access near Centreville",
+            2.04
+          ],
+          [
+            "Herndon Metro Station",
+            "Silver Line",
+            5.57
+          ],
+          [
+            "Dulles International",
+            "IAD",
+            5.8
+          ],
+          [
+            "Reagan National",
+            "DCA",
+            20.26
+          ]
+        ]
+      }
+    ],
+    "schools": [
+      "Poplar Tree Elementary School",
+      "Rocky Run Middle School",
+      "Chantilly High School"
+    ],
+    "locator_map": {
+      "title": "The Neighborhood",
+      "lede": "Chantilly, just south of Route 50 &mdash; the Sully Place and Wegmans corridor to the north, Fair Oaks to the east, and Dulles a short run up Route 28. The arrows point to everything past the edge of the map.",
+      "center": {
+        "lat": 38.875471,
+        "lng": -77.414298,
+        "label": "13581 Smallwood Ln"
+      },
+      "pins": [
+        {
+          "name": "Rocky Run Middle School",
+          "sub": "Fairfax County Public Schools",
+          "lat": 38.8743285,
+          "lng": -77.4101291,
+          "min": 6,
+          "mode": "walk"
+        },
+        {
+          "name": "Sully Place Shopping Center",
+          "sub": "The closest large retail center",
+          "lat": 38.8945345,
+          "lng": -77.4227493,
+          "min": 4,
+          "mode": "drive"
+        },
+        {
+          "name": "Lazy Dog Restaurant &amp; Bar",
+          "sub": "Family American",
+          "lat": 38.877338,
+          "lng": -77.441087,
+          "min": 5,
+          "mode": "drive"
+        },
+        {
+          "name": "ALDI",
+          "sub": "Value grocery on Route 50",
+          "lat": 38.893928,
+          "lng": -77.427902,
+          "min": 5,
+          "mode": "drive"
+        },
+        {
+          "name": "Backyard Grill",
+          "sub": "Casual American and brunch",
+          "lat": 38.895449,
+          "lng": -77.429116,
+          "min": 5,
+          "mode": "drive"
+        },
+        {
+          "name": "Wegmans",
+          "sub": "Full-service grocery",
+          "lat": 38.877681,
+          "lng": -77.443842,
+          "min": 5,
+          "mode": "drive"
+        },
+        {
+          "name": "Bourbon Boulevard Steakhouse",
+          "sub": "Upscale steakhouse",
+          "lat": 38.88679,
+          "lng": -77.442281,
+          "min": 5,
+          "mode": "drive"
+        },
+        {
+          "name": "Loud&rsquo;n Roasted Coffee Roasters",
+          "sub": "Local coffee roaster",
+          "lat": 38.894298,
+          "lng": -77.434814,
+          "min": 5,
+          "mode": "drive"
+        },
+        {
+          "name": "Starbucks",
+          "sub": "Drive-thru coffee",
+          "lat": 38.88658,
+          "lng": -77.44484,
+          "min": 6,
+          "mode": "drive"
+        },
+        {
+          "name": "Chantilly Crossing",
+          "sub": "Target and Costco anchors",
+          "lat": 38.8953353,
+          "lng": -77.4450815,
+          "min": 7,
+          "mode": "drive"
+        },
+        {
+          "name": "Lidl",
+          "sub": "Grocery at Chantilly Crossing",
+          "lat": 38.8972584,
+          "lng": -77.4462269,
+          "min": 7,
+          "mode": "drive"
+        },
+        {
+          "name": "The Capital Grille",
+          "sub": "Fine dining steakhouse",
+          "lat": 38.86028,
+          "lng": -77.36602,
+          "min": 9,
+          "mode": "drive"
+        }
+      ],
+      "arrows": [
+        [
+          16.3,
+          [
+            "Herndon Metro Station",
+            "12 min"
+          ]
+        ],
+        [
+          340.8,
+          [
+            "Dulles International",
+            "13 min"
+          ]
+        ],
+        [
+          94.8,
+          [
+            "Reagan National",
+            "35 min"
+          ]
+        ]
+      ]
+    }
+  },
+  "portal_url": "https://13581smallwood.netlify.app"
+}

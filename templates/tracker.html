@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>502 Spring St — Seller Tracker (Internal) — The Casey Samson Team</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+  :root{
+    --bg:#FAF7F0; --card:#FFFFFF; --banner:#F1EBDA; --ink:#221C14;
+    --muted:#71695A; --muted-2:#968972; --gold:#A5813B; --gold-deep:#8A6A2E;
+    --gold-line:#D3B978; --rule:#E4DCC8; --row-alt:#FBF8F1;
+    --ok:#5C6B4A; --ok-bg:#E9EDE1;
+    --warn:#8A6A2E; --warn-bg:#F3EAD3;
+    --crit:#8C4A3B; --crit-bg:#F3E3DE; --crit-line:#D9B3A8;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:'Lora',Georgia,serif; line-height:1.55; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:820px; margin:0 auto; padding:0 28px;}
+  .back{display:block; padding:14px 0; font-size:13px; color:var(--muted); text-decoration:none; border-bottom:1px solid var(--rule); background:var(--card);}
+  .back:hover{color:var(--gold-deep);}
+  .internal-note{
+    background:var(--crit-bg); border-bottom:1px solid var(--crit-line); text-align:center;
+    padding:9px 20px; font-size:12px; color:var(--crit); font-weight:700; letter-spacing:.02em;
+  }
+  .internal-note span{font-weight:400; font-style:italic;}
+  header.masthead{background:var(--banner); border-bottom:1px solid var(--gold-line); padding:36px 0 30px;}
+  .brandline{text-align:center; letter-spacing:.22em; font-size:11.5px; font-weight:600; color:var(--gold-deep); text-transform:uppercase; margin-bottom:10px;}
+  h1.title{font-family:'Playfair Display',Georgia,serif; text-align:center; font-size:clamp(24px,3.4vw,32px); font-weight:700; margin:0 0 6px;}
+  .subtitle{text-align:center; font-style:italic; color:var(--gold-deep); font-size:15px; margin:0 0 14px;}
+
+  /* ===== Phase pills ===== */
+  .phase-pills{display:flex; justify-content:center; gap:8px; margin:14px 0 16px;}
+  .phase-pill{
+    font-family:'Lora',Georgia,serif; font-size:12px; font-weight:700;
+    letter-spacing:.06em; text-transform:uppercase;
+    color:var(--muted); background:var(--card);
+    border:1px solid var(--rule); border-radius:20px;
+    padding:6px 18px; cursor:pointer; transition:none;
+  }
+  .phase-pill:hover{color:var(--gold-deep); border-color:var(--gold-line);}
+  .phase-pill[aria-selected="true"]{
+    color:#fff; background:var(--gold-deep); border-color:var(--gold-deep);
+  }
+  .phase-pill:focus-visible{outline:2px solid var(--ink); outline-offset:2px;}
+  [data-phase][hidden]{display:none !important;}
+  .addr-block{text-align:center;}
+  .addr{font-family:'Playfair Display',Georgia,serif; font-size:22px; font-weight:600; margin:0;}
+  .city{font-size:14px; color:var(--muted); margin:2px 0 8px;}
+  .asof{
+    display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.03em;
+    background:var(--card); border:1px solid var(--gold-line); color:var(--gold-deep);
+    padding:5px 14px; border-radius:20px;
+  }
+  section{padding:44px 0;}
+  section + section{border-top:1px solid var(--rule);}
+  h2.section-title{font-family:'Playfair Display',Georgia,serif; font-size:22px; font-weight:600; text-align:center; margin:0 0 6px;}
+  p.section-sub{text-align:center; color:var(--muted); font-size:14.5px; max-width:620px; margin:0 auto 28px;}
+
+  /* ===== Clocks ===== */
+  .clocks{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; max-width:780px; margin:0 auto;}
+  @media (max-width:680px){.clocks{grid-template-columns:1fr 1fr;}}
+  @media (max-width:420px){.clocks{grid-template-columns:1fr;}}
+  .clock{background:var(--card); border:1px solid var(--rule); border-radius:8px; padding:18px 14px; text-align:center;}
+  .clock .cl{font-size:10.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); margin-bottom:9px;}
+  .clock .cbig{font-family:'Playfair Display',Georgia,serif; font-size:30px; font-weight:700; color:var(--gold-deep); line-height:1; font-variant-numeric:tabular-nums;}
+  .clock .cbig small{display:block; font-family:'Lora',Georgia,serif; font-size:11.5px; font-weight:400; color:var(--muted-2); margin-top:4px; letter-spacing:.04em; text-transform:uppercase;}
+  .clock .cw{font-size:12px; color:var(--muted-2); font-style:italic; margin-top:8px;}
+  .clock.soon{border-color:var(--crit-line); background:#FDF7F5;}
+  .clock.soon .cbig{color:var(--crit);}
+  .clock.past .cbig{color:var(--ok);}
+
+  /* ===== Milestone rows (first checklist group) ===== */
+  .item.ms .meta{flex-direction:row; align-items:center; gap:9px;}
+  .ms-date{
+    font-family:'Lora',Georgia,serif; font-size:11.5px; font-weight:700; color:var(--gold-deep);
+    background:var(--card); border:1px solid var(--gold-line); border-radius:20px;
+    padding:3px 10px; font-variant-numeric:tabular-nums; cursor:pointer; line-height:1.35;
+  }
+  .ms-date:not([value]), .ms-date.empty{color:var(--muted-2); border-color:var(--rule); background:var(--row-alt);}
+  .ms-date::-webkit-calendar-picker-indicator{opacity:.5; cursor:pointer; margin-left:2px;}
+  .ms-date:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+  .item.ms.checked .ms-date{color:var(--ok); border-color:#C9D6BC; background:var(--ok-bg);}
+  .ms-chip{
+    font-size:10.5px; font-weight:700; letter-spacing:.03em; white-space:nowrap;
+    padding:2px 10px; border-radius:20px; background:var(--banner); color:var(--gold-deep);
+  }
+  .ms-chip.soon{background:var(--crit-bg); color:var(--crit);}
+  .ms-chip.past{background:var(--row-alt); color:var(--muted-2);}
+  .ms-chip.hidden{display:none;}
+  .ms-del{
+    width:21px; height:21px; padding:0; line-height:1; flex:0 0 auto;
+    font-family:'Lora',Georgia,serif; font-size:14px; color:var(--muted-2);
+    background:transparent; border:1px solid var(--rule); border-radius:50%; cursor:pointer;
+  }
+  .ms-del:hover{color:var(--crit); border-color:var(--crit-line); background:var(--crit-bg);}
+  .ms-del:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+
+  .ms-form{
+    display:flex; gap:9px; flex-wrap:wrap; align-items:center;
+    background:var(--banner); border:1px solid var(--gold-line); border-top:none;
+    border-radius:0 0 8px 8px; padding:13px 16px; margin-top:-1px;
+  }
+  .ms-form input{
+    font-family:'Lora',Georgia,serif; font-size:13px; color:var(--ink);
+    background:var(--card); border:1px solid var(--rule); border-radius:6px; padding:7px 11px;
+  }
+  .ms-form input#msName{flex:1 1 200px; min-width:0;}
+  .ms-form input#msDate{flex:0 0 auto; font-variant-numeric:tabular-nums;}
+  .ms-form input:focus{outline:none; border-color:var(--gold-deep);}
+  .ms-form button{
+    font-family:'Lora',Georgia,serif; font-size:12.5px; font-weight:700;
+    color:#fff; background:var(--gold-deep); border:none; border-radius:20px;
+    padding:8px 18px; cursor:pointer;
+  }
+  .ms-form button:hover{background:var(--gold);}
+  .ms-form button:focus-visible{outline:2px solid var(--ink); outline-offset:2px;}
+  .cl-group.ms-group .cl-list{border-radius:8px 8px 0 0;}
+
+  /* ===== Seller net sheet ===== */
+  .ns-basis{
+    display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+    max-width:780px; margin:0 auto 14px;
+    background:var(--banner); border:1px solid var(--gold-line); border-radius:8px;
+    padding:13px 16px;
+  }
+  .ns-basis .fld{display:flex; align-items:center; gap:7px;}
+  .ns-basis label{font-size:10.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--muted);}
+  .ns-in{
+    font-family:'Lora',Georgia,serif; font-size:13px; font-weight:700; color:var(--ink);
+    background:var(--card); border:1px solid var(--rule); border-radius:6px;
+    padding:6px 9px; font-variant-numeric:tabular-nums; text-align:right;
+  }
+  .ns-in:focus{outline:none; border-color:var(--gold-deep);}
+  .ns-in.w-price{width:118px;}
+  .ns-in.w-pct{width:62px;}
+  .ns-in.w-fee{width:92px;}
+  .ns-flag{
+    margin-left:auto; font-size:10.5px; font-weight:700; letter-spacing:.04em;
+    padding:3px 11px; border-radius:20px; background:var(--card);
+    border:1px solid var(--gold-line); color:var(--gold-deep); white-space:nowrap;
+  }
+  td.ns-formula{font-size:11.5px; color:var(--muted-2); font-style:italic;}
+  tr.ns-sub td{background:var(--row-alt); font-weight:700;}
+  tr.ns-net td{background:var(--banner); font-weight:700; font-size:15px;}
+  tr.ns-net td.r{font-family:'Playfair Display',Georgia,serif; font-size:19px; color:var(--gold-deep);}
+  tr.ns-memo td{background:var(--card); color:var(--muted-2); font-size:12.5px; font-style:italic;}
+  tr.ns-memo td.r{font-style:normal;}
+
+  /* ===== Flags ===== */
+  .flag{
+    max-width:760px; margin:0 auto 12px; background:var(--card);
+    border:1px solid var(--rule); border-left:5px solid var(--warn);
+    border-radius:8px; padding:18px 22px;
+  }
+  .flag.crit{border-left-color:var(--crit); background:#FEFAF9;}
+  .flag h3{font-family:'Playfair Display',Georgia,serif; font-size:17px; font-weight:600; margin:0 0 5px;}
+  .flag .src{
+    display:inline-block; font-family:'Lora',Georgia,serif; font-size:11px; font-weight:700;
+    letter-spacing:.04em; text-transform:uppercase; color:var(--muted-2);
+    background:var(--row-alt); border:1px solid var(--rule); border-radius:20px;
+    padding:2px 10px; margin-bottom:8px;
+  }
+  .flag p{font-size:13.5px; color:var(--muted); margin:0;}
+  .flag p b{color:var(--ink);}
+
+  /* ===== Tables ===== */
+  .table-wrap{max-width:780px; margin:0 auto 18px; overflow-x:auto; border:1px solid var(--rule); border-radius:4px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:460px;}
+  thead th{background:var(--banner); text-align:left; font-weight:600; font-size:11px; letter-spacing:.03em; text-transform:uppercase; color:var(--muted); padding:11px 14px; border-bottom:1px solid var(--gold-line);}
+  thead th.r{text-align:right;}
+  tbody td{padding:10px 14px; border-bottom:1px solid var(--rule); vertical-align:top;}
+  tbody td.r{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; font-weight:600;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr.total-row td{font-weight:700; background:var(--banner);}
+  td .sub{display:block; font-size:11.5px; color:var(--muted-2); font-weight:400; font-style:italic; margin-top:2px;}
+  td.k{color:var(--muted); width:46%;}
+  .badge{display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:2px 9px; border-radius:20px; white-space:nowrap; margin-right:6px;}
+  .badge.no{background:#EFEADC; color:var(--muted);}
+  .badge.yes{background:var(--ok-bg); color:var(--ok);}
+  .badge.w{background:var(--warn-bg); color:var(--warn);}
+
+  /* ===== Occupancy ===== */
+  .occ{max-width:760px; margin:0 auto; background:var(--card); border:1px solid var(--gold-line); border-radius:8px; padding:24px 26px;}
+  .occ-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin-bottom:18px; padding-bottom:18px; border-bottom:1px dashed var(--rule);}
+  @media (max-width:680px){.occ-grid{grid-template-columns:1fr 1fr;}}
+  .occ-grid .ol{font-size:10px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); margin-bottom:5px;}
+  .occ-grid .od{font-family:'Playfair Display',Georgia,serif; font-size:17px; font-weight:700; color:var(--gold-deep); line-height:1.15;}
+  .occ-grid .od em{display:block; font-family:'Lora',Georgia,serif; font-size:10.5px; font-weight:700; color:var(--crit); font-style:normal; text-transform:uppercase; letter-spacing:.04em; margin-top:3px;}
+  .occ ul{margin:0; padding-left:19px; font-size:13.5px; color:var(--muted);}
+  .occ li{margin-bottom:8px;}
+  .occ li b{color:var(--ink);}
+
+  /* ===== Checklist ===== */
+  .cl-group{max-width:760px; margin:0 auto 22px;}
+  .cl-head{display:flex; align-items:baseline; gap:11px; flex-wrap:wrap; margin-bottom:9px; padding:0 2px;}
+  .cl-head h3{font-family:'Playfair Display',Georgia,serif; font-size:16px; font-weight:600; color:var(--gold-deep); margin:0;}
+  .cl-head .cl-date{
+    font-size:11px; font-weight:700; letter-spacing:.03em; white-space:nowrap;
+    color:var(--gold-deep); background:var(--banner);
+    border:1px solid var(--gold-line); border-radius:20px; padding:2px 11px;
+    font-variant-numeric:tabular-nums;
+  }
+  .cl-head .count{margin-left:auto; font-size:11.5px; font-weight:700; letter-spacing:.03em; color:var(--muted-2); font-variant-numeric:tabular-nums;}
+  .cl-list{background:var(--card); border:1px solid var(--rule); border-radius:8px; overflow:hidden;}
+  .item{display:flex; gap:13px; align-items:flex-start; padding:11px 18px; border-bottom:1px solid var(--rule);}
+  .item:last-child{border-bottom:none;}
+  .item input[type=checkbox]{
+    appearance:none; -webkit-appearance:none; flex:0 0 auto; position:relative;
+    width:17px; height:17px; margin:3px 0 0; border:1.5px solid var(--muted-2);
+    border-radius:4px; background:var(--card); cursor:pointer;
+  }
+  .item input[type=checkbox]:checked{background:var(--gold-deep); border-color:var(--gold-deep);}
+  .item input[type=checkbox]:checked::after{
+    content:""; position:absolute; left:5px; top:1px; width:4px; height:9px;
+    border:solid #fff; border-width:0 2px 2px 0; transform:rotate(43deg);
+  }
+  .item input[type=checkbox]:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+  .item label{flex:1; font-size:13.5px; cursor:pointer;}
+  .item.checked label{color:var(--muted-2); text-decoration:line-through; text-decoration-color:var(--rule);}
+
+  /* right-hand date column */
+  .meta{display:flex; flex-direction:column; align-items:flex-end; gap:4px; flex:0 0 auto; padding-top:1px;}
+  .due{
+    font-size:11px; font-weight:700; letter-spacing:.03em; white-space:nowrap;
+    color:var(--muted-2); font-variant-numeric:tabular-nums;
+  }
+  .due.soon{color:var(--crit);}
+  .due.over{
+    color:var(--crit); background:var(--crit-bg); border:1px solid var(--crit-line);
+    border-radius:20px; padding:1px 9px;
+  }
+  .due.settled{color:var(--muted-2); font-weight:400; text-decoration:line-through; text-decoration-color:var(--rule);}
+  .stamp{
+    display:none; font-family:'Lora',Georgia,serif; font-size:11px; font-weight:700;
+    color:var(--ok); background:var(--ok-bg); border:1px solid #C9D6BC;
+    border-radius:20px; padding:2px 9px; font-variant-numeric:tabular-nums;
+    cursor:pointer; line-height:1.3;
+  }
+  .stamp::-webkit-calendar-picker-indicator{opacity:.5; cursor:pointer; margin-left:2px;}
+  .item.checked .stamp{display:inline-block;}
+  .stamp:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+  .stamp-label{
+    display:none; font-size:9.5px; font-weight:700; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--muted-2);
+  }
+  .item.checked .stamp-label{display:block;}
+  .cl-foot{max-width:760px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; font-size:12px; color:var(--muted-2); font-style:italic;}
+  .cl-foot button{
+    font-family:'Lora',Georgia,serif; font-size:12px; font-weight:700; color:var(--gold-deep);
+    background:var(--card); border:1px solid var(--gold-line); border-radius:20px;
+    padding:5px 14px; cursor:pointer;
+  }
+  .cl-foot button:hover{background:var(--banner);}
+
+  /* ===== Directory ===== */
+  .dir{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; max-width:780px; margin:0 auto;}
+  @media (max-width:680px){.dir{grid-template-columns:1fr 1fr;}}
+  @media (max-width:420px){.dir{grid-template-columns:1fr;}}
+  .dcard{background:var(--card); border:1px solid var(--rule); border-radius:8px; padding:16px;}
+  .dcard .role{font-size:10.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:6px;}
+  .dcard .nm{font-weight:600; font-size:14.5px;}
+  .dcard .org{font-size:12.5px; color:var(--muted-2); font-style:italic; margin-bottom:7px;}
+  .dcard a{display:block; font-size:12.5px; color:var(--ink); text-decoration:none; padding:2px 0; word-break:break-word;}
+  .dcard a:hover{color:var(--gold-deep); text-decoration:underline;}
+
+  .notes-box{max-width:700px; margin:22px auto 0; text-align:center; font-size:12.5px; color:var(--muted-2); font-style:italic;}
+
+  footer{text-align:center; padding:40px 0 56px; background:var(--banner); border-top:1px solid var(--gold-line);}
+  footer .produced{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  footer .contact-line{font-weight:700; font-size:13.5px; margin-bottom:12px;}
+  footer .contact-line a{color:inherit; text-decoration:none;}
+  footer .contact-line .sep{font-weight:400; color:var(--muted-2); margin:0 8px;}
+  footer .copy{font-size:12px; color:var(--muted); margin-top:14px;}
+
+  @media print{ .back, .cl-foot button{display:none;} body{background:#fff;} }
+</style>
+</head>
+<body>
+
+<a class="back" href="index.html">&larr; Back to 502 Spring St</a>
+<div class="internal-note">Internal &mdash; Casey Samson Team only <span>&middot; not for the seller, the buyers, or the buyer&rsquo;s agent</span></div>
+
+<header class="masthead">
+  <div class="wrap">
+    <img src="Gold_Standard_Logo.png" alt="Gold Standard Listing" style="display:block; width:100px; margin:0 auto 12px;">
+    <div class="brandline">The Casey Samson Team</div>
+    <h1 class="title">Seller Transaction Tracker</h1>
+
+    <div class="phase-pills" role="tablist" aria-label="Tracker phase">
+      <button type="button" class="phase-pill" data-set-phase="pre"  role="tab">Pre-Contract</button>
+      <button type="button" class="phase-pill" data-set-phase="post" role="tab">Post-Contract</button>
+    </div>
+
+    <p class="subtitle" data-phase="pre">Preparing for market &mdash; pricing, prep and launch</p>
+    <p class="subtitle" data-phase="post">Ratified $2,250,000 &mdash; no contingencies &mdash; 31-day rent-back</p>
+    <div class="addr-block">
+      <p class="addr">502 Spring St</p>
+      <p class="city">Vienna, Virginia &middot; Monica S. Tencate &middot; Kelly Samson</p>
+      <span class="asof" data-phase="pre">Coming Soon $2,149,999</span>
+      <span class="asof" data-phase="post">Ratified Friday, September 4, 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Clocks ===== -->
+<section>
+  <div class="wrap">
+    <div class="clocks" data-phase="pre">
+      <div class="clock" data-ms-date="m5">
+        <div class="cl">Picture Day</div>
+        <div class="cbig" data-count>&mdash;</div>
+        <div class="cw" data-when>Set the date in the checklist</div>
+      </div>
+      <div class="clock" data-ms-date="m6">
+        <div class="cl">Coming Soon</div>
+        <div class="cbig" data-count>&mdash;</div>
+        <div class="cw" data-when>Set the date in the checklist</div>
+      </div>
+      <div class="clock" data-ms-date="m7">
+        <div class="cl">Launch Date</div>
+        <div class="cbig" data-count>&mdash;</div>
+        <div class="cw" data-when>Set the date in the checklist</div>
+      </div>
+      <div class="clock" data-dom="m7">
+        <div class="cl">Days on Market</div>
+        <div class="cbig" data-count>&mdash;</div>
+        <div class="cw" data-when>Counts from launch</div>
+      </div>
+    </div>
+
+    <div class="clocks" data-phase="post">
+      <div class="clock" data-date="2026-09-14">
+        <div class="cl">Deposit &amp; Escrow</div>
+        <div class="cbig" data-count>&mdash;</div>
+        <div class="cw">Mon Sep 14 &middot; $50,000 to RGS</div>
+      </div>
+      <div class="clock" data-date="2026-10-02">
+        <div class="cl">Settlement</div>
+        <div class="cbig" data-count>&mdash;</div>
+        <div class="cw">Fri Oct 2 &middot; RGS Oakton</div>
+      </div>
+      <div class="clock" data-date="2026-11-02">
+        <div class="cl">Seller Vacates</div>
+        <div class="cbig" data-count>&mdash;</div>
+        <div class="cw">Mon Nov 2 &middot; 9:00 p.m.</div>
+      </div>
+      <div class="clock" data-date="2026-11-05">
+        <div class="cl">Deposit Release</div>
+        <div class="cbig" data-count>&mdash;</div>
+        <div class="cw">Thu Nov 5 &middot; $5,000 to Monica</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Economics ===== -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title" data-phase="pre">Projected Seller Net</h2>
+    <h2 class="section-title" data-phase="post">Deal Economics</h2>
+    <p class="section-sub" data-phase="pre">What Monica nets at the asking price. Change the list price to model a different number.</p>
+    <p class="section-sub" data-phase="post">Straight from the executed contract. Payoff, taxes and prorations are RGS's numbers.</p>
+
+    <div class="table-wrap" data-phase="post">
+      <table>
+        <thead><tr><th>Purchase</th><th class="r">Amount</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Sales price</td><td class="r">$2,250,000</td></tr>
+          <tr><td class="k">Down payment</td><td class="r">$775,000</td></tr>
+          <tr><td class="k">First trust<span class="sub">Conventional, 30-year fixed, Atlantic Coast Mortgage</span></td><td class="r">$1,475,000</td></tr>
+          <tr><td class="k">Loan to value</td><td class="r">65.56%</td></tr>
+          <tr><td class="k">Earnest money deposit<span class="sub">Held by RGS Title as escrow agent</span></td><td class="r">$50,000</td></tr>
+          <tr><td class="k">Seller subsidy</td><td class="r">$0</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ns-basis">
+      <div class="fld"><label for="nsList">List price</label><input type="text" inputmode="numeric" id="nsList" class="ns-in w-price" value="2,149,999"></div>
+      <div class="fld" data-phase="post"><label for="nsContract">Contract price</label><input type="text" inputmode="numeric" id="nsContract" class="ns-in w-price" value="2,250,000"></div>
+      <div class="fld"><label for="nsListPct">Listing %</label><input type="text" inputmode="decimal" id="nsListPct" class="ns-in w-pct" value="2.5"></div>
+      <div class="fld"><label for="nsBuyPct">Buyer %</label><input type="text" inputmode="decimal" id="nsBuyPct" class="ns-in w-pct" value="2.5"></div>
+      <span class="ns-flag" id="nsFlag">&mdash;</span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Seller net sheet</th><th>Basis</th><th class="r">Amount</th></tr></thead>
+        <tbody>
+          <tr><td class="k" id="nsPriceLabel">Sales Price</td><td class="ns-formula" id="nsPriceNote">&mdash;</td><td class="r" id="nsPrice">&mdash;</td></tr>
+          <tr><td class="k">Total Commission<span class="sub">Listing side 2.5% per listing agreement &middot; buyer side 2.5% per contract &sect;2(E)</span></td><td class="ns-formula" id="nsCommNote">&mdash;</td><td class="r" id="nsComm">&mdash;</td></tr>
+          <tr><td class="k">Grantor&rsquo;s Tax</td><td class="ns-formula">Price &times; 0.003</td><td class="r" id="nsTax">&mdash;</td></tr>
+          <tr><td class="k">Settlement Fee</td><td class="ns-formula">Flat</td><td class="r"><input type="text" inputmode="numeric" id="nsSettle" class="ns-in w-fee" value="855"></td></tr>
+          <tr><td class="k">Deed Preparation</td><td class="ns-formula">Flat</td><td class="r"><input type="text" inputmode="numeric" id="nsDeed" class="ns-in w-fee" value="175"></td></tr>
+          <tr><td class="k">Admin Fee</td><td class="ns-formula">Flat</td><td class="r"><input type="text" inputmode="numeric" id="nsAdmin" class="ns-in w-fee" value="345"></td></tr>
+          <tr><td class="k">Other Concessions</td><td class="ns-formula">Seller subsidy, credits</td><td class="r"><input type="text" inputmode="numeric" id="nsOther" class="ns-in w-fee" value="0"></td></tr>
+          <tr class="ns-sub"><td>Total Reductions</td><td class="ns-formula">&nbsp;</td><td class="r" id="nsTotal">&mdash;</td></tr>
+          <tr class="ns-net"><td>Seller Net Sheet</td><td class="ns-formula">Before payoff and prorations</td><td class="r" id="nsNet">&mdash;</td></tr>
+          <tr class="ns-memo" data-phase="post"><td>Less occupancy security deposit</td><td>Escrowed at settlement, released Nov 5</td><td class="r">&minus;$5,000</td></tr>
+          <tr class="ns-memo" data-phase="post"><td>Proceeds at the table</td><td>Before payoff and prorations</td><td class="r" id="nsTable">&mdash;</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="notes-box" style="margin-top:4px;">Does not include Monica&rsquo;s loan payoff, tax and utility prorations, or the Regional Congestion Relief and WMATA Capital fees &mdash; those are RGS&rsquo;s numbers on the settlement statement. Change any figure above and the sheet recalculates.</p>
+  </div>
+  </div>
+</section>
+
+<!-- ===== Terms ===== -->
+<section data-phase="post">
+  <div class="wrap">
+    <h2 class="section-title">Contract Terms at a Glance</h2>
+    <p class="section-sub">NVAR K1321 v07/26, ratified September 4, 2026.</p>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><td class="k">Home inspection</td><td><span class="badge no">Waived</span>Buyer waived the opportunity entirely. As-is as of the Sep 1 Date of Offer. Seller not obligated to provide inspection access.</td></tr>
+          <tr><td class="k">Financing</td><td><span class="badge no">Not contingent</span>No application deadline, no removal notice. Buyer is financing but carries the risk.</td></tr>
+          <tr><td class="k">Appraisal</td><td><span class="badge no">Not contingent</span>Seller still provides appraiser access.</td></tr>
+          <tr><td class="k">POA / condominium</td><td><span class="badge no">Neither</span>No resale certificate, no review period, no &sect;55.1-2312 cancellation right.</td></tr>
+          <tr><td class="k">Wood-destroying insect report</td><td><span class="badge w">Live item</span>Buyer orders at Buyer's expense, dated within 90 days of settlement. <b>Treatment and repair of anything found are at Seller's expense</b>, with written evidence before settlement.</td></tr>
+          <tr><td class="k">Home warranty</td><td><span class="badge no">No</span></td></tr>
+          <tr><td class="k">Settlement agent / escrow</td><td>RGS Title, Oakton &mdash; Buyer's designation. Holds both the $50,000 deposit and the $5,000 occupancy deposit.</td></tr>
+          <tr><td class="k">Possession</td><td><span class="badge w">Deferred</span>Not at settlement. Thirty-one day post-settlement occupancy &mdash; see below.</td></tr>
+          <tr><td class="k">Lead-based paint</td><td><span class="badge yes">N/A</span>Dwelling not built before 1978.</td></tr>
+          <tr><td class="k">FIRPTA</td><td><span class="badge yes">Clear</span>Seller is not a foreign person.</td></tr>
+          <tr><td class="k">Systems</td><td>Public water and sewer. Gas hot water and heating, electric air conditioning.</td></tr>
+          <tr><td class="k">Conveys at no charge</td><td><b>Vienna Woods Swim &amp; Tennis membership</b> (separate club transfer required), trampoline, soccer goal, two garage openers, standard appliances, window treatments, storage shed, smart devices. Surface-mounted electronics do not convey; mounts and brackets do.</td></tr>
+          <tr><td class="k">Contract notices</td><td>To Seller by email to kellysamson.sp@gmail.com. To Buyer at Joan@JustPhoneJoan.com and Admin@TheReimannGroup.com.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Occupancy ===== -->
+<section data-phase="post">
+  <div class="wrap">
+    <h2 class="section-title">Post-Settlement Occupancy</h2>
+    <p class="section-sub">NVAR K1020 rev 07/24. Thirty-one days, rent free &mdash; a temporary right to use, not a lease, and outside the Virginia Residential Landlord Tenant Act. This is where the remaining risk in the file sits.</p>
+
+    <div class="occ">
+      <div class="occ-grid">
+        <div><div class="ol">Charge</div><div class="od">$0.00</div></div>
+        <div><div class="ol">Term</div><div class="od">Oct 2 &ndash; Nov 2</div></div>
+        <div><div class="ol">Deposit</div><div class="od">$5,000</div></div>
+        <div><div class="ol">Deadline</div><div class="od">Nov 2, 9 p.m.</div></div>
+        <div><div class="ol">Holdover rate</div><div class="od">$500/day<em>Unconfirmed</em></div></div>
+      </div>
+      <ul>
+        <li><b>Monica's obligations.</b> Keep all utilities registered in her name and pay them through Nov 2. Maintain the property, appliances and systems in substantially the same condition as at settlement. Deliver it broom clean with all trash and debris removed. Carry insurance on her own personal property and liability.</li>
+        <li><b>Buyers' obligations.</b> Carry homeowner's insurance from settlement forward. They bear casualty risk &mdash; fire, flood, act of God &mdash; during the occupancy, except for Monica's own intentional or negligent acts. Their policy is primary if coverage overlaps.</li>
+        <li><b>Keys.</b> One set to the buyers at settlement. All remaining keys, mailbox keys, fobs, codes and digital keys at the Nov 2 deadline.</li>
+        <li><b>Vacating early.</b> Monica must give at least three days' written notice. She stays responsible for maintenance and utilities through Nov 2 unless the parties agree in writing that the buyers take exclusive possession sooner.</li>
+        <li><b>Deposit release.</b> Buyers inspect and deliver a written deficiency list to Monica and RGS within three business days after the deadline &mdash; by Thu Nov 5. No list in that window and RGS is irrevocably instructed to release the $5,000 to Monica.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Checklist ===== -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Working Checklist</h2>
+    <p class="section-sub" id="clSub">From listing setup through file close.</p>
+
+    <div class="cl-group ms-group" data-group data-phase="pre">
+      <div class="cl-head"><h3>Listing Milestones</h3><span class="count"></span></div>
+      <div class="cl-list" id="msList">
+        <div class="item ms"><input type="checkbox" id="m1"><label for="m1">Signed Listing Agreement</label></div>
+        <div class="item ms"><input type="checkbox" id="m2"><label for="m2">To Do List Meeting</label></div>
+        <div class="item ms"><input type="checkbox" id="m3"><label for="m3">Added to Preview</label></div>
+        <div class="item ms"><input type="checkbox" id="m4"><label for="m4">Estimated Completion Date</label></div>
+        <div class="item ms"><input type="checkbox" id="m5"><label for="m5">Picture Day</label></div>
+        <div class="item ms"><input type="checkbox" id="m6"><label for="m6">Coming Soon</label></div>
+        <div class="item ms"><input type="checkbox" id="m7"><label for="m7">Launch Date</label></div>
+        <div class="item ms"><input type="checkbox" id="m8"><label for="m8">Seller Info Received</label></div>
+      </div>
+      <form class="ms-form" id="msForm" autocomplete="off">
+        <input type="text" id="msName" placeholder="Add a milestone — e.g. Stager Walkthrough" maxlength="60" required>
+        <input type="date" id="msDate" aria-label="Milestone date">
+        <button type="submit">Add</button>
+      </form>
+    </div>
+
+    <div class="cl-group" data-group data-phase="post">
+      <div class="cl-head"><h3>Ratified Contract</h3><span class="cl-date">September 4, 2026</span><span class="count"></span></div>
+      <div class="cl-list">
+        <div class="item"><input type="checkbox" id="c1"><label for="c1">Send ratified contract, occupancy agreement and addendum to RGS Title Oakton</label><span class="due" data-due="2026-09-08"></span></div>
+        <div class="item"><input type="checkbox" id="c2"><label for="c2">Confirm $50,000 deposit received and receipted by RGS</label><span class="due" data-due="2026-09-14"></span></div>
+        <div class="item"><input type="checkbox" id="c3"><label for="c3">Confirm buyer side contacted RGS to schedule settlement</label><span class="due" data-due="2026-09-14"></span></div>
+        <div class="item"><input type="checkbox" id="c4"><label for="c4">Confirm the holdover rate and the buyer&rsquo;s showing rights in writing with Joan Reimann</label><span class="due" data-due="2026-09-15"></span></div>
+        <div class="item"><input type="checkbox" id="c5"><label for="c5">Send Monica's payoff authorization to RGS; confirm title exam and survey ordered</label><span class="due" data-due="2026-09-16"></span></div>
+        <div class="item"><input type="checkbox" id="c6"><label for="c6">Confirm buyer scheduled the WDI inspection &mdash; Seller pays for any treatment found</label><span class="due" data-due="2026-09-21"></span></div>
+        <div class="item"><input type="checkbox" id="c7"><label for="c7">Start Vienna Woods Swim &amp; Tennis membership transfer paperwork</label><span class="due" data-due="2026-09-21"></span></div>
+        <div class="item"><input type="checkbox" id="c8"><label for="c8">Confirm Monica's utilities stay in her name through Nov 2 and her insurance stays in force</label><span class="due" data-due="2026-09-23"></span></div>
+        <div class="item"><input type="checkbox" id="c9"><label for="c9">Coordinate final walkthrough with Joan &mdash; window opens Sep 25</label><span class="due" data-due="2026-09-25"></span></div>
+        <div class="item"><input type="checkbox" id="c10"><label for="c10">Review preliminary settlement statement &mdash; confirm the 2.5% and the $5,000 holdback are both on it</label><span class="due" data-due="2026-09-29"></span></div>
+        <div class="item"><input type="checkbox" id="c11"><label for="c11">Complete the Notice Information page &mdash; direct contacts for Monica, the Isakowitzes and RGS</label><span class="due" data-due="2026-10-01"></span></div>
+        <div class="item"><input type="checkbox" id="c12"><label for="c12">Confirm one set of keys ready to hand over at the table</label><span class="due" data-due="2026-10-01"></span></div>
+        <div class="item"><input type="checkbox" id="c13"><label for="c13">Settlement &mdash; RGS Title, Oakton</label><span class="due" data-due="2026-10-02"></span></div>
+      </div>
+    </div>
+
+    <div class="cl-group" data-group data-phase="post">
+      <div class="cl-head"><h3>Post-Settlement Occupancy</h3><span class="cl-date">October 2 &ndash; November 2, 2026</span><span class="count"></span></div>
+      <div class="cl-list">
+        <div class="item"><input type="checkbox" id="c14"><label for="c14">Confirm $5,000 escrowed with RGS and the disbursement instruction is on file</label><span class="due" data-due="2026-10-02"></span></div>
+        <div class="item"><input type="checkbox" id="c15"><label for="c15">Confirm buyers' homeowner's policy bound as of settlement</label><span class="due" data-due="2026-10-02"></span></div>
+        <div class="item"><input type="checkbox" id="c16"><label for="c16">Check in with Monica on the move-out plan &mdash; two weeks out</label><span class="due" data-due="2026-10-19"></span></div>
+        <div class="item"><input type="checkbox" id="c17"><label for="c17">Confirm movers booked and cleaning crew scheduled for broom-clean condition</label><span class="due" data-due="2026-10-26"></span></div>
+        <div class="item"><input type="checkbox" id="c18"><label for="c18">Walk the property with Monica before handover; photograph condition</label><span class="due" data-due="2026-11-01"></span></div>
+        <div class="item"><input type="checkbox" id="c19"><label for="c19">Vacate by 9:00 p.m. &mdash; all remaining keys, fobs, codes and digital keys delivered</label><span class="due" data-due="2026-11-02"></span></div>
+        <div class="item"><input type="checkbox" id="c20"><label for="c20">Confirm utilities transferred out of Monica's name effective Nov 3</label><span class="due" data-due="2026-11-02"></span></div>
+      </div>
+    </div>
+
+    <div class="cl-group" data-group data-phase="post">
+      <div class="cl-head"><h3>Closing the File</h3><span class="cl-date">November 5, 2026</span><span class="count"></span></div>
+      <div class="cl-list">
+        <div class="item"><input type="checkbox" id="c21"><label for="c21">Buyers' deficiency window closes &mdash; check whether any list was delivered to RGS</label><span class="due" data-due="2026-11-05"></span></div>
+        <div class="item"><input type="checkbox" id="c22"><label for="c22">Instruct RGS to release the $5,000 security deposit to Monica</label><span class="due" data-due="2026-11-06"></span></div>
+        <div class="item"><input type="checkbox" id="c23"><label for="c23">Confirm membership transfer completed and file closed</label><span class="due" data-due="2026-11-13"></span></div>
+      </div>
+    </div>
+
+    <div class="cl-foot">
+      <span id="clNote">Ticking an item stamps today&rsquo;s date &mdash; click the green date to change it. Saved in this browser on this device.</span>
+      <button type="button" id="clReset">Clear all</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Directory ===== -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Directory</h2>
+    <div class="dir">
+      <div class="dcard">
+        <div class="role">Our Client &middot; Seller</div>
+        <div class="nm">Monica S. Tencate</div>
+        <div class="org">502 Spring St SE, Vienna VA 22180</div>
+        <a href="#" style="color:var(--muted-2); pointer-events:none;">Direct contact not yet on file</a>
+      </div>
+      <div class="dcard">
+        <div class="role">Listing Agent</div>
+        <div class="nm">Kelly Samson</div>
+        <div class="org">Samson Properties &middot; MLS 3046435</div>
+        <a href="tel:+17036094582">(703) 609-4582</a>
+        <a href="mailto:kellysamson.sp@gmail.com">kellysamson.sp@gmail.com</a>
+      </div>
+      <div class="dcard" data-phase="post">
+        <div class="role">Buyer's Agent</div>
+        <div class="nm">Joan Reimann</div>
+        <div class="org">Corcoran McEnearney &middot; MLS 3034182</div>
+        <a href="tel:+17035055626">(703) 505-5626</a>
+        <a href="mailto:joan@justphonejoan.com">joan@justphonejoan.com</a>
+        <a href="mailto:Admin@TheReimannGroup.com">Admin@TheReimannGroup.com</a>
+      </div>
+      <div class="dcard" data-phase="post">
+        <div class="role">Buyers</div>
+        <div class="nm">Zachary &amp; Alexandra Isakowitz</div>
+        <div class="org">Occupying as principal residence</div>
+      </div>
+      <div class="dcard" data-phase="post">
+        <div class="role">Lender</div>
+        <div class="nm">James Gaudiosi</div>
+        <div class="org">Atlantic Coast Mortgage &middot; NMLS 474088</div>
+        <a href="tel:+17033388836">(703) 338-8836</a>
+        <a href="mailto:jgaudiosi@acmllc.com">jgaudiosi@acmllc.com</a>
+      </div>
+      <div class="dcard" data-phase="post">
+        <div class="role">Settlement &amp; Escrow</div>
+        <div class="nm">RGS Title</div>
+        <div class="org">Oakton office</div>
+        <a href="#" style="color:var(--muted-2); pointer-events:none;">Closer not yet assigned</a>
+      </div>
+    </div>
+    <p class="notes-box" data-phase="pre">Buyer, buyer&rsquo;s agent, lender and settlement agent join this directory once a contract is ratified.</p>
+    <p class="notes-box" data-phase="post">Built from NVAR K1321 v07/26 ratified 9/4/2026, NVAR K1020 rev 07/24, NVAR K1117 rev 01/19, and the Atlantic Coast Mortgage pre-approval of 9/1/2026. Deadlines use the contract's own conventions &mdash; calendar days unless stated, first day after delivery, 9:00 p.m. Eastern, business days excluding weekends and federal holidays. Verify every date against the executed contract before acting on it.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="produced">Produced by The Casey Samson Team</div>
+    <div class="contact-line">Casey Samson<span class="sep">|</span>703-508-2535<span class="sep">|</span><a href="mailto:Casey@caseysamson.com">Casey@caseysamson.com</a></div>
+    <div class="copy">&copy; 2026 The Casey Samson Team LLC. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var TODAY = new Date(); TODAY.setHours(0,0,0,0);
+  var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function parse(s){ var p = s.split('-'); return new Date(+p[0], +p[1]-1, +p[2]); }
+  function days(s){ var d = parse(s); d.setHours(0,0,0,0); return Math.round((d - TODAY)/86400000); }
+  function iso(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+  function pretty(s){ var d = parse(s); return MON[d.getMonth()]+' '+d.getDate(); }
+  function phrase(n){
+    if (n === 0)  return 'Today';
+    if (n === 1)  return 'Tomorrow';
+    if (n === -1) return 'Yesterday';
+    if (n < 0)    return Math.abs(n)+' days ago';
+    return 'In '+n+' days';
+  }
+  function esc(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  var TODAY_ISO = iso(TODAY);
+  var note = document.getElementById('clNote');
+  var sub  = document.getElementById('clSub');
+
+  /* ----- Phase pills: Pre-Contract / Post-Contract ----- */
+  var PHASE_KEY = 'cst-502spring-phase';
+  var phase = 'post';
+  try { phase = localStorage.getItem(PHASE_KEY) || 'post'; } catch(e){}
+  if (phase !== 'pre' && phase !== 'post') phase = 'post';
+
+  function setPhase(p){
+    phase = p;
+    try { localStorage.setItem(PHASE_KEY, p); } catch(e){}
+    document.querySelectorAll('[data-phase]').forEach(function(el){
+      el.hidden = (el.getAttribute('data-phase') !== p);
+    });
+    document.querySelectorAll('.phase-pill').forEach(function(b){
+      b.setAttribute('aria-selected', b.getAttribute('data-set-phase') === p ? 'true' : 'false');
+    });
+    /* a section whose every child is hidden should hide too */
+    document.querySelectorAll('section').forEach(function(sec){
+      if (sec.hasAttribute('data-phase')) return;
+      var kids = sec.querySelectorAll('.cl-group, .dcard');
+      if (!kids.length) return;
+      var anyVisible = Array.prototype.some.call(kids, function(k){ return !k.hidden; });
+      sec.hidden = !anyVisible;
+    });
+    paintClocks();
+    if (window.__nsCalc) window.__nsCalc();
+    if (typeof paintAll === 'function') paintAll();
+  }
+
+  document.querySelectorAll('.phase-pill').forEach(function(b){
+    b.addEventListener('click', function(){ setPhase(b.getAttribute('data-set-phase')); });
+  });
+
+  /* ----- Countdown tiles ----- */
+  function fill(c, n, whenText){
+    var el = c.querySelector('[data-count]');
+    if (!el) return;
+    c.classList.remove('soon','past');
+    if (n === null) { el.innerHTML = '&mdash;'; }
+    else if (n > 0)   el.innerHTML = n + '<small>' + (n === 1 ? 'day out' : 'days out') + '</small>';
+    else if (n === 0) el.innerHTML = 'Today<small>&nbsp;</small>';
+    else              el.innerHTML = Math.abs(n) + '<small>' + (Math.abs(n) === 1 ? 'day ago' : 'days ago') + '</small>';
+    if (n !== null && n >= 0 && n <= 7) c.classList.add('soon');
+    else if (n !== null && n < 0)       c.classList.add('past');
+    if (whenText) { var w = c.querySelector('[data-when]'); if (w) w.textContent = whenText; }
+  }
+
+  function paintClocks(){
+    /* fixed contract dates */
+    document.querySelectorAll('.clock[data-date]').forEach(function(c){
+      fill(c, days(c.getAttribute('data-date')));
+    });
+
+    /* pre-contract tiles read their date from the milestone rows */
+    document.querySelectorAll('.clock[data-ms-date]').forEach(function(c){
+      var st = msState[c.getAttribute('data-ms-date')];
+      var d  = st && st.d;
+      fill(c, d ? days(d) : null, d ? longDate(d) : 'Set the date in the checklist');
+    });
+
+    /* days on market, counted from launch */
+    document.querySelectorAll('.clock[data-dom]').forEach(function(c){
+      var st = msState[c.getAttribute('data-dom')];
+      var d  = st && st.d;
+      var el = c.querySelector('[data-count]');
+      var w  = c.querySelector('[data-when]');
+      c.classList.remove('soon','past');
+      if (!d) { el.innerHTML = '&mdash;'; if (w) w.textContent = 'Set the launch date'; return; }
+      var n = -days(d);
+      if (n < 0) { el.innerHTML = 'Not yet<small>&nbsp;</small>'; if (w) w.textContent = 'Launches ' + longDate(d); return; }
+      el.innerHTML = n + '<small>' + (n === 1 ? 'day' : 'days') + '</small>';
+      if (w) w.textContent = 'Since ' + longDate(d);
+    });
+  }
+
+  function longDate(s){
+    var d = parse(s);
+    return ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][d.getDay()] + ' ' + MON[d.getMonth()] + ' ' + d.getDate();
+  }
+
+  /* =================================================================
+     GROUP 1 — Listing Milestones. Each row carries a date you set
+     yourself; the checkbox marks it done. Custom rows can be added.
+     msState[id] = { d: 'YYYY-MM-DD' | '', done: 0|1, name?: '...' }
+     ================================================================= */
+  var MS_KEY = 'cst-502spring-milestones-v1';
+  var msList = document.getElementById('msList');
+  var msForm = document.getElementById('msForm');
+  var msName = document.getElementById('msName');
+  var msDate = document.getElementById('msDate');
+  var msState = {};
+
+  try { msState = JSON.parse(localStorage.getItem(MS_KEY) || '{}') || {}; }
+  catch(e){ msState = {}; }
+
+  function msSave(){
+    try { localStorage.setItem(MS_KEY, JSON.stringify(msState)); }
+    catch(e){ note.textContent = 'Nothing can be saved in this browser — changes will be gone on reload.'; }
+  }
+
+  /* Re-create any custom milestones from a previous visit */
+  Object.keys(msState).forEach(function(id){
+    if (!msState[id].name) return;
+    if (document.getElementById(id)) return;
+    msList.appendChild(buildCustomRow(id, msState[id].name));
+  });
+
+  function buildCustomRow(id, name){
+    var row = document.createElement('div');
+    row.className = 'item ms custom';
+    row.innerHTML = '<input type="checkbox" id="'+id+'">'
+                  + '<label for="'+id+'">'+esc(name)+'</label>';
+    return row;
+  }
+
+  function wireMilestone(row){
+    if (row.dataset.wired) return;
+    row.dataset.wired = '1';
+    var box = row.querySelector('input[type=checkbox]');
+    var id  = box.id;
+
+    var meta = document.createElement('div');
+    meta.className = 'meta';
+
+    var chip = document.createElement('span');
+    chip.className = 'ms-chip hidden';
+    meta.appendChild(chip);
+
+    var date = document.createElement('input');
+    date.type = 'date';
+    date.className = 'ms-date';
+    date.setAttribute('aria-label', 'Date for ' + row.querySelector('label').textContent);
+    meta.appendChild(date);
+
+    if (row.classList.contains('custom')) {
+      var del = document.createElement('button');
+      del.type = 'button';
+      del.className = 'ms-del';
+      del.title = 'Remove';
+      del.setAttribute('aria-label', 'Remove ' + row.querySelector('label').textContent);
+      del.innerHTML = '&times;';
+      del.addEventListener('click', function(){
+        delete msState[id];
+        row.remove();
+        paintAll(); msSave();
+      });
+      meta.appendChild(del);
+    }
+
+    row.appendChild(meta);
+
+    box.addEventListener('change', function(){
+      var st = msState[id] || (msState[id] = { d:'', done:0 });
+      st.done = box.checked ? 1 : 0;
+      if (box.checked && !st.d) st.d = TODAY_ISO;   /* ticking with no date stamps today */
+      paintAll(); msSave();
+    });
+
+    date.addEventListener('change', function(){
+      var st = msState[id] || (msState[id] = { d:'', done:0 });
+      st.d = date.value || '';
+      paintAll(); paintClocks(); msSave();
+    });
+  }
+
+  function paintMilestones(){
+    Array.prototype.forEach.call(msList.querySelectorAll('.item.ms'), function(row){
+      wireMilestone(row);
+      var box  = row.querySelector('input[type=checkbox]');
+      var date = row.querySelector('.ms-date');
+      var chip = row.querySelector('.ms-chip');
+      var st   = msState[box.id] || { d:'', done:0 };
+
+      box.checked = !!st.done;
+      row.classList.toggle('checked', !!st.done);
+      date.value = st.d || '';
+      date.classList.toggle('empty', !st.d);
+
+      if (st.d) {
+        var n = days(st.d);
+        chip.textContent = st.done ? pretty(st.d) : phrase(n);
+        chip.className = 'ms-chip' + (st.done ? ' past' : (n < 0 ? ' past' : (n <= 7 ? ' soon' : '')));
+      } else {
+        chip.className = 'ms-chip hidden';
+      }
+    });
+  }
+
+  msForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = msName.value.trim();
+    if (!name) return;
+    var id = 'mx' + Date.now().toString(36);
+    msState[id] = { d: msDate.value || '', done: 0, name: name };
+    msList.appendChild(buildCustomRow(id, name));
+    msName.value = ''; msDate.value = '';
+    paintAll(); msSave();
+    msName.focus();
+  });
+
+  /* =================================================================
+     GROUPS 2-4 — the task checklist. Fixed due dates; ticking records
+     the day it was done.  clState[id] = 'YYYY-MM-DD'
+     ================================================================= */
+  var CL_KEY = 'cst-502spring-tracker-v2';
+  var tasks  = Array.prototype.slice.call(document.querySelectorAll('.item:not(.ms)'));
+  var clState = {};
+
+  try {
+    clState = JSON.parse(localStorage.getItem(CL_KEY) || '{}') || {};
+    var old = localStorage.getItem('cst-502spring-tracker-v1');
+    if (old && !localStorage.getItem(CL_KEY)) {
+      var o = JSON.parse(old) || {};
+      Object.keys(o).forEach(function(k){ clState[k] = TODAY_ISO; });
+    }
+  } catch(e){
+    clState = {};
+    note.textContent = 'Nothing can be saved in this browser — changes will be gone on reload.';
+  }
+
+  function clSave(){
+    try { localStorage.setItem(CL_KEY, JSON.stringify(clState)); }
+    catch(e){ note.textContent = 'Nothing can be saved in this browser — changes will be gone on reload.'; }
+  }
+
+  tasks.forEach(function(item){
+    var box = item.querySelector('input[type=checkbox]');
+    var due = item.querySelector('.due');
+    var meta = document.createElement('div');
+    meta.className = 'meta';
+    item.appendChild(meta);
+    if (due) meta.appendChild(due);
+
+    var lab = document.createElement('span');
+    lab.className = 'stamp-label';
+    lab.textContent = 'Completed';
+    meta.appendChild(lab);
+
+    var stamp = document.createElement('input');
+    stamp.type = 'date';
+    stamp.className = 'stamp';
+    stamp.setAttribute('aria-label', 'Date completed');
+    meta.appendChild(stamp);
+
+    box.addEventListener('change', function(){
+      if (box.checked) clState[box.id] = TODAY_ISO; else delete clState[box.id];
+      paintAll(); clSave();
+    });
+    stamp.addEventListener('change', function(){
+      if (!stamp.value) { stamp.value = clState[box.id] || TODAY_ISO; return; }
+      clState[box.id] = stamp.value;
+      paintAll(); clSave();
+    });
+  });
+
+  function paintTasks(){
+    var overdue = 0;
+    tasks.forEach(function(item){
+      var grp = item.closest('[data-group]');
+      var visible = !(grp && grp.hidden);
+      var box   = item.querySelector('input[type=checkbox]');
+      var due   = item.querySelector('.due');
+      var stamp = item.querySelector('.stamp');
+      var when  = clState[box.id] || null;
+
+      box.checked = !!when;
+      item.classList.toggle('checked', !!when);
+      if (when) stamp.value = when;
+
+      if (due) {
+        var s = due.getAttribute('data-due');
+        var n = days(s);
+        due.className = 'due';
+        if (when) {
+          due.textContent = 'Due ' + pretty(s);
+          due.classList.add('settled');
+        } else if (n < 0) {
+          due.textContent = 'Overdue · ' + pretty(s);
+          due.classList.add('over');
+          if (visible) overdue++;
+        } else {
+          due.textContent = 'Due ' + pretty(s);
+          if (n <= 7) due.classList.add('soon');
+        }
+      }
+    });
+    return overdue;
+  }
+
+  /* ================================================================= */
+  function paintAll(){
+    paintMilestones();
+    var overdue = paintTasks();
+
+    var total = 0, done = 0;
+    document.querySelectorAll('[data-group]').forEach(function(g){
+      if (g.hidden) return;
+      var bs = Array.prototype.slice.call(g.querySelectorAll('input[type=checkbox]'));
+      var d = bs.filter(function(b){ return b.checked; }).length;
+      g.querySelector('.count').textContent = d + ' of ' + bs.length;
+      total += bs.length; done += d;
+    });
+
+    if (done === total)  sub.textContent = 'All ' + total + ' items complete.';
+    else if (overdue)    sub.textContent = done + ' of ' + total + ' complete · ' + overdue + (overdue === 1 ? ' item past due' : ' items past due');
+    else                 sub.textContent = done + ' of ' + total + ' items complete.';
+  }
+
+  document.getElementById('clReset').addEventListener('click', function(){
+    if (!Object.keys(clState).length && !Object.keys(msState).length) return;
+    clState = {};
+    Object.keys(msState).forEach(function(id){
+      if (msState[id].name) { msState[id].done = 0; msState[id].d = ''; }
+      else delete msState[id];
+    });
+    paintAll(); clSave(); msSave();
+  });
+
+  paintAll();
+  setPhase(phase);
+})();
+
+/* =====================================================================
+   Seller Net Sheet. Runs off the list price until a contract price is
+   entered, then switches to the contract price automatically.
+     Total Commission = (listing % + buyer %) x price
+     Grantor's Tax     = price x 0.003
+   ===================================================================== */
+(function(){
+  var NS_KEY = 'cst-502spring-netsheet-v1';
+  var ID = ['nsList','nsContract','nsListPct','nsBuyPct','nsSettle','nsDeed','nsAdmin','nsOther'];
+  var el = {};
+  ID.forEach(function(k){ el[k] = document.getElementById(k); });
+  if (!el.nsList) return;
+
+  var HOLDBACK = 5000;   /* occupancy security deposit escrowed at settlement */
+
+  function num(v){
+    var n = parseFloat(String(v).replace(/[^0-9.\-]/g, ''));
+    return isFinite(n) ? n : 0;
+  }
+  function money(n){
+    var neg = n < 0;
+    var a = Math.abs(n);
+    var s = a.toLocaleString('en-US', { minimumFractionDigits: (a % 1 ? 2 : 0), maximumFractionDigits: 2 });
+    return (neg ? '−$' : '$') + s;
+  }
+  function commas(n){ return n.toLocaleString('en-US', { maximumFractionDigits: 2 }); }
+  function set(id, txt){ var t = document.getElementById(id); if (t) t.textContent = txt; }
+
+  try {
+    var saved = JSON.parse(localStorage.getItem(NS_KEY) || 'null');
+    if (saved) ID.forEach(function(k){ if (saved[k] !== undefined) el[k].value = saved[k]; });
+  } catch(e){}
+
+  function save(){
+    var o = {};
+    ID.forEach(function(k){ o[k] = el[k].value; });
+    try { localStorage.setItem(NS_KEY, JSON.stringify(o)); } catch(e){}
+  }
+
+  function calc(){
+    var listP  = num(el.nsList.value);
+    var contP  = num(el.nsContract.value);
+    /* Pre-contract view always prices off the list price, whatever is stored */
+    var preView = el.nsContract.closest('[data-phase]') && el.nsContract.closest('[data-phase]').hidden;
+    var underContract = !preView && contP > 0;
+    var price  = underContract ? contP : listP;
+
+    var lPct = num(el.nsListPct.value) / 100;
+    var bPct = num(el.nsBuyPct.value) / 100;
+
+    var comm  = (lPct * price) + (bPct * price);
+    var tax   = price * 0.003;
+    var fees  = num(el.nsSettle.value) + num(el.nsDeed.value) + num(el.nsAdmin.value) + num(el.nsOther.value);
+    var total = comm + tax + fees;
+    var net   = price - total;
+
+    set('nsPriceLabel', underContract ? 'Contract Price' : 'List Price');
+    set('nsPriceNote',  underContract
+        ? 'Ratified — list price was ' + money(listP)
+        : (preView ? 'Pre-contract — projected net at this asking price'
+                   : 'No contract yet — switches automatically when a contract price is entered'));
+    document.getElementById('nsFlag').textContent = underContract ? 'Using contract price' : 'Using list price';
+
+    set('nsPrice', money(price));
+    set('nsCommNote', '(' + commas(num(el.nsListPct.value)) + '% listing + ' + commas(num(el.nsBuyPct.value)) + '% buyer) × price');
+    set('nsComm',  '−' + money(comm));
+    set('nsTax',   '−' + money(tax));
+    set('nsTotal', '−' + money(total));
+    set('nsNet',   money(net));
+    set('nsTable', money(net - HOLDBACK));
+  }
+
+  ID.forEach(function(k){
+    el[k].addEventListener('input', function(){ calc(); save(); });
+    el[k].addEventListener('blur', function(){
+      var isPct = (k === 'nsListPct' || k === 'nsBuyPct');
+      var n = num(el[k].value);
+      el[k].value = isPct ? commas(n) : (el[k].value.trim() === '' ? '' : commas(n));
+      calc(); save();
+    });
+  });
+
+  window.__nsCalc = calc;
+  calc();
+})();
+</script>
+
+</body>
+</html>

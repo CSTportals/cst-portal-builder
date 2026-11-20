@@ -1,0 +1,269 @@
+{
+ "address": "1717 Macon St",
+ "city": "McLean",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "",
+ "county": "Fairfax County",
+ "congestion_fees": true,
+ "report_date": "Sunday, September 13, 2026",
+ "prefix": "1717_Macon",
+ "listing_url": "1717Macon.com",
+ "include_tracker": true,
+ "agent": {
+  "lookup": "Casey C Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "Casey@caseysamson.com"
+ },
+ "subject": {
+  "built": 2023,
+  "sf": 4101,
+  "lot": 12303,
+  "assessment": 2212000
+ },
+ "values": {
+  "dated": 2140200,
+  "customary": 2378000,
+  "customary_list": 2357500,
+  "premium": 2568240
+ },
+ "comps": {
+  "rows": [
+   [
+    "6821 Dean Dr",
+    2022,
+    4659,
+    10890,
+    2460670,
+    2500000
+   ],
+   [
+    "1712 East Ave",
+    2020,
+    3972,
+    13500,
+    2384310,
+    2550000
+   ],
+   [
+    "1639 Macon St",
+    2019,
+    4353,
+    11695,
+    1782500,
+    2376100
+   ],
+   [
+    "6810 Broyhill St",
+    2019,
+    3793,
+    15246,
+    2087010,
+    2425000
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    2020,
+    4079,
+    13110,
+    2072755,
+    2382025
+   ],
+   [
+    "Price Range Average",
+    2019,
+    4287,
+    12323,
+    2202838,
+    2453400
+   ]
+  ]
+ },
+ "market": {
+  "name": "McLean Luxury Market",
+  "slug": "McLean_Luxury_Market_Snapshot",
+  "subhead": "Every home that sold in this segment sold successfully, and only one competitor remains active &mdash; a market that rewards correct entry pricing.",
+  "stats": null,
+  "absorption": null
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "6619 Byrnes Dr",
+   "dom": 102,
+   "built": 2016,
+   "sf": 4769,
+   "lot": 16728,
+   "list": 2550000
+  }
+ ],
+ "notes": [],
+ "photos": [
+  "1717_Macon_front.jpg",
+  "1717_Macon_kitchen.jpg",
+  "1717_Macon_dining.jpg",
+  "1717_Macon_master.jpg",
+  "1717_Macon_back.jpg"
+ ],
+ "premium_rating": [
+  [
+   {
+    "label": "Top Features",
+    "items": [
+     "Custom designed home built by Stanley Martin",
+     "6 bedrooms and 5.5 bathrooms on 4 levels",
+     "2 car garage",
+     "Bright open concept living/dining space on the main level",
+     "Loft level featuring bedroom, sitting room, and full bathroom",
+     "Lower level bedroom provides flexibility for multi-generational living or overnight guests",
+     "Screened-in porch"
+    ]
+   },
+   {
+    "label": "Schools",
+    "items": [
+     "Kent Gardens Elementary School",
+     "Long Fellow Middle School",
+     "McLean High School"
+    ]
+   }
+  ],
+  [
+   {
+    "label": "Features",
+    "items": [
+     "No HOA",
+     "Built in 2023",
+     "Spacious kitchen with pantry",
+     "Large center island with bar seating option",
+     "Custom tiled backsplash",
+     "Owner&rsquo;s suite with walk-in closet and spa-like en suite bathroom",
+     "Convenient upper level laundry room",
+     "Walk-up finished lower level with bedroom, gym, &amp; bathroom",
+     "Public sewer and water",
+     "5,452 finished square feet",
+     "0.28 acre lot"
+    ]
+   }
+  ]
+ ],
+ "asset_dir": "assets/1717_Macon",
+ "hero_photo": "1717_Macon_front.jpg",
+ "portal_url": "https://1717macon.netlify.app",
+ "buyer_portal": {
+  "display_address": "1717 Macon St",
+  "status_line": "Coming Soon",
+  "headline": "A 2023 Stanley Martin custom build in McLean &mdash; six bedrooms over four levels, 5,452 finished feet, and no HOA.",
+  "highlights": [
+   "Built 2023",
+   "5,452 finished sq ft",
+   "6 BR / 5.5 BA",
+   "No HOA"
+  ],
+  "facts": [
+   [
+    "2023",
+    "Year built"
+   ],
+   [
+    "5,452",
+    "Finished square feet"
+   ],
+   [
+    "6 / 5.5",
+    "Bedrooms / baths"
+   ],
+   [
+    "McLean",
+    "Fairfax County"
+   ]
+  ],
+  "schools": [
+   "Kent Gardens Elementary School",
+   "Longfellow Middle School",
+   "McLean High School"
+  ],
+  "feature_headlines": [
+   {
+    "head": "Four Levels, Six Bedrooms",
+    "sub": [
+     "Loft level with bedroom, sitting room and full bath",
+     "Walk-up finished lower level with bedroom, gym and bath",
+     "Room for multi-generational living or guests"
+    ]
+   },
+   {
+    "head": "Built in 2023, and It Shows",
+    "sub": [
+     "Custom designed by Stanley Martin",
+     "Owner&rsquo;s suite with walk-in closet and spa-like en suite",
+     "Upper level laundry, two-car garage, no HOA"
+    ]
+   },
+   {
+    "head": "The Kitchen and the Porch",
+    "sub": [
+     "Large center island with bar seating",
+     "Custom tiled backsplash and walk-in pantry",
+     "Screened-in porch off the main level"
+    ]
+   }
+  ],
+  "features": {
+   "The Home": [
+    "Custom designed home built by Stanley Martin, 2023",
+    "6 bedrooms and 5.5 bathrooms on 4 levels",
+    "5,452 finished square feet on a 0.28 acre lot",
+    "Bright open-concept living and dining on the main level",
+    "Spacious kitchen with pantry, large center island with bar seating",
+    "Custom tiled backsplash",
+    "Owner&rsquo;s suite with walk-in closet and spa-like en suite bathroom",
+    "Loft level with bedroom, sitting room and full bathroom",
+    "Walk-up finished lower level with bedroom, gym and bathroom",
+    "Convenient upper level laundry room",
+    "Screened-in porch",
+    "Two-car garage"
+   ],
+   "The Property": [
+    "No HOA",
+    "0.28 acre lot",
+    "Public sewer and water",
+    "Kent Gardens Elementary, Longfellow Middle, McLean High"
+   ]
+  },
+  "gallery": [
+   [
+    "1717_Macon_kitchen.jpg",
+    "The kitchen, island and pantry"
+   ],
+   [
+    "1717_Macon_dining.jpg",
+    "Open-concept living and dining"
+   ],
+   [
+    "1717_Macon_master.jpg",
+    "The owner&rsquo;s suite"
+   ],
+   [
+    "1717_Macon_back.jpg",
+    "The screened-in porch and yard"
+   ]
+  ],
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "pricing_pdf": "1717_Macon_Buyer_Report.pdf"
+ }
+}

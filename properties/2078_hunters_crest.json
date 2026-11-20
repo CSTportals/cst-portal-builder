@@ -1,0 +1,115 @@
+{
+ "address": "2078 Hunters Crest Way",
+ "city": "Vienna",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "",
+ "county": "Fairfax County",
+ "congestion_fees": true,
+ "report_date": "Saturday, September 12, 2026",
+ "prefix": "2078_Hunters_Crest",
+ "listing_url": "2078HuntersCrest.com",
+ "include_tracker": true,
+ "agent": {
+  "lookup": "Casey C Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "Casey@caseysamson.com"
+ },
+ "subject": {
+  "built": 1990,
+  "sf": 5216,
+  "lot": 76000,
+  "assessment": 1988000
+ },
+ "values": {
+  "dated": 2251990,
+  "customary": 2502212,
+  "customary_list": null,
+  "premium": 2702388
+ },
+ "comps": {
+  "rows": [
+   [
+    "1712 Abbey Oak Dr",
+    2015,
+    3777,
+    30492,
+    1649780,
+    2370000
+   ],
+   [
+    "2207 Aryness Dr",
+    1996,
+    5674,
+    75000,
+    1852280,
+    2160000
+   ],
+   [
+    "10101 Windy Knoll Ln",
+    1977,
+    3240,
+    217800,
+    1662910,
+    1965000
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    1996,
+    4590,
+    38384,
+    1631073,
+    1847100
+   ],
+   [
+    "Price Range Average",
+    1996,
+    4602,
+    99916,
+    1750310,
+    2173750
+   ]
+  ]
+ },
+ "market": {
+  "name": "Vienna Luxury Market",
+  "slug": "Vienna_Luxury_Market_Snapshot",
+  "subhead": "Nothing is currently under contract in this segment and the success rate stands at 29% &mdash; a market where correctly priced, well-presented homes sell and the rest withdraw.",
+  "stats": null,
+  "absorption": null
+ },
+ "competition": [
+  {
+   "status": "Pending",
+   "address": "10301 Forest Maple Rd",
+   "dom": 8,
+   "built": 1997,
+   "sf": 5716,
+   "lot": 76370,
+   "list": 2200000
+  },
+  {
+   "status": "Pending",
+   "address": "1950 Limb Tree Ln",
+   "dom": 12,
+   "built": 1982,
+   "sf": 3801,
+   "lot": 48234,
+   "list": 2000000
+  }
+ ],
+ "notes": [],
+ "photos": [
+  "2078_Hunters_Crest_exterior.jpg",
+  "2078_Hunters_Crest_pool.jpg",
+  "2078_Hunters_Crest_poolhouse.jpg",
+  "2078_Hunters_Crest_terrace.jpg"
+ ],
+ "premium_rating": null,
+ "asset_dir": "assets/2078_Hunters_Crest",
+ "hero_photo": "2078_Hunters_Crest_exterior.jpg",
+ "portal_url": "https://2078hunterscrest.netlify.app"
+}

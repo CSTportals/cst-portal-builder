@@ -1,0 +1,514 @@
+{
+ "address": "6032 Erinblair Loop",
+ "city": "Haymarket",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "20169",
+ "county": "Prince William",
+ "congestion_fees": false,
+ "report_date": "Wednesday, October 7, 2026",
+ "prefix": "6032_Erinblair",
+ "listing_url": "6032Erinblair.com",
+ "portal_url": "https://6032erinblair.netlify.app",
+ "include_tracker": true,
+ "listing_status": "new",
+ "subject": {
+  "built": 2000,
+  "sf": 4200,
+  "lot": 8137,
+  "assessment": 1049000
+ },
+ "values": {
+  "dated": 1015691,
+  "customary": 1128546,
+  "customary_list": 1128521,
+  "premium": 1218830,
+  "upgrades": 0
+ },
+ "comps": {
+  "rows": [
+   [
+    "5586 Tucson Creek",
+    2003,
+    3888,
+    10798,
+    1107900,
+    1180000
+   ],
+   [
+    "15227 Golf View",
+    2003,
+    3924,
+    11913,
+    1058500,
+    1150000
+   ],
+   [
+    "5468 Heredity",
+    2002,
+    4088,
+    20473,
+    1091400,
+    1149900
+   ],
+   [
+    "5779 Coachview",
+    2001,
+    3788,
+    9840,
+    990900,
+    1100000
+   ]
+  ],
+  "summary": [
+   [
+    "Price Range Average",
+    2002,
+    3922,
+    13256,
+    1062175,
+    1144975
+   ]
+  ]
+ },
+ "competition": [
+  {
+   "status": "Active Under Contract",
+   "address": "5404 Emmys Mill",
+   "dom": 0,
+   "built": 2006,
+   "sf": 3915,
+   "lot": 0,
+   "list": 1300000,
+   "assessment": 1120600
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "6518 Debhill Ln",
+   "dom": 6,
+   "built": 2006,
+   "sf": 4010,
+   "lot": 17153,
+   "list": 1098500,
+   "assessment": 1005000
+  },
+  {
+   "status": "Active",
+   "address": "5397 Cedarville",
+   "dom": 51,
+   "built": 2006,
+   "sf": 0,
+   "lot": 0,
+   "list": 1300000,
+   "assessment": 1133300
+  },
+  {
+   "status": "Active",
+   "address": "5905 Flynnsbrooke",
+   "dom": 6,
+   "built": 2002,
+   "sf": 3792,
+   "lot": 50094,
+   "list": 1275000,
+   "assessment": 1146900
+  },
+  {
+   "status": "Active",
+   "address": "13621 Piedmont",
+   "dom": 33,
+   "built": 2002,
+   "sf": 4142,
+   "lot": 12092,
+   "list": 1224900,
+   "assessment": 1066900
+  },
+  {
+   "status": "Active",
+   "address": "14562 Stoney Creek",
+   "dom": 125,
+   "built": 2008,
+   "sf": 3736,
+   "lot": 20542,
+   "list": 1175000,
+   "assessment": 1092500
+  },
+  {
+   "status": "Active",
+   "address": "14093 Burnley",
+   "dom": 75,
+   "built": 2003,
+   "sf": 4234,
+   "lot": 35536,
+   "list": 1148800,
+   "assessment": 1225900
+  }
+ ],
+ "market": {
+  "name": "Haymarket Family Market",
+  "slug": "Haymarket_Family_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "agent": {
+  "lookup": "Casey Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "casey@caseysamson.com"
+ },
+ "asset_dir": "assets/6032_Erinblair",
+ "hero_photo": "6032_Erinblair_front.jpg",
+ "photos": [
+  "6032_Erinblair_front.jpg",
+  "6032_Erinblair_aerial.jpg",
+  "6032_Erinblair_golfview.jpg",
+  "6032_Erinblair_sunroom.jpg"
+ ],
+ "buyer_portal": {
+  "display_address": "6032 Erinblair Loop",
+  "site": "6032Erinblair.com",
+  "url": "https://buyerinblair.netlify.app",
+  "deploy_to": "https://buyerinblair.netlify.app",
+  "list_price": 999900,
+  "status_line": "Coming Soon",
+  "headline": "A golf-course lot in Piedmont, overlooking the 10th and 18th &mdash; with room to make the finishes your own.",
+  "highlights": [
+   "4 BR &middot; 3.5 BA",
+   "6,518 total finished sq ft",
+   "Walk-out lower level",
+   "Gated golf community"
+  ],
+  "facts": [
+   [
+    "2000",
+    "Year built"
+   ],
+   [
+    "4,200",
+    "Above grade sq ft"
+   ],
+   [
+    "2,227",
+    "Walk-out lower level"
+   ],
+   [
+    "4 / 3.5",
+    "Bedrooms / baths"
+   ]
+  ],
+  "feature_headlines": [
+   {
+    "head": "A Premium Golf-Course Lot",
+    "sub": [
+     "Views over the 10th and 18th holes",
+     "No-thru-traffic setting",
+     "Open outlook from the deck and sunroom"
+    ]
+   },
+   {
+    "head": "Space That Is Getting Hard to Find",
+    "sub": [
+     "4,200 sq ft above grade",
+     "2,227 sq ft walk-out lower level",
+     "4 bedrooms &middot; 3.5 baths"
+    ]
+   },
+   {
+    "head": "The Expensive Work Is Already Done",
+    "sub": [
+     "Windows replaced 2025",
+     "Roof 2018 &middot; water heater 2024",
+     "Double oven 2025 &middot; laundry 2024"
+    ]
+   },
+   {
+    "head": "Priced So You Can Make It Yours",
+    "sub": [
+     "Personalize the finishes to your taste",
+     "No premium paid for another owner&rsquo;s choices",
+     "6-point pre-listing inspection complete"
+    ]
+   }
+  ],
+  "features": {
+   "Recent Improvements": [
+    "Windows replaced (2025)",
+    "Roof replacement (2018)",
+    "Zoned heating and cooling (6 and 9 years old)",
+    "Upper level heating system (9 years old)",
+    "Water heater (2024)",
+    "Double oven (2025)",
+    "Laundry machines (2024)",
+    "Irrigation system"
+   ],
+   "The Layout": [
+    "Approximately 4,200 sq ft above grade",
+    "Additional 2,227 sq ft in the walk-out lower level",
+    "4 bedrooms, 3.5 baths",
+    "Coveted upper-level laundry",
+    "Walk-out lower level",
+    "No-thru-traffic setting"
+   ],
+   "The Piedmont Community": [
+    "24-hour gated security",
+    "18-hole championship golf course (social and golf memberships available)",
+    "Clubhouse and fitness center",
+    "Indoor and outdoor pools",
+    "Tennis and pickleball courts",
+    "Basketball courts",
+    "Walking trails and playgrounds",
+    "Convenient access to major commuter routes, shopping and dining"
+   ]
+  },
+  "showing_note": "The seller completed a 6-point pre-listing inspection and has agreed to remedy the minor deficiencies noted.",
+  "gallery": [
+   [
+    "6032_Erinblair_aerial.jpg",
+    "The lot in context &mdash; backing to the 10th and 18th holes"
+   ],
+   [
+    "6032_Erinblair_golfview.jpg",
+    "The view from the deck"
+   ],
+   [
+    "6032_Erinblair_sunroom.jpg",
+    "Sunroom, with the golf course on three sides of glass"
+   ]
+  ],
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "pricing_pdf": "6032_Erinblair_Buyer_Report.pdf",
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Piedmont sits off Heathcote Boulevard at US-15, which puts the gate a few minutes from I-66 and the whole of Haymarket inside a ten-minute drive. The arrows point to everything beyond the map.",
+   "center": {
+    "lat": 38.8266225,
+    "lng": -77.6229115,
+    "label": "6032 Erinblair Loop"
+   },
+   "pins": [
+    {
+     "name": "Piedmont Golf Club",
+     "sub": "18-hole championship course &middot; clubhouse",
+     "lat": 38.82569,
+     "lng": -77.62712
+    },
+    {
+     "name": "Mountain View Elementary School",
+     "sub": "Prince William County Public Schools",
+     "lat": 38.837,
+     "lng": -77.627
+    },
+    {
+     "name": "Bull Run Middle School",
+     "sub": "Prince William County Public Schools",
+     "lat": 38.823687,
+     "lng": -77.605672
+    },
+    {
+     "name": "Battlefield High School",
+     "sub": "Prince William County Public Schools",
+     "lat": 38.845441,
+     "lng": -77.630006
+    },
+    {
+     "name": "Haymarket Medical Center",
+     "sub": "UVA Health &middot; emergency care",
+     "lat": 38.820939,
+     "lng": -77.642128
+    },
+    {
+     "name": "Town of Haymarket",
+     "sub": "Washington Street shops and dining",
+     "lat": 38.8124,
+     "lng": -77.63733
+    },
+    {
+     "name": "Virginia Gateway",
+     "sub": "Shopping, dining and cinema",
+     "lat": 38.794951,
+     "lng": -77.60673
+    },
+    {
+     "name": "Silver Lake Regional Park",
+     "sub": "Trails, fishing and 23 acres of lake",
+     "lat": 38.845716,
+     "lng": -77.668072
+    }
+   ],
+   "arrows": [
+    [
+     47.2,
+     [
+      "Dulles International",
+      "IAD &middot; 29 min"
+     ]
+    ],
+    [
+     79.8,
+     [
+      "Washington, DC",
+      "55 min"
+     ]
+    ],
+    [
+     86.7,
+     [
+      "Reagan National",
+      "DCA &middot; 54 min"
+     ]
+    ]
+   ]
+  },
+  "amenities_lede": "The golf course is a six-minute walk from the front door. Everything else in Haymarket is inside ten minutes by car, and the gate is a few minutes from I-66 at US-15.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "I-66 at US-15",
+      "Exit 40, via Heathcote Boulevard",
+      "A few minutes"
+     ],
+     [
+      "Broad Run / Airport",
+      "VRE Manassas Line terminus",
+      11.06
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      16.68
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      40.83
+     ],
+     [
+      "Washington, DC",
+      "Downtown",
+      41.62
+     ]
+    ]
+   },
+   {
+    "title": "Every Day",
+    "items": [
+     [
+      "Piedmont Golf Club",
+      "Clubhouse, fitness center, pools",
+      "6 min walk"
+     ],
+     [
+      "Haymarket Medical Center",
+      "UVA Health, emergency care",
+      1.44
+     ],
+     [
+      "Town of Haymarket",
+      "Washington Street shops and dining",
+      1.63
+     ],
+     [
+      "Virginia Gateway",
+      "Shopping, dining and cinema",
+      3.06
+     ]
+    ]
+   },
+   {
+    "title": "Schools and Parks",
+    "items": [
+     [
+      "Mountain View Elementary School",
+      "Prince William County Public Schools",
+      0.98
+     ],
+     [
+      "Bull Run Middle School",
+      "Prince William County Public Schools",
+      1.23
+     ],
+     [
+      "Battlefield High School",
+      "Prince William County Public Schools",
+      1.76
+     ],
+     [
+      "Silver Lake Regional Park",
+      "Trails, fishing and lake",
+      3.6
+     ]
+    ]
+   }
+  ],
+  "live": true
+ },
+ "premium_rating_headline": "Exceptional Value &amp; Opportunity",
+ "premium_rating": [
+  [
+   {
+    "label": "Top Features",
+    "items": [
+     "Premium golf-course lot overlooking the 10th and 18th holes",
+     "4 bedrooms &middot; 3.5 baths",
+     "Approximately 4,291 SF above grade",
+     "Additional 2,227 SF walk-out lower level"
+    ]
+   },
+   {
+    "label": "Recent Improvements",
+    "items": [
+     "Windows replaced (2025)",
+     "Roof replacement (2018)",
+     "Zoned heating and cooling (6 and 9 years old)",
+     "Upper level heating system (9 years old)",
+     "Water heater (2024)",
+     "Double oven (2025)",
+     "Laundry machines (2024)",
+     "Irrigation system"
+    ]
+   }
+  ],
+  [
+   {
+    "label": "Buyer Peace of Mind",
+    "items": [
+     "Seller completed a 6-point pre-listing inspection",
+     "Seller agrees to remedy the minor deficiencies noted",
+     "Coveted upper-level laundry",
+     "No-thru-traffic setting"
+    ]
+   },
+   {
+    "label": "Piedmont &mdash; A Gated Golf Community",
+    "items": [
+     "24-hour gated security",
+     "18-hole championship golf course &mdash; social and golf memberships available",
+     "Clubhouse and fitness center",
+     "Indoor and outdoor pools",
+     "Tennis, pickleball and basketball courts",
+     "Walking trails and playgrounds"
+    ]
+   },
+   {
+    "label": "Schools",
+    "items": [
+     "Mountain View Elementary School",
+     "Bull Run Middle School",
+     "Battlefield High School"
+    ]
+   }
+  ]
+ ]
+}

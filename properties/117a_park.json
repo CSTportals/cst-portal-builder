@@ -1,0 +1,681 @@
+{
+  "address": "117A Park St NE",
+  "city": "Vienna",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "22180",
+  "county": "Fairfax County",
+  "congestion_fees": true,
+  "report_date": "Thursday, September 24, 2026",
+  "prefix": "117A_Park",
+  "listing_url": "117APark.com",
+  "portal_url": "https://117apark.netlify.app",
+  "include_tracker": true,
+  "asset_dir": "assets/117A_Park",
+  "hero_photo": "117A_Park_front.jpg",
+  "photos": [
+    "117A_Park_front.jpg",
+    "117A_Park_kitchen.jpg",
+    "117A_Park_sunroom.jpg",
+    "117A_Park_dining.jpg"
+  ],
+  "agent": {
+    "lookup": "Casey C Samson",
+    "display": "Casey Samson",
+    "phone": "703-508-2535",
+    "email": "Casey@caseysamson.com"
+  },
+  "agent_page": "casey-c-samson.html",
+  "subject": {
+    "built": 2025,
+    "sf": 2850,
+    "lot": 0,
+    "assessment": 1781900
+  },
+  "values": {
+    "dated": 0,
+    "customary": 1920000,
+    "customary_list": null,
+    "premium": 2025000,
+    "coming_soon_override": 1899999
+  },
+  "comps": {
+    "rows": [],
+    "summary": []
+  },
+  "market": {
+    "name": "Vienna Luxury Market",
+    "slug": "Vienna_Luxury_Market_Snapshot",
+    "subhead": "Current conditions in the segment this home competes in.",
+    "stats": null,
+    "absorption": null
+  },
+  "competition": [],
+  "notes": [],
+  "premium_rating_headline": "Built 2025 &mdash; move-in ready in the heart of downtown Vienna.",
+  "premium_rating": [
+    [
+      {
+        "label": "Top Features",
+        "items": [
+          "Built in 2025 by Bukont Homes &mdash; Grove on Park, Aspen model",
+          "3 bedrooms, 3.5 bathrooms, 2,850 square feet",
+          "Private elevator between levels &mdash; convenience now and the ability to age in place",
+          "High ceilings, engineered wood flooring, luxury cabinetry and high-end finishes throughout",
+          "Gourmet kitchen with premium Wolf, Sub-Zero and Miele appliances",
+          "Four-season room with foliage views and a private feel in the center of Vienna",
+          "Attached two-car garage plus a reserved space and ample visitor parking",
+          "Move-in ready in the heart of downtown Vienna"
+        ]
+      },
+      {
+        "label": "Schools",
+        "items": [
+          "Vienna Elementary School",
+          "Thoreau Middle School",
+          "Madison High School"
+        ]
+      },
+      {
+        "label": "Condo Association",
+        "items": [
+          "Grove on Park Condo Association &mdash; $600 per month",
+          "Includes water, exterior maintenance, snow removal, and insurance for the common areas and building"
+        ]
+      }
+    ],
+    [
+      {
+        "label": "Systems &amp; Finishes",
+        "items": [
+          "Built 2025 &mdash; furnace, hot water and engineered wood flooring all 2025",
+          "HVAC: 3 electric zones serving the living levels and four-season room",
+          "Wolf, Sub-Zero and Miele kitchen appliances",
+          "Ceiling fans in all bedrooms, the living room and the four-season room",
+          "Motorized window treatments with top-down / bottom-up operation, blackout shades in all bedrooms",
+          "Glass enclosures on all showers and the bathtub",
+          "Oversized laundry room"
+        ]
+      },
+      {
+        "label": "Security &amp; Utilities",
+        "items": [
+          "Front and rear security cameras with keypad door locks tied to the security system",
+          "Automated timers on exterior lighting",
+          "In-wall safe in the primary bedroom closet",
+          "Public water and sewer",
+          "Cox internet, with Verizon available"
+        ]
+      },
+      {
+        "label": "Favorite Things",
+        "items": [
+          "A short walk in any direction to shops, restaurants and everyday conveniences",
+          "Walk to community events on Church Street and the Town Green",
+          "Foliage views give a surprisingly private setting for such a central location",
+          "Great neighbors and a strong sense of community"
+        ]
+      }
+    ]
+  ],
+  "buyer_portal": {
+    "display_address": "117A Park Street NE",
+    "site": "117APark.com",
+    "url": "https://caseysamson.com/market-snapshot/buypark",
+    "asset_dir": "assets/117A_Park/buyer",
+    "hero_photo": "PK_exterior_front.jpg",
+    "facts": [
+      [
+        "3",
+        "Bedrooms"
+      ],
+      [
+        "3.5",
+        "Bathrooms"
+      ],
+      [
+        "2,850",
+        "Square feet"
+      ],
+      [
+        "2025",
+        "Year built"
+      ],
+      [
+        "2",
+        "Car garage"
+      ],
+      [
+        "Yes",
+        "Private elevator"
+      ],
+      [
+        "End",
+        "Unit"
+      ],
+      [
+        "$600",
+        "Condo fee, monthly"
+      ]
+    ],
+    "description": "Beautiful end-unit townhome-style condo built in 2025 in the heart of downtown Vienna. Three bedrooms, three and a half baths and 2,850 square feet, with high ceilings and a private elevator offering the option for aging in place. The main level features a gourmet kitchen opening to light-filled living and dining spaces and a four-season room overlooking the surrounding foliage. The spacious owner&rsquo;s suite has a walk-in closet and spa-inspired bath, joined by an additional en suite bedroom and a flexible den. The lower level offers a third bedroom, full bath, storage and the attached two-car garage. A private setting, a short walk from Vienna&rsquo;s shops, restaurants, parks, Church Street and Town Green events.",
+    "builder_line": "Built in 2025 by Bukont Homes &mdash; Grove on Park, Aspen model.",
+    "gallery": [
+      [
+        "PK_kitchen.jpg",
+        "Gourmet kitchen with Wolf, Sub-Zero and Miele appliances"
+      ],
+      [
+        "PK_living.jpg",
+        "Open living and kitchen with high ceilings"
+      ],
+      [
+        "PK_dining.jpg",
+        "Light-filled dining space"
+      ],
+      [
+        "PK_four_season.jpg",
+        "Four-season room overlooking the foliage"
+      ],
+      [
+        "PK_sunroom.jpg",
+        "Four-season room, a private feel in the center of Vienna"
+      ],
+      [
+        "PK_suite.jpg",
+        "Owner&rsquo;s suite with walk-in closet"
+      ],
+      [
+        "PK_primary_bath.jpg",
+        "Spa-inspired primary bath with double vanity"
+      ],
+      [
+        "PK_primary_bath_2.jpg",
+        "Glass-enclosed shower and luxury cabinetry"
+      ],
+      [
+        "PK_bedroom.jpg",
+        "En suite second bedroom"
+      ],
+      [
+        "PK_bath_2.jpg",
+        "Additional full bath"
+      ],
+      [
+        "PK_stair.jpg",
+        "Entry and stair &mdash; the elevator serves every level"
+      ],
+      [
+        "PK_kitchen_2.jpg",
+        "Luxury cabinetry and engineered wood flooring"
+      ],
+      [
+        "PK_rear.jpg",
+        "Rear elevation"
+      ],
+      [
+        "PK_garage.jpg",
+        "Attached two-car garage plus a reserved space"
+      ],
+      [
+        "PK_community.jpg",
+        "Grove on Park, in the heart of downtown Vienna"
+      ]
+    ],
+    "features": {
+      "Top Features": [
+        "Built in 2025 by Bukont Homes &mdash; Grove on Park, Aspen model",
+        "3 bedrooms, 3.5 bathrooms, 2,850 square feet",
+        "Private elevator between levels &mdash; convenience now, and the ability to age in place",
+        "High ceilings, engineered wood flooring, luxury cabinetry and high-end finishes",
+        "Gourmet kitchen with premium Wolf, Sub-Zero and Miele appliances",
+        "Four-season room with foliage views and a private feel in the center of Vienna",
+        "Attached two-car garage plus a reserved space and ample visitor parking",
+        "End unit, move-in ready, in the heart of downtown Vienna"
+      ],
+      "Systems &amp; Finishes": [
+        "HVAC &mdash; three electric zones serving the living levels and the four-season room",
+        "Furnace and hot water heater (2025)",
+        "Motorized window treatments throughout, top-down/bottom-up, with blackout shades in all bedrooms",
+        "Ceiling fans in all bedrooms, the living room and the four-season room",
+        "Front and rear security cameras and keypad door locks on the security system",
+        "Automated timers on exterior lighting",
+        "Glass enclosures on all showers and the bathtub",
+        "Oversized laundry room and in-wall safe in the primary closet",
+        "Public water and sewer; Cox internet with Verizon available"
+      ]
+    },
+    "loves": [
+      "The private elevator makes moving larger items between floors easy, and offers the option to age in place",
+      "Directly in the center of downtown Vienna &mdash; a short walk in virtually any direction to shops, restaurants and everyday conveniences",
+      "Walk to community events on Church Street and the Town Green",
+      "Beautiful foliage views give a surprisingly private setting for such a central location",
+      "Great neighbors and a strong sense of community",
+      "Ample visitor parking right next to the home",
+      "Luxury feel throughout the cabinetry, appliances and finishes",
+      "High ceilings create an open, spacious feel",
+      "An easy downtown lifestyle without sacrificing privacy"
+    ],
+    "schools": [
+      "Vienna Elementary School",
+      "Thoreau Middle School",
+      "Madison High School"
+    ],
+    "hoa_includes": "Grove on Park Condo Association, $600 per month &mdash; water, exterior maintenance, snow removal, and insurance for the building and common areas.",
+    "utilities": "Public water and sewer. Three-zone electric HVAC; furnace and hot water 2025.",
+    "documents": [
+      [
+        "PK_Brochure.pdf",
+        "Property Brochure",
+        "Full-colour brochure with photography and features"
+      ],
+      [
+        "PK_Flyer.pdf",
+        "Property Flyer",
+        "One-page summary of the home"
+      ],
+      [
+        "PK_Hot_Sheet.pdf",
+        "Hot Sheet",
+        "Top features, systems, schools and what the owners love"
+      ],
+      [
+        "PK_Conveyances.pdf",
+        "Conveyances",
+        "Personal property, fixtures and utilities that convey"
+      ],
+      [
+        "PK_Offer_Instructions.pdf",
+        "Offer Instructions",
+        "Deadline, delivery, preferred terms and vendors"
+      ],
+      [
+        "PK_Disclosures.html",
+        "Seller Disclosures",
+        "What is disclosed, and how to get the signed packet"
+      ]
+    ],
+    "disclosures": {
+      "pending": true,
+      "items": [
+        [
+          "Virginia Residential Property Disclosure Statement",
+          "The statement required by &sect;55.1-703 of the Code of Virginia, signed by the seller."
+        ],
+        [
+          "Condominium Resale Certificate",
+          "The Grove on Park Condo Association resale package, ordered at the seller&rsquo;s expense and delivered on ratification. It starts the statutory review period."
+        ],
+        [
+          "Conveyances",
+          "Personal property and fixtures that convey, listed on the Conveyances sheet."
+        ],
+        [
+          "Lead-Based Paint",
+          "Not applicable &mdash; the home was built in 2025."
+        ],
+        [
+          "Septic and Well",
+          "Not applicable &mdash; the home is on public water and public sewer."
+        ]
+      ]
+    },
+    "offer_terms": [
+      [
+        "Contract deadlines",
+        "Contact the co-listing agent"
+      ],
+      [
+        "Submit to",
+        "morgan@caseysamson.com and colbysmyth@gmail.com"
+      ],
+      [
+        "Format",
+        "All documents combined in one PDF"
+      ],
+      [
+        "Escalation clauses",
+        "Please, none"
+      ],
+      [
+        "Preferred settlement",
+        "As soon as possible; move out no earlier than October 1st, rent back possible"
+      ],
+      [
+        "Preferred title",
+        "Cardinal Title Group"
+      ],
+      [
+        "Preferred lender",
+        "Mike Filan, CrossCountry Mortgage &mdash; 703-899-8720"
+      ],
+      [
+        "Lender letter",
+        "Must be current with the lender&rsquo;s direct phone and email"
+      ]
+    ],
+    "offer_summary": [
+      "Buyer name",
+      "Agent name",
+      "Lender",
+      "Title",
+      "Settlement date",
+      "Down payment",
+      "Deposit",
+      "Home sale contingency",
+      "Offer price",
+      "Buyer commissions",
+      "Other concessions and terms"
+    ],
+    "contacts": {
+      "photo": "PK_agents.jpg",
+      "names": "Morgan Samson &amp; Colby Smyth",
+      "team": "The Casey Samson Team &middot; Samson Properties",
+      "lines": [
+        [
+          "Morgan Samson",
+          "703-609-1745",
+          "morgan@caseysamson.com"
+        ],
+        [
+          "Colby Smyth",
+          "703-597-2428",
+          "colbysmyth@gmail.com"
+        ]
+      ],
+      "office": "Samson Properties, 14291 Park Meadow Dr, Suite 500, Chantilly, VA 20151"
+    },
+    "headline": "A private elevator, a four-season room, and downtown Vienna out the front door.",
+    "highlights": [
+      "Built 2025",
+      "Private elevator",
+      "Four-season room",
+      "2-car garage"
+    ],
+    "feature_headlines": [
+      {
+        "head": "A Private Elevator to Every Level",
+        "sub": [
+          "Convenience now, and the ability to age in place",
+          "Three levels, 2,850 square feet",
+          "High ceilings throughout"
+        ]
+      },
+      {
+        "head": "Wolf, Sub-Zero and Miele in the Kitchen",
+        "sub": [
+          "Luxury cabinetry and engineered wood flooring",
+          "Opens to light-filled living and dining space",
+          "Two-car garage plus a reserved space"
+        ]
+      },
+      {
+        "head": "Four-Season Room Over the Foliage",
+        "sub": [
+          "A private feel in the center of Vienna",
+          "Motorized shades, top-down and bottom-up",
+          "Blackout shades in every bedroom"
+        ]
+      },
+      {
+        "head": "Built 2025, End Unit, Downtown Vienna",
+        "sub": [
+          "Bukont Homes &mdash; Grove on Park, Aspen model",
+          "Walk to Church Street and the Town Green",
+          "Condo fee covers water, exterior and snow"
+        ]
+      }
+    ],
+    "pricing_pdf": "117A_Park_Buyer_Report.pdf",
+    "walk_to_lede": "Downtown Vienna starts at the front door. Every walk below is measured from this address.",
+    "walk_to": [
+      {
+        "name": "Town Green",
+        "note": "Concerts, markets, Viva Vienna",
+        "minutes": 4,
+        "kind": "park"
+      },
+      {
+        "name": "Whole Foods Market",
+        "note": "143 Maple Ave E",
+        "minutes": 5,
+        "kind": "grocery"
+      },
+      {
+        "name": "Vienna Inn",
+        "note": "The 1960 town institution",
+        "minutes": 5,
+        "kind": "dining"
+      },
+      {
+        "name": "W&amp;OD Trail",
+        "note": "45 miles, Shirlington to Purcellville",
+        "minutes": 5,
+        "kind": "trail"
+      },
+      {
+        "name": "Caff&egrave; Amouri",
+        "note": "Coffee roaster on Church St",
+        "minutes": 6,
+        "kind": "coffee"
+      },
+      {
+        "name": "Evelyn Rose",
+        "note": "Tasting menu on Church St NW",
+        "minutes": 8,
+        "kind": "dining"
+      },
+      {
+        "name": "Bards Alley",
+        "note": "Bookshop and caf&eacute;",
+        "minutes": 8,
+        "kind": "books"
+      },
+      {
+        "name": "Community Center",
+        "note": "Courts, classes, town events",
+        "minutes": 8,
+        "kind": "civic"
+      },
+      {
+        "name": "Roberto&rsquo;s",
+        "note": "Ristorante Italiano",
+        "minutes": 9,
+        "kind": "dining"
+      },
+      {
+        "name": "Post Office",
+        "note": "200 Lawyers Rd NW",
+        "minutes": 11,
+        "kind": "mail"
+      }
+    ],
+    "locator_map": {
+      "title": "The Neighborhood",
+      "lede": "Every numbered stop is inside a mile of the front door &mdash; most of them under ten minutes on foot. The arrows point to everything beyond, with the drive time.",
+      "radius_mi": 1.0,
+      "center": {
+        "lat": 38.90481,
+        "lng": -77.262799,
+        "label": "117A Park St NE"
+      },
+      "pins": [
+        {
+          "name": "Town Green",
+          "sub": "Concerts, markets, Viva Vienna",
+          "lat": 38.902941,
+          "lng": -77.2641239,
+          "min": 4,
+          "mode": "walk"
+        },
+        {
+          "name": "Whole Foods",
+          "sub": "143 Maple Ave E",
+          "lat": 38.9022469,
+          "lng": -77.2626957,
+          "min": 5,
+          "mode": "walk"
+        },
+        {
+          "name": "Vienna Inn",
+          "sub": "The 1960 town institution",
+          "lat": 38.9022013,
+          "lng": -77.2647713,
+          "min": 5,
+          "mode": "walk"
+        },
+        {
+          "name": "Caff\u00e8 Amouri",
+          "sub": "Coffee roaster on Church St",
+          "lat": 38.9024734,
+          "lng": -77.2657028,
+          "min": 6,
+          "mode": "walk"
+        },
+        {
+          "name": "Evelyn Rose",
+          "sub": "Tasting menu on Church St NW",
+          "lat": 38.9020805,
+          "lng": -77.2670056,
+          "min": 8,
+          "mode": "walk"
+        },
+        {
+          "name": "Bards Alley",
+          "sub": "Bookshop and caf\u00e9",
+          "lat": 38.9017049,
+          "lng": -77.2668085,
+          "min": 8,
+          "mode": "walk"
+        },
+        {
+          "name": "Community Center",
+          "sub": "Courts, classes, town events",
+          "lat": 38.9008267,
+          "lng": -77.2603307,
+          "min": 8,
+          "mode": "walk"
+        },
+        {
+          "name": "Roberto\u2019s",
+          "sub": "Ristorante Italiano",
+          "lat": 38.9010187,
+          "lng": -77.2674581,
+          "min": 9,
+          "mode": "walk"
+        },
+        {
+          "name": "Post Office",
+          "sub": "200 Lawyers Rd NW",
+          "lat": 38.9005367,
+          "lng": -77.2686049,
+          "min": 11,
+          "mode": "walk"
+        }
+      ],
+      "arrows": [
+        [
+          28.4,
+          [
+            "Dulles Toll Rd",
+            "6 min"
+          ]
+        ],
+        [
+          70.4,
+          [
+            "Tysons Corner",
+            "7 min"
+          ]
+        ],
+        [
+          107.1,
+          [
+            "Reagan National",
+            "DCA \u00b7 28 min"
+          ]
+        ],
+        [
+          190.0,
+          [
+            "Vienna Metro \u00b7 6 min",
+            "I-66 \u00b7 4 min"
+          ]
+        ],
+        [
+          287.8,
+          [
+            "Dulles Intl",
+            "IAD \u00b7 24 min"
+          ]
+        ]
+      ]
+    },
+    "deploy_to": "https://buypark.netlify.app",
+    "amenities": [
+      {
+        "title": "Walk to Town",
+        "items": [
+          [
+            "Town Green",
+            "Concerts, markets, Viva Vienna",
+            "4 min walk"
+          ],
+          [
+            "Vienna Inn",
+            "The 1960 town institution",
+            "5 min walk"
+          ],
+          [
+            "Caff\u00e8 Amouri",
+            "Coffee roaster on Church St",
+            "6 min walk"
+          ],
+          [
+            "Evelyn Rose",
+            "Tasting menu on Church St NW",
+            "8 min walk"
+          ],
+          [
+            "Bards Alley",
+            "Bookshop and caf\u00e9",
+            "8 min walk"
+          ],
+          [
+            "Roberto\u2019s",
+            "Ristorante Italiano",
+            "9 min walk"
+          ]
+        ]
+      },
+      {
+        "title": "Every Day",
+        "items": [
+          [
+            "Whole Foods",
+            "143 Maple Ave E",
+            "5 min walk"
+          ],
+          [
+            "Community Center",
+            "Courts, classes, town events",
+            "8 min walk"
+          ],
+          [
+            "Post Office",
+            "200 Lawyers Rd NW",
+            "11 min walk"
+          ]
+        ]
+      }
+    ],
+    "amenities_lede": "Vienna&rsquo;s town green, its restaurants and its shops are a walk from the front door, not a drive.",
+    "list_price": 1899999,
+    "show_amenities": false,
+    "open_house": {
+      "when": "Sunday, October 18 &middot; 12:00&ndash;2:00 PM",
+      "note": "Stop by, or call for a private showing."
+    },
+    "show_deadlines": false
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "address": "107 Dinwiddie Ct",
+  "city": "Stephens City",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "",
+  "county": "Frederick County",
+  "congestion_fees": false,
+  "report_date": "Tuesday, September 22, 2026",
+  "prefix": "107_Dinwiddie",
+  "listing_url": "107Dinwiddie.com",
+  "portal_url": "https://107dinwiddie.netlify.app",
+  "include_tracker": true,
+  "asset_dir": "assets/107_Dinwiddie",
+  "hero_photo": "107_Dinwiddie_front.png",
+  "photos": [
+    "107_Dinwiddie_front.png"
+  ],
+  "subject": {
+    "built": 1992,
+    "sf": 1853,
+    "lot": 9529,
+    "assessment": 440000
+  },
+  "values": {
+    "dated": 434828,
+    "customary": 483142,
+    "customary_list": 486676,
+    "premium": 521794
+  },
+  "comps": {
+    "rows": [
+      [
+        "104 Coopwood",
+        1997,
+        1890,
+        9003,
+        372652,
+        425500
+      ],
+      [
+        "101 Southdown",
+        1989,
+        1912,
+        0,
+        391380,
+        419000
+      ],
+      [
+        "109 Targee Pl",
+        1986,
+        1972,
+        0,
+        388800,
+        391000
+      ],
+      [
+        "103 Oxford Ct",
+        1990,
+        2276,
+        8712,
+        401480,
+        446200
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        1991,
+        1894,
+        5518,
+        366793,
+        406375
+      ],
+      [
+        "Price Range Average",
+        1991,
+        2013,
+        4429,
+        388578,
+        420425
+      ]
+    ]
+  },
+  "market": {
+    "name": "Winchester Family Market",
+    "slug": "Winchester_Family_Market_Snapshot",
+    "subhead": "Nothing in this segment is currently under contract, yet every home that sold, sold successfully &mdash; buyers are waiting for the right price.",
+    "stats": null,
+    "absorption": null
+  },
+  "competition": [
+    {
+      "status": "Active",
+      "address": "107 Romney Pl",
+      "dom": 7,
+      "built": 1997,
+      "sf": 0,
+      "lot": 0,
+      "list": 450000
+    },
+    {
+      "status": "Active",
+      "address": "106 Tunis Ct",
+      "dom": 11,
+      "built": 1987,
+      "sf": 1724,
+      "lot": 0,
+      "list": 424500
+    },
+    {
+      "status": "Active",
+      "address": "101 Tunis Ct",
+      "dom": 26,
+      "built": 1986,
+      "sf": 1936,
+      "lot": 0,
+      "list": 410000
+    },
+    {
+      "status": "Active",
+      "address": "123 Nightingale",
+      "dom": 4,
+      "built": 1987,
+      "sf": 0,
+      "lot": 18731,
+      "list": 400000
+    }
+  ],
+  "notes": [],
+  "premium_rating": [
+    [
+      {
+        "label": "Top Features",
+        "items": [
+          "Cul-de-sac location with no through traffic",
+          "In-ground pool with a diving board",
+          "Fully fenced back yard",
+          "Large shed with a loft for outdoor storage",
+          "Pergola for lounging or a grill station",
+          "4 generously sized bedrooms",
+          "2 full and 2 half bathrooms",
+          "Finished basement &mdash; bonus space to enjoy or entertain"
+        ]
+      }
+    ],
+    [
+      {
+        "label": "Pool Care",
+        "items": [
+          "Professionally opened, maintained and closed every year",
+          "Around $1,500 or less per year &mdash; about $125 a month"
+        ]
+      },
+      {
+        "label": "Location",
+        "items": [
+          "Off Warrior Drive, near the parks",
+          "Close to Sherando High School",
+          "Easy access to Martin&rsquo;s Food and Walmart",
+          "Convenient to I-81 and Route 522 for commuting"
+        ]
+      }
+    ]
+  ],
+  "premium_rating_headline": "Your &ldquo;Staycation&rdquo; home is here!",
+  "listing_status": "withdrawn",
+  "withdrawn_opener": "I was at the beach and saw Dinwiddie withdrew."
+}

@@ -1,0 +1,360 @@
+{
+ "address": "9668 Scotch Haven Dr",
+ "city": "Vienna",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "22181",
+ "county": "Fairfax",
+ "congestion_fees": false,
+ "report_date": "Tuesday, October 6, 2026",
+ "prefix": "9668_Scotch_Haven",
+ "listing_url": "9668ScotchHaven.com",
+ "portal_url": "https://9668scotchhaven.netlify.app",
+ "include_tracker": true,
+ "listing_status": "new",
+ "subject": {
+  "built": 1980,
+  "sf": 1479,
+  "lot": 1700,
+  "assessment": 704920
+ },
+ "values": {
+  "dated": 647654,
+  "customary": 719616,
+  "customary_list": 715996,
+  "premium": 777185,
+  "upgrades": 0
+ },
+ "comps": {
+  "rows": [
+   [
+    "9664 Scotch Haven Dr",
+    1980,
+    1518,
+    1700,
+    733150,
+    732000
+   ],
+   [
+    "9664 Masterworks Dr",
+    1979,
+    1472,
+    1814,
+    692110,
+    736600
+   ],
+   [
+    "9674 Scotch Haven Dr",
+    1980,
+    1479,
+    1700,
+    709690,
+    725000
+   ],
+   [
+    "2827 Kelly Sq",
+    1983,
+    1496,
+    1650,
+    703580,
+    709000
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    1981,
+    1491,
+    1716,
+    709633,
+    725650
+   ]
+  ]
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "9608 Masterworks Dr",
+   "dom": 124,
+   "built": 1979,
+   "sf": 1472,
+   "lot": 1814,
+   "list": 775000,
+   "assessment": 672830
+  },
+  {
+   "status": "Active",
+   "address": "2953 Finsbury",
+   "dom": 52,
+   "built": 2013,
+   "sf": 2294,
+   "lot": 0,
+   "list": 759990,
+   "assessment": 704810
+  },
+  {
+   "status": "Active",
+   "address": "2850 Kelly Sq",
+   "dom": 11,
+   "built": 1983,
+   "sf": 1496,
+   "lot": 1650,
+   "list": 740000,
+   "assessment": 703450
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "2836 Kelly Sq",
+   "dom": 34,
+   "built": 1990,
+   "sf": 1584,
+   "lot": 1742,
+   "list": 719950,
+   "assessment": 729850
+  }
+ ],
+ "agent": {
+  "lookup": "Casey Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "casey@caseysamson.com"
+ },
+ "asset_dir": "assets/9668_Scotch_Haven",
+ "hero_photo": "9668_Scotch_Haven_front.jpg",
+ "photos": [
+  "9668_Scotch_Haven_front.jpg"
+ ],
+ "buyer_portal": {
+  "display_address": "9668 Scotch Haven Dr",
+  "site": "9668ScotchHaven.com",
+  "url": "https://caseysamson.com/market-snapshot/buyscotch",
+  "deploy_to": "https://buyscotch.netlify.app",
+  "live": false,
+  "list_price": 699999,
+  "status_line": "Coming Soon",
+  "facts": [
+   [
+    "1980",
+    "Year built"
+   ],
+   [
+    "1,479",
+    "Finished square feet"
+   ],
+   [
+    "1,700",
+    "Lot size (sq ft)"
+   ],
+   [
+    "Vienna",
+    "Fairfax County"
+   ]
+  ],
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "pricing_pdf": "9668_Scotch_Haven_Buyer_Report.pdf",
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Country Creek sits off Vaden Drive, which means the Orange Line is a nine-minute walk and I-66 is about the same by car. The arrows point to everything beyond the map.",
+   "center": {
+    "lat": 38.881,
+    "lng": -77.2767,
+    "label": "9668 Scotch Haven Dr"
+   },
+   "pins": [
+    {
+     "name": "Vienna/Fairfax-GMU Metro",
+     "sub": "Orange Line &middot; Park &amp; Ride",
+     "lat": 38.8776,
+     "lng": -77.2719
+    },
+    {
+     "name": "Mosaic Elementary School",
+     "sub": "Fairfax County Public Schools",
+     "lat": 38.8807,
+     "lng": -77.2856
+    },
+    {
+     "name": "Pan Am Shopping Center",
+     "sub": "Grocery, pharmacy and restaurants",
+     "lat": 38.8706,
+     "lng": -77.2757
+    },
+    {
+     "name": "Nottoway Park",
+     "sub": "Trails, courts and playground",
+     "lat": 38.8906,
+     "lng": -77.2692
+    },
+    {
+     "name": "W&amp;OD Trail",
+     "sub": "45 miles of paved rail trail",
+     "lat": 38.9007,
+     "lng": -77.2707
+    },
+    {
+     "name": "Town of Vienna",
+     "sub": "Church Street shops and dining",
+     "lat": 38.9012,
+     "lng": -77.2653
+    },
+    {
+     "name": "Thoreau Middle School",
+     "sub": "Fairfax County Public Schools",
+     "lat": 38.887,
+     "lng": -77.246
+    },
+    {
+     "name": "Oakton High School",
+     "sub": "Fairfax County Public Schools",
+     "lat": 38.893,
+     "lng": -77.3044
+    },
+    {
+     "name": "Inova Fairfax Hospital",
+     "sub": "Level 1 trauma center",
+     "lat": 38.8588,
+     "lng": -77.2366
+    },
+    {
+     "name": "Mosaic District",
+     "sub": "Dining, cinema and shops",
+     "lat": 38.8713,
+     "lng": -77.2282
+    },
+    {
+     "name": "Tysons Corner Center",
+     "sub": "Shopping and offices",
+     "lat": 38.9176,
+     "lng": -77.2229
+    }
+   ],
+   "arrows": [
+    [
+     297.3,
+     [
+      "Dulles International",
+      "IAD &middot; 24 min"
+     ]
+    ],
+    [
+     99.1,
+     [
+      "Reagan National",
+      "DCA &middot; 29 min"
+     ]
+    ],
+    [
+     84.8,
+     [
+      "Washington, DC",
+      "29 min"
+     ]
+    ]
+   ]
+  },
+  "amenities_lede": "The Orange Line is the short walk that defines this address; everything else is a few minutes by car.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Vienna/Fairfax-GMU Metro",
+      "Orange Line, Park &amp; Ride",
+      "9 min walk"
+     ],
+     [
+      "I-66 at Nutley Street",
+      "Half a mile to the ramp",
+      0.46
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      14.1
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      16.8
+     ],
+     [
+      "Washington, DC",
+      "Downtown",
+      16.9
+     ]
+    ]
+   },
+   {
+    "title": "Every Day",
+    "items": [
+     [
+      "Pan Am Shopping Center",
+      "Grocery, pharmacy, restaurants",
+      0.94
+     ],
+     [
+      "Town of Vienna",
+      "Church Street shops and dining",
+      1.98
+     ],
+     [
+      "Inova Fairfax Hospital",
+      "Level 1 trauma center",
+      3.44
+     ],
+     [
+      "Mosaic District",
+      "Dining, cinema and shops",
+      3.5
+     ],
+     [
+      "Tysons Corner Center",
+      "Shopping and offices",
+      5.0
+     ]
+    ]
+   },
+   {
+    "title": "Schools and Parks",
+    "items": [
+     [
+      "Mosaic Elementary School",
+      "Fairfax County Public Schools",
+      "12 min walk"
+     ],
+     [
+      "Nottoway Park",
+      "Trails, courts, playground",
+      1.01
+     ],
+     [
+      "W&amp;OD Trail",
+      "Paved rail trail",
+      1.82
+     ],
+     [
+      "Thoreau Middle School",
+      "Fairfax County Public Schools",
+      2.21
+     ],
+     [
+      "Oakton High School",
+      "Fairfax County Public Schools",
+      2.22
+     ]
+    ]
+   }
+  ]
+ }
+}

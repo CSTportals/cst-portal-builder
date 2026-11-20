@@ -1,0 +1,459 @@
+{
+ "address": "41057 Haybine Ln",
+ "city": "Aldie",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "20105",
+ "county": "Loudoun",
+ "congestion_fees": false,
+ "report_date": "Tuesday, October 6, 2026",
+ "prefix": "41057_Haybine",
+ "listing_url": "41057Haybine.com",
+ "portal_url": "https://41057haybine.netlify.app",
+ "include_tracker": true,
+ "subject": {
+  "built": 2017,
+  "sf": 2504,
+  "lot": 12600,
+  "assessment": 1185000
+ },
+ "values": {
+  "dated": 1040231,
+  "customary": 1155812,
+  "customary_list": 1218171,
+  "premium": 1248277,
+  "upgrades": 0
+ },
+ "comps": {
+  "rows": [
+   [
+    "41833 Walden Knoll Ct",
+    2014,
+    2432,
+    10454,
+    859130,
+    1015000
+   ],
+   [
+    "25981 Royston Pass Cir",
+    2017,
+    2384,
+    8276,
+    907040,
+    1010000
+   ],
+   [
+    "41699 Brookebourough Ct",
+    2016,
+    2580,
+    9148,
+    967110,
+    1010000
+   ],
+   [
+    "25079 Chafee Cir",
+    2014,
+    2760,
+    6970,
+    886840,
+    950000
+   ]
+  ],
+  "summary": [
+   [
+    "Price Range Average",
+    2015,
+    2539,
+    8712,
+    905030,
+    996250
+   ]
+  ]
+ },
+ "market": {
+  "name": "Aldie Family Market",
+  "slug": "Aldie_Family_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "41217 Blue Oat Ct",
+   "dom": 83,
+   "built": 2016,
+   "sf": 2958,
+   "lot": 11326,
+   "list": 1297000,
+   "assessment": 1363670
+  },
+  {
+   "status": "Active",
+   "address": "24921 Balmoral Glen Ct",
+   "dom": 45,
+   "built": 2014,
+   "sf": 2393,
+   "lot": 0,
+   "list": 1199990,
+   "assessment": 1130830
+  },
+  {
+   "status": "Active",
+   "address": "42007 Powells Farm Way",
+   "dom": 89,
+   "built": 2011,
+   "sf": 2838,
+   "lot": 7841,
+   "list": 1175000,
+   "assessment": 988390
+  },
+  {
+   "status": "Active",
+   "address": "41089 Haybine Ln",
+   "dom": 40,
+   "built": 2017,
+   "sf": 0,
+   "lot": 0,
+   "list": 1150000,
+   "assessment": 1068540
+  }
+ ],
+ "notes": [],
+ "photos": [
+  "41057_Haybine_front.png",
+  "41057_Haybine_kitchen.png",
+  "41057_Haybine_dining.png",
+  "41057_Haybine_living.png"
+ ],
+ "premium_rating": [
+  [
+   {
+    "label": "Top Features",
+    "items": [
+     "Set in Willowsford&rsquo;s Greens community, one of Loudoun County&rsquo;s most sought-after neighborhoods",
+     "Gourmet kitchen opening seamlessly to the main gathering spaces",
+     "Spacious primary suite with generously sized secondary bedrooms",
+     "Finished walk-out lower level &mdash; recreation, home gym, office or guest accommodation",
+     "Multiple indoor and outdoor living areas",
+     "Beautifully landscaped surroundings"
+    ]
+   },
+   {
+    "label": "Property Details",
+    "items": [
+     "Built 2017",
+     "2,504 finished square feet",
+     "12,600 SF lot"
+    ]
+   }
+  ],
+  [
+   {
+    "label": "Willowsford Amenities",
+    "items": [
+     "Resort-style community amenities",
+     "Miles of scenic trails",
+     "Community pools",
+     "Fitness facilities",
+     "Clubhouse spaces",
+     "Athletic fields"
+    ]
+   },
+   {
+    "label": "Location",
+    "items": [
+     "The Greens at Willowsford, Aldie",
+     "Convenient to the amenities of Loudoun County"
+    ]
+   }
+  ]
+ ],
+ "asset_dir": "assets/41057_Haybine",
+ "hero_photo": "41057_Haybine_front.png",
+ "listing_status": "recovery",
+ "current_list": 1249980,
+ "days_on_market": 41,
+ "buyer_portal": {
+  "display_address": "41057 Haybine Ln",
+  "site": "41057Haybine.com",
+  "url": "https://creative-gnome-7b4c69.netlify.app",
+  "deploy_to": "https://creative-gnome-7b4c69.netlify.app",
+  "live": true,
+  "list_price": 1249980,
+  "status_line": "Active",
+  "headline": "A 2017 build in Willowsford&rsquo;s Greens &mdash; resort amenities, miles of trails, and a finished walk-out lower level.",
+  "highlights": [
+   "Built 2017",
+   "2,504 finished sq ft",
+   "Walk-out lower level",
+   "Willowsford Greens"
+  ],
+  "facts": [
+   [
+    "2017",
+    "Year built"
+   ],
+   [
+    "2,504",
+    "Finished square feet"
+   ],
+   [
+    "12,600",
+    "Lot size (sq ft)"
+   ],
+   [
+    "Aldie",
+    "Loudoun County"
+   ]
+  ],
+  "feature_headlines": [
+   {
+    "head": "Willowsford&rsquo;s Greens",
+    "sub": [
+     "One of Loudoun&rsquo;s most sought-after communities",
+     "Resort-style amenities and miles of trails",
+     "Pools, fitness, clubhouse and athletic fields"
+    ]
+   },
+   {
+    "head": "Built for the Way People Actually Live",
+    "sub": [
+     "Gourmet kitchen open to the gathering spaces",
+     "Finished walk-out lower level",
+     "Multiple indoor and outdoor living areas"
+    ]
+   },
+   {
+    "head": "Room That Works",
+    "sub": [
+     "Spacious primary suite",
+     "Generously sized secondary bedrooms",
+     "Recreation, gym, office or guest space below"
+    ]
+   }
+  ],
+  "features": {
+   "The Home": [
+    "Built 2017",
+    "2,504 finished square feet",
+    "12,600 SF lot",
+    "Gourmet kitchen opening seamlessly to the main gathering spaces",
+    "Spacious primary suite with generously sized secondary bedrooms",
+    "Finished walk-out lower level &mdash; recreation, home gym, office or guest accommodation",
+    "Multiple indoor and outdoor living areas",
+    "Beautifully landscaped surroundings"
+   ],
+   "Willowsford Amenities": [
+    "Resort-style community amenities",
+    "Miles of scenic trails",
+    "Community pools",
+    "Fitness facilities",
+    "Clubhouse spaces",
+    "Athletic fields"
+   ]
+  },
+  "gallery": [
+   [
+    "41057_Haybine_kitchen.png",
+    "The kitchen, open to the main gathering spaces"
+   ],
+   [
+    "41057_Haybine_dining.png",
+    "Dining"
+   ],
+   [
+    "41057_Haybine_living.png",
+    "Living"
+   ]
+  ],
+  "contacts": {
+   "names": "Ferris B Eways",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Ferris B Eways",
+     "",
+     "feways01@yahoo.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "pricing_pdf": "41057_Haybine_Buyer_Report.pdf",
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Willowsford&rsquo;s Greens sits off Braddock Road, with the community&rsquo;s own lake, lodge and trails a few minutes north and all three schools inside two miles. The arrows point to everything beyond the map.",
+   "center": {
+    "lat": 38.90984,
+    "lng": -77.58405,
+    "label": "41057 Haybine Ln"
+   },
+   "pins": [
+    {
+     "name": "The Lodge at Willow Lake",
+     "sub": "Willowsford amenity center",
+     "lat": 38.925852,
+     "lng": -77.583151
+    },
+    {
+     "name": "The Boathouse at Willow Lake",
+     "sub": "Pool and clubhouse",
+     "lat": 38.925872,
+     "lng": -77.584666
+    },
+    {
+     "name": "Willowsford Community Park",
+     "sub": "Trails and open space",
+     "lat": 38.924944,
+     "lng": -77.585212
+    },
+    {
+     "name": "Hovatter Elementary School",
+     "sub": "Loudoun County Public Schools",
+     "lat": 38.922151,
+     "lng": -77.58041
+    },
+    {
+     "name": "Willard Middle School",
+     "sub": "Loudoun County Public Schools",
+     "lat": 38.927219,
+     "lng": -77.58944
+    },
+    {
+     "name": "Lightridge High School",
+     "sub": "Loudoun County Public Schools",
+     "lat": 38.921223,
+     "lng": -77.586114
+    },
+    {
+     "name": "Dulles South Park &amp; Ride",
+     "sub": "Commuter bus to DC and Tysons",
+     "lat": 38.938516,
+     "lng": -77.549954
+    },
+    {
+     "name": "Gum Spring Library",
+     "sub": "Loudoun County Public Library",
+     "lat": 38.937744,
+     "lng": -77.545799
+    }
+   ],
+   "arrows": [
+    [
+     67.8,
+     [
+      "Dulles International",
+      "IAD &middot; 18 min"
+     ]
+    ],
+    [
+     37.2,
+     [
+      "Ashburn Metro",
+      "Silver Line &middot; 18 min"
+     ]
+    ],
+    [
+     90.2,
+     [
+      "Washington, DC",
+      "51 min"
+     ]
+    ]
+   ]
+  },
+  "amenities_lede": "Willowsford&rsquo;s lake, lodge and trails are four minutes up the road, and all three schools are inside two miles. Dulles is closer than the Beltway.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Dulles South Park &amp; Ride",
+      "Commuter bus to DC and Tysons",
+      3.51
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      10.28
+     ],
+     [
+      "Ashburn Metro",
+      "Silver Line terminus",
+      10.73
+     ],
+     [
+      "Washington, DC",
+      "Downtown",
+      38.24
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      38.39
+     ]
+    ]
+   },
+   {
+    "title": "Every Day",
+    "items": [
+     [
+      "The Lodge at Willow Lake",
+      "Willowsford amenity center",
+      1.44
+     ],
+     [
+      "The Boathouse at Willow Lake",
+      "Pool and clubhouse",
+      1.44
+     ],
+     [
+      "Gum Spring Library",
+      "Loudoun County Public Library",
+      3.66
+     ],
+     [
+      "Brambleton Library",
+      "Loudoun County Public Library",
+      7.52
+     ],
+     [
+      "Inova Loudoun Hospital",
+      "Leesburg",
+      16.55
+     ]
+    ]
+   },
+   {
+    "title": "Schools and Parks",
+    "items": [
+     [
+      "Lightridge High School",
+      "Loudoun County Public Schools",
+      1.03
+     ],
+     [
+      "Hovatter Elementary School",
+      "Loudoun County Public Schools",
+      1.13
+     ],
+     [
+      "Willowsford Community Park",
+      "Trails and open space",
+      1.36
+     ],
+     [
+      "Willard Middle School",
+      "Loudoun County Public Schools",
+      1.61
+     ]
+    ]
+   }
+  ]
+ },
+ "agent": {
+  "lookup": "Ferris B Eways",
+  "display": "Ferris Eways",
+  "phone": "",
+  "email": "feways01@yahoo.com"
+ }
+}

@@ -1,0 +1,334 @@
+{
+  "address": "15100 Heather Mill Ln",
+  "city": "Haymarket",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "county": "Prince William",
+  "zip": "",
+  "prefix": "15100_Heather_Mill",
+  "report_date": "Thursday, October 15, 2026",
+  "asset_dir": "assets/15100_Heather_Mill",
+  "hero_photo": "15100_Heather_Mill_front.png",
+  "portal_url": "https://15100heathermill.netlify.app",
+  "listing_status": "recovery",
+  "current_list": 424980,
+  "days_on_market": 64,
+  "agent": {
+    "lookup": "Casey Samson",
+    "display": "Casey Samson",
+    "phone": "703-508-2535",
+    "email": "casey@caseysamson.com"
+  },
+  "subject": {
+    "built": 2016,
+    "sf": 1499,
+    "lot": 0,
+    "assessment": 431000
+  },
+  "values": {
+    "dated": 398265,
+    "customary": 442516,
+    "customary_list": 448060,
+    "premium": 477918,
+    "upgrades": 0
+  },
+  "market": {
+    "name": "Regency at Dominion Valley",
+    "slug": null,
+    "stats": null,
+    "absorption": null
+  },
+  "comps": {
+    "rows": [
+      [
+        "15130 Heather Mill",
+        2017,
+        1551,
+        0,
+        441300,
+        480000
+      ],
+      [
+        "15140 Heather Mill",
+        2018,
+        1499,
+        0,
+        434400,
+        465000
+      ],
+      [
+        "15110 Heather Mill",
+        2016,
+        1538,
+        0,
+        437600,
+        408050
+      ]
+    ],
+    "summary": [
+      [
+        "Age &amp; Size Average",
+        2017,
+        1529,
+        0,
+        437767,
+        451017
+      ],
+      [
+        "Price Range Average",
+        2017,
+        1529,
+        0,
+        437767,
+        451017
+      ]
+    ]
+  },
+  "competition": [
+    {
+      "status": "Active",
+      "address": "15100 Heather Mill",
+      "dom": 140,
+      "built": 2016,
+      "sf": 1499,
+      "lot": 0,
+      "list": 414900,
+      "assessment": 431300
+    }
+  ],
+  "include_tracker": true,
+  "track_record": "Track_Record_Under_3500",
+  "team_stats_title": "The Casey Samson Team &mdash; Homes Sold Under 3,500 SF",
+  "local_snapshot": {
+    "ref": "2026-10-15",
+    "rows": [
+      {
+        "status": "ACT",
+        "address": "15100 Heather Mill (this home)",
+        "dom": 64,
+        "built": 2016,
+        "sf": 1499,
+        "lot": 0,
+        "assessment": 431300,
+        "list": 424980,
+        "sale": null
+      },
+      {
+        "status": "ACT",
+        "address": "15100 Heather Mill",
+        "dom": 140,
+        "built": 2016,
+        "sf": 1499,
+        "lot": 0,
+        "assessment": 431300,
+        "list": 414900,
+        "sale": null
+      },
+      {
+        "status": "CLS",
+        "address": "15130 Heather Mill",
+        "dom": 6,
+        "built": 2017,
+        "sf": 1551,
+        "lot": 0,
+        "assessment": 441300,
+        "list": 475000,
+        "sale": 480000
+      },
+      {
+        "status": "CLS",
+        "address": "15140 Heather Mill",
+        "dom": 28,
+        "built": 2018,
+        "sf": 1499,
+        "lot": 0,
+        "assessment": 434400,
+        "list": 470000,
+        "sale": 465000
+      },
+      {
+        "status": "CLS",
+        "address": "15110 Heather Mill",
+        "dom": 47,
+        "built": 2016,
+        "sf": 1538,
+        "lot": 0,
+        "assessment": 437600,
+        "list": 425000,
+        "sale": 408050
+      }
+    ]
+  },
+  "buyer_portal": {
+    "live": true,
+    "display_address": "15100 Heather Mill Lane",
+    "list_price": 424980,
+    "asset_dir": "assets/15100_Heather_Mill",
+    "hero_photo": "15100_Heather_Mill_front.png",
+    "pricing_pdf": "15100_Heather_Mill_Buyer_Report.pdf",
+    "headline": "One-level living in Regency at Dominion Valley&rsquo;s 55+ community.",
+    "facts": [
+      [
+        "2",
+        "Bedrooms"
+      ],
+      [
+        "2",
+        "Bathrooms"
+      ],
+      [
+        "1,499",
+        "Square feet"
+      ],
+      [
+        "2016",
+        "Year built"
+      ],
+      [
+        "55+",
+        "Community"
+      ],
+      [
+        "Yes",
+        "Detached garage"
+      ]
+    ],
+    "description": "Welcome to effortless luxury and resort-style living in the highly sought-after 55+ community of Regency at Dominion Valley. This beautifully maintained, one-level residence offers the perfect combination of comfort, elegance and convenience. Ideally located on the lower level with patio access to the outdoor space, this spacious 2-bedroom, 2-bath home features an open and inviting floor plan designed for both everyday living and entertaining. The light-filled main living area creates an easy flow between the living room, dining area and gourmet kitchen, while large windows bring in abundant natural light. The spacious primary suite provides a relaxing retreat with a generous bedroom, private bath and ample closet space. A second bedroom offers flexibility for guests, a home office or hobbies. Enjoy the convenience of your own detached garage, additional storage, elevator access and truly maintenance-free living. Water, cable, phone and internet are included in the condo fees.",
+    "features": {
+      "The Home": [
+        "One-level living on the lower level, with patio access to the outdoors",
+        "Open floor plan connecting living room, dining area and gourmet kitchen",
+        "Primary suite with private bath and ample closet space",
+        "Second bedroom for guests, a home office or hobbies",
+        "Large windows and abundant natural light throughout"
+      ],
+      "Effortless Ownership": [
+        "Detached garage plus additional storage",
+        "Elevator access to the building",
+        "Truly maintenance-free living",
+        "Water, cable, phone and internet included in the condo fees"
+      ]
+    },
+    "amenities_lede": "Regency at Dominion Valley is a gated 55+ community inside Dominion Valley, minutes from shopping, dining and the commuter routes.",
+    "amenities": [
+      {
+        "title": "The Community",
+        "items": [
+          [
+            "Indoor and outdoor pools",
+            "Regency at Dominion Valley",
+            0
+          ],
+          [
+            "Fitness facilities",
+            "Regency clubhouse",
+            0
+          ],
+          [
+            "Tennis",
+            "Regency at Dominion Valley",
+            0
+          ],
+          [
+            "Golf and putting green",
+            "Dominion Valley Country Club",
+            0
+          ],
+          [
+            "Walking and jogging paths",
+            "Throughout the community",
+            0
+          ],
+          [
+            "Dog park",
+            "Dominion Valley",
+            0
+          ]
+        ]
+      }
+    ],
+    "url": "https://buyheathermill.netlify.app",
+    "deploy_to": "https://buyheathermill.netlify.app",
+    "feature_headlines": [
+      {
+        "head": "One-Level Living, With the Patio Just Outside",
+        "sub": [
+          "2 bedrooms, 2 bathrooms, 1,499 square feet",
+          "Lower level with patio access to the outdoor space",
+          "No stairs anywhere in the home"
+        ]
+      },
+      {
+        "head": "An Open Plan Built for Everyday and for Entertaining",
+        "sub": [
+          "Living room, dining area and gourmet kitchen flow together",
+          "Large windows and abundant natural light",
+          "Primary suite with private bath and ample closet space"
+        ]
+      },
+      {
+        "head": "Resort-Style Amenities at Regency at Dominion Valley",
+        "sub": [
+          "Indoor and outdoor pools, fitness facilities and tennis",
+          "Golf and a putting green",
+          "Walking and jogging paths, and a dog park"
+        ]
+      },
+      {
+        "head": "Truly Maintenance-Free",
+        "sub": [
+          "Detached garage, additional storage and elevator access",
+          "Water, cable, phone and internet included in the condo fee",
+          "Minutes from shopping, dining and the commuter routes"
+        ]
+      }
+    ]
+  },
+  "premium_rating_headline": "Effortless one-level living in Regency at Dominion Valley&rsquo;s 55+ community.",
+  "premium_rating": [
+    [
+      {
+        "label": "Top Features",
+        "items": [
+          "2 bedrooms, 2 bathrooms, 1,499 square feet on one level",
+          "Lower level with patio access to the outdoor space",
+          "Open floor plan &mdash; living room, dining area and gourmet kitchen",
+          "Light-filled main living area with large windows throughout",
+          "Primary suite with private bath and ample closet space",
+          "Second bedroom for guests, a home office or hobbies",
+          "Detached garage, additional storage and elevator access"
+        ]
+      },
+      {
+        "label": "Regency at Dominion Valley",
+        "items": [
+          "Gated 55+ community inside Dominion Valley",
+          "Indoor and outdoor pools",
+          "Fitness facilities, tennis, golf and a putting green",
+          "Walking and jogging paths, and a dog park",
+          "Beautifully maintained community spaces"
+        ]
+      }
+    ],
+    [
+      {
+        "label": "Included in the Condo Fee",
+        "items": [
+          "Water",
+          "Cable",
+          "Phone",
+          "Internet",
+          "Truly maintenance-free living"
+        ]
+      },
+      {
+        "label": "Location",
+        "items": [
+          "Minutes from shopping, dining and entertainment",
+          "Close to major commuter routes",
+          "Inside the Dominion Valley community"
+        ]
+      }
+    ]
+  ]
+}
