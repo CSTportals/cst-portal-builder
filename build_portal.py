@@ -7523,11 +7523,11 @@ def seller_email_v2(p):
     items = [
         (f"{root}/{pre.lower()}_roadmap" if root else None, "Seller Roadmap&trade;",
          "Your comprehensive roadmap to a successful listing, from preparation and pricing "
-         "through marketing and settlement. Note: Pricing is only based on appraisal quality "
+         "through marketing and settlement. <b>Note: Pricing is only based on appraisal quality "
          "comps of similar size, age, location and time. This is only Preliminary Pricing. "
          "Final Pricing will be determined after an inspection and conversation with you about "
          "the home&rsquo;s condition, upgrades, comps that may not show up on appraisers&rsquo; "
-         "searches and analysis of market condition."),
+         "searches and analysis of market condition.</b>"),  # Casey, 20 Nov 2026: bold
         (f"{root}/{pre}_Pricing_Strategy_Summary.pdf" if root else None, "Pricing Strategy Summary&trade;",
          "A summary of our preliminary pricing ladder, major buyer thresholds, and triggers for "
          "adjusting our strategy based on market response."),
