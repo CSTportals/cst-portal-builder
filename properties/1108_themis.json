@@ -1,0 +1,491 @@
+{
+ "address": "1108 Themis St SE",
+ "city": "Leesburg",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "20175",
+ "county": "Loudoun County",
+ "prefix": "1108_Themis",
+ "report_date": "Friday, November 20, 2026",
+ "asset_dir": "assets/1108_Themis",
+ "hero_photo": null,
+ "photos": [],
+ "track_record": "Track_Record_Under_3500",
+ "values": {
+  "dated": 1132224,
+  "customary": 1258026,
+  "customary_list": 1258026,
+  "premium": 1358668,
+  "upgrades": 0,
+  "preview_override": 1250000,
+  "coming_soon_override": 1250000,
+  "fallback_override": 1199000,
+  "deep_override": 1150000,
+  "worksheet_note": "20 Nov 2026 worksheet: Preview $1,250,000, Coming Soon $1,250,000, Fall Back $1,199,000, Rip Cord $1,150,000. Comps = the 4 closed sales (averages match)."
+ },
+ "subject": {
+  "built": 2018,
+  "sf": 3343,
+  "lot": 8276,
+  "assessment": 1309940
+ },
+ "comps": {
+  "rows": [
+   [
+    "1114 Laconian St SE",
+    2019,
+    3309,
+    8276,
+    1292870,
+    1240000
+   ],
+   [
+    "1122 Laconian St SE",
+    2019,
+    3309,
+    8276,
+    1202810,
+    1162500
+   ],
+   [
+    "641 Lipizzan Dr SW",
+    2022,
+    3142,
+    5663,
+    1083880,
+    1100000
+   ],
+   [
+    "819 Banker Dr",
+    2022,
+    3142,
+    5663,
+    1062680,
+    995000
+   ]
+  ],
+  "dom": {
+   "1114 Laconian St SE": 63,
+   "1122 Laconian St SE": 42,
+   "641 Lipizzan Dr SW": 16,
+   "819 Banker Dr": 107
+  },
+  "list": {
+   "1114 Laconian St SE": 1250000,
+   "1122 Laconian St SE": 1165000,
+   "641 Lipizzan Dr SW": 1100000,
+   "819 Banker Dr": 1025000
+  },
+  "orig_list": {
+   "1114 Laconian St SE": 1250000,
+   "1122 Laconian St SE": 1165000,
+   "641 Lipizzan Dr SW": 1100000,
+   "819 Banker Dr": 1025000
+  },
+  "summary": [
+   [
+    "Age and Size &mdash; 4 sales",
+    2021,
+    3226,
+    6969,
+    1160560,
+    1124375
+   ],
+   [
+    "Price Range &mdash; 4 sales",
+    2021,
+    3226,
+    6969,
+    1160560,
+    1124375
+   ]
+  ],
+  "summary_ppsf": {
+   "Age and Size &mdash; 4 sales": {
+    "ppsf": 349
+   },
+   "Price Range &mdash; 4 sales": {
+    "ppsf": 349
+   }
+  },
+  "subject_value": 1258026
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "109 Philokalia St SE",
+   "dom": 100,
+   "built": 2022,
+   "sf": 3338,
+   "lot": 10890,
+   "assessment": 1089160,
+   "list": 1249900
+  },
+  {
+   "status": "Active",
+   "address": "1010 Coubertin Dr SE",
+   "dom": 37,
+   "built": 2021,
+   "sf": 2153,
+   "lot": 6098,
+   "assessment": 935740,
+   "list": 1000000
+  },
+  {
+   "status": "Active",
+   "address": "1006 Percheron Dr",
+   "dom": 50,
+   "built": 2022,
+   "sf": 3519,
+   "lot": 5663,
+   "assessment": 1092190,
+   "list": 1249000
+  }
+ ],
+ "market": {
+  "name": "Leesburg Family Market",
+  "slug": "Leesburg_Family_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "portal_url": "https://1108themis.netlify.app",
+ "agent": {
+  "lookup": "Ferris Eways",
+  "display": "Ferris Eways",
+  "title": "REALTOR&reg;"
+ },
+ "private_label": {
+  "name": "Ferris Eways",
+  "title": "REALTOR&reg;",
+  "office": "Samson Properties"
+ },
+ "market_map": {
+  "subject": [
+   39.0923524,
+   -77.5800768
+  ],
+  "subject_dir": "left",
+  "subject_dir_solds": "right",
+  "solds": [
+   {
+    "address": "1114 Laconian St SE",
+    "sale": 1240000,
+    "list": 1250000,
+    "orig_list": 1250000,
+    "dom": 63,
+    "status": "Sold",
+    "lat": 39.0913317,
+    "lng": -77.5794946
+   },
+   {
+    "address": "1122 Laconian St SE",
+    "sale": 1162500,
+    "list": 1165000,
+    "orig_list": 1165000,
+    "dom": 42,
+    "status": "Sold",
+    "lat": 39.0906744,
+    "lng": -77.5800042
+   },
+   {
+    "address": "641 Lipizzan Dr SW",
+    "sale": 1100000,
+    "list": 1100000,
+    "orig_list": 1100000,
+    "dom": 16,
+    "status": "Sold",
+    "lat": 39.1053768,
+    "lng": -77.5771953
+   },
+   {
+    "address": "819 Banker Dr",
+    "sale": 995000,
+    "list": 1025000,
+    "orig_list": 1025000,
+    "dom": 107,
+    "status": "Sold",
+    "lat": 39.1062754,
+    "lng": -77.5781116
+   }
+  ],
+  "listings": [
+   {
+    "address": "109 Philokalia St SE",
+    "status": "Active",
+    "list": 1249900,
+    "dom": 100,
+    "lat": 39.0890566,
+    "lng": -77.5836581
+   },
+   {
+    "address": "1010 Coubertin Dr SE",
+    "status": "Active",
+    "list": 1000000,
+    "dom": 37,
+    "lat": 39.0917298,
+    "lng": -77.5773972
+   },
+   {
+    "address": "1006 Percheron Dr",
+    "status": "Active",
+    "list": 1249000,
+    "dom": 50,
+    "lat": 39.1062679,
+    "lng": -77.5773853
+   }
+  ]
+ },
+ "market_snapshot": {
+  "label": "Leesburg Competition",
+  "source": "Bright MLS, Nov 20, 2026."
+ },
+ "model_unsold": [
+  {
+   "status": "EXP",
+   "address": "1114 Laconian St SE",
+   "dom": 63,
+   "list": 1300000
+  },
+  {
+   "status": "CNL",
+   "address": "1010 Laconian St SE",
+   "dom": 33,
+   "list": 1200000
+  }
+ ],
+ "premium_rating": [
+  [
+   {
+    "label": "Property Details",
+    "items": [
+     "Built 2018",
+     "3,343 finished square feet",
+     "8,276 SF lot",
+     "Assessment $1,309,940"
+    ]
+   }
+  ]
+ ],
+ "buyer_portal": {
+  "display_address": "1108 Themis St SE",
+  "asset_dir": "assets/1108_Themis/buyer",
+  "hero_photo": null,
+  "deploy_to": "https://buythemis.netlify.app",
+  "url": "https://buythemis.netlify.app",
+  "live": true,
+  "status_line": "Coming Soon",
+  "headline": "Built 2018 &mdash; 3,343 finished square feet in southeast Leesburg.",
+  "facts": [
+   [
+    "2018",
+    "Year built"
+   ],
+   [
+    "3,343",
+    "Finished SF"
+   ],
+   [
+    "8,276",
+    "SF lot"
+   ],
+   [
+    "Leesburg",
+    "Loudoun County"
+   ]
+  ],
+  "pricing_pdf": "1108_Themis_Buyer_Report.pdf",
+  "snapshot": {
+   "title": "Market Snapshot",
+   "lede": "Every home 1108 Themis St SE is competing with, and what each one is asking.",
+   "rows": [
+    [
+     "ACT",
+     "109 Philokalia St SE",
+     100,
+     2022,
+     3338,
+     10890,
+     1089160,
+     1249900
+    ],
+    [
+     "ACT",
+     "1010 Coubertin Dr SE",
+     37,
+     2021,
+     2153,
+     6098,
+     935740,
+     1000000
+    ],
+    [
+     "ACT",
+     "1006 Percheron Dr",
+     50,
+     2022,
+     3519,
+     5663,
+     1092190,
+     1249000
+    ]
+   ]
+  },
+  "contacts": {
+   "names": "Ferris Eways",
+   "team": "Ferris Eways &middot; Samson Properties",
+   "lines": [
+    [
+     "Ferris Eways",
+     "",
+     ""
+    ]
+   ],
+   "office": "Samson Properties"
+  },
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Southeast Leesburg, minutes from Historic Downtown, the W&amp;OD Trail, the Village at Leesburg and the outlets, with Route 7 and the Dulles Greenway for the commute. The arrows point to everything past the edge of the map.",
+   "center": {
+    "lat": 39.0923524,
+    "lng": -77.5800768,
+    "label": "1108 Themis St SE"
+   },
+   "pins": [
+    {
+     "name": "Historic Downtown Leesburg",
+     "sub": "Dining and shops on King St",
+     "lat": 39.1155838,
+     "lng": -77.5645795
+    },
+    {
+     "name": "W&amp;OD Trail",
+     "sub": "45-mile rail trail",
+     "lat": 39.1002223,
+     "lng": -77.5502087
+    },
+    {
+     "name": "Leesburg Premium Outlets",
+     "sub": "Outlet shopping",
+     "lat": 39.1055544,
+     "lng": -77.5391308
+    },
+    {
+     "name": "Leesburg Executive Airport",
+     "sub": "General aviation",
+     "lat": 39.0782543,
+     "lng": -77.5543742
+    }
+   ],
+   "arrows": [
+    [
+     94.2,
+     [
+      "Wegmans",
+      "Leesburg &middot; 10 min"
+     ]
+    ],
+    [
+     93.6,
+     [
+      "Village at Leesburg",
+      "Dining and shopping &middot; 9 min"
+     ]
+    ],
+    [
+     103.2,
+     [
+      "Inova Loudoun Hospital",
+      "Lansdowne &middot; 13 min"
+     ]
+    ],
+    [
+     145.8,
+     [
+      "Dulles International",
+      "IAD &middot; 26 min"
+     ]
+    ],
+    [
+     113.4,
+     [
+      "Washington, DC",
+      "Union Station &middot; 58 min"
+     ]
+    ]
+   ]
+  },
+  "amenities_lede": "Historic Downtown Leesburg for dining, the Village at Leesburg and Wegmans for shopping, the W&amp;OD Trail, and Route 7 and the Greenway toward Dulles.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Leesburg Executive Airport",
+      "General aviation",
+      2.19
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      15.2
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      43.59
+     ],
+     [
+      "Washington, DC",
+      "Union Station",
+      43.72
+     ]
+    ]
+   },
+   {
+    "title": "Fine Dining",
+    "items": [
+     [
+      "Historic Downtown Leesburg",
+      "Dining and shops on King St",
+      2.35
+     ]
+    ]
+   },
+   {
+    "title": "Family Dining",
+    "items": [
+     [
+      "Village at Leesburg",
+      "Restaurants and shops",
+      3.89
+     ]
+    ]
+   },
+   {
+    "title": "Shopping",
+    "items": [
+     [
+      "Leesburg Premium Outlets",
+      "Outlet shopping",
+      3.09
+     ],
+     [
+      "Wegmans",
+      "Leesburg",
+      4.06
+     ]
+    ]
+   },
+   {
+    "title": "Parks and Recreation",
+    "items": [
+     [
+      "W&amp;OD Trail",
+      "45-mile rail trail",
+      2.2
+     ]
+    ]
+   }
+  ]
+ }
+}

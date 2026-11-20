@@ -511,6 +511,33 @@ DATA["3106_Whimbrell"] = {
               ("Getting Around", "Reagan National", "DCA", 38.8501079, -77.039176),
               ("Getting Around", "Washington, DC", "Union Station", 38.897419, -77.006226)],
 }
+DATA["1108_Themis"] = {
+    # 1108 Themis St SE, Leesburg. 20 Nov 2026. Coordinates verified via
+    # places search 20 Nov 2026. Western Loudoun: wineries go in when added.
+    "center": (39.0923524, -77.5800768, "1108 Themis St SE"),
+    "title": "The Neighborhood",
+    "lede": "Southeast Leesburg, minutes from Historic Downtown, the W&amp;OD Trail, the Village at "
+            "Leesburg and the outlets, with Route 7 and the Dulles Greenway for the commute. The "
+            "arrows point to everything past the edge of the map.",
+    "amen_lede": "Historic Downtown Leesburg for dining, the Village at Leesburg and Wegmans for "
+                 "shopping, the W&amp;OD Trail, and Route 7 and the Greenway toward Dulles.",
+    "pins": [
+        ("Historic Downtown Leesburg", "Dining and shops on King St", 39.1155838, -77.5645795, "Fine Dining"),
+        ("W&amp;OD Trail", "45-mile rail trail", 39.1002223, -77.5502087, "Parks and Recreation"),
+        ("Leesburg Premium Outlets", "Outlet shopping", 39.1055544, -77.5391308, "Shopping"),
+        ("Leesburg Executive Airport", "General aviation", 39.0782543, -77.5543742, "Getting Around"),
+    ],
+    "arrows": [((39.089039, -77.521991), "Wegmans", "Leesburg"),
+               ((39.0896175, -77.5243701), "Village at Leesburg", "Dining and shopping"),
+               ((39.0735314, -77.4768783), "Inova Loudoun Hospital", "Lansdowne"),
+               ((38.9522483, -77.4578886), "Dulles International", "IAD"),
+               ((38.897419, -77.006226), "Washington, DC", "Union Station")],
+    "extra": [("Shopping", "Wegmans", "Leesburg", 39.089039, -77.521991),
+              ("Family Dining", "Village at Leesburg", "Restaurants and shops", 39.0896175, -77.5243701),
+              ("Getting Around", "Dulles International", "IAD", 38.9522483, -77.4578886),
+              ("Getting Around", "Reagan National", "DCA", 38.8501079, -77.039176),
+              ("Getting Around", "Washington, DC", "Union Station", 38.897419, -77.006226)],
+}
 CARD_ORDER = ["Getting Around", "Fine Dining", "Family Dining", "Shopping",
               "Downtown Vienna", "Every Day", "Schools and Parks", "Parks and Recreation", "Walk to Town"]
 
