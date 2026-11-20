@@ -3889,7 +3889,7 @@ def build_strategy_summary(p, s, out):
                            else "Presentation and marketing" if f["no_room"]
                            else "Move to the next buyer pool")
                + ("" if _at_floor else
-                  price_row("Fewer than 3, market against", money(_deep),
+                  price_row("Pulling the Rip Cord &mdash; 0 showings", money(_deep),
                             "Condition and reach" if f["no_room"]
                             else "A further adjustment")))
 
@@ -4225,8 +4225,8 @@ def build_strategy_email(p, s, out):
             ("5 or more &mdash; hold position", money(s.coming_soon)),
             ("Fewer than 5 &mdash; move to the next buyer pool",
              money(f["fallback"])),
-            ("Fewer than 3, market against &mdash; a further adjustment may be "
-             "due", money(f["deep"])),
+            ("Pulling the Rip Cord &mdash; 0 showings, a further adjustment",
+             money(f["deep"])),
         ])
         note("Pricing Summary email: no price_floor, so Predictive Analysis "
              "shows the showings ladder instead of a minimum launch price.")
@@ -4658,7 +4658,7 @@ def build_roadmap(p, s, out):
           </div>
         </div>
         <div class="needle-col">
-          <h4>Fewer than {SHOWINGS_CRITICAL_AT}, with the market against you</h4>
+          <h4>Pulling the Rip Cord &mdash; 0 showings</h4>
           <ul>
 {_col3_pts}          </ul>
           <div class="price-card">
