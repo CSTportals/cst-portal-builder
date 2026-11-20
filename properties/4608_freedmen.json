@@ -158,17 +158,7 @@
   "email": "vivianliverdino@gmail.com"
  },
  "seller_names": "Xue and Shen",
- "private_label": {
-  "name": "Vivian Li-Verdino",
-  "title": "REALTOR&reg; &middot; Licensed in VA",
-  "office": "Samson Properties",
-  "address": "14291 Park Meadow Drive, Suite 500, Chantilly, VA 20151",
-  "phone": "703-727-7737",
-  "office_phone": "703-378-8810",
-  "email": "vivianliverdino@gmail.com",
-  "website": "www.vivianliverdino.com",
-  "extra": "WeChat (&#24494;&#20449;): Vivian-Realtor"
- },
+ "private_label": "vivian_li_verdino",
  "market_map": {
   "subject": [
    38.8569847,

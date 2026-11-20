@@ -39,6 +39,7 @@ def _load(path):
     """
     import overrides as ov
     p = json.loads(Path(path).read_text(encoding="utf-8"))
+    import private_label as _plr; _plr.resolve(p)
     ov.apply(p, note=lambda _m: None)
     return p
 

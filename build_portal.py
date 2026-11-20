@@ -8182,6 +8182,7 @@ def main():
     args = ap.parse_args()
 
     p = json.loads(Path(args.property_json).read_text())
+    import private_label as _plr; _plr.resolve(p)
     import newhome as _nh0
     _nh0.ON = bool(p.get("new_construction"))
     # Casey's hand-set values, folded in before anything is computed. A file

@@ -152,13 +152,11 @@
  "agent": {
   "lookup": "Ferris Eways",
   "display": "Ferris Eways",
-  "title": "REALTOR&reg;"
+  "title": "Real Estate Consultant",
+  "phone": "(410) 245-6167",
+  "email": "feways01@yahoo.com"
  },
- "private_label": {
-  "name": "Ferris Eways",
-  "title": "REALTOR&reg;",
-  "office": "Samson Properties"
- },
+ "private_label": "ferris_eways",
  "market_map": {
   "subject": [
    39.0923524,
@@ -332,12 +330,12 @@
   },
   "contacts": {
    "names": "Ferris Eways",
-   "team": "Ferris Eways &middot; Samson Properties",
+   "team": "The Eways Team &middot; Samson Properties",
    "lines": [
     [
      "Ferris Eways",
-     "",
-     ""
+     "(410) 245-6167",
+     "feways01@yahoo.com"
     ]
    ],
    "office": "Samson Properties"
@@ -487,5 +485,7 @@
     ]
    }
   ]
- }
+ },
+ "listing_agent_name": "Ferris",
+ "listing_agent_email": "feways01@yahoo.com"
 }

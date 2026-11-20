@@ -2344,6 +2344,7 @@ def main():
     global PROP_PATH
     PROP_PATH = sys.argv[1]
     p = json.loads(Path(sys.argv[1]).read_text())
+    import private_label as _plr; _plr.resolve(p)
     # The same hand-set values the seller portal reads, so the two portals
     # can never disagree about a price or a link.
     import overrides as _ov

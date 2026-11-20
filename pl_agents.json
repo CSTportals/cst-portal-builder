@@ -1,0 +1,29 @@
+{
+ "_about": "Private-label agent tags (Casey, 20 Nov 2026: save tags for PLs, anticipating multiple agents). A property file uses \"private_label\": \"<tag>\", or {\"tag\": \"<tag>\", ...fields to override for that property}.",
+ "vivian_li_verdino": {
+  "name": "Vivian Li-Verdino",
+  "title": "REALTOR&reg; &middot; Licensed in VA",
+  "office": "Samson Properties",
+  "address": "14291 Park Meadow Drive, Suite 500, Chantilly, VA 20151",
+  "phone": "703-727-7737",
+  "office_phone": "703-378-8810",
+  "email": "vivianliverdino@gmail.com",
+  "website": "www.vivianliverdino.com",
+  "extra": "WeChat (&#24494;&#20449;): Vivian-Realtor"
+ },
+ "ferris_eways": {
+  "name": "Ferris Eways",
+  "team_name": "The Eways Team",
+  "title": "Real Estate Consultant",
+  "office": "Samson Properties",
+  "phone": "(410) 245-6167",
+  "email": "feways01@yahoo.com",
+  "website": "www.ewaysteam.com",
+  "review_url": "https://g.page/r/CRH0dzJzY0MzEBM/review",
+  "accolades": ["#1 Luxury Team in Virginia &mdash; WSJ",
+                "NVAR Diamond Top Producer",
+                "2019&ndash;2025 Northern Virginia Magazine Top Producing Real Estate Agent",
+                "Top 250 Realtors in the NOVA Market for 2025"],
+  "closing": "I value your referrals as it's the greatest compliment I can receive!"
+ }
+}

@@ -34,6 +34,31 @@ _CSS = ('<style id="pl-css">.pl-tag{display:block;font-size:.58em;letter-spacing
 _KEEP = [r"The Casey Samson Team LLC", r"CST-FP [^>]*?\(c\) The Casey Samson Team LLC"]
 
 
+AGENTS = Path(__file__).resolve().parent / "pl_agents.json"
+
+
+def resolve(p):
+    """Casey, 20 Nov 2026: PL agents are saved once as tags in pl_agents.json.
+    "private_label": "ferris_eways" (or {"tag": ..., overrides}) expands to the
+    full block in place; a full dict with no tag passes through unchanged."""
+    import json
+    pl = p.get("private_label")
+    if not pl:
+        return p
+    tag = pl if isinstance(pl, str) else pl.get("tag")
+    if tag:
+        reg = json.loads(AGENTS.read_text(encoding="utf-8"))
+        if tag not in reg:
+            raise SystemExit(f"private_label tag '{tag}' not in pl_agents.json "
+                             f"(known: {', '.join(k for k in reg if not k.startswith('_'))})")
+        full = dict(reg[tag])
+        if isinstance(pl, dict):
+            full.update({k: v for k, v in pl.items() if k != "tag"})
+        full["tag"] = tag
+        p["private_label"] = full
+    return p
+
+
 def _brand(pl):
     return pl.get("team") or pl["name"]
 
@@ -142,8 +167,8 @@ def copy_assets(out, pl):
 def letterhead(pl):
     """Casey, 15 Nov 2026: the agent's letterhead ("From the desk of ...") is
     the signature line at the bottom of the seller portal and the Roadmap."""
-    lines = [pl.get("title") or "REALTOR&reg;", pl.get("office") or "Samson Properties",
-             pl.get("address") or ""]
+    lines = [pl.get("team_name") or "", pl.get("title") or "REALTOR&reg;",
+             pl.get("office") or "Samson Properties", pl.get("address") or ""]
     contact = " &middot; ".join(x for x in (
         f'Cell: {pl["phone"]}' if pl.get("phone") else "",
         f'Office: {pl["office_phone"]}' if pl.get("office_phone") else "") if x)
@@ -151,6 +176,11 @@ def letterhead(pl):
         f'<a href="mailto:{pl["email"]}">{pl["email"]}</a>' if pl.get("email") else "",
         f'<a href="https://{pl["website"]}">{pl["website"]}</a>' if pl.get("website") else "",
         pl.get("extra") or "") if x)
+    acc = "".join(f"<div>{x}</div>" for x in pl.get("accolades") or [])
+    acc = (f'<div style="margin-top:10px;font-size:13px;color:#4A4234;">{acc}</div>' if acc else "")
+    tail = "".join(x for x in (
+        f'<div style="margin-top:8px;font-style:italic;">{pl["closing"]}</div>' if pl.get("closing") else "",
+        f'<div><a href="{pl["review_url"]}">Please leave a kind review</a></div>' if pl.get("review_url") else ""))
     logo = (f'<img src="{Path(pl["logo"]).name}" alt="{_brand(pl)}" style="max-height:60px;margin-bottom:8px;"><br>'
             if pl.get("logo") else "")
     return ('<div id="pl-letterhead" style="max-width:760px;margin:30px auto 24px;padding:18px 22px;'
@@ -160,6 +190,7 @@ def letterhead(pl):
             + "".join(f"<div>{x}</div>" for x in lines if x)
             + (f"<div>{contact}</div>" if contact else "")
             + (f"<div>{web}</div>" if web else "")
+            + acc + tail
             + f'<div style="margin-top:8px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A6A2E;">{TAG}</div>'
             '</div>')
 
