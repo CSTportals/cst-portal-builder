@@ -150,6 +150,9 @@ img{max-width:100%;}
     radial-gradient(ellipse 900px 520px at 22% 12%, #2E3346 0%, transparent 62%),
     radial-gradient(ellipse 800px 500px at 82% 88%, #3A3527 0%, transparent 58%),
     linear-gradient(150deg, #1B2233 0%, #232838 48%, #2A2A22 100%);}
+/* Casey, 20 Nov 2026: no photo -> a compact hero, not 540px of empty gradient */
+.hero.noshot{min-height:0;}
+.hero.noshot .hero-inner{padding:44px 0 34px;}
 .hero.noshot .hero-shade{background:linear-gradient(to bottom,
   rgba(12,10,6,.20) 0%, rgba(12,10,6,.05) 40%, rgba(12,10,6,.55) 100%);}
 .hero > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}

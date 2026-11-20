@@ -127,6 +127,8 @@ img{max-width:100%;}
 
 /* ---- hero ---- */
 .hero{position:relative; min-height:520px; display:flex; align-items:flex-end; overflow:hidden;}
+.hero.noshot{min-height:0;}  /* Casey, 20 Nov 2026: compact hero with no photo */
+.hero.noshot .hero-inner{padding:44px 0 34px;}
 .hero > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
 .hero-shade{position:absolute; inset:0;
   background:linear-gradient(to bottom, rgba(12,10,6,.45) 0%, rgba(12,10,6,.10) 38%, rgba(12,10,6,.80) 100%);}
@@ -2276,7 +2278,7 @@ def build(p, out):
 <body>
 
 {site_head}
-<div class="hero">
+<div class="hero{' noshot' if not hero_img.strip() else ''}">
 {hero_img}
   <div class="hero-shade"></div>
   <div class="hero-inner">
