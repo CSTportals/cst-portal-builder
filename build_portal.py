@@ -8179,7 +8179,9 @@ def net_proceeds_html(p, tiers):
     """Casey, 21 Nov 2026: estimated Seller Net Proceeds under the Authenticated
     Values, using the closing costs from the Seller Tracker net sheet:
     commission (listing % + buyer %) x price, Grantor's Tax price x 0.003,
-    settlement $855, deed preparation $175, admin $345. Opt-in per property
+    settlement $855, deed preparation $175, admin $345. The Sales Price cells
+    are fill-ins, prefilled with Dated / Customary / Premium, so the seller can
+    type a contract price and the column recalculates. Opt-in per property
     with "net_proceeds": true (or a dict overriding listing_pct, buyer_pct,
     settlement, deed, admin)."""
     cfg = p.get("net_proceeds")
@@ -8191,37 +8193,66 @@ def net_proceeds_html(p, tiers):
     cols = []
     for label, _st, amount, _sty, _b in tiers:
         m = re.search(r"\$([0-9][0-9,]*)", re.sub(r"<[^>]+>", "", amount))
-        if not m:
-            continue
-        price = int(m.group(1).replace(",", ""))
-        comm = price * (lp + bp) / 100
-        tax = price * 0.003
-        cols.append((re.sub(r"\bValue\b", "Price", label), price, comm, tax, flat,
-                     price - comm - tax - flat))
+        if m:
+            cols.append((re.sub(r"\bValue\b", "Price", label), int(m.group(1).replace(",", ""))))
     if not cols:
         return ""
-    th = "".join(f"<th class=\"r\">{c[0]}</th>" for c in cols)
-    def row(name, i, neg=True, cls=""):
+    def calc(price):
+        comm, tax = price * (lp + bp) / 100, price * 0.003
+        return comm, tax, price - comm - tax - flat
+    th = "".join(f'<th class="r">{c[0]}</th>' for c in cols)
+    inp = "".join(
+        f'<td class="r"><input type="text" inputmode="numeric" class="np-in" data-c="{k}" '
+        f'data-orig="{c[1]}" value="{money(c[1])}" aria-label="{c[0]} sales price" '
+        'style="width:9.2em;text-align:right;font:inherit;padding:5px 8px;border:1px solid #cdb98a;'
+        'border-radius:6px;background:#fffdf6;color:#1d1a14;"></td>'
+        for k, c in enumerate(cols))
+    def row(name, idx, cls="", neg=True):
         return (f'<tr{cls}><td class="k">{name}</td>'
-                + "".join(f'<td class="r">{"&minus;" if neg else ""}{money(round(c[i]))}</td>'
-                          for c in cols) + "</tr>")
-    _pct = f"{lp + bp:g}"
+                + "".join(f'<td class="r" id="np{idx}_{k}">{"&minus;" if neg else ""}'
+                          f'{money(round(calc(c[1])[idx]))}</td>' for k, c in enumerate(cols))
+                + "</tr>")
     return f"""    <div class="net-proceeds" style="margin:26px auto 6px;max-width:900px;">
       <h3 style="text-align:center;font-family:'Playfair Display',Georgia,serif;font-size:22px;margin:0 0 4px;">Estimated Seller Net Proceeds</h3>
-      <p style="text-align:center;font-size:14px;color:#6b6252;margin:0 0 12px;">What each authenticated price nets after closing costs.</p>
+      <p style="text-align:center;font-size:14px;color:#6b6252;margin:0 0 12px;">What each authenticated price nets after closing costs. Type a contract price in any Sales Price box and that column recalculates.</p>
       <div class="table-wrap"><table>
         <thead><tr><th>Closing costs</th>{th}</tr></thead>
         <tbody>
-{row("Sales Price", 1, neg=False)}
-{row(f"Total Commission ({lp:g}% listing + {bp:g}% buyer)", 2)}
-{row("Grantor&rsquo;s Tax (0.3%)", 3)}
-{row("Settlement, Deed Preparation &amp; Admin", 4)}
-{row("Estimated Net Proceeds", 5, neg=False, cls=' class="total-row" style="font-weight:700;"')}
+<tr><td class="k">Sales Price</td>{inp}</tr>
+{row(f"Total Commission ({lp:g}% listing + {bp:g}% buyer)", 0)}
+{row("Grantor&rsquo;s Tax (0.3%)", 1)}
+<tr><td class="k">Settlement, Deed Preparation &amp; Admin</td>{"".join(f'<td class="r">&minus;{money(flat)}</td>' for _ in cols)}</tr>
+{row("Estimated Net Proceeds", 2, cls=' class="total-row" style="font-weight:700;"', neg=False)}
         </tbody>
       </table></div>
-      <p style="font-size:12.5px;color:#7a705e;margin:8px 0 0;text-align:center;">Before the loan payoff, tax and utility prorations, and the regional recordation fees on the Title Company&rsquo;s settlement statement. Total commission shown at {_pct}%; your listing agreement governs.</p>
+      <p style="text-align:center;margin:8px 0 0;"><a href="#" id="npReset" style="font-size:13px;color:#8A6A2E;">Reset to the authenticated prices</a></p>
+      <p style="font-size:12.5px;color:#7a705e;margin:6px 0 0;text-align:center;">Before the loan payoff, tax and utility prorations, and the regional recordation fees on the Title Company&rsquo;s settlement statement. Total commission shown at {lp + bp:g}%; your listing agreement governs.</p>
+      <script>
+      (function(){{
+        var LP={lp}, BP={bp}, FLAT={flat};
+        function num(v){{var n=parseFloat(String(v).replace(/[^0-9.]/g,''));return isFinite(n)?n:0;}}
+        function money(n){{return '$'+Math.round(n).toLocaleString('en-US');}}
+        function set(id,t){{var e=document.getElementById(id);if(e)e.textContent=t;}}
+        var ins=document.querySelectorAll('.np-in');
+        function calc(el){{
+          var k=el.getAttribute('data-c'), pr=num(el.value);
+          var comm=pr*(LP+BP)/100, tax=pr*0.003;
+          set('np0_'+k,'\u2212'+money(comm)); set('np1_'+k,'\u2212'+money(tax));
+          set('np2_'+k, money(pr-comm-tax-FLAT));
+        }}
+        ins.forEach(function(el){{
+          el.addEventListener('input',function(){{calc(el);}});
+          el.addEventListener('blur',function(){{el.value=money(num(el.value));calc(el);}});
+        }});
+        var r=document.getElementById('npReset');
+        if(r) r.addEventListener('click',function(e){{e.preventDefault();
+          ins.forEach(function(el){{el.value=money(+el.getAttribute('data-orig'));calc(el);}});}});
+      }})();
+      </script>
+      <style>@media print{{#npReset{{display:none}} .np-in{{border:none!important;background:none!important;}}}}</style>
     </div>
 """
+
 
 def main():
     ap = argparse.ArgumentParser()
