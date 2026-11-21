@@ -4081,6 +4081,15 @@ def build_strategy_email(p, s, out):
     Times New Roman at 24pt is deliberate: Casey read and approved it at that
     size, which is why the body runs to 900px rather than the usual 640.
     """
+    # Casey, 21 Nov 2026: on a recovery the recovery seller email is the
+    # email -- the launch-style Pricing Summary Email is not written.
+    if is_recovery(p):
+        _old = Path(out) / f'{p["prefix"]}_Pricing_Summary_Email.html'
+        for _x in (_old, _old.with_suffix(".eml")):
+            if _x.exists():
+                _x.unlink()
+        note("Pricing Summary email: not written for a recovery -- the recovery seller email replaces it.")
+        return
     v, subj = p["values"], p["subject"]
     pre, addr = p["prefix"], p["address"]
     f = strategy_figures(p, s)
@@ -7636,6 +7645,8 @@ This creates an opportunity to secure an offer without formally reducing the pri
 <p>If no one calls, that is valuable market feedback. It suggests buyers are not engaged at our
 current price and a more significant adjustment is needed. We would then recommend returning to
 the market at <b>{money(r["hard"])}</b> to reach a substantially larger buyer pool.</p>
+
+<p><b>The Strategy:</b></p>
 
 <h3 {H}>Your CST Seller Portal&trade;</h3>
 

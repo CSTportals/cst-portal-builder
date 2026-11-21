@@ -39,10 +39,10 @@
   "customary_list": 582088,
   "premium": 628655,
   "upgrades": 0,
-  "worksheet_note": "21 Nov 2026 worksheet: Preview $575,000, Coming Soon $575,000, Fall Back $550,000, 0 Showings $550,000. One closed comp (13368 Colchester Ferry Pl).",
+  "worksheet_note": "21 Nov 2026 worksheet: Preview $575,000, Coming Soon $575,000, Fall Back $550,000, 0 Showings $550,000. One closed comp (13368 Colchester Ferry Pl). Recovery email (Casey, 21 Nov 6:06 PM): Fall Back $575,000, Rip Cord $550,000.",
   "preview_override": 575000,
   "coming_soon_override": 575000,
-  "fallback_override": 550000,
+  "fallback_override": 575000,
   "deep_override": 550000
  },
  "recovery": {
