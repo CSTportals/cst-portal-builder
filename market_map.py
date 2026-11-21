@@ -32,14 +32,17 @@ LIST_WORD = {"Active": "Active", "Active Under Contract": "Contingent", "Pending
 # 95-100% of LP, green if sold in less than 7 days over list price." The worse
 # reading wins. Index 0 red, 1 yellow, 2 green.
 SOLD_GRADE = (("red", "#B3261E", "Over 30 days or under 95% of original list"),
-              ("yellow", "#D9A52B", "8&ndash;30 days or 95&ndash;100% of original list"),
-              ("green", "#2F6B3A", "7 days or less and over original list"))
+              ("yellow", "#D9A52B", "8&ndash;30 days or under 99% of original list"),
+              ("green", "#2F6B3A", "7 days or less and 99% or more of original list"))
+# Casey, 21 Nov 2026: yellow = 8-30 days or under 99% of original list;
+# red = over 30 days or under 95%. Green is what is left: 7 days or less
+# at 99%+ of original list.
 
 
 def sold_grade(dom, sale, lp):
     r = sale / lp if lp else 1
     g_dom = 0 if dom > 30 else (1 if dom > 7 else 2)
-    g_pct = 0 if r < 0.95 else (1 if r <= 1.0 else 2)
+    g_pct = 0 if r < 0.95 else (1 if r < 0.99 else 2)
     return min(g_dom, g_pct)
 
 
