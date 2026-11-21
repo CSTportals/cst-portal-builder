@@ -55,8 +55,23 @@ def settings(p):
     return c
 
 
-def section(p, brand_line=""):
+def buyer_price(p):
+    b = p.get("buyer_portal") or {}
+    v = p["values"]
+    return int(b.get("list_price") or p.get("current_list") or v.get("coming_soon_override")
+               or v.get("customary_list") or v["customary"])
+
+
+def section(p, brand_line="", mode="seller"):
+    """mode "seller": Sell = this home (Seller Portal channel, titled Move Up
+    (or Down) Calculator). mode "buyer": Buy = this home at its asking price,
+    Sell = the buyer's own home, left for them to fill in (Buyer Portal)."""
     c = settings(p)
+    buyer = mode == "buyer"
+    if buyer:
+        c["new_price"] = buyer_price(p)
+        c["picks"] = []
+    title = "Move Up Calculator" if buyer else "Move Up (or Down) Calculator"
     data = json.dumps({k: c[k] for k in (
         "listing_pct", "buyer_pct", "seller_flat", "lender_fees", "title_base", "title_pct",
         "escrows", "prepaid_days", "tax_rate", "ins_hoa", "values")})
@@ -66,12 +81,12 @@ def section(p, brand_line=""):
                    for t, val in c["picks"])
     return f"""<section class="mu" id="move-up"><div class="mu-wrap">
 {f'<div class="mu-brand">{brand_line}</div>' if brand_line else ''}
-<h2 class="mu-t">Move Up Calculator</h2>
-<p class="mu-s">What {addr} puts in your pocket, and what it does for the payment on your next home.</p>
+<h2 class="mu-t">{title}</h2>
+<p class="mu-s">{f"What your current home puts toward {addr}, and what the monthly payment looks like." if buyer else f"What {addr} puts in your pocket, and what it does for the payment on your next home."}</p>
 <div class="mu-cols">
  <div class="mu-col">
   <h3>Sell</h3>
-  <label><span>Sales price</span><input id="muVal" class="mu-in" value="{m(c['value'])}"><i class="mu-qs">{vbtn}</i></label>
+  <label><span>Sales price</span><input id="muVal" class="mu-in" value="{'' if buyer else m(c['value'])}" placeholder="Your current home&rsquo;s price">{f'<i class="mu-qs">{vbtn}</i>' if vbtn else ''}</label>
   <label><span>Debt</span><input id="muDebt" class="mu-in" value="{m(c['debt'])}"><i>Mortgage payoff and any equity line</i></label>
   <div class="mu-out"><span>Walk out the door proceeds</span><b id="muWalk"></b></div>
   <button type="button" class="mu-arrow" aria-expanded="false" aria-controls="muMathS"><em>Math</em></button>
@@ -88,7 +103,7 @@ def section(p, brand_line=""):
  </div>
  <div class="mu-col">
   <h3>Buy</h3>
-  <label><span>Purchase price</span><input id="muNew" class="mu-in" value="{m(c['new_price'])}"></label>
+  <label><span>Purchase price{f" &middot; {addr}" if buyer else ""}</span><input id="muNew" class="mu-in" value="{m(c['new_price'])}"></label>
   <div class="mu-kv"><span>Down payment from proceeds</span><b id="muDfp"></b></div>
   <label><span>Additional down payment</span><input id="muAdd" class="mu-in" value="$0"><i>Cash beyond the sale proceeds</i></label>
   <div class="mu-pmt-h">Monthly payments &middot; 2-1 buydown</div>
@@ -173,7 +188,7 @@ function pmt(loan,rate){{var r=rate/100/12;return r>0?loan*r/(1-Math.pow(1+r,-36
 function run(){{
   var val=num($('muVal').value), debt=num($('muDebt').value);
   var cp=C.listing_pct+C.buyer_pct, comm=val*cp/100, tax=val*0.003, flat=C.seller_flat;
-  var walk=val-comm-tax-flat-debt;
+  var walk=val?val-comm-tax-flat-debt:0;
   $('muCp').textContent=cp; $('muV1').textContent=m(val); $('muComm').textContent=neg(comm);
   $('muTax').textContent=neg(tax); $('muFlat').textContent=neg(flat); $('muD1').textContent=neg(debt);
   $('muWalk').textContent=m(walk); $('muW2').textContent=m(walk);
@@ -199,14 +214,16 @@ function run(){{
   var r1=Math.max(rate-2,0), r2=Math.max(rate-1,0);
   $('muR1').textContent=r1.toFixed(2)+'%'; $('muR2').textContent=r2.toFixed(2)+'%'; $('muR3').textContent=rate.toFixed(2)+'%';
   $('muY1').textContent=m(pmt(loan,r1)+oth); $('muY2').textContent=m(pmt(loan,r2)+oth); $('muY3').textContent=m(pmt(loan,rate)+oth);
+  if(!val){{ ['muDfp','muDfp2','muDown','muLoan','muY1','muY2','muY3'].forEach(function(i){{$(i).textContent='\u2014';}}); $('muWalk').textContent='\u2014'; $('muW2').textContent='\u2014'; $('muDp').textContent='\u2014'; }}
   var w='';
-  if(walk<0) w='The sale does not cover the outstanding debt.';
+  if(!val) w='Enter your current home\u2019s sales price and debt to see your proceeds.';
+  else if(walk<0) w='The sale does not cover the outstanding debt.';
   else if(price && down<0) w='Proceeds do not cover the buyer closing costs.';
   else if(price && down/price<0.2) w='Under 20% down: expect mortgage insurance, not included above.';
   $('muWarn').textContent=w;
 }}
 document.querySelectorAll('.mu-in').forEach(function(e){{e.addEventListener('input',run);e.addEventListener('change',run);
-  if(e.id!=='muRate'&&e.tagName==='INPUT') e.addEventListener('blur',function(){{e.value=m(num(e.value));}});}});
+  if(e.id!=='muRate'&&e.tagName==='INPUT') e.addEventListener('blur',function(){{if(e.value!=='')e.value=m(num(e.value));}});}});
 document.querySelectorAll('.mu-q').forEach(function(b){{b.addEventListener('click',function(){{$('muVal').value=m(+b.getAttribute('data-v'));run();}});}});
 document.querySelectorAll('.mu-arrow').forEach(function(a){{a.addEventListener('click',function(){{
   var w=$(a.getAttribute('aria-controls')), open=w.hidden; w.hidden=!open; a.setAttribute('aria-expanded',open);}});}});
@@ -224,7 +241,7 @@ def page(p):
              if pl else "The Casey Samson Team &mdash; The Gold Standard of Pricing Strategy")
     return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Move Up Calculator &mdash; {_h.escape(p.get('address', ''))}</title>
+<title>Move Up (or Down) Calculator &mdash; {_h.escape(p.get('address', ''))}</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>body{{margin:0;background:#FAF6EE;}} .mu{{border-top:none;}}</style></head><body>
 {section(p, brand)}

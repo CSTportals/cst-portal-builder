@@ -8321,6 +8321,9 @@ def main():
     # The nav page the seller opens is the v2 design; the original card
     # stack is kept alongside it as index_classic.html.
     (out / "index.html").rename(out / "index_classic.html")
+    # Casey, 21 Nov 2026: Move Up (or Down) Calculator gets its own channel.
+    import move_up as _mu
+    (out / f"{p['prefix']}_Move_Up.html").write_text(_mu.page(p), encoding="utf-8")
     from build_index_v2 import build_index_v2
     build_index_v2(p, s, out)
     build_index_dynamic(p, s, out)

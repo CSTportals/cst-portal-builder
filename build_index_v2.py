@@ -667,6 +667,13 @@ def build_index_v2(p, s, out, filename="index.html"):
                      "buyer pool.",
                      "Why it matters: Maximum exposure in the days that matter most.",
                      f"{pre}_Marketing.html"))
+    # Casey, 21 Nov 2026: "It should have its own channel on the Seller portal."
+    if (out / f"{pre}_Move_Up.html").exists():
+        main.append(feat(next(_n), "Move Up (or Down)", "Move Up (or Down) Calculator",
+                         "Your walk out the door proceeds from this sale, and what they do "
+                         "for the down payment and monthly payment on your next home.",
+                         "Why it matters: You know your next move before you list.",
+                         f"{pre}_Move_Up.html"))
 
     # ---- everything else, two up ---------------------------------------
     tiles = []

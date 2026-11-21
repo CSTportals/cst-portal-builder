@@ -2167,6 +2167,9 @@ def build(p, out):
     # lender and Cardinal are its whole point) unless "win_calc": false; on
     # any other portal when "win_calc" is set.
     wincalc = ""
+    # Casey, 21 Nov 2026: Move Up Calculator at the bottom of every Buyer Portal.
+    import move_up as _mu
+    moveup = "" if b.get("move_up") is False else _mu.section(p, mode="buyer")
     if b.get("sponsor") or b.get("win_calc"):
         import win_calc as _wc
         wincalc = _wc.html(p, b)
@@ -2291,7 +2294,7 @@ def build(p, out):
   </div>
 </div>
 
-{band}{facts}{desc}{values}{mktmap}{locmap_top}{snap}{mkt}{video}{gallery}{features}{loves}{walkto}{locmap_low}{press}{prod}{docs}{offers}{contact}{wincalc}
+{band}{facts}{desc}{values}{mktmap}{locmap_top}{snap}{mkt}{video}{gallery}{features}{loves}{walkto}{locmap_low}{press}{prod}{docs}{offers}{contact}{wincalc}{moveup}
 <footer>
   <div class="wrap">
     <div class="produced">The Casey Samson Team</div>
