@@ -8200,12 +8200,11 @@ def net_proceeds_html(p, tiers):
     mid = cols[len(cols) // 2]
     price = mid[1]
     comm, tax = price * (lp + bp) / 100, price * 0.003
-    btns = "".join(
-        f'<button type="button" class="np-q{" on" if c is mid else ""}" data-v="{c[1]}">{c[0]} {money(c[1])}</button>'
-        for c in cols)
+    # Casey, 21 Nov 2026: "the quick buttons are immaterial once contracts
+    # come in. They are estimates, contract prices are certain." No buttons.
     return f"""    <div class="net-proceeds" style="margin:26px auto 6px;max-width:640px;">
       <h3 style="text-align:center;font-family:'Playfair Display',Georgia,serif;font-size:22px;margin:0 0 4px;">Estimated Seller Net Proceeds</h3>
-      <p style="text-align:center;font-size:14px;color:#6b6252;margin:0 0 12px;">Starts at the {mid[0]}. Type your actual contract price and the net recalculates.</p>
+      <p style="text-align:center;font-size:14px;color:#6b6252;margin:0 0 12px;">Estimated at the {mid[0]}. Once a contract comes in, enter the contract price and the net recalculates.</p>
       <div class="table-wrap"><table>
         <tbody>
 <tr><td class="k">Sales Price</td><td class="r"><input type="text" inputmode="numeric" id="npIn" value="{money(price)}" aria-label="Sales price" style="width:9.5em;text-align:right;font:inherit;font-weight:700;padding:6px 10px;border:1px solid #cdb98a;border-radius:6px;background:#fffdf6;color:#1d1a14;"></td></tr>
@@ -8215,11 +8214,8 @@ def net_proceeds_html(p, tiers):
 <tr class="total-row" style="font-weight:700;"><td class="k">Estimated Net Proceeds</td><td class="r" id="np2">{money(round(price - comm - tax - flat))}</td></tr>
         </tbody>
       </table></div>
-      <div class="np-qs" style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:10px 0 0;">{btns}</div>
       <p style="font-size:12.5px;color:#7a705e;margin:10px 0 0;text-align:center;">Before the loan payoff, tax and utility prorations, and the regional recordation fees on the Title Company&rsquo;s settlement statement. Total commission shown at {lp + bp:g}%; your listing agreement governs.</p>
-      <style>.np-q{{font:600 12.5px system-ui,sans-serif;border:1px solid #cdb98a;background:#f6efdf;color:#6f5526;border-radius:14px;padding:5px 12px;cursor:pointer;}}
-      .np-q.on{{background:#1F2A44;color:#fff;border-color:#1F2A44;}}
-      @media print{{.np-qs{{display:none!important;}} #npIn{{border:none!important;background:none!important;}}}}</style>
+      <style>@media print{{#npIn{{border:none!important;background:none!important;}}}}</style>
       <script>
       (function(){{
         var LP={lp}, BP={bp}, FLAT={flat};
@@ -8227,15 +8223,12 @@ def net_proceeds_html(p, tiers):
         function num(v){{var n=parseFloat(String(v).replace(/[^0-9.]/g,''));return isFinite(n)?n:0;}}
         function money(n){{return '$'+Math.round(n).toLocaleString('en-US');}}
         function set(id,t){{var e=document.getElementById(id);if(e)e.textContent=t;}}
-        var qs=document.querySelectorAll('.np-q');
         function calc(){{
           var pr=num(el.value), comm=pr*(LP+BP)/100, tax=pr*0.003;
           set('np0','\u2212'+money(comm)); set('np1','\u2212'+money(tax)); set('np2', money(pr-comm-tax-FLAT));
-          qs.forEach(function(q){{q.classList.toggle('on', +q.getAttribute('data-v')===Math.round(pr));}});
         }}
         el.addEventListener('input',calc);
         el.addEventListener('blur',function(){{el.value=money(num(el.value));calc();}});
-        qs.forEach(function(q){{q.addEventListener('click',function(){{el.value=money(+q.getAttribute('data-v'));calc();}});}});
       }})();
       </script>
     </div>
