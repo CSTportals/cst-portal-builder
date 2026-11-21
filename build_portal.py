@@ -7377,7 +7377,7 @@ both relaunch prices, with our track record on the back.</p>
         _seller = recovery_seller_email(p, _r)
         _subj = f'Your Listing Recovery Strategy — {p["address"]}'
         (out / f"{pre}_Seller_Email.html").write_text(
-            _seller.replace('line-height:1.5;">', 'line-height:1.5;">\n' + agent_instructions(p, _r, _subj), 1),
+            _seller.replace('color:#000;">', 'color:#000;">\n' + agent_instructions(p, _r, _subj), 1),
             encoding="utf-8")
         _write_eml(out, f"{pre}_Seller_Email", _seller, _subj, p)
         return
@@ -7568,20 +7568,20 @@ def agent_instructions(p, r, subject):
     pre = p["prefix"]
     def a(h, t):
         return f'<a href="{h}">{t}</a>' if h else t
-    return f"""<div style="border:2px solid #B8902F;background:#FBF6EA;border-radius:8px;padding:16px 20px;margin:0 0 20px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;color:#2b2618;">
-<p style="margin:0 0 8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8A6A2E;font-size:12px;">For the agent &mdash; do not send this section</p>
+    return f"""<div style="border:2px solid #B8902F;background:#FBF6EA;border-radius:8px;padding:16px 20px;margin:0 0 20px;font-family:Arial,Helvetica,sans-serif;font-size:14pt;line-height:1.45;color:#2b2618;">
+<p style="margin:0 0 8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8A6A2E;font-size:14pt;">For the agent &mdash; do not send this section</p>
 <p style="margin:0 0 6px;"><b>1. Review:</b> {a(root + "/" if root else None, "Seller Portal")}, {a(f"{root}/{pre.lower()}_roadmap" if root else None, "Recovery Roadmap")}, and {a(f"{root}/{pre}_Pricing_Strategy_Summary.pdf" if root else None, "Pricing Strategy Summary")}.</p>
 <p style="margin:0 0 6px;"><b>2. Personalize:</b> Add the seller&rsquo;s name and confirm the pricing recommendations.</p>
 <p style="margin:0 0 6px;"><b>3. Copy:</b> Everything below the line into a new email.</p>
 <p style="margin:0;"><b>4. Send:</b> From your own email. Your signature is included.</p>
 </div>
-<p style="margin:0 0 6px;font-family:Arial,Helvetica,sans-serif;font-size:14px;"><b>Subject:</b> {subject}</p>
-<p style="margin:0 0 22px;text-align:center;color:#8A6A2E;font:12px Arial,sans-serif;letter-spacing:.2em;">&#9986; &mdash;&mdash;&mdash; COPY BELOW THIS LINE &mdash;&mdash;&mdash;</p>
+<p style="margin:0 0 22px;text-align:center;color:#8A6A2E;font:14pt Arial,sans-serif;letter-spacing:.15em;">&#9986; &mdash;&mdash;&mdash; COPY BELOW THIS LINE &mdash;&mdash;&mdash;</p>
 """
 
 
 def recovery_seller_email(p, r):
-    """Casey's recovery seller email, 21 Nov 2026 (6:08 PM), word for word.
+    """Casey's recovery (PL) seller email, 21 Nov 2026 (6:15 PM), word for word:
+    the agent box at 14pt, the email at 24pt Times New Roman.
     Fall Back = r["soft"], Rip Cord = r["hard"] -- the two relaunch prices on
     the Recovery Roadmap. Signature: the listing agent (PL agent on a PL)."""
     pre = p["prefix"]
@@ -7609,12 +7609,12 @@ def recovery_seller_email(p, r):
     ]
     li = "".join(f'<p style="margin:0 0 8px;">{i}. {a(u, n)} &mdash; {d}</p>\n'
                  for i, (u, n, d) in enumerate(items, 1))
-    H = 'style="margin:22px 0 8px;font-size:17px;"'
+    H = 'style="margin:26px 0 10px;font-size:24pt;font-weight:700;"'
     S = 'style="margin:0 0 2px;"'
     return f"""<!DOCTYPE html>
 <html><head><meta charset="UTF-8">
 <title>{p["address"]} — Recovery seller email</title></head>
-<body style="max-width:620px; margin:24px auto; padding:0 20px; line-height:1.5;">
+<body style="max-width:900px; margin:24px auto; padding:0 20px; line-height:1.4; font-family:'Times New Roman',Times,serif; font-size:24pt; color:#000;">
 
 <p>Hi {names},</p>
 
@@ -7638,7 +7638,7 @@ buyers.</p>
 <p>If no one calls, that suggests our price is still too high. We return at {rc} to reach a much
 larger buyer pool.</p>
 
-<h3 {H}>Your CST Seller Portal&trade;</h3>
+<h3 {H}>Your CST Seller Portal&trade; Assets</h3>
 
 <p>Your {a(root + "/" if root else None, "Seller Portal")} includes four tools to support our strategy:</p>
 
