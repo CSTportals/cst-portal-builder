@@ -7356,9 +7356,17 @@ both relaunch prices, with our track record on the back.</p>
 
 </body></html>
 """
-        (out / f"{pre}_Seller_Email.html").write_text(_html)
-        _write_eml(out, f"{pre}_Seller_Email", _html,
-                   f'Recovery strategy — {p["address"]}', p)
+        # Casey, 21 Nov 2026: "recovery emails should be same new seller emails.
+        # Give instructions to agents at top and email they can copy and paste
+        # to seller." The older recovery letter above is kept in _html for
+        # reference only; the file the agent opens is the instructions plus
+        # the standard seller email, and the .eml draft is the seller email.
+        _seller = seller_email_v2(p)
+        _subj = f'Your Seller Portal — {p["address"]}'
+        (out / f"{pre}_Seller_Email.html").write_text(
+            _seller.replace('line-height:1.5;">', 'line-height:1.5;">\n' + agent_instructions(p, _r, _subj), 1),
+            encoding="utf-8")
+        _write_eml(out, f"{pre}_Seller_Email", _seller, _subj, p)
         return
 
     # Casey, 10 Oct 2026: "just say greetings... just have key links... Make
@@ -7538,6 +7546,30 @@ Strategy.&trade;</i></p>
     _write_eml(out, f"{pre}_Seller_Email", html, _subj, p)
 
 
+
+
+def agent_instructions(p, r, subject):
+    """Instructions for the listing agent, above the copy-and-paste seller
+    email on a recovery (Casey, 21 Nov 2026)."""
+    root = (seller_host(p) or "").rstrip("/")
+    pre = p["prefix"]
+    miss = []
+    if not p.get("seller_names"):
+        miss.append("the sellers&rsquo; names in the greeting")
+    if not p.get("meeting"):
+        miss.append("the day and time you are meeting")
+    fill = (" Replace the marked spots: " + " and ".join(miss) + "." if miss else "")
+    def a(h, t):
+        return f'<a href="{h}">{t}</a>' if h else t
+    return f"""<div style="border:2px solid #B8902F;background:#FBF6EA;border-radius:8px;padding:16px 20px;margin:0 0 26px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;color:#2b2618;">
+<p style="margin:0 0 8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8A6A2E;font-size:12px;">For the agent &mdash; read first, do not send this box</p>
+<p style="margin:0 0 6px;"><b>1. Review before you send.</b> Open the {a(root + "/" if root else None, "Seller Portal")}, the {a(f"{root}/{pre.lower()}_roadmap" if root else None, "Recovery Roadmap")} and the {a(f"{root}/{pre}_Pricing_Strategy_Summary.pdf" if root else None, "Pricing Strategy Summary")}. Relaunch prices: <b>{money(r["soft"])}</b> if 2 to 3 buyers inquire, <b>{money(r["hard"])}</b> if no one calls.</p>
+<p style="margin:0 0 6px;"><b>2. Personalize.</b>{fill or " Check the greeting and meeting time."}</p>
+<p style="margin:0 0 6px;"><b>3. Copy and paste.</b> Copy everything below the line into a new email to your seller. Subject: <b>{subject}</b>. The links stay live when pasted.</p>
+<p style="margin:0;"><b>4. Send from your own email.</b> The signature is already yours.</p>
+</div>
+<p style="margin:0 0 22px;text-align:center;color:#8A6A2E;font:12px Arial,sans-serif;letter-spacing:.2em;">&#9986; &mdash;&mdash;&mdash; COPY BELOW THIS LINE &mdash;&mdash;&mdash;</p>
+"""
 
 
 def seller_email_v2(p):
