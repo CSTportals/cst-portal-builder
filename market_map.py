@@ -52,6 +52,7 @@ def _k(x):
 
 
 def _map(p, mid, title, items, kind):
+    import compass as _compass
     mm = p["market_map"]
     cv = p["values"]["customary"]
     lat, lng = mm["subject"]
@@ -137,7 +138,7 @@ def _map(p, mid, title, items, kind):
     data = {"s": [lat, lng], "sl": p["address"], "sv": f"Customary Value ${cv:,}", "pins": pins,
             "sdir": mm.get("subject_dir_solds" if kind == "sold" else "subject_dir", "left")}
     return f"""<div class="rmm"><div class="rmm-h">{title}</div>
-<div class="rmm-map" id="{mid}"></div>
+<div style="position:relative;"><div class="rmm-map" id="{mid}"></div>{_compass.html(p.get("facing"), 62)}</div>
 <ol class="rmm-key">{key}</ol>
 <div class="rmm-leg"><span><i style="background:#221C14"></i>Subject</span>{legend}<span class="rmm-note">{"Sale price" if kind == "sold" else "List price"}{" &middot; over or under each home&rsquo;s own Customary Value" if any(a.get("customary") for a in items) else ""}</span></div></div>
 <script>window.addEventListener('load',function(){{var D={json.dumps(data)};

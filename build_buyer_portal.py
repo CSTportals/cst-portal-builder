@@ -1112,6 +1112,7 @@ def qr_block(b, p=None):
 
 
 def locator_map(b):
+    import compass as _compass
     """A real street map of the neighbourhood: Leaflet over OpenStreetMap
     tiles, with a pin on every place inside the walk radius and an arrow at
     the frame edge for everything beyond it. The tiles are fetched by the
@@ -1182,6 +1183,7 @@ def locator_map(b):
         '<div class="locmap"><div id="locmap" role="application" '
         'aria-label="Neighbourhood map"></div>'
         '<div class="locmap-arrows" id="locmapArrows" aria-hidden="true"></div>'
+        + _compass.html(m.get("facing") or b.get("facing") or b.get("_facing")) +
         '</div>'
         f'<ol class="locmap-key">{legend}</ol>'
         '<p class="locmap-note">Walking times on foot. Drive times in normal '
@@ -1708,7 +1710,19 @@ def values_section(p, b):
                  f'font-size:14.5px;line-height:1.55;color:var(--ink);">{_abn}</p>')
     return (f'<section><div class="wrap">{_abl}<h2 class="st">Authenticated Values&trade;</h2>'
             f'<p class="ss">{lede}{" " + meta if meta else ""}</p>'
-            f"{table}{cards}" + (f'<p class="ss" style="margin-top:14px;"><b>{_buyer_note(v)}</b></p>' if _buyer_note(v) else "") + f"{pr}{stamp}{foot}</div></section>\n")
+            f"{table}{cards}" + (f'<p class="ss" style="margin-top:14px;"><b>{_buyer_note(v)}</b></p>' if _buyer_note(v) else "") + f"{pr}{stamp}{foot}" + _cst_history(b) + "</div></section>\n")
+
+
+def _cst_history(b):
+    """Casey, 21 Nov 2026: at the bottom of Authenticated Values -- "Historically,
+    CST Listings sell between Customary and Premium Values. Sometimes More."
+    "cst_history": false on the buyer_portal block leaves it off."""
+    if b.get("cst_history") is False:
+        return ""
+    return ('<p class="cst-history" style="text-align:center;max-width:760px;margin:18px auto 0;'
+            "font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:18px;"
+            'color:var(--gold-deep);line-height:1.45;">Historically, CST listings sell between '
+            'Customary and Premium Values. Sometimes more.</p>')
 
 
 DISCLOSURE_PAGE = """<!DOCTYPE html>
@@ -2179,6 +2193,7 @@ def build(p, out):
     # ---- contact --------------------------------------------------------
     qr = qr_block(b, p)
     site_head = site_header(qr, hero_pdf_tile(b))
+    b.setdefault("_facing", p.get("facing"))
     locmap = locator_map(b)
     # With a Current Market map, the neighbourhood map moves up beside it --
     # "Maps under the comps".
