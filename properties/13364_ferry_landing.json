@@ -39,11 +39,13 @@
   "customary_list": 582088,
   "premium": 628655,
   "upgrades": 0,
-  "worksheet_note": "21 Nov 2026 worksheet: Preview $575,000, Coming Soon $575,000, Fall Back $550,000, 0 Showings $550,000. One closed comp (13368 Colchester Ferry Pl)."
+  "worksheet_note": "21 Nov 2026 worksheet: Preview $575,000, Coming Soon $575,000, Fall Back $550,000, 0 Showings $550,000. One closed comp (13368 Colchester Ferry Pl).",
+  "preview_override": 575000,
+  "coming_soon_override": 575000,
+  "fallback_override": 550000,
+  "deep_override": 550000
  },
  "recovery": {
-  "soft_override": 575000,
-  "hard_override": 550000,
   "exact": true
  },
  "comps": {

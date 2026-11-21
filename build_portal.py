@@ -495,11 +495,15 @@ def recovery_prices(p):
     separate calls to `recovery()` invited.
     """
     v, r = p["values"], (p.get("recovery") or {})
+    # Casey, 21 Nov 2026: "email should match Models Fall back and rip cord."
+    # On a recovery the worksheet's Fall Back and 0-showings (Rip Cord) prices
+    # ARE the two relaunch prices, used exactly as hardcoded.
+    _fb, _rc = v.get("fallback_override"), v.get("deep_override")
     out = recovery(int(p["current_list"]), v["customary"],
                    v.get("customary_list"),
-                   soft_override=r.get("soft_override"),
-                   hard_override=r.get("hard_override"),
-                   exact=bool(r.get("exact")))
+                   soft_override=_fb or r.get("soft_override"),
+                   hard_override=_rc or r.get("hard_override"),
+                   exact=bool(r.get("exact")) or bool(_fb or _rc))
     if r.get("soft_override") or r.get("hard_override"):
         note("Roadmap: relaunch prices set by hand — "
              f'{money(out["soft"])} if 2 to 3 call, {money(out["hard"])} if '
