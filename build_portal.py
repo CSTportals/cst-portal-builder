@@ -7375,7 +7375,7 @@ both relaunch prices, with our track record on the back.</p>
         # reference only; the file the agent opens is the instructions plus
         # the standard seller email, and the .eml draft is the seller email.
         _seller = recovery_seller_email(p, _r)
-        _subj = f'Your Seller Portal — {p["address"]}'
+        _subj = f'Your Listing Recovery Strategy — {p["address"]}'
         (out / f"{pre}_Seller_Email.html").write_text(
             _seller.replace('line-height:1.5;">', 'line-height:1.5;">\n' + agent_instructions(p, _r, _subj), 1),
             encoding="utf-8")
@@ -7563,27 +7563,27 @@ Strategy.&trade;</i></p>
 
 def agent_instructions(p, r, subject):
     """Instructions for the listing agent, above the copy-and-paste seller
-    email on a recovery -- Casey's wording, 21 Nov 2026."""
+    email on a recovery -- Casey's wording, 21 Nov 2026 (6:08 PM)."""
     root = (seller_host(p) or "").rstrip("/")
     pre = p["prefix"]
     def a(h, t):
         return f'<a href="{h}">{t}</a>' if h else t
-    return f"""<div style="border:2px solid #B8902F;background:#FBF6EA;border-radius:8px;padding:16px 20px;margin:0 0 26px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;color:#2b2618;">
-<p style="margin:0 0 8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8A6A2E;font-size:12px;">For the agent &mdash; read first, do not send this box</p>
-<p style="margin:0 0 6px;"><b>1. Review before you send.</b> Open the {a(root + "/" if root else None, "Seller Portal")}, the {a(f"{root}/{pre.lower()}_roadmap" if root else None, "Recovery Roadmap")} and the {a(f"{root}/{pre}_Pricing_Strategy_Summary.pdf" if root else None, "Pricing Strategy Summary")}.</p>
-<p style="margin:0 0 6px;"><b>2. Personalize.</b> Replace the marked spots: the sellers&rsquo; names in the greeting and the day and time you are meeting.</p>
-<p style="margin:0 0 6px;"><b>3. Copy and paste.</b> Copy everything below the line into a new email to your seller. Subject: {subject}. The links stay live when pasted.</p>
-<p style="margin:0;"><b>4. Send from your own email.</b> The signature is already yours.</p>
+    return f"""<div style="border:2px solid #B8902F;background:#FBF6EA;border-radius:8px;padding:16px 20px;margin:0 0 20px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;color:#2b2618;">
+<p style="margin:0 0 8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8A6A2E;font-size:12px;">For the agent &mdash; do not send this section</p>
+<p style="margin:0 0 6px;"><b>1. Review:</b> {a(root + "/" if root else None, "Seller Portal")}, {a(f"{root}/{pre.lower()}_roadmap" if root else None, "Recovery Roadmap")}, and {a(f"{root}/{pre}_Pricing_Strategy_Summary.pdf" if root else None, "Pricing Strategy Summary")}.</p>
+<p style="margin:0 0 6px;"><b>2. Personalize:</b> Add the seller&rsquo;s name and confirm the pricing recommendations.</p>
+<p style="margin:0 0 6px;"><b>3. Copy:</b> Everything below the line into a new email.</p>
+<p style="margin:0;"><b>4. Send:</b> From your own email. Your signature is included.</p>
 </div>
+<p style="margin:0 0 6px;font-family:Arial,Helvetica,sans-serif;font-size:14px;"><b>Subject:</b> {subject}</p>
 <p style="margin:0 0 22px;text-align:center;color:#8A6A2E;font:12px Arial,sans-serif;letter-spacing:.2em;">&#9986; &mdash;&mdash;&mdash; COPY BELOW THIS LINE &mdash;&mdash;&mdash;</p>
 """
 
 
 def recovery_seller_email(p, r):
-    """Casey's recovery seller email, 21 Nov 2026, word for word. Fall Back
-    = the relaunch if buyers inquire (r["soft"]), Rip Cord = the relaunch if
-    no one calls (r["hard"]) -- the same two prices the Recovery Roadmap
-    shows. Signature: the listing agent (the PL agent on a PL build)."""
+    """Casey's recovery seller email, 21 Nov 2026 (6:08 PM), word for word.
+    Fall Back = r["soft"], Rip Cord = r["hard"] -- the two relaunch prices on
+    the Recovery Roadmap. Signature: the listing agent (PL agent on a PL)."""
     pre = p["prefix"]
     root = (seller_host(p) or "").rstrip("/")
     bp = (buyer_portal_url(p) or "").rstrip("/")
@@ -7595,26 +7595,22 @@ def recovery_seller_email(p, r):
     title = re.sub(r"\s*&middot;\s*Licensed.*$", "", pl.get("title") or ag.get("title") or "REALTOR&reg;")
     phone = pl.get("phone") or ag.get("phone") or "Phone"
     names = p.get("seller_names") or "(Seller Name)"
+    fb, rc = money(r["soft"]), money(r["hard"])
     def a(h, t):
         return f'<a href="{h}">{t}</a>' if h else t
     items = [
         (f"{root}/{pre.lower()}_roadmap" if root else None, "Seller Roadmap&trade;",
-         "Our comprehensive plan covering preparation, authenticated pricing, marketing, and "
-         "settlement. Values are based on appraisal-quality comparable sales adjusted for size, "
-         "age, location, and time."),
+         "Authenticated home values, pricing strategy, and marketing plan based on comparable sales."),
         (bp + "/" if bp else None, "Buyer Portal&trade;",
-         "Showcases your home&rsquo;s authenticated value, premium features, upgrades, schools, "
-         "amenities, and lifestyle advantages to attract buyers and build confidence."),
+         "Showcases your home&rsquo;s value, upgrades, and neighborhood advantages."),
         (f"{root}/{pre}_Buyer_Report.pdf" if root else None, "Buyer Flyer",
-         "Highlights authenticated values and property premiums, helping buyers understand and "
-         "appreciate the home&rsquo;s value during showings and open houses."),
-        (mkt, "Market Snapshot",
-         "Updated weekly to show what is selling, how quickly homes are moving, and whether "
-         "buyers or sellers control the market."),
+         "Helps buyers understand your home&rsquo;s value during showings."),
+        (mkt, "Market Snapshot", "Weekly market conditions showing buyer demand and competition."),
     ]
-    li = "".join(f'<p style="margin:0 0 10px;">{i}. {a(u, n)} &mdash; {d}</p>\n'
+    li = "".join(f'<p style="margin:0 0 8px;">{i}. {a(u, n)} &mdash; {d}</p>\n'
                  for i, (u, n, d) in enumerate(items, 1))
-    H = 'style="margin:22px 0 6px;font-size:17px;"'
+    H = 'style="margin:22px 0 8px;font-size:17px;"'
+    S = 'style="margin:0 0 2px;"'
     return f"""<!DOCTYPE html>
 <html><head><meta charset="UTF-8">
 <title>{p["address"]} — Recovery seller email</title></head>
@@ -7622,44 +7618,37 @@ def recovery_seller_email(p, r):
 
 <p>Hi {names},</p>
 
-<p>It was nice speaking with you. Here is our recommended Listing Recovery Strategy which
-attracts the largest possible buyer pool.</p>
+<p>It was nice speaking with you. Here is our Listing Recovery Strategy to attract more buyers and
+secure the best possible offer.</p>
 
-<h3 {H}>The Recovery Strategy</h3>
+<h3 {H}>Our 4-Step Recovery Strategy</h3>
 
-<p style="margin:0 0 4px;"><b>Step 1 &ndash; Temporarily Off Market</b></p>
-<p>Temporarily withdraw the listing. Going TEMP Off will test demand, create an opportunity for
-an immediate deal, and let buyer response determine how aggressively we reposition the home.</p>
+<p {S}><b>1. Temporarily Off Market</b></p>
+<p>Take the home TEMP Off Market. Buyers and agents watching the listing may call to find out why.</p>
 
-<p style="margin:0 0 4px;"><b>Step 2 &ndash; Test Buyer Interest</b></p>
-<p>If we receive inquiries, we will explain that the home is expected to return to the market at
-a reduced price designed to attract a larger buyer pool.</p>
-<p>Buyers and agents may attempt to negotiate a deal before the price reduction becomes public.
-This creates an opportunity to secure an offer without formally reducing the price.</p>
+<p {S}><b>2. Test Buyer Interest</b></p>
+<p>If they call, we explain that the home will return at a lower price. This may encourage buyers
+to make an offer before the reduction.</p>
 
-<p style="margin:0 0 4px;"><b>Step 3 &ndash; Fall Back Price</b></p>
-<p>If we generate interest, but no acceptable offer, we return to the market at
-<b>{money(r["soft"])}</b>, positioning the home to reach more qualified buyers.</p>
+<p {S}><b>3. Fall Back Price &mdash; {fb}</b></p>
+<p>If we receive interest but no acceptable offer, we return to the market at {fb} to attract more
+buyers.</p>
 
-<p style="margin:0 0 4px;"><b>Step 4 &ndash; Rip Cord Price</b></p>
-<p>If no one calls, that is valuable market feedback. It suggests buyers are not engaged at our
-current price and a more significant adjustment is needed. We would then recommend returning to
-the market at <b>{money(r["hard"])}</b> to reach a substantially larger buyer pool.</p>
-
-<p><b>The Strategy:</b></p>
+<p {S}><b>4. Rip Cord Price &mdash; {rc}</b></p>
+<p>If no one calls, that suggests our price is still too high. We return at {rc} to reach a much
+larger buyer pool.</p>
 
 <h3 {H}>Your CST Seller Portal&trade;</h3>
 
-<p>Our {a(root + "/" if root else None, "Seller Portal")} brings together four powerful tools to
-support this strategy and maximize your home&rsquo;s value.</p>
+<p>Your {a(root + "/" if root else None, "Seller Portal")} includes four tools to support our strategy:</p>
 
 {li}
-<p><b>The Bottom Line</b> &ndash; Our Recovery Strategy is designed to create renewed interest,
-authenticate your home&rsquo;s value, and position us to negotiate the strongest possible offer.</p>
+<p><b>Our Goal:</b> Test buyer interest, reposition the home at the right price, and use our
+marketing tools to generate the strongest possible offer.</p>
 
 <p><i>It&rsquo;s Not a Price, It&rsquo;s a Strategy.&trade;</i></p>
 
-<p>We can review everything together when we meet.</p>
+<p>We can review everything when we meet.</p>
 
 <p style="line-height:1.4;">{full}<br>{phone}<br>{title} &middot; Samson Properties</p>
 
