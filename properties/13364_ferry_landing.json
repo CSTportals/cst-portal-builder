@@ -1,0 +1,408 @@
+{
+ "address": "13364 Ferry Landing Ln",
+ "city": "Woodbridge",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "22191",
+ "county": "Prince William County",
+ "prefix": "13364_Ferry_Landing",
+ "report_date": "Saturday, November 21, 2026",
+ "asset_dir": "assets/13364_Ferry_Landing",
+ "hero_photo": "13364_Ferry_Landing_dining.png",
+ "photos": [
+  "13364_Ferry_Landing_dining.png",
+  "13364_Ferry_Landing_kitchen.png"
+ ],
+ "portal_url": "https://13364ferrylanding.netlify.app",
+ "listing_status": "recovery",
+ "current_list": 595000,
+ "days_on_market": 87,
+ "agent": {
+  "lookup": "Danielle Best",
+  "display": "Danielle Best",
+  "title": "REALTOR&reg;",
+  "phone": "703.298.4821"
+ },
+ "listing_agent_name": "Danielle",
+ "private_label": "danielle_best",
+ "track_record": "Track_Record_Under_3500",
+ "include_tracker": true,
+ "subject": {
+  "built": 1998,
+  "sf": 1760,
+  "lot": 1803,
+  "assessment": 586000
+ },
+ "values": {
+  "dated": 523879,
+  "customary": 582088,
+  "customary_list": 582088,
+  "premium": 628655,
+  "upgrades": 0,
+  "worksheet_note": "21 Nov 2026 worksheet: Preview $575,000, Coming Soon $575,000, Fall Back $550,000, 0 Showings $550,000. One closed comp (13368 Colchester Ferry Pl)."
+ },
+ "recovery": {
+  "soft_override": 575000,
+  "hard_override": 550000,
+  "exact": true
+ },
+ "comps": {
+  "rows": [
+   [
+    "13368 Colchester Ferry Pl",
+    2001,
+    1760,
+    1881,
+    578000,
+    580000
+   ]
+  ],
+  "dom": {
+   "13368 Colchester Ferry Pl": 50
+  },
+  "list": {
+   "13368 Colchester Ferry Pl": 590000
+  },
+  "orig_list": {
+   "13368 Colchester Ferry Pl": 590000
+  },
+  "summary": [
+   [
+    "Age and Size &mdash; 1 sale",
+    2001,
+    1760,
+    1881,
+    578000,
+    580000
+   ],
+   [
+    "Price Range &mdash; 1 sale",
+    2001,
+    1760,
+    1881,
+    578000,
+    580000
+   ]
+  ],
+  "summary_ppsf": {
+   "Age and Size &mdash; 1 sale": {
+    "ppsf": 331
+   },
+   "Price Range &mdash; 1 sale": {
+    "ppsf": 331
+   }
+  },
+  "subject_value": 582088
+ },
+ "market": {
+  "name": "Prince William County Market",
+  "slug": "Prince_William_County_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "13340 Ferry Landing Ln",
+   "dom": 20,
+   "built": 1997,
+   "sf": 1776,
+   "lot": 2652,
+   "assessment": 579400,
+   "list": 590000
+  }
+ ],
+ "model_unsold": [
+  {
+   "status": "WTH",
+   "address": "728 Vestal St",
+   "dom": 61,
+   "list": 700000
+  }
+ ],
+ "local_snapshot": {
+  "ref": "2026-11-21",
+  "rows": [
+   {
+    "status": "ACT",
+    "address": "13364 Ferry Landing Ln (this home)",
+    "dom": 87,
+    "built": 1998,
+    "sf": 1760,
+    "lot": 1803,
+    "assessment": 586500,
+    "list": 595000,
+    "sale": null
+   },
+   {
+    "status": "ACT",
+    "address": "13340 Ferry Landing Ln",
+    "dom": 20,
+    "built": 1997,
+    "sf": 1776,
+    "lot": 2652,
+    "assessment": 579400,
+    "list": 590000,
+    "sale": null
+   },
+   {
+    "status": "CLS",
+    "address": "13368 Colchester Ferry Pl",
+    "dom": 50,
+    "built": 2001,
+    "sf": 1760,
+    "lot": 1881,
+    "assessment": 578000,
+    "list": 590000,
+    "sale": 580000
+   },
+   {
+    "status": "CLS",
+    "address": "713 Belmont Bay Dr",
+    "dom": 85,
+    "built": 2003,
+    "sf": 2524,
+    "lot": 2631,
+    "assessment": 629900,
+    "list": 725000,
+    "sale": 710000
+   },
+   {
+    "status": "WTH",
+    "address": "728 Vestal St",
+    "dom": 61,
+    "built": 2003,
+    "sf": 1972,
+    "lot": 0,
+    "assessment": 587600,
+    "list": 700000,
+    "sale": null
+   }
+  ]
+ },
+ "market_map": {
+  "subject": [
+   38.6633984,
+   -77.2427714
+  ],
+  "subject_dir": "left",
+  "subject_dir_solds": "right",
+  "solds": [
+   {
+    "address": "13368 Colchester Ferry Pl",
+    "sale": 580000,
+    "list": 590000,
+    "orig_list": 590000,
+    "dom": 50,
+    "status": "Sold",
+    "lat": 38.6636169,
+    "lng": -77.2435582
+   },
+   {
+    "address": "713 Belmont Bay Dr",
+    "sale": 710000,
+    "list": 725000,
+    "orig_list": 725000,
+    "dom": 85,
+    "status": "Sold",
+    "lat": 38.6553514,
+    "lng": -77.2375375
+   }
+  ],
+  "listings": [
+   {
+    "address": "13340 Ferry Landing Ln",
+    "status": "Active",
+    "list": 590000,
+    "dom": 20,
+    "lat": 38.664048,
+    "lng": -77.2419862
+   }
+  ]
+ },
+ "premium_rating": [
+  [
+   {
+    "label": "Property Details",
+    "items": [
+     "Built 1998",
+     "1,760 finished square feet",
+     "Assessment $586,000"
+    ]
+   }
+  ]
+ ],
+ "buyer_portal": {
+  "live": true,
+  "display_address": "13364 Ferry Landing Ln",
+  "list_price": 595000,
+  "asset_dir": "assets/13364_Ferry_Landing/buyer",
+  "hero_photo": "13364_Ferry_Landing_dining.png",
+  "pricing_pdf": "13364_Ferry_Landing_Buyer_Report.pdf",
+  "headline": "Hardwood floors, crown molding and an open kitchen with a granite island in Belmont Bay.",
+  "facts": [
+   [
+    "1998",
+    "Year built"
+   ],
+   [
+    "1,760",
+    "Finished SF"
+   ],
+   [
+    "Woodbridge",
+    "Prince William County"
+   ],
+   [
+    "Belmont Bay",
+    "Neighborhood"
+   ]
+  ],
+  "deploy_to": "https://buyferrylanding.netlify.app",
+  "url": "https://buyferrylanding.netlify.app",
+  "contacts": {
+   "names": "Danielle Best",
+   "team": "Danielle Best &middot; Samson Properties",
+   "lines": [
+    [
+     "Danielle Best",
+     "703.298.4821",
+     ""
+    ]
+   ],
+   "office": "Samson Properties"
+  },
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Belmont Bay on the Occoquan, with the Woodbridge VRE station, the marina and the Occoquan Bay wildlife refuge close by, and Stonebridge, Potomac Mills and historic Occoquan a short drive. The arrows point to everything past the edge of the map.",
+   "center": {
+    "lat": 38.6633984,
+    "lng": -77.2427714,
+    "label": "13364 Ferry Landing Ln"
+   },
+   "pins": [
+    {
+     "name": "Woodbridge VRE Station",
+     "sub": "VRE and Amtrak",
+     "lat": 38.658966,
+     "lng": -77.247932
+    },
+    {
+     "name": "Belmont Bay Harbor",
+     "sub": "Marina",
+     "lat": 38.6563664,
+     "lng": -77.2340941
+    },
+    {
+     "name": "Occoquan Bay Wildlife Refuge",
+     "sub": "Trails on the bay",
+     "lat": 38.6444296,
+     "lng": -77.2368086
+    }
+   ],
+   "arrows": [
+    [
+     326.1,
+     [
+      "Historic Occoquan",
+      "Dining and shops &middot; 5 min"
+     ]
+    ],
+    [
+     225.9,
+     [
+      "Stonebridge",
+      "Dining and shopping &middot; 11 min"
+     ]
+    ],
+    [
+     243.9,
+     [
+      "Potomac Mills",
+      "Shopping &middot; 10 min"
+     ]
+    ],
+    [
+     38.2,
+     [
+      "Washington, DC",
+      "Union Station &middot; 36 min"
+     ]
+    ]
+   ]
+  },
+  "amenities_lede": "The Woodbridge VRE and Amtrak station for the commute, Belmont Bay Harbor and the Occoquan Bay refuge for the water and trails, and Stonebridge and Wegmans for dining and groceries.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Woodbridge VRE Station",
+      "VRE and Amtrak",
+      "11 min walk"
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      22.01
+     ],
+     [
+      "Washington, DC",
+      "Union Station",
+      26.76
+     ]
+    ]
+   },
+   {
+    "title": "Fine Dining",
+    "items": [
+     [
+      "Historic Occoquan",
+      "Riverfront restaurants",
+      2.2
+     ]
+    ]
+   },
+   {
+    "title": "Family Dining",
+    "items": [
+     [
+      "Stonebridge at Potomac Town Center",
+      "Restaurants and shops",
+      4.42
+     ]
+    ]
+   },
+   {
+    "title": "Shopping",
+    "items": [
+     [
+      "Potomac Mills",
+      "Outlet mall",
+      4.09
+     ],
+     [
+      "Wegmans",
+      "Woodbridge",
+      4.34
+     ]
+    ]
+   },
+   {
+    "title": "Parks and Recreation",
+    "items": [
+     [
+      "Belmont Bay Harbor",
+      "Marina",
+      0.88
+     ],
+     [
+      "Occoquan Bay Wildlife Refuge",
+      "Trails on the bay",
+      1.75
+     ]
+    ]
+   }
+  ]
+ }
+}

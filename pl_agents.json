@@ -20,10 +20,27 @@
   "email": "feways01@yahoo.com",
   "website": "www.ewaysteam.com",
   "review_url": "https://g.page/r/CRH0dzJzY0MzEBM/review",
-  "accolades": ["#1 Luxury Team in Virginia &mdash; WSJ",
-                "NVAR Diamond Top Producer",
-                "2019&ndash;2025 Northern Virginia Magazine Top Producing Real Estate Agent",
-                "Top 250 Realtors in the NOVA Market for 2025"],
+  "accolades": [
+   "#1 Luxury Team in Virginia &mdash; WSJ",
+   "NVAR Diamond Top Producer",
+   "2019&ndash;2025 Northern Virginia Magazine Top Producing Real Estate Agent",
+   "Top 250 Realtors in the NOVA Market for 2025"
+  ],
   "closing": "I value your referrals as it's the greatest compliment I can receive!"
+ },
+ "danielle_best": {
+  "name": "Danielle Best",
+  "title": "REALTOR&reg;",
+  "office": "Samson Properties",
+  "address": "6363 Walker Ln., Suite 130, Alexandria, VA 22310",
+  "phone": "703.298.4821",
+  "office_phone": "703.341.6271",
+  "accolades": [
+   "Certified Negotiation Expert (CNE)",
+   "Certified International Property Specialist (CIPS)",
+   "Certified Military Residential Specialist (CMRS)",
+   "Virginia Housing Qualified Trainer",
+   "Licensed in Virginia, Maryland and D.C."
+  ]
  }
 }
