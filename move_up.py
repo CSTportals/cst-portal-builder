@@ -70,42 +70,51 @@ def section(p, brand_line=""):
 <p class="mu-s">What {addr} puts in your pocket, and what it does for the payment on your next home.</p>
 <div class="mu-cols">
  <div class="mu-col">
-  <h3>Current Home</h3>
-  <label><span>Value</span><input id="muVal" class="mu-in" value="{m(c['value'])}"><i class="mu-qs">{vbtn}</i></label>
-  <label><span>Outstanding debt</span><input id="muDebt" class="mu-in" value="{m(c['debt'])}"><i>Mortgage payoff and any equity line</i></label>
+  <h3>Sell</h3>
+  <label><span>Sales price</span><input id="muVal" class="mu-in" value="{m(c['value'])}"><i class="mu-qs">{vbtn}</i></label>
+  <label><span>Debt</span><input id="muDebt" class="mu-in" value="{m(c['debt'])}"><i>Mortgage payoff and any equity line</i></label>
+  <div class="mu-out"><span>Walk out the door proceeds</span><b id="muWalk"></b></div>
+  <button type="button" class="mu-arrow" aria-expanded="false" aria-controls="muMathS"><em>Math</em></button>
+  <div class="mu-math-wrap" id="muMathS" hidden>
   <table class="mu-math">
-   <tr><td>Value</td><td id="muV1"></td></tr>
+   <tr><td>Sales price</td><td id="muV1"></td></tr>
    <tr><td>Commission (<span id="muCp"></span>%)</td><td id="muComm"></td></tr>
    <tr><td>Grantor&rsquo;s Tax (0.3%)</td><td id="muTax"></td></tr>
    <tr><td>Settlement, deed &amp; admin</td><td id="muFlat"></td></tr>
-   <tr><td>Outstanding debt</td><td id="muD1"></td></tr>
+   <tr><td>Debt</td><td id="muD1"></td></tr>
+   <tr class="tot"><td>Walk out the door proceeds</td><td id="muW2"></td></tr>
   </table>
-  <div class="mu-arrow" aria-hidden="true"></div>
-  <div class="mu-out"><span>Walk out the door proceeds</span><b id="muWalk"></b></div>
+  </div>
  </div>
  <div class="mu-col">
-  <h3>New Home</h3>
-  <label><span>New home price</span><input id="muNew" class="mu-in" value="{m(c['new_price'])}"></label>
+  <h3>Buy</h3>
+  <label><span>Purchase price</span><input id="muNew" class="mu-in" value="{m(c['new_price'])}"></label>
+  <div class="mu-kv"><span>Down payment from proceeds</span><b id="muDfp"></b></div>
   <label><span>Additional down payment</span><input id="muAdd" class="mu-in" value="$0"><i>Cash beyond the sale proceeds</i></label>
-  <label><span>Note rate, 30-yr fixed</span><input id="muRate" class="mu-in" type="number" step="0.05" min="2" max="15" value="{c['rate']}"><i>{_h.escape(c['rate_label'])} &middot; 2-1 buydown</i></label>
-  <label><span>Buydown paid by</span><select id="muBy" class="mu-in"><option value="seller"{' selected' if c['buydown_paid_by'] == 'seller' else ''}>New home&rsquo;s seller (concession)</option><option value="buyer"{' selected' if c['buydown_paid_by'] == 'buyer' else ''}>You, at closing</option></select></label>
-  <table class="mu-math">
-   <tr><td>Proceeds brought in</td><td id="muP1"></td></tr>
-   <tr><td>Lender fees</td><td id="muLf"></td></tr>
-   <tr><td>Title &amp; recording</td><td id="muTi"></td></tr>
-   <tr><td>Prepaids &amp; escrows</td><td id="muPre"></td></tr>
-   <tr id="muBdRow"><td>2-1 buydown</td><td id="muBd"></td></tr>
-   <tr><td>Additional down payment</td><td id="muA1"></td></tr>
-   <tr class="tot"><td>Down payment (<span id="muDp"></span>)</td><td id="muDown"></td></tr>
-   <tr><td>Loan amount</td><td id="muLoan"></td></tr>
-  </table>
-  <div class="mu-arrow" aria-hidden="true"></div>
+  <div class="mu-pmt-h">Monthly payments &middot; 2-1 buydown</div>
   <div class="mu-pmt">
    <div><span>Year 1</span><small id="muR1"></small><b id="muY1"></b></div>
    <div><span>Year 2</span><small id="muR2"></small><b id="muY2"></b></div>
    <div><span>Year 3&ndash;30</span><small id="muR3"></small><b id="muY3"></b></div>
   </div>
-  <p class="mu-pi" id="muPi"></p>
+  <button type="button" class="mu-arrow" aria-expanded="false" aria-controls="muMathB"><em>Math</em></button>
+  <div class="mu-math-wrap" id="muMathB" hidden>
+  <label><span>Note rate, 30-yr fixed</span><input id="muRate" class="mu-in" type="number" step="0.05" min="2" max="15" value="{c['rate']}"><i>{_h.escape(c['rate_label'])} &middot; Year 1 at note &minus; 2, Year 2 at note &minus; 1</i></label>
+  <label><span>Buydown paid by</span><select id="muBy" class="mu-in"><option value="seller"{' selected' if c['buydown_paid_by'] == 'seller' else ''}>New home&rsquo;s seller (concession)</option><option value="buyer"{' selected' if c['buydown_paid_by'] == 'buyer' else ''}>You, at closing</option></select></label>
+  <table class="mu-math">
+   <tr><td>Walk out the door proceeds</td><td id="muP1"></td></tr>
+   <tr><td>Lender fees</td><td id="muLf"></td></tr>
+   <tr><td>Title &amp; recording</td><td id="muTi"></td></tr>
+   <tr><td>Prepaids &amp; escrows</td><td id="muPre"></td></tr>
+   <tr><td>2-1 buydown</td><td id="muBd"></td></tr>
+   <tr class="tot"><td>Down payment from proceeds</td><td id="muDfp2"></td></tr>
+   <tr><td>Additional down payment</td><td id="muA1"></td></tr>
+   <tr class="tot"><td>Total down payment (<span id="muDp"></span>)</td><td id="muDown"></td></tr>
+   <tr><td>Loan amount</td><td id="muLoan"></td></tr>
+   <tr><td>Property taxes</td><td id="muTx"></td></tr>
+   <tr><td>Insurance &amp; HOA</td><td id="muIns"></td></tr>
+  </table>
+  </div>
  </div>
 </div>
 <p class="mu-warn" id="muWarn"></p>
@@ -129,8 +138,16 @@ def section(p, brand_line=""):
 .mu-math{{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:6px;}}
 .mu-math td{{padding:6px 2px;border-bottom:1px solid #efe7d6;}} .mu-math td:last-child{{text-align:right;white-space:nowrap;}}
 .mu-math tr.tot td{{font-weight:700;border-top:2px solid #cdb98a;}}
-.mu-arrow{{width:0;height:0;margin:16px auto 12px;border-left:26px solid transparent;border-right:26px solid transparent;border-top:26px solid #2E5D7E;position:relative;}}
-.mu-arrow:before{{content:"";position:absolute;left:-9px;top:-46px;width:18px;height:22px;background:#2E5D7E;}}
+.mu-arrow{{display:block;margin:18px auto 6px;border:none;background:none;cursor:pointer;position:relative;width:110px;height:72px;padding:0;}}
+.mu-arrow:before{{content:"";position:absolute;left:29px;top:0;width:52px;height:34px;background:#2E5D7E;}}
+.mu-arrow:after{{content:"";position:absolute;left:0;top:32px;border-left:55px solid transparent;border-right:55px solid transparent;border-top:40px solid #2E5D7E;transition:transform .2s;}}
+.mu-arrow em{{position:absolute;left:0;right:0;top:11px;z-index:2;font:700 13px system-ui,sans-serif;letter-spacing:.08em;color:#fff;font-style:normal;text-transform:uppercase;}}
+.mu-arrow:hover:before{{background:#244b67;}} .mu-arrow:hover:after{{border-top-color:#244b67;}}
+.mu-math-wrap{{margin-top:6px;}}
+.mu-kv{{display:flex;justify-content:space-between;align-items:baseline;background:#f6efdf;border:1px solid #e6dcc6;border-radius:8px;padding:12px 14px;margin:0 0 12px;}}
+.mu-kv span{{font:700 11px system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#6b6252;}}
+.mu-kv b{{font:700 22px 'Playfair Display',Georgia,serif;}}
+.mu-pmt-h{{font:700 11px system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#6b6252;margin:4px 0 6px;}}
 .mu-out{{background:#1F2A44;color:#fff;border-radius:8px;padding:16px;text-align:center;}}
 .mu-out span{{display:block;font:700 11.5px system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#d8c08a;}}
 .mu-out b{{font:700 32px 'Playfair Display',Georgia,serif;}}
@@ -140,11 +157,10 @@ def section(p, brand_line=""):
 .mu-pmt span{{display:block;font:700 11px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#d8c08a;}}
 .mu-pmt small{{display:block;font:12px system-ui,sans-serif;color:#c9d2e0;margin:2px 0 4px;}}
 .mu-pmt b{{font:700 22px 'Playfair Display',Georgia,serif;}}
-.mu-pi{{text-align:center;font:12.5px system-ui,sans-serif;color:#6b6252;margin:10px 0 0;}}
 .mu-warn{{text-align:center;color:#B3261E;font-weight:700;min-height:1em;margin:16px 0 0;}}
 .mu-note{{text-align:center;font:11.5px/1.5 system-ui,sans-serif;color:#8a8170;margin:14px auto 0;max-width:820px;}}
 @media (max-width:760px){{.mu-cols{{grid-template-columns:1fr;}}}}
-@media print{{.mu-q{{display:none;}} .mu-in{{border:none;background:none;padding-left:0;}}}}
+@media print{{.mu-math-wrap{{display:block!important;}} .mu-arrow{{display:none;}} .mu-q{{display:none;}} .mu-in{{border:none;background:none;padding-left:0;}}}}
 </style>
 <script>
 (function(){{
@@ -160,7 +176,7 @@ function run(){{
   var walk=val-comm-tax-flat-debt;
   $('muCp').textContent=cp; $('muV1').textContent=m(val); $('muComm').textContent=neg(comm);
   $('muTax').textContent=neg(tax); $('muFlat').textContent=neg(flat); $('muD1').textContent=neg(debt);
-  $('muWalk').textContent=m(walk);
+  $('muWalk').textContent=m(walk); $('muW2').textContent=m(walk);
   var price=num($('muNew').value), add=num($('muAdd').value), rate=parseFloat($('muRate').value)||0;
   var byBuyer=$('muBy').value==='buyer';
   var title=C.title_base+price*C.title_pct/100, lf=C.lender_fees;
@@ -176,13 +192,13 @@ function run(){{
   var tx=price*C.tax_rate/100/12, oth=tx+C.ins_hoa;
   $('muP1').textContent=m(Math.max(0,walk)); $('muLf').textContent=neg(lf); $('muTi').textContent=neg(title);
   $('muPre').textContent=neg(pre);
-  $('muBd').textContent=byBuyer?neg(bd):m(bd)+' paid by seller';
-  $('muA1').textContent=m(add); $('muDown').textContent=m(down); $('muLoan').textContent=m(loan);
+  $('muBd').textContent=byBuyer?neg(bd):'$0 ('+m(bd)+' paid by seller)';
+  $('muA1').textContent=m(add); var dfp=down-add; $('muDfp').textContent=m(dfp); $('muDfp2').textContent=m(dfp);
+  $('muTx').textContent=m(tx)+'/mo'; $('muIns').textContent=m(C.ins_hoa)+'/mo'; $('muDown').textContent=m(down); $('muLoan').textContent=m(loan);
   $('muDp').textContent=(price?(down/price*100).toFixed(1):'0')+'% of price';
   var r1=Math.max(rate-2,0), r2=Math.max(rate-1,0);
   $('muR1').textContent=r1.toFixed(2)+'%'; $('muR2').textContent=r2.toFixed(2)+'%'; $('muR3').textContent=rate.toFixed(2)+'%';
   $('muY1').textContent=m(pmt(loan,r1)+oth); $('muY2').textContent=m(pmt(loan,r2)+oth); $('muY3').textContent=m(pmt(loan,rate)+oth);
-  $('muPi').textContent='Each payment includes taxes '+m(tx)+'/mo and insurance & HOA '+m(C.ins_hoa)+'/mo. Buydown cost '+m(bd)+'.';
   var w='';
   if(walk<0) w='The sale does not cover the outstanding debt.';
   else if(price && down<0) w='Proceeds do not cover the buyer closing costs.';
@@ -192,6 +208,8 @@ function run(){{
 document.querySelectorAll('.mu-in').forEach(function(e){{e.addEventListener('input',run);e.addEventListener('change',run);
   if(e.id!=='muRate'&&e.tagName==='INPUT') e.addEventListener('blur',function(){{e.value=m(num(e.value));}});}});
 document.querySelectorAll('.mu-q').forEach(function(b){{b.addEventListener('click',function(){{$('muVal').value=m(+b.getAttribute('data-v'));run();}});}});
+document.querySelectorAll('.mu-arrow').forEach(function(a){{a.addEventListener('click',function(){{
+  var w=$(a.getAttribute('aria-controls')), open=w.hidden; w.hidden=!open; a.setAttribute('aria-expanded',open);}});}});
 run();
 }})();
 </script>
