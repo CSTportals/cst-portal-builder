@@ -10,14 +10,9 @@
  "prefix": "Sample",
  "listing_url": "SampleListing.com",
  "include_tracker": true,
- "asset_dir": "/mnt/user-data/uploads",
- "hero_photo": "502_Spring_St_photo.jpg",
- "photos": [
-  "502_Spring_St_exterior.jpg",
-  "502_Spring_St_family.jpg",
-  "502_Spring_St_kitchen.jpg",
-  "502_Spring_St_basement.jpg"
- ],
+ "asset_dir": "assets/Sample",
+ "hero_photo": null,
+ "photos": [],
  "agent": {
   "lookup": "Casey C Samson",
   "display": "Casey Samson",
@@ -271,5 +266,162 @@
   "cst-sample-tracker-v1": "cst-sample-tracker-v1"
  },
  "portal_url": "https://sample.netlify.app",
- "net_proceeds": true
+ "net_proceeds": true,
+ "buyer_portal": {
+  "display_address": "Sample",
+  "asset_dir": "assets/Sample/buyer",
+  "hero_photo": null,
+  "deploy_to": "https://samplebuyer.netlify.app",
+  "url": "https://samplebuyer.netlify.app",
+  "live": true,
+  "status_line": "Coming Soon",
+  "headline": "A custom home on one of Vienna&rsquo;s premier streets, walking distance to everything.",
+  "facts": [
+   [
+    "2008",
+    "Year built"
+   ],
+   [
+    "4,842",
+    "Finished SF"
+   ],
+   [
+    "0.33",
+    "Acre lot"
+   ],
+   [
+    "Vienna",
+    "Fairfax County"
+   ]
+  ],
+  "pricing_pdf": "Sample_Buyer_Report.pdf",
+  "snapshot": {
+   "title": "Market Snapshot",
+   "lede": "Every home the Sample is competing with, and what each one is asking.",
+   "rows": [
+    [
+     "ACT",
+     "609 Kingsley Rd SW",
+     176,
+     2017,
+     4980,
+     12948,
+     "",
+     2300000
+    ],
+    [
+     "ACT",
+     "513 John Marshall Dr NE",
+     51,
+     2007,
+     4312,
+     15776,
+     "",
+     2250000
+    ],
+    [
+     "ACT",
+     "9311 Talisman Dr",
+     77,
+     2014,
+     4162,
+     10890,
+     "",
+     2175000
+    ],
+    [
+     "ACT",
+     "605 Meadow Ln SW",
+     38,
+     2019,
+     3609,
+     14519,
+     "",
+     2099900
+    ],
+    [
+     "ACT",
+     "10900 Hunter Station Rd",
+     319,
+     1985,
+     5935,
+     80376,
+     "",
+     2099900
+    ],
+    [
+     "ACT",
+     "1489 Broadstone Pl",
+     100,
+     2001,
+     4049,
+     15200,
+     "",
+     2074000
+    ],
+    [
+     "ACT",
+     "2755 Oakton Plantation Ln",
+     1,
+     1998,
+     3585,
+     16210,
+     "",
+     2000000
+    ],
+    [
+     "A/C",
+     "10301 Forest Maple Rd",
+     8,
+     1997,
+     5716,
+     76370,
+     "",
+     2200000
+    ],
+    [
+     "A/C",
+     "1950 Limb Tree Ln",
+     12,
+     1982,
+     3801,
+     48234,
+     "",
+     2000000
+    ],
+    [
+     "A/C",
+     "8263 Trailwood Ct",
+     19,
+     2003,
+     4586,
+     6874,
+     "",
+     1995000
+    ],
+    [
+     "PND",
+     "9932 Clearfield Ave",
+     7,
+     2021,
+     3543,
+     21782,
+     "",
+     2149900
+    ]
+   ]
+  },
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties"
+  }
+ }
 }
