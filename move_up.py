@@ -11,6 +11,7 @@ Seller side uses the Seller Net Proceeds costs (commission %, Grantor's Tax
 and title model from the "What It Takes to Win" calculator (win_calc.py).
 
     python3 move_up.py properties/X.json     -> output/<prefix>/<prefix>_Move_Up.html
+    python3 move_up.py --standalone          -> output/Move_Up_Calculator/index.html (no property)
 
 Optional property-file block "move_up": {"rate": 7.50, "rate_label": "...",
 "new_price": 2900000, "debt": 0, "listing_pct": 2.5, "buyer_pct": 2.5,
@@ -66,10 +67,19 @@ def section(p, brand_line="", mode="seller"):
     """mode "seller": Sell = this home (Seller Portal channel, titled Move Up
     (or Down) Calculator). mode "buyer": Buy = this home at its asking price,
     Sell = the buyer's own home, left for them to fill in (Buyer Portal)."""
+    # mode "standalone": Casey, 21 Nov 2026 -- the stand-alone buyer
+    # calculator references none of our homes: no address, no values, both
+    # prices left for the buyer to fill in.
+    alone = mode == "standalone"
+    if alone:
+        p = {"values": {"customary": 0, "premium": 0}}
     c = settings(p)
-    buyer = mode == "buyer"
+    buyer = mode in ("buyer", "standalone")
     bpicks = ""
-    if buyer:
+    if alone:
+        c["new_price"] = 0
+        c["picks"] = []
+    elif buyer:
         # Casey, 21 Nov 2026: purchase starts at Customary, with a toggle to
         # Premium so the buyer sees the payment difference between the two.
         v = p["values"]
@@ -79,7 +89,7 @@ def section(p, brand_line="", mode="seller"):
             f'<button type="button" class="mu-q mu-qb{" on" if k == "customary" else ""}" data-v="{int(v[k])}">{t} {"$" + format(int(v[k]), ",")}</button>'
             for k, t in (("customary", "Customary"), ("premium", "Premium")))
     title = "Move Up Calculator" if buyer else "Move Up (or Down) Calculator"
-    c["cust"] = int(p["values"]["customary"]) if buyer else 0
+    c["cust"] = int(p["values"]["customary"]) if (buyer and not alone) else 0
     data = json.dumps({k: c[k] for k in (
         "listing_pct", "buyer_pct", "seller_flat", "lender_fees", "title_base", "title_pct",
         "escrows", "prepaid_days", "tax_rate", "ins_hoa", "values", "cust")})
@@ -90,7 +100,7 @@ def section(p, brand_line="", mode="seller"):
     return f"""<section class="mu" id="move-up"><div class="mu-wrap">
 {f'<div class="mu-brand">{brand_line}</div>' if brand_line else ''}
 <h2 class="mu-t">{title}</h2>
-<p class="mu-s">{f"What your current home puts toward {addr}, and what the monthly payment looks like." if buyer else f"What {addr} puts in your pocket, and what it does for the payment on your next home."}</p>
+<p class="mu-s">{"What your current home puts toward your next one, and what the monthly payment looks like." if alone else f"What your current home puts toward {addr}, and what the monthly payment looks like." if buyer else f"What {addr} puts in your pocket, and what it does for the payment on your next home."}</p>
 <div class="mu-cols">
  <div class="mu-col">
   <h3>Sell</h3>
@@ -111,7 +121,7 @@ def section(p, brand_line="", mode="seller"):
  </div>
  <div class="mu-col">
   <h3>Buy</h3>
-  <label><span>Purchase price{f" &middot; {addr}" if buyer else ""}</span><input id="muNew" class="mu-in" value="{m(c['new_price'])}">{f'<i class="mu-qs">{bpicks}</i>' if bpicks else ''}</label>
+  <label><span>Purchase price{f" &middot; {addr}" if (buyer and not alone) else ""}</span><input id="muNew" class="mu-in" value="{m(c['new_price']) if c['new_price'] else ''}" placeholder="Your next home&rsquo;s price">{f'<i class="mu-qs">{bpicks}</i>' if bpicks else ''}</label>
   <div class="mu-kv"><span>Down payment from proceeds</span><b id="muDfp"></b></div>
   <label><span>Additional down payment</span><input id="muAdd" class="mu-in" value="$0"><i>Cash beyond the sale proceeds</i></label>
   <div class="mu-pmt-h">Monthly payments &middot; 2-1 buydown</div>
@@ -239,9 +249,11 @@ function run(){{
   var r1=Math.max(rate-2,0), r2=Math.max(rate-1,0);
   $('muR1').textContent=r1.toFixed(2)+'%'; $('muR2').textContent=r2.toFixed(2)+'%'; $('muR3').textContent=rate.toFixed(2)+'%';
   $('muY1').textContent=m(B.y1); $('muY2').textContent=m(B.y2); $('muY3').textContent=m(B.y3);
+  if(!price){{ ['muDfp','muDfp2','muDown','muLoan','muY1','muY2','muY3'].forEach(function(i){{$(i).textContent='\u2014';}}); $('muDp').textContent='\u2014'; }}
   if(!val){{ ['muDfp','muDfp2','muDown','muLoan','muY1','muY2','muY3'].forEach(function(i){{$(i).textContent='\u2014';}}); $('muWalk').textContent='\u2014'; $('muW2').textContent='\u2014'; $('muDp').textContent='\u2014'; }}
   var w='';
   if(!val) w='Enter your current home\u2019s sales price and debt to see your proceeds.';
+  else if(!price) w='Enter your next home\u2019s purchase price to see the payments.';
   else if(walk<0) w='The sale does not cover the outstanding debt.';
   else if(price && down<0) w='Proceeds do not cover the buyer closing costs.';
   else if(price && down/price<0.2) w='Under 20% down: expect mortgage insurance, not included above.';
@@ -256,6 +268,18 @@ run();
 }})();
 </script>
 """
+
+
+def standalone_page():
+    """The stand-alone buyer Move Up Calculator -- no property, no values."""
+    brand = "The Casey Samson Team &mdash; The Gold Standard of Pricing Strategy"
+    return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Move Up Calculator &mdash; The Casey Samson Team</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>body{{margin:0;background:#FAF6EE;}} .mu{{border-top:none;}}</style></head><body>
+{section(None, brand, mode="standalone")}
+</body></html>"""
 
 
 def page(p):
@@ -274,6 +298,12 @@ def page(p):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) < 2 or sys.argv[1] == "--standalone":
+        out = Path(__file__).resolve().parent / "output" / "Move_Up_Calculator"
+        out.mkdir(parents=True, exist_ok=True)
+        (out / "index.html").write_text(standalone_page(), encoding="utf-8")
+        print(out / "index.html")
+        sys.exit(0)
     p = json.loads(Path(sys.argv[1]).read_text())
     out = Path(__file__).resolve().parent / "output" / p["prefix"]
     out.mkdir(parents=True, exist_ok=True)
