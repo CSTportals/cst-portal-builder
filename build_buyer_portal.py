@@ -2193,6 +2193,10 @@ def build(p, out):
     # ---- contact --------------------------------------------------------
     qr = qr_block(b, p)
     site_head = site_header(qr, hero_pdf_tile(b))
+    # Casey, 21 Nov 2026: Buyer Portal Guide on every Buyer Portal.
+    import build_portal as _bp
+    _host = _buyer_host(p)
+    site_head += _bp._guide_bar(p, "buyer", (_host or "").rstrip("/"))
     b.setdefault("_facing", p.get("facing"))
     locmap = locator_map(b)
     # With a Current Market map, the neighbourhood map moves up beside it --
@@ -2390,6 +2394,9 @@ def main():
         + "\nThis folder is public. It carries no pricing strategy, no money at\n"
           "risk and no seller tracker.\n")
     shutil.copy(TPL / "Gold_Standard_Logo.png", out / "Gold_Standard_Logo.png")
+    if p.get("guides") is not False:
+        import build_portal as _bp2
+        _bp2.copy_guide("buyer", out)
     # Leaflet is vendored rather than pulled from a CDN: the portal keeps
     # working if the CDN is blocked, and the version never shifts underneath
     # a live listing. Only copied when the property actually has a map.

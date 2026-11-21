@@ -4280,6 +4280,42 @@ return.</p>
                f"{addr} — our pricing strategy", p)
 
 
+
+GUIDES = Path(__file__).resolve().parent / "templates" / "guides"
+GUIDE_FILES = {"roadmap": ("Seller_Roadmap_Guide.html", "{pre}_Roadmap_Guide.html",
+                           "New to your Roadmap?", "Read the Seller Roadmap Guide"),
+               "buyer": ("Buyer_Portal_Guide.html", "Buyer_Portal_Guide.html",
+                         "First time on a Buyer Portal?", "Read the Buyer Portal Guide")}
+
+
+def copy_guide(kind, out, pre=""):
+    """Casey, 21 Nov 2026: attach the Seller Roadmap Guide to every Roadmap and
+    the Buyer Portal Guide to every Buyer Portal (templates/guides/)."""
+    import shutil
+    src, dst, _, _ = GUIDE_FILES[kind]
+    dst = dst.format(pre=pre)
+    if (GUIDES / src).exists():
+        shutil.copy(GUIDES / src, Path(out) / dst)
+        return dst
+    return None
+
+
+def _guide_bar(p, kind, root=None):
+    """Gold bar under the page header linking to the guide. Absolute link when
+    the site address is known, so it also works from the printed PDF."""
+    if p.get("guides") is False:
+        return ""
+    _, dst, ask, link = GUIDE_FILES[kind]
+    dst = dst.format(pre=p["prefix"])
+    if root is None:
+        root = (p.get("portal_url") or "").rstrip("/")
+    href = f"{root}/{dst}" if root else dst
+    return (f'<div class="guide-bar" style="background:#F3EAD3;border-bottom:1px solid #d9c9a3;'
+            f'text-align:center;padding:10px 16px;font:15px Georgia,serif;color:#4A4234;">'
+            f'{ask} <a href="{href}" target="_blank" rel="noopener" style="color:#8A6A2E;'
+            f'font-weight:700;text-decoration:underline;">{link} &rarr;</a></div>\n')
+
+
 def build_roadmap(p, s, out):
     subj = p["subject"]
     addr, city_state = p["address"], f'{p["city"]}, {p["state"]}'
@@ -5491,7 +5527,7 @@ def build_roadmap(p, s, out):
 
 <a class="back" href="index.html">&larr; Back to {addr}</a>
 <div class="private-note">{_privacy_note}</div>
-
+{_guide_bar(p, "roadmap")}
 <div class="rm-hero">
 {rm_hero_img}
   <div class="rm-shade"></div>
@@ -5608,6 +5644,8 @@ def build_roadmap(p, s, out):
         body = _recovery_order(body)
     body = re.sub(r"<!--SEC:[a-z-]+-->\n?", "", body)   # layout markers, not content
     (out / f'{p["prefix"]}_Roadmap.html').write_text(head + body)
+    if p.get("guides") is not False:
+        copy_guide("roadmap", out, p["prefix"])
 
 
 def agent_card(p):
