@@ -7613,16 +7613,14 @@ def recovery_seller_email(p, r):
 
 <p>Hi {names},</p>
 
-<p>It was nice speaking with you. Our goal is to maximize your home&rsquo;s value by combining
-strategic pricing, professional marketing, and a plan to attract the largest possible buyer pool.</p>
-
-<p>Here is our recommended Listing Recovery Strategy moving forward.</p>
+<p>It was nice speaking with you. Here is our recommended Listing Recovery Strategy which
+attracts the largest possible buyer pool.</p>
 
 <h3 {H}>The Recovery Strategy</h3>
 
 <p style="margin:0 0 4px;"><b>Step 1 &ndash; Temporarily Off Market</b></p>
-<p>Temporarily withdraw the listing. Agents and buyers monitoring your home will notice the
-change, potentially prompting calls to find out what is happening.</p>
+<p>Temporarily withdraw the listing. Going TEMP Off will test demand, create an opportunity for
+an immediate deal, and let buyer response determine how aggressively we reposition the home.</p>
 
 <p style="margin:0 0 4px;"><b>Step 2 &ndash; Test Buyer Interest</b></p>
 <p>If we receive inquiries, we will explain that the home is expected to return to the market at
@@ -7631,17 +7629,13 @@ a reduced price designed to attract a larger buyer pool.</p>
 This creates an opportunity to secure an offer without formally reducing the price.</p>
 
 <p style="margin:0 0 4px;"><b>Step 3 &ndash; Fall Back Price</b></p>
-<p>If we generate interest but no acceptable offer, we return to the market at
+<p>If we generate interest, but no acceptable offer, we return to the market at
 <b>{money(r["soft"])}</b>, positioning the home to reach more qualified buyers.</p>
 
 <p style="margin:0 0 4px;"><b>Step 4 &ndash; Rip Cord Price</b></p>
 <p>If no one calls, that is valuable market feedback. It suggests buyers are not engaged at our
-current price and a more significant adjustment is needed.</p>
-<p>We would then recommend returning to the market at <b>{money(r["hard"])}</b> to reach a
-substantially larger buyer pool.</p>
-
-<p><b>The Strategy:</b> Use the temporary withdrawal to test demand, create an opportunity for an
-immediate deal, and let buyer response determine how aggressively we reposition the home.</p>
+current price and a more significant adjustment is needed. We would then recommend returning to
+the market at <b>{money(r["hard"])}</b> to reach a substantially larger buyer pool.</p>
 
 <h3 {H}>Your CST Seller Portal&trade;</h3>
 
