@@ -68,13 +68,21 @@ def section(p, brand_line="", mode="seller"):
     Sell = the buyer's own home, left for them to fill in (Buyer Portal)."""
     c = settings(p)
     buyer = mode == "buyer"
+    bpicks = ""
     if buyer:
-        c["new_price"] = buyer_price(p)
+        # Casey, 21 Nov 2026: purchase starts at Customary, with a toggle to
+        # Premium so the buyer sees the payment difference between the two.
+        v = p["values"]
+        c["new_price"] = int(v["customary"])
         c["picks"] = []
+        bpicks = "".join(
+            f'<button type="button" class="mu-q mu-qb{" on" if k == "customary" else ""}" data-v="{int(v[k])}">{t} {"$" + format(int(v[k]), ",")}</button>'
+            for k, t in (("customary", "Customary"), ("premium", "Premium")))
     title = "Move Up Calculator" if buyer else "Move Up (or Down) Calculator"
+    c["cust"] = int(p["values"]["customary"]) if buyer else 0
     data = json.dumps({k: c[k] for k in (
         "listing_pct", "buyer_pct", "seller_flat", "lender_fees", "title_base", "title_pct",
-        "escrows", "prepaid_days", "tax_rate", "ins_hoa", "values")})
+        "escrows", "prepaid_days", "tax_rate", "ins_hoa", "values", "cust")})
     m = lambda x: f"${int(x):,}"
     addr = _h.escape(p.get("address") or "your home")
     vbtn = "".join(f'<button type="button" class="mu-q" data-v="{val}">{_h.escape(t)}</button>'
@@ -103,7 +111,7 @@ def section(p, brand_line="", mode="seller"):
  </div>
  <div class="mu-col">
   <h3>Buy</h3>
-  <label><span>Purchase price{f" &middot; {addr}" if buyer else ""}</span><input id="muNew" class="mu-in" value="{m(c['new_price'])}"></label>
+  <label><span>Purchase price{f" &middot; {addr}" if buyer else ""}</span><input id="muNew" class="mu-in" value="{m(c['new_price'])}">{f'<i class="mu-qs">{bpicks}</i>' if bpicks else ''}</label>
   <div class="mu-kv"><span>Down payment from proceeds</span><b id="muDfp"></b></div>
   <label><span>Additional down payment</span><input id="muAdd" class="mu-in" value="$0"><i>Cash beyond the sale proceeds</i></label>
   <div class="mu-pmt-h">Monthly payments &middot; 2-1 buydown</div>
@@ -112,6 +120,7 @@ def section(p, brand_line="", mode="seller"):
    <div><span>Year 2</span><small id="muR2"></small><b id="muY2"></b></div>
    <div><span>Year 3&ndash;30</span><small id="muR3"></small><b id="muY3"></b></div>
   </div>
+  <p class="mu-delta" id="muDelta"></p>
   <button type="button" class="mu-arrow" aria-expanded="false" aria-controls="muMathB"><em>Math</em></button>
   <div class="mu-math-wrap" id="muMathB" hidden>
   <label><span>Note rate, 30-yr fixed</span><input id="muRate" class="mu-in" type="number" step="0.05" min="2" max="15" value="{c['rate']}"><i>{_h.escape(c['rate_label'])} &middot; Year 1 at note &minus; 2, Year 2 at note &minus; 1</i></label>
@@ -149,6 +158,8 @@ def section(p, brand_line="", mode="seller"):
 .mu-col label i{{font:12px system-ui,sans-serif;color:#8a8170;font-style:normal;}}
 .mu-in{{font:600 17px Georgia,serif;padding:9px 12px;border:1px solid #cdb98a;border-radius:6px;background:#fffdf6;color:#1d1a14;width:100%;box-sizing:border-box;}}
 .mu-qs{{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}}
+.mu-qb.on{{background:#1F2A44;color:#fff;border-color:#1F2A44;}}
+.mu-delta{{text-align:center;font:600 13.5px system-ui,sans-serif;color:#8A6A2E;margin:10px 0 0;min-height:1em;}}
 .mu-q{{font:600 12px system-ui,sans-serif;border:1px solid #cdb98a;background:#f6efdf;color:#6f5526;border-radius:14px;padding:4px 10px;cursor:pointer;}}
 .mu-math{{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:6px;}}
 .mu-math td{{padding:6px 2px;border-bottom:1px solid #efe7d6;}} .mu-math td:last-child{{text-align:right;white-space:nowrap;}}
@@ -175,7 +186,9 @@ def section(p, brand_line="", mode="seller"):
 .mu-warn{{text-align:center;color:#B3261E;font-weight:700;min-height:1em;margin:16px 0 0;}}
 .mu-note{{text-align:center;font:11.5px/1.5 system-ui,sans-serif;color:#8a8170;margin:14px auto 0;max-width:820px;}}
 @media (max-width:760px){{.mu-cols{{grid-template-columns:1fr;}}}}
-@media print{{.mu-math-wrap{{display:block!important;}} .mu-arrow{{display:none;}} .mu-q{{display:none;}} .mu-in{{border:none;background:none;padding-left:0;}}}}
+@media print{{.mu-math-wrap{{display:block!important;}} .mu-arrow{{display:none;}} .mu-qb.on{{background:#1F2A44;color:#fff;border-color:#1F2A44;}}
+.mu-delta{{text-align:center;font:600 13.5px system-ui,sans-serif;color:#8A6A2E;margin:10px 0 0;min-height:1em;}}
+.mu-q{{display:none;}} .mu-in{{border:none;background:none;padding-left:0;}}}}
 </style>
 <script>
 (function(){{
@@ -193,18 +206,30 @@ function run(){{
   $('muTax').textContent=neg(tax); $('muFlat').textContent=neg(flat); $('muD1').textContent=neg(debt);
   $('muWalk').textContent=m(walk); $('muW2').textContent=m(walk);
   var price=num($('muNew').value), add=num($('muAdd').value), rate=parseFloat($('muRate').value)||0;
-  var byBuyer=$('muBy').value==='buyer';
-  var title=C.title_base+price*C.title_pct/100, lf=C.lender_fees;
-  // Down payment and loan solve together: prepaid interest and the buydown both depend on the loan.
-  var loan=price*0.8, bd=0, pre=0, down=0;
-  for(var k=0;k<6;k++){{
-    pre=C.escrows+loan*rate/100*C.prepaid_days/365;
-    var p0=pmt(loan,rate);
-    bd=12*(p0-pmt(loan,Math.max(rate-2,0)))+12*(p0-pmt(loan,Math.max(rate-1,0)));
-    down=Math.max(0,walk)-lf-title-pre-(byBuyer?bd:0)+add;
-    loan=Math.max(0,price-down);
+  var byBuyer=$('muBy').value==='buyer', lf=C.lender_fees;
+  function buy(price){{
+    var title=C.title_base+price*C.title_pct/100;
+    // Down payment and loan solve together: prepaid interest and the buydown both depend on the loan.
+    var loan=price*0.8, bd=0, pre=0, down=0;
+    for(var k=0;k<6;k++){{
+      pre=C.escrows+loan*rate/100*C.prepaid_days/365;
+      var p0=pmt(loan,rate);
+      bd=12*(p0-pmt(loan,Math.max(rate-2,0)))+12*(p0-pmt(loan,Math.max(rate-1,0)));
+      down=Math.max(0,walk)-lf-title-pre-(byBuyer?bd:0)+add;
+      loan=Math.max(0,price-down);
+    }}
+    var tx=price*C.tax_rate/100/12, oth=tx+C.ins_hoa;
+    return {{title:title,pre:pre,bd:bd,down:down,loan:loan,tx:tx,oth:oth,
+      y1:pmt(loan,Math.max(rate-2,0))+oth, y2:pmt(loan,Math.max(rate-1,0))+oth, y3:pmt(loan,rate)+oth}};
   }}
-  var tx=price*C.tax_rate/100/12, oth=tx+C.ins_hoa;
+  var B=buy(price), title=B.title, pre=B.pre, bd=B.bd, down=B.down, loan=B.loan, tx=B.tx, oth=B.oth;
+  document.querySelectorAll('.mu-qb').forEach(function(q){{q.classList.toggle('on', +q.getAttribute('data-v')===Math.round(price));}});
+  var dl='';
+  if(C.cust && val && Math.round(price)!==C.cust){{
+    var K=buy(C.cust), d1=B.y1-K.y1, d3=B.y3-K.y3, sg=function(x){{return (x>=0?'+':'\u2212')+m(Math.abs(x));}};
+    dl=(price>C.cust?'Over':'Under')+' Customary by '+m(Math.abs(price-C.cust))+': '+sg(d1)+'/mo in Year 1, '+sg(d3)+'/mo from Year 3';
+  }}
+  $('muDelta').textContent=dl;
   $('muP1').textContent=m(Math.max(0,walk)); $('muLf').textContent=neg(lf); $('muTi').textContent=neg(title);
   $('muPre').textContent=neg(pre);
   $('muBd').textContent=byBuyer?neg(bd):'$0 ('+m(bd)+' paid by seller)';
@@ -213,7 +238,7 @@ function run(){{
   $('muDp').textContent=(price?(down/price*100).toFixed(1):'0')+'% of price';
   var r1=Math.max(rate-2,0), r2=Math.max(rate-1,0);
   $('muR1').textContent=r1.toFixed(2)+'%'; $('muR2').textContent=r2.toFixed(2)+'%'; $('muR3').textContent=rate.toFixed(2)+'%';
-  $('muY1').textContent=m(pmt(loan,r1)+oth); $('muY2').textContent=m(pmt(loan,r2)+oth); $('muY3').textContent=m(pmt(loan,rate)+oth);
+  $('muY1').textContent=m(B.y1); $('muY2').textContent=m(B.y2); $('muY3').textContent=m(B.y3);
   if(!val){{ ['muDfp','muDfp2','muDown','muLoan','muY1','muY2','muY3'].forEach(function(i){{$(i).textContent='\u2014';}}); $('muWalk').textContent='\u2014'; $('muW2').textContent='\u2014'; $('muDp').textContent='\u2014'; }}
   var w='';
   if(!val) w='Enter your current home\u2019s sales price and debt to see your proceeds.';
@@ -224,7 +249,7 @@ function run(){{
 }}
 document.querySelectorAll('.mu-in').forEach(function(e){{e.addEventListener('input',run);e.addEventListener('change',run);
   if(e.id!=='muRate'&&e.tagName==='INPUT') e.addEventListener('blur',function(){{if(e.value!=='')e.value=m(num(e.value));}});}});
-document.querySelectorAll('.mu-q').forEach(function(b){{b.addEventListener('click',function(){{$('muVal').value=m(+b.getAttribute('data-v'));run();}});}});
+document.querySelectorAll('.mu-q').forEach(function(b){{b.addEventListener('click',function(){{$(b.classList.contains('mu-qb')?'muNew':'muVal').value=m(+b.getAttribute('data-v'));run();}});}});
 document.querySelectorAll('.mu-arrow').forEach(function(a){{a.addEventListener('click',function(){{
   var w=$(a.getAttribute('aria-controls')), open=w.hidden; w.hidden=!open; a.setAttribute('aria-expanded',open);}});}});
 run();
