@@ -270,5 +270,6 @@
  "tracker_replace": {
   "cst-sample-tracker-v1": "cst-sample-tracker-v1"
  },
- "portal_url": "https://sample.netlify.app"
+ "portal_url": "https://sample.netlify.app",
+ "net_proceeds": true
 }

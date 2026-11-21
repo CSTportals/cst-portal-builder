@@ -5440,7 +5440,7 @@ def build_roadmap(p, s, out):
     <div class="values-grid"{grid_style}>
 {chr(10).join(cards)}
     </div>
-{value_story_html(p)}    <div class="money-at-risk">
+{net_proceeds_html(p, tiers)}{value_story_html(p)}    <div class="money-at-risk">
       <div class="lbl">{mar_label}</div>
       <div class="num">{mar_value}</div>
       <div class="mar-note">Loss of value can occur with over pricing or poor preparation.</div>
@@ -8173,6 +8173,55 @@ def render_pdfs(out, prefix):
 
     asyncio.run(go())
 
+
+
+def net_proceeds_html(p, tiers):
+    """Casey, 21 Nov 2026: estimated Seller Net Proceeds under the Authenticated
+    Values, using the closing costs from the Seller Tracker net sheet:
+    commission (listing % + buyer %) x price, Grantor's Tax price x 0.003,
+    settlement $855, deed preparation $175, admin $345. Opt-in per property
+    with "net_proceeds": true (or a dict overriding listing_pct, buyer_pct,
+    settlement, deed, admin)."""
+    cfg = p.get("net_proceeds")
+    if not cfg:
+        return ""
+    cfg = cfg if isinstance(cfg, dict) else {}
+    lp, bp = cfg.get("listing_pct", 2.5), cfg.get("buyer_pct", 2.5)
+    flat = cfg.get("settlement", 855) + cfg.get("deed", 175) + cfg.get("admin", 345)
+    cols = []
+    for label, _st, amount, _sty, _b in tiers:
+        m = re.search(r"\$([0-9][0-9,]*)", re.sub(r"<[^>]+>", "", amount))
+        if not m:
+            continue
+        price = int(m.group(1).replace(",", ""))
+        comm = price * (lp + bp) / 100
+        tax = price * 0.003
+        cols.append((re.sub(r"\bValue\b", "Price", label), price, comm, tax, flat,
+                     price - comm - tax - flat))
+    if not cols:
+        return ""
+    th = "".join(f"<th class=\"r\">{c[0]}</th>" for c in cols)
+    def row(name, i, neg=True, cls=""):
+        return (f'<tr{cls}><td class="k">{name}</td>'
+                + "".join(f'<td class="r">{"&minus;" if neg else ""}{money(round(c[i]))}</td>'
+                          for c in cols) + "</tr>")
+    _pct = f"{lp + bp:g}"
+    return f"""    <div class="net-proceeds" style="margin:26px auto 6px;max-width:900px;">
+      <h3 style="text-align:center;font-family:'Playfair Display',Georgia,serif;font-size:22px;margin:0 0 4px;">Estimated Seller Net Proceeds</h3>
+      <p style="text-align:center;font-size:14px;color:#6b6252;margin:0 0 12px;">What each authenticated price nets after closing costs.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Closing costs</th>{th}</tr></thead>
+        <tbody>
+{row("Sales Price", 1, neg=False)}
+{row(f"Total Commission ({lp:g}% listing + {bp:g}% buyer)", 2)}
+{row("Grantor&rsquo;s Tax (0.3%)", 3)}
+{row("Settlement, Deed Preparation &amp; Admin", 4)}
+{row("Estimated Net Proceeds", 5, neg=False, cls=' class="total-row" style="font-weight:700;"')}
+        </tbody>
+      </table></div>
+      <p style="font-size:12.5px;color:#7a705e;margin:8px 0 0;text-align:center;">Before the loan payoff, tax and utility prorations, and the regional recordation fees on the Title Company&rsquo;s settlement statement. Total commission shown at {_pct}%; your listing agreement governs.</p>
+    </div>
+"""
 
 def main():
     ap = argparse.ArgumentParser()
