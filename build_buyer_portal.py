@@ -439,11 +439,18 @@ p.builder{max-width:760px; margin:16px auto 0; text-align:center; font-size:14px
   font-weight:600; letter-spacing:.06em; text-transform:uppercase;
   padding:4px 0; border-bottom:1px solid transparent;}
 .site-head .sh-nav a:hover{color:#fff; border-bottom-color:var(--gold);}
+/* Casey, 21 Nov 2026: replaces The Nightmare Before Christmas; same size as
+   The Casey Samson Team letters. */
+.site-head .sh-guide{font-family:'Playfair Display',Georgia,serif;
+  font-size:15px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:#E8DFC9; text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:2px;}
+.site-head .sh-guide:hover{color:#fff;}
 @media (max-width:900px){
   .site-head{gap:11px; padding:12px 96px;}
   .site-head .sh-nav{gap:2px 14px;}
   .site-head .sh-nav a{font-size:11px; letter-spacing:.04em;}
   .site-head .sh-logo span{font-size:13px; letter-spacing:.1em;}
+  .site-head .sh-guide{font-size:13px; letter-spacing:.1em;}
   .site-bar{padding:6px 14px; font-size:11.5px;}
 }
 @media print{ .site-bar, .site-head{display:none;} }
@@ -669,7 +676,6 @@ SITE_NAV = [
     ("Blog", "https://caseysamson.com/category/blog/"),
     ("Portfolio", "https://caseysamson.com/portfolio/"),
     ("Real Housed", "https://caseysamson.com/podcast/real-housed/"),
-    ("The Nightmare Before Christmas", "https://caseysamson.com/christmas/"),
 ]
 SITE_PHONE = "703.508.2535"
 SITE_EMAIL = "Casey@caseysamson.com"
@@ -702,7 +708,7 @@ def hero_pdf_tile(b):
         '    <span class="hpdf-cap">Open the PDF</span>\n  </a>\n')
 
 
-def site_header(qr="", pdf=""):
+def site_header(qr="", pdf="", guide=""):
     """The caseysamson.com header, rebuilt above the property hero so a buyer
     landing on a listing site is plainly on a Casey Samson Team page: black
     utility bar with the phone and email, then the seal and the site nav."""
@@ -721,6 +727,8 @@ def site_header(qr="", pdf=""):
         '<img src="Gold_Standard_Logo.png" alt="The Casey Samson Team">'
         '<span>The Casey Samson Team</span></a>\n'
         f'  <nav class="sh-nav">{nav}</nav>\n'
+        + (f'  <a class="sh-guide" href="{guide}" target="_blank" rel="noopener">'
+           'Guide to Understanding the Buyer Portal</a>\n' if guide else '') +
         f'{pdf}{qr}'
         '</header>\n')
 
@@ -2192,11 +2200,11 @@ def build(p, out):
 
     # ---- contact --------------------------------------------------------
     qr = qr_block(b, p)
-    site_head = site_header(qr, hero_pdf_tile(b))
-    # Casey, 21 Nov 2026: Buyer Portal Guide on every Buyer Portal.
-    import build_portal as _bp
-    _host = _buyer_host(p)
-    site_head += _bp._guide_bar(p, "buyer", (_host or "").rstrip("/"))
+    # Casey, 21 Nov 2026: Buyer Portal Guide on every Buyer Portal, linked
+    # from the header where The Nightmare Before Christmas used to be.
+    _host = (_buyer_host(p) or "").rstrip("/")
+    _guide = "" if p.get("guides") is False else (f"{_host}/Buyer_Portal_Guide.html" if _host else "Buyer_Portal_Guide.html")
+    site_head = site_header(qr, hero_pdf_tile(b), _guide)
     b.setdefault("_facing", p.get("facing"))
     locmap = locator_map(b)
     # With a Current Market map, the neighbourhood map moves up beside it --

@@ -4283,9 +4283,9 @@ return.</p>
 
 GUIDES = Path(__file__).resolve().parent / "templates" / "guides"
 GUIDE_FILES = {"roadmap": ("Seller_Roadmap_Guide.html", "{pre}_Roadmap_Guide.html",
-                           "New to your Roadmap?", "Read the Seller Roadmap Guide"),
+                           "", "Guide to Understanding the Roadmap"),
                "buyer": ("Buyer_Portal_Guide.html", "Buyer_Portal_Guide.html",
-                         "First time on a Buyer Portal?", "Read the Buyer Portal Guide")}
+                         "", "Guide to Understanding the Buyer Portal")}
 
 
 def copy_guide(kind, out, pre=""):
@@ -4310,10 +4310,12 @@ def _guide_bar(p, kind, root=None):
     if root is None:
         root = (p.get("portal_url") or "").rstrip("/")
     href = f"{root}/{dst}" if root else dst
-    return (f'<div class="guide-bar" style="background:#F3EAD3;border-bottom:1px solid #d9c9a3;'
-            f'text-align:center;padding:10px 16px;font:15px Georgia,serif;color:#4A4234;">'
-            f'{ask} <a href="{href}" target="_blank" rel="noopener" style="color:#8A6A2E;'
-            f'font-weight:700;text-decoration:underline;">{link} &rarr;</a></div>\n')
+    # Casey, 21 Nov 2026: "Guide to Understanding the Roadmap" in the header,
+    # the same size as The Casey Samson Team letters in the Roadmap hero.
+    return (f'<div class="guide-bar" style="background:#231F1A;text-align:center;padding:11px 16px;">'
+            f'<a href="{href}" target="_blank" rel="noopener" style="color:#F0E4C4;'
+            f'font-size:11.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;'
+            f'text-decoration:none;border-bottom:1px solid #B8902F;padding-bottom:2px;">{link}</a></div>\n')
 
 
 def build_roadmap(p, s, out):
