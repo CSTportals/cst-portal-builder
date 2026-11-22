@@ -7958,12 +7958,12 @@ def seller_email_v2(p):
 <title>{p["address"]} — Seller email</title></head>
 <body style="max-width:620px; margin:24px auto; padding:0 20px; line-height:1.5;">
 
-<p>{names},</p>
+<p>{names}:</p>
 
 <p>We look forward to seeing you {_on}{when}.</p>
 
-<p>{_std} to sell in an average of 6 days, create competition for the home, and receive highest and
-best offers with no contingencies. The Pricing and Selling Strategy, outlined in our
+<p>{_std} to sell in an average of 6 days, create competition for the home, receive highest and
+best offers with no contingencies, and give our sellers flexibility on moving preferences. The Pricing and Selling Strategy, outlined in our
 {a(root + "/" if root else None, "Seller Portal")}, shows how we use five powerful tools to do it.</p>
 
 {li}
