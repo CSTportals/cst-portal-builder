@@ -4070,10 +4070,12 @@ def build_strategy_summary(p, s, out):
 
 
 def _abbr_m(x):
-    """$2,750,000 -> $2.75M; $2,649,999 -> $2.65M; $575,000 -> $575K."""
-    x = int(round(x / 10_000.0) * 10_000) if x >= 1_000_000 else int(round(x / 1_000.0) * 1_000)
+    """$2,750,000 -> $2.75M; $1,775,000 -> $1.775M; $2,649,999 -> $2.65M; $575,000 -> $575K."""
+    # Nearest $1,000, so $1,775,000 stays $1.775M and $1,699,000 $1.699M
+    # (a $2,649,999 Coming Soon still reads $2.65M).
+    x = int(round(x / 1_000.0) * 1_000)
     if x >= 1_000_000:
-        return "$" + (f"{x / 1e6:.2f}".rstrip("0").rstrip(".")) + "M"
+        return "$" + (f"{x / 1e6:.3f}".rstrip("0").rstrip(".")) + "M"
     return f"${x // 1000}K"
 
 

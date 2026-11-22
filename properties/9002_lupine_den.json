@@ -33,11 +33,11 @@
   "customary_list": 1785372,
   "premium": 1934751,
   "upgrades": 0,
-  "preview_override": 1750000,
-  "coming_soon_override": 1750000,
-  "fallback_override": 1699000,
+  "preview_override": 1775000,
+  "coming_soon_override": 1775000,
+  "fallback_override": 1750000,
   "deep_override": 1699000,
-  "worksheet_note": "22 Nov 2026 worksheet: Customary List Price $1,750,000 to $1,750,000 (Preview / Coming Soon), Fall Back $1,699,000, Rip Cord $1,699,000. Price-range comps = 2022 & 2028 Spring Branch, 8263 Trailwood, 1954 Horse Shoe (averages match)."
+  "worksheet_note": "22 Nov 2026 worksheet (revised 10:49): Preview / Coming Soon $1,775,000, Fall Back $1,750,000, Rip Cord $1,699,000. Price-range comps = 2022 & 2028 Spring Branch, 8263 Trailwood, 1954 Horse Shoe (averages match)."
  },
  "comps": {
   "rows": [
