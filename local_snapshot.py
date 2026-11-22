@@ -1129,7 +1129,7 @@ def conditions_from_figures(f, nflags, colour):
         "flag_color": "green" if colour == "#1B9E4B" else "red",
         "headline": plain, "headline_figure": fig,
         "sub": re.sub(r"<[^>]+>", "", subhead(f)),
-        "stats": stats, "advice": demand_advice(f),
+        "stats": stats, "advice": demand_advice(f), "uc30_explain": uc30_explain(f),
         "update": re.sub(r"^<b>Market Update:</b>\s*", "",
                          market_update(f)).strip(),
     }
@@ -1311,6 +1311,35 @@ def cmi_block(f, p, nflags, colour, meta=""):
     return GAUGE_CSS, band, dash
 
 
+def uc30_explain(f):
+    """Casey, 22 Nov 2026: "Current competition should comment on the circled
+    index and explain." The circled number is Under Contract (Last 30 Days):
+    of the homes listed in the last 30 days, the share already under contract
+    -- the freshest read on how buyers respond to homes priced at today's
+    values. Bands follow the gauge: under 25% buyers, 25-40% neutral, over 40%
+    sellers."""
+    coh, won, p30 = f.get("cohort") or 0, f.get("w30") or 0, f.get("p30")
+    if not coh or p30 is None:
+        return ""
+    of = (f"{won} of the {coh} homes listed in the last 30 days" if coh > 1
+          else f"{won} of the 1 home listed in the last 30 days")
+    if p30 > 40:
+        read = ("New listings priced at today&rsquo;s values are selling fast &mdash; buyers are "
+                "acting on the right home at the right price, even where older listings sit.")
+    elif p30 >= 25:
+        read = ("New listings are selling at a steady pace &mdash; buyers are active, but only for "
+                "homes that are priced and prepared correctly.")
+    else:
+        read = ("Few new listings are finding buyers &mdash; buyers are waiting, so price and "
+                "condition have to be right from the first day.")
+    thin = (" With only a handful of new listings, read it alongside the other gauges."
+            if coh < 5 else "")
+    return (f"<b>The circled number &mdash; Under Contract (Last 30 Days), {p30}%:</b> {of} "
+            f"{'is' if won == 1 else 'are'} already under contract. It is the freshest measure of "
+            "the market, because it shows how buyers are responding right now, not how long older "
+            f"listings have been sitting. Under 25% favors buyers, over 40% favors sellers. {read}{thin}")
+
+
 def demand_advice(f):
     """Casey, 15 Oct 2026: "Current market conditions follow with Advice:
     There are no or limited (whichever is appropriate) homes under contract
@@ -1339,7 +1368,7 @@ def market_stats_from_figures(f):
     control = {"buyer": "Buyer's", "mixed": "Neutral",
                "seller": "Seller's"}[f["control_cls"]]
     stats = {"control": control, "under_contract": "%d%%" % f["uc_w"],
-             "advice": demand_advice(f)}
+             "advice": demand_advice(f), "uc30_explain": uc30_explain(f)}
     # Casey, 18 Oct 2026: Success Rate leads both the Roadmap's five and the
     # Summary's four. It is the one measure the competition set alone cannot
     # give -- it needs the listings that did NOT sell -- so it is computed

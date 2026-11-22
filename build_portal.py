@@ -1957,6 +1957,10 @@ def market_conditions(market):
     # Casey, 15 Oct 2026: Current Market Conditions is followed by Advice.
     if c.get("advice"):
         upd = f'<p class="mc-advice">{c["advice"]}</p>' + upd
+    # Casey, 22 Nov 2026: explain the circled Under Contract (Last 30 Days).
+    if c.get("uc30_explain"):
+        upd = (upd.replace('</p>', '</p>' + f'<p class="mc-advice" style="font-size:.95em;">{c["uc30_explain"]}</p>', 1)
+               if c.get("advice") else f'<p class="mc-advice">{c["uc30_explain"]}</p>' + upd)
     return (
         '    <div class="mc">\n'
         '      <div class="mc-eyebrow">Current Market Conditions</div>\n'
