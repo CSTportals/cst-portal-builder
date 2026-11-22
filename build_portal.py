@@ -5093,6 +5093,8 @@ def build_roadmap(p, s, out):
                 "upgrades earned." if _upg else "recovers the value the home "
                 "actually has."))
 
+            GUIDE_NOTES["recovery"] = {"pool": _pool, "list": _cl,
+                                       "fb": _r["soft"], "rc": _r["hard"]}
             _cols = ["Customary Value", "Buyer Threshold", "Premium Value",
                      "Current List Price"]
             _vals = [money(_v["customary"]),

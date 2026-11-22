@@ -177,9 +177,64 @@ def roadmap_guide(p, s_dir):
           "Every price is established in advance. We let buyer activity dictate our next move, eliminating "
           "surprises and protecting momentum."]),
     ]
+    rec = notes.get("recovery")
+    if rec:
+        secs = _recovery_roadmap_secs(p, page, secs, rec)
     return _page("Your Seller Roadmap Guide",
                  f"{addr} &mdash; what each part of your Gold Standard Seller Roadmap&trade; shows you.",
                  secs, _brand(p))
+
+
+def _recovery_roadmap_secs(p, page, secs, rec):
+    """Casey, 22 Nov 2026: a recovery Roadmap has no Preview, Coming Soon or
+    Predictive Analysis -- it has Reconciling Value and Price and the 4-step
+    Recovery Strategy, and the guide explains those instead."""
+    v = p["values"]
+    pool, cl, fb, rc = rec["pool"], rec["list"], rec["fb"], rec["rc"]
+    sh = _shots(page.as_uri(), ["Reconciling Value", "Our 4-Step", "4. Adjust Price"])
+    top = secs[0]
+    top = (top[0], top[1], top[2], [t.replace(
+        "<li><b>The Test&trade;</b> &mdash; Our proven Preview and Coming Soon strategy to identify the "
+        "strongest buyer pool and position your home for a successful sale.</li>",
+        "<li><b>Recovery Strategy</b> &mdash; Our 4-step plan to test buyer interest, reposition the home "
+        "at the right price, and generate the strongest possible offer.</li>").replace(
+        "Sell your home in the first week at the highest possible price.",
+        "Find the buyer pool and create competition for your home.") for t in top[3]])
+    keep = [top] + [x for x in secs[1:] if x[1] not in (
+        "Preview", "Coming Soon", "Predictive Analysis&trade; Sets the Price")]
+    keep += [
+        (sh.get("Reconciling Value"), "Reconciling Value and Price", "Here is the problem",
+         ["This table puts four numbers side by side: what the home is worth (<b>Customary</b> and "
+          "<b>Premium Values</b>), where buyers are shopping (the <b>Buyer Threshold</b>), and where the home "
+          "is listed today (the <b>Current List Price</b>).",
+          f"Your home is listed at <b>{money(cl)}</b>. Buyers for homes of this age and size are shopping "
+          f"under <b>{money(pool)}</b>. The competing active listings and the recent sales underneath the "
+          "table show where that pool actually is.",
+          "A home can be worth more than the buyer pool will pay&mdash;but value alone does not sell a home. "
+          "Buyers do, and days on market do not close that distance.",
+          "<b>The key is to find the buyer pool and create bidding&mdash;not to inch toward it.</b> A home "
+          "priced into the pool, below the homes that have been sitting in it, draws more than one buyer at "
+          "a time. That competition is what produces a sale above the list price."]),
+        (sh.get("Our 4-Step"), "Our 4-Step Recovery Strategy", "Steps 1&ndash;3: prepare and test",
+         ["<b>1. Inspect Property and Review Comments.</b> We walk the home and read every showing comment. "
+          "If an update would make it more appealing to buyers, it is done now&mdash;see Moving the Needle.",
+          "<b>2. Temporarily Off Market.</b> The home goes TEMP Off Market. Buyers and agents who have been "
+          "watching it often call to find out why.",
+          "<b>3. Test Buyer Interest.</b> When they call, we explain the home will return at a lower price. "
+          "That can bring an offer before the reduction&mdash;and how many call tells us where the buyer "
+          "pool is."]),
+        (sh.get("4. Adjust Price"), "4. Adjust Price", "A larger buyer pool, not a lower sales price",
+         ["Adjusting price does not mean a lower sales price, it means a larger buyer pool. Lower prices "
+          "usually produce higher prices, because more buyers compete for the same home.",
+          "<ul style=\"margin:0 0 0 1.1em;padding:0;\">"
+          f"<li><b>If some buyers call &mdash; Fall Back Price, {money(fb)}:</b> buyers are close. If no "
+          "acceptable offer comes, we return at this price to reach a larger buyer pool.</li>"
+          f"<li><b>If no one calls &mdash; Pull the Rip Cord, {money(rc)}:</b> the price is not close to the "
+          "buyer pool. This price guarantees the largest buyer pool, and whatever buyers bid is what the "
+          "home is worth at this time.</li></ul>",
+          "Both prices are set in advance. The calls during the test decide which one we use."]),
+    ]
+    return keep
 
 
 def _map_png():
