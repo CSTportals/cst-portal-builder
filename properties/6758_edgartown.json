@@ -1,0 +1,732 @@
+{
+ "address": "6758 Edgartown Way",
+ "city": "Gainesville",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "20155",
+ "county": "Prince William County",
+ "prefix": "6758_Edgartown",
+ "report_date": "Sunday, November 22, 2026",
+ "asset_dir": "assets/6758_Edgartown",
+ "hero_photo": "6758_Edgartown_front.jpg",
+ "photos": [
+  "6758_Edgartown_front.jpg",
+  "6758_Edgartown_family.jpg",
+  "6758_Edgartown_kitchen.jpg"
+ ],
+ "portal_url": "https://6758edgartown.netlify.app",
+ "listing_status": "recovery",
+ "current_list": 1085000,
+ "days_on_market": 31,
+ "property_type": "single family",
+ "agent": {
+  "lookup": "Cathy Kane",
+  "display": "Cathy Kane",
+  "title": "VA/MD Licensed REALTOR&reg;",
+  "phone": "703-868-1976",
+  "email": "cathykane1@gmail.com"
+ },
+ "listing_agent_name": "Cathy",
+ "listing_agent_email": "cathykane1@gmail.com",
+ "private_label": "cathy_kane",
+ "track_record": "Track_Record_Under_3500",
+ "include_tracker": true,
+ "subject": {
+  "built": 2005,
+  "sf": 3662,
+  "lot": 8286,
+  "assessment": 943000
+ },
+ "values": {
+  "dated": 905695,
+  "customary": 1006327,
+  "customary_list": 1006327,
+  "premium": 1086833,
+  "upgrades": 0,
+  "preview_override": 1019917,
+  "coming_soon_override": 1019917,
+  "fallback_override": 1000000,
+  "deep_override": 950000,
+  "worksheet_note": "22 Nov 2026 recovery worksheet: Some Calls $1,000,000 (Fall Back), No Calls $950,000 (Rip Cord). Price-range comps = Debhill, Jupiter Hills, Coachview, 13520 Heritage Farms (averages match)."
+ },
+ "recovery": {
+  "exact": true
+ },
+ "comps": {
+  "rows": [
+   [
+    "6518 Debhill Ln",
+    2006,
+    4010,
+    17153,
+    1005000,
+    1073500
+   ],
+   [
+    "15107 Jupiter Hills Ln",
+    2002,
+    3540,
+    13207,
+    998200,
+    1046000
+   ],
+   [
+    "5775 Coachview Ct",
+    2001,
+    3522,
+    9857,
+    966900,
+    1048000
+   ],
+   [
+    "13520 Heritage Farms Dr",
+    2001,
+    3196,
+    null,
+    1024600,
+    999625
+   ]
+  ],
+  "dom": {
+   "6518 Debhill Ln": 6,
+   "15107 Jupiter Hills Ln": 40,
+   "5775 Coachview Ct": 5,
+   "13520 Heritage Farms Dr": 5
+  },
+  "list": {
+   "6518 Debhill Ln": 1098500,
+   "15107 Jupiter Hills Ln": 1050000,
+   "5775 Coachview Ct": 1050000,
+   "13520 Heritage Farms Dr": 1024900
+  },
+  "orig_list": {
+   "6518 Debhill Ln": 1098500,
+   "15107 Jupiter Hills Ln": 1050000,
+   "5775 Coachview Ct": 1050000,
+   "13520 Heritage Farms Dr": 1024900
+  },
+  "summary": [
+   [
+    "Age and Size &mdash; 4 sales",
+    2004,
+    3486,
+    14953,
+    934000,
+    1006875
+   ],
+   [
+    "Price Range &mdash; 4 sales",
+    2003,
+    3567,
+    15911,
+    998675,
+    1041781
+   ]
+  ],
+  "summary_ppsf": {
+   "Age and Size &mdash; 4 sales": {
+    "ppsf": 279
+   },
+   "Price Range &mdash; 4 sales": {
+    "ppsf": 271
+   }
+  },
+  "subject_value": 1006327
+ },
+ "market": {
+  "name": "Haymarket Family Market",
+  "slug": "Haymarket_Family_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "5638 Lick River Ln",
+   "dom": 165,
+   "built": 2002,
+   "sf": 3369,
+   "lot": 21980,
+   "assessment": 956500,
+   "list": 1075000
+  },
+  {
+   "status": "Active",
+   "address": "5950 Tumble Creek Ct",
+   "dom": 58,
+   "built": 2002,
+   "sf": 3723,
+   "lot": 10890,
+   "assessment": 911100,
+   "list": 1050000
+  },
+  {
+   "status": "Active",
+   "address": "6112 Tinley Mill Dr",
+   "dom": 11,
+   "built": 2003,
+   "sf": 3184,
+   "lot": 22873,
+   "assessment": 1036000,
+   "list": 1049000
+  },
+  {
+   "status": "Active",
+   "address": "5663 Shoal Creek Dr",
+   "dom": 38,
+   "built": 2001,
+   "sf": 3351,
+   "lot": 13220,
+   "assessment": 975100,
+   "list": 1099000
+  },
+  {
+   "status": "Active",
+   "address": "5801 Serengeti Ct",
+   "dom": 25,
+   "built": 2001,
+   "sf": 3124,
+   "lot": 12754,
+   "assessment": 881500,
+   "list": 1050000
+  },
+  {
+   "status": "Active",
+   "address": "5431 Lick River Ln",
+   "dom": 143,
+   "built": 2002,
+   "sf": 3456,
+   "lot": 22023,
+   "assessment": 1023500,
+   "list": 1099000
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "14970 Paloma Ct",
+   "dom": 0,
+   "built": 2003,
+   "sf": null,
+   "lot": 9679,
+   "assessment": 921400,
+   "list": 985000
+  },
+  {
+   "status": "Pending",
+   "address": "6032 Erinblair Loop",
+   "dom": 26,
+   "built": 2000,
+   "sf": 4291,
+   "lot": 8137,
+   "assessment": 1049300,
+   "list": 999900
+  }
+ ],
+ "local_snapshot": {
+  "ref": "2026-11-22",
+  "rows": [
+   {
+    "status": "ACT",
+    "address": "6758 Edgartown Way (this home)",
+    "dom": 31,
+    "built": 2005,
+    "sf": 3642,
+    "lot": 8286,
+    "assessment": 943800,
+    "list": 1085000,
+    "sale": null
+   },
+   {
+    "status": "ACT",
+    "address": "5638 Lick River Ln",
+    "dom": 165,
+    "built": 2002,
+    "sf": 3369,
+    "lot": 21980,
+    "assessment": 956500,
+    "list": 1075000,
+    "sale": null
+   },
+   {
+    "status": "ACT",
+    "address": "5950 Tumble Creek Ct",
+    "dom": 58,
+    "built": 2002,
+    "sf": 3723,
+    "lot": 10890,
+    "assessment": 911100,
+    "list": 1050000,
+    "sale": null
+   },
+   {
+    "status": "ACT",
+    "address": "6112 Tinley Mill Dr",
+    "dom": 11,
+    "built": 2003,
+    "sf": 3184,
+    "lot": 22873,
+    "assessment": 1036000,
+    "list": 1049000,
+    "sale": null
+   },
+   {
+    "status": "ACT",
+    "address": "5663 Shoal Creek Dr",
+    "dom": 38,
+    "built": 2001,
+    "sf": 3351,
+    "lot": 13220,
+    "assessment": 975100,
+    "list": 1099000,
+    "sale": null
+   },
+   {
+    "status": "ACT",
+    "address": "5801 Serengeti Ct",
+    "dom": 25,
+    "built": 2001,
+    "sf": 3124,
+    "lot": 12754,
+    "assessment": 881500,
+    "list": 1050000,
+    "sale": null
+   },
+   {
+    "status": "ACT",
+    "address": "5431 Lick River Ln",
+    "dom": 143,
+    "built": 2002,
+    "sf": 3456,
+    "lot": 22023,
+    "assessment": 1023500,
+    "list": 1099000,
+    "sale": null
+   },
+   {
+    "status": "C/S",
+    "address": "14970 Paloma Ct",
+    "dom": 0,
+    "built": 2003,
+    "sf": 0,
+    "lot": 9679,
+    "assessment": 921400,
+    "list": 985000,
+    "sale": null
+   },
+   {
+    "status": "PND",
+    "address": "6032 Erinblair Loop",
+    "dom": 26,
+    "built": 2000,
+    "sf": 4291,
+    "lot": 8137,
+    "assessment": 1049300,
+    "list": 999900,
+    "sale": null
+   },
+   {
+    "status": "CLS",
+    "address": "14093 Burnley Glen Ct",
+    "dom": 107,
+    "built": 2003,
+    "sf": 4234,
+    "lot": 35536,
+    "assessment": 1225900,
+    "list": 1099900,
+    "sale": 1089900
+   },
+   {
+    "status": "CLS",
+    "address": "6518 Debhill Ln",
+    "dom": 6,
+    "built": 2006,
+    "sf": 4010,
+    "lot": 17153,
+    "assessment": 1005000,
+    "list": 1098500,
+    "sale": 1073500
+   },
+   {
+    "status": "CLS",
+    "address": "15107 Jupiter Hills Ln",
+    "dom": 40,
+    "built": 2002,
+    "sf": 3540,
+    "lot": 13207,
+    "assessment": 998200,
+    "list": 1050000,
+    "sale": 1046000
+   },
+   {
+    "status": "CLS",
+    "address": "5775 Coachview Ct",
+    "dom": 5,
+    "built": 2001,
+    "sf": 3522,
+    "lot": 9857,
+    "assessment": 966900,
+    "list": 1050000,
+    "sale": 1048000
+   },
+   {
+    "status": "CLS",
+    "address": "13520 Heritage Farms Dr",
+    "dom": 5,
+    "built": 2001,
+    "sf": 3196,
+    "lot": 0,
+    "assessment": 1024600,
+    "list": 1024900,
+    "sale": 999625
+   },
+   {
+    "status": "CLS",
+    "address": "14232 Snickersville Dr",
+    "dom": 8,
+    "built": 2004,
+    "sf": 3144,
+    "lot": 0,
+    "assessment": 826500,
+    "list": 1025000,
+    "sale": 1010000
+   },
+   {
+    "status": "CLS",
+    "address": "13539 Heritage Farms Dr",
+    "dom": 59,
+    "built": 2001,
+    "sf": 0,
+    "lot": 0,
+    "assessment": 1063900,
+    "list": 995000,
+    "sale": 974000
+   }
+  ]
+ },
+ "market_map": {
+  "subject": [
+   38.8191467,
+   -77.6054077
+  ],
+  "subject_dir": "left",
+  "subject_dir_solds": "right",
+  "solds": [
+   {
+    "address": "14093 Burnley Glen Ct",
+    "sale": 1089900,
+    "list": 1099900,
+    "orig_list": 1099900,
+    "dom": 107,
+    "status": "Sold",
+    "lat": 38.8283265,
+    "lng": -77.6095583
+   },
+   {
+    "address": "6518 Debhill Ln",
+    "sale": 1073500,
+    "list": 1098500,
+    "orig_list": 1098500,
+    "dom": 6,
+    "status": "Sold",
+    "lat": 38.8169332,
+    "lng": -77.612241
+   },
+   {
+    "address": "15107 Jupiter Hills Ln",
+    "sale": 1046000,
+    "list": 1050000,
+    "orig_list": 1050000,
+    "dom": 40,
+    "status": "Sold",
+    "lat": 38.8321141,
+    "lng": -77.6384299
+   },
+   {
+    "address": "5775 Coachview Ct",
+    "sale": 1048000,
+    "list": 1050000,
+    "orig_list": 1050000,
+    "dom": 5,
+    "status": "Sold",
+    "lat": 38.8238335,
+    "lng": -77.6124988
+   },
+   {
+    "address": "13520 Heritage Farms Dr",
+    "sale": 999625,
+    "list": 1024900,
+    "orig_list": 1024900,
+    "dom": 5,
+    "status": "Sold",
+    "lat": 38.8410023,
+    "lng": -77.5972039
+   },
+   {
+    "address": "14232 Snickersville Dr",
+    "sale": 1010000,
+    "list": 1025000,
+    "orig_list": 1025000,
+    "dom": 8,
+    "status": "Sold",
+    "lat": 38.8163337,
+    "lng": -77.6117452
+   },
+   {
+    "address": "13539 Heritage Farms Dr",
+    "sale": 974000,
+    "list": 995000,
+    "orig_list": 995000,
+    "dom": 59,
+    "status": "Sold",
+    "lat": 38.842064,
+    "lng": -77.5994801
+   }
+  ],
+  "listings": [
+   {
+    "address": "5638 Lick River Ln",
+    "status": "Active",
+    "list": 1075000,
+    "dom": 165,
+    "lat": 38.8391116,
+    "lng": -77.6008811
+   },
+   {
+    "address": "5950 Tumble Creek Ct",
+    "status": "Active",
+    "list": 1050000,
+    "dom": 58,
+    "lat": 38.8275311,
+    "lng": -77.6380533
+   },
+   {
+    "address": "6112 Tinley Mill Dr",
+    "status": "Active",
+    "list": 1049000,
+    "dom": 11,
+    "lat": 38.8196604,
+    "lng": -77.6122091
+   },
+   {
+    "address": "5663 Shoal Creek Dr",
+    "status": "Active",
+    "list": 1099000,
+    "dom": 38,
+    "lat": 38.8312088,
+    "lng": -77.6359757
+   },
+   {
+    "address": "5801 Serengeti Ct",
+    "status": "Active",
+    "list": 1050000,
+    "dom": 25,
+    "lat": 38.8230745,
+    "lng": -77.6136568
+   },
+   {
+    "address": "5431 Lick River Ln",
+    "status": "Active",
+    "list": 1099000,
+    "dom": 143,
+    "lat": 38.8461402,
+    "lng": -77.5968053
+   },
+   {
+    "address": "14970 Paloma Ct",
+    "status": "Active Under Contract",
+    "list": 985000,
+    "dom": 0,
+    "lat": 38.822906,
+    "lng": -77.6216206
+   },
+   {
+    "address": "6032 Erinblair Loop",
+    "status": "Pending",
+    "list": 999900,
+    "dom": 26,
+    "lat": 38.8266225,
+    "lng": -77.6229115
+   }
+  ]
+ },
+ "premium_rating": [
+  [
+   {
+    "label": "Property Details",
+    "items": [
+     "Built 2005",
+     "3,662 finished square feet",
+     "8,286 SF lot",
+     "Assessment $943,000"
+    ]
+   }
+  ]
+ ],
+ "buyer_portal": {
+  "live": true,
+  "display_address": "6758 Edgartown Way",
+  "list_price": 1085000,
+  "asset_dir": "assets/6758_Edgartown/buyer",
+  "hero_photo": "6758_Edgartown_front.jpg",
+  "pricing_pdf": "6758_Edgartown_Buyer_Report.pdf",
+  "headline": "Brick-front colonial with a two-story family room, a stone fireplace wall and a white kitchen with double ovens.",
+  "facts": [
+   [
+    "2005",
+    "Year built"
+   ],
+   [
+    "3,662",
+    "Finished SF"
+   ],
+   [
+    "8,286",
+    "SF lot"
+   ],
+   [
+    "Gainesville",
+    "Prince William County"
+   ]
+  ],
+  "deploy_to": "https://buyedgartown.netlify.app",
+  "url": "https://buyedgartown.netlify.app",
+  "contacts": {
+   "names": "Cathy Kane",
+   "team": "Cathy Kane &middot; Samson Properties",
+   "lines": [
+    [
+     "Cathy Kane",
+     "703-868-1976",
+     "cathykane1@gmail.com"
+    ]
+   ],
+   "office": "Samson Properties"
+  },
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Gainesville between Haymarket and Virginia Gateway, with Dominion Valley, the UVA Haymarket Medical Center and Battlefield High close by and I-66 for the commute. The arrows point to everything past the edge of the map.",
+   "center": {
+    "lat": 38.8191467,
+    "lng": -77.6054077,
+    "label": "6758 Edgartown Way"
+   },
+   "pins": [
+    {
+     "name": "Battlefield High School",
+     "sub": "Prince William County Public Schools",
+     "lat": 38.8453326,
+     "lng": -77.6298068
+    },
+    {
+     "name": "UVA Haymarket Medical Center",
+     "sub": "Hospital",
+     "lat": 38.820752,
+     "lng": -77.6425481
+    },
+    {
+     "name": "Dominion Valley Country Club",
+     "sub": "Golf and club",
+     "lat": 38.840535,
+     "lng": -77.6419155
+    }
+   ],
+   "arrows": [
+    [
+     182.4,
+     [
+      "Virginia Gateway",
+      "Dining and shopping &middot; 5 min"
+     ]
+    ],
+    [
+     227.0,
+     [
+      "Wegmans",
+      "Gainesville &middot; 11 min"
+     ]
+    ],
+    [
+     90.7,
+     [
+      "Manassas Battlefield",
+      "Trails &middot; 11 min"
+     ]
+    ],
+    [
+     80.3,
+     [
+      "Washington, DC",
+      "Union Station &middot; 57 min"
+     ]
+    ]
+   ]
+  },
+  "amenities_lede": "Virginia Gateway and Wegmans for shopping and dining, historic Haymarket, Dominion Valley for golf, Manassas Battlefield for trails, and I-66 toward Washington.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "UVA Haymarket Medical Center",
+      "Hospital",
+      2.6
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      15.79
+     ],
+     [
+      "Washington, DC",
+      "Union Station",
+      42.5
+     ]
+    ]
+   },
+   {
+    "title": "Family Dining",
+    "items": [
+     [
+      "Historic Haymarket",
+      "Washington Street",
+      2.24
+     ]
+    ]
+   },
+   {
+    "title": "Shopping",
+    "items": [
+     [
+      "Virginia Gateway",
+      "Shops and restaurants",
+      2.18
+     ],
+     [
+      "Wegmans",
+      "Gainesville",
+      4.58
+     ]
+    ]
+   },
+   {
+    "title": "Parks and Recreation",
+    "items": [
+     [
+      "Dominion Valley Country Club",
+      "Golf and club",
+      3.2
+     ],
+     [
+      "Jiffy Lube Live",
+      "Concerts",
+      3.2
+     ],
+     [
+      "Manassas National Battlefield",
+      "Trails",
+      4.76
+     ]
+    ]
+   }
+  ]
+ }
+}

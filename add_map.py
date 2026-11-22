@@ -565,6 +565,33 @@ DATA["13364_Ferry_Landing"] = {
               ("Getting Around", "Reagan National", "DCA", 38.8501079, -77.039176),
               ("Getting Around", "Washington, DC", "Union Station", 38.897419, -77.006226)],
 }
+DATA["6758_Edgartown"] = {
+    # 6758 Edgartown Way, Gainesville. 22 Nov 2026. Coordinates verified via
+    # places search 22 Nov 2026.
+    "center": (38.8191467, -77.6054077, "6758 Edgartown Way"),
+    "title": "The Neighborhood",
+    "lede": "Gainesville between Haymarket and Virginia Gateway, with Dominion Valley, the UVA Haymarket "
+            "Medical Center and Battlefield High close by and I-66 for the commute. The arrows point to "
+            "everything past the edge of the map.",
+    "amen_lede": "Virginia Gateway and Wegmans for shopping and dining, historic Haymarket, Dominion Valley "
+                 "for golf, Manassas Battlefield for trails, and I-66 toward Washington.",
+    "pins": [
+        ("Battlefield High School", "Prince William County Public Schools", 38.8453326, -77.6298068, "Schools"),
+        ("UVA Haymarket Medical Center", "Hospital", 38.820752, -77.6425481, "Getting Around"),
+        ("Dominion Valley Country Club", "Golf and club", 38.840535, -77.6419155, "Parks and Recreation"),
+    ],
+    "arrows": [((38.7948622, -77.6067255), "Virginia Gateway", "Dining and shopping"),
+               ((38.784336, -77.653277), "Wegmans", "Gainesville"),
+               ((38.8185193, -77.5374564), "Manassas Battlefield", "Trails"),
+               ((38.897419, -77.006226), "Washington, DC", "Union Station")],
+    "extra": [("Shopping", "Virginia Gateway", "Shops and restaurants", 38.7948622, -77.6067255),
+              ("Shopping", "Wegmans", "Gainesville", 38.784336, -77.653277),
+              ("Family Dining", "Historic Haymarket", "Washington Street", 38.8119916, -77.6360834),
+              ("Parks and Recreation", "Manassas National Battlefield", "Trails", 38.8185193, -77.5374564),
+              ("Parks and Recreation", "Jiffy Lube Live", "Concerts", 38.7855213, -77.5901733),
+              ("Getting Around", "Dulles International", "IAD", 38.9522483, -77.4578886),
+              ("Getting Around", "Washington, DC", "Union Station", 38.897419, -77.006226)],
+}
 CARD_ORDER = ["Getting Around", "Fine Dining", "Family Dining", "Shopping",
               "Downtown Vienna", "Every Day", "Schools and Parks", "Parks and Recreation", "Walk to Town"]
 
