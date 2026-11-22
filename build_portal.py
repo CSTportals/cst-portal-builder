@@ -7928,7 +7928,10 @@ def seller_email_v2(p):
          "searches and analysis of market condition.</b>"),  # Casey, 20 Nov 2026: bold
         (f"{root}/{pre}_Pricing_Strategy_Summary.pdf" if root else None, "Pricing Strategy Summary&trade;",
          "A summary of our preliminary pricing ladder, major buyer thresholds, and triggers for "
-         "adjusting our strategy based on market response."),
+         "adjusting our strategy based on market response. Getting the highest value is not "
+         "about price, it&rsquo;s about a strategy of testing markets to find the buyer pool "
+         "that delivers the highest and best contracts (see below). 95% of our sales avoid "
+         "home inspection and financing contingencies."),
         (bp + "/" if bp else None, "Buyer Portal&trade;",
          "A powerful marketing tool that showcases your home&rsquo;s value, premium features, "
          "upgrades, schools, amenities, maps, and lifestyle advantages to prospective buyers."),
