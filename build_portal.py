@@ -7805,7 +7805,8 @@ def agent_instructions(p, r, subject):
 
 
 def recovery_seller_email(p, r):
-    """Casey's recovery (PL) seller email, 21 Nov 2026 (6:15 PM), word for word:
+    """Casey's recovery (PL) seller email (steps revised 22 Nov 2026: Inspect,
+    TEMP Off, Test, Adjust Price with Fall Back / Rip Cord sub-steps), 21 Nov 2026 (6:15 PM), word for word:
     the agent box at 14pt, the email at 24pt Times New Roman.
     Fall Back = r["soft"], Rip Cord = r["hard"] -- the two relaunch prices on
     the Recovery Roadmap. Signature: the listing agent (PL agent on a PL)."""
@@ -7848,20 +7849,23 @@ secure the best possible offer.</p>
 
 <h3 {H}>Our 4-Step Recovery Strategy</h3>
 
-<p {S}><b>1. Temporarily Off Market</b></p>
+<p {S}><b>1. Inspect Property and Review Comments</b></p>
+<p style="margin-top:0;">Does the property need any updates that can make it more appealing to buyers?</p>
+
+<p {S}><b>2. Temporarily Off Market</b></p>
 <p style="margin-top:0;">Take the home TEMP Off Market. Buyers and agents watching the listing may call to find out why.</p>
 
-<p {S}><b>2. Test Buyer Interest</b></p>
+<p {S}><b>3. Test Buyer Interest</b></p>
 <p style="margin-top:0;">If they call, we explain that the home will return at a lower price. This may encourage buyers
 to make an offer before the reduction.</p>
 
-<p {S}><b>3. Fall Back Price &mdash; {fb}</b></p>
-<p style="margin-top:0;">If we receive interest but no acceptable offer, we return to the market at {fb} to attract more
-buyers.</p>
-
-<p {S}><b>4. Rip Cord Price &mdash; {rc}</b></p>
-<p style="margin-top:0;">If no one calls, that suggests our price is still too high. We return at {rc} to reach a much
-larger buyer pool.</p>
+<p {S}><b>4. Adjust Price</b></p>
+<p style="margin:0 0 2px 1.2em;"><i>If some buyers call &mdash; Fall Back Price, {fb}</i></p>
+<p style="margin:0 0 14px 1.2em;">If we receive interest but no acceptable offer, we return to the market at {fb} to
+attract more buyers.</p>
+<p style="margin:0 0 2px 1.2em;"><i>If no one calls &mdash; Pull the Rip Cord, {rc}</i></p>
+<p style="margin:0 0 14px 1.2em;">If no one calls, that suggests our price is still too high. We pull the rip cord and
+return at {rc} to reach a much larger buyer pool.</p>
 
 <h3 {H}>Your CST Seller Portal&trade; Assets</h3>
 
