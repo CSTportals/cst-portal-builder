@@ -1968,6 +1968,8 @@ def market_conditions(market, three=False):
     # Casey, 15 Oct 2026: the four statistics are now the CST Market
     # Intelligence(TM) dashboard -- "not four ordinary statistic boxes".
     stats = cmi_dashboard(canonical_stats(market, c), c, three=three)
+    if three:
+        stats = stats.replace(CMI_SCALE, "")
     sub = f'<p class="mc-sub">{c["sub"]}</p>' if c.get("sub") else ""
     upd = (f'<div class="mc-update"><b>Market Update:</b> {c["update"]}</div>'
            if c.get("update") else "")
@@ -1979,6 +1981,14 @@ def market_conditions(market, three=False):
     # not the Roadmap -- handed over through GUIDE_NOTES.
     if c.get("uc30_explain"):
         GUIDE_NOTES["uc30"] = c["uc30_explain"]
+    if three:
+        # Casey, 22 Nov 2026: "Just do headlines three indexes: %UC, DOM,
+        # %UC last 30, then map then homes ... Cut everything else out of
+        # Current Comp."
+        return ('    <div class="mc">\n'
+                f'      <h3 class="mc-head">{flags}{head}</h3>\n'
+                f'      {stats}\n'
+                '    </div>')
     return (
         '    <div class="mc">\n'
         '      <div class="mc-eyebrow">Current Market Conditions</div>\n'
@@ -1989,8 +1999,12 @@ def market_conditions(market, three=False):
         '    </div>')
 
 
-def market_block(market):
-    """Regional market heading, optional stats table, optional absorption strip."""
+def market_block(market, compact=False):
+    """Regional market heading, optional stats table, optional absorption strip.
+    compact=True (Roadmap Current Competition, Casey 22 Nov 2026): the flag
+    headline and three gauges only -- no market name, update, table or strip.
+    Not live-wrapped: the live MSS block would bring the rest back; the
+    gauges refresh when the portal is rebuilt on the week's MSS."""
     slug = market.get("slug")
     head = '    <h3 style="text-align:center; font-family:\'Playfair Display\',Georgia,serif; font-size:16px; margin:0 0 4px;">'
     if slug:
@@ -2031,6 +2045,8 @@ def market_block(market):
         # The MSS flag block replaces the old subhead line: it says the same
         # thing and more, and two reads of the market stacked is noise.
         _mc = market_conditions(market, three=True)
+        if compact:
+            return _mc
         # Casey, 21 Oct 2026: follows the weekly MSS live (see live_slug).
         _ls = market.get("slug")
         if _mc and _ls and cached.get("conditions") is market.get("conditions"):
@@ -5814,10 +5830,8 @@ def build_roadmap(p, s, out):
     comp_section = f"""<section{upgrade_break}>
   <div class="wrap">
     <h2 class="section-title">Current Competition</h2>
-{market_block(p["market"])}
+{market_block(p["market"], compact=True)}
 <!--RMMl-anchor-->
-    <p class="section-sub" style="margin-top:30px;">{comp_lede}</p>
-    {f'<p class="stat-line">{stat}</p>' if stat else ''}
     {f"""<div class="table-wrap">
       <table>
         <thead><tr><th>Status</th><th>Property</th><th>DOM</th><th>Built</th><th>Finished SF</th><th>Assessment</th><th>List Price</th></tr></thead>
