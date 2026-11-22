@@ -7864,7 +7864,7 @@ to make an offer before the reduction.</p>
 buyer pool. Lower prices usually produce higher prices (see below).</p>
 <p style="margin:0 0 2px 1.2em;"><i>If some buyers call &mdash; Fall Back Price, {fb}</i></p>
 <p style="margin:0 0 14px 1.2em;">If we receive interest but no acceptable offer, we return to the market at {fb} to
-attract more buyers.</p>
+get exposure to a larger buyer pool.</p>
 <p style="margin:0 0 2px 1.2em;"><i>If no one calls &mdash; Pull the Rip Cord, {rc}</i></p>
 <p style="margin:0 0 14px 1.2em;">This suggests our price is not close to the buyer pool. We go to {rc} to
 guarantee the largest buyer pool. Whatever buyers bid is what the home is worth at this time.</p>
