@@ -5404,7 +5404,7 @@ def build_roadmap(p, s, out):
         strategy_para = (
             f"The {s.anchor_basis_label} of <b>{money(s.anchor_basis)}</b> is the basis "
             "for positioning, so the strategy begins at the first buyer threshold below "
-            f"it &mdash; the <b>{abbrev(s.anchor)} mark</b>.")
+            f"it &mdash; the <b>{abbrev(s.closest_buyer_threshold)} mark</b>.")
         if _sf.get("safe_haven"):
             # The paragraph named the grid line the price no longer uses.
             strategy_para = (

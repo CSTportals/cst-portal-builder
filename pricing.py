@@ -231,7 +231,8 @@ def abbrev(v):
     """$943,216 -> $943K ; $2,446,200 -> $2.45M"""
     if v < 1_000_000:
         return f"${round(v / 1_000):,}K"
-    return f"${v / 1_000_000:.2f}M"
+    # $1.00M reads as $1M and $2.50M as $2.5M -- the way Casey writes them.
+    return "$" + f"{v / 1_000_000:.2f}".rstrip("0").rstrip(".") + "M"
 
 
 def compute(dated, customary, customary_list=None, premium=0,
@@ -333,6 +334,11 @@ def compute(dated, customary, customary_list=None, premium=0,
 
     coming_soon = anchor - 1
     computed_coming_soon = coming_soon
+    # Casey, 22 Nov 2026 (6758 Edgartown): "Rule is first threshold UNDER
+    # customary value." The threshold the documents name is always the grid
+    # line at or below the basis -- a hand-set Coming Soon above Customary
+    # moves the price ladder, never the threshold.
+    basis_threshold = anchor
 
     # Casey, 10 Oct 2026: the market picks the formula. In a conservative
     # market (buyers or neutral in control) Coming Soon tests the first
@@ -417,7 +423,7 @@ def compute(dated, customary, customary_list=None, premium=0,
         coming_soon_above=coming_soon_above,
         coming_soon=coming_soon,
         anchor=anchor,
-        closest_buyer_threshold=anchor,
+        closest_buyer_threshold=basis_threshold,
         anchor_basis=basis,
         anchor_basis_label=basis_label,
         fallback=fallback,
