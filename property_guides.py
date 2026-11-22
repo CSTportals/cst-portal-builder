@@ -172,10 +172,11 @@ def buyer_guide(p, b_dir):
           "Tap <b>Pricing Report</b> for the printable Buyer Pricing Report. Scan the <b>QR code</b> to put "
           "this portal on your phone."]),
         (sh.get(names[0]), "Authenticated Values&trade;", "How the price was set",
-         [f"<b>Customary Value {money(v['customary'])}</b> is what a home of this standard commands. "
+         [_lp_line(p),
+          f"<b>Customary Value {money(v['customary'])}</b> is what a home of this standard commands. "
           f"<b>Premium Value {money(v['premium'])}</b> is what it commands when upgrades, finishes and "
           "presentation exceed the standard.",
-          "Historically, CST listings sell between Customary and Premium Values. Sometimes more."]),
+          "Historically, CST listings sell between Customary and Premium Values (sometimes more)."]),
         (sh.get(names[1]), "Market Snapshot", "Every home it is competing with",
          ["Every home on the market against this one, and what each is asking, so you can compare value."]),
         (sh.get(names[2]), "Amenities and Transportation", "How far everything is",
@@ -188,6 +189,40 @@ def buyer_guide(p, b_dir):
     ]
     return _page("Your Buyer Portal Guide",
                  f"{addr} &mdash; what each part of the portal shows you, and how to use it.", secs, _brand(p))
+
+
+def _lp_line(p):
+    """Casey, 22 Nov 2026: "The List Price reflects where the largest Buyer
+    Pool is for this home." """
+    return "The List Price reflects where the largest Buyer Pool is for this home."
+
+
+def buyer_report_guide(p, s_dir):
+    """Casey, 22 Nov 2026: a Guide to Understanding the Buyer Report, linked
+    prominently from the report itself."""
+    page = s_dir / f"{p['prefix']}_Buyer_Report.html"
+    if not page.exists():
+        return None
+    v = p["values"]
+    names = ["Comparable Property Analysis", "Authenticated Values"]
+    sh = _shots(page.as_uri(), names)
+    secs = [
+        (sh.get("_top"), "The Buyer Pricing Report", p["address"],
+         ["A one-page summary for buyers and their agents: the home, the sales that authenticate its value, "
+          "and the value range itself. It is displayed at the listing and at open houses, and prints as a PDF."]),
+        (sh.get(names[0]), "Comparable Property Analysis", "The sales behind the value",
+         ["Each comparable is a real closed sale of similar size, age, location and time &mdash; the same tests "
+          "an appraiser applies &mdash; with the averages by age and size and by price range.",
+          "Compare the home&rsquo;s year built, size and lot with the sales to see where it stands."]),
+        (sh.get(names[1]), "Authenticated Values&trade;", "What the home is worth",
+         [_lp_line(p),
+          f"<b>Customary Value {money(v['customary'])}</b> is what a home of this standard commands. "
+          f"<b>Premium Value {money(v['premium'])}</b> is what it commands when upgrades, finishes and "
+          "presentation exceed the standard.",
+          "Historically, CST listings sell between Customary and Premium Values (sometimes more)."]),
+    ]
+    return _page("Guide to Understanding the Buyer Report",
+                 f"{p['address']} &mdash; what each part of the Buyer Pricing Report tells you.", secs, _brand(p))
 
 
 def mss_guide(p):
@@ -284,6 +319,11 @@ def build(p, which=("roadmap", "mss", "moveup", "buyer")):
         (s_dir / "Market_Snapshot_Guide.html").write_text(h, encoding="utf-8"); made.append("market snapshot")
     if "moveup" in which and (h := moveup_guide(p, s_dir)):
         (s_dir / "Move_Up_Guide.html").write_text(h, encoding="utf-8"); made.append("move up")
+    if "roadmap" in which and (h := buyer_report_guide(p, s_dir)):
+        for d in (s_dir, b_dir, ROOT / "output" / f"{pre}_Buyer_Small"):
+            if d.exists():
+                (d / "Buyer_Report_Guide.html").write_text(h, encoding="utf-8")
+        made.append("buyer report")
     if "buyer" in which and (h := buyer_guide(p, b_dir)):
         for d in (s_dir, b_dir, ROOT / "output" / f"{pre}_Buyer_Small"):
             if d.exists():

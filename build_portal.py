@@ -6075,7 +6075,7 @@ BR_WALK_CSS = """
 
 
 def build_buyer_report(p, s, out, stats=True, balance=False, cover=True, loves=0, walk=0,
-                       walk_notes=False, cover_px=0):
+                       walk_notes=False, cover_px=0, guide_in_mast=False):
     subj, addr = p["subject"], p["address"]
     # PDF rule: the sub-photo row is stripped from the printed gallery;
     # only the main photo is kept. The web page keeps all of them.
@@ -6277,6 +6277,23 @@ def build_buyer_report(p, s, out, stats=True, balance=False, cover=True, loves=0
 </section>
 """
 
+    # Casey, 22 Nov 2026: "Guide to Understanding the Buyer Report should have
+    # a prominent place on Buyer Reports." Absolute link so it works from the
+    # printed PDF as well.
+    _gr = (seller_host(p) or "").rstrip("/")
+    _gh = f"{_gr}/Buyer_Report_Guide.html" if _gr else "Buyer_Report_Guide.html"
+    _mast_guide = (f'<a href="{_gh}" style="display:block;margin-top:4px;font:700 11px Georgia,serif;'
+                   'color:#8A6A2E;text-decoration:underline;">Guide to Understanding the Buyer Report &rarr;</a>'
+                   if p.get("guides") is not False else "")
+    _br_guide = ("" if p.get("guides") is False or guide_in_mast else
+        '<style>@media print{.br-guide-s{padding:0!important}.br-guide{margin:6px auto 0!important;padding:4px 12px!important;font-size:12.5px!important;line-height:1.3!important}.br-guide span{display:inline!important;margin:0 6px!important;font-size:9.5px!important}}</style>'
+        f'<section class="br-guide-s" style="padding:0;"><div class="wrap"><a class="br-guide" href="{_gh}" target="_blank" rel="noopener" '
+        'style="display:block;margin:26px auto 4px;max-width:760px;background:#1F2A44;color:#E8C77A;'
+        'text-align:center;text-decoration:none;border-radius:8px;padding:14px 18px;'
+        "font:700 19px 'Playfair Display',Georgia,serif;-webkit-print-color-adjust:exact;print-color-adjust:exact;\">"
+        '<span style="display:block;font:700 10.5px Georgia,serif;letter-spacing:.22em;text-transform:uppercase;'
+        'color:#C9D2E0;margin-bottom:4px;">New to this report?</span>Guide to Understanding the Buyer Report '
+        f'&rarr;<span style="display:block;font:12px Georgia,serif;color:#C9D2E0;margin-top:4px;">{_gh.replace("https://", "")}</span></a></div></section>\n')
     br_masthead = br_cover if br_cover else f"""<header class="masthead">
   <div class="mast-row">
     <div class="mast-left">
@@ -6287,7 +6304,7 @@ def build_buyer_report(p, s, out, stats=True, balance=False, cover=True, loves=0
       <p class="addr">{addr}</p>
       <p class="city">{p["city"]}, {p["state"]}</p>
     </div>
-    <div class="mast-right"><h1 class="title">Buyer Pricing Report</h1>
+    <div class="mast-right"><h1 class="title">Buyer Pricing Report</h1>{_mast_guide if guide_in_mast else ""}
 {buyer_qr_corner(p)}    </div>
   </div>
 </header>
@@ -6357,7 +6374,7 @@ def build_buyer_report(p, s, out, stats=True, balance=False, cover=True, loves=0
 </script>
 
 {br_masthead}
-{br_stats}{br_headlines}{walk_to_strip(p, walk, walk_notes)}{comps_section}
+{br_stats}{_br_guide}{br_headlines}{walk_to_strip(p, walk, walk_notes)}{comps_section}
 <section class="br-values">
   <div class="wrap">
     <h2 class="section-title">Authenticated Values&trade;</h2>
@@ -8495,11 +8512,14 @@ def fit_buyer_report(p, s, out):
         return _pdf_pages(out / f"{stem}.pdf") or 99
 
     base, label = None, ""
-    ladder = [(True, True, "full cover"),
-              (True, False, "cover without the stat strip"),
-              (False, True, "condensed header")]
-    for cover, stats, lbl in ladder:
-        kw = dict(stats=stats, balance=True, cover=cover)
+    # Casey, 22 Nov 2026: the Buyer Report Guide band is prominent; only on
+    # the tightest layout does it shrink to a line in the masthead.
+    ladder = [(True, True, "full cover", False),
+              (True, False, "cover without the stat strip", False),
+              (False, True, "condensed header", False),
+              (False, True, "condensed header, guide link in the masthead", True)]
+    for cover, stats, lbl, gm in ladder:
+        kw = dict(stats=stats, balance=True, cover=cover, guide_in_mast=gm)
         if pages(loves=0, walk=0, **kw) > 2:
             continue                       # this rung does not fit at all
         # It fits bare, so find the most Walk To places it will carry. The
