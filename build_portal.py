@@ -7794,7 +7794,7 @@ def recovery_seller_email(p, r):
     li = "".join(f'<p style="margin:0 0 8px;">{i}. {a(u, n)} &mdash; {d}</p>\n'
                  for i, (u, n, d) in enumerate(items, 1))
     H = 'style="margin:26px 0 10px;font-size:24pt;font-weight:700;"'
-    S = 'style="margin:0 0 2px;"'
+    S = 'style="margin:18px 0 2px;"'
     return f"""<!DOCTYPE html>
 <html><head><meta charset="UTF-8">
 <title>{p["address"]} — Recovery seller email</title></head>
@@ -7808,18 +7808,18 @@ secure the best possible offer.</p>
 <h3 {H}>Our 4-Step Recovery Strategy</h3>
 
 <p {S}><b>1. Temporarily Off Market</b></p>
-<p>Take the home TEMP Off Market. Buyers and agents watching the listing may call to find out why.</p>
+<p style="margin-top:0;">Take the home TEMP Off Market. Buyers and agents watching the listing may call to find out why.</p>
 
 <p {S}><b>2. Test Buyer Interest</b></p>
-<p>If they call, we explain that the home will return at a lower price. This may encourage buyers
+<p style="margin-top:0;">If they call, we explain that the home will return at a lower price. This may encourage buyers
 to make an offer before the reduction.</p>
 
 <p {S}><b>3. Fall Back Price &mdash; {fb}</b></p>
-<p>If we receive interest but no acceptable offer, we return to the market at {fb} to attract more
+<p style="margin-top:0;">If we receive interest but no acceptable offer, we return to the market at {fb} to attract more
 buyers.</p>
 
 <p {S}><b>4. Rip Cord Price &mdash; {rc}</b></p>
-<p>If no one calls, that suggests our price is still too high. We return at {rc} to reach a much
+<p style="margin-top:0;">If no one calls, that suggests our price is still too high. We return at {rc} to reach a much
 larger buyer pool.</p>
 
 <h3 {H}>Your CST Seller Portal&trade; Assets</h3>
