@@ -4127,7 +4127,7 @@ def townhome_table_html(H):
         f"<tr><td {td}>{x['address']}</td><td {tr}>{money(x['orig'])}</td>"
         f"<td {tr}>{money(x['sold'])}</td><td {tr}><b>+{money(x['over'])}</b></td>"
         f"<td {tr}>{round(100 * x['sold'] / x['orig'])}%</td><td {tr}>{x['dom']}</td></tr>" for x in ov)
-    return (f'<h3 {H}>CST Track Record</h3>\n'
+    return (f'<h3 {H}>CST Track Record &mdash; Town Homes</h3>\n'
             f'<p><b>{pct}% of our town homes sell over list price in an average of {days} days.</b></p>\n'
             f'<table style="border-collapse:collapse;width:100%;font-size:0.7em;font-family:inherit;">'
             f"<tr><th {th}>Town Home</th><th {thr}>List</th><th {thr}>Sold</th><th {thr}>Over List</th>"
