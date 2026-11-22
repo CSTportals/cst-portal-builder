@@ -4085,6 +4085,27 @@ def _range_m(x):
     return f"{_abbr_m(lo)}&ndash;{_abbr_m(lo + step)}"
 
 
+def cst_over_list_rows():
+    """CST resales that closed over original list (data/CST_Resales.xlsx, the
+    MLS export behind the track record), largest amount over first."""
+    import openpyxl
+    src = Path(__file__).resolve().parent / "data" / "CST_Resales.xlsx"
+    if not src.exists():
+        return []
+    ws = openpyxl.load_workbook(src, read_only=True, data_only=True).worksheets[0]
+    rows = list(ws.iter_rows(values_only=True))
+    h = rows[0]
+    ix = {k: h.index(k) for k in ("Address", "City", "Close Price", "Original List Price", "DOM", "Close Date")}
+    out = []
+    for r in rows[1:]:
+        cp, ol = r[ix["Close Price"]], r[ix["Original List Price"]]
+        if cp and ol and cp > ol:
+            out.append(dict(address=re.sub(r"\bMacarthur\b", "MacArthur", r[ix["Address"]] or ""), city=(r[ix["City"]] or "").title().replace("Mclean", "McLean"),
+                            orig=int(ol), sold=int(cp), over=int(cp - ol), dom=r[ix["DOM"]],
+                            date=r[ix["Close Date"]]))
+    return sorted(out, key=lambda x: -x["over"])
+
+
 def build_followup_email(p, s, out):
     """The follow-up email after the walk-through (Casey, 21 Nov 2026, from his
     3106 Whimbrell letter to Chad). "Once I have seen the home, I will update
@@ -4163,6 +4184,33 @@ def build_followup_email(p, s, out):
     phone = pl.get("phone") or ag.get("phone") or "703-508-2535"
     intro = "".join(f"<p>{x}</p>\n" for x in fu.get("intro", []))
     H = 'style="margin:26px 0 8px;font-size:24pt;font-weight:700;"'
+    # Casey, 21 Nov 2026: Next Steps before the Seller Portal.
+    _next = "".join(f"<p>{x}</p>\n" for x in fu.get("next_steps", [
+        "With hundreds of thousands of dollars at risk, strategic improvements are critical&mdash;"
+        "and a Casey Samson Team specialty.",
+        "The right cosmetic improvements can deliver a substantial increase in perceived value at a "
+        "fraction of the cost. When the home is complete and pictures are done, the Buyer Portal will "
+        "be completed and ready for the buyers."]))
+    # Casey, 21 Nov 2026: "At the end of the email show the homes from our
+    # track record that sold over list price."
+    _ov = cst_over_list_rows() if fu.get("over_list_table", True) else []
+    if _ov:
+        _td = 'style="padding:6px 10px;border-bottom:1px solid #ddd;"'
+        _tr = 'style="padding:6px 10px;border-bottom:1px solid #ddd;text-align:right;"'
+        _body = "".join(
+            f"<tr><td {_td}>{x['address']}, {x['city']}</td><td {_tr}>{money(x['orig'])}</td>"
+            f"<td {_tr}>{money(x['sold'])}</td><td {_tr}><b>+{money(x['over'])}</b></td>"
+            f"<td {_tr}>{x['dom']}</td></tr>" for x in _ov)
+        _th = 'style="padding:6px 10px;border-bottom:2px solid #000;text-align:left;"'
+        _thr = 'style="padding:6px 10px;border-bottom:2px solid #000;text-align:right;"'
+        _over = (f'<h3 {H}>Casey Samson Team Homes Sold Over List Price</h3>\n'
+                 f'<table style="border-collapse:collapse;width:100%;font-size:16pt;">'
+                 f"<tr><th {_th}>Home</th><th {_thr}>List</th><th {_thr}>Sold</th>"
+                 f"<th {_thr}>Over List</th><th {_thr}>Days</th></tr>{_body}</table>\n"
+                 f'<p style="font-size:14pt;color:#444;">{len(_ov)} homes sold over their original list '
+                 "price. Casey Samson Team resales, $1.5M and above, since 2025. Source: MLS Bright.</p>\n")
+    else:
+        _over = ""
     html = f"""<!DOCTYPE html>
 <html><head><meta charset="UTF-8">
 <title>{p["address"]} — Follow-up email</title></head>
@@ -4179,9 +4227,11 @@ def build_followup_email(p, s, out):
 {f"<p>Our target: Buyers searching {areas}.</p>" if areas else ""}
 <ol style="margin:0 0 10px;">{sli}</ol>
 
-<p>{fu.get("over_list_note", "Selling over list is not unusual for our team.")} The key is getting
+<p>{fu.get("over_list_note", "Selling over list is not unusual for our team (see below).")} The key is getting
 buyers through the door to experience the upgrades and fall in love with the home.</p>
 
+<h3 {H}>Next Steps</h3>
+{_next}
 <h3 {H}>Your CST Seller Portal&trade;</h3>
 <p>Here are the five tools supporting our strategy:</p>
 <ol style="margin:0 0 10px;">{tli}</ol>
@@ -4195,7 +4245,7 @@ buyers through the door to experience the upgrades and fall in love with the hom
 <p style="line-height:1.35;">{first}<br>{team}<br>{phone}</p>
 
 <p>P.S. {fu.get("ps", "Please confirm you received this. Thanks!")}</p>
-
+{_over}
 </body></html>
 """
     (out / f"{pre}_Follow_Up_Email.html").write_text(html, encoding="utf-8")
