@@ -4164,6 +4164,15 @@ def over_list_table_html(H='style="margin:26px 0 8px;font-weight:700;"', p=None)
             f'<p style="font-size:0.6em;color:#444;">Top {len(ov)} CST sales over list '
             "price since 2025. Source: MLS Bright.</p>\n")
 
+def _band_span(lo, hi):
+    """Customary to Premium in Casey's round numbers: $1,791,436-$1,934,751
+    -> $1.75M-$1.95M (50K bands over $1M, 25K under)."""
+    step = 50_000 if lo >= 1_000_000 else 25_000
+    a = int(lo // step * step)
+    b = int(-(-hi // step) * step)
+    return f"{_abbr_m(a)}&ndash;{_abbr_m(b)}"
+
+
 def build_followup_email(p, s, out):
     """The follow-up email after the walk-through (Casey, 21 Nov 2026, from his
     3106 Whimbrell letter to Chad). "Once I have seen the home, I will update
@@ -4204,7 +4213,7 @@ def build_followup_email(p, s, out):
                     "presentation above the standard")
     pv, cs, fb, deep = f["preview"], f["coming_soon"], f["fallback"], f["deep"]
     tr = fu.get("target_range") or (f"{_abbr_m(cs)}&ndash;{_abbr_m(pv)}" if pv > cs
-                                     else f"{_abbr_m(cust)}&ndash;{_abbr_m(int(v.get('premium') or cust))}")
+                                     else _band_span(cust, int(v.get("premium") or cust)))
     vals.append(f"<b>{tr}:</b> Our target sales range once buyers experience the home")
     vli = "".join(f"<li>{x}</li>" for x in vals)
 
