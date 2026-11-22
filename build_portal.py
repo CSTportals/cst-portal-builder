@@ -7899,7 +7899,8 @@ marketing tools to generate the strongest possible offer.</p>
 """
 
 def seller_email_v2(p):
-    """Casey's 20 Nov 2026 seller email. Links follow the published site:
+    """Casey's seller email (20 Nov 2026; revised 22 Nov 2026 -- The Standard
+    paragraph, Buyer Portal premium line, no tagline line). Links follow the published site:
     the Roadmap as its lowercase page name without .html, the Market Snapshot
     as cstmarketupdate.netlify.app/<market slug, lowercase>."""
     pre = p["prefix"]
@@ -7915,6 +7916,12 @@ def seller_email_v2(p):
     phone = pl.get("phone") or ag.get("phone") or "Agent Phone"
     names = p.get("seller_names") or "(Seller name)"
     when = p.get("meeting") or "(day) at (time)"
+    # Casey, 22 Nov 2026 (Leigh, 9002 Lupine Den): "We look forward to seeing
+    # you tomorrow at 9." -- no "on" before a relative day.
+    _on = "" if re.match(r"(tomorrow|today|tonight|this|next)\b", when.lower()) else "on "
+    # The Standard paragraph is CST's record; on a private label it is named
+    # as CST's so the branding pass never hands it to the agent.
+    _std = "The CST Standard is" if pl else "The Standard for the Casey Samson Team is"
 
     def a(href, text):
         return f'<a href="{href}">{text}</a>' if href else text
@@ -7934,7 +7941,9 @@ def seller_email_v2(p):
          "home inspection and financing contingencies."),
         (bp + "/" if bp else None, "Buyer Portal&trade;",
          "A powerful marketing tool that showcases your home&rsquo;s value, premium features, "
-         "upgrades, schools, amenities, maps, and lifestyle advantages to prospective buyers."),
+         "upgrades, schools, amenities, maps, and lifestyle advantages to prospective buyers. "
+         "It authenticates premium values and gives the buyer confidence it&rsquo;s OK to pay "
+         "Premium Pricing."),
         (f"{root}/{pre}_Buyer_Report.pdf" if root else None, "Buyer Flyer",
          "Displayed at the listing and open houses, highlighting your home&rsquo;s authenticated "
          "values and premiums to help buyers understand and appreciate its value."),
@@ -7951,17 +7960,15 @@ def seller_email_v2(p):
 
 <p>{names},</p>
 
-<p>We look forward to seeing you on {when}.</p>
+<p>We look forward to seeing you {_on}{when}.</p>
 
-<p>Our goal is to maximize the value of your home through strategic pricing and professional
-marketing that finds the largest buyer pool. {a(root + "/" if root else None, "The Seller Portal")}
-brings together five powerful tools designed to achieve a successful sale:</p>
+<p>{_std} to sell in an average of 6 days, create competition for the home, and receive highest and
+best offers with no contingencies. The Pricing and Selling Strategy, outlined in our
+{a(root + "/" if root else None, "Seller Portal")}, shows how we use five powerful tools to do it.</p>
 
 {li}
 <p>Each tool is designed to attract buyers, build confidence in your home&rsquo;s value, and help
 us negotiate the strongest possible offer.</p>
-
-<p><i>It&rsquo;s Not a Price, It&rsquo;s a Strategy.&trade;</i></p>
 
 <p>We can review when we meet.</p>
 
