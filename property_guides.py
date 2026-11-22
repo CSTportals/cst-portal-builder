@@ -224,9 +224,9 @@ def buyer_guide(p, b_dir):
          ["Headlines identify the most important things buyers need to know about the home."]),
         (sh.get(names[0]), "Authenticated Values&trade;", "How the price was set",
          [_lp_line(p),
-          f"<b>Customary Value {money(v['customary'])}</b> is what a home of this standard commands. "
-          f"<b>Premium Value {money(v['premium'])}</b> is what it commands when upgrades, finishes and "
-          "presentation exceed the standard.",
+          f"<b>Customary Value</b> is {money(v['customary'])} for a home of this size and age that has sold in "
+          f"the past 90 days. <b>Premium Value</b> of {money(v['premium'])} is what premium homes with superior "
+          "finishes and presentation command.",
           "Historically, CST listings sell between Customary and Premium Values (sometimes more)."]),
         (sh.get(names[1]), "See the Home", "The photography",
          ["The full gallery of the home. Tap any photo to see it large."]),
@@ -270,7 +270,8 @@ def buyer_guide(p, b_dir):
 def _lp_line(p):
     """Casey, 22 Nov 2026: "The List Price reflects where the largest Buyer
     Pool is for this home." """
-    return "The List Price reflects where the largest Buyer Pool is for this home."
+    return ("The List Price reflects where The Casey Samson Team test found the largest Buyer Pool is "
+            "for this home.")
 
 
 def buyer_report_guide(p, s_dir):
@@ -292,9 +293,9 @@ def buyer_report_guide(p, s_dir):
           "Compare the home&rsquo;s year built, size and lot with the sales to see where it stands."]),
         (sh.get(names[1]), "Authenticated Values&trade;", "What the home is worth",
          [_lp_line(p),
-          f"<b>Customary Value {money(v['customary'])}</b> is what a home of this standard commands. "
-          f"<b>Premium Value {money(v['premium'])}</b> is what it commands when upgrades, finishes and "
-          "presentation exceed the standard.",
+          f"<b>Customary Value</b> is {money(v['customary'])} for a home of this size and age that has sold in "
+          f"the past 90 days. <b>Premium Value</b> of {money(v['premium'])} is what premium homes with superior "
+          "finishes and presentation command.",
           "Historically, CST listings sell between Customary and Premium Values (sometimes more)."]),
     ]
     return _page("Guide to Understanding the Buyer Report",
