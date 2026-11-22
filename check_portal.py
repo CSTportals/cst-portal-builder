@@ -293,8 +293,8 @@ def check_property(path):
                 + ", ".join(map(str, _nocol)) + " -- those pins cannot be colored",
                 hard=not _sp)
         _bad = [f'{a.get("address")} ({a.get("status")})' for a in _mm.get("listings") or []
-                if a.get("status") not in ("Active", "Active Under Contract", "Pending", "Coming Soon")]
-        r.check(not _bad, "Current Market map: status must be Active, Active Under "
+                if a.get("status") not in ("Active", "Active Under Contract", "Pending", "Coming Soon", "Temp Off")]
+        r.check(not _bad, "Current Market map: status must be Active, Coming Soon, Temp Off, Active Under "
                 "Contract (A/C) or Pending -- " + ", ".join(_bad), hard=not _sp)
         # Casey, 13 Nov 2026: every new listing ships the Sample Buyer Portal
         # tile (until the home has a real gallery) and a small buyer portal.

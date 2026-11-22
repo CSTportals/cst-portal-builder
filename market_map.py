@@ -25,7 +25,8 @@ COLORS = {"Active": "#B3261E", "Active Under Contract": "#C8701E", "Pending": "#
 SHORT = {"Active": "Active", "Active Under Contract": "A/C", "Pending": "Pending", "Sold": "Sold"}
 # Casey, 13 Nov 2026: "the current conditions map should have DOM and say
 # active pending or contingent."
-LIST_WORD = {"Active": "Active", "Active Under Contract": "Contingent", "Pending": "Pending"}
+LIST_WORD = {"Active": "Active", "Active Under Contract": "Contingent", "Pending": "Pending",
+             "Coming Soon": "Coming Soon", "Temp Off": "Temp Off"}
 
 # Casey, 13 Nov 2026: "In the sales comps, there should be red if properties
 # sold in over 30 days or under 95% of list price, yellow if 8-30 days or
@@ -44,6 +45,20 @@ def sold_grade(dom, sale, lp):
     g_dom = 0 if dom > 30 else (1 if dom > 7 else 2)
     g_pct = 0 if r < 0.95 else (1 if r < 0.99 else 2)
     return min(g_dom, g_pct)
+
+
+def list_grade(status, dom):
+    """Current-market pin color. Casey, 22 Nov 2026: "Green is Coming Soon or
+    homes that meet the standard, under 7 days Pending (no contingencies).
+    Yellow is UC under 30 days with contingencies. If DOM is over 30 or
+    active, it's red." Index 0 red, 1 yellow, 2 green."""
+    if status == "Coming Soon":
+        return 2
+    if status in ("Active", "Temp Off") or (dom or 0) > 30:
+        return 0
+    if status == "Pending" and (dom or 0) <= 7:
+        return 2
+    return 1
 
 
 def _k(x):
@@ -99,9 +114,7 @@ def _map(p, mid, title, items, kind):
                         a["dom"] = c["dom"]
             if a.get("dom") is not None:
                 vs = f'<br>{a["dom"]} day{"s" if a["dom"] != 1 else ""} on market' + vs
-                g = 0 if a["dom"] > 30 else (1 if a["dom"] > 7 else 2)
-                if st == "Active":
-                    g = 0
+                g = list_grade(st, a["dom"])
                 a["_grade"] = g
                 col = SOLD_GRADE[g][1]
         # Casey, 13 Nov 2026: "% under or over list price should be under or
@@ -126,9 +139,9 @@ def _map(p, mid, title, items, kind):
             seen.append(st)
     legend = "".join(f'<span><i style="background:{COLORS.get(s, "#B3261E")}"></i>{LIST_WORD.get(s, s) if kind != "sold" else s}</span>' for s in seen)
     if kind != "sold" and any("_grade" in a for a in items):
-        LIST_GRADE = ("Active (no contract) or over 30 days on market",
-                      "Under contract in 8&ndash;30 days",
-                      "Under contract in 7 days or less")
+        LIST_GRADE = ("Active, or over 30 days on market",
+                      "Under contract with contingencies, 30 days or less",
+                      "Coming Soon, or Pending in 7 days or less (no contingencies)")
         legend = "".join(f'<span><i style="background:{SOLD_GRADE[g][1]}"></i>{LIST_GRADE[g]}</span>'
                          for g in (2, 1, 0) if any(a.get("_grade") == g for a in items))
     if kind == "sold" and any("_grade" in a for a in items):

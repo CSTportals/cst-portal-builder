@@ -128,7 +128,7 @@
  },
  "competition": [
   {
-   "status": "Active Under Contract",
+   "status": "Coming Soon",
    "address": "1770 Beulah Rd",
    "dom": 0,
    "built": null,
@@ -168,7 +168,7 @@
    "list": 1949900
   },
   {
-   "status": "Active Under Contract",
+   "status": "Temp Off",
    "address": "1683 Drewlaine Dr",
    "dom": 9,
    "built": 2000,
@@ -206,7 +206,7 @@
   "ref": "2026-11-22",
   "rows": [
    {
-    "status": "A/C",
+    "status": "C/S",
     "address": "1770 Beulah Rd",
     "dom": 0,
     "built": 0,
@@ -250,7 +250,7 @@
     "sale": null
    },
    {
-    "status": "A/C",
+    "status": "T/O",
     "address": "1683 Drewlaine Dr",
     "dom": 9,
     "built": 2000,
@@ -464,7 +464,7 @@
   "listings": [
    {
     "address": "1770 Beulah Rd",
-    "status": "Active Under Contract",
+    "status": "Coming Soon",
     "list": 1600000,
     "dom": 0,
     "lat": 38.9279027,
@@ -496,7 +496,7 @@
    },
    {
     "address": "1683 Drewlaine Dr",
-    "status": "Active Under Contract",
+    "status": "Temp Off",
     "list": 1999999,
     "dom": 9,
     "lat": 38.9262657,
@@ -558,7 +558,7 @@
    "lede": "Every home 9002 Lupine Den Dr is competing with, and what each one is asking.",
    "rows": [
     [
-     "A/C",
+     "C/S",
      "1770 Beulah Rd",
      0,
      "",
@@ -598,7 +598,7 @@
      1949900
     ],
     [
-     "A/C",
+     "T/O",
      "1683 Drewlaine Dr",
      9,
      2000,
