@@ -180,11 +180,17 @@ def roadmap_guide(p, s_dir):
 
 
 def buyer_guide(p, b_dir):
-    page = b_dir / "index.html"
+    """Casey, 22 Nov 2026: "Rebuild buyer portal guide based on Sample Buyer
+    portal" -- the screenshots come from the full Sample Buyer Portal (502
+    MacArthur), so every section of a finished Buyer Portal is shown, while
+    the text carries THIS home's current figures."""
+    sample = ROOT / "output" / "502_MacArthur_Buyer" / "index.html"
+    page = sample if sample.exists() else b_dir / "index.html"
     if not page.exists():
         return None
     v = p["values"]
-    names = ["Authenticated Values", "Market Snapshot", "Amenities and Transportation", "Move Up Calculator"]
+    names = ["Authenticated Values", "See the Home", "The Home", "Features", "What the Owners Love",
+             "Amenities and Transportation", "Property Documents", "Writing an Offer", "Move Up Calculator"]
     sh = _shots(page.as_uri(), names,
                 before="(()=>{var a=document.getElementById('muVal'),d=document.getElementById('muDebt');"
                        "if(a){a.value='$1,200,000';d.value='$400,000';"
@@ -202,15 +208,25 @@ def buyer_guide(p, b_dir):
           f"<b>Premium Value {money(v['premium'])}</b> is what it commands when upgrades, finishes and "
           "presentation exceed the standard.",
           "Historically, CST listings sell between Customary and Premium Values (sometimes more)."]),
-        (sh.get(names[1]), "Market Snapshot", "Every home it is competing with",
-         ["Every home on the market against this one, and what each is asking, so you can compare value."]),
-        (sh.get(names[2]), "Amenities and Transportation", "How far everything is",
-         ["Drive times to schools, shopping, dining, parks, the Metro and the airports."]),
-        (sh.get(names[3]), "Move Up Calculator", "What your current home puts toward this one",
+        (sh.get(names[1]), "See the Home", "The photography",
+         ["The full gallery of the home. Tap any photo to see it large."]),
+        (sh.get(names[2]), "The Home", "The facts and the story",
+         ["Bedrooms, baths, square footage, lot and year built, and the headlines that set this home apart."]),
+        (sh.get(names[3]), "Features &amp; Updates", "What is inside, and what is new",
+         ["Every feature, and every major update with the year it was done."]),
+        (sh.get(names[4]), "What the Owners Love", "In their own words",
+         ["The things the owners will miss most about living here."]),
+        (sh.get(names[5]), "Amenities and Transportation", "How far everything is",
+         ["Drive and walk times to schools, shopping, dining, parks, the Metro and the airports."]),
+        (sh.get(names[6]), "Property Documents", "Everything to review before an offer",
+         ["Disclosures, the floor plan, the survey and the other documents a buyer needs."]),
+        (sh.get(names[7]), "Writing an Offer", "How to make yours the strongest",
+         ["What the sellers are looking for, and how to put your best offer forward."]),
+        (sh.get(names[8]), "Move Up Calculator", "What your current home puts toward this one",
          ["Enter your current home&rsquo;s price and what you owe. Your walk out the door proceeds become the "
           "down payment, after closing costs.",
-          "Switch between <b>Customary</b> and <b>Premium</b> to see the payment difference. Tap <b>Math</b> "
-          "for every number."]),
+          f"Switch between <b>Customary</b> ({money(v['customary'])}) and <b>Premium</b> "
+          f"({money(v['premium'])}) to see the payment difference. Tap <b>Math</b> for every number."]),
     ]
     return _page("Your Buyer Portal Guide",
                  f"{addr} &mdash; what each part of the portal shows you, and how to use it.", secs, _brand(p))
