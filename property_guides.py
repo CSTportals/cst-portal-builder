@@ -179,6 +179,21 @@ def roadmap_guide(p, s_dir):
                  secs, _brand(p))
 
 
+def _map_png():
+    """The Sample's neighborhood map with its list, from Casey's screenshot
+    (map tiles do not load in the build workspace)."""
+    f = ROOT / "templates" / "guides" / "img" / "sample_neighborhood_map.png"
+    return f.read_bytes() if f.exists() else None
+
+
+def _engine_png():
+    """The Pricing Engine section of the Sample Roadmap."""
+    page = ROOT / "output" / "Sample" / "Sample_Roadmap.html"
+    if not page.exists():
+        return None
+    return _shots(page.as_uri(), ["Price Authenticated"], max_h=1100).get("Price Authenticated")
+
+
 def buyer_guide(p, b_dir):
     """Casey, 22 Nov 2026: "Rebuild buyer portal guide based on Sample Buyer
     portal" -- the screenshots come from the full Sample Buyer Portal (502
@@ -211,13 +226,30 @@ def buyer_guide(p, b_dir):
         (sh.get(names[1]), "See the Home", "The photography",
          ["The full gallery of the home. Tap any photo to see it large."]),
         (sh.get(names[2]), "The Home", "The facts and the story",
-         ["Bedrooms, baths, square footage, lot and year built, and the headlines that set this home apart."]),
+         ["Bedrooms, baths, square footage, lot and year built at a glance.",
+          "<b>Two headlines</b> take the long-running listing description and break it into short statements "
+          "that emphasize the home&rsquo;s true value &mdash; what sets it apart, and why it is worth it."]),
+        (_engine_png(), "Price Authenticated by the CST Pricing Team", "The pricing engine",
+         ["The value of this home was not pulled from an online estimate. The CST Pricing Team authenticates it "
+          "by hand, through ten tests.",
+          "Cylinders 1&ndash;6 run on every home: age and size, price range, price per square foot, assessment, "
+          "market anomalies and inflation. Cylinders 7&ndash;10 fire only when they apply:",
+          "<b>Neighborhood (7)</b> analyzes neighborhood sales over the past 5 years. "
+          "<b>Premium/Discount (8)</b> compares whether the seller paid a premium or a discount at the time of "
+          "purchase. <b>Extraordinary Upgrades (9)</b> applies when upgrades have been made that move the needle "
+          "to a different price range. <b>Detriment (10)</b> is an adjustment for issues with the lot or "
+          "functionality.",
+          "That is why you can have confidence in the Customary and Premium Values above."]),
         (sh.get(names[3]), "Features &amp; Updates", "What is inside, and what is new",
          ["Every feature, and every major update with the year it was done."]),
         (sh.get(names[4]), "What the Owners Love", "In their own words",
          ["The things the owners will miss most about living here."]),
-        (sh.get(names[5]), "Amenities and Transportation", "How far everything is",
-         ["Drive and walk times to schools, shopping, dining, parks, the Metro and the airports."]),
+        (_map_png() or sh.get(names[5]), "The Neighborhood &mdash; Amenities and Transportation",
+         "The map, and the list under it",
+         ["The red pin is the home. Every numbered stop on the map matches the list underneath, with its walk or "
+          "drive time.",
+          "The arrows along the edges point to places just past the map &mdash; the airports, the Metro and the "
+          "nearby town centers &mdash; with their drive times. Zoom and drag the map to explore."]),
         (sh.get(names[6]), "Property Documents", "Everything to review before an offer",
          ["Disclosures, the floor plan, the survey and the other documents a buyer needs."]),
         (sh.get(names[7]), "Writing an Offer", "How to make yours the strongest",
