@@ -4533,6 +4533,10 @@ return.</p>
 GUIDES = Path(__file__).resolve().parent / "templates" / "guides"
 GUIDE_FILES = {"roadmap": ("Seller_Roadmap_Guide.html", "{pre}_Roadmap_Guide.html",
                            "", "Guide to Understanding the Roadmap"),
+               "mss": ("Market_Snapshot_Guide.html", "Market_Snapshot_Guide.html",
+                       "", "Guide to Understanding the Market Snapshot"),
+               "moveup": ("Move_Up_Guide.html", "Move_Up_Guide.html",
+                          "", "Guide to Understanding the Move Up Calculator"),
                "buyer": ("Buyer_Portal_Guide.html", "Buyer_Portal_Guide.html",
                          "", "Guide to Understanding the Buyer Portal")}
 
@@ -5896,7 +5900,10 @@ def build_roadmap(p, s, out):
     body = re.sub(r"<!--SEC:[a-z-]+-->\n?", "", body)   # layout markers, not content
     (out / f'{p["prefix"]}_Roadmap.html').write_text(head + body)
     if p.get("guides") is not False:
-        copy_guide("roadmap", out, p["prefix"])
+        # Casey, 22 Nov 2026: all four guides live on the seller site, for the
+        # "Guides to Understanding CST Tools" row at the top of the portal.
+        for _k in ("roadmap", "buyer", "mss", "moveup"):
+            copy_guide(_k, out, p["prefix"])
 
 
 def agent_card(p):

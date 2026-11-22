@@ -718,6 +718,17 @@ def build_index_v2(p, s, out, filename="index.html"):
     contact_html = '<span class="sep">|</span>'.join(contact)
 
     noshot = "" if hero else " noshot"
+    # Casey, 22 Nov 2026: "Guides to Understanding CST Tools" near the top --
+    # navy boxes for the Seller Roadmap, Buyer Portal, Market Snapshot and
+    # Move Up Buyers guides. Only guides that were copied into the site show.
+    _g = [(f"{pre}_Roadmap_Guide.html", "Seller Roadmap"), ("Buyer_Portal_Guide.html", "Buyer Portal"),
+          ("Market_Snapshot_Guide.html", "Market Snapshot"), ("Move_Up_Guide.html", "Move Up Buyers")]
+    _g = [(h, t) for h, t in _g if (out / h).exists()]
+    guides_html = ("" if not _g or p.get("guides") is False else
+        '<section class="guides"><div class="wrap"><h2 class="st">Guides to Understanding CST Tools</h2>'
+        '<div class="guide-row">' + "".join(
+            f'<a class="guide-box" href="{h}" target="_blank" rel="noopener"><span>Guide</span>{t}</a>'
+            for h, t in _g) + "</div></div></section>\n")
     html = f"""<!-- SELLER PORTAL (private) — {addr}. Deploy to {p.get("portal_url", "(portal_url not set)")} -->
 <!DOCTYPE html>
 <html lang="en">
@@ -728,6 +739,15 @@ def build_index_v2(p, s, out, filename="index.html"):
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 {CSS}
+.guides{{padding:34px 0 6px;}}
+.guide-row{{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px;}}
+.guide-box{{display:block;background:#1F2A44;color:#E8C77A;text-decoration:none;text-align:center;
+  border-radius:8px;padding:20px 12px;font:700 19px 'Playfair Display',Georgia,serif;
+  box-shadow:0 6px 16px rgba(31,42,68,.18);transition:transform .15s;}}
+.guide-box span{{display:block;font:700 10.5px 'Lora',Georgia,serif;letter-spacing:.22em;
+  text-transform:uppercase;color:#C9D2E0;margin-bottom:6px;}}
+.guide-box:hover{{transform:translateY(-2px);background:#26355A;}}
+@media (max-width:760px){{.guide-row{{grid-template-columns:repeat(2,1fr);}}}}
 </style>
 </head>
 <body>
@@ -746,7 +766,7 @@ def build_index_v2(p, s, out, filename="index.html"):
 </div>
 
 {band}{facts_html}
-
+{guides_html}
 <section>
   <div class="wrap">
     {"".join(main)}
