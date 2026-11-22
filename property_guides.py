@@ -92,6 +92,9 @@ def _shots(page_url, wanted, viewport=(1280, 900), before=None, max_h=1500):
             out[name] = pg.screenshot(full_page=True, clip={"x": 0, "y": max(0, y0 - 40),
                                                             "width": viewport[0], "height": y1 - y0 + 30})
         out["_top"] = pg.screenshot()
+        el = pg.query_selector("section.pitch")
+        if el:
+            out["_headlines"] = el.screenshot()
         b.close()
     return out
 
@@ -217,6 +220,8 @@ def buyer_guide(p, b_dir):
           "how to write an offer, all in one place.",
           "Tap <b>Pricing Report</b> for the printable Buyer Pricing Report. Scan the <b>QR code</b> to put "
           "this portal on your phone."]),
+        (sh.get("_headlines"), "Headlines", "What matters most",
+         ["Headlines identify the most important things buyers need to know about the home."]),
         (sh.get(names[0]), "Authenticated Values&trade;", "How the price was set",
          [_lp_line(p),
           f"<b>Customary Value {money(v['customary'])}</b> is what a home of this standard commands. "
@@ -226,9 +231,7 @@ def buyer_guide(p, b_dir):
         (sh.get(names[1]), "See the Home", "The photography",
          ["The full gallery of the home. Tap any photo to see it large."]),
         (sh.get(names[2]), "The Home", "The facts and the story",
-         ["Bedrooms, baths, square footage, lot and year built at a glance.",
-          "<b>Two headlines</b> take the long-running listing description and break it into short statements "
-          "that emphasize the home&rsquo;s true value &mdash; what sets it apart, and why it is worth it."]),
+         ["The photo gallery of the home, with a caption under every picture. Tap any photo to see it large."]),
         (_engine_png(), "Price Authenticated by the CST Pricing Team", "The pricing engine",
          ["The value of this home was not pulled from an online estimate. The CST Pricing Team authenticates it "
           "by hand, through ten tests.",
