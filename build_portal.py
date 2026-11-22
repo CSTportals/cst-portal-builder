@@ -7847,12 +7847,19 @@ Strategy.&trade;</i></p>
     # the private-label agent on a PL build.
     html = seller_email_v2(p)
     _launch = False
-    (out / f"{pre}_Seller_Email.html").write_text(html, encoding="utf-8")
     # The subject has to match the first line. An email that opens "We are
     # going Coming Soon today at $1.299" and arrives titled "Your Seller
     # Portal" buries the one thing the seller is waiting to read.
     _subj = (f'Coming Soon — {p["address"]}' if _launch
              else f'Your Seller Portal — {p["address"]}')
+    # Casey, 22 Nov 2026: private-label seller emails carry the same agent
+    # instructions as recovery emails -- the agent copies the email below the
+    # line and sends it from their own account. The .eml draft stays clean.
+    _page = html
+    if p.get("private_label"):
+        _page = re.sub(r"(<body[^>]*>)", lambda m: m.group(1) + "\n" + agent_instructions(p, None, _subj),
+                       html, count=1)
+    (out / f"{pre}_Seller_Email.html").write_text(_page, encoding="utf-8")
     _write_eml(out, f"{pre}_Seller_Email", html, _subj, p)
 
 
@@ -7863,12 +7870,13 @@ def agent_instructions(p, r, subject):
     email on a recovery -- Casey's wording, 21 Nov 2026 (6:08 PM)."""
     root = (seller_host(p) or "").rstrip("/")
     pre = p["prefix"]
+    rec = p.get("listing_status") == "recovery"
     def a(h, t):
         return f'<a href="{h}">{t}</a>' if h else t
     return f"""<div style="border:2px solid #B8902F;background:#FBF6EA;border-radius:8px;padding:16px 20px;margin:0 0 20px;font-family:Arial,Helvetica,sans-serif;font-size:14pt;line-height:1.45;color:#2b2618;">
 <p style="margin:0 0 8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8A6A2E;font-size:14pt;">For the agent &mdash; do not send this section</p>
-<p style="margin:0 0 6px;"><b>1. Review:</b> {a(root + "/" if root else None, "Seller Portal")}, {a(f"{root}/{pre.lower()}_roadmap" if root else None, "Recovery Roadmap")}, and {a(f"{root}/{pre}_Pricing_Strategy_Summary.pdf" if root else None, "Pricing Strategy Summary")}.</p>
-<p style="margin:0 0 6px;"><b>2. Personalize:</b> Add the seller&rsquo;s name and confirm the pricing recommendations.</p>
+<p style="margin:0 0 6px;"><b>1. Review:</b> {a(root + "/" if root else None, "Seller Portal")}, {a(f"{root}/{pre.lower()}_roadmap" if root else None, "Recovery Roadmap" if rec else "Seller Roadmap")}, and {a(f"{root}/{pre}_Pricing_Strategy_Summary.pdf" if root else None, "Pricing Strategy Summary")}.</p>
+<p style="margin:0 0 6px;"><b>2. Personalize:</b> {"Add the seller&rsquo;s name and confirm the pricing recommendations." if rec else "Add the seller&rsquo;s name and confirm the meeting day and time."}</p>
 <p style="margin:0 0 6px;"><b>3. Copy:</b> Everything below the line into a new email.</p>
 <p style="margin:0;"><b>4. Send:</b> From your own email. Your signature is included.</p>
 </div>
