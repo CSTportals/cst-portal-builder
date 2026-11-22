@@ -5114,45 +5114,75 @@ def build_roadmap(p, s, out):
   </div>
 </section>"""
 
-            recovery_block = f"""<section>
+            # Casey, 22 Nov 2026: "recovery strategy need to be put in recovery
+            # roadmaps just like regular seller road maps" -- the approved
+            # 4-step strategy from the recovery seller email, laid out the way
+            # The Test and The Launch are on a standard Roadmap. Fall Back and
+            # Rip Cord are the same two prices the email quotes.
+            recovery_block = f"""<section class="pred-sec">
   <div class="wrap">
-    <h2 class="section-title">Recovery Strategy</h2>
-    <p class="section-sub">Three things decide the next move: what the inspection
-    of condition finds, what the market is doing, and who calls while the home is
-    off it.</p>
+    <h2 class="test-head">Recovery Strategy</h2>
+    <h2 class="section-title">Our 4-Step Recovery Strategy</h2>
+    <p class="section-sub">Test buyer interest, reposition the home at the right
+    price, and use our marketing tools to generate the strongest possible offer.</p>
 
     <div class="needle-table">
       <div class="needle-cols three">
         <div class="needle-col">
-          <h4>Temporarily Off Market &mdash; 14 days</h4>
+          <h4>1. Inspect Property and Review Comments</h4>
           <ul>
-            <li>Inspect condition.</li>
-            <li>Test the buyer pool.</li>
-            <li>Analyze market.</li>
+            <li>Does the property need any updates that can make it more appealing to buyers?</li>
+            <li>See Moving the Needle above.</li>
           </ul>
         </div>
         <div class="needle-col">
-          <h4>If 2 to 3 people inquire, and the market is favorable</h4>
+          <h4>2. Temporarily Off Market</h4>
           <ul>
-            <li>Buyers are still watching at this level.</li>
-            <li>{_soft_rule}</li>
-            <li>The move is <b>{_r["soft_basis"]}</b> &mdash; {money(_r["soft_cut"])} off.</li>
+            <li>Take the home TEMP Off Market.</li>
+            <li>Buyers and agents watching the listing may call to find out why.</li>
+          </ul>
+        </div>
+        <div class="needle-col">
+          <h4>3. Test Buyer Interest</h4>
+          <ul>
+            <li>If they call, we explain that the home will return at a lower price.</li>
+            <li>This may encourage buyers to make an offer before the reduction.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pred-sec">
+  <div class="wrap">
+    <h2 class="section-title">4. Adjust Price</h2>
+    <p class="section-sub"><b>Note:</b> Adjusting price does not mean a lower sales
+    price, it means a larger buyer pool. Lower prices usually produce higher prices.</p>
+
+    <div class="needle-table">
+      <div class="needle-cols">
+        <div class="needle-col">
+          <h4>If some buyers call &mdash; Fall Back Price</h4>
+          <ul>
+            <li>If we receive interest but no acceptable offer, we return to the market at
+            {money(_r["soft"])} to get exposure to a larger buyer pool.</li>
           </ul>
           <div class="price-card">
-            <div class="rec-label">Recommended Relaunch Price</div>
+            <div class="rec-label">Fall Back Price</div>
             <div class="rec-price">{money(_r["soft"])}</div>
             <div class="rec-expected">{expected}</div>
           </div>
         </div>
         <div class="needle-col">
-          <h4>If no one calls</h4>
+          <h4>If no one calls &mdash; Pull the Rip Cord</h4>
           <ul>
-            <li>No one is watching at this level, and a small step will not find them.</li>
-            <li>The move is <b>{_r["hard_basis"]}</b>.</li>
-            <li>{_hard_why}</li>
+            <li>This suggests our price is not close to the buyer pool. We go to
+            {money(_r["hard"])} to guarantee the largest buyer pool. Whatever buyers bid
+            is what the home is worth at this time.</li>
           </ul>
           <div class="price-card">
-            <div class="rec-label">Recommended Relaunch Price</div>
+            <div class="rec-label">Rip Cord Price</div>
             <div class="rec-price">{money(_r["hard"])}</div>
             <div class="rec-expected">{expected}</div>
           </div>
@@ -5160,11 +5190,6 @@ def build_roadmap(p, s, out):
       </div>
     </div>
 
-    <p class="price-para" style="margin-top:20px;"><b>Condition.</b> The 14 days are
-    not a pause, they are the work. A home that returns looking the same will be
-    read as the same home at a lower price, and the reduction is spent for nothing.
-    &mdash; see Moving the Needle above.</p>
-    <p class="price-para" style="margin-top:14px;"><b>Market.</b> {_third_note}</p>
 {_bp_link}  </div>
 </section>"""
 
@@ -5783,8 +5808,10 @@ def build_roadmap(p, s, out):
     </div>""" if comp_body else ''}
   </div>
 </section>"""
-    comp_in_bg = "" if _is_recovery else comp_section
-    comp_at_end = comp_section if _is_recovery else ""
+    # Casey, 22 Nov 2026: recovery Roadmaps follow the standard order --
+    # Current Competition before the CST Pricing Strategy.
+    comp_in_bg = comp_section
+    comp_at_end = ""
 
     body = f"""<body>
 
@@ -5903,7 +5930,7 @@ def build_roadmap(p, s, out):
 </body>
 </html>
 """
-    if p.get("listing_status") == "recovery":
+    if p.get("listing_status") == "recovery" and comp_at_end:
         body = _recovery_order(body)
     body = re.sub(r"<!--SEC:[a-z-]+-->\n?", "", body)   # layout markers, not content
     (out / f'{p["prefix"]}_Roadmap.html').write_text(head + body)
