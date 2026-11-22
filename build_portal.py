@@ -7866,8 +7866,8 @@ buyer pool. Lower prices usually produce higher prices (see below).</p>
 <p style="margin:0 0 14px 1.2em;">If we receive interest but no acceptable offer, we return to the market at {fb} to
 attract more buyers.</p>
 <p style="margin:0 0 2px 1.2em;"><i>If no one calls &mdash; Pull the Rip Cord, {rc}</i></p>
-<p style="margin:0 0 14px 1.2em;">If no one calls, that suggests our price is still too high. We pull the rip cord and
-return at {rc} to reach a much larger buyer pool.</p>
+<p style="margin:0 0 14px 1.2em;">This suggests our price is not close to the buyer pool. We go to {rc} to
+guarantee the largest buyer pool. Whatever buyers bid is what the home is worth at this time.</p>
 
 <h3 {H}>Your CST Seller Portal&trade; Assets</h3>
 
