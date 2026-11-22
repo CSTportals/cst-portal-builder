@@ -252,12 +252,17 @@ def buyer_guide(p, b_dir):
          ["Every feature, and every major update with the year it was done."]),
         (sh.get(names[4]), "What the Owners Love", "In their own words",
          ["The things the owners will miss most about living here."]),
-        (_map_png() or sh.get(names[5]), "The Neighborhood &mdash; Amenities and Transportation",
-         "The map, and the list under it",
-         ["The red pin is the home. Every numbered stop on the map matches the list underneath, with its walk or "
-          "drive time.",
-          "The arrows along the edges point to places just past the map &mdash; the airports, the Metro and the "
-          "nearby town centers &mdash; with their drive times. Zoom and drag the map to explore."]),
+        (_map_png() or sh.get(names[5]), "The Neighborhood &mdash; Amenities &amp; Transportation",
+         "More Than a Home. A Community and a Lifestyle.",
+         ["Buyers aren&rsquo;t just purchasing a home. They&rsquo;re investing in a community, a lifestyle, and "
+          "everything the surrounding area offers.",
+          f"{p['address']} puts buyers in {_town(p)}, "
+          + ("recognized by Travel + Leisure as one of America&rsquo;s best small towns, " if _town(p) == "Vienna" else "")
+          + "with exceptional parks, restaurants, shopping, schools, and convenient access to Metro, airports, "
+          "and major employment centers.",
+          "The interactive map highlights the amenities, attractions, and transportation options that make this "
+          "location so desirable, with estimated walking and driving times.",
+          f"<b>We&rsquo;re not just selling the home. We&rsquo;re selling the {_town(p)} lifestyle.</b>"]),
         (sh.get(names[6]), "Property Documents", "Everything to review before an offer",
          ["Disclosures, the floor plan, the survey and the other documents a buyer needs."]),
         (sh.get(names[7]), "Writing an Offer", "How to make yours the strongest",
@@ -270,6 +275,10 @@ def buyer_guide(p, b_dir):
     ]
     return _page("Your Buyer Portal Guide",
                  f"{addr} &mdash; what each part of the portal shows you, and how to use it.", secs, _brand(p))
+
+
+def _town(p):
+    return (p.get("city") or "Northern Virginia").strip()
 
 
 def _lp_line(p):
