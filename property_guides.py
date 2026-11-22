@@ -123,7 +123,12 @@ def roadmap_guide(p, s_dir):
           "up when the buyer&rsquo;s lender orders the appraisal."]),
         (sh.get(names[1]), "Price Authenticated by the CST Pricing Team", "The pricing engine",
          ["Cylinders 1&ndash;6 run on every home: age and size, price range, price per square foot, "
-          "assessment, market anomalies and inflation. Cylinders 7&ndash;10 fire only when they apply.",
+          "assessment, market anomalies and inflation. Cylinders 7&ndash;10 fire only when they apply:",
+          "<b>Neighborhood (7)</b> analyzes neighborhood sales over the past 5 years. "
+          "<b>Premium/Discount (8)</b> compares whether the seller paid a premium or a discount at the time "
+          "of purchase. <b>Extraordinary Upgrades (9)</b> applies when upgrades have been made that move the "
+          "needle to a different price range. <b>Detriment (10)</b> is an adjustment for issues with the lot "
+          "or functionality.",
           f"Your values: <b>Dated {money(v['dated'])}</b>, <b>Customary {money(v['customary'])}</b>, "
           f"<b>Premium {money(v['premium'])}</b>. Historically, CST listings sell between Customary and "
           "Premium Values. Sometimes more."]),
