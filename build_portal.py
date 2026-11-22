@@ -1957,10 +1957,11 @@ def market_conditions(market):
     # Casey, 15 Oct 2026: Current Market Conditions is followed by Advice.
     if c.get("advice"):
         upd = f'<p class="mc-advice">{c["advice"]}</p>' + upd
-    # Casey, 22 Nov 2026: explain the circled Under Contract (Last 30 Days).
+    # Casey, 22 Nov 2026: "The portals are for facts, the guides are for
+    # explanation." The circled-number explanation goes to the Roadmap Guide,
+    # not the Roadmap -- handed over through GUIDE_NOTES.
     if c.get("uc30_explain"):
-        upd = (upd.replace('</p>', '</p>' + f'<p class="mc-advice" style="font-size:.95em;">{c["uc30_explain"]}</p>', 1)
-               if c.get("advice") else f'<p class="mc-advice">{c["uc30_explain"]}</p>' + upd)
+        GUIDE_NOTES["uc30"] = c["uc30_explain"]
     return (
         '    <div class="mc">\n'
         '      <div class="mc-eyebrow">Current Market Conditions</div>\n'
@@ -4573,6 +4574,9 @@ def _guide_bar(p, kind, root=None):
             f'<a href="{href}" target="_blank" rel="noopener" style="color:#F0E4C4;'
             f'font-size:11.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;'
             f'text-decoration:none;border-bottom:1px solid #B8902F;padding-bottom:2px;">{link}</a></div>\n')
+
+
+GUIDE_NOTES = {}
 
 
 def build_roadmap(p, s, out):
@@ -8713,6 +8717,7 @@ def main():
         s.fallback = _sf0["fallback"]
         s.deep = _sf0["deep"]
     build_roadmap(p, s, out)
+    (out / "_guide_notes.json").write_text(json.dumps(GUIDE_NOTES), encoding="utf-8")
     build_strategy_summary(p, s, out)
     build_strategy_email(p, s, out)
     build_followup_email(p, s, out)

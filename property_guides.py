@@ -105,6 +105,8 @@ def roadmap_guide(p, s_dir):
     names = ["Appraisal-Quality Comparable Analysis", "Price Authenticated", "Moving the Needle",
              "Current Competition", "CST Pricing Strategy", "Preview", "Coming Soon", "Predictive Analysis"]
     sh = _shots(page.as_uri(), names)
+    _nf = s_dir / "_guide_notes.json"
+    notes = json.loads(_nf.read_text()) if _nf.exists() else {}
     cs = v.get("coming_soon_override") or v.get("customary")
     fb, dp = v.get("fallback_override"), v.get("deep_override")
     addr = p["address"]
@@ -132,7 +134,7 @@ def roadmap_guide(p, s_dir):
           "fraction of the cost."]),
         (sh.get(names[3]), "Current Competition", "Who you are up against",
          [f"Every home {addr} is competing with today, and how the market is moving: the share under "
-          "contract, Market Strength and Market Momentum."]),
+          "contract, Market Strength and Market Momentum."] + ([notes["uc30"]] if notes.get("uc30") else [])),
         (sh.get(names[4]), "CST Pricing Strategy", "Where the price goes, and why",
          [f"The strategy places the home at the first buyer threshold under its Customary Value of "
           f"{money(v['customary'])}, so it shows up for every buyer searching that range."]),
@@ -277,6 +279,7 @@ def build(p, which=("roadmap", "mss", "moveup", "buyer")):
     made = []
     if "roadmap" in which and (h := roadmap_guide(p, s_dir)):
         (s_dir / f"{pre}_Roadmap_Guide.html").write_text(h, encoding="utf-8"); made.append("roadmap")
+    (s_dir / "_guide_notes.json").unlink(missing_ok=True)   # build-time only, not for the site
     if "mss" in which and (h := mss_guide(p)):
         (s_dir / "Market_Snapshot_Guide.html").write_text(h, encoding="utf-8"); made.append("market snapshot")
     if "moveup" in which and (h := moveup_guide(p, s_dir)):
