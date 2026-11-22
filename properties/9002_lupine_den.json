@@ -524,5 +524,246 @@
     ]
    }
   ]
- ]
+ ],
+ "buyer_portal": {
+  "live": true,
+  "display_address": "9002 Lupine Den Dr",
+  "asset_dir": "assets/9002_Lupine_Den/buyer",
+  "hero_photo": "9002_Lupine_Den_front.jpg",
+  "pricing_pdf": "9002_Lupine_Den_Buyer_Report.pdf",
+  "status_line": "Coming Soon",
+  "headline": "Brick-front colonial on a 16,680 SF lot between Wolf Trap and Tysons.",
+  "facts": [
+   [
+    "1996",
+    "Year built"
+   ],
+   [
+    "4,188",
+    "Finished SF"
+   ],
+   [
+    "16,680",
+    "SF lot"
+   ],
+   [
+    "Vienna",
+    "Fairfax County"
+   ]
+  ],
+  "deploy_to": "https://buylupineden.netlify.app",
+  "url": "https://buylupineden.netlify.app",
+  "snapshot": {
+   "title": "Market Snapshot",
+   "lede": "Every home 9002 Lupine Den Dr is competing with, and what each one is asking.",
+   "rows": [
+    [
+     "A/C",
+     "1770 Beulah Rd",
+     0,
+     "",
+     4214,
+     36155,
+     1509960,
+     1600000
+    ],
+    [
+     "ACT",
+     "8302 Wolftrap Rd",
+     12,
+     1997,
+     3800,
+     8184,
+     1429060,
+     1599888
+    ],
+    [
+     "ACT",
+     "1613 Chathams Ford Pl",
+     55,
+     1998,
+     4532,
+     36155,
+     1789470,
+     1999999
+    ],
+    [
+     "A/C",
+     "2021 George Washington Rd",
+     18,
+     2001,
+     3852,
+     28560,
+     1593670,
+     1949900
+    ],
+    [
+     "A/C",
+     "1683 Drewlaine Dr",
+     9,
+     2000,
+     3959,
+     36431,
+     1815910,
+     1999999
+    ],
+    [
+     "PND",
+     "9082 Best Bower Ct",
+     11,
+     2000,
+     3920,
+     15468,
+     1834460,
+     1850000
+    ]
+   ]
+  },
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties"
+  },
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Vienna between Wolf Trap and Tysons, with Wolftrap Elementary, the Spring Hill Metro and Wolf Trap National Park close by. The arrows point to everything past the edge of the map.",
+   "center": {
+    "lat": 38.9264201,
+    "lng": -77.2573551,
+    "label": "9002 Lupine Den Dr"
+   },
+   "pins": [
+    {
+     "name": "Wolftrap Elementary School",
+     "sub": "Fairfax County Public Schools",
+     "lat": 38.9175151,
+     "lng": -77.2663853
+    },
+    {
+     "name": "Wolf Trap National Park",
+     "sub": "Performing arts",
+     "lat": 38.9383676,
+     "lng": -77.264695
+    },
+    {
+     "name": "Spring Hill Metro",
+     "sub": "Silver Line",
+     "lat": 38.928776,
+     "lng": -77.241455
+    }
+   ],
+   "arrows": [
+    [
+     109.3,
+     [
+      "Tysons Corner Center",
+      "Shopping and dining &middot; 6 min"
+     ]
+    ],
+    [
+     91.3,
+     [
+      "Wegmans",
+      "Tysons &middot; 8 min"
+     ]
+    ],
+    [
+     194.5,
+     [
+      "Church Street",
+      "Historic Vienna &middot; 5 min"
+     ]
+    ],
+    [
+     208.9,
+     [
+      "James Madison High School",
+      "Fairfax County Public Schools &middot; 7 min"
+     ]
+    ],
+    [
+     98.4,
+     [
+      "Washington, DC",
+      "Union Station &middot; 30 min"
+     ]
+    ]
+   ]
+  },
+  "amenities_lede": "Wolf Trap for summer concerts, Tysons Corner and Wegmans for shopping and dining, the Spring Hill Metro on the Silver Line, and historic Church Street in Vienna.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Spring Hill Metro",
+      "Silver Line",
+      1.13
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      14.2
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      16.72
+     ],
+     [
+      "Washington, DC",
+      "Union Station",
+      17.74
+     ]
+    ]
+   },
+   {
+    "title": "Family Dining",
+    "items": [
+     [
+      "Church Street",
+      "Historic Vienna",
+      2.14
+     ]
+    ]
+   },
+   {
+    "title": "Shopping",
+    "items": [
+     [
+      "Tysons Corner Center",
+      "Shopping and dining",
+      2.56
+     ],
+     [
+      "Wegmans",
+      "Tysons",
+      3.3
+     ]
+    ]
+   },
+   {
+    "title": "Parks and Recreation",
+    "items": [
+     [
+      "Wolf Trap National Park",
+      "Performing arts",
+      1.19
+     ],
+     [
+      "Spring Hill Rec Center",
+      "Pool and courts",
+      2.48
+     ]
+    ]
+   }
+  ]
+ }
 }
