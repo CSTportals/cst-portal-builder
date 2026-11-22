@@ -4240,7 +4240,7 @@ buyers through the door to experience the upgrades and fall in love with the hom
 
 <p><i>It&rsquo;s Not a Price, It&rsquo;s a Strategy.&trade;</i></p>
 
-<p>Call anytime with questions.</p>
+<p>Let us know if you are ready for next steps.</p>
 
 <p style="line-height:1.35;">{first}<br>{team}<br>{phone}</p>
 
