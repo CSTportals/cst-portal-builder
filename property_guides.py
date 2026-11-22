@@ -140,7 +140,7 @@ def roadmap_guide(p, s_dir):
           "or functionality.",
           f"Your values: <b>Dated {money(v['dated'])}</b>, <b>Customary {money(v['customary'])}</b>, "
           f"<b>Premium {money(v['premium'])}</b>. Historically, CST listings sell between Customary and "
-          "Premium Values. Sometimes more."]),
+          "Premium Values (sometimes more)."]),
         (sh.get(names[2]), "Moving the Needle&trade; Guide", "What raises the price, and what lowers it",
          ["With hundreds of thousands of dollars at risk, strategic improvements are critical&mdash;and a "
           "Casey Samson Team specialty.",
