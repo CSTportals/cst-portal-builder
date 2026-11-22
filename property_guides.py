@@ -61,7 +61,7 @@ def _page(title, lede, sections, brand):
             f"<main>\n{cards}</main>\n<footer><b>Questions?</b>{FOOT}</footer>\n</body></html>")
 
 
-def _shots(page_url, wanted, viewport=(1280, 900), before=None, max_h=1500):
+def _shots(page_url, wanted, viewport=(1280, 900), before=None, max_h=1500, hide_maps=False):
     """Screenshot each section that starts with an <h2> in `wanted`, down to
     the next <h2>. Returns {heading: png bytes} for the ones found. Leaflet
     maps inside a section are hidden first."""
@@ -75,9 +75,18 @@ def _shots(page_url, wanted, viewport=(1280, 900), before=None, max_h=1500):
         if before:
             pg.evaluate(before)
             pg.wait_for_timeout(300)
-        pg.add_style_tag(content=".leaflet-container,.rmm-map,#locmap,.locmap,.mss-map,[id*=map]{display:none!important}"
-                                 " .rmm-key,.locmap-arrows{display:none!important}")
-        pg.wait_for_timeout(300)
+        if hide_maps:
+            pg.add_style_tag(content=".leaflet-container,.rmm-map,#locmap,.locmap,.mss-map,[id*=map]{display:none!important}"
+                                     " .rmm-key,.locmap-arrows{display:none!important}")
+            pg.wait_for_timeout(300)
+        else:
+            # Casey, 22 Nov 2026: the guide must show the section as the
+            # seller sees it -- map included. Give the tiles time to arrive.
+            try:
+                pg.wait_for_load_state("networkidle", timeout=8000)
+            except Exception:
+                pass
+            pg.wait_for_timeout(1200)
         H = pg.evaluate("document.documentElement.scrollHeight")
         tops = pg.evaluate("""() => [...document.querySelectorAll('h1,h2')].map(e =>
             [e.textContent.trim(), e.getBoundingClientRect().top + scrollY])""")
@@ -107,7 +116,7 @@ def roadmap_guide(p, s_dir):
         return None
     names = ["Appraisal-Quality Comparable Analysis", "Price Authenticated", "Moving the Needle",
              "Current Competition", "CST Pricing Strategy", "Preview", "Coming Soon", "Predictive Analysis"]
-    sh = _shots(page.as_uri(), names)
+    sh = _shots(page.as_uri(), names, max_h=2600)
     _nf = s_dir / "_guide_notes.json"
     notes = json.loads(_nf.read_text()) if _nf.exists() else {}
     cs = v.get("coming_soon_override") or v.get("customary")
