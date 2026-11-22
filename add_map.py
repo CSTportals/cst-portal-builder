@@ -592,6 +592,33 @@ DATA["6758_Edgartown"] = {
               ("Getting Around", "Dulles International", "IAD", 38.9522483, -77.4578886),
               ("Getting Around", "Washington, DC", "Union Station", 38.897419, -77.006226)],
 }
+DATA["9002_Lupine_Den"] = {
+    # 9002 Lupine Den Dr, Vienna 22182. 22 Nov 2026. Coordinates verified via
+    # places search 22 Nov 2026.
+    "center": (38.9264201, -77.2573551, "9002 Lupine Den Dr"),
+    "title": "The Neighborhood",
+    "lede": "Vienna between Wolf Trap and Tysons, with Wolftrap Elementary, the Spring Hill Metro and "
+            "Wolf Trap National Park close by. The arrows point to everything past the edge of the map.",
+    "amen_lede": "Wolf Trap for summer concerts, Tysons Corner and Wegmans for shopping and dining, the "
+                 "Spring Hill Metro on the Silver Line, and historic Church Street in Vienna.",
+    "pins": [
+        ("Wolftrap Elementary School", "Fairfax County Public Schools", 38.9175151, -77.2663853, "Schools"),
+        ("Wolf Trap National Park", "Performing arts", 38.9383676, -77.264695, "Parks and Recreation"),
+        ("Spring Hill Metro", "Silver Line", 38.928776, -77.241455, "Getting Around"),
+    ],
+    "arrows": [((38.917017, -77.2228361), "Tysons Corner Center", "Shopping and dining"),
+               ((38.925605, -77.210107), "Wegmans", "Tysons"),
+               ((38.9033616, -77.2650446), "Church Street", "Historic Vienna"),
+               ((38.8961219, -77.2788162), "James Madison High School", "Fairfax County Public Schools"),
+               ((38.897419, -77.006226), "Washington, DC", "Union Station")],
+    "extra": [("Shopping", "Tysons Corner Center", "Shopping and dining", 38.917017, -77.2228361),
+              ("Shopping", "Wegmans", "Tysons", 38.925605, -77.210107),
+              ("Family Dining", "Church Street", "Historic Vienna", 38.9033616, -77.2650446),
+              ("Parks and Recreation", "Spring Hill Rec Center", "Pool and courts", 38.9424136, -77.2285035),
+              ("Getting Around", "Dulles International", "IAD", 38.9522483, -77.4578886),
+              ("Getting Around", "Reagan National", "DCA", 38.8501079, -77.039176),
+              ("Getting Around", "Washington, DC", "Union Station", 38.897419, -77.006226)],
+}
 CARD_ORDER = ["Getting Around", "Fine Dining", "Family Dining", "Shopping",
               "Downtown Vienna", "Every Day", "Schools and Parks", "Parks and Recreation", "Walk to Town"]
 
