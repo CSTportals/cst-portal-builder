@@ -228,15 +228,6 @@ def buyer_guide(p, b_dir):
           f"the past 90 days. <b>Premium Value</b> of {money(v['premium'])} is what premium homes with superior "
           "finishes and presentation command.",
           "Historically, CST listings sell between Customary and Premium Values (sometimes more)."]),
-        (sh.get(names[1]), "See the Home", "The photography",
-         ["The full gallery of the home. Tap any photo to see it large."]),
-        (sh.get(names[2]), "The Home &mdash; We Are More Than a Pretty Face", "Home Preparation Is the Key to a Gold Standard Listing&trade;",
-         ["Every Casey Samson Team listing undergoes a thorough pre-market inspection of major systems and "
-          "potential problem areas, including heating and cooling, appliances, electrical systems, roof, "
-          "foundation, and mold.",
-          "Identified issues are addressed before the home goes live, minimizing surprises, strengthening buyer "
-          "confidence, and protecting the sale price.",
-          "<b>Our goal: Resolve inspection issues before contract negotiations&mdash;not during them.</b>"]),
         (_engine_png(), "Price Authenticated by the CST Pricing Team", "The pricing engine",
          ["The value of this home was not pulled from an online estimate. The CST Pricing Team authenticates it "
           "by hand, through ten tests.",
@@ -248,6 +239,15 @@ def buyer_guide(p, b_dir):
           "to a different price range. <b>Detriment (10)</b> is an adjustment for issues with the lot or "
           "functionality.",
           "That is why you can have confidence in the Customary and Premium Values above."]),
+        (sh.get(names[1]), "See the Home", "The photography",
+         ["The full gallery of the home. Tap any photo to see it large."]),
+        (sh.get(names[2]), "The Home &mdash; We Are More Than a Pretty Face", "Home Preparation Is the Key to a Gold Standard Listing&trade;",
+         ["Every Casey Samson Team listing undergoes a thorough pre-market inspection of major systems and "
+          "potential problem areas, including heating and cooling, appliances, electrical systems, roof, "
+          "foundation, and mold.",
+          "Identified issues are addressed before the home goes live, minimizing surprises, strengthening buyer "
+          "confidence, and protecting the sale price.",
+          "<b>Our goal: Resolve inspection issues before contract negotiations&mdash;not during them.</b>"]),
         (sh.get(names[3]), "Features &amp; Updates", "What is inside, and what is new",
          ["Every feature, and every major update with the year it was done."]),
         (sh.get(names[4]), "What the Owners Love", "In their own words",
