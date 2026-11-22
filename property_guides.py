@@ -111,11 +111,20 @@ def roadmap_guide(p, s_dir):
     fb, dp = v.get("fallback_override"), v.get("deep_override")
     addr = p["address"]
     secs = [
-        (sh.get("_top"), "Your Roadmap at a Glance", addr,
-         [f"The top of your Roadmap carries the plan for {addr}: the recommended price, the expected sale "
-          "price and the authenticated range from Customary to Premium Value.",
-          "Pricing is preliminary until a trained Realtor has walked the home. Final values depend on "
-          "condition, upgrades and any lot premium or discount."]),
+        (sh.get("_top"), f"{addr} | CST Seller Roadmap&trade;", "Your plan, start to finish",
+         ["Your Seller Roadmap&trade; outlines the proven pricing and marketing strategies that have made "
+          "The Casey Samson Team&rsquo;s listings the Gold Standard against which other listings are judged.",
+          "The Roadmap includes:"
+          "<ul style=\"margin:8px 0 0 1.1em;padding:0;\">"
+          "<li><b>Authenticated Pricing&trade;</b> &mdash; Establishing Customary to Premium Value and a "
+          "strategic list price.</li>"
+          "<li><b>Current Market Conditions</b> &mdash; Understanding buyer demand, competition, and market "
+          "trends.</li>"
+          "<li><b>Moving the Needle</b> &mdash; Recommendations to maximize your home&rsquo;s appeal and "
+          "achieve top dollar.</li>"
+          "<li><b>The Test&trade;</b> &mdash; Our proven Preview and Coming Soon strategy to identify the "
+          "strongest buyer pool and position your home for a successful sale.</li></ul>",
+          "<b>Our goal:</b> Sell your home in the first week at the highest possible price."]),
         (sh.get(names[0]), "Appraisal-Quality Comparable Analysis", "The sales an appraiser would use",
          [f"Your home sits at the top of the table, built {p['subject'].get('built')}, "
           f"{p['subject'].get('sf'):,} square feet, with the average of the comparable sales right under it.",
