@@ -230,8 +230,13 @@ def buyer_guide(p, b_dir):
           "Historically, CST listings sell between Customary and Premium Values (sometimes more)."]),
         (sh.get(names[1]), "See the Home", "The photography",
          ["The full gallery of the home. Tap any photo to see it large."]),
-        (sh.get(names[2]), "The Home", "The facts and the story",
-         ["The photo gallery of the home, with a caption under every picture. Tap any photo to see it large."]),
+        (sh.get(names[2]), "The Home &mdash; We Are More Than a Pretty Face", "Home Preparation Is the Key to a Gold Standard Listing&trade;",
+         ["Every Casey Samson Team listing undergoes a thorough pre-market inspection of major systems and "
+          "potential problem areas, including heating and cooling, appliances, electrical systems, roof, "
+          "foundation, and mold.",
+          "Identified issues are addressed before the home goes live, minimizing surprises, strengthening buyer "
+          "confidence, and protecting the sale price.",
+          "<b>Our goal: Resolve inspection issues before contract negotiations&mdash;not during them.</b>"]),
         (_engine_png(), "Price Authenticated by the CST Pricing Team", "The pricing engine",
          ["The value of this home was not pulled from an online estimate. The CST Pricing Team authenticates it "
           "by hand, through ten tests.",
