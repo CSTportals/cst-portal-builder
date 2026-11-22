@@ -652,5 +652,22 @@
    "Flint Hill School (private, JK&ndash;12) about a mile away"
   ]
  },
- "net_proceeds": true
+ "net_proceeds": true,
+ "followup": {
+  "intro": [
+   "Kevin and I are confident in our valuation, particularly our Neighborhood Model using the two most recent Renaissance sales&mdash;10807 Tradewinds and 3014 Apple Blossom&mdash;adjusted for appreciation.",
+   "We also have Vintage Crest listed at $2.5M. We received a full-price offer, but the sellers held out for more, and no higher offer materialized.",
+   "While your home is older, its superior floor plan and entertaining spaces add significant value."
+  ],
+  "upgrade_desc": "sunroom/outdoor entertainment",
+  "tier2_note": "unusual, but justified in my opinion",
+  "pool_note": "The typical buyer pool for a 1998 Oakton home centers around $2.15M. At $2.5M, we are at the upper end of Oakton but competitive with Great Falls and McLean.",
+  "target_areas": [
+   "Oakton",
+   "Vienna",
+   "Great Falls",
+   "McLean"
+  ],
+  "over_list_note": "Selling $200K&ndash;$250K over list is not unusual for our team."
+ }
 }

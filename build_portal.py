@@ -4069,6 +4069,142 @@ def build_strategy_summary(p, s, out):
                                                               encoding="utf-8")
 
 
+def _abbr_m(x):
+    """$2,750,000 -> $2.75M; $2,649,999 -> $2.65M; $575,000 -> $575K."""
+    x = int(round(x / 10_000.0) * 10_000) if x >= 1_000_000 else int(round(x / 1_000.0) * 1_000)
+    if x >= 1_000_000:
+        return "$" + (f"{x / 1e6:.2f}".rstrip("0").rstrip(".")) + "M"
+    return f"${x // 1000}K"
+
+
+def _range_m(x):
+    """A value as Casey writes it in the follow-up: the band it sits in --
+    $2,470,613 -> $2.45M&ndash;$2.5M (50K bands over $1M, 25K under)."""
+    step = 50_000 if x >= 1_000_000 else 25_000
+    lo = int(x // step * step)
+    return f"{_abbr_m(lo)}&ndash;{_abbr_m(lo + step)}"
+
+
+def build_followup_email(p, s, out):
+    """The follow-up email after the walk-through (Casey, 21 Nov 2026, from his
+    3106 Whimbrell letter to Chad). "Once I have seen the home, I will update
+    the model and those numbers appear on the follow up email": values and
+    the pricing ladder come from the model; the home's own story comes from
+    the property file's "followup" block --
+      intro: [paragraphs], upgrade_desc, tier2_note, target_range,
+      pool_note, target_areas: [...], golive_note, over_list_note, ps.
+    Not written for a recovery (the recovery email covers it)."""
+    if is_recovery(p):
+        return
+    fu = p.get("followup") or {}
+    v = p["values"]
+    f = strategy_figures(p, s)
+    pre = p["prefix"]
+    root = (seller_host(p) or "").rstrip("/")
+    bp = (buyer_portal_url(p) or "").rstrip("/")
+    mk = p.get("market") or {}
+    slug = mk.get("slug") or ""
+    mkt = f"https://cstmarketupdate.netlify.app/{slug.lower()}" if slug else None
+    mkt_words = re.sub(r"\s*Market$", "", mk.get("name", "")).strip()
+    mkt_words = (mkt_words.split()[0] + " " + " ".join(w.lower() for w in mkt_words.split()[1:])).strip() if mkt_words else ""
+    names = p.get("seller_names") or "(Seller Name)"
+
+    # ---- where we see value: straight from the model
+    cust = int(v.get("customary_unadjusted") or v["customary"])
+    ul, up = v.get("upgrade_labels"), int(v.get("significant_upgrades") or 0)
+    vals = [f"<b>{_range_m(cust)}:</b> Customary Value"]
+    if ul and up:
+        pct = [re.search(r"(\d+)%", x).group(1) if re.search(r"(\d+)%", x) else "" for x in ul]
+        desc = fu.get("upgrade_desc", "upgrade")
+        vals.append(f"<b>{_range_m(int(v['customary']))}:</b> With a {pct[0]}% return on the "
+                    f"{_abbr_m(up)} {desc} investment")
+        vals.append(f"<b>{_range_m(int(v['premium']))}:</b> With a {pct[1]}% return"
+                    + (f"&mdash;{fu['tier2_note']}" if fu.get("tier2_note") else ""))
+    elif v.get("premium"):
+        vals.append(f"<b>{_range_m(int(v['premium']))}:</b> Premium Value &mdash; finishes and "
+                    "presentation above the standard")
+    pv, cs, fb, deep = f["preview"], f["coming_soon"], f["fallback"], f["deep"]
+    tr = fu.get("target_range") or (f"{_abbr_m(cs)}&ndash;{_abbr_m(pv)}" if pv > cs
+                                     else f"{_abbr_m(cust)}&ndash;{_abbr_m(int(v.get('premium') or cust))}")
+    vals.append(f"<b>{tr}:</b> Our target sales range once buyers experience the home")
+    vli = "".join(f"<li>{x}</li>" for x in vals)
+
+    # ---- the ladder: straight from the model
+    steps = [f"Preview at <b>{_abbr_m(pv)}</b> on Zillow, Samson Properties, and Realtor.com to establish value and test interest.",
+             f"Coming Soon at <b>{_abbr_m(cs)}</b> to gauge buyer response.",
+             f"Go Live at <b>{_abbr_m(fb)}</b> if we don&rsquo;t generate offers. "
+             + fu.get("golive_note", "This is a major buyer threshold that opens a larger pool."),
+             f"Consider <b>{_abbr_m(deep)}</b> if interest and showings are weak. We let the market guide us. Your call."]
+    sli = "".join(f"<li>{x}</li>" for x in steps)
+    areas = fu.get("target_areas")
+    if areas:
+        areas = (", ".join(areas[:-1]) + ", and " + areas[-1]) if len(areas) > 2 else " and ".join(areas)
+
+    def a(h, t):
+        return f'<a href="{h}">{t}</a>' if h else t
+    tools = [
+        (f"{root}/{pre}_Roadmap.html" if root else None, "Seller Roadmap&trade;",
+         "Authenticated values, preparation, pricing, and marketing plan."),
+        (f"{root}/{pre}_Pricing_Strategy_Summary.pdf" if root else None, "Pricing Strategy Summary&trade;",
+         "Pricing ladder, buyer thresholds, and adjustment triggers."),
+        (bp + "/" if bp else None, "Buyer Portal&trade;",
+         "Showcases your home&rsquo;s value, upgrades, amenities, and lifestyle advantages."),
+        (f"{root}/{pre}_Buyer_Report.pdf" if root else None, "Buyer Flyer",
+         "Helps buyers recognize and appreciate your home&rsquo;s premiums."),
+        (mkt, "Market Snapshot", f"Weekly {mkt_words + ' ' if mkt_words else ''}market conditions and buyer demand."),
+    ]
+    tli = "".join(f"<li>{a(u, n)} &mdash; {d}</li>" for u, n, d in tools)
+
+    pl = p.get("private_label") or {}
+    ag = p.get("agent") or {}
+    full = pl.get("name") or ag.get("display") or "Casey Samson"
+    first = full.split()[0]
+    team = pl.get("team_name") or ("Samson Properties" if pl else "The Casey Samson Team")
+    phone = pl.get("phone") or ag.get("phone") or "703-508-2535"
+    intro = "".join(f"<p>{x}</p>\n" for x in fu.get("intro", []))
+    H = 'style="margin:26px 0 8px;font-size:24pt;font-weight:700;"'
+    html = f"""<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>{p["address"]} — Follow-up email</title></head>
+<body style="max-width:900px; margin:24px auto; padding:0 20px; line-height:1.4; font-family:'Times New Roman',Times,serif; font-size:24pt; color:#000;">
+
+<p>{names},</p>
+
+{intro}
+<h3 {H}>Where We See Value</h3>
+<ul style="margin:0 0 10px;">{vli}</ul>
+
+<h3 {H}>Our Pricing Strategy</h3>
+{f"<p>{fu['pool_note']}</p>" if fu.get("pool_note") else ""}
+{f"<p>Our target: Buyers searching {areas}.</p>" if areas else ""}
+<ol style="margin:0 0 10px;">{sli}</ol>
+
+<p>{fu.get("over_list_note", "Selling over list is not unusual for our team.")} The key is getting
+buyers through the door to experience the upgrades and fall in love with the home.</p>
+
+<h3 {H}>Your CST Seller Portal&trade;</h3>
+<p>Here are the five tools supporting our strategy:</p>
+<ol style="margin:0 0 10px;">{tli}</ol>
+
+<p>Together, these tools attract buyers, authenticate value, and strengthen our negotiating position.</p>
+
+<p><i>It&rsquo;s Not a Price, It&rsquo;s a Strategy.&trade;</i></p>
+
+<p>Call anytime with questions.</p>
+
+<p style="line-height:1.35;">{first}<br>{team}<br>{phone}</p>
+
+<p>P.S. {fu.get("ps", "Please confirm you received this. Thanks!")}</p>
+
+</body></html>
+"""
+    (out / f"{pre}_Follow_Up_Email.html").write_text(html, encoding="utf-8")
+    _write_eml(out, f"{pre}_Follow_Up_Email", html, f'Following up — {p["address"]}', p)
+    if not fu:
+        note('Follow-up email: no "followup" block -- written from the model alone '
+             "(values and ladder); add intro paragraphs after the walk-through.")
+
+
 def build_strategy_email(p, s, out):
     """The seller's pricing email, in the shape Casey approved on 9 Oct 2026.
 
@@ -8450,6 +8586,7 @@ def main():
     build_roadmap(p, s, out)
     build_strategy_summary(p, s, out)
     build_strategy_email(p, s, out)
+    build_followup_email(p, s, out)
     build_buyer_report(p, s, out)
     build_marketing(p, s, out)
     build_tracker(p, s, out)
