@@ -147,8 +147,13 @@ def roadmap_guide(p, s_dir):
           "The right cosmetic improvements can deliver a substantial increase in perceived value at a "
           "fraction of the cost."]),
         (sh.get(names[3]), "Current Competition", "Who you are up against",
-         [f"Every home {addr} is competing with today, and how the market is moving: the share under "
-          "contract, Market Strength and Market Momentum."] + ([notes["uc30"]] if notes.get("uc30") else [])),
+         ["Understanding the competition is only half the equation. We measure Market Strength, Buyer "
+          "Demand, and Market Momentum to determine whether buyers are actively purchasing homes&mdash;and, "
+          "more importantly, which price ranges have the strongest buyer pools.",
+          f"Our strategy is to position {addr} where buyer demand is strongest and launch when market "
+          "conditions offer the best opportunity for success.",
+          "<b>We don&rsquo;t just put homes on the market. We make sure the buyers are there when we "
+          "launch.</b>"] + ([notes["uc30"]] if notes.get("uc30") else [])),
         (sh.get(names[4]), "CST Pricing Strategy", "Where the price goes, and why",
          [f"The strategy places the home at the first buyer threshold under its Customary Value of "
           f"{money(v['customary'])}, so it shows up for every buyer searching that range."]),
