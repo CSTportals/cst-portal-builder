@@ -7860,6 +7860,8 @@ secure the best possible offer.</p>
 to make an offer before the reduction.</p>
 
 <p {S}><b>4. Adjust Price</b></p>
+<p style="margin-top:0;"><b>Note:</b> Adjusting price does not mean a lower sales price, it means a larger
+buyer pool. Lower prices usually produce higher prices (see below).</p>
 <p style="margin:0 0 2px 1.2em;"><i>If some buyers call &mdash; Fall Back Price, {fb}</i></p>
 <p style="margin:0 0 14px 1.2em;">If we receive interest but no acceptable offer, we return to the market at {fb} to
 attract more buyers.</p>
