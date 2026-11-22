@@ -2512,3 +2512,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # Casey, 22 Nov 2026: "when I create a portal, lets create the guides as
+    # well" -- each portal gets its own four guides from its own pages.
+    try:
+        import json as _j, property_guides as _pg
+        _a = [x for x in sys.argv[1:] if x.endswith(".json")]
+        if _a:
+            _made = _pg.build(_j.loads(Path(_a[0]).read_text()), ("buyer",))
+            print("  Guides:", ", ".join(_made) or "none")
+    except Exception as _e:
+        print("  Guides: skipped --", _e)
