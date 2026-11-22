@@ -162,11 +162,17 @@ def roadmap_guide(p, s_dir):
           "property information on Zillow, Homes.com, Samson Properties and more."]),
         (sh.get(names[6]), "Coming Soon", f"Full marketing at {money(cs)}",
          [f"The home goes on the MLS as Coming Soon at {money(cs)}, with full photography and marketing."]),
-        (sh.get(names[7]), "Predictive Analysis Sets the Price", "The first week decides the next move",
-         ["<b>Five or more showings:</b> hold the price."
-          + (f" <b>Fewer than five:</b> move to {money(fb)}." if fb else "")
-          + (f" <b>Pulling the Rip Cord, 0 showings:</b> {money(dp)}." if dp else ""),
-          "Every price is set in advance, so there are no surprises."]),
+        (sh.get(names[7]), "Predictive Analysis&trade; Sets the Price", "The first week decides the next move",
+         ["Our proven track record is built on monitoring buyer activity and responding decisively. Arriving "
+          "at the right price is a science, not guesswork.",
+          "<ul style=\"margin:0 0 0 1.1em;padding:0;\">"
+          "<li><b>5+ Scheduled Showings:</b> Hold the price. We&rsquo;ve reached an active buyer pool.</li>"
+          + (f"<li><b>1&ndash;4 Showings:</b> Adjust to {money(fb)} to attract a stronger buyer pool.</li>" if fb else "")
+          + (f"<li><b>0 Showings &mdash; Pull the Rip Cord:</b> Move immediately to {money(dp)} to reach a new "
+             "buyer pool.</li>" if dp else "")
+          + "</ul>",
+          "Every price is established in advance. We let buyer activity dictate our next move, eliminating "
+          "surprises and protecting momentum."]),
     ]
     return _page("Your Seller Roadmap Guide",
                  f"{addr} &mdash; what each part of your Gold Standard Seller Roadmap&trade; shows you.",
