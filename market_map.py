@@ -71,6 +71,9 @@ def _map(p, mid, title, items, kind):
     mm = p["market_map"]
     cv = p["values"]["customary"]
     lat, lng = mm["subject"]
+    # Casey, 22 Nov 2026: "Coming Soon should not appear on maps."
+    if kind != "sold":
+        items = [a for a in items if a.get("status") != "Coming Soon"]
     pins = []
     for i, a in enumerate(items):
         st = a.get("status", "Sold")
@@ -141,7 +144,7 @@ def _map(p, mid, title, items, kind):
     if kind != "sold" and any("_grade" in a for a in items):
         LIST_GRADE = ("Active, or over 30 days on market",
                       "Under contract with contingencies, 30 days or less",
-                      "Coming Soon, or Pending in 7 days or less (no contingencies)")
+                      "Pending in 7 days or less (no contingencies)")
         legend = "".join(f'<span><i style="background:{SOLD_GRADE[g][1]}"></i>{LIST_GRADE[g]}</span>'
                          for g in (2, 1, 0) if any(a.get("_grade") == g for a in items))
     if kind == "sold" and any("_grade" in a for a in items):
