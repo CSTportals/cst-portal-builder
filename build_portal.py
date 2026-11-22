@@ -1350,6 +1350,7 @@ GAUGE_CSS = """
   /* Both rows the same width: the strength pair was sizing to its own
      content and coming out 70px narrower than the momentum pair under it. */
   .cmi-wrap .cmi-row{margin:0 auto; width:100%; max-width:520px;}
+  .cmi-wrap.cmi-three .cmi-row{max-width:780px;}
   /* screen only: a printed page is 816px wide, so a bare max-width rule
      here stacks the two groups on paper as well as on a phone. */
   @media screen and (max-width:860px){
@@ -1582,14 +1583,30 @@ CMI_SCALE = (
     '<span class="grn">Seller&rsquo;s Market</span></div></div>')
 
 
-def cmi_dashboard(stats, cond=None, wide=False, shared=True):
+ROADMAP_GAUGES = ("uc_total", "dom", "uc_30")
+
+
+def cmi_dashboard(stats, cond=None, wide=False, shared=True, three=False):
     """The whole dashboard: the cards, under their two group headings.
+
+    three=True (Roadmap Current Competition): Casey, 22 Nov 2026 -- "only
+    three index matter: % under contract, DOM and Contracts last 30 days".
+    One row of three, no group headings or scores.
 
     `stats` is the (figure, label) list the report already carries. A group
     with no figures on file is left out rather than printed empty, so a
     property without contract dates shows one heading and not two.
     """
     seen = [(gauge_key(l), n, l) for n, l in stats]
+    if three:
+        pick = {k: (k, n, l) for k, n, l in seen if k in ROADMAP_GAUGES}
+        mine = [pick[k] for k in ROADMAP_GAUGES if k in pick]
+        if not mine:
+            return ""
+        cards = "".join(cmi_card(k, n, l, wide=wide, shared=shared) for k, n, l in mine)
+        return ('<div class="cmi-wrap cmi-three"><div class="cmi-group">'
+                f'<div class="cmi-row n{len(mine)}">{cards}</div></div></div>'
+                + (CMI_SCALE if shared else ""))
     groups = []
     for title, keys in CMI_GROUPS:
         mine = [(k, n, l) for k, n, l in seen if k in keys]
@@ -1913,7 +1930,7 @@ def canonical_stats(market, cond):
     return out
 
 
-def market_conditions(market):
+def market_conditions(market, three=False):
     """Current Market Conditions, in the MSS's own flag format: eyebrow, flag
     headline with the figure called out, the italic read, three stats and the
     Market Update. Everything here is text the MSS produces — nothing is
@@ -1950,7 +1967,7 @@ def market_conditions(market):
                             f'<span class="mc-fig">{c["headline_figure"]}</span>', 1)
     # Casey, 15 Oct 2026: the four statistics are now the CST Market
     # Intelligence(TM) dashboard -- "not four ordinary statistic boxes".
-    stats = cmi_dashboard(canonical_stats(market, c), c)
+    stats = cmi_dashboard(canonical_stats(market, c), c, three=three)
     sub = f'<p class="mc-sub">{c["sub"]}</p>' if c.get("sub") else ""
     upd = (f'<div class="mc-update"><b>Market Update:</b> {c["update"]}</div>'
            if c.get("update") else "")
@@ -2013,7 +2030,7 @@ def market_block(market):
     if market.get("conditions"):
         # The MSS flag block replaces the old subhead line: it says the same
         # thing and more, and two reads of the market stacked is noise.
-        _mc = market_conditions(market)
+        _mc = market_conditions(market, three=True)
         # Casey, 21 Oct 2026: follows the weekly MSS live (see live_slug).
         _ls = market.get("slug")
         if _mc and _ls and cached.get("conditions") is market.get("conditions"):
@@ -5798,6 +5815,7 @@ def build_roadmap(p, s, out):
   <div class="wrap">
     <h2 class="section-title">Current Competition</h2>
 {market_block(p["market"])}
+<!--RMMl-anchor-->
     <p class="section-sub" style="margin-top:30px;">{comp_lede}</p>
     {f'<p class="stat-line">{stat}</p>' if stat else ''}
     {f"""<div class="table-wrap">

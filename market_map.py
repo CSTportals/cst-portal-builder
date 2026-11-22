@@ -256,11 +256,17 @@ def add_to_roadmap(p, out, note=print):
     # "Moving forward, All seller portals need maps for comps and
     # competition." On by default again; "listings_map": false leaves it off.
     if mm.get("listings") and mm.get("listings_map", True) is not False:
+        # Casey, 22 Nov 2026: "three index ... then Map, then properties
+        # table" -- the map sits above the competition table when the
+        # Roadmap carries the anchor.
         i = h.find("Current Competition</h2>")
-        j = h.find("</table>", i)
-        j = h.find("</div>", j) if j > 0 else -1
+        a = h.find("<!--RMMl-anchor-->", i)
+        if a > 0:
+            j = a + len("<!--RMMl-anchor-->")
+        else:
+            j = h.find("</table>", i)
+            j = h.find("</div>", j) + len("</div>") if j > 0 else -1
         if i > 0 and j > 0:
-            j += len("</div>")
             blk = "<!--RMMl-->" + _map(p, "rmmList", "The Current Market", mm["listings"], "list") + "<!--/RMMl-->\n"
             h = h[:j] + "\n" + blk + h[j:]
             done.append(f'{len(mm["listings"])} listings under the Current Competition table')
