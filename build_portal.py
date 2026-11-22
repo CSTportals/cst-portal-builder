@@ -4086,25 +4086,40 @@ def _range_m(x):
 
 
 def cst_over_list_rows():
-    """CST resales that closed over original list (data/CST_Resales.xlsx, the
-    MLS export behind the track record), largest amount over first."""
-    import openpyxl
-    src = Path(__file__).resolve().parent / "data" / "CST_Resales.xlsx"
+    """Casey, 22 Nov 2026: the top 30 Casey Samson Team sales over list price
+    since 2025 (data/CST_Over_List_Top30.csv, from his list), largest first."""
+    import csv
+    src = Path(__file__).resolve().parent / "data" / "CST_Over_List_Top30.csv"
     if not src.exists():
         return []
-    ws = openpyxl.load_workbook(src, read_only=True, data_only=True).worksheets[0]
-    rows = list(ws.iter_rows(values_only=True))
-    h = rows[0]
-    ix = {k: h.index(k) for k in ("Address", "City", "Close Price", "Original List Price", "DOM", "Close Date")}
-    out = []
-    for r in rows[1:]:
-        cp, ol = r[ix["Close Price"]], r[ix["Original List Price"]]
-        if cp and ol and cp > ol:
-            out.append(dict(address=re.sub(r"\bMacarthur\b", "MacArthur", r[ix["Address"]] or ""), city=(r[ix["City"]] or "").title().replace("Mclean", "McLean"),
-                            orig=int(ol), sold=int(cp), over=int(cp - ol), dom=r[ix["DOM"]],
-                            date=r[ix["Close Date"]]))
-    return sorted(out, key=lambda x: -x["over"])
+    rows = [dict(address=r["address"], city=r["city"], orig=int(r["list"]), sold=int(r["sold"]),
+                 over=int(r["over"]), pct=r["pct"], dom=int(r["dom"]))
+            for r in csv.DictReader(src.open(encoding="utf-8"))]
+    return sorted(rows, key=lambda x: -x["over"])[:30]
 
+
+def over_list_table_html(H='style="margin:26px 0 8px;font-weight:700;"'):
+    """The track record at the bottom of the seller emails (regular, recovery
+    and follow-up): CST homes sold over list price, top 30 since 2025."""
+    ov = cst_over_list_rows()
+    if not ov:
+        return ""
+    td = 'style="padding:5px 8px;border-bottom:1px solid #ddd;"'
+    tr = 'style="padding:5px 8px;border-bottom:1px solid #ddd;text-align:right;"'
+    th = 'style="padding:5px 8px;border-bottom:2px solid #000;text-align:left;"'
+    thr = 'style="padding:5px 8px;border-bottom:2px solid #000;text-align:right;"'
+    body = "".join(
+        f"<tr><td {td}>{x['address']}, {x['city']}</td><td {tr}>{money(x['orig'])}</td>"
+        f"<td {tr}>{money(x['sold'])}</td><td {tr}><b>+{money(x['over'])}</b></td>"
+        f"<td {tr}>{x['pct']}</td><td {tr}>{x['dom']}</td></tr>" for x in ov)
+    # Labeled "CST" so private-label branding never renames it: on a PL
+    # portal the track record stays CST's (Casey, Nov 2026).
+    return (f'<h3 {H}>CST Track Record &mdash; Homes Sold Over List Price</h3>\n'
+            f'<table style="border-collapse:collapse;width:100%;font-size:0.7em;font-family:inherit;">'
+            f"<tr><th {th}>Home</th><th {thr}>List</th><th {thr}>Sold</th><th {thr}>Over List</th>"
+            f"<th {thr}>% of List</th><th {thr}>Days</th></tr>{body}</table>\n"
+            f'<p style="font-size:0.6em;color:#444;">Top {len(ov)} CST sales over list '
+            "price since 2025. Source: MLS Bright.</p>\n")
 
 def build_followup_email(p, s, out):
     """The follow-up email after the walk-through (Casey, 21 Nov 2026, from his
@@ -4193,24 +4208,7 @@ def build_followup_email(p, s, out):
         "be completed and ready for the buyers."]))
     # Casey, 21 Nov 2026: "At the end of the email show the homes from our
     # track record that sold over list price."
-    _ov = cst_over_list_rows() if fu.get("over_list_table", True) else []
-    if _ov:
-        _td = 'style="padding:6px 10px;border-bottom:1px solid #ddd;"'
-        _tr = 'style="padding:6px 10px;border-bottom:1px solid #ddd;text-align:right;"'
-        _body = "".join(
-            f"<tr><td {_td}>{x['address']}, {x['city']}</td><td {_tr}>{money(x['orig'])}</td>"
-            f"<td {_tr}>{money(x['sold'])}</td><td {_tr}><b>+{money(x['over'])}</b></td>"
-            f"<td {_tr}>{x['dom']}</td></tr>" for x in _ov)
-        _th = 'style="padding:6px 10px;border-bottom:2px solid #000;text-align:left;"'
-        _thr = 'style="padding:6px 10px;border-bottom:2px solid #000;text-align:right;"'
-        _over = (f'<h3 {H}>Casey Samson Team Homes Sold Over List Price</h3>\n'
-                 f'<table style="border-collapse:collapse;width:100%;font-size:16pt;">'
-                 f"<tr><th {_th}>Home</th><th {_thr}>List</th><th {_thr}>Sold</th>"
-                 f"<th {_thr}>Over List</th><th {_thr}>Days</th></tr>{_body}</table>\n"
-                 f'<p style="font-size:14pt;color:#444;">{len(_ov)} homes sold over their original list '
-                 "price. Casey Samson Team resales, $1.5M and above, since 2025. Source: MLS Bright.</p>\n")
-    else:
-        _over = ""
+    _over = over_list_table_html(H) if fu.get("over_list_table", True) else ""
     html = f"""<!DOCTYPE html>
 <html><head><meta charset="UTF-8">
 <title>{p["address"]} — Follow-up email</title></head>
@@ -7838,6 +7836,7 @@ marketing tools to generate the strongest possible offer.</p>
 
 <p style="line-height:1.4;">{full}<br>{phone}<br>{title} &middot; Samson Properties</p>
 
+{over_list_table_html(H)}
 </body></html>
 """
 
@@ -7909,6 +7908,7 @@ us negotiate the strongest possible offer.</p>
 
 <p style="line-height:1.4;">{full}<br>{title} &middot; Samson Properties<br>{phone}</p>
 
+{over_list_table_html()}
 </body></html>
 """
 
