@@ -4098,9 +4098,50 @@ def cst_over_list_rows():
     return sorted(rows, key=lambda x: -x["over"])[:30]
 
 
-def over_list_table_html(H='style="margin:26px 0 8px;font-weight:700;"'):
+def is_townhome(p):
+    t = str((p or {}).get("property_type", "")).lower().replace("-", "").replace(" ", "")
+    return t in ("townhome", "townhouse", "th", "rowhouse")
+
+
+def townhome_table_html(H):
+    """Casey, 22 Nov 2026: on a town home, "93% of our town homes sell over list
+    price in an average of 5 days" with the town home sales behind it
+    (data/CST_Townhome_Sales.csv). The figures are computed from the list."""
+    import csv
+    src = Path(__file__).resolve().parent / "data" / "CST_Townhome_Sales.csv"
+    if not src.exists():
+        return ""
+    rows = [dict(address=r["address"], orig=int(r["list"]), sold=int(r["sold"]),
+                 over=int(r["over"]), dom=int(r["dom"]))
+            for r in csv.DictReader(src.open(encoding="utf-8"))]
+    ov = sorted([x for x in rows if x["over"] > 0], key=lambda x: -x["over"])
+    if not ov:
+        return ""
+    pct = round(100 * len(ov) / len(rows))
+    days = round(sum(x["dom"] for x in ov) / len(ov))
+    td = 'style="padding:5px 8px;border-bottom:1px solid #ddd;"'
+    tr = 'style="padding:5px 8px;border-bottom:1px solid #ddd;text-align:right;"'
+    th = 'style="padding:5px 8px;border-bottom:2px solid #000;text-align:left;"'
+    thr = 'style="padding:5px 8px;border-bottom:2px solid #000;text-align:right;"'
+    body = "".join(
+        f"<tr><td {td}>{x['address']}</td><td {tr}>{money(x['orig'])}</td>"
+        f"<td {tr}>{money(x['sold'])}</td><td {tr}><b>+{money(x['over'])}</b></td>"
+        f"<td {tr}>{round(100 * x['sold'] / x['orig'])}%</td><td {tr}>{x['dom']}</td></tr>" for x in ov)
+    return (f'<h3 {H}>CST Track Record &mdash; Town Homes Sold Over List Price</h3>\n'
+            f'<p><b>{pct}% of our town homes sell over list price in an average of {days} days.</b></p>\n'
+            f'<table style="border-collapse:collapse;width:100%;font-size:0.7em;font-family:inherit;">'
+            f"<tr><th {th}>Town Home</th><th {thr}>List</th><th {thr}>Sold</th><th {thr}>Over List</th>"
+            f"<th {thr}>% of List</th><th {thr}>Days</th></tr>{body}</table>\n"
+            f'<p style="font-size:0.6em;color:#444;">{len(ov)} of {len(rows)} CST town home sales closed '
+            "over list price. Source: MLS Bright.</p>\n")
+
+
+def over_list_table_html(H='style="margin:26px 0 8px;font-weight:700;"', p=None):
     """The track record at the bottom of the seller emails (regular, recovery
-    and follow-up): CST homes sold over list price, top 30 since 2025."""
+    and follow-up): CST homes sold over list price, top 30 since 2025 -- or,
+    on a town home ("property_type": "townhome"), the town home record."""
+    if is_townhome(p):
+        return townhome_table_html(H)
     ov = cst_over_list_rows()
     if not ov:
         return ""
@@ -4208,7 +4249,7 @@ def build_followup_email(p, s, out):
         "be completed and ready for the buyers."]))
     # Casey, 21 Nov 2026: "At the end of the email show the homes from our
     # track record that sold over list price."
-    _over = over_list_table_html(H) if fu.get("over_list_table", True) else ""
+    _over = over_list_table_html(H, p) if fu.get("over_list_table", True) else ""
     html = f"""<!DOCTYPE html>
 <html><head><meta charset="UTF-8">
 <title>{p["address"]} — Follow-up email</title></head>
@@ -7836,7 +7877,7 @@ marketing tools to generate the strongest possible offer.</p>
 
 <p style="line-height:1.4;">{full}<br>{phone}<br>{title} &middot; Samson Properties</p>
 
-{over_list_table_html(H)}
+{over_list_table_html(H, p)}
 </body></html>
 """
 
@@ -7908,7 +7949,7 @@ us negotiate the strongest possible offer.</p>
 
 <p style="line-height:1.4;">{full}<br>{title} &middot; Samson Properties<br>{phone}</p>
 
-{over_list_table_html()}
+{over_list_table_html(p=p)}
 </body></html>
 """
 
