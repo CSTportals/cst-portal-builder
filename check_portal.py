@@ -99,14 +99,16 @@ ROADMAP_ORDER = [
 # same order, with the two recovery sections where Predictive Analysis would
 # be -- and Current Competition held back to sit under them, because the
 # Buyer Portal card belongs straight after the competition.
+# Casey, 22 Nov 2026: recovery Roadmaps now follow the standard order --
+# Current Competition before the CST Pricing Strategy.
 RECOVERY_ROADMAP_ORDER = [
     "Appraisal-Quality Comparable Analysis",
     "Price Authenticated by CST Pricing Team",
     "Moving the Needle&trade;",
+    "Current Competition",
     "CST Pricing Strategy",
     "Reconciling Value and Price",
     "Recovery Strategy",
-    "Current Competition",
 ]
 # The one-page sheet keeps Reality Check at the bottom, after the prices.
 SUMMARY_ORDER = [
