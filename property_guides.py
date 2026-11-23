@@ -607,6 +607,99 @@ def track_record_to_roadmap(index, rm):
     return True
 
 
+SAMPLE_BUYER = ("502_MacArthur_Buyer", "https://buymacarthur.netlify.app", "502 MacArthur Ave NE")
+
+
+def _bp_finished(p):
+    """The home's own Buyer Portal is finished once its photography and
+    headlines are in (or the property file says so)."""
+    bp = p.get("buyer_portal") or {}
+    if "finished" in bp:
+        return bool(bp["finished"])
+    return len(bp.get("gallery") or []) >= 5 and bool(bp.get("feature_headlines"))
+
+
+def _portal_top(page, out):
+    """The top of a Buyer Portal -- hero, facts and the headlines -- as the
+    buyer first sees it."""
+    from playwright.sync_api import sync_playwright
+    with sync_playwright() as pw:
+        b = pw.chromium.launch()
+        pg = b.new_page(viewport={"width": 1280, "height": 900})
+        pg.goto(page.as_uri(), wait_until="load")
+        pg.wait_for_timeout(900)
+        bottom = pg.evaluate("""() => { const e = document.querySelector('section.pitch');
+            return e ? e.getBoundingClientRect().bottom + scrollY + 20 : 1500; }""")
+        png = pg.screenshot(full_page=True, clip={"x": 0, "y": 0, "width": 1280,
+                                                  "height": min(max(bottom, 900), 2300)})
+        b.close()
+    im = Image.open(io.BytesIO(png)).convert("RGB")
+    im = im.resize((1000, int(im.height * 1000 / 1280)), Image.LANCZOS)
+    im.save(out, "JPEG", quality=82, optimize=True)
+
+
+def buyer_preview_to_roadmap(p, s_dir, b_dir):
+    """Casey, 23 Nov 2026: the Roadmap's Buyer Portal section promotes the
+    portal with a picture of it. Until this home's portal is finished it
+    toggles between this home's portal (headers in place, details to come)
+    and the finished Sample; once the home's portal is finished the Sample
+    is replaced by it."""
+    rm = s_dir / f"{p['prefix']}_Roadmap.html"
+    home = b_dir / "index.html"
+    if not (rm.exists() and home.exists()):
+        return False
+    h = rm.read_text(encoding="utf-8")
+    h = re.sub(r"<!--BPV-->.*?<!--/BPV-->\n?", "", h, flags=re.S)
+    m = re.search(r'<h2 class="section-title">Your Buyer Portal</h2>.*?</a>', h, re.S)
+    if not m:
+        return False
+    url = ((p.get("buyer_portal") or {}).get("url") or "").rstrip("/")
+    _portal_top(home, s_dir / "bp_preview_home.jpg")
+    done = _bp_finished(p)
+    sample = ROOT / "output" / SAMPLE_BUYER[0] / "index.html"
+    if not done and sample.exists():
+        _portal_top(sample, s_dir / "bp_preview_sample.jpg")
+    else:
+        done = True
+    fig = ('<a class="bpv-shot{c}" data-v="{v}" href="{u}" target="_blank" rel="noopener">'
+           '<img src="{src}" alt="{alt}" loading="lazy"></a>')
+    if done:
+        tabs = ""
+        shots = fig.format(c=" on", v="home", u=url, src="bp_preview_home.jpg", alt="This home's Buyer Portal")
+        cap = '<p class="bpv-cap">This home&rsquo;s Buyer Portal &mdash; tap to open it.</p>'
+    else:
+        tabs = ('<div class="bpv-tabs"><button type="button" class="on" data-v="home">This Home</button>'
+                '<button type="button" data-v="sample">Finished Sample</button></div>')
+        shots = (fig.format(c=" on", v="home", u=url, src="bp_preview_home.jpg", alt="This home's Buyer Portal")
+                 + fig.format(c="", v="sample", u=SAMPLE_BUYER[1], src="bp_preview_sample.jpg",
+                              alt=f"Sample Buyer Portal, {SAMPLE_BUYER[2]}"))
+        cap = ('<p class="bpv-cap" data-v="home">This home&rsquo;s Buyer Portal &mdash; every section is in place; '
+               'photography, headlines and details fill in as the home is prepared.</p>'
+               f'<p class="bpv-cap" data-v="sample" hidden>A finished Buyer Portal: {SAMPLE_BUYER[2]}, '
+               'sold for $2,300,000. Yours will look like this.</p>')
+    block = ("<!--BPV-->\n<style>"
+             ".bpv{max-width:900px;margin:26px auto 0;text-align:center}"
+             ".bpv-tabs{display:inline-flex;border:1px solid #B8902F;border-radius:22px;overflow:hidden;margin-bottom:14px}"
+             ".bpv-tabs button{font:700 14px Georgia,serif;letter-spacing:.04em;padding:9px 22px;border:0;"
+             "background:#FFFDF7;color:#1F2A44;cursor:pointer}"
+             ".bpv-tabs button.on{background:#1F2A44;color:#E8C77A}"
+             ".bpv-frame{border:1px solid #D9CBA6;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(40,30,10,.18);"
+             "max-height:620px;overflow-y:auto;background:#fff}"
+             ".bpv-shot{display:none}.bpv-shot.on{display:block}.bpv-shot img{display:block;width:100%;height:auto}"
+             ".bpv-cap{font-size:14px;color:#71695A;font-style:italic;margin:12px 0 0}"
+             "@media print{.bpv-frame{max-height:none}.bpv-tabs{display:none}}"
+             "</style>\n"
+             f'<div class="bpv">{tabs}<div class="bpv-frame">{shots}</div>{cap}</div>\n'
+             "<script>(function(){var r=document.querySelector('.bpv');if(!r)return;"
+             "r.querySelectorAll('.bpv-tabs button').forEach(function(b){b.onclick=function(){var v=b.dataset.v;"
+             "r.querySelectorAll('[data-v]').forEach(function(e){var on=e.dataset.v===v;"
+             "if(e.tagName==='P'){e.hidden=!on}else{e.classList.toggle('on',on)}});};});})();</script>\n"
+             "<!--/BPV-->\n")
+    h = h[:m.end()] + "\n" + block + h[m.end():]
+    rm.write_text(h, encoding="utf-8")
+    return True
+
+
 def build(p, which=("roadmap", "mss", "moveup", "buyer")):
     import private_label as _pl
     _pl.resolve(p)
@@ -621,6 +714,11 @@ def build(p, which=("roadmap", "mss", "moveup", "buyer")):
         inject_links(rm, f"{pre}_Roadmap_Guide.html", ROADMAP_LINKS)
     if "roadmap" in which:
         track_record_to_roadmap(s_dir / "index.html", rm)
+    if "roadmap" in which or "buyer" in which:
+        try:
+            buyer_preview_to_roadmap(p, s_dir, b_dir)
+        except Exception as e:  # a preview must never stop a build
+            print("  buyer preview skipped:", e)
     (s_dir / "_guide_notes.json").unlink(missing_ok=True)   # build-time only, not for the site
     if "mss" in which and (h := mss_guide(p)):
         (s_dir / "Market_Snapshot_Guide.html").write_text(h, encoding="utf-8"); made.append("market snapshot")
