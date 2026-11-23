@@ -326,14 +326,17 @@ def roadmap_guide(p, s_dir):
         (sh.get(names[1]), "Price Authenticated by the CST Pricing Team", "The pricing engine",
          ["Cylinders 1&ndash;6 run on every home: age and size, price range, price per square foot, "
           "assessment, market anomalies and inflation. Cylinders 7&ndash;10 fire only when they apply:",
-          "<b>Neighborhood (7)</b> analyzes neighborhood sales over the past 5 years. "
+          # Casey, 23 Nov 2026: each of (7) (8) (9) (10) on its own line.
+          "<b>Neighborhood (7)</b> analyzes neighborhood sales over the past 5 years.",
           "<b>Premium/Discount (8)</b> compares whether the seller paid a premium or a discount at the time "
-          "of purchase. <b>Extraordinary Upgrades (9)</b> applies when upgrades have been made that move the "
-          "needle to a different price range. <b>Detriment (10)</b> is an adjustment for issues with the lot "
-          "or functionality.",
+          "of purchase.",
+          "<b>Extraordinary Upgrades (9)</b> applies when upgrades have been made that move the needle to a "
+          "different price range.",
+          "<b>Detriment (10)</b> is an adjustment for issues with the lot or functionality.",
           f"Your values: <b>Dated {money(v['dated'])}</b>, <b>Customary {money(v['customary'])}</b>, "
-          f"<b>Premium {money(v['premium'])}</b>. Historically, CST listings sell between Customary and "
-          "Premium Values (sometimes more)."]),
+          f"<b>Premium {money(v['premium'])}</b>. CST listings are listed at the first threshold under "
+          "Customary Value, and historically sell between Customary and Premium Values (sometimes more) "
+          "within 6 days."]),
         # Casey, 23 Nov 2026: "another section for Authenticated Value breaking
         # down definitions for each, with cross links".
         # Casey, 23 Nov 2026: the three values across, each definition next to
