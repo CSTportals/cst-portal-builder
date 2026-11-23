@@ -399,10 +399,20 @@ def buyer_guide(p, b_dir):
     portal" -- the screenshots come from the full Sample Buyer Portal (502
     MacArthur), so every section of a finished Buyer Portal is shown, while
     the text carries THIS home's current figures."""
-    sample = ROOT / "output" / "502_MacArthur_Buyer" / "index.html"
-    page = sample if sample.exists() else b_dir / "index.html"
+    # Casey, 23 Nov 2026: "Completeness of report dictates." Until this
+    # home's Buyer Portal is finished (photos and features), the guide is the
+    # Sample's guide -- its pictures and its figures. Once it is finished the
+    # guide is built from this home's own portal and figures.
+    sample = ROOT / "output" / SAMPLE_BUYER[0] / "index.html"
+    done = _bp_finished(p) or not sample.exists()
+    page = (b_dir / "index.html") if done else sample
     if not page.exists():
         return None
+    home = p
+    if not done:
+        import private_label as _pl
+        p = json.loads((ROOT / "properties" / "502_macarthur.json").read_text(encoding="utf-8"))
+        _pl.resolve(p)
     v = p["values"]
     names = ["Authenticated Values", "See the Home", "The Home", "Features", "What the Owners Love",
              "Amenities and Transportation", "Property Documents", "Writing an Offer", "Move Up Calculator"]
@@ -415,8 +425,10 @@ def buyer_guide(p, b_dir):
         (sh.get("_top"), "Your First Look", addr,
          ["The front door to everything you need to know about the home: photography, values, documents and "
           "how to write an offer, all in one place.",
-          "Tap <b>Pricing Report</b> for the printable Buyer Pricing Report. Scan the <b>QR code</b> to put "
-          "this portal on your phone."]),
+          "Tap <b>Pricing Report</b> for the printable Buyer Report. Scan the <b>QR code</b> to put "
+          "this portal on your phone.",
+          '<a class="gback" href="Buyer_Report_Guide.html" style="border-bottom-width:2px;">'
+          "Guide to Understanding the Buyer Report &rarr;</a>"]),
         (sh.get("_headlines"), "Headlines", "What matters most",
          ["Headlines identify the most important things buyers need to know about the home."]),
         (sh.get(names[0]), "Authenticated Values&trade;", "How the price was set",
@@ -449,7 +461,8 @@ def buyer_guide(p, b_dir):
          ["Every feature, and every major update with the year it was done."]),
         (sh.get(names[4]), "What the Owners Love", "In their own words",
          ["The things the owners will miss most about living here."]),
-        (_map_png() or sh.get(names[5]), "The Neighborhood &mdash; Amenities &amp; Transportation",
+        ((sh.get(names[5]) if done else None) or _map_png() or sh.get(names[5]),
+         "The Neighborhood &mdash; Amenities &amp; Transportation",
          "More Than a Home. A Community and a Lifestyle.",
          ["Buyers aren&rsquo;t just purchasing a home. They&rsquo;re investing in a community, a lifestyle, and "
           "everything the surrounding area offers.",
@@ -470,9 +483,12 @@ def buyer_guide(p, b_dir):
           f"Switch between <b>Customary</b> ({money(v['customary'])}) and <b>Premium</b> "
           f"({money(v['premium'])}) to see the payment difference. Tap <b>Math</b> for every number."]),
     ]
-    return _page("Your Buyer Portal Guide",
-                 f"{addr} &mdash; what each part of the portal shows you, and how to use it.", secs, _brand(p),
-                 links=BUYER_LINKS, back="Buyer Portal")
+    lede = (f"{addr} &mdash; what each part of the portal shows you, and how to use it." if done else
+            f"A finished Buyer Portal, {addr} &mdash; what each part shows you, and how to use it. "
+            f"The portal for {home.get('buyer_portal', {}).get('display_address') or home['address']} "
+            "fills in the same way as the home is prepared.")
+    return _page("Your Buyer Portal Guide" if done else "Buyer Portal Guide &mdash; Sample",
+                 lede, secs, _brand(home), links=BUYER_LINKS, back="Buyer Portal")
 
 
 def _town(p):
@@ -675,29 +691,27 @@ def buyer_preview_to_roadmap(p, s_dir, b_dir):
     if not m:
         return False
     url = ((p.get("buyer_portal") or {}).get("url") or "").rstrip("/")
-    _portal_top(home, s_dir / "bp_preview_home.jpg")
+    # Casey, 23 Nov 2026: "Remove options ... to go to Subject or sample.
+    # Completeness of report dictates." One picture: the Sample until this
+    # home's portal is finished, then this home's portal.
     done = _bp_finished(p)
     sample = ROOT / "output" / SAMPLE_BUYER[0] / "index.html"
-    if not done and sample.exists():
-        _portal_top(sample, s_dir / "bp_preview_sample.jpg")
-    else:
+    if not done and not sample.exists():
         done = True
-    fig = ('<a class="bpv-shot{c}" data-v="{v}" href="{u}" target="_blank" rel="noopener">'
-           '<img src="{src}" alt="{alt}" loading="lazy"></a>')
+    for old_jpg in ("bp_preview_home.jpg", "bp_preview_sample.jpg"):
+        (s_dir / old_jpg).unlink(missing_ok=True)
     if done:
-        tabs = ""
-        shots = fig.format(c=" on", v="home", u=url, src="bp_preview_home.jpg", alt="This home's Buyer Portal")
+        _portal_top(home, s_dir / "bp_preview_home.jpg")
+        shot = (f'<a class="bpv-shot on" href="{url}" target="_blank" rel="noopener">'
+                '<img src="bp_preview_home.jpg" alt="This home&rsquo;s Buyer Portal"></a>')
         cap = '<p class="bpv-cap">This home&rsquo;s Buyer Portal &mdash; tap to open it.</p>'
     else:
-        tabs = ('<div class="bpv-tabs"><button type="button" class="on" data-v="home">This Home</button>'
-                '<button type="button" data-v="sample">Finished Sample</button></div>')
-        shots = (fig.format(c=" on", v="home", u=url, src="bp_preview_home.jpg", alt="This home's Buyer Portal")
-                 + fig.format(c="", v="sample", u=SAMPLE_BUYER[1], src="bp_preview_sample.jpg",
-                              alt=f"Sample Buyer Portal, {SAMPLE_BUYER[2]}"))
-        cap = ('<p class="bpv-cap" data-v="home">This home&rsquo;s Buyer Portal &mdash; every section is in place; '
-               'photography, headlines and details fill in as the home is prepared.</p>'
-               f'<p class="bpv-cap" data-v="sample" hidden>A finished Buyer Portal: {SAMPLE_BUYER[2]}, '
-               'sold for $2,300,000. Yours will look like this.</p>')
+        _portal_top(sample, s_dir / "bp_preview_sample.jpg")
+        shot = (f'<a class="bpv-shot on" href="{SAMPLE_BUYER[1]}" target="_blank" rel="noopener">'
+                f'<img src="bp_preview_sample.jpg" alt="Sample Buyer Portal, {SAMPLE_BUYER[2]}"></a>')
+        cap = (f'<p class="bpv-cap">A finished Buyer Portal: {SAMPLE_BUYER[2]}, sold for $2,300,000. '
+               'This home&rsquo;s portal fills in the same way as the home is prepared.</p>')
+    tabs, shots = "", shot
     block = ("<!--BPV-->\n<style>"
              ".bpv{max-width:900px;margin:26px auto 0;text-align:center}"
              ".bpv-tabs{display:inline-flex;border:1px solid #B8902F;border-radius:22px;overflow:hidden;margin-bottom:14px}"
