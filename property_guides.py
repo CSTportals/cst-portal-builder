@@ -767,7 +767,11 @@ def buyer_preview_to_roadmap(p, s_dir, b_dir):
     is replaced by it."""
     rm = s_dir / f"{p['prefix']}_Roadmap.html"
     home = b_dir / "index.html"
-    if not (rm.exists() and home.exists()):
+    # Casey, 23 Nov 2026: the link is constant -- the Sample until this
+    # home's portal has its pictures and features, then this home's. A home
+    # with no buyer portal of its own (the Sample itself, a new listing not
+    # yet built) still gets the Sample.
+    if not rm.exists():
         return False
     h = rm.read_text(encoding="utf-8")
     h = re.sub(r"<!--BPV-->.*?<!--/BPV-->\n?", "", h, flags=re.S)
@@ -778,9 +782,11 @@ def buyer_preview_to_roadmap(p, s_dir, b_dir):
     # Casey, 23 Nov 2026: "Remove options ... to go to Subject or sample.
     # Completeness of report dictates." One picture: the Sample until this
     # home's portal is finished, then this home's portal.
-    done = _bp_finished(p)
+    done = _bp_finished(p) and home.exists()
     sample = ROOT / "output" / SAMPLE_BUYER[0] / "index.html"
     if not done and not sample.exists():
+        if not home.exists():
+            return False
         done = True
     for old_jpg in ("bp_preview_home.jpg", "bp_preview_sample.jpg"):
         (s_dir / old_jpg).unlink(missing_ok=True)
