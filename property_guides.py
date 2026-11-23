@@ -97,6 +97,7 @@ def _page(title, lede, sections, brand, links=None, back=None):
 ROADMAP_LINKS = {
     "Appraisal-Quality": "Appraisal-Quality Comparable Analysis",
     "Price Authenticated": "Price Authenticated",
+    "Authenticated Values": "css:values-grid",
     "Moving the Needle": "Moving the Needle",
     "Current Competition": "Current Competition",
     "CST Pricing Strategy": "CST Pricing Strategy",
@@ -154,15 +155,18 @@ def inject_links(page, guide_href, links):
             continue
         if target.startswith("css:"):
             cls = target[4:]
-            m = re.search(r'<section class="' + cls + r'[^"]*"[^>]*>', h)
+            m = re.search(r'<(?:section|div) class="' + cls + r'[^"]*"[^>]*>', h)
             if not m:
                 continue
-            name = "the Headlines" if cls == "pitch" else cls.title()
+            name = {"pitch": "the Headlines", "values-grid": "Authenticated Values"}.get(cls, cls.title())
             tag = m.group(0)
             new = tag if " id=" in tag else tag[:-1] + f' id="s-{sg}">'
             link = GLINK.format(s=sg, href=guide_href, name=name).replace(
                 'style="text-align:center;margin:4px 0 16px;"', 'style="text-align:center;margin:0 0 14px;"')
-            h = h[:m.start()] + new + link + h[m.end():]
+            if cls == "pitch":
+                h = h[:m.start()] + new + link + h[m.end():]
+            else:   # the link sits just above the block it explains
+                h = h[:m.start()] + link + new + h[m.end():]
         else:
             hit = None
             for m in re.finditer(r"<h2([^>]*)>(.*?)</h2>", h, re.S):
@@ -237,6 +241,16 @@ def _shots(page_url, wanted, viewport=(1280, 900), before=None, max_h=1500, hide
         el = pg.query_selector("section.pitch")
         if el:
             out["_headlines"] = el.screenshot()
+        el = pg.query_selector(".values-grid")
+        if el:
+            box = el.bounding_box()
+            lab = pg.query_selector(".values-label")
+            y0 = lab.bounding_box()["y"] - 10 if lab else box["y"] - 10
+            risk = pg.query_selector(".money-at-risk")
+            y1 = (risk.bounding_box()["y"] + risk.bounding_box()["height"]) if risk else box["y"] + box["height"]
+            out["_values"] = pg.screenshot(full_page=True, clip={
+                "x": max(box["x"] - 30, 0), "y": max(y0, 0),
+                "width": min(box["width"] + 60, viewport[0]), "height": y1 - y0 + 24})
         b.close()
     return out
 
@@ -297,6 +311,25 @@ def roadmap_guide(p, s_dir):
           f"Your values: <b>Dated {money(v['dated'])}</b>, <b>Customary {money(v['customary'])}</b>, "
           f"<b>Premium {money(v['premium'])}</b>. Historically, CST listings sell between Customary and "
           "Premium Values (sometimes more)."]),
+        # Casey, 23 Nov 2026: "another section for Authenticated Value breaking
+        # down definitions for each, with cross links".
+        (sh.get("_values"), "Authenticated Values&trade;", "Dated, Customary and Premium &mdash; what each one means",
+         ["Three values, one for each condition a home can be in. Final values are set after a trained "
+          "Realtor inspects the home&rsquo;s condition, upgrades and lot premium or discount.",
+          f"<b>Dated Price (one star) &mdash; {money(v['dated'])}.</b> The home as it stands if it "
+          "has not been updated: kitchen and bathrooms largely original; paint, lighting, hardware, flooring "
+          "and finishes dated; presentation below standard.",
+          f"<b>Customary Price (two stars) &mdash; {money(v['customary'])}.</b> What a home of this "
+          "size and age has sold for in the past 90 days: kitchen and bathrooms updated within about 15 years; "
+          "paint, lighting, hardware, flooring and finishes at today&rsquo;s standard; presentation competitive "
+          "with comparable homes. This is the value the pricing strategy starts from.",
+          f"<b>Premium Price (three stars) &mdash; {money(v['premium'])}.</b> What premium homes with "
+          "superior finishes and presentation command: kitchen and bathrooms updated within about 10 years; "
+          "upgrades, finishes and craftsmanship above the standard; presentation that sets the home apart "
+          "from the competition.",
+          f"<b>Money at Risk &mdash; {money(v['premium'] - v['dated'])}.</b> The distance from Dated to Premium: "
+          "the value that can be lost to overpricing or poor preparation, and won back by Moving the Needle.",
+          "Historically, CST listings sell between Customary and Premium Values (sometimes more)."]),
         (sh.get(names[2]), "Moving the Needle&trade; Guide", "What raises the price, and what lowers it",
          ["With hundreds of thousands of dollars at risk, strategic improvements are critical&mdash;and a "
           "Casey Samson Team specialty.",
