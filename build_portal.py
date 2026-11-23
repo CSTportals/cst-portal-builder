@@ -6330,6 +6330,10 @@ def build_buyer_report(p, s, out, stats=True, balance=False, cover=True, loves=0
   <div class="rm-shade"></div>
   <div class="rm-hero-inner">
     <img class="seal" src="Gold_Standard_Logo.png" alt="Gold Standard Listing">
+    <div class="br-ttl" style="font-family:'Playfair Display',Georgia,serif;color:#E8C77A;font-weight:700;
+      line-height:1.15;margin:4px 0 8px;text-shadow:0 2px 10px rgba(0,0,0,.6);">
+      <span style="display:block;font-size:22px;letter-spacing:.06em;">The Casey Samson Team</span>
+      <span style="display:block;font-size:30px;color:#FFFDF7;">Buyer Report</span></div>
     <h1>{_bp.get("display_address") or addr}</h1>
     {_price}
     {_site}
@@ -6393,7 +6397,8 @@ def build_buyer_report(p, s, out, stats=True, balance=False, cover=True, loves=0
     _mast_guide = (f'<a href="{_gh}" style="display:block;margin-top:6px;font:700 22px Georgia,serif;'
                    'color:#8A6A2E;text-decoration:underline;">Guide to Understanding the Buyer Report &rarr;</a>'
                    if p.get("guides") is not False else "")
-    _br_guide = ("" if p.get("guides") is False or guide_in_mast else
+    # Casey, 23 Nov 2026: "Buyer report Remove guide link on top."
+    _br_guide = ("" if True else
         '<style>@media print{.br-guide-s{padding:0!important}.br-guide{margin:6px auto 0!important;padding:6px 12px!important;font-size:25px!important;line-height:1.3!important}.br-guide span{display:inline!important;margin:0 6px!important;font-size:12px!important}}</style>'
         f'<section class="br-guide-s" style="padding:0;"><div class="wrap"><a class="br-guide" href="{_gh}" target="_blank" rel="noopener" '
         'style="display:block;margin:26px auto 4px;max-width:1000px;background:#1F2A44;color:#E8C77A;'
@@ -6412,7 +6417,7 @@ def build_buyer_report(p, s, out, stats=True, balance=False, cover=True, loves=0
       <p class="addr">{addr}</p>
       <p class="city">{p["city"]}, {p["state"]}</p>
     </div>
-    <div class="mast-right"><h1 class="title">Buyer Pricing Report</h1>{_mast_guide if guide_in_mast else ""}
+    <div class="mast-right"><h1 class="title">Buyer Report</h1>
 {buyer_qr_corner(p)}    </div>
   </div>
 </header>
@@ -6497,6 +6502,20 @@ def build_buyer_report(p, s, out, stats=True, balance=False, cover=True, loves=0
 </body>
 </html>
 """
+    # Casey, 23 Nov 2026: guide links "more subtle ... off the top and next
+    # to each section like roadmap". Absolute, so they work in the PDF too.
+    if p.get("guides") is not False:
+        import re as _re
+        for _t, _sg in (("Comparable Property Analysis", "comparable-property-analysis"),
+                        ("Authenticated Values", "authenticated-values")):
+            _m = _re.search(r"(<h2[^>]*>)(\s*" + _t + r".*?</h2>)", body, _re.S)
+            if _m:
+                body = (body[:_m.start()] + _m.group(1)[:-1] + f' id="s-{_sg}">' + _m.group(2)
+                        + f'<a class="glink-sub" href="{_gh}#g-{_sg}" target="_blank" rel="noopener">'
+                        "Guide to Understanding this section &rarr;</a>" + body[_m.end():])
+        head = head.replace("</style>", ".glink-sub{display:block;text-align:center;margin:-6px 0 14px;"
+                            "font:italic 13px Georgia,serif;color:#8A6A2E;text-decoration:none;"
+                            "border:0}.glink-sub:hover{text-decoration:underline}</style>", 1)
     (out / f'{p["prefix"]}_Buyer_Report.html').write_text(head + body)
 
 

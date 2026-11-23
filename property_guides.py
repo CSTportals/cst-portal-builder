@@ -106,6 +106,10 @@ ROADMAP_LINKS = {
     "Our 4-Step": "Our 4-Step",
     "4. Adjust Price": "4. Adjust Price",
 }
+BR_LINKS = {
+    "Comparable Property Analysis": "Comparable Property Analysis",
+    "Authenticated Values": "Authenticated Values",
+}
 BUYER_LINKS = {
     "Headlines": "css:pitch",
     "Authenticated Values": "Authenticated Values",
@@ -120,10 +124,11 @@ BUYER_LINKS = {
     "Move Up Calculator": "Move Up Calculator",
 }
 
-GLINK = ('<div class="glink-row" data-glink="{s}" style="text-align:center;margin:6px 0 18px;">'
-         '<a href="{href}#g-{s}" target="_blank" rel="noopener" style="display:inline-block;'
-         "background:#1F2A44;color:#E8C77A;font:700 14px Georgia,serif;letter-spacing:.04em;"
-         'text-decoration:none;border-radius:20px;padding:7px 16px;">Guide to Understanding {name} &rarr;</a></div>')
+# Casey, 23 Nov 2026: "Links to the guide ... more subtle".
+GLINK = ('<div class="glink-row" data-glink="{s}" style="text-align:center;margin:2px 0 16px;">'
+         '<a href="{href}#g-{s}" target="_blank" rel="noopener" style="font:italic 13px Georgia,serif;'
+         'color:#8A6A2E;text-decoration:none;border-bottom:1px dotted #B8902F;">'
+         'Guide to Understanding {name} &rarr;</a></div>')
 
 
 def inject_links(page, guide_href, links):
@@ -148,7 +153,7 @@ def inject_links(page, guide_href, links):
             tag = m.group(0)
             new = tag if " id=" in tag else tag[:-1] + f' id="s-{sg}">'
             link = GLINK.format(s=sg, href=guide_href, name=name).replace(
-                'style="text-align:center;margin:6px 0 18px;"', 'style="text-align:center;margin:0 0 14px;"')
+                'style="text-align:center;margin:2px 0 16px;"', 'style="text-align:center;margin:0 0 14px;"')
             h = h[:m.start()] + new + link + h[m.end():]
         else:
             hit = None
@@ -478,7 +483,7 @@ def buyer_report_guide(p, s_dir):
     names = ["Comparable Property Analysis", "Authenticated Values"]
     sh = _shots(page.as_uri(), names)
     secs = [
-        (sh.get("_top"), "The Buyer Pricing Report", p["address"],
+        (sh.get("_top"), "The Buyer Report", p["address"],
          ["A one-page summary for buyers and their agents: the home, the sales that authenticate its value, "
           "and the value range itself. It is displayed at the listing and at open houses, and prints as a PDF."]),
         (sh.get(names[0]), "Comparable Property Analysis", "The sales behind the value",
@@ -493,7 +498,8 @@ def buyer_report_guide(p, s_dir):
           "Historically, CST listings sell between Customary and Premium Values (sometimes more)."]),
     ]
     return _page("Guide to Understanding the Buyer Report",
-                 f"{p['address']} &mdash; what each part of the Buyer Pricing Report tells you.", secs, _brand(p))
+                 f"{p['address']} &mdash; what each part of the Buyer Report tells you.", secs, _brand(p),
+                 links=BR_LINKS, back="Buyer Report")
 
 
 def mss_guide(p):
@@ -727,7 +733,10 @@ def build(p, which=("roadmap", "mss", "moveup", "buyer")):
     if "roadmap" in which and (h := buyer_report_guide(p, s_dir)):
         for d in (s_dir, b_dir, ROOT / "output" / f"{pre}_Buyer_Small"):
             if d.exists():
-                (d / "Buyer_Report_Guide.html").write_text(h, encoding="utf-8")
+                _br = f"{pre}_Buyer_Report.html"
+                if not (d / _br).exists():
+                    _br = f"{pre}_Buyer_Report.pdf"
+                (d / "Buyer_Report_Guide.html").write_text(h.replace("__BACK__", _br), encoding="utf-8")
         made.append("buyer report")
     if "buyer" in which and (h := buyer_guide(p, b_dir)):
         bp_url = ((p.get("buyer_portal") or {}).get("url") or "").rstrip("/")
