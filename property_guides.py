@@ -67,7 +67,20 @@ def _target(links, t):
     return (links or {}).get("*")
 
 
-BACK_CSS = (".gback{display:inline-block;margin-top:14px;font:700 15px Georgia,serif;color:#1F2A44;"
+BACK_CSS = (
+            ".avx{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:14px 0 0}"
+            ".avx .c{background:#fff;border:1px solid #E4DCC8;border-radius:10px;padding:16px 18px}"
+            ".avx .c.mid{border-color:#B8902F;box-shadow:0 4px 14px rgba(138,106,46,.10)}"
+            ".avx .k{font:700 12px Georgia,serif;letter-spacing:.14em;text-transform:uppercase;color:#71695A}"
+            ".avx .st{color:#B8902F;font-size:15px;margin:2px 0 6px}"
+            ".avx .row{display:flex;gap:14px;align-items:flex-start}"
+            ".avx .v{font:700 24px 'Playfair Display',Georgia,serif;color:#8A6A2E;white-space:nowrap}"
+            ".avx .d{font-size:14.5px;line-height:1.5;color:#3a332a;margin:0}"
+            ".avx-risk{margin:16px auto 0;max-width:640px;background:#F3EAD3;border:1px solid #D9C79A;border-radius:10px;"
+            "padding:14px 20px;display:flex;gap:18px;align-items:center}"
+            ".avx-risk .v{font:700 24px 'Playfair Display',Georgia,serif;color:#8A6A2E;white-space:nowrap}"
+            "@media(max-width:820px){.avx{grid-template-columns:1fr}}"
+            ".gback{display:inline-block;margin-top:14px;font:700 15px Georgia,serif;color:#1F2A44;"
             "text-decoration:none;border-bottom:2px solid #B8902F;padding-bottom:2px}"
             ".gback:hover{color:#8A6A2E}"
             ".gtop{display:inline-block;margin-top:14px;font:700 15px Georgia,serif;color:#F0E4C4;"
@@ -80,6 +93,16 @@ def _page(title, lede, sections, brand, links=None, back=None):
     portal. back = (label, href placeholder) -- the href is filled per site."""
     cards = ""
     for k, (png, t, sub, ps) in enumerate([s for s in sections if s[0]], 1):
+        if isinstance(png, tuple) and png[0] == "HTML":
+            tg = _target(links, t) if back else None
+            tg = tg[7:] if tg and tg.startswith("anchor:") else tg
+            sid = f' id="g-{slug(tg)}"' if tg else ""
+            bl = (f'<a class="gback" href="__BACK__#s-{slug(tg)}">&larr; Back to {back}</a>' if tg else
+                  (f'<a class="gback" href="__BACK__">&larr; Back to {back}</a>' if back else ""))
+            cards += (f'<section class="g wide"{sid}><div class="n">{k}</div><div class="txt" style="max-width:none;">'
+                      f'<h2>{t}</h2><p class="sub">{sub}</p>' + "".join(f"<p>{x}</p>" for x in ps)
+                      + png[1] + bl + "</div></section>\n")
+            continue
         tg = _target(links, t) if back else None
         tg = tg[7:] if tg and tg.startswith("anchor:") else tg
         sid = f' id="g-{slug(tg)}"' if tg else ""
@@ -313,23 +336,33 @@ def roadmap_guide(p, s_dir):
           "Premium Values (sometimes more)."]),
         # Casey, 23 Nov 2026: "another section for Authenticated Value breaking
         # down definitions for each, with cross links".
-        (sh.get("_values"), "Authenticated Values&trade;", "Dated, Customary and Premium &mdash; what each one means",
+        # Casey, 23 Nov 2026: the three values across, each definition next to
+        # its number, Money at Risk below.
+        (("HTML",
+          '<div class="avx">'
+          f'<div class="c"><div class="k">Dated Price</div><div class="st">&#9733;&#9734;&#9734;</div>'
+          f'<div class="row"><div class="v">{money(v["dated"])}</div><p class="d">The home as it stands if it '
+          'has not been updated: kitchen and bathrooms largely original; paint, lighting, hardware, flooring '
+          'and finishes dated; presentation below standard.</p></div></div>'
+          f'<div class="c mid"><div class="k">Customary Price</div><div class="st">&#9733;&#9733;&#9734;</div>'
+          f'<div class="row"><div class="v">{money(v["customary"])}</div><p class="d">What a home of this size '
+          'and age has sold for in the past 90 days: kitchen and bathrooms updated within about 15 years; '
+          'finishes at today&rsquo;s standard; presentation competitive with comparable homes. The pricing '
+          'strategy starts here.</p></div></div>'
+          f'<div class="c"><div class="k">Premium Price</div><div class="st">&#9733;&#9733;&#9733;</div>'
+          f'<div class="row"><div class="v">{money(v["premium"])}</div><p class="d">What premium homes with '
+          'superior finishes and presentation command: kitchen and bathrooms updated within about 10 years; '
+          'upgrades and craftsmanship above the standard; presentation that sets the home apart.</p></div></div>'
+          '</div>'
+          f'<div class="avx-risk"><div><div class="k" style="font:700 12px Georgia,serif;letter-spacing:.14em;'
+          f'text-transform:uppercase;color:#71695A;">Money at Risk</div><div class="v">{money(v["premium"] - v["dated"])}</div></div>'
+          '<p class="d" style="margin:0;font-size:14.5px;line-height:1.5;">The distance from Dated to Premium: '
+          'the value that can be lost to overpricing or poor preparation, and won back by Moving the Needle.</p></div>'
+          '<p style="text-align:center;margin-top:14px;">Historically, CST listings sell between Customary and '
+          'Premium Values (sometimes more).</p>'),
+         "Authenticated Values&trade;", "Dated, Customary and Premium &mdash; what each one means",
          ["Three values, one for each condition a home can be in. Final values are set after a trained "
-          "Realtor inspects the home&rsquo;s condition, upgrades and lot premium or discount.",
-          f"<b>Dated Price (one star) &mdash; {money(v['dated'])}.</b> The home as it stands if it "
-          "has not been updated: kitchen and bathrooms largely original; paint, lighting, hardware, flooring "
-          "and finishes dated; presentation below standard.",
-          f"<b>Customary Price (two stars) &mdash; {money(v['customary'])}.</b> What a home of this "
-          "size and age has sold for in the past 90 days: kitchen and bathrooms updated within about 15 years; "
-          "paint, lighting, hardware, flooring and finishes at today&rsquo;s standard; presentation competitive "
-          "with comparable homes. This is the value the pricing strategy starts from.",
-          f"<b>Premium Price (three stars) &mdash; {money(v['premium'])}.</b> What premium homes with "
-          "superior finishes and presentation command: kitchen and bathrooms updated within about 10 years; "
-          "upgrades, finishes and craftsmanship above the standard; presentation that sets the home apart "
-          "from the competition.",
-          f"<b>Money at Risk &mdash; {money(v['premium'] - v['dated'])}.</b> The distance from Dated to Premium: "
-          "the value that can be lost to overpricing or poor preparation, and won back by Moving the Needle.",
-          "Historically, CST listings sell between Customary and Premium Values (sometimes more)."]),
+          "Realtor inspects the home&rsquo;s condition, upgrades and lot premium or discount."]),
         (sh.get(names[2]), "Moving the Needle&trade; Guide", "What raises the price, and what lowers it",
          ["With hundreds of thousands of dollars at risk, strategic improvements are critical&mdash;and a "
           "Casey Samson Team specialty.",
