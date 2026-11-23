@@ -62,9 +62,9 @@ def _target(links, t):
     heading)."""
     plain = slug(t)
     for k, v in (links or {}).items():
-        if plain.startswith(slug(k)):
+        if k != "*" and plain.startswith(slug(k)):
             return v
-    return None
+    return (links or {}).get("*")
 
 
 BACK_CSS = (".gback{display:inline-block;margin-top:14px;font:700 15px Georgia,serif;color:#1F2A44;"
@@ -81,6 +81,7 @@ def _page(title, lede, sections, brand, links=None, back=None):
     cards = ""
     for k, (png, t, sub, ps) in enumerate([s for s in sections if s[0]], 1):
         tg = _target(links, t) if back else None
+        tg = tg[7:] if tg and tg.startswith("anchor:") else tg
         sid = f' id="g-{slug(tg)}"' if tg else ""
         bl = (f'<a class="gback" href="__BACK__#s-{slug(tg)}">&larr; Back to {back}</a>' if tg else
               (f'<a class="gback" href="__BACK__">&larr; Back to {back}</a>' if back else ""))
@@ -141,6 +142,9 @@ def inject_links(page, guide_href, links):
     h = page.read_text(encoding="utf-8")
     n, done = 0, set()
     for target in dict.fromkeys(links.values()):
+        anchor_only = target.startswith("anchor:")
+        if anchor_only:
+            target = target[7:]
         sg = slug(target)
         if sg in done or f'data-glink="{sg}"' in h:
             continue
@@ -170,6 +174,11 @@ def inject_links(page, guide_href, links):
                 head = anchor + hit.group(0)
             else:
                 head = f'<h2{attrs} id="s-{sg}">{hit.group(2)}</h2>'
+            if anchor_only:   # the "Back to" landing spot, no guide link
+                h = h[:hit.start()] + head + h[hit.end():]
+                done.add(sg)
+                n += 1
+                continue
             name = _h.unescape(re.sub("<[^>]+>", "", hit.group(2))).strip()
             name = re.sub(r"[\u2122\u00ae]", "", name).strip()
             # The guide's own id is keyed to the guide section's target
@@ -540,7 +549,7 @@ def mss_guide(p):
     ]
     secs = [(shots[i] if i < len(shots) else None, *text[i]) for i in range(len(text))]
     return _page("Your Market Snapshot Guide",
-                 f"The {mk} Market Snapshot &mdash; what each part tells you, and how to read it.", secs, _brand(p))
+                 f"The {mk} Market Snapshot &mdash; what each part tells you, and how to read it.", secs, _brand(p), links=GUIDES_ROW, back="Seller Portal")
 
 
 def moveup_guide(p, s_dir):
@@ -572,7 +581,7 @@ def moveup_guide(p, s_dir):
           "the purchase; the loan amount, taxes and insurance. Estimates for planning only."]),
     ]
     return _page("Your Move Up (or Down) Calculator Guide",
-                 f"{p['address']} &mdash; what your sale puts toward your next home.", secs, _brand(p))
+                 f"{p['address']} &mdash; what your sale puts toward your next home.", secs, _brand(p), links=GUIDES_ROW, back="Seller Portal")
 
 
 def _brand(p):
@@ -612,6 +621,8 @@ def track_record_to_roadmap(index, rm):
     rm.write_text(h[:k] + block + h[k:], encoding="utf-8")
     return True
 
+
+GUIDES_ROW = {"*": "anchor:Guides to Understanding CST Tools"}
 
 SAMPLE_BUYER = ("502_MacArthur_Buyer", "https://buymacarthur.netlify.app", "502 MacArthur Ave NE")
 
@@ -727,9 +738,13 @@ def build(p, which=("roadmap", "mss", "moveup", "buyer")):
             print("  buyer preview skipped:", e)
     (s_dir / "_guide_notes.json").unlink(missing_ok=True)   # build-time only, not for the site
     if "mss" in which and (h := mss_guide(p)):
-        (s_dir / "Market_Snapshot_Guide.html").write_text(h, encoding="utf-8"); made.append("market snapshot")
+        (s_dir / "Market_Snapshot_Guide.html").write_text(h.replace("__BACK__", "index.html"), encoding="utf-8")
+        made.append("market snapshot")
     if "moveup" in which and (h := moveup_guide(p, s_dir)):
-        (s_dir / "Move_Up_Guide.html").write_text(h, encoding="utf-8"); made.append("move up")
+        (s_dir / "Move_Up_Guide.html").write_text(h.replace("__BACK__", "index.html"), encoding="utf-8")
+        made.append("move up")
+    if "mss" in which or "moveup" in which:
+        inject_links(s_dir / "index.html", "", GUIDES_ROW)
     if "roadmap" in which and (h := buyer_report_guide(p, s_dir)):
         for d in (s_dir, b_dir, ROOT / "output" / f"{pre}_Buyer_Small"):
             if d.exists():
