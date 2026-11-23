@@ -4607,6 +4607,8 @@ def copy_guide(kind, out, pre=""):
     return None
 
 
+# Casey, 23 Nov 2026: "take guide to understanding... off the top of roadmap.
+# Links are in every section." No longer placed on the Roadmap; kept for reuse.
 def _guide_bar(p, kind, root=None):
     """Gold bar under the page header linking to the guide. Absolute link when
     the site address is known, so it also works from the printed PDF."""
@@ -5896,7 +5898,6 @@ def build_roadmap(p, s, out):
 
 <a class="back" href="index.html">&larr; Back to {addr}</a>
 <div class="private-note">{_privacy_note}</div>
-{_guide_bar(p, "roadmap")}
 <div class="rm-hero">
 {rm_hero_img}
   <div class="rm-shade"></div>
