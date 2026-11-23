@@ -644,7 +644,8 @@ def track_record_to_roadmap(index, rm):
 
 GUIDES_ROW = {"*": "anchor:Guides to Understanding CST Tools"}
 
-SAMPLE_BUYER = ("502_MacArthur_Buyer", "https://buymacarthur.netlify.app", "502 MacArthur Ave NE")
+# The public sample site (Casey, 5 Nov 2026), not the client portal.
+SAMPLE_BUYER = ("502_MacArthur_Buyer", "https://samplebuyerportal.netlify.app", "502 MacArthur Ave NE")
 
 
 def _bp_finished(p):
@@ -653,7 +654,10 @@ def _bp_finished(p):
     bp = p.get("buyer_portal") or {}
     if "finished" in bp:
         return bool(bp["finished"])
-    return len(bp.get("gallery") or []) >= 5 and bool(bp.get("feature_headlines"))
+    # One rule everywhere: the same test that retires the Example card on the
+    # Seller Portal.
+    from build_portal import buyer_portal_ready
+    return buyer_portal_ready(p)
 
 
 def _portal_top(page, out):

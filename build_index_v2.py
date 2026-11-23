@@ -592,14 +592,20 @@ def build_index_v2(p, s, out, filename="index.html"):
                      # Casey, 20 Nov 2026: back to tan as well.
 
     _own_pdf = (f"{pre}_Buyer_Report.pdf", "Printable Buyer Pricing (PDF)")
-    if bp:
+    # Casey, 23 Nov 2026: "Remove options ... to go to Subject or sample.
+    # Completeness ... dictates." One buyer card: the Example until this
+    # home's portal is finished, then this home's own.
+    _own_ok = is_example_home(p) or buyer_portal_ready(p)
+    if bp and not _own_ok:
+        pass
+    elif bp:
         main.append(feat(next(_n), "Buyer Portal", "Buyer Portal",
                          "The total picture of your home&rsquo;s offering &mdash; "
                          "photography, video, authenticated values, disclosures and the "
                          "instructions for writing an offer.",
                          "Why it matters: One place buyers trust means stronger offers.",
                          bp, blank=True, pdf=_own_pdf))
-    elif (out / f"{pre}_Buyer_Report.pdf").exists():
+    elif _own_ok and (out / f"{pre}_Buyer_Report.pdf").exists():
         # The Buyer Pricing Report is a file inside this folder, so it works
         # whether or not the portal site is published. Gating the button on
         # "live" withheld the seller's own pricing document because a web
