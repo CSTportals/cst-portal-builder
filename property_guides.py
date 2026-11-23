@@ -832,7 +832,9 @@ def build(p, which=("roadmap", "mss", "moveup", "buyer")):
                 if d != s_dir:
                     inject_links(d / "index.html", "Buyer_Portal_Guide.html", BUYER_LINKS)
         made.append("buyer portal")
-    if p.get("roadmap_first", True):
+    # The switch happens on a seller build; a buyer-only build just keeps an
+    # already-switched site's front-door copy of the Roadmap current.
+    if p.get("roadmap_first", True) and ("roadmap" in which or (s_dir / "portal.html").exists()):
         try:
             roadmap_first(p, s_dir)
         except Exception as e:  # never stop a build over the front door
