@@ -325,5 +325,212 @@
       }
     ]
   ],
-  "notes": []
+  "notes": [],
+  "buyer_portal": {
+    "live": true,
+    "display_address": "10320 Lynch Ln",
+    "asset_dir": "assets/10320_Lynch/buyer",
+    "hero_photo": "10320_Lynch_front.jpg",
+    "pricing_pdf": "10320_Lynch_Buyer_Report.pdf",
+    "status_line": "Coming Soon",
+    "headline": "Brick-and-stone colonial built in 2013 on an 18,400 SF lot in Oakton.",
+    "facts": [
+      [
+        "2013",
+        "Year built"
+      ],
+      [
+        "4,403",
+        "Finished SF"
+      ],
+      [
+        "18,400",
+        "SF lot"
+      ],
+      [
+        "Oakton",
+        "Fairfax County"
+      ]
+    ],
+    "deploy_to": "https://buylynch.netlify.app",
+    "url": "https://buylynch.netlify.app",
+    "snapshot": {
+      "title": "Market Snapshot",
+      "lede": "Every home 10320 Lynch Ln is competing with, and what each one is asking.",
+      "rows": [
+        [
+          "ACT",
+          "9311 Talisman Dr",
+          165,
+          2014,
+          4162,
+          "",
+          1967340,
+          2099900
+        ],
+        [
+          "ACT",
+          "1404 Cottage St SW",
+          47,
+          2015,
+          "",
+          "",
+          1660480,
+          1875000
+        ]
+      ]
+    },
+    "contacts": {
+      "names": "Casey Samson",
+      "team": "The Casey Samson Team &middot; Samson Properties",
+      "lines": [
+        [
+          "Casey Samson",
+          "703-508-2535",
+          "Casey@caseysamson.com"
+        ]
+      ],
+      "office": "Samson Properties"
+    },
+    "locator_map": {
+      "title": "The Neighborhood",
+      "lede": "Oakton between Vienna and Fairfax, with the Oakton Library, Oakton Shopping Center, Nottoway Park and the Vienna Metro close by. The arrows point to everything past the edge of the map.",
+      "center": {
+        "lat": 38.8903299,
+        "lng": -77.3019967,
+        "label": "10320 Lynch Ln"
+      },
+      "pins": [
+        {
+          "name": "Oakton Library",
+          "sub": "Fairfax County Public Library",
+          "lat": 38.8839576,
+          "lng": -77.3025467
+        },
+        {
+          "name": "Oakton Shopping Center",
+          "sub": "Giant, CVS, dining",
+          "lat": 38.883081,
+          "lng": -77.2998168
+        },
+        {
+          "name": "Nottoway Park",
+          "sub": "Trails, courts, playground",
+          "lat": 38.8854738,
+          "lng": -77.2760481
+        },
+        {
+          "name": "Vienna/Fairfax-GMU Metro",
+          "sub": "Orange Line",
+          "lat": 38.8783642,
+          "lng": -77.2718132
+        }
+      ],
+      "arrows": [
+        [
+          66.6,
+          [
+            "Tysons Corner Center",
+            "Shopping and dining &middot; 4.6 mi"
+          ]
+        ],
+        [
+          107.2,
+          [
+            "Mosaic District",
+            "Shops, cinema, dining &middot; 4.1 mi"
+          ]
+        ],
+        [
+          222.2,
+          [
+            "Wegmans",
+            "Fairfax &middot; 3.7 mi"
+          ]
+        ],
+        [
+          297.1,
+          [
+            "Dulles International",
+            "IAD &middot; 9.4 mi"
+          ]
+        ],
+        [
+          101.0,
+          [
+            "Reagan National",
+            "DCA &middot; 14.4 mi"
+          ]
+        ]
+      ]
+    },
+    "amenities_lede": "The Oakton Library and Oakton Shopping Center minutes away, Nottoway Park for trails and courts, the Vienna Metro on the Orange Line, and Tysons and the Mosaic District for shopping and dining.",
+    "amenities": [
+      {
+        "title": "Getting Around",
+        "items": [
+          [
+            "Vienna/Fairfax-GMU Metro",
+            "Orange Line",
+            1.82
+          ],
+          [
+            "Dulles International",
+            "IAD",
+            9.41
+          ],
+          [
+            "Reagan National",
+            "DCA",
+            14.41
+          ]
+        ]
+      },
+      {
+        "title": "Shopping",
+        "items": [
+          [
+            "Oakton Shopping Center",
+            "Giant, CVS, dining",
+            0.51
+          ],
+          [
+            "Whole Foods Market",
+            "Maple Ave E, Vienna",
+            2.27
+          ],
+          [
+            "Wegmans",
+            "Fairfax",
+            3.66
+          ],
+          [
+            "Tysons Corner Center",
+            "Shopping and dining",
+            4.64
+          ],
+          [
+            "Mosaic District",
+            "Shops, cinema, dining",
+            4.09
+          ]
+        ]
+      },
+      {
+        "title": "Parks and Community",
+        "items": [
+          [
+            "Oakton Library",
+            "Fairfax County Public Library",
+            0.44
+          ],
+          [
+            "Nottoway Park",
+            "Trails, courts, playground",
+            1.44
+          ]
+        ]
+      }
+    ]
+  }
 }
