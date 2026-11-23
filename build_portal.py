@@ -5288,17 +5288,19 @@ def build_roadmap(p, s, out):
     _rm_bp_section = ""
     if p.get("listing_status") != "recovery":
         _rbp = buyer_portal_url(p)
-        if _rbp:
-            _rm_bp_section = (
-                '<section class="bp-band">\n  <div class="wrap">\n'
-                '    <h2 class="section-title">Your Buyer Portal</h2>\n'
-                f'    <a class="bp-cta" href="{_rbp}" target="_blank" rel="noopener">\n'
-                '      <span class="bp-cta-lbl">What Buyers And Their Agents See</span>\n'
-                '      <span class="bp-cta-sub">Photography, Authenticated Values, the competition, '
-                'disclosures and how to write an offer &mdash; everything a buyer needs, in one place.</span>\n'
-                '      <span class="bp-cta-go">Open the Buyer Portal &rarr;</span>\n'
-                f'      <span class="bp-cta-url">{_rbp.replace("https://", "")}</span>\n'
-                "    </a>\n  </div>\n</section>\n")
+        # Casey, 23 Nov 2026: the card hand-off was "awkward" -- just the
+        # words "What the Buyers See / Buyer Portal"; the picture under them
+        # (added by property_guides) links to the Sample until this home's
+        # own portal is finished.
+        _rm_bp_section = (
+            '<section class="bp-band">\n  <div class="wrap" style="text-align:center;">\n'
+            '    <div class="bp-words" style="display:inline-block;">\n'
+            '      <span style="display:block;font:700 13px Georgia,serif;letter-spacing:.22em;'
+            'text-transform:uppercase;color:#8A6A2E;">What the Buyers See</span>\n'
+            "      <span style=\"display:block;font-family:'Playfair Display',Georgia,serif;font-size:40px;"
+            'font-weight:700;color:#1F2A44;line-height:1.15;border-bottom:2px solid #B8902F;'
+            'padding-bottom:4px;margin-top:4px;">Buyer Portal</span>\n'
+            "    </div>\n  </div>\n</section>\n")
     if p.get("listing_status") == "recovery" and recovery_block:
         next_step_section = reconcile_block + "\n\n" + recovery_block
         note("Roadmap: Recovery Strategy used in place of Predictive Analysis "

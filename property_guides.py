@@ -691,7 +691,7 @@ def buyer_preview_to_roadmap(p, s_dir, b_dir):
         return False
     h = rm.read_text(encoding="utf-8")
     h = re.sub(r"<!--BPV-->.*?<!--/BPV-->\n?", "", h, flags=re.S)
-    m = re.search(r'<h2 class="section-title">Your Buyer Portal</h2>.*?</a>', h, re.S)
+    m = re.search(r'<div class="bp-words".*?</div>', h, re.S)
     if not m:
         return False
     url = ((p.get("buyer_portal") or {}).get("url") or "").rstrip("/")
