@@ -6514,7 +6514,7 @@ def build_buyer_report(p, s, out, stats=True, balance=False, cover=True, loves=0
                         + f'<a class="glink-sub" href="{_gh}#g-{_sg}" target="_blank" rel="noopener">'
                         f"<span>Guide to Understanding {_t} &rarr;</span></a>" + body[_m.end():])
         # Flush right, styled like the guide's "<- Back to" link (Casey).
-        head = head.replace("</style>", ".glink-sub{display:block;text-align:right;margin:2px 0 14px;}"
+        head = head.replace("</style>", ".glink-sub{display:block;text-align:center;margin:2px 0 14px;}"
                             ".glink-sub span{font:700 15px Georgia,serif;color:#1F2A44;"
                             "border-bottom:2px solid #B8902F;padding-bottom:2px}"
                             "@media print{.glink-sub{margin:-6px 0 2px;line-height:1.1}.glink-sub span{font-size:10px;border-bottom-width:1px;padding-bottom:0}}</style>", 1)
