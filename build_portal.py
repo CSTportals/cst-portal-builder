@@ -6515,7 +6515,8 @@ def build_buyer_report(p, s, out, stats=True, balance=False, cover=True, loves=0
                         "Guide to Understanding this section &rarr;</a>" + body[_m.end():])
         head = head.replace("</style>", ".glink-sub{display:block;text-align:center;margin:-6px 0 14px;"
                             "font:italic 13px Georgia,serif;color:#8A6A2E;text-decoration:none;"
-                            "border:0}.glink-sub:hover{text-decoration:underline}</style>", 1)
+                            "border:0}.glink-sub:hover{text-decoration:underline}"
+                            "@media print{.glink-sub{margin:-8px 0 4px;font-size:10px;line-height:1.2}}</style>", 1)
     (out / f'{p["prefix"]}_Buyer_Report.html').write_text(head + body)
 
 
@@ -8651,8 +8652,9 @@ def fit_buyer_report(p, s, out):
     # the tightest layout does it shrink to a line in the masthead.
     ladder = [(True, True, "full cover", False),
               (True, False, "cover without the stat strip", False),
-              (False, True, "condensed header", False),
-              (False, True, "condensed header, guide link in the masthead", True)]
+              (False, True, "condensed header", False)]
+    # (Casey, 23 Nov 2026: the guide band and masthead link are gone; the
+    # guide links sit beside each section, so the fourth rung went with them.)
     for cover, stats, lbl, gm in ladder:
         kw = dict(stats=stats, balance=True, cover=cover, guide_in_mast=gm)
         if pages(loves=0, walk=0, **kw) > 2:
