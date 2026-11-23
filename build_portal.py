@@ -6517,7 +6517,7 @@ def build_buyer_report(p, s, out, stats=True, balance=False, cover=True, loves=0
         head = head.replace("</style>", ".glink-sub{display:block;text-align:right;margin:2px 0 14px;}"
                             ".glink-sub span{font:700 15px Georgia,serif;color:#1F2A44;"
                             "border-bottom:2px solid #B8902F;padding-bottom:2px}"
-                            "@media print{.glink-sub{margin:0 0 6px}.glink-sub span{font-size:11px}}</style>", 1)
+                            "@media print{.glink-sub{margin:-6px 0 2px;line-height:1.1}.glink-sub span{font-size:10px;border-bottom-width:1px;padding-bottom:0}}</style>", 1)
     (out / f'{p["prefix"]}_Buyer_Report.html').write_text(head + body)
 
 
