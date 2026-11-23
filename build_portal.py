@@ -2585,6 +2585,16 @@ RM_BADGE_CSS = """
     color:#D3B060; font-weight:700; margin-bottom:4px;}
   .rm-col .v{font-family:'Playfair Display',Georgia,serif; font-size:17px; font-weight:700;}
   .rm-col .s{font-size:11.5px; color:#BFB7A5; margin-top:3px;}
+  .rm-specs{padding:26px 0 56px;}
+  .rm-specs .wrap{max-width:1100px;}
+  .rm-specs .rm-cols{flex-wrap:nowrap;}
+  .rm-specs .rm-col{flex:1 1 0; min-width:0; padding:6px 10px;}
+  .rm-specs .rm-col .k{font-size:10px; margin-bottom:8px; min-height:2.6em; display:flex;
+    align-items:flex-end; justify-content:center;}
+  .rm-specs .rm-col .v{font-size:23px; color:#FFFDF7; white-space:nowrap;}
+  @media (max-width:760px){ .rm-specs .rm-cols{flex-wrap:wrap;} .rm-specs .rm-col{flex:1 1 40%;}
+    .rm-specs .rm-col + .rm-col{border-left:none;} }
+  @media print{ .rm-specs{padding:14px 0 40px;} .rm-specs .rm-col .v{font-size:18px;} }
   /* Casey, 23 Nov 2026: the home's specs in a navy box; the white box
      under it is the CST-vs-market comparison. "Just one navy box" -- the
      Authenticated Range / Money at Risk / market band is gone. */
@@ -5333,9 +5343,12 @@ def build_roadmap(p, s, out):
                    "FINAL PRICING CAN ONLY BE DETERMINED AFTER A VISUAL INSPECTION OF "
                    "CONDITIONS, UPGRADES AND LOT PREMIUM OR DISCOUNT.</p>")
 
+    # Casey, 23 Nov 2026: replaces "Engineered for a First-Week Sale --
+    # Highest Price, Best Terms, Lowest Risk", larger.
     rm_tag = ("" if _is_recovery else
-              '    <p class="tag">Engineered for a First-Week Sale &mdash; '
-              "Highest Price, Best Terms, Lowest Risk</p>")
+              '    <p class="tag" style="font-family:\'Playfair Display\',Georgia,serif;font-size:28px;'
+              'font-style:italic;font-weight:700;color:#FFFDF7;margin:12px 0 14px;'
+              'text-shadow:0 2px 10px rgba(0,0,0,.6);">Success is a Strategy, not a Price</p>')
 
     rm_badges = ""
     if _b:
@@ -5434,10 +5447,13 @@ def build_roadmap(p, s, out):
             _facts.append((money(_vv0.get("premium_top") or _vv0["premium"]), "Premium Value"))
     rm_facts = ""
     if _facts:
-        rm_facts = ('<div class="wrap"><div class="rm-facts">'
-                    + "".join(f'<div class="rm-fact"><span class="n">{n}</span>'
-                              f'<div class="l">{l}</div></div>' for n, l in _facts)
-                    + "</div></div>")
+        # Casey, 23 Nov 2026: "Give it the same look" as the Seller Portal --
+        # the specs across a full-width navy band, the white CST-vs-market
+        # card overlapping its lower edge.
+        rm_facts = ('<div class="rm-band rm-specs"><div class="wrap"><div class="rm-cols">'
+                    + "".join(f'<div class="rm-col"><div class="k">{l}</div>'
+                              f'<div class="v">{n}</div></div>' for n, l in _facts)
+                    + "</div></div></div>")
 
     # Casey, 13 Oct 2026: "Bring price up top like you have, then Since
     # 2019, home values have appreciated 61%..." -- his copy verbatim, with

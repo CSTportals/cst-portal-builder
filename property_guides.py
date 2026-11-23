@@ -595,9 +595,9 @@ def track_record_to_roadmap(index, rm):
     a, b = src.find("/* facts card"), src.find("section{padding:46px 0;}")
     css = src[a:b] if a > 0 and b > a else ""
     css = re.sub(r"(^|\n|\})\s*(\.fact)", r"\1 .trk \2", css)
-    css = css.replace("margin:-30px auto 0", "margin:0 auto")
+    # Overlaps the navy specs band above it, as on the Seller Portal.
     block = ('<style>.trk{--card:#FFFFFF;--rule:#E4DCC8;--ink:#221C14;--muted:#71695A;--muted-2:#968972;'
-             "--gold-deep:#8A6A2E;padding:34px 0 30px;}" + css + "</style>\n"
+             "--gold-deep:#8A6A2E;padding:0 0 34px;border-top:none!important;}" + css + "</style>\n"
              f'<section class="trk">{card}</section>\n')
     k = h.find("Appraisal-Quality Comparable Analysis")
     k = h.rfind("<section", 0, k) if k > 0 else -1
