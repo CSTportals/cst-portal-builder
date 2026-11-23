@@ -50,15 +50,130 @@ def _emb(png):
     return base64.b64encode(b.getvalue()).decode()
 
 
-def _page(title, lede, sections, brand):
+def slug(t):
+    import html as _h
+    t = _h.unescape(re.sub("<[^>]+>", "", t)).lower()
+    return re.sub(r"[^a-z0-9]+", "-", t).strip("-")[:40]
+
+
+def _target(links, t):
+    """The portal section a guide section explains: links maps a guide-title
+    prefix to the portal heading prefix (or 'css:...' for a block with no
+    heading)."""
+    plain = slug(t)
+    for k, v in (links or {}).items():
+        if plain.startswith(slug(k)):
+            return v
+    return None
+
+
+BACK_CSS = (".gback{display:inline-block;margin-top:14px;font:700 15px Georgia,serif;color:#1F2A44;"
+            "text-decoration:none;border-bottom:2px solid #B8902F;padding-bottom:2px}"
+            ".gback:hover{color:#8A6A2E}"
+            ".gtop{display:inline-block;margin-top:14px;font:700 15px Georgia,serif;color:#F0E4C4;"
+            "text-decoration:none;border-bottom:2px solid #B8902F;padding-bottom:2px}")
+
+
+def _page(title, lede, sections, brand, links=None, back=None):
+    """links / back (Casey, 23 Nov 2026): every guide section the portal links
+    to gets an id, and a "Back to <portal>" link to that section of the
+    portal. back = (label, href placeholder) -- the href is filled per site."""
     cards = ""
     for k, (png, t, sub, ps) in enumerate([s for s in sections if s[0]], 1):
-        cards += (f'<section class="g"><div class="n">{k}</div><div class="txt"><h2>{t}</h2>'
-                  f'<p class="sub">{sub}</p>' + "".join(f"<p>{x}</p>" for x in ps) + "</div>"
+        tg = _target(links, t) if back else None
+        sid = f' id="g-{slug(tg)}"' if tg else ""
+        bl = (f'<a class="gback" href="__BACK__#s-{slug(tg)}">&larr; Back to {back}</a>' if tg else
+              (f'<a class="gback" href="__BACK__">&larr; Back to {back}</a>' if back else ""))
+        cards += (f'<section class="g"{sid}><div class="n">{k}</div><div class="txt"><h2>{t}</h2>'
+                  f'<p class="sub">{sub}</p>' + "".join(f"<p>{x}</p>" for x in ps) + bl + "</div>"
                   f'<figure><img src="data:image/jpeg;base64,{_emb(png)}" alt="{re.sub("<[^>]+>", "", t)}"></figure></section>\n')
-    return (_head(f"{title} &mdash; {brand}") + "</style></head><body>\n"
-            f'<header><div class="k">{brand}</div><h1>{title}</h1><p>{lede}</p></header>\n'
+    top = f'<br><a class="gtop" href="__BACK__">&larr; Back to {back}</a>' if back else ""
+    return (_head(f"{title} &mdash; {brand}") + BACK_CSS + "</style></head><body>\n"
+            f'<header><div class="k">{brand}</div><h1>{title}</h1><p>{lede}</p>{top}</header>\n'
             f"<main>\n{cards}</main>\n<footer><b>Questions?</b>{FOOT}</footer>\n</body></html>")
+
+
+ROADMAP_LINKS = {
+    "Appraisal-Quality": "Appraisal-Quality Comparable Analysis",
+    "Price Authenticated": "Price Authenticated",
+    "Moving the Needle": "Moving the Needle",
+    "Current Competition": "Current Competition",
+    "CST Pricing Strategy": "CST Pricing Strategy",
+    "Preview": "Preview",
+    "Coming Soon": "Coming Soon",
+    "Predictive Analysis": "Predictive Analysis",
+    "Reconciling Value": "Reconciling Value",
+    "Our 4-Step": "Our 4-Step",
+    "4. Adjust Price": "4. Adjust Price",
+}
+BUYER_LINKS = {
+    "Headlines": "css:pitch",
+    "Authenticated Values": "Authenticated Values",
+    "Price Authenticated": "Authenticated Values",
+    "See the Home": "See the Home",
+    "The Home": "The Home",
+    "Features": "Features",
+    "What the Owners Love": "What the Owners Love",
+    "The Neighborhood": "Amenities and Transportation",
+    "Property Documents": "Property Documents",
+    "Writing an Offer": "Writing an Offer",
+    "Move Up Calculator": "Move Up Calculator",
+}
+
+GLINK = ('<div class="glink-row" data-glink="{s}" style="text-align:center;margin:6px 0 18px;">'
+         '<a href="{href}#g-{s}" target="_blank" rel="noopener" style="display:inline-block;'
+         "background:#1F2A44;color:#E8C77A;font:700 14px Georgia,serif;letter-spacing:.04em;"
+         'text-decoration:none;border-radius:20px;padding:7px 16px;">Guide to Understanding {name} &rarr;</a></div>')
+
+
+def inject_links(page, guide_href, links):
+    """Casey, 23 Nov 2026: every portal section the guide explains links to
+    its guide section, and gets the id the guide's "Back to" link lands on.
+    Safe to run twice."""
+    import html as _h
+    if not page.exists():
+        return 0
+    h = page.read_text(encoding="utf-8")
+    n, done = 0, set()
+    for target in dict.fromkeys(links.values()):
+        sg = slug(target)
+        if sg in done or f'data-glink="{sg}"' in h:
+            continue
+        if target.startswith("css:"):
+            cls = target[4:]
+            m = re.search(r'<section class="' + cls + r'[^"]*"[^>]*>', h)
+            if not m:
+                continue
+            name = "the Headlines" if cls == "pitch" else cls.title()
+            tag = m.group(0)
+            new = tag if " id=" in tag else tag[:-1] + f' id="s-{sg}">'
+            link = GLINK.format(s=sg, href=guide_href, name=name).replace(
+                'style="text-align:center;margin:6px 0 18px;"', 'style="text-align:center;margin:0 0 14px;"')
+            h = h[:m.start()] + new + link + h[m.end():]
+        else:
+            hit = None
+            for m in re.finditer(r"<h2([^>]*)>(.*?)</h2>", h, re.S):
+                if slug(m.group(2)).startswith(sg):
+                    hit = m
+                    break
+            if not hit:
+                continue
+            attrs = hit.group(1)
+            m_id = re.search(r'\bid="([^"]+)"', attrs)
+            if m_id:   # keep the page's own id; add ours as an anchor
+                anchor = f'<a id="s-{sg}" style="position:relative;top:-70px;"></a>'
+                head = anchor + hit.group(0)
+            else:
+                head = f'<h2{attrs} id="s-{sg}">{hit.group(2)}</h2>'
+            name = _h.unescape(re.sub("<[^>]+>", "", hit.group(2))).strip()
+            name = re.sub(r"[\u2122\u00ae]", "", name).strip()
+            # The guide's own id is keyed to the guide section's target
+            link = GLINK.format(s=sg, href=guide_href, name=_h.escape(name))
+            h = h[:hit.start()] + head + link + h[hit.end():]
+        done.add(sg)
+        n += 1
+    page.write_text(h, encoding="utf-8")
+    return n
 
 
 def _shots(page_url, wanted, viewport=(1280, 900), before=None, max_h=1500, hide_maps=False):
@@ -191,7 +306,7 @@ def roadmap_guide(p, s_dir):
         secs = _recovery_roadmap_secs(p, page, secs, rec)
     return _page("Your Seller Roadmap Guide",
                  f"{addr} &mdash; what each part of your Gold Standard Seller Roadmap&trade; shows you.",
-                 secs, _brand(p))
+                 secs, _brand(p), links=ROADMAP_LINKS, back="Roadmap")
 
 
 def _recovery_roadmap_secs(p, page, secs, rec):
@@ -338,7 +453,8 @@ def buyer_guide(p, b_dir):
           f"({money(v['premium'])}) to see the payment difference. Tap <b>Math</b> for every number."]),
     ]
     return _page("Your Buyer Portal Guide",
-                 f"{addr} &mdash; what each part of the portal shows you, and how to use it.", secs, _brand(p))
+                 f"{addr} &mdash; what each part of the portal shows you, and how to use it.", secs, _brand(p),
+                 links=BUYER_LINKS, back="Buyer Portal")
 
 
 def _town(p):
@@ -460,6 +576,37 @@ def _brand(p):
     return "The Casey Samson Team &mdash; The Gold Standard of Pricing Strategy"
 
 
+def track_record_to_roadmap(index, rm):
+    """Casey, 23 Nov 2026: "Take track record comparison on Portal and put on
+    Roadmap." The same card the Seller Portal shows -- the team row over the
+    local market row -- copied as built, right under the Roadmap hero."""
+    if not (index.exists() and rm.exists()):
+        return False
+    ih, h = index.read_text(encoding="utf-8"), rm.read_text(encoding="utf-8")
+    if 'class="trk"' in h:
+        return False
+    i = ih.find('<div class="wrap"><div class="facts">')
+    j = ih.find('class="facts-note"', i)
+    j = ih.find("</div>", j) + len("</div>") if j > 0 else -1
+    if i < 0 or j < 0:
+        return False
+    card = ih[i:j]
+    src = (ROOT / "build_index_v2.py").read_text(encoding="utf-8")
+    a, b = src.find("/* facts card"), src.find("section{padding:46px 0;}")
+    css = src[a:b] if a > 0 and b > a else ""
+    css = re.sub(r"(^|\n|\})\s*(\.fact)", r"\1 .trk \2", css)
+    css = css.replace("margin:-30px auto 0", "margin:0 auto")
+    block = ('<style>.trk{--card:#FFFFFF;--rule:#E4DCC8;--ink:#221C14;--muted:#71695A;--muted-2:#968972;'
+             "--gold-deep:#8A6A2E;padding:34px 0 30px;}" + css + "</style>\n"
+             f'<section class="trk">{card}</section>\n')
+    k = h.find("Appraisal-Quality Comparable Analysis")
+    k = h.rfind("<section", 0, k) if k > 0 else -1
+    if k < 0:
+        return False
+    rm.write_text(h[:k] + block + h[k:], encoding="utf-8")
+    return True
+
+
 def build(p, which=("roadmap", "mss", "moveup", "buyer")):
     import private_label as _pl
     _pl.resolve(p)
@@ -467,8 +614,13 @@ def build(p, which=("roadmap", "mss", "moveup", "buyer")):
     s_dir = ROOT / "output" / pre
     b_dir = ROOT / "output" / f"{pre}_Buyer"
     made = []
+    rm = s_dir / f"{pre}_Roadmap.html"
     if "roadmap" in which and (h := roadmap_guide(p, s_dir)):
-        (s_dir / f"{pre}_Roadmap_Guide.html").write_text(h, encoding="utf-8"); made.append("roadmap")
+        (s_dir / f"{pre}_Roadmap_Guide.html").write_text(h.replace("__BACK__", rm.name), encoding="utf-8")
+        made.append("roadmap")
+        inject_links(rm, f"{pre}_Roadmap_Guide.html", ROADMAP_LINKS)
+    if "roadmap" in which:
+        track_record_to_roadmap(s_dir / "index.html", rm)
     (s_dir / "_guide_notes.json").unlink(missing_ok=True)   # build-time only, not for the site
     if "mss" in which and (h := mss_guide(p)):
         (s_dir / "Market_Snapshot_Guide.html").write_text(h, encoding="utf-8"); made.append("market snapshot")
@@ -480,9 +632,15 @@ def build(p, which=("roadmap", "mss", "moveup", "buyer")):
                 (d / "Buyer_Report_Guide.html").write_text(h, encoding="utf-8")
         made.append("buyer report")
     if "buyer" in which and (h := buyer_guide(p, b_dir)):
+        bp_url = ((p.get("buyer_portal") or {}).get("url") or "").rstrip("/")
         for d in (s_dir, b_dir, ROOT / "output" / f"{pre}_Buyer_Small"):
             if d.exists():
-                (d / "Buyer_Portal_Guide.html").write_text(h, encoding="utf-8")
+                # From the buyer sites "Back to Buyer Portal" is the page next
+                # door; from the seller site it is the published portal.
+                back = "index.html" if d != s_dir else (bp_url + "/" if bp_url else "index.html")
+                (d / "Buyer_Portal_Guide.html").write_text(h.replace("__BACK__", back), encoding="utf-8")
+                if d != s_dir:
+                    inject_links(d / "index.html", "Buyer_Portal_Guide.html", BUYER_LINKS)
         made.append("buyer portal")
     return made
 

@@ -92,7 +92,10 @@ def apply(html, pl, fname=""):
             ("Authenticated by the Casey Samson Team", f"Authenticated by {CST}"),
             ("authenticate the Casey Samson Team value range", f"authenticate the {CST} value range"),
             ("summary of the Casey Samson Team Pricing Strategy", f"summary of the {CST} Strategy"),
-            ("The Casey Samson Team (CST) is a seven-agent", f"{CST} is backed by the Casey Samson Team (CST), a seven-agent"),
+            ("The Casey Samson Team (CST) is a seven-agent", f"{CST} is backed by the Casey&#32;Samson Team (CST), a seven-agent"),
+            # (&#32; keeps the running-text swap below from turning CST's
+            # own name into the agent's -- Themis read "backed by Ferris
+            # Eways (CST), a seven-agent team". Caught 23 Nov 2026.)
         ]:
             html = html.replace(a, b)
         # title bar

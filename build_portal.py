@@ -5264,6 +5264,23 @@ def build_roadmap(p, s, out):
   </div>
 </section>"""
 
+    # Casey, 23 Nov 2026: "Add a section in roadmap for buyer Portal that
+    # direct links to the Buyer Portal." Recovery Roadmaps already carry the
+    # band inside the Recovery Strategy.
+    _rm_bp_section = ""
+    if p.get("listing_status") != "recovery":
+        _rbp = buyer_portal_url(p)
+        if _rbp:
+            _rm_bp_section = (
+                '<section class="bp-band">\n  <div class="wrap">\n'
+                '    <h2 class="section-title">Your Buyer Portal</h2>\n'
+                f'    <a class="bp-cta" href="{_rbp}" target="_blank" rel="noopener">\n'
+                '      <span class="bp-cta-lbl">What Buyers And Their Agents See</span>\n'
+                '      <span class="bp-cta-sub">Photography, Authenticated Values, the competition, '
+                'disclosures and how to write an offer &mdash; everything a buyer needs, in one place.</span>\n'
+                '      <span class="bp-cta-go">Open the Buyer Portal &rarr;</span>\n'
+                f'      <span class="bp-cta-url">{_rbp.replace("https://", "")}</span>\n'
+                "    </a>\n  </div>\n</section>\n")
     if p.get("listing_status") == "recovery" and recovery_block:
         next_step_section = reconcile_block + "\n\n" + recovery_block
         note("Roadmap: Recovery Strategy used in place of Predictive Analysis "
@@ -5940,6 +5957,7 @@ def build_roadmap(p, s, out):
 <!--SEC:comp-start-->
 {comp_at_end}
 <!--SEC:comp-end-->
+{_rm_bp_section}
 
 
 <section>
