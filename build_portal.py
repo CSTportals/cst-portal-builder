@@ -2586,9 +2586,10 @@ RM_BADGE_CSS = """
   .rm-col .v{font-family:'Playfair Display',Georgia,serif; font-size:17px; font-weight:700;}
   .rm-col .s{font-size:11.5px; color:#BFB7A5; margin-top:3px;}
   /* Casey, 23 Nov 2026: the home's specs in a navy box; the white box
-     under it is the CST-vs-market comparison. */
+     under it is the CST-vs-market comparison. "Just one navy box" -- the
+     Authenticated Range / Money at Risk / market band is gone. */
   .rm-facts{display:flex; flex-wrap:wrap; justify-content:center; background:#1F2A44;
-    border:1px solid #B8902F; border-radius:8px; margin:-30px auto 0; position:relative;
+    border:1px solid #B8902F; border-radius:8px; margin:30px auto 0; position:relative;
     z-index:3; max-width:860px; box-shadow:0 8px 24px rgba(20,25,40,.25); padding:16px 8px;
     -webkit-print-color-adjust:exact; print-color-adjust:exact;}
   .rm-fact{flex:1 1 110px; text-align:center; padding:5px 8px;}
@@ -2614,7 +2615,7 @@ RM_BADGE_CSS = """
   .rc-g{font-size:10px; letter-spacing:.05em; text-transform:uppercase;
     color:var(--muted-2); margin-top:7px;}
   @media print{ .rm-band{padding:14px 0 40px;} .rm-col .v{font-size:15px;}
-    .rm-facts{margin:-26px auto 0; padding:12px 6px;} .rm-fact .n{font-size:16px;}
+    .rm-facts{margin:18px auto 0; padding:12px 6px;} .rm-fact .n{font-size:16px;}
     .rm-band, .rm-facts{break-inside:avoid;}
     .rc-sec{break-inside:avoid; margin-top:16px;} .rc-v{font-size:19px;} }
 
@@ -5896,7 +5897,7 @@ def build_roadmap(p, s, out):
   </div>
 </div>
 
-{rm_band}{rm_facts}
+{rm_facts}
 <!--SEC:bg-start-->
 <!--SEC:bg-start-->
 {rm_comps_section}
