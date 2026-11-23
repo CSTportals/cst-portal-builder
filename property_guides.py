@@ -739,6 +739,52 @@ def buyer_preview_to_roadmap(p, s_dir, b_dir):
     return True
 
 
+def roadmap_first(p, s_dir):
+    """Casey, 23 Nov 2026: "make the Roadmap the first page that comes up,
+    not the portal." The site's front door (index.html) is the Roadmap; the
+    Seller Portal moves to portal.html, and every link that meant the portal
+    -- "Back to <address>", the guides' "Back to Seller Portal", the emails'
+    Seller Portal links -- now points there. Safe to run after every build."""
+    rm = s_dir / f"{p['prefix']}_Roadmap.html"
+    idx, portal = s_dir / "index.html", s_dir / "portal.html"
+    if not rm.exists():
+        return False
+    if idx.exists() and 'class="feat-hit"' in idx.read_text(encoding="utf-8"):
+        idx.replace(portal)          # a fresh Seller Portal from this build
+    if not portal.exists():
+        return False
+    root = (p.get("portal_url") or "").rstrip("/")
+    def fix(t):
+        n = t.replace('href="index.html', 'href="portal.html')
+        if root:
+            n = n.replace(f'href="{root}/"', f'href="{root}/portal.html"').replace(
+                f'href="{root}"', f'href="{root}/portal.html"')
+        return n
+
+    for f in s_dir.glob("*.html"):
+        if f.name == "index.html":
+            continue
+        t = f.read_text(encoding="utf-8", errors="ignore")
+        if fix(t) != t:
+            f.write_text(fix(t), encoding="utf-8")
+    # The .eml drafts are quoted-printable: decode, fix, re-encode.
+    import email
+    from email import policy
+    for f in s_dir.glob("*.eml"):
+        msg = email.message_from_bytes(f.read_bytes(), policy=policy.default)
+        changed = False
+        for part in msg.walk():
+            if part.get_content_type() == "text/html":
+                t = part.get_content()
+                if fix(t) != t:
+                    part.set_content(fix(t), subtype="html", cte="quoted-printable")
+                    changed = True
+        if changed:
+            f.write_bytes(msg.as_bytes(policy=policy.default))
+    idx.write_text(rm.read_text(encoding="utf-8"), encoding="utf-8")
+    return True
+
+
 def build(p, which=("roadmap", "mss", "moveup", "buyer")):
     import private_label as _pl
     _pl.resolve(p)
@@ -786,6 +832,11 @@ def build(p, which=("roadmap", "mss", "moveup", "buyer")):
                 if d != s_dir:
                     inject_links(d / "index.html", "Buyer_Portal_Guide.html", BUYER_LINKS)
         made.append("buyer portal")
+    if p.get("roadmap_first", True):
+        try:
+            roadmap_first(p, s_dir)
+        except Exception as e:  # never stop a build over the front door
+            print("  roadmap-first skipped:", e)
     return made
 
 

@@ -302,7 +302,7 @@ def check_property(path):
         # tile (until the home has a real gallery) and a small buyer portal.
         try:
             from build_portal import buyer_portal_ready, is_example_home
-            _ix = sell / "index.html"
+            _ix = sell / "portal.html" if (sell / "portal.html").exists() else sell / "index.html"
             if (p.get("buyer_portal") and not _sp and not is_example_home(p)
                     and not buyer_portal_ready(p) and _ix.exists()):
                 r.check("samplebuyerportal" in _ix.read_text(encoding="utf-8"),
