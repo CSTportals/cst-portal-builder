@@ -5897,7 +5897,7 @@ def build_roadmap(p, s, out):
     body = f"""<body>
 
 <a class="back" href="index.html">&larr; Back to {addr}</a>
-<div class="private-note">{_privacy_note}</div>
+<!-- Casey, 23 Nov 2026: privacy note removed from the Roadmap. -->
 <div class="rm-hero">
 {rm_hero_img}
   <div class="rm-shade"></div>
