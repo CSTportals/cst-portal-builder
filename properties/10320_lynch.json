@@ -1,42 +1,329 @@
 {
-  "address": "10320 Lynch Ct", "city": "Oakton", "state": "Virginia",
-  "state_abbr": "VA", "zip": "", "county": "Fairfax County",
+  "address": "10320 Lynch Ln",
+  "city": "Oakton",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "22124",
+  "county": "Fairfax County",
   "congestion_fees": true,
-  "report_date": "Tuesday, September 22, 2026",
-  "prefix": "10320_Lynch", "listing_url": "10320Lynch.com",
+  "prefix": "10320_Lynch",
+  "report_date": "Monday, November 23, 2026",
+  "listing_url": "10320Lynch.com",
   "portal_url": "https://10320lynch.netlify.app",
   "include_tracker": true,
   "asset_dir": "assets/10320_Lynch",
-  "hero_photo": "10320_Lynch_front.png",
-  "photos": ["10320_Lynch_front.png"],
-  "agent": { "lookup": "Casey C Samson", "display": "Casey Samson",
-             "phone": "703-508-2535", "email": "Casey@caseysamson.com" },
+  "hero_photo": "10320_Lynch_front.jpg",
+  "photos": [
+    "10320_Lynch_front.jpg"
+  ],
+  "property_type": "single family",
+  "agent": {
+    "lookup": "Casey C Samson",
+    "display": "Casey Samson",
+    "phone": "703-508-2535",
+    "email": "Casey@caseysamson.com"
+  },
   "agent_page": "casey-c-samson.html",
-  "subject": { "built": 2013, "sf": 4403, "lot": 18400, "assessment": 1948000 },
-  "values": { "dated": 1944037, "customary": 2160041, "customary_list": 2200733, "premium": 2332844 },
+  "subject": {
+    "built": 2013,
+    "sf": 4403,
+    "lot": 18400,
+    "assessment": 1948000
+  },
+  "values": {
+    "dated": 1810147,
+    "customary": 2011275,
+    "customary_list": 2056720,
+    "premium": 2172177,
+    "upgrades": 0,
+    "preview_override": 2100000,
+    "coming_soon_override": 2000000,
+    "fallback_override": 1899000,
+    "deep_override": 1899000,
+    "worksheet_note": "23 Nov 2026 worksheet: Preview $2,100,000, Coming Soon $2,000,000, Fall Back $1,899,000, 0 Showings $1,899,000. Price-range comps = Orchid Pond, Wilson, Trailwood, Falcone Pointe (averages match). Falcone Pointe lot 6,466 derived from the price-range lot average."
+  },
   "comps": {
     "rows": [
-      ["3557 Orchid Pond", 2023, 4240,     0, 2043990, 2050000],
-      ["2961 Wilson Ave",  2004, 4745,     0, 1833750, 1936860],
-      ["11042 Heathland",  2003, 6257, 38479, 1859290, 1994960],
-      ["2954 Bonds Ridge", 2000, 4970, 49516, 1817700, 2060000]
+      [
+        "3557 Orchid Pond Way",
+        2023,
+        4240,
+        36017,
+        2043990,
+        2050000
+      ],
+      [
+        "2961 Wilson Ave",
+        2004,
+        4745,
+        37984,
+        1833750,
+        1975000
+      ],
+      [
+        "8263 Trailwood Ct",
+        2003,
+        4586,
+        6874,
+        1880500,
+        1940000
+      ],
+      [
+        "8421 Falcone Pointe Way",
+        2007,
+        4790,
+        6466,
+        1929050,
+        1780000
+      ]
     ],
+    "dom": {
+      "3557 Orchid Pond Way": 257,
+      "2961 Wilson Ave": 3,
+      "8263 Trailwood Ct": 19,
+      "8421 Falcone Pointe Way": 40
+    },
+    "list": {
+      "3557 Orchid Pond Way": 2100000,
+      "2961 Wilson Ave": 1975000,
+      "8263 Trailwood Ct": 1995000,
+      "8421 Falcone Pointe Way": 1850000
+    },
+    "orig_list": {
+      "3557 Orchid Pond Way": 2100000,
+      "2961 Wilson Ave": 1975000,
+      "8263 Trailwood Ct": 1995000,
+      "8421 Falcone Pointe Way": 1850000
+    },
     "summary": [
-      ["Age &amp; Size Average", 2004, 4745, 37984, 1833750, 1975000],
-      ["Price Range Average",    2007, 5598, 55020, 1865425, 2057490]
-    ]
+      [
+        "Age and Size &mdash; 5 sales",
+        2017,
+        4515,
+        24467,
+        2047758,
+        2169000
+      ],
+      [
+        "Price Range &mdash; 4 sales",
+        2009,
+        4590,
+        21835,
+        1921823,
+        1936250
+      ]
+    ],
+    "summary_ppsf": {
+      "Age and Size &mdash; 5 sales": {
+        "ppsf": 463
+      },
+      "Price Range &mdash; 4 sales": {
+        "ppsf": 451
+      }
+    },
+    "subject_value": 2011275
   },
   "market": {
-    "name": "Oakton Luxury Market", "slug": "Oakton_Luxury_Market_Snapshot",
-    "subhead": "Every home that sold in this segment sold successfully, but only a small share of the market is under contract &mdash; buyers are selective and patient.",
-    "stats": null, "absorption": null
+    "name": "Oakton Luxury Market",
+    "slug": "Oakton_Luxury_Market_Snapshot",
+    "stats": null,
+    "absorption": null
   },
   "competition": [
-    { "status": "Active", "address": "11040 Heathland", "dom": 138, "built": 2004, "sf": 0, "lot": 39245, "list": 2149000 },
-    { "status": "Active Under Contract", "address": "2785 Marshall",   "dom": 11, "built": 2001, "sf": 5600, "lot": 79814, "list": 2195000 },
-    { "status": "Active Under Contract", "address": "10101 Copper Ct", "dom": 1,  "built": 1998, "sf": 4128, "lot": 21678, "list": 1900000 },
-    { "status": "Pending", "address": "11102 Prince Edward", "dom": 129, "built": 1991, "sf": 7312, "lot": 76756, "list": 2349900 },
-    { "status": "Pending", "address": "3454 Virginia",       "dom": 94,  "built": 2000, "sf": 3834, "lot": 37462, "list": 2099000 }
+    {
+      "status": "Active",
+      "address": "9311 Talisman Dr",
+      "dom": 165,
+      "built": 2014,
+      "sf": 4162,
+      "lot": null,
+      "assessment": 1967340,
+      "list": 2099900
+    },
+    {
+      "status": "Active",
+      "address": "1404 Cottage St SW",
+      "dom": 47,
+      "built": 2015,
+      "sf": null,
+      "lot": null,
+      "assessment": 1660480,
+      "list": 1875000
+    }
   ],
-  "notes": [], "premium_rating": null
+  "model_unsold": [],
+  "local_snapshot": {
+    "ref": "2026-11-23",
+    "rows": [
+      {
+        "status": "ACT",
+        "address": "9311 Talisman Dr",
+        "dom": 165,
+        "built": 2014,
+        "sf": 4162,
+        "lot": 0,
+        "assessment": 1967340,
+        "list": 2099900,
+        "sale": null
+      },
+      {
+        "status": "ACT",
+        "address": "1404 Cottage St SW",
+        "dom": 47,
+        "built": 2015,
+        "sf": 0,
+        "lot": 0,
+        "assessment": 1660480,
+        "list": 1875000,
+        "sale": null
+      },
+      {
+        "status": "CLS",
+        "address": "1002 Frederick St SW",
+        "dom": 1,
+        "built": 2021,
+        "sf": 4569,
+        "lot": 12323,
+        "assessment": 2042370,
+        "list": 2150000,
+        "sale": 2175000
+      },
+      {
+        "status": "CLS",
+        "address": "3557 Orchid Pond Way",
+        "dom": 257,
+        "built": 2023,
+        "sf": 4240,
+        "lot": 36017,
+        "assessment": 2043990,
+        "list": 2100000,
+        "sale": 2050000
+      },
+      {
+        "status": "CLS",
+        "address": "2961 Wilson Ave",
+        "dom": 3,
+        "built": 2004,
+        "sf": 4745,
+        "lot": 37984,
+        "assessment": 1833750,
+        "list": 1975000,
+        "sale": 1975000
+      },
+      {
+        "status": "CLS",
+        "address": "8263 Trailwood Ct",
+        "dom": 19,
+        "built": 2003,
+        "sf": 4586,
+        "lot": 6874,
+        "assessment": 1880500,
+        "list": 1995000,
+        "sale": 1940000
+      },
+      {
+        "status": "CLS",
+        "address": "8421 Falcone Pointe Way",
+        "dom": 40,
+        "built": 2007,
+        "sf": 4790,
+        "lot": 6466,
+        "assessment": 1929050,
+        "list": 1850000,
+        "sale": 1780000
+      }
+    ]
+  },
+  "market_map": {
+    "subject": [
+      38.8903299,
+      -77.3019967
+    ],
+    "subject_dir": "left",
+    "subject_dir_solds": "right",
+    "solds": [
+      {
+        "address": "1002 Frederick St SW",
+        "sale": 2175000,
+        "list": 2150000,
+        "orig_list": 2150000,
+        "dom": 1,
+        "status": "Sold",
+        "lat": 38.8872218,
+        "lng": -77.2595215
+      },
+      {
+        "address": "3557 Orchid Pond Way",
+        "sale": 2050000,
+        "list": 2100000,
+        "orig_list": 2100000,
+        "dom": 257,
+        "status": "Sold",
+        "lat": 38.8695348,
+        "lng": -77.3336475
+      },
+      {
+        "address": "2961 Wilson Ave",
+        "sale": 1975000,
+        "list": 1975000,
+        "orig_list": 1975000,
+        "dom": 3,
+        "status": "Sold",
+        "lat": 38.8829013,
+        "lng": -77.3074828
+      },
+      {
+        "address": "8263 Trailwood Ct",
+        "sale": 1940000,
+        "list": 1995000,
+        "orig_list": 1995000,
+        "dom": 19,
+        "status": "Sold",
+        "lat": 38.9088842,
+        "lng": -77.2299258
+      },
+      {
+        "address": "8421 Falcone Pointe Way",
+        "sale": 1780000,
+        "list": 1850000,
+        "orig_list": 1850000,
+        "dom": 40,
+        "status": "Sold",
+        "lat": 38.9028343,
+        "lng": -77.2375981
+      }
+    ],
+    "listings": [
+      {
+        "address": "9311 Talisman Dr",
+        "status": "Active",
+        "list": 2099900,
+        "dom": 165,
+        "lat": 38.9176479,
+        "lng": -77.2680437
+      },
+      {
+        "address": "1404 Cottage St SW",
+        "status": "Active",
+        "list": 1875000,
+        "dom": 47,
+        "lat": 38.8829673,
+        "lng": -77.2482273
+      }
+    ]
+  },
+  "premium_rating": [
+    [
+      {
+        "label": "Property Details",
+        "items": [
+          "Built 2013",
+          "4,403 finished square feet",
+          "18,400 SF lot",
+          "Assessment $1,948,000"
+        ]
+      }
+    ]
+  ],
+  "notes": []
 }
