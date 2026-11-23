@@ -2585,14 +2585,19 @@ RM_BADGE_CSS = """
     color:#D3B060; font-weight:700; margin-bottom:4px;}
   .rm-col .v{font-family:'Playfair Display',Georgia,serif; font-size:17px; font-weight:700;}
   .rm-col .s{font-size:11.5px; color:#BFB7A5; margin-top:3px;}
-  .rm-facts{display:flex; flex-wrap:wrap; justify-content:center; background:var(--card);
-    border:1px solid var(--rule); border-radius:8px; margin:-30px auto 0; position:relative;
-    z-index:3; max-width:860px; box-shadow:0 8px 24px rgba(60,45,10,.10); padding:16px 8px;}
+  /* Casey, 23 Nov 2026: the home's specs in a navy box; the white box
+     under it is the CST-vs-market comparison. */
+  .rm-facts{display:flex; flex-wrap:wrap; justify-content:center; background:#1F2A44;
+    border:1px solid #B8902F; border-radius:8px; margin:-30px auto 0; position:relative;
+    z-index:3; max-width:860px; box-shadow:0 8px 24px rgba(20,25,40,.25); padding:16px 8px;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;}
   .rm-fact{flex:1 1 110px; text-align:center; padding:5px 8px;}
   .rm-fact .n{font-family:'Playfair Display',Georgia,serif; font-size:19px; font-weight:700;
-    color:var(--gold-deep); display:block; line-height:1.15;}
+    color:#E8C77A; display:block; line-height:1.15;}
   .rm-fact .l{font-size:9.5px; letter-spacing:.06em; text-transform:uppercase;
-    color:var(--muted); margin-top:3px;}
+    color:#C9D2E0; margin-top:3px;}
+  .rm-hero-inner .lbl.rts{font-size:26px; font-style:normal; font-weight:700; letter-spacing:.02em;
+    color:#E8C77A; margin-bottom:6px;}
   .rc-sec{max-width:860px; margin:22px auto 0;}
   .rc-head{font-family:'Playfair Display',Georgia,serif; font-size:17px;
     text-align:center; color:var(--gold-deep); margin:0 0 12px;}
@@ -5865,6 +5870,11 @@ def build_roadmap(p, s, out):
     comp_in_bg = comp_section
     comp_at_end = ""
 
+    # Casey, 23 Nov 2026: "The roadmap header should be The Casey Samson Team
+    # Roadmap to Success (address)". The separate team line stays only on
+    # private-label builds, where it carries the agent's name and tag.
+    _rm_brandline = ('    <div class="bl">The Casey Samson Team</div>'
+                     if (_is_recovery or p.get("private_label")) else "")
     body = f"""<body>
 
 <a class="back" href="index.html">&larr; Back to {addr}</a>
@@ -5875,8 +5885,8 @@ def build_roadmap(p, s, out):
   <div class="rm-shade"></div>
   <div class="rm-hero-inner">
     <img class="seal" src="Gold_Standard_Logo.png" alt="Gold Standard Listing">
-    <div class="bl">The Casey Samson Team</div>
-    <p class="lbl{" recovery" if _is_recovery else ""}">{"Recovery Strategy For" if _is_recovery else "Gold Standard Seller Roadmap&trade;"}</p>
+{_rm_brandline}
+    <p class="lbl{" recovery" if _is_recovery else " rts"}">{"Recovery Strategy For" if _is_recovery else "The Casey Samson Team Roadmap to Success"}</p>
     <h1>{addr}</h1>
     <p class="city">{city_state}</p>
 {rm_tag}
