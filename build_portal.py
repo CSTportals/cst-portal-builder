@@ -4601,12 +4601,13 @@ def _guide_bar(p, kind, root=None):
     if root is None:
         root = (p.get("portal_url") or "").rstrip("/")
     href = f"{root}/{dst}" if root else dst
+    # Casey, 22 Nov 2026: doubled -- "This has to be very obvious".
     # Casey, 21 Nov 2026: "Guide to Understanding the Roadmap" in the header,
     # the same size as The Casey Samson Team letters in the Roadmap hero.
-    return (f'<div class="guide-bar" style="background:#231F1A;text-align:center;padding:11px 16px;">'
+    return (f'<div class="guide-bar" style="background:#231F1A;text-align:center;padding:18px 16px;">'
             f'<a href="{href}" target="_blank" rel="noopener" style="color:#F0E4C4;'
-            f'font-size:11.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;'
-            f'text-decoration:none;border-bottom:1px solid #B8902F;padding-bottom:2px;">{link}</a></div>\n')
+            f'font-size:23px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;'
+            f'text-decoration:none;border-bottom:2px solid #B8902F;padding-bottom:3px;">{link}</a></div>\n')
 
 
 GUIDE_NOTES = {}
@@ -6343,16 +6344,16 @@ def build_buyer_report(p, s, out, stats=True, balance=False, cover=True, loves=0
     # printed PDF as well.
     _gr = (seller_host(p) or "").rstrip("/")
     _gh = f"{_gr}/Buyer_Report_Guide.html" if _gr else "Buyer_Report_Guide.html"
-    _mast_guide = (f'<a href="{_gh}" style="display:block;margin-top:4px;font:700 11px Georgia,serif;'
+    _mast_guide = (f'<a href="{_gh}" style="display:block;margin-top:6px;font:700 22px Georgia,serif;'
                    'color:#8A6A2E;text-decoration:underline;">Guide to Understanding the Buyer Report &rarr;</a>'
                    if p.get("guides") is not False else "")
     _br_guide = ("" if p.get("guides") is False or guide_in_mast else
-        '<style>@media print{.br-guide-s{padding:0!important}.br-guide{margin:6px auto 0!important;padding:4px 12px!important;font-size:12.5px!important;line-height:1.3!important}.br-guide span{display:inline!important;margin:0 6px!important;font-size:9.5px!important}}</style>'
+        '<style>@media print{.br-guide-s{padding:0!important}.br-guide{margin:6px auto 0!important;padding:6px 12px!important;font-size:25px!important;line-height:1.3!important}.br-guide span{display:inline!important;margin:0 6px!important;font-size:12px!important}}</style>'
         f'<section class="br-guide-s" style="padding:0;"><div class="wrap"><a class="br-guide" href="{_gh}" target="_blank" rel="noopener" '
-        'style="display:block;margin:26px auto 4px;max-width:760px;background:#1F2A44;color:#E8C77A;'
-        'text-align:center;text-decoration:none;border-radius:8px;padding:14px 18px;'
-        "font:700 19px 'Playfair Display',Georgia,serif;-webkit-print-color-adjust:exact;print-color-adjust:exact;\">"
-        '<span style="display:block;font:700 10.5px Georgia,serif;letter-spacing:.22em;text-transform:uppercase;'
+        'style="display:block;margin:26px auto 4px;max-width:1000px;background:#1F2A44;color:#E8C77A;'
+        'text-align:center;text-decoration:none;border-radius:8px;padding:20px 18px;'
+        "font:700 38px 'Playfair Display',Georgia,serif;-webkit-print-color-adjust:exact;print-color-adjust:exact;\">"
+        '<span style="display:block;font:700 14px Georgia,serif;letter-spacing:.22em;text-transform:uppercase;'
         'color:#C9D2E0;margin-bottom:4px;">New to this report?</span>Guide to Understanding the Buyer Report '
         f'&rarr;<span style="display:block;font:12px Georgia,serif;color:#C9D2E0;margin-top:4px;">{_gh.replace("https://", "")}</span></a></div></section>\n')
     br_masthead = br_cover if br_cover else f"""<header class="masthead">
