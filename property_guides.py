@@ -274,7 +274,18 @@ def roadmap_guide(p, s_dir):
          [f"Your home sits at the top of the table, built {p['subject'].get('built')}, "
           f"{p['subject'].get('sf'):,} square feet, with the average of the comparable sales right under it.",
           "Each comparable is a real closed sale of similar size, age, location and time, so the price holds "
-          "up when the buyer&rsquo;s lender orders the appraisal."]),
+          "up when the buyer&rsquo;s lender orders the appraisal.",
+          # Casey, 23 Nov 2026: say what the colours mean (market_map.SOLD_GRADE).
+          "<b>What the colors mean.</b> Each numbered sale on the map is colored by how it sold, measured "
+          "against its original list price:"
+          '<ul style="margin:6px 0 0 1.1em;padding:0;">'
+          '<li><b style="color:#2F6B3A;">Green</b> &mdash; sold in 7 days or less, at 99% or more of '
+          "original list.</li>"
+          '<li><b style="color:#B8860B;">Yellow</b> &mdash; took 8 to 30 days, or sold under 99% of '
+          "original list.</li>"
+          '<li><b style="color:#B3261E;">Red</b> &mdash; took over 30 days, or sold under 95% of '
+          "original list.</li></ul>"
+          "The black star is your home."]),
         (sh.get(names[1]), "Price Authenticated by the CST Pricing Team", "The pricing engine",
          ["Cylinders 1&ndash;6 run on every home: age and size, price range, price per square foot, "
           "assessment, market anomalies and inflation. Cylinders 7&ndash;10 fire only when they apply:",
