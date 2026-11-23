@@ -125,10 +125,13 @@ BUYER_LINKS = {
     "Move Up Calculator": "Move Up Calculator",
 }
 
-# Casey, 23 Nov 2026: "Links to the guide ... more subtle".
-GLINK = ('<div class="glink-row" data-glink="{s}" style="text-align:center;margin:2px 0 16px;">'
-         '<a href="{href}#g-{s}" target="_blank" rel="noopener" style="font:italic 13px Georgia,serif;'
-         'color:#8A6A2E;text-decoration:none;border-bottom:1px dotted #B8902F;">'
+# Casey, 23 Nov 2026: "flush right with an arrow just like the link 'back'
+# is flush left with arrow back. They should look alike." Same type, colour
+# and gold underline as the guide's "<- Back to" link (.gback).
+GLINK_STYLE = ("font:700 15px Georgia,serif;color:#1F2A44;text-decoration:none;"
+               "border-bottom:2px solid #B8902F;padding-bottom:2px;")
+GLINK = ('<div class="glink-row" data-glink="{s}" style="text-align:right;margin:4px 0 16px;">'
+         '<a href="{href}#g-{s}" target="_blank" rel="noopener" style="' + GLINK_STYLE + '">'
          'Guide to Understanding {name} &rarr;</a></div>')
 
 
@@ -157,7 +160,7 @@ def inject_links(page, guide_href, links):
             tag = m.group(0)
             new = tag if " id=" in tag else tag[:-1] + f' id="s-{sg}">'
             link = GLINK.format(s=sg, href=guide_href, name=name).replace(
-                'style="text-align:center;margin:2px 0 16px;"', 'style="text-align:center;margin:0 0 14px;"')
+                'style="text-align:right;margin:4px 0 16px;"', 'style="text-align:right;margin:0 0 14px;"')
             h = h[:m.start()] + new + link + h[m.end():]
         else:
             hit = None

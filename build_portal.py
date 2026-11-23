@@ -6512,11 +6512,12 @@ def build_buyer_report(p, s, out, stats=True, balance=False, cover=True, loves=0
             if _m:
                 body = (body[:_m.start()] + _m.group(1)[:-1] + f' id="s-{_sg}">' + _m.group(2)
                         + f'<a class="glink-sub" href="{_gh}#g-{_sg}" target="_blank" rel="noopener">'
-                        "Guide to Understanding this section &rarr;</a>" + body[_m.end():])
-        head = head.replace("</style>", ".glink-sub{display:block;text-align:center;margin:-6px 0 14px;"
-                            "font:italic 13px Georgia,serif;color:#8A6A2E;text-decoration:none;"
-                            "border:0}.glink-sub:hover{text-decoration:underline}"
-                            "@media print{.glink-sub{margin:-8px 0 4px;font-size:10px;line-height:1.2}}</style>", 1)
+                        f"<span>Guide to Understanding {_t} &rarr;</span></a>" + body[_m.end():])
+        # Flush right, styled like the guide's "<- Back to" link (Casey).
+        head = head.replace("</style>", ".glink-sub{display:block;text-align:right;margin:2px 0 14px;}"
+                            ".glink-sub span{font:700 15px Georgia,serif;color:#1F2A44;"
+                            "border-bottom:2px solid #B8902F;padding-bottom:2px}"
+                            "@media print{.glink-sub{margin:0 0 6px}.glink-sub span{font-size:11px}}</style>", 1)
     (out / f'{p["prefix"]}_Buyer_Report.html').write_text(head + body)
 
 
