@@ -1119,6 +1119,84 @@ def qr_block(b, p=None):
         '    <div class="hqr-cap">Scan to View</div>\n  </div>\n')
 
 
+def lot_map(b, addr):
+    """Casey, 23 Nov 2026: the lot from above, four ways -- satellite with lot
+    lines, satellite with street names, neighborhood aerial, and a street map
+    with the dimensions of each side. Lot lines come from the county parcel
+    layer (approximate; the recorded plat is the official boundary)."""
+    lot = b.get("lot") or {}
+    poly = lot.get("polygon") or []
+    if len(poly) < 3:
+        return ""
+    import json as _j, math as _m
+    def _ft(a, c):
+        la = _m.radians((a[0] + c[0]) / 2)
+        dx = _m.radians(c[1] - a[1]) * 6371008.8 * _m.cos(la)
+        dy = _m.radians(c[0] - a[0]) * 6371008.8
+        return round(_m.hypot(dx, dy) * 3.28084)
+    sides = [[(poly[i][0] + poly[(i + 1) % len(poly)][0]) / 2,
+              (poly[i][1] + poly[(i + 1) % len(poly)][1]) / 2,
+              _ft(poly[i], poly[(i + 1) % len(poly)])] for i in range(len(poly))]
+    area = lot.get("area_sf")
+    note = (f'County parcel {lot["pin"]}' if lot.get("pin") else "County parcel") + (
+        f', about {area:,} square feet' if area else "") + (
+        ". Lot lines and dimensions are approximate, from the county parcel map; "
+        "the recorded plat is the official boundary.")
+    D = _j.dumps({"lot": poly, "sides": sides, "label": addr})
+    tabs = [("a", "Satellite"), ("b", "With street names"), ("c", "Neighborhood"), ("d", "Lot dimensions")]
+    return (
+        '<section class="lotsec"><div class="wrap">'
+        '<h2 class="st">The Lot</h2>'
+        '<p class="ss">The property from above, with the lot lines drawn in gold.</p>'
+        '<div class="lot-tabs" role="tablist">'
+        + "".join(f'<button type="button" role="tab" data-v="{k}"{" class=on" if i == 0 else ""}>{t}</button>'
+                  for i, (k, t) in enumerate(tabs)) +
+        '</div><div class="lot-frame">'
+        + "".join(f'<div class="lot-map{" on" if i == 0 else ""}" id="lot-{k}"></div>' for i, (k, _) in enumerate(tabs)) +
+        f'</div><p class="lot-note">{note}</p></div></section>\n'
+        '<style>.lotsec .lot-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:6px 0 14px}'
+        '.lotsec .lot-tabs button{font:700 14px Georgia,serif;letter-spacing:.03em;padding:9px 18px;border-radius:22px;'
+        'border:1px solid #B8902F;background:#FFFDF7;color:#1F2A44;cursor:pointer}'
+        '.lotsec .lot-tabs button.on{background:#1F2A44;color:#E8C77A}'
+        '.lotsec .lot-frame{position:relative;max-width:1000px;margin:0 auto;border-radius:10px;overflow:hidden;'
+        'border:1px solid #D9CBA6;box-shadow:0 10px 28px rgba(31,42,68,.12)}'
+        '.lotsec .lot-map{height:520px;display:none}.lotsec .lot-map.on{display:block}'
+        '.lotsec .lot-note{text-align:center;font-size:13.5px;color:#71695A;font-style:italic;margin:12px auto 0;max-width:760px}'
+        '.lotsec .lot-lbl{background:#1F2A44;color:#E8C77A;border:0;font:700 13px Georgia,serif;padding:4px 9px;border-radius:4px;box-shadow:none}'
+        '.lotsec .lot-dim{background:#fff;color:#1F2A44;border:1px solid #8A6A2E;font:700 13px Georgia,serif;padding:2px 7px;border-radius:4px;box-shadow:none}'
+        '.lotsec .lot-lbl:before,.lotsec .lot-dim:before{display:none}'
+        '@media(max-width:600px){.lotsec .lot-map{height:380px}}</style>\n'
+        '<link rel="stylesheet" href="leaflet.css">\n<script src="leaflet.js"></script>\n'
+        '<script>\n(function(){var D=' + D + ';\n'
+        'if(!window.L)return;var made={};\n'
+        'var IMG="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",'
+        'ROADS="https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}",'
+        'REF="https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",'
+        'ATT="Imagery &copy; Esri, Maxar, Earthstar Geographics";\n'
+        'function t(u,a){return L.tileLayer(u,{maxZoom:21,maxNativeZoom:19,attribution:a||""});}\n'
+        'var V={a:{layers:function(){return[t(IMG,ATT)]},fit:true},'
+        'b:{layers:function(){return[t(IMG,ATT),t(ROADS),t(REF)]},zoom:18},'
+        'c:{layers:function(){return[t(IMG,ATT),t(ROADS)]},zoom:17},'
+        'd:{layers:function(){return[L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:21,maxNativeZoom:19,'
+        'attribution:"&copy; OpenStreetMap contributors"})]},fit:true,dims:true}};\n'
+        'function make(k){if(made[k]){made[k].invalidateSize();return;}var v=V[k];\n'
+        ' var m=L.map("lot-"+k,{scrollWheelZoom:false,zoomSnap:.25});m.setView(D.lot[0],v.zoom||19);\n'
+        ' v.layers().forEach(function(l){l.addTo(m)});\n'
+        ' var dim=!!v.dims;L.polygon(D.lot,{color:dim?"#8A6A2E":"#E8C77A",weight:4,fillColor:dim?"#B8902F":"#E8C77A",'
+        'fillOpacity:dim?.16:.12}).addTo(m).bindTooltip(D.label,{permanent:true,direction:"center",className:"lot-lbl"});\n'
+        ' if(dim)D.sides.forEach(function(s){L.tooltip({permanent:true,direction:"center",className:"lot-dim"})'
+        '.setLatLng([s[0],s[1]]).setContent(s[2]+" ft").addTo(m);});\n'
+        ' L.control.scale({imperial:true,metric:false}).addTo(m);\n'
+        ' if(v.fit)m.fitBounds(D.lot,{padding:[60,60]});else m.setView(L.polygon(D.lot).getBounds().getCenter(),v.zoom);\n'
+        ' made[k]=m;}\n'
+        'var bt=document.querySelectorAll(".lot-tabs button");\n'
+        'bt.forEach(function(b){b.addEventListener("click",function(){var k=b.dataset.v;\n'
+        ' bt.forEach(function(x){x.classList.toggle("on",x===b)});\n'
+        ' document.querySelectorAll(".lot-map").forEach(function(d){d.classList.toggle("on",d.id==="lot-"+k)});\n'
+        ' make(k);});});\n'
+        'make("a");})();\n</script>\n')
+
+
 def locator_map(b):
     import compass as _compass
     """A real street map of the neighbourhood: Leaflet over OpenStreetMap
@@ -2210,6 +2288,7 @@ def build(p, out):
     # With a Current Market map, the neighbourhood map moves up beside it --
     # "Maps under the comps".
     locmap_top, locmap_low = (locmap, "") if mktmap else ("", locmap)
+    lotmap = lot_map(b, b.get("display_address") or p["address"])
 
     contact = ""
     c = b.get("contacts")
@@ -2288,7 +2367,7 @@ def build(p, out):
     # offer, contact and financing -- and drops every section that waits on
     # MLS photos, maps, amenities or documents.
     if SMALL:
-        mktmap = locmap_top = locmap_low = snap = mkt = video = loves = walkto = press = prod = docs = ""
+        mktmap = locmap_top = locmap_low = lotmap = snap = mkt = video = loves = walkto = press = prod = docs = ""
         if len(b.get("gallery") or []) < 4:
             gallery = ""
 
@@ -2321,7 +2400,7 @@ def build(p, out):
   </div>
 </div>
 
-{band}{facts}{desc}{values}{mktmap}{locmap_top}{snap}{mkt}{video}{gallery}{features}{loves}{walkto}{locmap_low}{press}{prod}{docs}{offers}{contact}{wincalc}{moveup}
+{band}{facts}{desc}{values}{mktmap}{locmap_top}{snap}{mkt}{video}{gallery}{features}{lotmap}{loves}{walkto}{locmap_low}{press}{prod}{docs}{offers}{contact}{wincalc}{moveup}
 <footer>
   <div class="wrap">
     <div class="produced">The Casey Samson Team</div>

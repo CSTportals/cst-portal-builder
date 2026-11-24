@@ -1,771 +1,794 @@
 {
- "address": "9002 Lupine Den Dr",
- "city": "Vienna",
- "state": "Virginia",
- "state_abbr": "VA",
- "zip": "22182",
- "county": "Fairfax County",
- "prefix": "9002_Lupine_Den",
- "report_date": "Sunday, November 22, 2026",
- "asset_dir": "assets/9002_Lupine_Den",
- "hero_photo": "9002_Lupine_Den_front.jpg",
- "photos": [
-  "9002_Lupine_Den_front.jpg"
- ],
- "portal_url": "https://9002lupineden.netlify.app",
- "property_type": "single family",
- "agent": {
-  "lookup": "Casey Samson",
-  "display": "Casey Samson",
-  "title": "REALTOR&reg;",
-  "phone": "703-508-2535"
- },
- "track_record": "Track_Record_Over_3500",
- "subject": {
-  "built": 1996,
-  "sf": 4188,
-  "lot": 16680,
-  "assessment": 1622000
- },
- "values": {
-  "dated": 1612292,
-  "customary": 1791436,
-  "customary_list": 1785372,
-  "premium": 1934751,
-  "upgrades": 0,
-  "preview_override": 1775000,
-  "coming_soon_override": 1775000,
-  "fallback_override": 1750000,
-  "deep_override": 1699000,
-  "worksheet_note": "22 Nov 2026 worksheet (revised 10:49): Preview / Coming Soon $1,775,000, Fall Back $1,750,000, Rip Cord $1,699,000. Price-range comps = 2022 & 2028 Spring Branch, 8263 Trailwood, 1954 Horse Shoe (averages match)."
- },
- "comps": {
-  "rows": [
-   [
-    "2022 Spring Branch Dr",
-    1987,
-    4950,
-    43797,
-    1832290,
-    2000000
-   ],
-   [
-    "8263 Trailwood Ct",
-    2003,
-    4586,
-    6874,
-    1880500,
-    1940000
-   ],
-   [
-    "2028 Spring Branch Dr",
-    1986,
-    3819,
-    25665,
-    1653300,
-    1825000
-   ],
-   [
-    "1954 Horse Shoe Dr",
-    1995,
-    3942,
-    null,
-    1467620,
-    1650000
-   ]
-  ],
-  "dom": {
-   "2022 Spring Branch Dr": 3,
-   "8263 Trailwood Ct": 19,
-   "2028 Spring Branch Dr": 66,
-   "1954 Horse Shoe Dr": 4
-  },
-  "list": {
-   "2022 Spring Branch Dr": 1820000,
-   "8263 Trailwood Ct": 1995000,
-   "2028 Spring Branch Dr": 1875000,
-   "1954 Horse Shoe Dr": 1699900
-  },
-  "orig_list": {
-   "2022 Spring Branch Dr": 1820000,
-   "8263 Trailwood Ct": 1995000,
-   "2028 Spring Branch Dr": 1875000,
-   "1954 Horse Shoe Dr": 1699900
-  },
-  "summary": [
-   [
-    "Age and Size &mdash; 4 sales",
-    1993,
-    3948,
-    11354,
-    1457958,
-    1606250
-   ],
-   [
-    "Price Range &mdash; 4 sales",
-    1993,
-    4324,
-    21657,
-    1708428,
-    1853750
-   ]
-  ],
-  "summary_ppsf": {
-   "Age and Size &mdash; 4 sales": {
-    "ppsf": 431
-   },
-   "Price Range &mdash; 4 sales": {
-    "ppsf": 425
-   }
-  },
-  "subject_value": 1791436
- },
- "market": {
-  "name": "Vienna Luxury Market",
-  "slug": "Vienna_Luxury_Market_Snapshot",
-  "stats": null,
-  "absorption": null
- },
- "competition": [
-  {
-   "status": "Coming Soon",
-   "address": "1770 Beulah Rd",
-   "dom": 0,
-   "built": null,
-   "sf": 4214,
-   "lot": 36155,
-   "assessment": 1509960,
-   "list": 1600000
-  },
-  {
-   "status": "Active",
-   "address": "8302 Wolftrap Rd",
-   "dom": 12,
-   "built": 1997,
-   "sf": 3800,
-   "lot": 8184,
-   "assessment": 1429060,
-   "list": 1599888
-  },
-  {
-   "status": "Active",
-   "address": "1613 Chathams Ford Pl",
-   "dom": 55,
-   "built": 1998,
-   "sf": 4532,
-   "lot": 36155,
-   "assessment": 1789470,
-   "list": 1999999
-  },
-  {
-   "status": "Active Under Contract",
-   "address": "2021 George Washington Rd",
-   "dom": 18,
-   "built": 2001,
-   "sf": 3852,
-   "lot": 28560,
-   "assessment": 1593670,
-   "list": 1949900
-  },
-  {
-   "status": "Temp Off",
-   "address": "1683 Drewlaine Dr",
-   "dom": 9,
-   "built": 2000,
-   "sf": 3959,
-   "lot": 36431,
-   "assessment": 1815910,
-   "list": 1999999
-  },
-  {
-   "status": "Pending",
-   "address": "9082 Best Bower Ct",
-   "dom": 11,
-   "built": 2000,
-   "sf": 3920,
-   "lot": 15468,
-   "assessment": 1834460,
-   "list": 1850000
-  }
- ],
- "model_unsold": [
-  {
-   "status": "WTH",
-   "address": "2028 Spring Branch Dr",
-   "dom": 66,
-   "list": 1895000
-  },
-  {
-   "status": "EXP",
-   "address": "303 Talahi Rd SE",
-   "dom": 122,
-   "list": 1985000
-  }
- ],
- "local_snapshot": {
-  "ref": "2026-11-22",
-  "rows": [
-   {
-    "status": "C/S",
-    "address": "1770 Beulah Rd",
-    "dom": 0,
-    "built": 0,
-    "sf": 4214,
-    "lot": 36155,
-    "assessment": 1509960,
-    "list": 1600000,
-    "sale": null
-   },
-   {
-    "status": "ACT",
-    "address": "8302 Wolftrap Rd",
-    "dom": 12,
-    "built": 1997,
-    "sf": 3800,
-    "lot": 8184,
-    "assessment": 1429060,
-    "list": 1599888,
-    "sale": null
-   },
-   {
-    "status": "ACT",
-    "address": "1613 Chathams Ford Pl",
-    "dom": 55,
-    "built": 1998,
-    "sf": 4532,
-    "lot": 36155,
-    "assessment": 1789470,
-    "list": 1999999,
-    "sale": null
-   },
-   {
-    "status": "A/C",
-    "address": "2021 George Washington Rd",
-    "dom": 18,
-    "built": 2001,
-    "sf": 3852,
-    "lot": 28560,
-    "assessment": 1593670,
-    "list": 1949900,
-    "sale": null
-   },
-   {
-    "status": "T/O",
-    "address": "1683 Drewlaine Dr",
-    "dom": 9,
-    "built": 2000,
-    "sf": 3959,
-    "lot": 36431,
-    "assessment": 1815910,
-    "list": 1999999,
-    "sale": null
-   },
-   {
-    "status": "PND",
-    "address": "9082 Best Bower Ct",
-    "dom": 11,
-    "built": 2000,
-    "sf": 3920,
-    "lot": 15468,
-    "assessment": 1834460,
-    "list": 1850000,
-    "sale": null
-   },
-   {
-    "status": "CLS",
-    "address": "2007 Carrhill Rd",
-    "dom": 3,
-    "built": 1986,
-    "sf": 3819,
-    "lot": 33071,
-    "assessment": 1771060,
-    "list": 1850000,
-    "sale": 2065000
-   },
-   {
-    "status": "CLS",
-    "address": "2022 Spring Branch Dr",
-    "dom": 3,
-    "built": 1987,
-    "sf": 4950,
-    "lot": 43797,
-    "assessment": 1832290,
-    "list": 1820000,
-    "sale": 2000000
-   },
-   {
-    "status": "CLS",
-    "address": "8263 Trailwood Ct",
-    "dom": 19,
-    "built": 2003,
-    "sf": 4586,
-    "lot": 6874,
-    "assessment": 1880500,
-    "list": 1995000,
-    "sale": 1940000
-   },
-   {
-    "status": "CLS",
-    "address": "2028 Spring Branch Dr",
-    "dom": 66,
-    "built": 1986,
-    "sf": 3819,
-    "lot": 25665,
-    "assessment": 1653300,
-    "list": 1875000,
-    "sale": 1825000
-   },
-   {
-    "status": "CLS",
-    "address": "1954 Horse Shoe Dr",
-    "dom": 4,
-    "built": 1995,
-    "sf": 3942,
-    "lot": 0,
-    "assessment": 1467620,
-    "list": 1699900,
-    "sale": 1650000
-   },
-   {
-    "status": "CLS",
-    "address": "309 Springwood Ct NE",
-    "dom": 1,
-    "built": 1989,
-    "sf": 3860,
-    "lot": 0,
-    "assessment": 1420690,
-    "list": 1600000,
-    "sale": 1618405
-   },
-   {
-    "status": "CLS",
-    "address": "1946 Horse Shoe Dr",
-    "dom": 6,
-    "built": 1993,
-    "sf": 0,
-    "lot": 0,
-    "assessment": 1585380,
-    "list": 1625000,
-    "sale": 1802280
-   },
-   {
-    "status": "CLS",
-    "address": "1964 Horse Shoe Dr",
-    "dom": 5,
-    "built": 1994,
-    "sf": 0,
-    "lot": 8991,
-    "assessment": 1358140,
-    "list": 1500000,
-    "sale": 1584101
-   },
-   {
-    "status": "EXP",
-    "address": "303 Talahi Rd SE",
-    "dom": 122,
-    "built": 2001,
-    "sf": 4091,
-    "lot": 10000,
-    "assessment": 1267830,
-    "list": 1985000,
-    "sale": null
-   }
-  ]
- },
- "market_map": {
-  "subject": [
-   38.9264201,
-   -77.2573551
-  ],
-  "subject_dir": "left",
-  "subject_dir_solds": "right",
-  "solds": [
-   {
-    "address": "2007 Carrhill Rd",
-    "sale": 2065000,
-    "list": 1850000,
-    "orig_list": 1850000,
-    "dom": 3,
-    "status": "Sold",
-    "lat": 38.9201671,
-    "lng": -77.287581
-   },
-   {
-    "address": "2022 Spring Branch Dr",
-    "sale": 2000000,
-    "list": 1820000,
-    "orig_list": 1820000,
-    "dom": 3,
-    "status": "Sold",
-    "lat": 38.9218083,
-    "lng": -77.2926604
-   },
-   {
-    "address": "8263 Trailwood Ct",
-    "sale": 1940000,
-    "list": 1995000,
-    "orig_list": 1995000,
-    "dom": 19,
-    "status": "Sold",
-    "lat": 38.9088842,
-    "lng": -77.2299258
-   },
-   {
-    "address": "2028 Spring Branch Dr",
-    "sale": 1825000,
-    "list": 1875000,
-    "orig_list": 1875000,
-    "dom": 66,
-    "status": "Sold",
-    "lat": 38.9207242,
-    "lng": -77.2914705
-   },
-   {
-    "address": "1954 Horse Shoe Dr",
-    "sale": 1650000,
-    "list": 1699900,
-    "orig_list": 1699900,
-    "dom": 4,
-    "status": "Sold",
-    "lat": 38.9119141,
-    "lng": -77.2400667
-   },
-   {
-    "address": "309 Springwood Ct NE",
-    "sale": 1618405,
-    "list": 1600000,
-    "orig_list": 1600000,
-    "dom": 1,
-    "status": "Sold",
-    "lat": 38.9113433,
-    "lng": -77.267635
-   },
-   {
-    "address": "1946 Horse Shoe Dr",
-    "sale": 1802280,
-    "list": 1625000,
-    "orig_list": 1625000,
-    "dom": 6,
-    "status": "Sold",
-    "lat": 38.9122218,
-    "lng": -77.2392941
-   },
-   {
-    "address": "1964 Horse Shoe Dr",
-    "sale": 1584101,
-    "list": 1500000,
-    "orig_list": 1500000,
-    "dom": 5,
-    "status": "Sold",
-    "lat": 38.9120823,
-    "lng": -77.2412244
-   }
-  ],
-  "listings": [
-   {
-    "address": "1770 Beulah Rd",
-    "status": "Coming Soon",
-    "list": 1600000,
-    "dom": 0,
-    "lat": 38.9279027,
-    "lng": -77.273587
-   },
-   {
-    "address": "8302 Wolftrap Rd",
-    "status": "Active",
-    "list": 1599888,
-    "dom": 12,
-    "lat": 38.9053681,
-    "lng": -77.2318943
-   },
-   {
-    "address": "1613 Chathams Ford Pl",
-    "status": "Active",
-    "list": 1999999,
-    "dom": 55,
-    "lat": 38.9393267,
-    "lng": -77.2773959
-   },
-   {
-    "address": "2021 George Washington Rd",
-    "status": "Active Under Contract",
-    "list": 1949900,
-    "dom": 18,
-    "lat": 38.9083117,
-    "lng": -77.2292614
-   },
-   {
-    "address": "1683 Drewlaine Dr",
-    "status": "Temp Off",
-    "list": 1999999,
-    "dom": 9,
-    "lat": 38.9262657,
-    "lng": -77.259056
-   },
-   {
-    "address": "9082 Best Bower Ct",
-    "status": "Pending",
-    "list": 1850000,
-    "dom": 11,
-    "lat": 38.925306,
-    "lng": -77.2593098
-   }
-  ]
- },
- "premium_rating": [
-  [
-   {
-    "label": "Property Details",
-    "items": [
-     "Built 1996",
-     "4,188 finished square feet",
-     "16,680 SF lot",
-     "Assessment $1,622,000"
-    ]
-   }
-  ]
- ],
- "buyer_portal": {
-  "live": true,
-  "display_address": "9002 Lupine Den Dr",
-  "asset_dir": "assets/9002_Lupine_Den/buyer",
+  "address": "9002 Lupine Den Dr",
+  "city": "Vienna",
+  "state": "Virginia",
+  "state_abbr": "VA",
+  "zip": "22182",
+  "county": "Fairfax County",
+  "prefix": "9002_Lupine_Den",
+  "report_date": "Sunday, November 22, 2026",
+  "asset_dir": "assets/9002_Lupine_Den",
   "hero_photo": "9002_Lupine_Den_front.jpg",
-  "pricing_pdf": "9002_Lupine_Den_Buyer_Report.pdf",
-  "status_line": "Coming Soon",
-  "headline": "Brick-front colonial on a 16,680 SF lot between Wolf Trap and Tysons.",
-  "facts": [
-   [
-    "1996",
-    "Year built"
-   ],
-   [
-    "4,188",
-    "Finished SF"
-   ],
-   [
-    "16,680",
-    "SF lot"
-   ],
-   [
-    "Vienna",
-    "Fairfax County"
-   ]
+  "photos": [
+    "9002_Lupine_Den_front.jpg"
   ],
-  "deploy_to": "https://buylupineden.netlify.app",
-  "url": "https://buylupineden.netlify.app",
-  "snapshot": {
-   "title": "Market Snapshot",
-   "lede": "Every home 9002 Lupine Den Dr is competing with, and what each one is asking.",
-   "rows": [
-    [
-     "C/S",
-     "1770 Beulah Rd",
-     0,
-     "",
-     4214,
-     36155,
-     1509960,
-     1600000
-    ],
-    [
-     "ACT",
-     "8302 Wolftrap Rd",
-     12,
-     1997,
-     3800,
-     8184,
-     1429060,
-     1599888
-    ],
-    [
-     "ACT",
-     "1613 Chathams Ford Pl",
-     55,
-     1998,
-     4532,
-     36155,
-     1789470,
-     1999999
-    ],
-    [
-     "A/C",
-     "2021 George Washington Rd",
-     18,
-     2001,
-     3852,
-     28560,
-     1593670,
-     1949900
-    ],
-    [
-     "T/O",
-     "1683 Drewlaine Dr",
-     9,
-     2000,
-     3959,
-     36431,
-     1815910,
-     1999999
-    ],
-    [
-     "PND",
-     "9082 Best Bower Ct",
-     11,
-     2000,
-     3920,
-     15468,
-     1834460,
-     1850000
-    ]
-   ]
+  "portal_url": "https://9002lupineden.netlify.app",
+  "property_type": "single family",
+  "agent": {
+    "lookup": "Casey Samson",
+    "display": "Casey Samson",
+    "title": "REALTOR&reg;",
+    "phone": "703-508-2535"
   },
-  "contacts": {
-   "names": "Casey Samson",
-   "team": "The Casey Samson Team &middot; Samson Properties",
-   "lines": [
-    [
-     "Casey Samson",
-     "703-508-2535",
-     "Casey@caseysamson.com"
-    ]
-   ],
-   "office": "Samson Properties"
+  "track_record": "Track_Record_Over_3500",
+  "subject": {
+    "built": 1996,
+    "sf": 4188,
+    "lot": 16680,
+    "assessment": 1622000
   },
-  "locator_map": {
-   "title": "The Neighborhood",
-   "lede": "Vienna between Wolf Trap and Tysons, with Wolftrap Elementary, the Spring Hill Metro and Wolf Trap National Park close by. The arrows point to everything past the edge of the map.",
-   "center": {
-    "lat": 38.9264201,
-    "lng": -77.2573551,
-    "label": "9002 Lupine Den Dr"
-   },
-   "pins": [
+  "values": {
+    "dated": 1612292,
+    "customary": 1791436,
+    "customary_list": 1785372,
+    "premium": 1934751,
+    "upgrades": 0,
+    "preview_override": 1775000,
+    "coming_soon_override": 1775000,
+    "fallback_override": 1750000,
+    "deep_override": 1699000,
+    "worksheet_note": "22 Nov 2026 worksheet (revised 10:49): Preview / Coming Soon $1,775,000, Fall Back $1,750,000, Rip Cord $1,699,000. Price-range comps = 2022 & 2028 Spring Branch, 8263 Trailwood, 1954 Horse Shoe (averages match)."
+  },
+  "comps": {
+    "rows": [
+      [
+        "2022 Spring Branch Dr",
+        1987,
+        4950,
+        43797,
+        1832290,
+        2000000
+      ],
+      [
+        "8263 Trailwood Ct",
+        2003,
+        4586,
+        6874,
+        1880500,
+        1940000
+      ],
+      [
+        "2028 Spring Branch Dr",
+        1986,
+        3819,
+        25665,
+        1653300,
+        1825000
+      ],
+      [
+        "1954 Horse Shoe Dr",
+        1995,
+        3942,
+        null,
+        1467620,
+        1650000
+      ]
+    ],
+    "dom": {
+      "2022 Spring Branch Dr": 3,
+      "8263 Trailwood Ct": 19,
+      "2028 Spring Branch Dr": 66,
+      "1954 Horse Shoe Dr": 4
+    },
+    "list": {
+      "2022 Spring Branch Dr": 1820000,
+      "8263 Trailwood Ct": 1995000,
+      "2028 Spring Branch Dr": 1875000,
+      "1954 Horse Shoe Dr": 1699900
+    },
+    "orig_list": {
+      "2022 Spring Branch Dr": 1820000,
+      "8263 Trailwood Ct": 1995000,
+      "2028 Spring Branch Dr": 1875000,
+      "1954 Horse Shoe Dr": 1699900
+    },
+    "summary": [
+      [
+        "Age and Size &mdash; 4 sales",
+        1993,
+        3948,
+        11354,
+        1457958,
+        1606250
+      ],
+      [
+        "Price Range &mdash; 4 sales",
+        1993,
+        4324,
+        21657,
+        1708428,
+        1853750
+      ]
+    ],
+    "summary_ppsf": {
+      "Age and Size &mdash; 4 sales": {
+        "ppsf": 431
+      },
+      "Price Range &mdash; 4 sales": {
+        "ppsf": 425
+      }
+    },
+    "subject_value": 1791436
+  },
+  "market": {
+    "name": "Vienna Luxury Market",
+    "slug": "Vienna_Luxury_Market_Snapshot",
+    "stats": null,
+    "absorption": null
+  },
+  "competition": [
     {
-     "name": "Wolftrap Elementary School",
-     "sub": "Fairfax County Public Schools",
-     "lat": 38.9175151,
-     "lng": -77.2663853
+      "status": "Coming Soon",
+      "address": "1770 Beulah Rd",
+      "dom": 0,
+      "built": null,
+      "sf": 4214,
+      "lot": 36155,
+      "assessment": 1509960,
+      "list": 1600000
     },
     {
-     "name": "Wolf Trap National Park",
-     "sub": "Performing arts",
-     "lat": 38.9383676,
-     "lng": -77.264695
+      "status": "Active",
+      "address": "8302 Wolftrap Rd",
+      "dom": 12,
+      "built": 1997,
+      "sf": 3800,
+      "lot": 8184,
+      "assessment": 1429060,
+      "list": 1599888
     },
     {
-     "name": "Spring Hill Metro",
-     "sub": "Silver Line",
-     "lat": 38.928776,
-     "lng": -77.241455
+      "status": "Active",
+      "address": "1613 Chathams Ford Pl",
+      "dom": 55,
+      "built": 1998,
+      "sf": 4532,
+      "lot": 36155,
+      "assessment": 1789470,
+      "list": 1999999
+    },
+    {
+      "status": "Active Under Contract",
+      "address": "2021 George Washington Rd",
+      "dom": 18,
+      "built": 2001,
+      "sf": 3852,
+      "lot": 28560,
+      "assessment": 1593670,
+      "list": 1949900
+    },
+    {
+      "status": "Temp Off",
+      "address": "1683 Drewlaine Dr",
+      "dom": 9,
+      "built": 2000,
+      "sf": 3959,
+      "lot": 36431,
+      "assessment": 1815910,
+      "list": 1999999
+    },
+    {
+      "status": "Pending",
+      "address": "9082 Best Bower Ct",
+      "dom": 11,
+      "built": 2000,
+      "sf": 3920,
+      "lot": 15468,
+      "assessment": 1834460,
+      "list": 1850000
     }
-   ],
-   "arrows": [
-    [
-     109.3,
-     [
-      "Tysons Corner Center",
-      "Shopping and dining &middot; 6 min"
-     ]
-    ],
-    [
-     91.3,
-     [
-      "Wegmans",
-      "Tysons &middot; 8 min"
-     ]
-    ],
-    [
-     194.5,
-     [
-      "Church Street",
-      "Historic Vienna &middot; 5 min"
-     ]
-    ],
-    [
-     208.9,
-     [
-      "James Madison High School",
-      "Fairfax County Public Schools &middot; 7 min"
-     ]
-    ],
-    [
-     98.4,
-     [
-      "Washington, DC",
-      "Union Station &middot; 30 min"
-     ]
+  ],
+  "model_unsold": [
+    {
+      "status": "WTH",
+      "address": "2028 Spring Branch Dr",
+      "dom": 66,
+      "list": 1895000
+    },
+    {
+      "status": "EXP",
+      "address": "303 Talahi Rd SE",
+      "dom": 122,
+      "list": 1985000
+    }
+  ],
+  "local_snapshot": {
+    "ref": "2026-11-22",
+    "rows": [
+      {
+        "status": "C/S",
+        "address": "1770 Beulah Rd",
+        "dom": 0,
+        "built": 0,
+        "sf": 4214,
+        "lot": 36155,
+        "assessment": 1509960,
+        "list": 1600000,
+        "sale": null
+      },
+      {
+        "status": "ACT",
+        "address": "8302 Wolftrap Rd",
+        "dom": 12,
+        "built": 1997,
+        "sf": 3800,
+        "lot": 8184,
+        "assessment": 1429060,
+        "list": 1599888,
+        "sale": null
+      },
+      {
+        "status": "ACT",
+        "address": "1613 Chathams Ford Pl",
+        "dom": 55,
+        "built": 1998,
+        "sf": 4532,
+        "lot": 36155,
+        "assessment": 1789470,
+        "list": 1999999,
+        "sale": null
+      },
+      {
+        "status": "A/C",
+        "address": "2021 George Washington Rd",
+        "dom": 18,
+        "built": 2001,
+        "sf": 3852,
+        "lot": 28560,
+        "assessment": 1593670,
+        "list": 1949900,
+        "sale": null
+      },
+      {
+        "status": "T/O",
+        "address": "1683 Drewlaine Dr",
+        "dom": 9,
+        "built": 2000,
+        "sf": 3959,
+        "lot": 36431,
+        "assessment": 1815910,
+        "list": 1999999,
+        "sale": null
+      },
+      {
+        "status": "PND",
+        "address": "9082 Best Bower Ct",
+        "dom": 11,
+        "built": 2000,
+        "sf": 3920,
+        "lot": 15468,
+        "assessment": 1834460,
+        "list": 1850000,
+        "sale": null
+      },
+      {
+        "status": "CLS",
+        "address": "2007 Carrhill Rd",
+        "dom": 3,
+        "built": 1986,
+        "sf": 3819,
+        "lot": 33071,
+        "assessment": 1771060,
+        "list": 1850000,
+        "sale": 2065000
+      },
+      {
+        "status": "CLS",
+        "address": "2022 Spring Branch Dr",
+        "dom": 3,
+        "built": 1987,
+        "sf": 4950,
+        "lot": 43797,
+        "assessment": 1832290,
+        "list": 1820000,
+        "sale": 2000000
+      },
+      {
+        "status": "CLS",
+        "address": "8263 Trailwood Ct",
+        "dom": 19,
+        "built": 2003,
+        "sf": 4586,
+        "lot": 6874,
+        "assessment": 1880500,
+        "list": 1995000,
+        "sale": 1940000
+      },
+      {
+        "status": "CLS",
+        "address": "2028 Spring Branch Dr",
+        "dom": 66,
+        "built": 1986,
+        "sf": 3819,
+        "lot": 25665,
+        "assessment": 1653300,
+        "list": 1875000,
+        "sale": 1825000
+      },
+      {
+        "status": "CLS",
+        "address": "1954 Horse Shoe Dr",
+        "dom": 4,
+        "built": 1995,
+        "sf": 3942,
+        "lot": 0,
+        "assessment": 1467620,
+        "list": 1699900,
+        "sale": 1650000
+      },
+      {
+        "status": "CLS",
+        "address": "309 Springwood Ct NE",
+        "dom": 1,
+        "built": 1989,
+        "sf": 3860,
+        "lot": 0,
+        "assessment": 1420690,
+        "list": 1600000,
+        "sale": 1618405
+      },
+      {
+        "status": "CLS",
+        "address": "1946 Horse Shoe Dr",
+        "dom": 6,
+        "built": 1993,
+        "sf": 0,
+        "lot": 0,
+        "assessment": 1585380,
+        "list": 1625000,
+        "sale": 1802280
+      },
+      {
+        "status": "CLS",
+        "address": "1964 Horse Shoe Dr",
+        "dom": 5,
+        "built": 1994,
+        "sf": 0,
+        "lot": 8991,
+        "assessment": 1358140,
+        "list": 1500000,
+        "sale": 1584101
+      },
+      {
+        "status": "EXP",
+        "address": "303 Talahi Rd SE",
+        "dom": 122,
+        "built": 2001,
+        "sf": 4091,
+        "lot": 10000,
+        "assessment": 1267830,
+        "list": 1985000,
+        "sale": null
+      }
     ]
-   ]
   },
-  "amenities_lede": "Wolf Trap for summer concerts, Tysons Corner and Wegmans for shopping and dining, the Spring Hill Metro on the Silver Line, and historic Church Street in Vienna.",
-  "amenities": [
-   {
-    "title": "Getting Around",
-    "items": [
-     [
-      "Spring Hill Metro",
-      "Silver Line",
-      1.13
-     ],
-     [
-      "Dulles International",
-      "IAD",
-      14.2
-     ],
-     [
-      "Reagan National",
-      "DCA",
-      16.72
-     ],
-     [
-      "Washington, DC",
-      "Union Station",
-      17.74
-     ]
+  "market_map": {
+    "subject": [
+      38.9264201,
+      -77.2573551
+    ],
+    "subject_dir": "left",
+    "subject_dir_solds": "right",
+    "solds": [
+      {
+        "address": "2007 Carrhill Rd",
+        "sale": 2065000,
+        "list": 1850000,
+        "orig_list": 1850000,
+        "dom": 3,
+        "status": "Sold",
+        "lat": 38.9201671,
+        "lng": -77.287581
+      },
+      {
+        "address": "2022 Spring Branch Dr",
+        "sale": 2000000,
+        "list": 1820000,
+        "orig_list": 1820000,
+        "dom": 3,
+        "status": "Sold",
+        "lat": 38.9218083,
+        "lng": -77.2926604
+      },
+      {
+        "address": "8263 Trailwood Ct",
+        "sale": 1940000,
+        "list": 1995000,
+        "orig_list": 1995000,
+        "dom": 19,
+        "status": "Sold",
+        "lat": 38.9088842,
+        "lng": -77.2299258
+      },
+      {
+        "address": "2028 Spring Branch Dr",
+        "sale": 1825000,
+        "list": 1875000,
+        "orig_list": 1875000,
+        "dom": 66,
+        "status": "Sold",
+        "lat": 38.9207242,
+        "lng": -77.2914705
+      },
+      {
+        "address": "1954 Horse Shoe Dr",
+        "sale": 1650000,
+        "list": 1699900,
+        "orig_list": 1699900,
+        "dom": 4,
+        "status": "Sold",
+        "lat": 38.9119141,
+        "lng": -77.2400667
+      },
+      {
+        "address": "309 Springwood Ct NE",
+        "sale": 1618405,
+        "list": 1600000,
+        "orig_list": 1600000,
+        "dom": 1,
+        "status": "Sold",
+        "lat": 38.9113433,
+        "lng": -77.267635
+      },
+      {
+        "address": "1946 Horse Shoe Dr",
+        "sale": 1802280,
+        "list": 1625000,
+        "orig_list": 1625000,
+        "dom": 6,
+        "status": "Sold",
+        "lat": 38.9122218,
+        "lng": -77.2392941
+      },
+      {
+        "address": "1964 Horse Shoe Dr",
+        "sale": 1584101,
+        "list": 1500000,
+        "orig_list": 1500000,
+        "dom": 5,
+        "status": "Sold",
+        "lat": 38.9120823,
+        "lng": -77.2412244
+      }
+    ],
+    "listings": [
+      {
+        "address": "1770 Beulah Rd",
+        "status": "Coming Soon",
+        "list": 1600000,
+        "dom": 0,
+        "lat": 38.9279027,
+        "lng": -77.273587
+      },
+      {
+        "address": "8302 Wolftrap Rd",
+        "status": "Active",
+        "list": 1599888,
+        "dom": 12,
+        "lat": 38.9053681,
+        "lng": -77.2318943
+      },
+      {
+        "address": "1613 Chathams Ford Pl",
+        "status": "Active",
+        "list": 1999999,
+        "dom": 55,
+        "lat": 38.9393267,
+        "lng": -77.2773959
+      },
+      {
+        "address": "2021 George Washington Rd",
+        "status": "Active Under Contract",
+        "list": 1949900,
+        "dom": 18,
+        "lat": 38.9083117,
+        "lng": -77.2292614
+      },
+      {
+        "address": "1683 Drewlaine Dr",
+        "status": "Temp Off",
+        "list": 1999999,
+        "dom": 9,
+        "lat": 38.9262657,
+        "lng": -77.259056
+      },
+      {
+        "address": "9082 Best Bower Ct",
+        "status": "Pending",
+        "list": 1850000,
+        "dom": 11,
+        "lat": 38.925306,
+        "lng": -77.2593098
+      }
     ]
-   },
-   {
-    "title": "Family Dining",
-    "items": [
-     [
-      "Church Street",
-      "Historic Vienna",
-      2.14
-     ]
+  },
+  "premium_rating": [
+    [
+      {
+        "label": "Property Details",
+        "items": [
+          "Built 1996",
+          "4,188 finished square feet",
+          "16,680 SF lot",
+          "Assessment $1,622,000"
+        ]
+      }
     ]
-   },
-   {
-    "title": "Shopping",
-    "items": [
-     [
-      "Tysons Corner Center",
-      "Shopping and dining",
-      2.56
-     ],
-     [
-      "Wegmans",
-      "Tysons",
-      3.3
-     ]
-    ]
-   },
-   {
-    "title": "Parks and Recreation",
-    "items": [
-     [
-      "Wolf Trap National Park",
-      "Performing arts",
-      1.19
-     ],
-     [
-      "Spring Hill Rec Center",
-      "Pool and courts",
-      2.48
-     ]
-    ]
-   }
-  ]
- },
- "seller_names": "Leigh",
- "meeting": "tomorrow at 9"
+  ],
+  "buyer_portal": {
+    "live": true,
+    "display_address": "9002 Lupine Den Dr",
+    "asset_dir": "assets/9002_Lupine_Den/buyer",
+    "hero_photo": "9002_Lupine_Den_front.jpg",
+    "pricing_pdf": "9002_Lupine_Den_Buyer_Report.pdf",
+    "status_line": "Coming Soon",
+    "headline": "Brick-front colonial on a 16,680 SF lot between Wolf Trap and Tysons.",
+    "facts": [
+      [
+        "1996",
+        "Year built"
+      ],
+      [
+        "4,188",
+        "Finished SF"
+      ],
+      [
+        "16,680",
+        "SF lot"
+      ],
+      [
+        "Vienna",
+        "Fairfax County"
+      ]
+    ],
+    "deploy_to": "https://buylupineden.netlify.app",
+    "url": "https://buylupineden.netlify.app",
+    "snapshot": {
+      "title": "Market Snapshot",
+      "lede": "Every home 9002 Lupine Den Dr is competing with, and what each one is asking.",
+      "rows": [
+        [
+          "C/S",
+          "1770 Beulah Rd",
+          0,
+          "",
+          4214,
+          36155,
+          1509960,
+          1600000
+        ],
+        [
+          "ACT",
+          "8302 Wolftrap Rd",
+          12,
+          1997,
+          3800,
+          8184,
+          1429060,
+          1599888
+        ],
+        [
+          "ACT",
+          "1613 Chathams Ford Pl",
+          55,
+          1998,
+          4532,
+          36155,
+          1789470,
+          1999999
+        ],
+        [
+          "A/C",
+          "2021 George Washington Rd",
+          18,
+          2001,
+          3852,
+          28560,
+          1593670,
+          1949900
+        ],
+        [
+          "T/O",
+          "1683 Drewlaine Dr",
+          9,
+          2000,
+          3959,
+          36431,
+          1815910,
+          1999999
+        ],
+        [
+          "PND",
+          "9082 Best Bower Ct",
+          11,
+          2000,
+          3920,
+          15468,
+          1834460,
+          1850000
+        ]
+      ]
+    },
+    "contacts": {
+      "names": "Casey Samson",
+      "team": "The Casey Samson Team &middot; Samson Properties",
+      "lines": [
+        [
+          "Casey Samson",
+          "703-508-2535",
+          "Casey@caseysamson.com"
+        ]
+      ],
+      "office": "Samson Properties"
+    },
+    "locator_map": {
+      "title": "The Neighborhood",
+      "lede": "Vienna between Wolf Trap and Tysons, with Wolftrap Elementary, the Spring Hill Metro and Wolf Trap National Park close by. The arrows point to everything past the edge of the map.",
+      "center": {
+        "lat": 38.9264201,
+        "lng": -77.2573551,
+        "label": "9002 Lupine Den Dr"
+      },
+      "pins": [
+        {
+          "name": "Wolftrap Elementary School",
+          "sub": "Fairfax County Public Schools",
+          "lat": 38.9175151,
+          "lng": -77.2663853
+        },
+        {
+          "name": "Wolf Trap National Park",
+          "sub": "Performing arts",
+          "lat": 38.9383676,
+          "lng": -77.264695
+        },
+        {
+          "name": "Spring Hill Metro",
+          "sub": "Silver Line",
+          "lat": 38.928776,
+          "lng": -77.241455
+        }
+      ],
+      "arrows": [
+        [
+          109.3,
+          [
+            "Tysons Corner Center",
+            "Shopping and dining &middot; 6 min"
+          ]
+        ],
+        [
+          91.3,
+          [
+            "Wegmans",
+            "Tysons &middot; 8 min"
+          ]
+        ],
+        [
+          194.5,
+          [
+            "Church Street",
+            "Historic Vienna &middot; 5 min"
+          ]
+        ],
+        [
+          208.9,
+          [
+            "James Madison High School",
+            "Fairfax County Public Schools &middot; 7 min"
+          ]
+        ],
+        [
+          98.4,
+          [
+            "Washington, DC",
+            "Union Station &middot; 30 min"
+          ]
+        ]
+      ]
+    },
+    "amenities_lede": "Wolf Trap for summer concerts, Tysons Corner and Wegmans for shopping and dining, the Spring Hill Metro on the Silver Line, and historic Church Street in Vienna.",
+    "amenities": [
+      {
+        "title": "Getting Around",
+        "items": [
+          [
+            "Spring Hill Metro",
+            "Silver Line",
+            1.13
+          ],
+          [
+            "Dulles International",
+            "IAD",
+            14.2
+          ],
+          [
+            "Reagan National",
+            "DCA",
+            16.72
+          ],
+          [
+            "Washington, DC",
+            "Union Station",
+            17.74
+          ]
+        ]
+      },
+      {
+        "title": "Family Dining",
+        "items": [
+          [
+            "Church Street",
+            "Historic Vienna",
+            2.14
+          ]
+        ]
+      },
+      {
+        "title": "Shopping",
+        "items": [
+          [
+            "Tysons Corner Center",
+            "Shopping and dining",
+            2.56
+          ],
+          [
+            "Wegmans",
+            "Tysons",
+            3.3
+          ]
+        ]
+      },
+      {
+        "title": "Parks and Recreation",
+        "items": [
+          [
+            "Wolf Trap National Park",
+            "Performing arts",
+            1.19
+          ],
+          [
+            "Spring Hill Rec Center",
+            "Pool and courts",
+            2.48
+          ]
+        ]
+      }
+    ],
+    "lot": {
+      "pin": "0284 34 0030",
+      "area_sf": 18050,
+      "source": "Fairfax County GIS parcels (23 Nov 2026)",
+      "polygon": [
+        [
+          38.9264615223174,
+          -77.2576183140051
+        ],
+        [
+          38.9266779886777,
+          -77.2572338024478
+        ],
+        [
+          38.9264305033236,
+          -77.2569284297508
+        ],
+        [
+          38.9261784079261,
+          -77.2573621653865
+        ]
+      ]
+    }
+  },
+  "seller_names": "Leigh",
+  "meeting": "tomorrow at 9"
 }
