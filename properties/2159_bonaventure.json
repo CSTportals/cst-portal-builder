@@ -1,0 +1,509 @@
+{
+ "address": "2159 Bonaventure Dr",
+ "city": "Vienna",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "22181",
+ "county": "Fairfax County",
+ "congestion_fees": true,
+ "report_date": "Tuesday, November 24, 2026",
+ "prefix": "2159_Bonaventure",
+ "listing_url": "2159Bonaventure.com",
+ "portal_url": "https://2159bonaventure.netlify.app",
+ "include_tracker": true,
+ "listing_status": "new",
+ "property_type": "single family",
+ "asset_dir": "assets/2159_Bonaventure",
+ "hero_photo": "2159_Bonaventure_pool.jpg",
+ "photos": [
+  "2159_Bonaventure_pool.jpg"
+ ],
+ "subject": {
+  "built": 1999,
+  "sf": 3795,
+  "lot": 19600,
+  "assessment": 1473000
+ },
+ "values": {
+  "dated": 1639750,
+  "customary": 1821945,
+  "customary_list": null,
+  "premium": 1967700,
+  "upgrades": 0,
+  "preview_override": 1850000,
+  "coming_soon_override": 1800000,
+  "fallback_override": 1750000,
+  "deep_override": 1750000,
+  "worksheet_note": "24 Nov 2026 worksheet: Preview $1,850,000, Coming Soon $1,800,000, Fall Back $1,750,000, 0 Showings $1,750,000. Price-range comps = Carrhill, Oakton Plantation, Windy Knoll, George Washington, Limb Tree, Cottage (averages match). Age & Size average (3 sales) entered from the worksheet; its three homes not identified. GW/Limb Tree/Cottage lots read under the Draft watermark, confirmed by county parcels."
+ },
+ "comps": {
+  "rows": [
+   [
+    "2007 Carrhill Rd",
+    1986,
+    3819,
+    33071,
+    1771060,
+    2065000
+   ],
+   [
+    "2755 Oakton Plantation Ln",
+    1998,
+    3585,
+    16210,
+    1552680,
+    2000000
+   ],
+   [
+    "10101 Windy Knoll Ln",
+    1977,
+    3240,
+    217800,
+    1662910,
+    1965000
+   ],
+   [
+    "2021 George Washington Rd",
+    2001,
+    3852,
+    28560,
+    1593670,
+    1930000
+   ],
+   [
+    "1950 Limb Tree Ln",
+    1982,
+    3801,
+    48234,
+    1495090,
+    1900000
+   ],
+   [
+    "924 Cottage St SW",
+    2006,
+    3365,
+    16026,
+    1619700,
+    1860000
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    1999,
+    3878,
+    15340,
+    1774433,
+    1935000
+   ],
+   [
+    "Price Range Average",
+    1992,
+    3610,
+    59984,
+    1615852,
+    1953333
+   ]
+  ]
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "2744 Sutton Rd",
+   "dom": 33,
+   "built": 1995,
+   "sf": 3247,
+   "lot": 22042,
+   "list": 1900000,
+   "assessment": 1309460
+  },
+  {
+   "status": "Active",
+   "address": "8302 Wolftrap Rd",
+   "dom": 34,
+   "built": 1997,
+   "sf": 3800,
+   "lot": 8184,
+   "list": 1574888,
+   "assessment": 1429060
+  }
+ ],
+ "notes": [],
+ "market": {
+  "name": "Vienna Luxury Market",
+  "slug": "Vienna_Luxury_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "agent": {
+  "lookup": "Casey Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "casey@caseysamson.com"
+ },
+ "market_map": {
+  "subject": [
+   38.9088546,
+   -77.2820947
+  ],
+  "subject_dir": "left",
+  "subject_dir_solds": "left",
+  "solds": [
+   {
+    "address": "2007 Carrhill Rd",
+    "sale": 2065000,
+    "list": 1850000,
+    "orig_list": 1850000,
+    "dom": 3,
+    "status": "Sold",
+    "lat": 38.9201671,
+    "lng": -77.287581
+   },
+   {
+    "address": "2755 Oakton Plantation Ln",
+    "sale": 2000000,
+    "list": 2000000,
+    "orig_list": 2000000,
+    "dom": 12,
+    "status": "Sold",
+    "lat": 38.8818607,
+    "lng": -77.2911233
+   },
+   {
+    "address": "10101 Windy Knoll Ln",
+    "sale": 1965000,
+    "list": 1975000,
+    "orig_list": 1975000,
+    "dom": 13,
+    "status": "Sold",
+    "lat": 38.9537662,
+    "lng": -77.2930573
+   },
+   {
+    "address": "2021 George Washington Rd",
+    "sale": 1930000,
+    "list": 1949900,
+    "orig_list": 1949900,
+    "dom": 18,
+    "status": "Sold",
+    "lat": 38.9083117,
+    "lng": -77.2292614
+   },
+   {
+    "address": "1950 Limb Tree Ln",
+    "sale": 1900000,
+    "list": 2000000,
+    "orig_list": 2000000,
+    "dom": 12,
+    "status": "Sold",
+    "lat": 38.9280595,
+    "lng": -77.3000592
+   },
+   {
+    "address": "924 Cottage St SW",
+    "sale": 1860000,
+    "list": 1860000,
+    "orig_list": 1860000,
+    "dom": 1,
+    "status": "Sold",
+    "lat": 38.8885629,
+    "lng": -77.2581861
+   }
+  ],
+  "listings": [
+   {
+    "address": "2744 Sutton Rd",
+    "status": "Active",
+    "list": 1900000,
+    "dom": 33,
+    "lat": 38.8833072,
+    "lng": -77.2807058
+   },
+   {
+    "address": "8302 Wolftrap Rd",
+    "status": "Active",
+    "list": 1574888,
+    "dom": 34,
+    "lat": 38.9053681,
+    "lng": -77.2318943
+   }
+  ]
+ },
+ "buyer_portal": {
+  "live": true,
+  "display_address": "2159 Bonaventure Dr",
+  "asset_dir": "assets/2159_Bonaventure/buyer",
+  "hero_photo": "2159_Bonaventure_pool.jpg",
+  "pricing_pdf": "2159_Bonaventure_Buyer_Report.pdf",
+  "facts": [
+   [
+    "1999",
+    "Year built"
+   ],
+   [
+    "3,795",
+    "Above grade SF"
+   ],
+   [
+    "19,600",
+    "SF lot"
+   ],
+   [
+    "Vienna",
+    "Fairfax County"
+   ]
+  ],
+  "url": "https://buybonaventure.netlify.app",
+  "deploy_to": "https://buybonaventure.netlify.app",
+  "list_price": 1800000,
+  "status_line": "Coming Soon",
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Just west of the Town of Vienna, with Nottoway Park, Madison High School and the Vienna Metro close by. The arrows point to everything past the edge of the map.",
+   "center": {
+    "lat": 38.9088546,
+    "lng": -77.2820947,
+    "label": "2159 Bonaventure Dr"
+   },
+   "pins": [
+    {
+     "name": "Nottoway Park",
+     "sub": "Trails, courts and playground",
+     "lat": 38.8906,
+     "lng": -77.2692
+    },
+    {
+     "name": "James Madison High School",
+     "sub": "Fairfax County Public Schools",
+     "lat": 38.8961219,
+     "lng": -77.2788162
+    },
+    {
+     "name": "Vienna Town Green",
+     "sub": "Concerts, markets, Viva Vienna",
+     "lat": 38.902941,
+     "lng": -77.2641239
+    },
+    {
+     "name": "Vienna Community Center",
+     "sub": "Courts, classes, town events",
+     "lat": 38.9008267,
+     "lng": -77.2603307
+    },
+    {
+     "name": "Vienna Metro",
+     "sub": "Orange Line",
+     "lat": 38.877579,
+     "lng": -77.272461
+    }
+   ],
+   "arrows": [
+    [
+     79.4,
+     [
+      "Tysons Corner Center",
+      "Shopping and dining &middot; 3.26 mi"
+     ]
+    ],
+    [
+     24.6,
+     [
+      "Wolf Trap",
+      "Performing arts and parkland &middot; 2.24 mi"
+     ]
+    ],
+    [
+     288.1,
+     [
+      "Dulles International",
+      "IAD &middot; 9.86 mi"
+     ]
+    ],
+    [
+     106.9,
+     [
+      "Reagan National",
+      "DCA &middot; 13.61 mi"
+     ]
+    ],
+    [
+     131.8,
+     [
+      "Mosaic District",
+      "Dining, cinema and shops &middot; 3.89 mi"
+     ]
+    ]
+   ]
+  },
+  "amenities_lede": "Nottoway Park and the W&amp;OD nearby, downtown Vienna minutes away, and the Orange Line at Vienna Metro.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Vienna Metro",
+      "Orange Line",
+      2.22
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      9.86
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      13.61
+     ]
+    ]
+   },
+   {
+    "title": "Shopping and Dining",
+    "items": [
+     [
+      "Vienna Town Green",
+      "Concerts, markets, Viva Vienna",
+      1.05
+     ],
+     [
+      "Mosaic District",
+      "Dining, cinema and shops",
+      3.89
+     ],
+     [
+      "Tysons Corner Center",
+      "Shopping and dining",
+      3.26
+     ]
+    ]
+   },
+   {
+    "title": "Schools and Parks",
+    "items": [
+     [
+      "Nottoway Park",
+      "Trails, courts and playground",
+      1.44
+     ],
+     [
+      "James Madison High School",
+      "Fairfax County Public Schools",
+      0.9
+     ],
+     [
+      "Wolf Trap",
+      "Performing arts and parkland",
+      2.24
+     ]
+    ]
+   }
+  ],
+  "lot": {
+   "pin": "0381 39 0016",
+   "area_sf": 19310.0,
+   "source": "Fairfax County GIS parcels (24 Nov 2026)",
+   "polygon": [
+    [
+     38.9087456,
+     -77.2823639
+    ],
+    [
+     38.9089561,
+     -77.2821887
+    ],
+    [
+     38.9091788,
+     -77.2822888
+    ],
+    [
+     38.9092411,
+     -77.2824162
+    ],
+    [
+     38.909423,
+     -77.2827886
+    ],
+    [
+     38.9094322,
+     -77.2827772
+    ],
+    [
+     38.9094421,
+     -77.2827668
+    ],
+    [
+     38.909217,
+     -77.2823177
+    ],
+    [
+     38.9091886,
+     -77.2821158
+    ],
+    [
+     38.9090046,
+     -77.2820352
+    ],
+    [
+     38.9088835,
+     -77.2817899
+    ],
+    [
+     38.9085459,
+     -77.282099
+    ],
+    [
+     38.9085675,
+     -77.2821183
+    ],
+    [
+     38.9085886,
+     -77.2821386
+    ],
+    [
+     38.9086089,
+     -77.28216
+    ],
+    [
+     38.9086287,
+     -77.2821824
+    ],
+    [
+     38.9086477,
+     -77.2822057
+    ],
+    [
+     38.908666,
+     -77.28223
+    ],
+    [
+     38.9086835,
+     -77.2822551
+    ],
+    [
+     38.9087003,
+     -77.2822811
+    ],
+    [
+     38.9087162,
+     -77.282308
+    ],
+    [
+     38.9087314,
+     -77.2823356
+    ]
+   ]
+  }
+ }
+}
