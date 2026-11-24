@@ -270,5 +270,134 @@
   "portal_url": "https://sample.netlify.app",
   "net_proceeds": true,
   "sold_for": 2300000,
-  "hero_note": "Casey, 23 Nov 2026: the Sample shows 502 MacArthur's front photo (the Sample is MacArthur, sold for $2,300,000)."
+  "hero_note": "Casey, 23 Nov 2026: the Sample shows 502 MacArthur's front photo (the Sample is MacArthur, sold for $2,300,000).",
+  "market_map": {
+    "subject": [
+      38.9137624,
+      -77.2666062
+    ],
+    "subject_dir": "left",
+    "subject_dir_solds": "right",
+    "solds": [
+      {
+        "address": "701 Meadow Ln SW",
+        "sale": 2433625,
+        "status": "Sold",
+        "lat": 38.8888802,
+        "lng": -77.2689394
+      },
+      {
+        "address": "204 Battle St SW",
+        "sale": 2349000,
+        "status": "Sold",
+        "lat": 38.8958897,
+        "lng": -77.2627631
+      },
+      {
+        "address": "913 Hillcrest Dr SW",
+        "sale": 2325000,
+        "status": "Sold",
+        "lat": 38.8891091,
+        "lng": -77.2599581
+      },
+      {
+        "address": "121 Tapawingo Rd SW",
+        "sale": 2275000,
+        "status": "Sold",
+        "lat": 38.8927905,
+        "lng": -77.2572186
+      }
+    ],
+    "listings": [
+      {
+        "address": "609 Kingsley Rd SW",
+        "status": "Active",
+        "list": 2300000,
+        "dom": 176,
+        "lat": 38.8855146,
+        "lng": -77.2649415
+      },
+      {
+        "address": "513 John Marshall Dr NE",
+        "status": "Active",
+        "list": 2250000,
+        "dom": 51,
+        "lat": 38.9146834,
+        "lng": -77.2670014
+      },
+      {
+        "address": "605 Meadow Ln SW",
+        "status": "Active",
+        "list": 2099900,
+        "dom": 38,
+        "lat": 38.8900975,
+        "lng": -77.2691064
+      },
+      {
+        "address": "10900 Hunter Station Rd",
+        "status": "Active",
+        "list": 2099900,
+        "dom": 319,
+        "lat": 38.9262195,
+        "lng": -77.3218526
+      },
+      {
+        "address": "1489 Broadstone Pl",
+        "status": "Active",
+        "list": 2074000,
+        "dom": 100,
+        "lat": 38.9357379,
+        "lng": -77.249925
+      },
+      {
+        "address": "2755 Oakton Plantation Ln",
+        "status": "Active",
+        "list": 2000000,
+        "dom": 1,
+        "lat": 38.8818607,
+        "lng": -77.2911233
+      },
+      {
+        "address": "10301 Forest Maple Rd",
+        "status": "Active Under Contract",
+        "list": 2200000,
+        "dom": 8,
+        "lat": 38.9494337,
+        "lng": -77.3012093
+      },
+      {
+        "address": "1950 Limb Tree Ln",
+        "status": "Active Under Contract",
+        "list": 2000000,
+        "dom": 12,
+        "lat": 38.9280595,
+        "lng": -77.3000592
+      },
+      {
+        "address": "9932 Clearfield Ave",
+        "status": "Pending",
+        "list": 2149900,
+        "dom": 7,
+        "lat": 38.8932745,
+        "lng": -77.2897573
+      },
+      {
+        "address": "9311 Talisman Dr",
+        "status": "Active",
+        "list": 2175000,
+        "dom": 77,
+        "lat": 38.9176479,
+        "lng": -77.2680437
+      },
+      {
+        "address": "8263 Trailwood Ct",
+        "status": "Active Under Contract",
+        "list": 1995000,
+        "dom": 19,
+        "lat": 38.9088842,
+        "lng": -77.2299258
+      }
+    ],
+    "note": "Casey, 23 Nov 2026: Sample maps; subject pinned at 502 MacArthur (the Sample's photo). Comp DOM/list not on file, so sold pins use the plain Sold color."
+  }
 }
