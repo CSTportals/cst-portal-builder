@@ -361,8 +361,10 @@ def roadmap_guide(p, s_dir):
           f'text-transform:uppercase;color:#71695A;">Money at Risk</div><div class="v">{money(v["premium"] - v["dated"])}</div></div>'
           '<p class="d" style="margin:0;font-size:14.5px;line-height:1.5;">The distance from Dated to Premium: '
           'the value that can be lost to overpricing or poor preparation, and won back by Moving the Needle.</p></div>'
-          '<p style="text-align:center;margin-top:14px;">Historically, CST listings sell between Customary and '
-          'Premium Values (sometimes more).</p>'),
+          # Casey, 23 Nov 2026: replaces "Historically, CST listings sell between...".
+          '<p style="text-align:center;margin:16px auto 0;max-width:820px;">This is where professional Realtors add '
+          'real value. Strategic, cost-effective cosmetic improvements can significantly increase a home&rsquo;s '
+          'market value, generating returns far greater than the investment.</p>'),
          "Authenticated Values&trade;", "Dated, Customary and Premium &mdash; what each one means",
          ["Three values, one for each condition a home can be in. Final values are set after a trained "
           "Realtor inspects the home&rsquo;s condition, upgrades and lot premium or discount."]),
