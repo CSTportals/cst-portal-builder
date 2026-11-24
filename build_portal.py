@@ -6012,8 +6012,6 @@ def build_roadmap(p, s, out):
         <div class="needle-rail">
           <div class="rail-in">
             <h4>What Buyers Discount For</h4>
-            <p class="rail-sub">Conditions buyers do not prefer, and what the market
-            typically takes off for each.</p>
             <ul>
 {needle_down_items(p)}
             </ul>
