@@ -1,0 +1,610 @@
+{
+ "address": "2838 Cedar Ln",
+ "city": "Vienna",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "22180",
+ "county": "Fairfax County",
+ "congestion_fees": true,
+ "report_date": "Thursday, October 22, 2026",
+ "prefix": "2838_Cedar",
+ "listing_url": "2838Cedar.com",
+ "portal_url": "https://2838cedar.netlify.app",
+ "include_tracker": true,
+ "listing_status": "new",
+ "asset_dir": "assets/2838_Cedar",
+ "hero_photo": "2838_Cedar_front.jpg",
+ "photos": [
+  "2838_Cedar_front.jpg"
+ ],
+ "subject": {
+  "built": 1947,
+  "sf": 2650,
+  "lot": 15600,
+  "assessment": 1025000
+ },
+ "values": {
+  "dated": 1012217,
+  "customary": 1124685,
+  "customary_list": null,
+  "premium": 1214660,
+  "upgrades": 0,
+  "preview_override": 1099999,
+  "coming_soon_override": 1099999,
+  "fallback_override": 1049999,
+  "deep_override": 999999,
+  "worksheet_note": "Rebuilt 24 Nov 2026 from the live 22 Oct 2026 site: Preview/Coming Soon $1,099,999, Fall Back $1,049,999, deep $999,999."
+ },
+ "comps": {
+  "rows": [
+   [
+    "2332 Addison St",
+    1952,
+    2071,
+    22000,
+    1043610,
+    1346747
+   ],
+   [
+    "405 Colin Ln NW",
+    1963,
+    2828,
+    14532,
+    1110730,
+    1315360
+   ],
+   [
+    "2627 Five Oaks Rd",
+    1952,
+    2854,
+    43612,
+    1234670,
+    1286000
+   ],
+   [
+    "408 Holloway Ct NE",
+    1969,
+    2408,
+    16117,
+    1011110,
+    1270000
+   ],
+   [
+    "1715 Fox Run Ct",
+    1970,
+    2580,
+    null,
+    1123720,
+    1258000
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    1960,
+    2717,
+    21092,
+    1137542,
+    1332272
+   ],
+   [
+    "Price Range Average",
+    1964,
+    2668,
+    23643,
+    1120058,
+    1282340
+   ]
+  ]
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "2836 Cedar Ln",
+   "dom": 48,
+   "built": 1952,
+   "sf": 2000,
+   "lot": 15600,
+   "list": 1275000,
+   "assessment": 940000
+  },
+  {
+   "status": "Active",
+   "address": "1107 Hillcrest Dr SW",
+   "dom": 21,
+   "built": 1959,
+   "sf": 2100,
+   "lot": 12224,
+   "list": 1150000,
+   "assessment": 890010
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "244 Old Courthouse Rd",
+   "dom": 72,
+   "built": 1960,
+   "sf": 2535,
+   "list": 1250000,
+   "assessment": 1116470
+  },
+  {
+   "status": "Pending",
+   "address": "511 Malcolm Rd NW",
+   "dom": 103,
+   "built": 1965,
+   "sf": 2340,
+   "lot": 21170,
+   "list": 1300000,
+   "assessment": 1145510
+  },
+  {
+   "status": "Pending",
+   "address": "10309 Hunt Country Ln",
+   "dom": 4,
+   "built": 1969,
+   "sf": 2560,
+   "list": 1299989,
+   "assessment": 1244970
+  },
+  {
+   "status": "Pending",
+   "address": "2210 Loch Lomond Dr",
+   "dom": 4,
+   "built": 1969,
+   "sf": 2066,
+   "lot": 15400,
+   "list": 1150000,
+   "assessment": 1161610
+  },
+  {
+   "status": "Coming Soon",
+   "address": "403 John Marshall Dr NE",
+   "dom": 0,
+   "built": 1959,
+   "sf": 1992,
+   "lot": 12700,
+   "list": 1299000,
+   "assessment": 1195230
+  }
+ ],
+ "notes": [],
+ "market": {
+  "name": "Vienna Family Market",
+  "slug": "Vienna_Family_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "agent": {
+  "lookup": "Casey Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "casey@caseysamson.com"
+ },
+ "market_map": {
+  "subject": [
+   38.8747445,
+   -77.246646
+  ],
+  "subject_dir": "left",
+  "subject_dir_solds": "left",
+  "solds": [
+   {
+    "address": "2332 Addison St",
+    "sale": 1346747,
+    "status": "Sold",
+    "lat": 38.8955594,
+    "lng": -77.2420743
+   },
+   {
+    "address": "405 Colin Ln NW",
+    "sale": 1315360,
+    "status": "Sold",
+    "lat": 38.9039186,
+    "lng": -77.2759691
+   },
+   {
+    "address": "2627 Five Oaks Rd",
+    "sale": 1286000,
+    "status": "Sold",
+    "lat": 38.8901591,
+    "lng": -77.2846106
+   },
+   {
+    "address": "408 Holloway Ct NE",
+    "sale": 1270000,
+    "status": "Sold",
+    "lat": 38.9092545,
+    "lng": -77.2661669
+   },
+   {
+    "address": "1715 Fox Run Ct",
+    "sale": 1258000,
+    "status": "Sold",
+    "lat": 38.9406657,
+    "lng": -77.3008046
+   }
+  ],
+  "listings": [
+   {
+    "address": "2836 Cedar Ln",
+    "status": "Active",
+    "list": 1275000,
+    "dom": 48,
+    "lat": 38.8749692,
+    "lng": -77.2466291
+   },
+   {
+    "address": "1107 Hillcrest Dr SW",
+    "status": "Active",
+    "list": 1150000,
+    "dom": 21,
+    "lat": 38.8856334,
+    "lng": -77.2554471
+   },
+   {
+    "address": "244 Old Courthouse Rd",
+    "status": "Active Under Contract",
+    "list": 1250000,
+    "dom": 72,
+    "lat": 38.916512,
+    "lng": -77.244055
+   },
+   {
+    "address": "511 Malcolm Rd NW",
+    "status": "Pending",
+    "list": 1300000,
+    "dom": 103,
+    "lat": 38.9020599,
+    "lng": -77.2781859
+   },
+   {
+    "address": "10309 Hunt Country Ln",
+    "status": "Pending",
+    "list": 1299989,
+    "dom": 4,
+    "lat": 38.9408001,
+    "lng": -77.3032685
+   },
+   {
+    "address": "2210 Loch Lomond Dr",
+    "status": "Pending",
+    "list": 1150000,
+    "dom": 4,
+    "lat": 38.9072692,
+    "lng": -77.2841708
+   },
+   {
+    "address": "403 John Marshall Dr NE",
+    "status": "Coming Soon",
+    "list": 1299000,
+    "dom": 0,
+    "lat": 38.9127984,
+    "lng": -77.2690286
+   }
+  ]
+ },
+ "buyer_portal": {
+  "display_address": "2838 Cedar Ln",
+  "site": "2838Cedar.com",
+  "live": true,
+  "status_line": "Coming Soon",
+  "facts": [
+   [
+    "1947",
+    "Year built"
+   ],
+   [
+    "2,650",
+    "Square feet"
+   ],
+   [
+    "0.36",
+    "Acres"
+   ],
+   [
+    "Vienna",
+    "Fairfax County"
+   ]
+  ],
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "pricing_pdf": "2838_Cedar_Buyer_Report.pdf",
+  "list_price": 1099999,
+  "headline": "A classic all-brick Cape on a 15,600 square foot lot in Lee Manor, minutes to the Mosaic District and Dunn Loring Metro.",
+  "highlights": [
+   "Classic brick Cape",
+   "15,600 SF lot",
+   "2,650 sq ft",
+   "Minutes to Mosaic"
+  ],
+  "feature_headlines": [
+   {
+    "head": "Classic Brick Cape",
+    "sub": [
+     "All-brick front with twin dormers",
+     "Brick chimney",
+     "Columned front entry"
+    ]
+   },
+   {
+    "head": "Room to Spread Out",
+    "sub": [
+     "15,600 square foot lot",
+     "Long private driveway",
+     "Mature trees and an open front lawn"
+    ]
+   },
+   {
+    "head": "Close to Everything",
+    "sub": [
+     "Mosaic District 1.3 miles",
+     "Dunn Loring Metro 1.5 miles",
+     "I-66 and the Beltway minutes away"
+    ]
+   }
+  ],
+  "features": {
+   "The Home": [
+    "Built 1947",
+    "2,650 square feet",
+    "All-brick Cape Cod with front dormers and a brick chimney",
+    "Covered, columned front entry"
+   ],
+   "The Lot": [
+    "15,600 square foot lot",
+    "Long private driveway",
+    "Mature trees and an open front lawn"
+   ],
+   "Location": [
+    "Lee Manor, Vienna",
+    "Minutes to the Mosaic District and Dunn Loring Metro",
+    "Fairfax County"
+   ]
+  },
+  "amenities_lede": "The Mosaic District and Dunn Loring Metro are minutes away, downtown Vienna is a short drive, and Tysons is about ten minutes north.",
+  "amenities": [
+   {
+    "title": "Dining",
+    "items": [
+     [
+      "Evelyn Rose",
+      "Fine dining &middot; Tasting menu, Church St",
+      "7 min"
+     ],
+     [
+      "Cafe Renaissance",
+      "Fine dining &middot; French",
+      "7 min"
+     ],
+     [
+      "801 Chophouse",
+      "Fine dining &middot; Steak, Westpark Dr",
+      "11 min"
+     ],
+     [
+      "Vienna Inn",
+      "Family &middot; the 1960 town institution",
+      "7 min"
+     ],
+     [
+      "Carnegie Diner",
+      "Family &middot; All day, Maple Ave W",
+      "6 min"
+     ],
+     [
+      "Clyde&rsquo;s of Tysons",
+      "Family &middot; American, all day",
+      "10 min"
+     ]
+    ]
+   },
+   {
+    "title": "Shopping",
+    "items": [
+     [
+      "Mosaic District",
+      "Dining, cinema and shops",
+      "4 min"
+     ],
+     [
+      "Tysons Corner Center",
+      "Virginia&rsquo;s largest mall",
+      "10 min"
+     ],
+     [
+      "Tysons Galleria",
+      "Saks, Neiman Marcus",
+      "11 min"
+     ],
+     [
+      "Pan Am Shopping Center",
+      "Grocery, pharmacy and restaurants",
+      "5 min"
+     ],
+     [
+      "Safeway",
+      "Nutley St",
+      "3 min"
+     ],
+     [
+      "Whole Foods Market",
+      "Maple Avenue, Vienna",
+      "6 min"
+     ]
+    ]
+   },
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Dunn Loring Metro",
+      "Orange Line",
+      "4 min"
+     ],
+     [
+      "Vienna Metro",
+      "Orange Line terminus",
+      "4 min"
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      "28 min"
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      "25 min"
+     ],
+     [
+      "Washington, DC",
+      "Downtown",
+      "25 min"
+     ]
+    ]
+   },
+   {
+    "title": "Parks &amp; Health",
+    "items": [
+     [
+      "Nottoway Park",
+      "Trails, courts and playground",
+      "5 min"
+     ],
+     [
+      "W&amp;OD Trail",
+      "45 miles of paved rail trail",
+      "7 min"
+     ],
+     [
+      "Inova Fairfax Hospital",
+      "Level 1 trauma center",
+      "4 min"
+     ]
+    ]
+   }
+  ],
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Lee Manor sits between downtown Vienna and the Mosaic District, with Dunn Loring Metro and Inova Fairfax each a short drive. The arrows point to everything past the map.",
+   "center": {
+    "lat": 38.8747445,
+    "lng": -77.246646,
+    "label": "2838 Cedar Ln"
+   },
+   "pins": [
+    {
+     "name": "Dunn Loring Metro",
+     "sub": "Orange Line",
+     "lat": 38.8833529,
+     "lng": -77.22812
+    },
+    {
+     "name": "Mosaic District",
+     "sub": "Dining, cinema and shops",
+     "lat": 38.8713,
+     "lng": -77.2282
+    },
+    {
+     "name": "Inova Fairfax Hospital",
+     "sub": "Level 1 trauma center",
+     "lat": 38.8588,
+     "lng": -77.2366
+    },
+    {
+     "name": "Vienna Metro",
+     "sub": "Orange Line terminus",
+     "lat": 38.877579,
+     "lng": -77.272461
+    },
+    {
+     "name": "Safeway",
+     "sub": "Nutley St",
+     "lat": 38.8713687,
+     "lng": -77.2609436
+    },
+    {
+     "name": "Pan Am Shopping Center",
+     "sub": "Grocery, pharmacy and restaurants",
+     "lat": 38.8706,
+     "lng": -77.2757
+    },
+    {
+     "name": "Nottoway Park",
+     "sub": "Trails, courts and playground",
+     "lat": 38.8906,
+     "lng": -77.2692
+    },
+    {
+     "name": "Town of Vienna",
+     "sub": "Church Street shops and dining",
+     "lat": 38.9012,
+     "lng": -77.2653
+    }
+   ],
+   "arrows": [
+    [
+     23.4,
+     [
+      "Tysons Corner",
+      "10 min"
+     ]
+    ],
+    [
+     295.6,
+     [
+      "Dulles International",
+      "IAD &middot; 28 min"
+     ]
+    ],
+    [
+     98.3,
+     [
+      "Reagan National",
+      "DCA &middot; 25 min"
+     ]
+    ],
+    [
+     82.0,
+     [
+      "Washington, DC",
+      "25 min"
+     ]
+    ]
+   ]
+  },
+  "lot": {
+   "pin": "0493 03 0011",
+   "area_sf": 16230.0,
+   "source": "Fairfax County GIS parcels (24 Nov 2026)",
+   "polygon": [
+    [
+     38.8746638095209,
+     -77.2463158706796
+    ],
+    [
+     38.8746083381438,
+     -77.2470129176492
+    ],
+    [
+     38.8748328716415,
+     -77.2470429101336
+    ],
+    [
+     38.8748868800402,
+     -77.2463492483771
+    ]
+   ]
+  }
+ }
+}

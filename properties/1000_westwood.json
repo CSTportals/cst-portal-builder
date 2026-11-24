@@ -1,0 +1,496 @@
+{
+ "address": "1000 Westwood Dr NE",
+ "city": "Vienna",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "22180",
+ "county": "Fairfax County",
+ "congestion_fees": true,
+ "report_date": "Thursday, November 5, 2026",
+ "prefix": "1000_Westwood",
+ "listing_url": "1000Westwood.com",
+ "portal_url": "https://1000westwood.netlify.app",
+ "include_tracker": true,
+ "listing_status": "new",
+ "asset_dir": "assets/1000_Westwood",
+ "hero_photo": "1000_Westwood_front.jpg",
+ "photos": [
+  "1000_Westwood_front.jpg"
+ ],
+ "subject": {
+  "built": 1963,
+  "sf": 1472,
+  "lot": 12502,
+  "assessment": 1085180
+ },
+ "values": {
+  "dated": 1098057,
+  "customary": 1220063,
+  "customary_list": null,
+  "premium": 1317668,
+  "upgrades": 0,
+  "preview_override": 1199999,
+  "coming_soon_override": 1199999,
+  "fallback_override": 1149999,
+  "deep_override": 1099999,
+  "worksheet_note": "Rebuilt 24 Nov 2026 from the 5 Nov 2026 site: Preview/Coming Soon $1,199,999, Fall Back $1,149,999, deep $1,099,999."
+ },
+ "comps": {
+  "rows": [
+   [
+    "1013 Westwood Dr NE",
+    1966,
+    1436,
+    13090,
+    1166990,
+    1280000
+   ],
+   [
+    "408 Holloway Ct NE",
+    1969,
+    2408,
+    16117,
+    1011110,
+    1270000
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    1966,
+    1397,
+    11877,
+    1079485,
+    1245000
+   ],
+   [
+    "Price Range Average",
+    1968,
+    1922,
+    14604,
+    1089050,
+    1275000
+   ]
+  ]
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "304 Jean Pl NE",
+   "dom": 3,
+   "built": 1969,
+   "sf": 1525,
+   "list": 1149500,
+   "assessment": 1112790
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "244 Old Courthouse Rd NE",
+   "dom": 72,
+   "built": 1960,
+   "sf": 2535,
+   "list": 1250000,
+   "assessment": 1116470
+  },
+  {
+   "status": "Pending",
+   "address": "403 John Marshall Dr NE",
+   "dom": 6,
+   "built": 1959,
+   "sf": 1992,
+   "list": 1299000,
+   "assessment": 1195230
+  },
+  {
+   "status": "Coming Soon",
+   "address": "312 Branch Cir SE",
+   "dom": 0,
+   "built": 1956,
+   "sf": 1680,
+   "list": 1150000,
+   "assessment": 932730
+  }
+ ],
+ "notes": [],
+ "market": {
+  "name": "Vienna Family Market",
+  "slug": "Vienna_Family_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "agent": {
+  "lookup": "Casey Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "casey@caseysamson.com"
+ },
+ "buyer_portal": {
+  "display_address": "1000 Westwood Dr NE",
+  "site": "1000Westwood.com",
+  "live": true,
+  "status_line": "Coming Soon",
+  "facts": [
+   [
+    "1963",
+    "Year built"
+   ],
+   [
+    "1,472",
+    "Square feet above grade"
+   ],
+   [
+    "0.29",
+    "Acres"
+   ],
+   [
+    "Vienna",
+    "Town of Vienna"
+   ]
+  ],
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "pricing_pdf": "1000_Westwood_Buyer_Report.pdf",
+  "list_price": 1199999,
+  "headline": "A 1963 Town of Vienna home on a 12,500 SF lot, just down the street from Westwood Country Club.",
+  "highlights": [
+   "Town of Vienna",
+   "Built 1963",
+   "12,502 SF lot",
+   "Near Westwood CC"
+  ],
+  "amenities_lede": "Westwood Country Club down the street, downtown Vienna minutes away, and Tysons and the Silver Line just east.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Spring Hill Metro",
+      "Silver Line",
+      "4 min"
+     ],
+     [
+      "Vienna Metro",
+      "Orange Line",
+      "9 min"
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      "25 min"
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      "28 min"
+     ]
+    ]
+   },
+   {
+    "title": "Dining",
+    "items": [
+     [
+      "Cafe Renaissance",
+      "French, Glyndon St SE",
+      "4 min"
+     ],
+     [
+      "Evelyn Rose",
+      "Tasting menu, Church St NW",
+      "4 min"
+     ],
+     [
+      "The Maple Room",
+      "Steaks and seafood, Maple Ave W",
+      "6 min"
+     ],
+     [
+      "Vienna Inn",
+      "The 1960 town institution",
+      "4 min"
+     ]
+    ]
+   },
+   {
+    "title": "Shopping and Every Day",
+    "items": [
+     [
+      "Whole Foods, The Boro",
+      "Shops, dining and cinema",
+      "4 min"
+     ],
+     [
+      "Tysons Corner Center",
+      "Regional mall",
+      "5 min"
+     ],
+     [
+      "Giant Food",
+      "359 Maple Ave E",
+      "4 min"
+     ],
+     [
+      "Vienna Town Green",
+      "Concerts, markets and Viva Vienna",
+      "4 min"
+     ]
+    ]
+   },
+   {
+    "title": "Parks and Recreation",
+    "items": [
+     [
+      "Westwood Country Club",
+      "Golf, pool and dining",
+      "14 min walk"
+     ],
+     [
+      "Vienna Community Center",
+      "Courts, classes and town events",
+      "4 min"
+     ],
+     [
+      "Wolf Trap National Park",
+      "Filene Center concerts",
+      "5 min"
+     ]
+    ]
+   }
+  ],
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Westwood Country Club is just down the street, Maple Avenue and the Town Green a short drive south, and Tysons and the Silver Line a few minutes east. The arrows point to everything past the edge of the map.",
+   "center": {
+    "lat": 38.9190391,
+    "lng": -77.253513,
+    "label": "1000 Westwood Dr NE"
+   },
+   "pins": [
+    {
+     "name": "Westwood Country Club",
+     "sub": "Golf, pool and dining",
+     "lat": 38.9111609,
+     "lng": -77.2538015
+    },
+    {
+     "name": "Vienna Town Green",
+     "sub": "Concerts, markets and Viva Vienna",
+     "lat": 38.902941,
+     "lng": -77.2641239
+    },
+    {
+     "name": "Vienna Community Center",
+     "sub": "Courts, classes and town events",
+     "lat": 38.9008267,
+     "lng": -77.2603307
+    },
+    {
+     "name": "Giant Food",
+     "sub": "359 Maple Ave E",
+     "lat": 38.9053633,
+     "lng": -77.2580414
+    },
+    {
+     "name": "Vienna Inn",
+     "sub": "The 1960 town institution",
+     "lat": 38.9022013,
+     "lng": -77.2647713
+    },
+    {
+     "name": "Spring Hill Metro",
+     "sub": "Silver Line",
+     "lat": 38.928776,
+     "lng": -77.241455
+    }
+   ],
+   "arrows": [
+    [
+     94.8,
+     [
+      "Tysons Corner Center",
+      "Shopping &middot; 5 min"
+     ]
+    ],
+    [
+     335.8,
+     [
+      "Wolf Trap",
+      "Filene Center &middot; 5 min"
+     ]
+    ],
+    [
+     199.6,
+     [
+      "Vienna Metro",
+      "Orange Line &middot; 9 min"
+     ]
+    ],
+    [
+     281.9,
+     [
+      "Dulles International",
+      "IAD &middot; 25 min"
+     ]
+    ]
+   ]
+  },
+  "lot": {
+   "pin": "0284 12 0052",
+   "area_sf": 12460.0,
+   "source": "Fairfax County GIS parcels (24 Nov 2026)",
+   "polygon": [
+    [
+     38.9190521153806,
+     -77.2531770748432
+    ],
+    [
+     38.9188806824317,
+     -77.25353688196
+    ],
+    [
+     38.9188777494191,
+     -77.2535433232325
+    ],
+    [
+     38.9188752589598,
+     -77.2535500661336
+    ],
+    [
+     38.9188732352413,
+     -77.2535570610326
+    ],
+    [
+     38.9188716886114,
+     -77.2535642479947
+    ],
+    [
+     38.9188706350583,
+     -77.253571581047
+    ],
+    [
+     38.9188700767683,
+     -77.2535790074264
+    ],
+    [
+     38.9188700213067,
+     -77.2535864637314
+    ],
+    [
+     38.9188704681143,
+     -77.2535938972466
+    ],
+    [
+     38.9188714138866,
+     -77.2536012553045
+    ],
+    [
+     38.9188728525362,
+     -77.2536084817708
+    ],
+    [
+     38.9188747725222,
+     -77.253615524121
+    ],
+    [
+     38.9188771595208,
+     -77.2536223263641
+    ],
+    [
+     38.9188799965376,
+     -77.2536288395853
+    ],
+    [
+     38.9188832610869,
+     -77.2536350149654
+    ],
+    [
+     38.9188869279752,
+     -77.253640807247
+    ],
+    [
+     38.9188909747915,
+     -77.2536461746396
+    ],
+    [
+     38.9188953653604,
+     -77.2536510720767
+    ],
+    [
+     38.9190529761303,
+     -77.2537748911832
+    ],
+    [
+     38.919253162759,
+     -77.2533483010142
+    ]
+   ]
+  }
+ },
+ "market_map": {
+  "subject": [
+   38.9190391,
+   -77.253513
+  ],
+  "subject_dir": "left",
+  "subject_dir_solds": "right",
+  "solds": [
+   {
+    "address": "1013 Westwood Dr NE",
+    "sale": 1280000,
+    "status": "Sold",
+    "lat": 38.9195988,
+    "lng": -77.2513616
+   },
+   {
+    "address": "408 Holloway Ct NE",
+    "sale": 1270000,
+    "status": "Sold",
+    "lat": 38.9092545,
+    "lng": -77.2661669
+   }
+  ],
+  "listings": [
+   {
+    "address": "312 Branch Cir SE",
+    "status": "Coming Soon",
+    "list": 1150000,
+    "dom": 0,
+    "lat": 38.9029832,
+    "lng": -77.2555356
+   },
+   {
+    "address": "304 Jean Pl NE",
+    "status": "Active",
+    "list": 1149500,
+    "dom": 3,
+    "lat": 38.9074437,
+    "lng": -77.2664743
+   },
+   {
+    "address": "244 Old Courthouse Rd NE",
+    "status": "Active Under Contract",
+    "list": 1250000,
+    "dom": 72,
+    "lat": 38.916512,
+    "lng": -77.244055
+   },
+   {
+    "address": "403 John Marshall Dr NE",
+    "status": "Pending",
+    "list": 1299000,
+    "dom": 6,
+    "lat": 38.9127984,
+    "lng": -77.2690286
+   }
+  ]
+ }
+}
