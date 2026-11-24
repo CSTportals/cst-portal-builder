@@ -146,6 +146,7 @@ BUYER_LINKS = {
     "The Neighborhood": "Amenities and Transportation",
     "Property Documents": "Property Documents",
     "Writing an Offer": "Writing an Offer",
+    "The Lot": "The Lot",
     "Move Up Calculator": "Move Up Calculator",
 }
 
@@ -461,6 +462,34 @@ def _recovery_roadmap_secs(p, page, secs, rec):
     return keep
 
 
+def _lot_png(page):
+    """The Lot section on the given Buyer Portal, on its Lot dimensions view
+    (street tiles load where aerial tiles may not)."""
+    try:
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as pw:
+            b = pw.chromium.launch()
+            pg = b.new_page(viewport={"width": 1280, "height": 900})
+            pg.goto(page.as_uri(), wait_until="load")
+            el = pg.query_selector("section.lotsec")
+            if not el:
+                b.close()
+                return None
+            btn = pg.query_selector('.lot-tabs button[data-v="d"]')
+            if btn:
+                btn.click()
+            try:
+                pg.wait_for_load_state("networkidle", timeout=8000)
+            except Exception:
+                pass
+            pg.wait_for_timeout(1500)
+            png = el.screenshot()
+            b.close()
+            return png
+    except Exception:
+        return None
+
+
 def _map_png():
     """The Sample's neighborhood map with its list, from Casey's screenshot
     (map tiles do not load in the build workspace)."""
@@ -543,6 +572,17 @@ def buyer_guide(p, b_dir):
          ["Every feature, and every major update with the year it was done."]),
         (sh.get(names[4]), "What the Owners Love", "In their own words",
          ["The things the owners will miss most about living here."]),
+        # Casey, 23 Nov 2026: The Lot -- four aerial views with lot lines.
+        (_lot_png(page), "The Lot", "The property from above, four ways",
+         ["Four views of the lot with the property lines drawn in gold. Tap a button above the map to switch.",
+          "<b>Satellite</b> &mdash; a close aerial photo framed on the lot: the house, the yard, the trees and "
+          "how far the lot runs.",
+          "<b>With street names</b> &mdash; a step back, so you can see the street and the homes on either side.",
+          "<b>Neighborhood</b> &mdash; the lot within the whole neighborhood: nearby streets, cul-de-sacs and open "
+          "space.",
+          "<b>Lot dimensions</b> &mdash; a clean street map with the length of each side in feet and a scale bar.",
+          "The lot lines and dimensions come from the county parcel map and are approximate; the recorded plat "
+          "is the official boundary."]),
         ((sh.get(names[5]) if done else None) or _map_png() or sh.get(names[5]),
          "The Neighborhood &mdash; Amenities &amp; Transportation",
          "More Than a Home. A Community and a Lifestyle.",
