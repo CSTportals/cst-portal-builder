@@ -109,71 +109,320 @@
   "asset_dir": "assets/2078_Hunters_Crest",
   "hero_photo": "2078_Hunters_Crest_front.jpg",
   "portal_url": "https://2078hunterscrest.netlify.app",
-  "lot": {
-    "pin": "0272 10 0018A",
-    "area_sf": 81370,
-    "source": "Fairfax County GIS parcels (23 Nov 2026)",
-    "polygon": [
+  "buyer_portal": {
+    "live": true,
+    "display_address": "2078 Hunters Crest Way",
+    "asset_dir": "assets/2078_Hunters_Crest/buyer",
+    "hero_photo": "2078_Hunters_Crest_front.jpg",
+    "pricing_pdf": "2078_Hunters_Crest_Buyer_Report.pdf",
+    "facts": [
       [
-        38.9307814676604,
-        -77.3104298210339
+        "1990",
+        "Year built"
       ],
       [
-        38.9309988833729,
-        -77.3112470626881
+        "5,216",
+        "Finished SF"
       ],
       [
-        38.9309183290785,
-        -77.3114526284329
+        "76,000",
+        "SF lot"
       ],
       [
-        38.9309238528213,
-        -77.3116743801163
-      ],
-      [
-        38.9310692082421,
-        -77.3116064371492
-      ],
-      [
-        38.9309533848475,
-        -77.3118353891594
-      ],
-      [
-        38.9310621208665,
-        -77.3119372336231
-      ],
-      [
-        38.9311300170733,
-        -77.3120008269823
-      ],
-      [
-        38.9311561570343,
-        -77.3119439230342
-      ],
-      [
-        38.9312462560285,
-        -77.3119522913554
-      ],
-      [
-        38.9313366326679,
-        -77.3119606902531
-      ],
-      [
-        38.9315697285525,
-        -77.3119823442402
-      ],
-      [
-        38.9317128732589,
-        -77.3119727654417
-      ],
-      [
-        38.931721533514,
-        -77.3115683089077
-      ],
-      [
-        38.931749976958,
-        -77.3113832290383
+        "Vienna",
+        "Fairfax County"
       ]
-    ]
+    ],
+    "url": "https://buyhunterscrest.netlify.app",
+    "deploy_to": "https://buyhunterscrest.netlify.app",
+    "snapshot": {
+      "title": "Market Snapshot",
+      "lede": "Every home 2078 Hunters Crest Way is competing with, and what each one is asking.",
+      "rows": [
+        [
+          "PND",
+          "10301 Forest Maple Rd",
+          8,
+          1997,
+          5716,
+          "",
+          "",
+          2200000
+        ],
+        [
+          "PND",
+          "1950 Limb Tree Ln",
+          12,
+          1982,
+          3801,
+          "",
+          "",
+          2000000
+        ]
+      ]
+    },
+    "contacts": {
+      "names": "Casey Samson",
+      "team": "The Casey Samson Team &middot; Samson Properties",
+      "lines": [
+        [
+          "Casey Samson",
+          "703-508-2535",
+          "Casey@caseysamson.com"
+        ]
+      ],
+      "office": "Samson Properties"
+    },
+    "locator_map": {
+      "title": "The Neighborhood",
+      "lede": "Between Vienna and Reston, near Wolf Trap and Lake Fairfax Park, with the Silver Line at Wiehle-Reston East. The arrows point to everything past the edge of the map.",
+      "center": {
+        "lat": 38.9311428,
+        "lng": -77.3111485,
+        "label": "2078 Hunters Crest Way"
+      },
+      "pins": [
+        {
+          "name": "Wolf Trap",
+          "sub": "Performing arts and parkland",
+          "lat": 38.9383676,
+          "lng": -77.264695
+        },
+        {
+          "name": "Lake Fairfax Park",
+          "sub": "Trails, lake, water park",
+          "lat": 38.9616703,
+          "lng": -77.318032
+        },
+        {
+          "name": "Wiehle-Reston East Metro",
+          "sub": "Silver Line",
+          "lat": 38.947762,
+          "lng": -77.3401002
+        }
+      ],
+      "arrows": [
+        [
+          305.4,
+          [
+            "Reston Town Center",
+            "Shopping and dining &middot; 3.3 mi"
+          ]
+        ],
+        [
+          101.6,
+          [
+            "Tysons Corner Center",
+            "Shopping and dining &middot; 4.8 mi"
+          ]
+        ],
+        [
+          280.5,
+          [
+            "Dulles International",
+            "IAD &middot; 8.0 mi"
+          ]
+        ],
+        [
+          110.9,
+          [
+            "Reagan National",
+            "DCA &middot; 15.7 mi"
+          ]
+        ],
+        [
+          149.9,
+          [
+            "Vienna Metro",
+            "Orange Line &middot; 4.2 mi"
+          ]
+        ]
+      ]
+    },
+    "amenities_lede": "Wolf Trap and Lake Fairfax Park close by, the Silver Line at Wiehle-Reston East, and Reston Town Center and Tysons for shopping and dining.",
+    "amenities": [
+      {
+        "title": "Getting Around",
+        "items": [
+          [
+            "Wiehle-Reston East Metro",
+            "Silver Line",
+            1.93
+          ],
+          [
+            "Vienna/Fairfax-GMU Metro",
+            "Orange Line",
+            4.22
+          ],
+          [
+            "Dulles International",
+            "IAD",
+            8.02
+          ],
+          [
+            "Reagan National",
+            "DCA",
+            15.66
+          ]
+        ]
+      },
+      {
+        "title": "Shopping",
+        "items": [
+          [
+            "Reston Town Center",
+            "Shopping and dining",
+            3.32
+          ],
+          [
+            "Tysons Corner Center",
+            "Shopping and dining",
+            4.85
+          ],
+          [
+            "Wegmans",
+            "Tysons",
+            5.44
+          ]
+        ]
+      },
+      {
+        "title": "Parks and Recreation",
+        "items": [
+          [
+            "Wolf Trap",
+            "Performing arts and parkland",
+            2.55
+          ],
+          [
+            "Lake Fairfax Park",
+            "Trails, lake, water park",
+            2.14
+          ],
+          [
+            "Spring Hill Rec Center",
+            "Pool, fitness, classes",
+            4.51
+          ]
+        ]
+      }
+    ],
+    "lot": {
+      "pin": "0272 10 0018A",
+      "area_sf": 81370,
+      "source": "Fairfax County GIS parcels (23 Nov 2026)",
+      "polygon": [
+        [
+          38.9307814676604,
+          -77.3104298210339
+        ],
+        [
+          38.9309988833729,
+          -77.3112470626881
+        ],
+        [
+          38.9309183290785,
+          -77.3114526284329
+        ],
+        [
+          38.9309238528213,
+          -77.3116743801163
+        ],
+        [
+          38.9310692082421,
+          -77.3116064371492
+        ],
+        [
+          38.9309533848475,
+          -77.3118353891594
+        ],
+        [
+          38.9310621208665,
+          -77.3119372336231
+        ],
+        [
+          38.9311300170733,
+          -77.3120008269823
+        ],
+        [
+          38.9311561570343,
+          -77.3119439230342
+        ],
+        [
+          38.9312462560285,
+          -77.3119522913554
+        ],
+        [
+          38.9313366326679,
+          -77.3119606902531
+        ],
+        [
+          38.9315697285525,
+          -77.3119823442402
+        ],
+        [
+          38.9317128732589,
+          -77.3119727654417
+        ],
+        [
+          38.931721533514,
+          -77.3115683089077
+        ],
+        [
+          38.931749976958,
+          -77.3113832290383
+        ]
+      ]
+    }
+  },
+  "market_map": {
+    "subject": [
+      38.9311428,
+      -77.3111485
+    ],
+    "subject_dir": "left",
+    "subject_dir_solds": "right",
+    "solds": [
+      {
+        "address": "1712 Abbey Oak Dr",
+        "sale": 2370000,
+        "status": "Sold",
+        "lat": 38.9371481,
+        "lng": -77.2913478
+      },
+      {
+        "address": "2207 Aryness Dr",
+        "sale": 2160000,
+        "status": "Sold",
+        "lat": 38.9190164,
+        "lng": -77.3081315
+      },
+      {
+        "address": "10101 Windy Knoll Ln",
+        "sale": 1965000,
+        "status": "Sold",
+        "lat": 38.9537662,
+        "lng": -77.2930573
+      }
+    ],
+    "listings": [
+      {
+        "address": "10301 Forest Maple Rd",
+        "status": "Pending",
+        "list": 2200000,
+        "dom": 8,
+        "lat": 38.9494337,
+        "lng": -77.3012093
+      },
+      {
+        "address": "1950 Limb Tree Ln",
+        "status": "Pending",
+        "list": 2000000,
+        "dom": 12,
+        "lat": 38.9280595,
+        "lng": -77.3000592
+      }
+    ],
+    "note": "24 Nov 2026: geocoded; comp DOM/list not on file (plain Sold pins)."
   }
 }
