@@ -635,6 +635,10 @@ NEEDLE_DOWN = [
     ("Double-yellow-line traffic", "&minus;$50K to &minus;$250K"),
     ("No back yard", ""),
     ("Non-functioning floor plan", ""),
+    # Casey, 24 Nov 2026: "Corner lots are a negative and so are homes with
+    # less than the customary BR and BAs."
+    ("Corner lot", ""),
+    ("Fewer bedrooms or baths than customary", ""),
     ("Unfinished basement", "&minus;$25K to &minus;$75K depending on size"),
     ("Roof over 20 years", "&minus;$25K+ &middot; deal killer"),
 ]
