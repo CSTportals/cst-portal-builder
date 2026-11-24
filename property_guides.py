@@ -726,8 +726,9 @@ def track_record_to_roadmap(index, rm):
 
 GUIDES_ROW = {"*": "anchor:Guides to Understanding CST Tools"}
 
-# The public sample site (Casey, 5 Nov 2026), not the client portal.
-SAMPLE_BUYER = ("502_MacArthur_Buyer", "https://samplebuyerportal.netlify.app", "502 MacArthur Ave NE")
+# Casey, 23 Nov 2026: seller sites at <address>.netlify.app, buyer portals at
+# buy<street>.netlify.app -- the Sample's buyer portal is buymacarthur.
+SAMPLE_BUYER = ("502_MacArthur_Buyer", "https://buymacarthur.netlify.app", "502 MacArthur Ave NE")
 
 
 def _bp_finished(p):
@@ -915,7 +916,10 @@ def build(p, which=("roadmap", "mss", "moveup", "buyer")):
             if d.exists():
                 # From the buyer sites "Back to Buyer Portal" is the page next
                 # door; from the seller site it is the published portal.
-                back = "index.html" if d != s_dir else (bp_url + "/" if bp_url else "index.html")
+                # From the seller site, "Back to Buyer Portal" must never land on
+                # the seller site's own front page (the Roadmap): it goes to this
+                # home's buyer portal, or to the Sample's when there is none.
+                back = "index.html" if d != s_dir else (bp_url or SAMPLE_BUYER[1]) + "/"
                 (d / "Buyer_Portal_Guide.html").write_text(h.replace("__BACK__", back), encoding="utf-8")
                 if d != s_dir:
                     inject_links(d / "index.html", "Buyer_Portal_Guide.html", BUYER_LINKS)

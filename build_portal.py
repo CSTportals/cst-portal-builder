@@ -105,7 +105,7 @@ def show_luxury(p):
 # further notice buystreetname.netlify.app is the default buyer portal" — the
 # example is a buyer portal like any other, so it follows the same rule
 # rather than being the one link on the page that still needs a redirect.
-EXAMPLE_BUYER_PORTAL = "https://samplebuyerportal.netlify.app"   # Casey, 5 Nov 2026: public sample, not the client portal
+EXAMPLE_BUYER_PORTAL = "https://buymacarthur.netlify.app"   # Casey, 23 Nov 2026: buyer portals live at buy<street>.netlify.app
 EXAMPLE_BUYER_HOME = "502 MacArthur"
 # Casey, 12 Oct 2026: "Seller portals need a button on the Buyer Example to
 # the buyer PDF and attach PDF." The example home's own Buyer Pricing Report,

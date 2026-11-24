@@ -305,7 +305,7 @@ def check_property(path):
             _ix = sell / "portal.html" if (sell / "portal.html").exists() else sell / "index.html"
             if (p.get("buyer_portal") and not _sp and not is_example_home(p)
                     and not buyer_portal_ready(p) and _ix.exists()):
-                r.check("samplebuyerportal" in _ix.read_text(encoding="utf-8"),
+                r.check("buymacarthur" in _ix.read_text(encoding="utf-8"),
                         "Seller portal has no Sample Buyer Portal tile")
             if p.get("buyer_portal") and not _sp and not is_example_home(p):
                 r.check((sell.parent / f"{pre}_Buyer_Small" / "index.html").exists(),
