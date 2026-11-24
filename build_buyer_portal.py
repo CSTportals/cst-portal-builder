@@ -736,8 +736,9 @@ def site_header(qr="", pdf="", guide=""):
         '<img src="Gold_Standard_Logo.png" alt="The Casey Samson Team">'
         '<span>The Casey Samson Team</span></a>\n'
         f'  <nav class="sh-nav">{nav}</nav>\n'
-        + (f'  <a class="sh-guide" href="{guide}" target="_blank" rel="noopener">'
-           'Guide to Understanding the Buyer Portal</a>\n' if guide else '') +
+        # Casey, 24 Nov 2026: the guide link comes out of the header -- the
+        # section links run throughout the page.
+        + '' +
         f'{pdf}{qr}'
         '</header>\n')
 
