@@ -655,7 +655,8 @@ def buyer_report_guide(p, s_dir):
 
 def mss_guide(p):
     slug = (p.get("market") or {}).get("slug")
-    page = ROOT / "mss_pages" / f"{slug}.html" if slug else None
+    import townhome_mss as _th
+    page = _th.mss_page(slug)
     if not page or not page.exists():
         return None
     mk = re.sub(r"\s*Market$", "", (p.get("market") or {}).get("name", "your market"))

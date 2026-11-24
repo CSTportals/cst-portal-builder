@@ -31,15 +31,19 @@ def parse(path):
     if head:
         ctl = "Buyer's" if head.startswith("Buyers") else "Seller's" if head.startswith("Sellers") else "Neutral"
     st["control"] = ctl
-    asof = grab(t, r'AS OF ([A-Z]+ \d+, \d{4})')
+    asof = grab(t, r'AS OF ([A-Z]+ \d+, \d{4})') or grab(t, r'Week of ([A-Z][a-z]+ \d+, \d{4})')
     return {k: v for k, v in st.items() if v}, head, cap, read, asof
 
 def main():
     cache_f = HERE / "market_cache.json"
     cache = json.loads(cache_f.read_text())
     n = 0
-    for f in sorted((HERE / "mss_pages").glob("*_Market_Snapshot.html")):
-        slug = f.stem
+    # Casey, 24 Nov 2026: the town home MSS (csttownhomes.netlify.app) uses
+    # the same page names as the detached MSS, so its pages live in
+    # mss_pages_townhome/ and are cached under "TH_" + page name.
+    pages = [(f, f.stem) for f in sorted((HERE / "mss_pages").glob("*_Market_Snapshot.html"))]
+    pages += [(f, "TH_" + f.stem) for f in sorted((HERE / "mss_pages_townhome").glob("*_Market_Snapshot.html"))]
+    for f, slug in pages:
         st, head, cap, read, asof = parse(f)
         if not st.get("under_contract"):
             continue
@@ -61,7 +65,7 @@ def main():
                           [[st["uc_14"], "Of all listings, under contract in 14 days"]] if st.get("uc_14") else [])
             if c.get("capsule"):
                 c["flags"] = 2 if "DOUBLE" in c["capsule"] else 1
-        e["refreshed_from"] = f"mss_pages ({asof or 'Nov 11, 2026'})"
+        e["refreshed_from"] = f"{f.parent.name} ({asof or 'Nov 11, 2026'})"
         n += 1
     cache_f.write_text(json.dumps(cache, indent=1))
     print(f"refreshed {n} markets")

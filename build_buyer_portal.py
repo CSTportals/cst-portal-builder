@@ -2657,3 +2657,13 @@ if __name__ == "__main__":
             print("  Guides:", ", ".join(_made) or "none")
     except Exception as _e:
         print("  Guides: skipped --", _e)
+    # Casey, 24 Nov 2026: town home markets link to the town home MSS.
+    try:
+        import json as _j, townhome_mss as _th
+        _a = [x for x in sys.argv[1:] if x.endswith(".json")]
+        if _a:
+            _fx = _th.fix_outputs(_j.loads(Path(_a[0]).read_text()))
+            if _fx:
+                print(f"  Town home MSS: links pointed at {_th.TH_SITE} in {len(set(_fx))} file(s)")
+    except Exception as _e:
+        print("  Town home MSS: skipped --", _e)

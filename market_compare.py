@@ -18,8 +18,9 @@ PAGES = HERE / "mss_pages"
 
 
 def read_row(slug):
-    f = PAGES / f"{slug}.html"
-    if not f.exists():
+    import townhome_mss as _th
+    f = _th.mss_page(slug)
+    if not f or not f.exists():
         return None
     s = f.read_text(encoding="utf-8", errors="ignore")
     m = re.search(r'<div class="cstf-row mkt"><div class="cstf-c lab">(.*?)</div>(.*?)</div></div>', s, re.S)

@@ -291,7 +291,8 @@ def add_mss_map(p, out, note=print):
     # back for that one.
     if not p.get("mss_map"):
         return
-    src = Path(__file__).parent / "templates" / "MSS_Map.html"
+    import townhome_mss as _th
+    src = _th.map_template(p)
     f = Path(out) / f'{p["prefix"]}_Roadmap.html'
     if not (src.exists() and f.exists()):
         return
@@ -330,7 +331,8 @@ def portal_mss_block(p, out):
     published; "mss_map": "live" frames the MSS's own page instead."""
     from pathlib import Path
     import shutil
-    src = Path(__file__).parent / "templates" / "MSS_Map.html"
+    import townhome_mss as _th
+    src = _th.map_template(p)
     live = p.get("mss_map") == "live"
     if not live:
         if not src.exists():

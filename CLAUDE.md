@@ -11,6 +11,11 @@ source of truth for the CST portal builder.
 4. After EVERY builder change: commit and push here.
 5. New MSS package each week: copy its *_Market_Snapshot.html pages into mss_pages/,
    run `python3 refresh_cache_from_mss.py`, swap templates/MSS_Map.html, commit.
+6. Town home MSS package (csttownhomes.netlify.app, same page names): copy its
+   *_Market_Snapshot.html pages into mss_pages_townhome/, save its map_embed.html as
+   templates/MSS_Map_Townhome.html (keep the ?seg=/resize snippet), run
+   `python3 refresh_cache_from_mss.py` (caches them as TH_<page>), commit.
+   A town home property uses "market": {"slug": "TH_<page>"}; see townhome_mss.py.
 
 ## Rules for working in this repo
 - This repo IS the builder. Never keep builder changes only in the workspace.
