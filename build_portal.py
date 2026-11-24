@@ -7404,6 +7404,9 @@ def _write_eml(out, stem, html, subject, p, to=""):
     # Keep the line structure: <br> and </p> are real breaks in the text.
     plain = _re.sub(r"<li[^>]*>\s*", "\n\u2022 ", plain, flags=_re.I)
     plain = _re.sub(r"<br\s*/?>", "\n", plain, flags=_re.I)
+    # Tables (the track record) read as one row per line, cells split by "|".
+    plain = _re.sub(r"</t[dh]>\s*(?=<t[dh])", " | ", plain, flags=_re.I)
+    plain = _re.sub(r"</tr>", "\n", plain, flags=_re.I)
     plain = _re.sub(r"</p>", "\n\n", plain, flags=_re.I)
     plain = _re.sub(r"<[^>]+>", "", plain)
     plain = _html.unescape(plain)
@@ -8541,6 +8544,85 @@ discount.</p>
     _write_eml(out, _stem, html, _subj, casey, to=_to)
 
 
+def build_inquiry_email(p, s, out):
+    """Potential seller email -- the reply to a seller inquiry (Casey, 24 Nov
+    2026, on 2159 Bonaventure for Zunera and Allen). The first of the three
+    seller emails: potential seller (inquiry) -> pre-meeting
+    (build_prelisting_seller_email) -> post-meeting. His copy, word for word;
+    the names, links and the home's own issue paragraph are filled in.
+    Property file (all optional):
+
+        "inquiry_email": {
+            "seller_names": "Zunera and Allen",
+            "issue": "Your home has a unique issue: ...",   -- one paragraph
+            "to": "...", "subject": "..."
+        }
+    """
+    cfg = p.get("inquiry_email") or {}
+    pre = p["prefix"]
+    root = (seller_host(p) or (p.get("portal_url") or "")).rstrip("/")
+    roadmap = f"{root}/{pre.lower()}_roadmap" if root else f"{pre}_Roadmap.html"
+    bp = buyer_portal_url(p) or buyer_host(p)
+    mkt = market_snapshot_url(p)
+    mk_name = re.sub(r"\s*Market$", "", ((p.get("market") or {}).get("name") or "").strip())
+    names = (cfg.get("seller_names") or p.get("seller_names") or "").strip()
+    addr = p["address"]
+    ag = p.get("agent") or {}
+    a = lambda href, text: f'<a href="{href}">{text}</a>' if href else text
+    vienna = (p.get("city") or "").strip().lower() == "vienna"
+    if not vienna:
+        note("Potential seller email: the home is not in Vienna, so the "
+             "\"over $150M per year in Vienna\" sentence is left out.")
+    issue = (cfg.get("issue") or "").strip()
+    sample = "" if buyer_portal_ready(p) else (
+        f'<br>\n{a(EXAMPLE_BUYER_PORTAL + "/", "Sample Buyer Portal")} &mdash; what yours will '
+        "look like when we have all of the pictures and features")
+    html = f"""<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>{addr} — potential seller email</title></head>
+<body style="max-width:620px; margin:24px auto; padding:0 20px; line-height:1.5;">
+
+<p>{names or "(Seller names)"},</p>
+
+<p>Thanks for reaching out.</p>
+
+<p>The Casey Samson Team, Virginia&rsquo;s #1 Luxury Team, is based out of Vienna.{" We do over $150M per year in Vienna, mostly over $1.5M." if vienna else ""}</p>
+
+<p>The Standard for the Casey Samson Team is to sell in an average of 6 days, at highest and best
+offers with no contingencies. The Pricing and Selling Strategy, outlined in our
+{a(roadmap, "Seller Roadmap&trade;")}, makes that happen regardless of market conditions. You can
+review it before we meet.</p>
+
+<p><b>Note:</b> Pricing in the Roadmap is based on appraisal quality comps of similar size, age,
+location and time. This is only Preliminary Pricing. Final Pricing will be determined after an
+inspection and conversation with you about the home&rsquo;s condition, upgrades, neighborhood comps
+that may not show up on appraisers&rsquo; searches and analysis of market condition.</p>
+{f"<p>{issue}</p>" if issue else ""}
+<p>We can review when we meet.</p>
+
+<p>Our Buyer Portal does a great job of Authenticating Values:</p>
+
+<p style="margin-left:16px;">{a(bp + "/" if bp else None, "Buyer Portal")} for {addr}{sample}</p>
+{f"<p>Current conditions in your market, updated every week: {a(mkt, (mk_name + ' Market Snapshot') if mk_name else 'Market Snapshot')}</p>" if mkt else ""}
+<p>Let me know some good days and times to meet.</p>
+
+<p>{(ag.get("display") or ag.get("lookup") or "Casey").split()[0]}</p>
+
+<p>{ag.get("display") or ag.get("lookup") or "Casey Samson"}<br>
+REALTOR&reg; &middot; Samson Properties<br>
+{ag.get("phone") or "703-508-2535"}</p>
+
+{over_list_table_html(p=p)}
+</body></html>
+"""
+    # One line per paragraph, so the plain-text copy does not wrap mid-sentence.
+    html = re.sub(r"(?<=[^>\n])\n(?=[^<\n])", " ", html)
+    stem = f"{pre}_Potential_Seller_Email"
+    subj = cfg.get("subject") or f"{addr} — Your Seller Roadmap"
+    (out / f"{stem}.html").write_text(html, encoding="utf-8")
+    _write_eml(out, stem, html, subj, p, to=cfg.get("to") or "")
+
+
 def build_withdrawn_email(p, s, out):
     """Prospecting email to the listing agent of a withdrawn or expired
     listing: here is the portal we ran, and the strategy it lays out."""
@@ -8970,6 +9052,11 @@ def main():
     # Casey, 27 Oct 2026: the short realtor email on every portal.
     build_recovery_agent_email(p, s, out)
     # Casey, 22 Oct 2026: pre-listing email to the sellers (2838 Cedar).
+    # Casey, 24 Nov 2026: three seller emails -- potential seller (inquiry),
+    # pre-meeting, post-meeting. The potential seller email goes with every
+    # listing that is not already on the market with someone else.
+    if p.get("inquiry_email") or p.get("listing_status") not in ("recovery", "withdrawn", "expired", "relaunch"):
+        build_inquiry_email(p, s, out)
     if p.get("prelisting_email"):
         build_prelisting_seller_email(p, s, out)
     # Both sites ship an index.html, so each folder says out loud which
