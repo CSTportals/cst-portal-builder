@@ -1806,6 +1806,19 @@ def values_section(p, b):
     # or assembled here.
     stamp = ""
     _st = b.get("stamp")
+    if not _st and b.get("sold_for"):
+        _sfp = b["sold_for"]
+        _top = v.get("premium_top") or v["premium"]
+        if v["customary"] <= _sfp <= _top:
+            _where = f'{(_sfp / v["customary"] - 1) * 100:.1f}% over Customary Value'
+        elif _sfp > _top:
+            _where = f'{(_sfp / _top - 1) * 100:.1f}% over Premium Value'
+        else:
+            _where = f'{(1 - _sfp / v["customary"]) * 100:.1f}% under Customary Value'
+        _st = [f'SOLD {money(_sfp)}', _where]
+        if b.get("list_price") and _sfp > b["list_price"]:
+            _st[1] = f'{(_sfp / b["list_price"] - 1) * 100:.1f}% over list &middot; ' + _where
+        foot = ""
     if _st:
         _lines = _st if isinstance(_st, list) else [_st]
         _body = "".join(f'<span class="stamp-l">{t}</span>' for t in _lines)
@@ -1978,6 +1991,11 @@ def build(p, out):
 
     price = (f'<span class="price">{money(b["list_price"])}</span>'
              if b.get("list_price") else "")
+    # Casey, 24 Nov 2026: "Add sold $1.383M on John Marshall buyer". A closed
+    # sale ("sold_for" on the buyer_portal block) replaces the offered price.
+    if b.get("sold_for"):
+        price = f'<span class="price">Sold {money(b["sold_for"])}</span>'
+
     if not b.get("list_price"):
         note("Offered price OMITTED — no list_price in the buyer_portal block.")
 

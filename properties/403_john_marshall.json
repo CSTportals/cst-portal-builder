@@ -179,7 +179,7 @@
   "display_address": "403 John Marshall Dr NE",
   "site": "403JohnMarshall.com",
   "live": true,
-  "status_line": "Coming Soon",
+  "status_line": "Sold",
   "facts": [
    [
     "1959",
@@ -536,7 +536,8 @@
      -77.2691764
     ]
    ]
-  }
+  },
+  "sold_for": 1383000
  },
  "market_local": {
   "label": "Vienna Family Market &mdash; 527 sales under 3,500 SF",
