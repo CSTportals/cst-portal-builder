@@ -581,5 +581,11 @@
     ]
    ]
   }
+ },
+ "engine_diagnosis": {
+  "4": "This home has a unique issue: a 5,150 SF above grade home built in 2004 assesses for $1.7M. For some reason, the assessment on your home is $1.405M, almost $300K less than market, so validating price to buyers will be critical. That will not be a problem for us."
+ },
+ "inquiry_email": {
+  "issue": "Your home has a unique issue: a 5,150 SF above grade home built in 2004 assesses for $1.7M. For some reason, the assessment on your home is $1.405M, almost $300K less than market, so validating price to buyers will be critical. That will not be a problem for us."
  }
 }

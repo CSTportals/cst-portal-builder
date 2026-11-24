@@ -199,6 +199,10 @@ CSS = """
 .eng-h{font-weight:700;font-size:12px;letter-spacing:.03em;text-transform:uppercase;color:#1c2a44;margin-bottom:5px}
 .eng-c.off .eng-h{color:#8b857a}
 .eng-fs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.eng-dx{margin:16px 0 0;border:2px solid #B08A3E;border-left-width:6px;border-radius:10px;background:#FFF8E8;padding:14px 18px;}
+.eng-dx-h{font-family:'Playfair Display',Georgia,serif;font-weight:700;color:#1F2A44;font-size:16px;margin-bottom:6px;display:flex;align-items:center;gap:10px;}
+.eng-dx p{margin:0;font-size:15px;line-height:1.55;color:#221C14;}
+.eng-dx-flag{margin-top:6px;font-size:12px;font-weight:700;color:#8A6A2E;letter-spacing:.02em;}
 .eng-f{border-radius:10px;background:#1c2a44;color:#f3e6c4;padding:13px 16px;font-size:14px;line-height:1.5;
   text-align:center;break-inside:avoid;page-break-inside:avoid}
 .eng-f b{color:#fff}
@@ -223,7 +227,15 @@ def panel(p, coming_soon=0, conservative=True, stats=None, relaunch=0):
         return ""
     cyl, (mkt, thr) = cylinders(p, coming_soon, conservative, stats, relaunch)
 
+    # Casey, 24 Nov 2026 (11040 Heathland): a cylinder's own diagnosis of
+    # this home, in his words, shown under the engine and flagged on the
+    # card.  "engine_diagnosis": {"4": "This home has a unique issue: ..."}
+    diag = {str(k): v for k, v in (p.get("engine_diagnosis") or {}).items() if v}
+
     def card(i, f, t):
+        if str(i) in diag:
+            t += '<div class="eng-dx-flag">Diagnosis below &darr;</div>'
+            f = True
         return (f'<div class="eng-c{"" if f else " off"}"><div class="eng-h">'
                 f'<span class="eng-n">{i}</span>{NAMES[i-1]}</div>{t}</div>')
     core = "".join(card(i, f, t) for i, (f, t) in enumerate(cyl[:6], 1))
@@ -231,6 +243,10 @@ def panel(p, coming_soon=0, conservative=True, stats=None, relaunch=0):
     filt = f'<div class="eng-f"><span class="eng-fl">Market Condition Filter</span>{mkt}</div>'
     if thr:
         filt += f'<div class="eng-f"><span class="eng-fl">Threshold Filter</span>{thr}</div>'
+    dx = "".join(
+        f'<div class="eng-dx"><div class="eng-dx-h"><span class="eng-n">{k}</span>'
+        f'Pricing Engine Diagnosis &middot; Cylinder {k}, {NAMES[int(k)-1]}</div>'
+        f'<p>{v}</p></div>' for k, v in sorted(diag.items(), key=lambda kv: int(kv[0])))
     return (f'<style>{CSS}</style><div class="eng">'
             f'<img class="eng-img" src="{IMG}" alt="The CST Ten Cylinder Pricing Engine">'
             f'<p class="eng-lede">Cylinders 1&ndash;6 are the standard, performed on every home; '
@@ -240,4 +256,4 @@ def panel(p, coming_soon=0, conservative=True, stats=None, relaunch=0):
             f'<div class="eng-grid eng-6">{core}</div>'
             f'<div class="eng-g">When applicable &mdash; cylinders 7&ndash;10</div>'
             f'<div class="eng-grid eng-4">{case}</div>'
-            f'<div class="eng-fs">{filt}</div></div>\n')
+            f'<div class="eng-fs">{filt}</div>{dx}</div>\n')
