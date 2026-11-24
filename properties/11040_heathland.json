@@ -1,0 +1,585 @@
+{
+ "address": "11040 Heathland Dr",
+ "city": "Oakton",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "22124",
+ "county": "Fairfax County",
+ "congestion_fees": true,
+ "report_date": "Tuesday, November 24, 2026",
+ "prefix": "11040_Heathland",
+ "listing_url": "11040Heathland.com",
+ "portal_url": "https://11040heathland.netlify.app",
+ "include_tracker": true,
+ "listing_status": "new",
+ "property_type": "single family",
+ "asset_dir": "assets/11040_Heathland",
+ "hero_photo": "11040_Heathland_front.jpg",
+ "photos": [
+  "11040_Heathland_front.jpg",
+  "11040_Heathland_rear.jpg"
+ ],
+ "subject": {
+  "built": 2004,
+  "sf": 5150,
+  "lot": 39250,
+  "assessment": 1405000
+ },
+ "values": {
+  "dated": 1806744,
+  "customary": 2007494,
+  "customary_list": null,
+  "premium": 2168093,
+  "upgrades": 0,
+  "preview_override": 2100000,
+  "coming_soon_override": 2000000,
+  "fallback_override": 1950000,
+  "worksheet_note": "24 Nov 2026 worksheet: Preview $2,100,000, A Few Calls (Coming Soon) $2,000,000, No Calls (Fall Back) $1,950,000; no deep price on the sheet. Price-range comps = Copper, Wheatland Farms, Southam, Miller Heights (averages match); Age & Size average (5 sales) entered from the worksheet. Competition digits under the Draft watermark: Brecknock/Sledding Hill lots from county parcels; Sledding Hill and Stuart Mill SF and Green Moor year not readable."
+ },
+ "comps": {
+  "rows": [
+   [
+    "2961 Wilson Ave",
+    2004,
+    4745,
+    37984,
+    1833750,
+    1975000
+   ],
+   [
+    "10101 Copper Ct",
+    1998,
+    4128,
+    21678,
+    1556050,
+    1921000
+   ],
+   [
+    "3203 Wheatland Farms Ct",
+    1996,
+    4402,
+    37249,
+    1769300,
+    1768800
+   ],
+   [
+    "10345 Southam Ln",
+    2004,
+    4548,
+    5663,
+    1380470,
+    1635000
+   ],
+   [
+    "3415 Miller Heights Rd",
+    1986,
+    5350,
+    84104,
+    1445240,
+    1630000
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    2000,
+    4431,
+    54990,
+    1622932,
+    1889960
+   ],
+   [
+    "Price Range Average",
+    1996,
+    4607,
+    37174,
+    1537765,
+    1738700
+   ]
+  ]
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "12187 Brecknock St",
+   "dom": 241,
+   "built": 1989,
+   "sf": 4362,
+   "lot": 42707,
+   "list": 1649000,
+   "assessment": 1613560
+  },
+  {
+   "status": "Active",
+   "address": "2617 Sledding Hill Rd",
+   "dom": 59,
+   "built": 1997,
+   "sf": null,
+   "lot": 39223,
+   "list": 1850000,
+   "assessment": 1794770
+  },
+  {
+   "status": "Active",
+   "address": "11728 Stuart Mill Rd",
+   "dom": 277,
+   "built": 1977,
+   "sf": null,
+   "lot": 146362,
+   "list": 1699000,
+   "assessment": 1572670
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "11404 Green Moor Ln",
+   "dom": 43,
+   "built": null,
+   "sf": 3681,
+   "lot": 20909,
+   "list": 1625000,
+   "assessment": 1362510
+  },
+  {
+   "status": "Pending",
+   "address": "2973 Palmer St",
+   "dom": 4,
+   "built": 2002,
+   "sf": 3650,
+   "lot": 23506,
+   "list": 1700000,
+   "assessment": 1263210
+  }
+ ],
+ "notes": [],
+ "market": {
+  "name": "Oakton Luxury Market",
+  "slug": "Oakton_Luxury_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "agent": {
+  "lookup": "Casey Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "casey@caseysamson.com"
+ },
+ "market_map": {
+  "subject": [
+   38.8705214,
+   -77.3297687
+  ],
+  "subject_dir": "left",
+  "subject_dir_solds": "left",
+  "solds": [
+   {
+    "address": "2961 Wilson Ave",
+    "sale": 1975000,
+    "list": 1975000,
+    "orig_list": 1975000,
+    "dom": 3,
+    "status": "Sold",
+    "lat": 38.8829013,
+    "lng": -77.3074828
+   },
+   {
+    "address": "10101 Copper Ct",
+    "sale": 1921000,
+    "list": 1900000,
+    "orig_list": 1900000,
+    "dom": 1,
+    "status": "Sold",
+    "lat": 38.8791405,
+    "lng": -77.292145
+   },
+   {
+    "address": "3203 Wheatland Farms Ct",
+    "sale": 1768800,
+    "list": 1800000,
+    "orig_list": 1800000,
+    "dom": 16,
+    "status": "Sold",
+    "lat": 38.8804886,
+    "lng": -77.3238901
+   },
+   {
+    "address": "10345 Southam Ln",
+    "sale": 1635000,
+    "list": 1600000,
+    "orig_list": 1600000,
+    "dom": 2,
+    "status": "Sold",
+    "lat": 38.8825264,
+    "lng": -77.3037808
+   },
+   {
+    "address": "3415 Miller Heights Rd",
+    "sale": 1630000,
+    "list": 1699000,
+    "orig_list": 1699000,
+    "dom": 37,
+    "status": "Sold",
+    "lat": 38.8724525,
+    "lng": -77.3298882
+   }
+  ],
+  "listings": [
+   {
+    "address": "12187 Brecknock St",
+    "status": "Active",
+    "list": 1649000,
+    "dom": 241,
+    "lat": 38.8833751,
+    "lng": -77.3679042
+   },
+   {
+    "address": "2617 Sledding Hill Rd",
+    "status": "Active",
+    "list": 1850000,
+    "dom": 59,
+    "lat": 38.8994128,
+    "lng": -77.3061081
+   },
+   {
+    "address": "11728 Stuart Mill Rd",
+    "status": "Active",
+    "list": 1699000,
+    "dom": 277,
+    "lat": 38.9082325,
+    "lng": -77.353437
+   },
+   {
+    "address": "11404 Green Moor Ln",
+    "status": "Active Under Contract",
+    "list": 1625000,
+    "dom": 43,
+    "lat": 38.9009239,
+    "lng": -77.3427165
+   },
+   {
+    "address": "2973 Palmer St",
+    "status": "Pending",
+    "list": 1700000,
+    "dom": 4,
+    "lat": 38.8776961,
+    "lng": -77.2966723
+   }
+  ]
+ },
+ "buyer_portal": {
+  "live": true,
+  "display_address": "11040 Heathland Dr",
+  "asset_dir": "assets/11040_Heathland/buyer",
+  "hero_photo": "11040_Heathland_front.jpg",
+  "pricing_pdf": "11040_Heathland_Buyer_Report.pdf",
+  "facts": [
+   [
+    "2004",
+    "Year built"
+   ],
+   [
+    "5,150",
+    "Above grade SF"
+   ],
+   [
+    "0.90",
+    "Acre lot"
+   ],
+   [
+    "Oakton",
+    "Fairfax County"
+   ]
+  ],
+  "url": "https://buyheathland.netlify.app",
+  "deploy_to": "https://buyheathland.netlify.app",
+  "list_price": 2000000,
+  "status_line": "Coming Soon",
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Close to Oakton High School, Oakton Shopping Center and Fairfax Corner, with the Vienna Metro and I-66 a short drive away. The arrows point to everything past the edge of the map.",
+   "center": {
+    "lat": 38.8705214,
+    "lng": -77.3297687,
+    "label": "11040 Heathland Dr"
+   },
+   "pins": [
+    {
+     "name": "Oakton High School",
+     "sub": "Fairfax County Public Schools",
+     "lat": 38.8807,
+     "lng": -77.3006
+    },
+    {
+     "name": "Oakton Shopping Center",
+     "sub": "Grocery, dining and services",
+     "lat": 38.8812,
+     "lng": -77.3008
+    },
+    {
+     "name": "Oakton Library",
+     "sub": "Fairfax County Public Library",
+     "lat": 38.8844,
+     "lng": -77.2984
+    },
+    {
+     "name": "Fairfax Corner",
+     "sub": "Shops, dining and cinema",
+     "lat": 38.8548,
+     "lng": -77.3681
+    },
+    {
+     "name": "Vienna Metro",
+     "sub": "Orange Line",
+     "lat": 38.877579,
+     "lng": -77.272461
+    }
+   ],
+   "arrows": [
+    [
+     60.6,
+     [
+      "Tysons Corner Center",
+      "Shopping and dining &middot; 6.62 mi"
+     ]
+    ],
+    [
+     346.5,
+     [
+      "Reston Town Center",
+      "Shops, dining and events &middot; 6.26 mi"
+     ]
+    ],
+    [
+     310.0,
+     [
+      "Dulles International",
+      "IAD &middot; 8.89 mi"
+     ]
+    ],
+    [
+     94.8,
+     [
+      "Reagan National",
+      "DCA &middot; 15.64 mi"
+     ]
+    ],
+    [
+     89.4,
+     [
+      "Mosaic District",
+      "Dining, cinema and shops &middot; 5.46 mi"
+     ]
+    ]
+   ]
+  },
+  "amenities_lede": "Oakton's schools and shops close by, Fairfax Corner and the Vienna Metro a short drive, and Tysons and Reston within reach.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Vienna Metro",
+      "Orange Line",
+      3.12
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      8.89
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      15.64
+     ]
+    ]
+   },
+   {
+    "title": "Shopping and Dining",
+    "items": [
+     [
+      "Oakton Shopping Center",
+      "Grocery, dining and services",
+      1.72
+     ],
+     [
+      "Fairfax Corner",
+      "Shops, dining and cinema",
+      2.33
+     ],
+     [
+      "Mosaic District",
+      "Dining, cinema and shops",
+      5.46
+     ]
+    ]
+   },
+   {
+    "title": "Schools and Community",
+    "items": [
+     [
+      "Oakton High School",
+      "Fairfax County Public Schools",
+      1.72
+     ],
+     [
+      "Oakton Library",
+      "Fairfax County Public Library",
+      1.94
+     ],
+     [
+      "Tysons Corner Center",
+      "Shopping and dining",
+      6.62
+     ]
+    ]
+   }
+  ],
+  "lot": {
+   "pin": "0473 17 0001",
+   "area_sf": 39030,
+   "source": "Fairfax County GIS parcels (24 Nov 2026)",
+   "polygon": [
+    [
+     38.8709439,
+     -77.3295956
+    ],
+    [
+     38.8707413,
+     -77.329253
+    ],
+    [
+     38.8707391,
+     -77.3292531
+    ],
+    [
+     38.8707388,
+     -77.3292531
+    ],
+    [
+     38.8707369,
+     -77.3292532
+    ],
+    [
+     38.8707323,
+     -77.3292538
+    ],
+    [
+     38.8707303,
+     -77.3292542
+    ],
+    [
+     38.8707281,
+     -77.3292547
+    ],
+    [
+     38.8707279,
+     -77.3292548
+    ],
+    [
+     38.870726,
+     -77.3292553
+    ],
+    [
+     38.8707215,
+     -77.3292568
+    ],
+    [
+     38.8707196,
+     -77.3292576
+    ],
+    [
+     38.8707175,
+     -77.3292586
+    ],
+    [
+     38.8707173,
+     -77.3292587
+    ],
+    [
+     38.8707155,
+     -77.3292596
+    ],
+    [
+     38.8707113,
+     -77.329262
+    ],
+    [
+     38.8707095,
+     -77.3292632
+    ],
+    [
+     38.8707075,
+     -77.3292646
+    ],
+    [
+     38.8707073,
+     -77.3292647
+    ],
+    [
+     38.8707056,
+     -77.329266
+    ],
+    [
+     38.8707018,
+     -77.3292692
+    ],
+    [
+     38.8707002,
+     -77.3292708
+    ],
+    [
+     38.8702555,
+     -77.3297011
+    ],
+    [
+     38.8706562,
+     -77.3303785
+    ],
+    [
+     38.8709601,
+     -77.3299821
+    ],
+    [
+     38.8709565,
+     -77.329976
+    ],
+    [
+     38.8708886,
+     -77.3298612
+    ],
+    [
+     38.8706885,
+     -77.3297826
+    ],
+    [
+     38.87069,
+     -77.3297744
+    ],
+    [
+     38.870695,
+     -77.3297464
+    ],
+    [
+     38.8707365,
+     -77.3295143
+    ],
+    [
+     38.8707375,
+     -77.3295147
+    ]
+   ]
+  }
+ }
+}
