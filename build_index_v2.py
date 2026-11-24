@@ -89,6 +89,46 @@ PRODUCTION_SINCE_2025 = [
 ]
 
 
+def _is_townhome(p):
+    t = str((p or {}).get("property_type", "")).lower().replace("-", "").replace(" ", "")
+    return t in ("townhome", "townhouse", "th", "rowhouse")
+
+
+def townhome_production():
+    """Casey, 24 Nov 2026 (13364 Ferry Landing): "The stats be compared with
+    our townhome stats." The team's six figures for a town home, computed
+    from the CST town home sales on file (data/CST_Townhome_Sales.csv), in
+    the same columns as the market row they sit over."""
+    import csv
+    src = HERE / "data" / "CST_Townhome_Sales.csv"
+    if not src.exists():
+        return None
+    r = [dict(dom=int(x["dom"]), lst=int(x["list"]), sold=int(x["sold"]))
+         for x in csv.DictReader(src.open(encoding="utf-8"))]
+    if not r:
+        return None
+    n = len(r)
+    pct = lambda k: f"{round(100 * k / n)}%"
+    return [
+        (str(n), "CST town home sales"),
+        (PRODUCTION_SINCE_2025[1][0], "Success rate"),   # team-wide figure
+        (str(round(sum(x["dom"] for x in r) / n)), "Avg days on market"),
+        (f'{100 * sum(x["sold"] / x["lst"] for x in r) / n:.1f}%', "Of original list price"),
+        (pct(sum(1 for x in r if x["dom"] <= 10)), "Sold in the first 10 days"),
+        (pct(sum(1 for x in r if x["sold"] > x["lst"])), "Sold above list price"),
+    ]
+
+
+def production_rows(p=None):
+    """The team's six figures: the town home record on a town home, the
+    $1.5M+ production everywhere else."""
+    if _is_townhome(p):
+        th = townhome_production()
+        if th:
+            return th
+    return list(PRODUCTION_SINCE_2025)
+
+
 def portfolio_stats(p):
     """Rebuilt 19 Nov 2026: the band reads PRODUCTION_SINCE_2025, the same six
     figures as the Summary's back page and the buyer portal.
@@ -100,7 +140,7 @@ The six figures in the portal's band.
     of team figures on its portal and a different set on its sheet, and the
     market row below lands under measures it does not answer.
     """
-    return list(PRODUCTION_SINCE_2025)
+    return production_rows(p)
     src = HERE / "templates" / SUMMARY_TRACK_RECORD
     if not src.exists():
         src = HERE / "templates" / track_record_file(p)

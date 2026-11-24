@@ -41,6 +41,10 @@ def build(p, note=print):
         note(f"Track record market row: no saved MSS page for {slug} -- copy the "
              "latest MSS package's pages into mss_pages/.")
         return
+    # Town home markets say so in the row label (Casey, 24 Nov 2026).
+    import townhome_mss as _th
+    if _th.is_th_slug(slug) and "town home" not in row["label"].lower():
+        row["label"] = re.sub(r"\s*Market$", "", row["label"]) + " Town Home Market"
     p["market_local"] = row
     note(f"Track record market row: {row['label']} -- "
          + ", ".join(f"{n} {l}" for n, l in row["cells"]) + " (MSS page).")

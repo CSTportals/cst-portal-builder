@@ -3643,8 +3643,8 @@ def track_record_back(p):
     # Casey, 29 Oct 2026: "use the one in the buyer portal as our Track
     # record every where but DOM is 6." The six tiles are the buyer portal's
     # production band; the sales table below still lists the resales.
-    from build_index_v2 import PRODUCTION_SINCE_2025 as _prod
-    keep = list(_prod)
+    from build_index_v2 import production_rows as _prod
+    keep = _prod(p)
     tiles = "".join(
         f'      <div class="tr-cell"><span class="tr-n">{n_}</span>'
         f'<span class="tr-l">{l_}</span></div>\n' for n_, l_ in keep[:6])

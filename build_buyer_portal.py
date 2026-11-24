@@ -1544,7 +1544,8 @@ def production_section(p, b):
         note('Production band OMITTED by "production": false.')
         return ""
     try:
-        from build_index_v2 import PRODUCTION_SINCE_2025 as rows
+        from build_index_v2 import production_rows as _pr
+        rows = _pr(p)
     except ImportError:
         note("Production band OMITTED — build_index_v2 is not importable, "
              "so there are no figures to quote.")
