@@ -137,6 +137,15 @@ img{max-width:100%;}
   filter:drop-shadow(0 2px 8px rgba(0,0,0,.6));}
 .hero .brandline{letter-spacing:.24em; font-size:11.5px; font-weight:700; color:#F0E4C4;
   text-transform:uppercase; text-shadow:0 2px 10px rgba(0,0,0,.8);}
+/* Casey, 24 Nov 2026: balanced like the Roadmap -- title centred on the
+   photo, The Casey Samson Team larger. */
+.hero:not(.noshot){align-items:center;}
+.hero:not(.noshot) .hero-shade{background:radial-gradient(ellipse 70% 65% at 50% 50%,
+  rgba(12,10,6,.60) 0%, rgba(12,10,6,.36) 60%, rgba(12,10,6,.28) 100%);}
+.hero:not(.noshot) .hero-inner img.seal{width:84px; margin-bottom:14px;}
+.hero .brandline{font-family:'Playfair Display',Georgia,serif; font-size:clamp(26px,3.6vw,40px);
+  letter-spacing:.12em; color:#E8C77A; line-height:1.1;}
+@media (max-width:600px){ .hero .brandline{font-size:22px; letter-spacing:.08em;} }
 .hero h1{font-family:'Playfair Display',Georgia,serif; font-weight:700; color:#FFFDF7;
   font-size:clamp(28px,4.4vw,46px); margin:8px 0 2px; line-height:1.1;
   text-shadow:0 2px 14px rgba(0,0,0,.85);}
@@ -1816,8 +1825,9 @@ def values_section(p, b):
     _abn = b.get("authenticated_by_note")
     if _abn is None and _ab:
         _abn = ("The Casey Samson Team (CST) is a seven-agent real estate team with over "
-                "$300 million in MLS-documented production over a 365-day period. 82% of CST "
-                "listings sell in the first week, with 68% selling over list price.")
+                "$300 million in MLS-documented production over a 365-day period. 50% of CST "
+                "listings sell in the first week, with 74% selling over list price.")
+        # (Casey, 24 Nov 2026: 50% first week, 74% over list.)
     if _abn:
         _abl += (f'<p class="auth-note" style="text-align:center;max-width:760px;margin:0 auto 14px;'
                  f'font-size:14.5px;line-height:1.55;color:var(--ink);">{_abn}</p>')
