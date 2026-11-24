@@ -2607,6 +2607,21 @@ RM_BADGE_CSS = """
     color:#E8C77A; display:block; line-height:1.15;}
   .rm-fact .l{font-size:9.5px; letter-spacing:.06em; text-transform:uppercase;
     color:#C9D2E0; margin-top:3px;}
+  .rm-hero-inner .lbl.rts .rts-1{display:block;font-size:22px;letter-spacing:.16em;text-transform:uppercase;}
+  .rm-hero-inner .lbl.rts .rts-2{display:block;font-size:34px;color:#FFFDF7;letter-spacing:.01em;margin-top:2px;}
+  .rm-steps{padding:30px 0 60px;}
+  .rm-steps .rm-col{flex:1 1 0;min-width:0;padding:6px 18px;}
+  .rm-steps .rm-col .k{font-size:11px;letter-spacing:.22em;margin-bottom:8px;}
+  .rm-steps .rm-col .v{font-size:26px;color:#FFFDF7;}
+  .rm-steps .rm-col .s{font-size:15px;color:#C9D2E0;margin-top:6px;line-height:1.4;}
+  @media (max-width:760px){ .rm-steps .rm-cols{flex-direction:column;} .rm-steps .rm-col + .rm-col{border-left:none;border-top:1px solid rgba(255,255,255,.15);} }
+  .rm-subj{padding:26px 0 0;border-top:none!important;}
+  .rm-subj-card{max-width:820px;margin:0 auto;background:#fff;border:1px solid var(--rule,#E4DCC8);border-radius:10px;padding:14px 18px;}
+  .rm-subj-t{text-align:center;font:700 12px Georgia,serif;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep,#8A6A2E);margin-bottom:8px;}
+  .rm-subj-row{display:flex;flex-wrap:wrap;justify-content:center;}
+  .rm-subj-f{flex:1 1 140px;text-align:center;padding:4px 8px;}
+  .rm-subj-f .n{display:block;font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:700;color:var(--gold-deep,#8A6A2E);}
+  .rm-subj-f .l{display:block;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#71695A);margin-top:2px;}
   .rm-hero-inner .lbl.rts{font-size:26px; font-style:normal; font-weight:700; letter-spacing:.02em;
     color:#E8C77A; margin-bottom:6px;}
   .rc-sec{max-width:860px; margin:22px auto 0;}
@@ -5450,6 +5465,26 @@ def build_roadmap(p, s, out):
             _facts.append((money(_vv0["customary"]), "Customary Value"))
             _facts.append((money(_vv0.get("premium_top") or _vv0["premium"]), "Premium Value"))
     rm_facts = ""
+    rm_subject = ""
+    if not _is_recovery:
+        # Casey, 24 Nov 2026: the navy band carries the three steps from the
+        # Seller Portal; the home's specs move to a "Subject" strip over the
+        # Appraisal-Quality Comparable Analysis.
+        _steps = (("First", "Build Confidence", "In the value and the condition of the home"),
+                  ("Then", "Create Competition", "Maximum exposure to the largest qualified buyer pool"),
+                  ("Result", "Validate Highest and Best Price", "Buyers compete, and the price is proven"))
+        rm_facts = ('<div class="rm-band rm-steps"><div class="wrap"><div class="rm-cols">'
+                    + "".join(f'<div class="rm-col"><div class="k">{a}</div><div class="v">{b}</div>'
+                              f'<div class="s">{c}</div></div>' for a, b, c in _steps)
+                    + "</div></div></div>")
+        _subj4 = _facts[:4]
+        if _subj4:
+            rm_subject = ('<section class="rm-subj"><div class="wrap"><div class="rm-subj-card">'
+                          '<div class="rm-subj-t">Subject</div><div class="rm-subj-row">'
+                          + "".join(f'<div class="rm-subj-f"><span class="n">{n}</span>'
+                                    f'<span class="l">{l}</span></div>' for n, l in _subj4)
+                          + "</div></div></div></section>\n")
+        _facts = []
     if _facts:
         # Casey, 23 Nov 2026: "Give it the same look" as the Seller Portal --
         # the specs across a full-width navy band, the white CST-vs-market
@@ -5839,11 +5874,11 @@ def build_roadmap(p, s, out):
   <div class="wrap">
     <h2 class="section-title">Price Authenticated by CST Pricing Team</h2>
     <p class="section-sub">{auth_stats}</p>
-{_engine_html}{_sold_html}    <p class="values-label" style="text-align:center;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:15px;color:var(--gold-deep,#8A6A2E);margin:6px auto 14px;max-width:760px;line-height:1.45;">Final Values are determined after inspection by a Trained Realtor of property condition, upgrades and lot premium/discount.</p>
+{_engine_html}    <p class="values-label" style="text-align:center;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:15px;color:var(--gold-deep,#8A6A2E);margin:6px auto 14px;max-width:760px;line-height:1.45;">Final Values are determined after inspection by a Trained Realtor of property condition, upgrades and lot premium/discount.</p>
     <div class="values-grid"{grid_style}>
 {chr(10).join(cards)}
     </div>
-{net_proceeds_html(p, tiers)}{value_story_html(p)}    <div class="money-at-risk">
+{_sold_html}{net_proceeds_html(p, tiers)}{value_story_html(p)}    <div class="money-at-risk">
       <div class="lbl">{mar_label}</div>
       <div class="num">{mar_value}</div>
       <div class="mar-note">Loss of value can occur with over pricing or poor preparation.</div>
@@ -5906,20 +5941,20 @@ def build_roadmap(p, s, out):
   <div class="rm-hero-inner">
     <img class="seal" src="Gold_Standard_Logo.png" alt="Gold Standard Listing">
 {_rm_brandline}
-    <p class="lbl{" recovery" if _is_recovery else " rts"}">{"Recovery Strategy For" if _is_recovery else "The Casey Samson Team Roadmap to Success"}</p>
-    <h1>{addr}</h1>
+    {('<p class="lbl recovery">Recovery Strategy For</p>' if _is_recovery else
+      '<p class="lbl rts"><span class="rts-1">The Casey Samson Team</span>'
+      '<span class="rts-2">Seller Roadmap to Success</span></p>')}
+    <h1>{"Address" if is_example_home(p) or p.get("address") == "Sample" else addr}</h1>
     <p class="city">{city_state}</p>
 {rm_tag}
-    <span class="asof-pill">As of {p["report_date"]}</span>
-{rm_note}
-{rm_badges}
+{(f'    <span class="asof-pill">As of {p["report_date"]}</span>' + chr(10) + rm_note + chr(10) + rm_badges) if _is_recovery else ""}
   </div>
 </div>
 
 {rm_facts}
 <!--SEC:bg-start-->
 <!--SEC:bg-start-->
-{rm_comps_section}
+{rm_subject}{rm_comps_section}
 {auth_section}
 <section>
   <div class="wrap">

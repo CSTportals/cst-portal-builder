@@ -756,8 +756,12 @@ def track_record_to_roadmap(index, rm):
     block = ('<style>.trk{--card:#FFFFFF;--rule:#E4DCC8;--ink:#221C14;--muted:#71695A;--muted-2:#968972;'
              "--gold-deep:#8A6A2E;padding:0 0 34px;border-top:none!important;}" + css + "</style>\n"
              f'<section class="trk">{card}</section>\n')
-    k = h.find("Appraisal-Quality Comparable Analysis")
-    k = h.rfind("<section", 0, k) if k > 0 else -1
+    # Right under the navy band (it overlaps the band's edge), ahead of the
+    # Subject strip when there is one.
+    k = h.find('<section class="rm-subj"')
+    if k < 0:
+        k = h.find("Appraisal-Quality Comparable Analysis")
+        k = h.rfind("<section", 0, k) if k > 0 else -1
     if k < 0:
         return False
     rm.write_text(h[:k] + block + h[k:], encoding="utf-8")
