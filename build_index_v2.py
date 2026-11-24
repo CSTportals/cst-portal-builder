@@ -99,6 +99,18 @@ def townhome_production():
     our townhome stats." The team's six figures for a town home, computed
     from the CST town home sales on file (data/CST_Townhome_Sales.csv), in
     the same columns as the market row they sit over."""
+    # Casey, 24 Nov 2026 (second Nov 23 town home package): the town home MSS
+    # prints the team's town home row itself -- use it, so the portal and
+    # the MSS always show the same figures. The sales list is the fallback.
+    import re as _re
+    for f in sorted((HERE / "mss_pages_townhome").glob("*_Market_Snapshot.html")):
+        m = _re.search(r'<div class="cstf-row">(.*?)<div class="cstf-row mkt">',
+                       f.read_text(encoding="utf-8", errors="ignore"), _re.S)
+        cells = _re.findall(r'<span class="n">([^<]+)</span><span class="l">([^<]+)</span>',
+                            m.group(1)) if m else []
+        if len(cells) == 6 and "town home" in cells[0][1].lower():
+            lab = {"% Sold in first 10 days": "Sold in the first 10 days"}
+            return [(n, lab.get(l, l)) for n, l in cells]
     import csv
     src = HERE / "data" / "CST_Townhome_Sales.csv"
     if not src.exists():
