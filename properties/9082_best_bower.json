@@ -773,7 +773,7 @@
     ]
    ]
   },
-  "deploy_to": "https://buybest.netlify.app",
+  "deploy_to": "https://buybestbower.netlify.app",
   "lot": {
    "pin": "0284 35 0009",
    "area_sf": 14960,
