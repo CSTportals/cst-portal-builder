@@ -1181,6 +1181,20 @@ def lot_map(b, addr):
         "the recorded plat is the official boundary.")
     D = _j.dumps({"lot": poly, "sides": sides, "label": addr})
     tabs = [("a", "Satellite"), ("b", "With street names"), ("c", "Neighborhood"), ("d", "Lot dimensions")]
+    # Casey, 24 Nov 2026: "If you can identify which is the plat, replace one
+    # of the maps with the plat. Leave the map with dimensions." The house
+    # location plat from the county zoning file takes the Neighborhood tab.
+    plat = lot.get("plat")
+    plat_html = ""
+    if plat:
+        tabs[2] = ("p", "House Location Plat")
+        src = (lot.get("plat_source") or "").strip()
+        view = lot.get("plat_view") or plat   # the drawing; the link opens the whole plat
+        plat_html = (f'<a href="{plat}" target="_blank" rel="noopener" title="Open the full plat">'
+                     f'<img src="{view}" alt="House location plat, {addr}"></a>'
+                     + (f'<div class="lot-plat-src">{src}</div>' if src else ""))
+        note = note.replace("the recorded plat is the official boundary.",
+                            "the recorded plat is the official boundary (see House Location Plat; click it for the full signed plat).")
     return (
         '<section class="lotsec"><div class="wrap">'
         '<h2 class="st">The Lot</h2>'
@@ -1189,7 +1203,8 @@ def lot_map(b, addr):
         + "".join(f'<button type="button" role="tab" data-v="{k}"{" class=on" if i == 0 else ""}>{t}</button>'
                   for i, (k, t) in enumerate(tabs)) +
         '</div><div class="lot-frame">'
-        + "".join(f'<div class="lot-map{" on" if i == 0 else ""}" id="lot-{k}"></div>' for i, (k, _) in enumerate(tabs)) +
+        + "".join(f'<div class="lot-map{" on" if i == 0 else ""}{" lot-plat" if k == "p" else ""}" id="lot-{k}">'
+                  f'{plat_html if k == "p" else ""}</div>' for i, (k, _) in enumerate(tabs)) +
         f'</div><p class="lot-note">{note}</p></div></section>\n'
         '<style>.lotsec .lot-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:6px 0 14px}'
         '.lotsec .lot-tabs button{font:700 14px Georgia,serif;letter-spacing:.03em;padding:9px 18px;border-radius:22px;'
@@ -1202,6 +1217,10 @@ def lot_map(b, addr):
         '.lotsec .lot-lbl{background:#1F2A44;color:#E8C77A;border:0;font:700 13px Georgia,serif;padding:4px 9px;border-radius:4px;box-shadow:none}'
         '.lotsec .lot-dim{background:#fff;color:#1F2A44;border:1px solid #8A6A2E;font:700 13px Georgia,serif;padding:2px 7px;border-radius:4px;box-shadow:none}'
         '.lotsec .lot-lbl:before,.lotsec .lot-dim:before{display:none}'
+        '.lotsec .lot-plat{background:#fff;overflow:auto;text-align:center;position:relative}'
+        '.lotsec .lot-plat img{height:100%;width:auto;max-width:100%;object-fit:contain;cursor:zoom-in;display:inline-block}'
+        '.lotsec .lot-plat-src{position:absolute;left:0;right:0;bottom:0;background:rgba(31,42,68,.85);color:#E8C77A;'
+        'font:12px Georgia,serif;padding:5px 10px}'
         '@media(max-width:600px){.lotsec .lot-map{height:380px}}</style>\n'
         '<link rel="stylesheet" href="leaflet.css">\n<script src="leaflet.js"></script>\n'
         '<script>\n(function(){var D=' + D + ';\n'
@@ -1216,7 +1235,7 @@ def lot_map(b, addr):
         'c:{layers:function(){return[t(IMG,ATT),t(ROADS)]},zoom:17},'
         'd:{layers:function(){return[L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:21,maxNativeZoom:19,'
         'attribution:"&copy; OpenStreetMap contributors"})]},fit:true,dims:true}};\n'
-        'function make(k){if(made[k]){made[k].invalidateSize();return;}var v=V[k];\n'
+        'function make(k){if(!V[k])return;if(made[k]){made[k].invalidateSize();return;}var v=V[k];\n'
         ' var m=L.map("lot-"+k,{scrollWheelZoom:false,zoomSnap:.25});m.setView(D.lot[0],v.zoom||19);\n'
         ' v.layers().forEach(function(l){l.addTo(m)});\n'
         ' var dim=!!v.dims;L.polygon(D.lot,{color:dim?"#8A6A2E":"#E8C77A",weight:4,fillColor:dim?"#B8902F":"#E8C77A",'
@@ -2538,6 +2557,12 @@ def main():
         + "\nThis folder is public. It carries no pricing strategy, no money at\n"
           "risk and no seller tracker.\n")
     shutil.copy(TPL / "Gold_Standard_Logo.png", out / "Gold_Standard_Logo.png")
+    for _plat in [x for x in ((b.get("lot") or {}).get("plat"), (b.get("lot") or {}).get("plat_view")) if x]:
+        _ps = HERE / (b.get("asset_dir") or p.get("asset_dir") or "") / _plat
+        if _ps.exists():
+            shutil.copy(_ps, out / _plat)
+        else:
+            note(f"Buyer portal: plat image {_plat} not found in the asset folder.")
     if p.get("guides") is not False:
         import build_portal as _bp2
         _bp2.copy_guide("buyer", out)
