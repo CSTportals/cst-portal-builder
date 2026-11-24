@@ -1,0 +1,373 @@
+{
+ "address": "8302 Wolftrap Rd",
+ "city": "Vienna",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "22182",
+ "county": "Fairfax County",
+ "congestion_fees": true,
+ "report_date": "Tuesday, November 24, 2026",
+ "prefix": "8302_Wolftrap",
+ "listing_url": "8302Wolftrap.com",
+ "portal_url": "https://8302wolftrap.netlify.app",
+ "include_tracker": true,
+ "listing_status": "new",
+ "property_type": "single family",
+ "asset_dir": "assets/8302_Wolftrap",
+ "hero_photo": "8302_Wolftrap_front.jpg",
+ "photos": [
+  "8302_Wolftrap_front.jpg",
+  "8302_Wolftrap_kitchen.jpg"
+ ],
+ "subject": {
+  "built": 1997,
+  "sf": 3745,
+  "lot": 8184,
+  "assessment": 1429000
+ },
+ "values": {
+  "dated": 1371007,
+  "customary": 1523341,
+  "customary_list": null,
+  "premium": 1645209,
+  "upgrades": 0,
+  "preview_override": 1500000,
+  "coming_soon_override": 1500000,
+  "fallback_override": 1450000,
+  "deep_override": 1400000,
+  "worksheet_note": "24 Nov 2026 worksheet: Preview $1,500,000, Coming Soon $1,500,000, Fall Back $1,450,000, 0 Showings $1,400,000. Price-range comps = 1946 and 1964 Horse Shoe (averages match); Age & Size average (4 sales) entered from the worksheet. Home currently active at $1,574,888 (34 DOM; earlier $1,599,888 cancelled). 2206 Central Ave lot read under the Draft watermark, from county parcels."
+ },
+ "comps": {
+  "rows": [
+   [
+    "309 Springwood Ct NE",
+    1989,
+    3860,
+    17083,
+    1420690,
+    1650000
+   ],
+   [
+    "1946 Horse Shoe Dr",
+    1993,
+    4484,
+    9052,
+    1585380,
+    1625000
+   ],
+   [
+    "1964 Horse Shoe Dr",
+    1994,
+    3506,
+    8991,
+    1358140,
+    1500000
+   ]
+  ],
+  "summary": [
+   [
+    "Age &amp; Size Average",
+    1995,
+    3854,
+    7084,
+    1447035,
+    1520500
+   ],
+   [
+    "Price Range Average",
+    1994,
+    3995,
+    9022,
+    1471760,
+    1562500
+   ]
+  ]
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "2206 Central Ave",
+   "dom": 34,
+   "built": 1992,
+   "sf": 3900,
+   "lot": 7803,
+   "list": 1438888,
+   "assessment": 1347030
+  }
+ ],
+ "notes": [],
+ "market": {
+  "name": "Vienna Family Market",
+  "slug": "Vienna_Family_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "agent": {
+  "lookup": "Casey Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "casey@caseysamson.com"
+ },
+ "market_map": {
+  "subject": [
+   38.9053681,
+   -77.2318943
+  ],
+  "subject_dir": "left",
+  "subject_dir_solds": "left",
+  "solds": [
+   {
+    "address": "309 Springwood Ct NE",
+    "sale": 1650000,
+    "list": 1600000,
+    "orig_list": 1600000,
+    "dom": 1,
+    "status": "Sold",
+    "lat": 38.9113433,
+    "lng": -77.267635
+   },
+   {
+    "address": "1946 Horse Shoe Dr",
+    "sale": 1625000,
+    "list": 1625000,
+    "orig_list": 1625000,
+    "dom": 6,
+    "status": "Sold",
+    "lat": 38.9122218,
+    "lng": -77.2392941
+   },
+   {
+    "address": "1964 Horse Shoe Dr",
+    "sale": 1500000,
+    "list": 1500000,
+    "orig_list": 1500000,
+    "dom": 5,
+    "status": "Sold",
+    "lat": 38.9120823,
+    "lng": -77.2412244
+   }
+  ],
+  "listings": [
+   {
+    "address": "2206 Central Ave",
+    "status": "Active",
+    "list": 1438888,
+    "dom": 34,
+    "lat": 38.9011434,
+    "lng": -77.2296705
+   }
+  ]
+ },
+ "buyer_portal": {
+  "live": true,
+  "display_address": "8302 Wolftrap Rd",
+  "asset_dir": "assets/8302_Wolftrap/buyer",
+  "hero_photo": "8302_Wolftrap_front.jpg",
+  "pricing_pdf": "8302_Wolftrap_Buyer_Report.pdf",
+  "facts": [
+   [
+    "1997",
+    "Year built"
+   ],
+   [
+    "3,745",
+    "Above grade SF"
+   ],
+   [
+    "8,184",
+    "SF lot"
+   ],
+   [
+    "Vienna",
+    "Fairfax County"
+   ]
+  ],
+  "url": "https://buywolftrap.netlify.app",
+  "deploy_to": "https://buywolftrap.netlify.app",
+  "list_price": 1500000,
+  "status_line": "Coming Soon",
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Between Tysons and the Town of Vienna, with Dunn Loring Metro and the Mosaic District a short drive. The arrows point to everything past the edge of the map.",
+   "center": {
+    "lat": 38.9053681,
+    "lng": -77.2318943,
+    "label": "8302 Wolftrap Rd"
+   },
+   "pins": [
+    {
+     "name": "Tysons Corner Center",
+     "sub": "Shopping and dining",
+     "lat": 38.9175,
+     "lng": -77.2224
+    },
+    {
+     "name": "Dunn Loring Metro",
+     "sub": "Orange Line",
+     "lat": 38.8833529,
+     "lng": -77.22812
+    },
+    {
+     "name": "Wolf Trap Elementary",
+     "sub": "Fairfax County Public Schools",
+     "lat": 38.9218,
+     "lng": -77.2468
+    },
+    {
+     "name": "Vienna Town Green",
+     "sub": "Concerts, markets, Viva Vienna",
+     "lat": 38.902941,
+     "lng": -77.2641239
+    },
+    {
+     "name": "Mosaic District",
+     "sub": "Dining, cinema and shops",
+     "lat": 38.8713,
+     "lng": -77.2282
+    }
+   ],
+   "arrows": [
+    [
+     322.3,
+     [
+      "Wolf Trap",
+      "Filene Center &middot; 2.88 mi"
+     ]
+    ],
+    [
+     298.7,
+     [
+      "Reston Town Center",
+      "Shops, dining and events &middot; 7.66 mi"
+     ]
+    ],
+    [
+     285.3,
+     [
+      "Dulles International",
+      "IAD &middot; 12.51 mi"
+     ]
+    ],
+    [
+     109.9,
+     [
+      "Reagan National",
+      "DCA &middot; 10.97 mi"
+     ]
+    ],
+    [
+     92.8,
+     [
+      "Washington, DC",
+      "Downtown &middot; 10.52 mi"
+     ]
+    ]
+   ]
+  },
+  "amenities_lede": "Tysons and the Mosaic District minutes away, Dunn Loring Metro for the Orange Line, and the Town of Vienna just west.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Dunn Loring Metro",
+      "Orange Line",
+      1.53
+     ],
+     [
+      "Dulles International",
+      "IAD",
+      12.51
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      10.97
+     ]
+    ]
+   },
+   {
+    "title": "Shopping and Dining",
+    "items": [
+     [
+      "Tysons Corner Center",
+      "Shopping and dining",
+      0.98
+     ],
+     [
+      "Mosaic District",
+      "Dining, cinema and shops",
+      2.36
+     ],
+     [
+      "Vienna Town Green",
+      "Concerts, markets, Viva Vienna",
+      1.74
+     ]
+    ]
+   },
+   {
+    "title": "Schools and Parks",
+    "items": [
+     [
+      "Wolf Trap Elementary",
+      "Fairfax County Public Schools",
+      1.39
+     ],
+     [
+      "Wolf Trap",
+      "Filene Center",
+      2.88
+     ]
+    ]
+   }
+  ],
+  "lot": {
+   "pin": "0391 40 0007A",
+   "area_sf": 8620,
+   "source": "Fairfax County GIS parcels (24 Nov 2026)",
+   "polygon": [
+    [
+     38.9054217,
+     -77.2316203
+    ],
+    [
+     38.9051766,
+     -77.2318503
+    ],
+    [
+     38.9052324,
+     -77.2319429
+    ],
+    [
+     38.9053201,
+     -77.2320829
+    ],
+    [
+     38.9055388,
+     -77.2318899
+    ],
+    [
+     38.9054827,
+     -77.2317996
+    ],
+    [
+     38.9054467,
+     -77.2316937
+    ]
+   ]
+  }
+ }
+}
