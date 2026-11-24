@@ -1134,9 +1134,36 @@ def lot_map(b, addr):
         dx = _m.radians(c[1] - a[1]) * 6371008.8 * _m.cos(la)
         dy = _m.radians(c[0] - a[0]) * 6371008.8
         return round(_m.hypot(dx, dy) * 3.28084)
-    sides = [[(poly[i][0] + poly[(i + 1) % len(poly)][0]) / 2,
-              (poly[i][1] + poly[(i + 1) % len(poly)][1]) / 2,
-              _ft(poly[i], poly[(i + 1) % len(poly)])] for i in range(len(poly))]
+    # Curved frontages come as many tiny segments: label the straight runs.
+    # Simplify the outline (Douglas-Peucker, ~1.5 m) and label sides of 15 ft
+    # or more, so a cul-de-sac curve reads as one chord, not a dozen labels.
+    def _xy(q):
+        la = _m.radians(poly[0][0])
+        return (_m.radians(q[1]) * 6371008.8 * _m.cos(la), _m.radians(q[0]) * 6371008.8)
+    def _dp(pts, tol):
+        if len(pts) < 3:
+            return pts
+        a, c = _xy(pts[0]), _xy(pts[-1])
+        dx, dy = c[0] - a[0], c[1] - a[1]
+        L2 = dx * dx + dy * dy or 1e-9
+        best, bi = 0, 0
+        for i in range(1, len(pts) - 1):
+            p_ = _xy(pts[i])
+            t_ = max(0, min(1, ((p_[0] - a[0]) * dx + (p_[1] - a[1]) * dy) / L2))
+            d_ = _m.hypot(p_[0] - a[0] - t_ * dx, p_[1] - a[1] - t_ * dy)
+            if d_ > best:
+                best, bi = d_, i
+        if best <= tol:
+            return [pts[0], pts[-1]]
+        return _dp(pts[:bi + 1], tol)[:-1] + _dp(pts[bi:], tol)
+    ring = poly + [poly[0]]
+    simp = _dp(ring, 1.5)[:-1] if len(poly) > 4 else poly
+    sides = []
+    for i in range(len(simp)):
+        a, c = simp[i], simp[(i + 1) % len(simp)]
+        ft = _ft(a, c)
+        if ft >= 15:
+            sides.append([(a[0] + c[0]) / 2, (a[1] + c[1]) / 2, ft])
     area = lot.get("area_sf")
     note = (f'County parcel {lot["pin"]}' if lot.get("pin") else "County parcel") + (
         f', about {area:,} square feet' if area else "") + (
