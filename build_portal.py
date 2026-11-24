@@ -2607,8 +2607,15 @@ RM_BADGE_CSS = """
     color:#E8C77A; display:block; line-height:1.15;}
   .rm-fact .l{font-size:9.5px; letter-spacing:.06em; text-transform:uppercase;
     color:#C9D2E0; margin-top:3px;}
-  .rm-hero-inner .lbl.rts .rts-1{display:block;font-size:22px;letter-spacing:.16em;text-transform:uppercase;}
-  .rm-hero-inner .lbl.rts .rts-2{display:block;font-size:34px;color:#FFFDF7;letter-spacing:.01em;margin-top:2px;}
+  /* Casey, 24 Nov 2026: "title is all in lower 1/2 of header. Needs balance.
+     Make Casey Samson Team larger." New-listing heroes centre the title. */
+  .rm-hero:has(.lbl.rts){align-items:center;}
+  .rm-hero:has(.lbl.rts) .rm-shade{background:radial-gradient(ellipse 70% 65% at 50% 50%,
+      rgba(12,10,6,.62) 0%, rgba(12,10,6,.38) 60%, rgba(12,10,6,.30) 100%);}
+  .rm-hero:has(.lbl.rts) .seal{width:84px;margin-bottom:14px;}
+  .rm-hero-inner .lbl.rts .rts-1{display:block;font-size:clamp(28px,3.8vw,42px);letter-spacing:.12em;
+    text-transform:uppercase;line-height:1.1;}
+  .rm-hero-inner .lbl.rts .rts-2{display:block;font-size:clamp(24px,3vw,32px);color:#FFFDF7;letter-spacing:.01em;margin-top:6px;}
   .rm-steps{padding:30px 0 60px;}
   .rm-steps .rm-col{flex:1 1 0;min-width:0;padding:6px 18px;}
   .rm-steps .rm-col .k{font-size:11px;letter-spacing:.22em;margin-bottom:8px;}
@@ -5470,12 +5477,15 @@ def build_roadmap(p, s, out):
         # Casey, 24 Nov 2026: the navy band carries the three steps from the
         # Seller Portal; the home's specs move to a "Subject" strip over the
         # Appraisal-Quality Comparable Analysis.
-        _steps = (("First", "Build Confidence", "In the value and the condition of the home"),
-                  ("Then", "Create Competition", "Maximum exposure to the largest qualified buyer pool"),
-                  ("Result", "Validate Highest and Best Price", "Buyers compete, and the price is proven"))
+        # Casey, 24 Nov 2026: no First/Then/Result labels; "Build
+        # Confidence" on two lines; the third box is "Inspire Highest and Best
+        # Offers" with the Buyer Portal.
+        _steps = (("Build<br>Confidence", "In the value and the condition of the home"),
+                  ("Create<br>Competition", "Maximum exposure to the largest qualified buyer pool"),
+                  ("Inspire Highest<br>and Best Offers", "With the Buyer Portal"))
         rm_facts = ('<div class="rm-band rm-steps"><div class="wrap"><div class="rm-cols">'
-                    + "".join(f'<div class="rm-col"><div class="k">{a}</div><div class="v">{b}</div>'
-                              f'<div class="s">{c}</div></div>' for a, b, c in _steps)
+                    + "".join(f'<div class="rm-col"><div class="v">{b}</div>'
+                              f'<div class="s">{c}</div></div>' for b, c in _steps)
                     + "</div></div></div>")
         _subj4 = _facts[:4]
         if _subj4:
