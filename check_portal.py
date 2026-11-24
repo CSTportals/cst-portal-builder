@@ -108,7 +108,7 @@ RECOVERY_ROADMAP_ORDER = [
     "Current Competition",
     "CST Pricing Strategy",
     "Reconciling Value and Price",
-    "Recovery Strategy",
+    "The Test",          # Casey, 24 Nov 2026: was "Recovery Strategy"
 ]
 # The one-page sheet keeps Reality Check at the bottom, after the prices.
 SUMMARY_ORDER = [
@@ -325,7 +325,7 @@ def check_property(path):
                 f"{'recovery ' if rec else ''}Roadmap sections are out of "
                 "order: " + " / ".join(x.replace("&trade;", "") for x in got))
         if rec:
-            for must in ("Reconciling Value and Price", "Recovery Strategy"):
+            for must in ("Reconciling Value and Price", "The Test"):
                 r.check(must in secs,
                         f"recovery Roadmap has no {must} section")
         if "Appraisal-Quality Comparable Analysis" not in secs:

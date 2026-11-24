@@ -5202,7 +5202,7 @@ def build_roadmap(p, s, out):
             # Rip Cord are the same two prices the email quotes.
             recovery_block = f"""<section class="pred-sec">
   <div class="wrap">
-    <h2 class="test-head">Recovery Strategy</h2>
+    <h2 class="test-head">The Test</h2>
     <h2 class="section-title">Our 4-Step Recovery Strategy</h2>
     <p class="section-sub">Test buyer interest, reposition the home at the right
     price, and use our marketing tools to generate the strongest possible offer.</p>
@@ -5376,8 +5376,9 @@ def build_roadmap(p, s, out):
 
     # Casey, 23 Nov 2026: replaces "Engineered for a First-Week Sale --
     # Highest Price, Best Terms, Lowest Risk", larger.
-    rm_tag = ("" if _is_recovery else
-              '    <p class="tag" style="font-family:\'Playfair Display\',Georgia,serif;font-size:28px;'
+    # Casey, 24 Nov 2026: "recovery roadmap header and opening should look
+    # just like regular only Recovery Roadmap" -- same tagline, same band.
+    rm_tag = ('    <p class="tag" style="font-family:\'Playfair Display\',Georgia,serif;font-size:28px;'
               'font-style:italic;font-weight:700;color:#FFFDF7;margin:12px 0 14px;'
               'text-shadow:0 2px 10px rgba(0,0,0,.6);">Success is a Strategy, not a Price</p>')
 
@@ -5462,9 +5463,8 @@ def build_roadmap(p, s, out):
         _facts.append((f'{_subj["lot"]:,}', "Lot SF"))
     if _subj.get("assessment"):
         _facts.append((money(_subj["assessment"]), "Assessment"))
-    if _is_recovery:
-        _rv = recovery_prices(p)
-        _facts.append((money(_rv["hard"]), "If no one calls"))
+    if False:
+        pass
     else:
         # Casey, 16 Nov 2026: "on that list it should be customary value
         # Premium Value" -- new listings end the strip with the two values;
@@ -5478,7 +5478,7 @@ def build_roadmap(p, s, out):
             _facts.append((money(_vv0.get("premium_top") or _vv0["premium"]), "Premium Value"))
     rm_facts = ""
     rm_subject = ""
-    if not _is_recovery:
+    if True:
         # Casey, 24 Nov 2026: the navy band carries the three steps from the
         # Seller Portal; the home's specs move to a "Subject" strip over the
         # Appraisal-Quality Comparable Analysis.
@@ -5944,8 +5944,9 @@ def build_roadmap(p, s, out):
     # Casey, 23 Nov 2026: "The roadmap header should be The Casey Samson Team
     # Roadmap to Success (address)". The separate team line stays only on
     # private-label builds, where it carries the agent's name and tag.
-    _rm_brandline = ('    <div class="bl">The Casey Samson Team</div>'
-                     if (_is_recovery or p.get("private_label")) else "")
+    # Casey, 24 Nov 2026: the two-line header carries the team (or, on a
+    # private label, the agent) itself, so no separate brand line.
+    _rm_brandline = ""
     body = f"""<body>
 
 <a class="back" href="index.html">&larr; Back to {addr}</a>
@@ -5956,13 +5957,11 @@ def build_roadmap(p, s, out):
   <div class="rm-hero-inner">
     <img class="seal" src="Gold_Standard_Logo.png" alt="Gold Standard Listing">
 {_rm_brandline}
-    {('<p class="lbl recovery">Recovery Strategy For</p>' if _is_recovery else
-      '<p class="lbl rts"><span class="rts-1">The Casey Samson Team</span>'
-      '<span class="rts-2">Seller Roadmap to Success</span></p>')}
+    {('<p class="lbl rts"><span class="rts-1">The Casey Samson Team</span>'
+      f'<span class="rts-2">{"Recovery Roadmap to Success" if _is_recovery else "Seller Roadmap to Success"}</span></p>')}
     <h1>{"Address" if is_example_home(p) or p.get("address") == "Sample" else addr}</h1>
     <p class="city">{city_state}</p>
 {rm_tag}
-{(f'    <span class="asof-pill">As of {p["report_date"]}</span>' + chr(10) + rm_note + chr(10) + rm_badges) if _is_recovery else ""}
   </div>
 </div>
 
