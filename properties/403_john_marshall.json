@@ -473,7 +473,70 @@
     "Offer Instructions",
     "Deadline, how to submit, preferred terms and title company"
    ]
-  ]
+  ],
+  "lot": {
+   "pin": "0382 03 0033",
+   "area_sf": 12860,
+   "source": "Fairfax County GIS parcels (24 Nov 2026)",
+   "polygon": [
+    [
+     38.9127823,
+     -77.268601
+    ],
+    [
+     38.9126397,
+     -77.2688886
+    ],
+    [
+     38.9126636,
+     -77.268972
+    ],
+    [
+     38.9127543,
+     -77.2692881
+    ],
+    [
+     38.9127782,
+     -77.2692785
+    ],
+    [
+     38.912802,
+     -77.2692685
+    ],
+    [
+     38.9128257,
+     -77.2692582
+    ],
+    [
+     38.9128494,
+     -77.2692476
+    ],
+    [
+     38.9128729,
+     -77.2692366
+    ],
+    [
+     38.9128963,
+     -77.2692253
+    ],
+    [
+     38.9129196,
+     -77.2692136
+    ],
+    [
+     38.9129428,
+     -77.2692015
+    ],
+    [
+     38.9129659,
+     -77.2691891
+    ],
+    [
+     38.9129889,
+     -77.2691764
+    ]
+   ]
+  }
  },
  "market_local": {
   "label": "Vienna Family Market &mdash; 527 sales under 3,500 SF",
@@ -506,5 +569,101 @@
  "overrides": {
   "coming_soon": 1299999
  },
- "seller_names": "Lance and Toria"
+ "seller_names": "Lance and Toria",
+ "market_map": {
+  "subject": [
+   38.9127984,
+   -77.2690286
+  ],
+  "subject_dir": "left",
+  "subject_dir_solds": "left",
+  "solds": [
+   {
+    "address": "1703 Palm Springs Dr",
+    "sale": 1105000,
+    "status": "Sold",
+    "lat": 38.924808,
+    "lng": -77.2518758
+   },
+   {
+    "address": "9509 Mandolin Ct",
+    "sale": 1375000,
+    "status": "Sold",
+    "lat": 38.9455514,
+    "lng": -77.2745384
+   },
+   {
+    "address": "2332 Addison St",
+    "sale": 1346747,
+    "status": "Sold",
+    "lat": 38.8955594,
+    "lng": -77.2420743
+   },
+   {
+    "address": "408 Holloway Ct NE",
+    "sale": 1270000,
+    "status": "Sold",
+    "lat": 38.9092545,
+    "lng": -77.2661669
+   }
+  ],
+  "listings": [
+   {
+    "address": "2836 Cedar Ln",
+    "status": "Active",
+    "list": 1275000,
+    "dom": 36,
+    "lat": 38.8749692,
+    "lng": -77.2466291
+   },
+   {
+    "address": "1107 Hillcrest Dr SW",
+    "status": "Active",
+    "list": 1150000,
+    "dom": 9,
+    "lat": 38.8856334,
+    "lng": -77.2554471
+   },
+   {
+    "address": "1843 Foxstone Dr",
+    "status": "Active",
+    "list": 1025000,
+    "dom": 43,
+    "lat": 38.9183893,
+    "lng": -77.2614179
+   },
+   {
+    "address": "8215 Bucknell Dr",
+    "status": "Active Under Contract",
+    "list": 1289900,
+    "dom": 13,
+    "lat": 38.8857886,
+    "lng": -77.2293763
+   },
+   {
+    "address": "2210 Loch Lomond Dr",
+    "status": "Pending",
+    "list": 1150000,
+    "dom": 4,
+    "lat": 38.9072692,
+    "lng": -77.2841708
+   },
+   {
+    "address": "508 Roberts Dr NW",
+    "status": "Pending",
+    "list": 1100000,
+    "dom": 11,
+    "lat": 38.9005414,
+    "lng": -77.2830421
+   },
+   {
+    "address": "511 Malcolm Rd NW",
+    "status": "Pending",
+    "list": 1300000,
+    "dom": 103,
+    "lat": 38.9020599,
+    "lng": -77.2781859
+   }
+  ]
+ }
 }

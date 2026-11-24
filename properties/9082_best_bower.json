@@ -11,9 +11,9 @@
  "listing_url": "9082BestBower.com",
  "include_tracker": true,
  "asset_dir": "assets/9082_Best_Bower",
- "hero_photo": "9082_Best_Bower_front.png",
+ "hero_photo": "9082_Best_Bower_front.jpg",
  "photos": [
-  "9082_Best_Bower_front.png"
+  "9082_Best_Bower_front.jpg"
  ],
  "agent": {
   "lookup": "Casey C Samson",
@@ -754,7 +754,7 @@
      113.4,
      [
       "Reagan National",
-      "DCA · 29 min"
+      "DCA \u00b7 29 min"
      ]
     ],
     [
@@ -768,12 +768,159 @@
      280.3,
      [
       "Dulles Intl",
-      "IAD · 24 min"
+      "IAD \u00b7 24 min"
      ]
     ]
    ]
   },
-  "deploy_to": "https://buybest.netlify.app"
+  "deploy_to": "https://buybest.netlify.app",
+  "lot": {
+   "pin": "0284 35 0009",
+   "area_sf": 14960,
+   "source": "Fairfax County GIS parcels (24 Nov 2026)",
+   "polygon": [
+    [
+     38.9251504,
+     -77.2595038
+    ],
+    [
+     38.9255765,
+     -77.2595011
+    ],
+    [
+     38.9256206,
+     -77.2593896
+    ],
+    [
+     38.9256095,
+     -77.2593752
+    ],
+    [
+     38.9254244,
+     -77.2591383
+    ],
+    [
+     38.9254201,
+     -77.2591328
+    ],
+    [
+     38.9251493,
+     -77.2591369
+    ],
+    [
+     38.9251494,
+     -77.2591527
+    ],
+    [
+     38.9251498,
+     -77.2591865
+    ],
+    [
+     38.9251501,
+     -77.2592364
+    ],
+    [
+     38.9251499,
+     -77.259287
+    ],
+    [
+     38.92515,
+     -77.2593728
+    ],
+    [
+     38.9251502,
+     -77.2594361
+    ]
+   ]
+  }
  },
- "band_color": "#000000"
+ "band_color": "#000000",
+ "market_map": {
+  "subject": [
+   38.925306,
+   -77.2593098
+  ],
+  "subject_dir": "left",
+  "subject_dir_solds": "left",
+  "solds": [
+   {
+    "address": "961 Nicholas Ct",
+    "sale": 2011116,
+    "status": "Sold",
+    "lat": 38.8968264,
+    "lng": -77.2464114
+   },
+   {
+    "address": "2628 Five Oaks",
+    "sale": 2024351,
+    "status": "Sold",
+    "lat": 38.8897451,
+    "lng": -77.2851138
+   },
+   {
+    "address": "9153 Riesley Ln",
+    "sale": 2050000,
+    "status": "Sold",
+    "lat": 38.9438059,
+    "lng": -77.2608141
+   },
+   {
+    "address": "8228 Westchester",
+    "sale": 2045000,
+    "status": "Sold",
+    "lat": 38.8953043,
+    "lng": -77.2302643
+   }
+  ],
+  "listings": [
+   {
+    "address": "513 John Marshall",
+    "status": "Active",
+    "list": 2250000,
+    "dom": 69,
+    "lat": 38.9146834,
+    "lng": -77.2670014
+   },
+   {
+    "address": "9311 Talisman",
+    "status": "Active",
+    "list": 2099900,
+    "dom": 95,
+    "lat": 38.9176479,
+    "lng": -77.2680437
+   },
+   {
+    "address": "1489 Broadstone",
+    "status": "Active",
+    "list": 2074000,
+    "dom": 118,
+    "lat": 38.9357379,
+    "lng": -77.249925
+   },
+   {
+    "address": "303 Talahi Rd S",
+    "status": "Active",
+    "list": 1985000,
+    "dom": 105,
+    "lat": 38.8998102,
+    "lng": -77.2535104
+   },
+   {
+    "address": "2053 George Washington",
+    "status": "Active",
+    "list": 1875000,
+    "dom": 18,
+    "lat": 38.9053239,
+    "lng": -77.2310281
+   },
+   {
+    "address": "8421 Falcone Pl",
+    "status": "Active Under Contract",
+    "list": 1850000,
+    "dom": 40,
+    "lat": 38.9028343,
+    "lng": -77.2375981
+   }
+  ]
+ }
 }
