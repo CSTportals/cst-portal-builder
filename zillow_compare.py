@@ -124,7 +124,7 @@ def error_callout(p):
         miss = round(cv * OFF_MKT / 100 / 1000) * 1000
         usd = (f'<div class="usd">On a ${round(cv, -4):,.0f} home, that is ${miss:,.0f} '
                f'too high or too low.</div>')
-    return ('<div class="zx"><div class="k">Before You List, Zillow Is Guessing</div>'
+    return ('<div class="zx"><div class="k">AI Can Not Price Your Home</div>'
             f'<div class="big">{OFF_MKT:.2f}%</div>'
             '<div class="sub">Zillow&rsquo;s own median Zestimate error for homes not on the market</div>'
             f'{usd}'
