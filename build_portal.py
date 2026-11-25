@@ -2631,6 +2631,8 @@ RM_BADGE_CSS = """
   .sch-row .sch{flex:1 1 160px;text-align:center;padding:2px 8px}
   .sch-row .sl{display:block;font:700 10.5px Georgia,serif;letter-spacing:.14em;text-transform:uppercase;color:#8A6A2E}
   .sch-row .sn{display:block;font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#1F2A44}
+  .sch-row .sr{display:block;font:600 12.5px Georgia,serif;color:#8A6A2E;margin-top:2px}
+  .sch-row .sch-src{flex:1 1 100%;text-align:center;font:italic 11px Georgia,serif;color:#71695A;margin-top:4px}
   .rm-subj-card{max-width:820px;margin:0 auto;background:#fff;border:1px solid var(--rule,#E4DCC8);border-radius:10px;padding:14px 18px;}
   .rm-subj-t{text-align:center;font:700 12px Georgia,serif;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep,#8A6A2E);margin-bottom:8px;}
   .rm-subj-row{display:flex;flex-wrap:wrap;justify-content:center;}

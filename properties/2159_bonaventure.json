@@ -513,7 +513,14 @@
    "Thoreau Middle School",
    "Madison High School"
   ],
-  "schools_source": "MLS (Bright): 2159 Bonaventure 2020 sale (Thoreau, Madison); 2144/2156/2160 Bonaventure (Louise Archer, Thoreau, Madison). FCPS: Thoreau feeds Madison HS."
+  "schools_source": "MLS (Bright): 2159 Bonaventure 2020 sale (Thoreau, Madison); 2144/2156/2160 Bonaventure (Louise Archer, Thoreau, Madison). FCPS: Thoreau feeds Madison HS.",
+  "school_ratings": {
+   "Louise Archer Elementary School": 10,
+   "Thoreau Middle School": 9,
+   "Madison High School": 9
+  },
+  "school_ratings_year": 2026,
+  "school_ratings_source": "greatschools.org school pages, overall rating updated 2026 (checked 25 Nov 2026)"
  },
  "inquiry_email": {
   "seller_names": "Zunera and Allen",

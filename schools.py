@@ -33,17 +33,33 @@ def schools_of(p):
     return out
 
 
+def ratings_of(p):
+    """Casey, 25 Nov 2026: GreatSchools ratings, from GreatSchools itself.
+    buyer_portal.school_ratings: {"<school name as listed>": 10, ...}."""
+    return (p.get("buyer_portal") or {}).get("school_ratings") or {}
+
+
 def row_html(p, cls="sch-row"):
     s = schools_of(p)
     if not s:
         return ""
-    cells = "".join(f'<div class="sch"><span class="sl">{lab}</span><span class="sn">{_short(n)}</span></div>'
+    r = ratings_of(p)
+    def _rt(n):
+        v = r.get(n) or r.get(_short(n))
+        return f'<span class="sr">GreatSchools {v}/10</span>' if v else ""
+    cells = "".join(f'<div class="sch"><span class="sl">{lab}</span><span class="sn">{_short(n)}</span>{_rt(n)}</div>'
                     for lab, n in s)
-    return f'<div class="{cls}">{cells}</div>'
+    src = ""
+    if r:
+        yr = (p.get("buyer_portal") or {}).get("school_ratings_year") or ""
+        src = f'<div class="sch-src">GreatSchools ratings{(" &middot; " + str(yr)) if yr else ""}</div>'
+    return f'<div class="{cls}">{cells}{src}</div>'
 
 
 CSS = (".sch-row{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 0;margin-top:10px;"
        "padding-top:10px;border-top:1px solid #E4DCC8}"
        ".sch-row .sch{flex:1 1 160px;text-align:center;padding:2px 8px}"
        ".sch-row .sl{display:block;font:700 10.5px Georgia,serif;letter-spacing:.14em;text-transform:uppercase;color:#8A6A2E}"
-       ".sch-row .sn{display:block;font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#1F2A44}")
+       ".sch-row .sn{display:block;font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#1F2A44}"
+       ".sch-row .sr{display:block;font:600 12.5px Georgia,serif;color:#8A6A2E;margin-top:2px}"
+       ".sch-row .sch-src{flex:1 1 100%;text-align:center;font:italic 11px Georgia,serif;color:#71695A;margin-top:4px}")
