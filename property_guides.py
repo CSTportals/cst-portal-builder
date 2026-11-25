@@ -92,7 +92,9 @@ def _page(title, lede, sections, brand, links=None, back=None):
     to gets an id, and a "Back to <portal>" link to that section of the
     portal. back = (label, href placeholder) -- the href is filled per site."""
     cards = ""
-    for k, (png, t, sub, ps) in enumerate([s for s in sections if s[0]], 1):
+    for k, sec in enumerate([s for s in sections if s[0]], 1):
+        png, t, sub, ps = sec[:4]
+        extra = sec[4] if len(sec) > 4 else ""
         if isinstance(png, tuple) and png[0] == "HTML":
             tg = _target(links, t) if back else None
             tg = tg[7:] if tg and tg.startswith("anchor:") else tg
@@ -110,7 +112,9 @@ def _page(title, lede, sections, brand, links=None, back=None):
               (f'<a class="gback" href="__BACK__">&larr; Back to {back}</a>' if back else ""))
         cards += (f'<section class="g"{sid}><div class="n">{k}</div><div class="txt"><h2>{t}</h2>'
                   f'<p class="sub">{sub}</p>' + "".join(f"<p>{x}</p>" for x in ps) + bl + "</div>"
-                  f'<figure><img src="data:image/jpeg;base64,{_emb(png)}" alt="{re.sub("<[^>]+>", "", t)}"></figure></section>\n')
+                  f'<figure><img src="data:image/jpeg;base64,{_emb(png)}" alt="{re.sub("<[^>]+>", "", t)}"></figure>'
+                  + (f'<div class="gx" style="grid-column:1/-1;flex-basis:100%;width:100%;">{extra}</div>' if extra else "")
+                  + '</section>\n')
     top = f'<br><a class="gtop" href="__BACK__">&larr; Back to {back}</a>' if back else ""
     return (_head(f"{title} &mdash; {brand}") + BACK_CSS + "</style></head><body>\n"
             f'<header><div class="k">{brand}</div><h1>{title}</h1><p>{lede}</p>{top}</header>\n'
@@ -133,7 +137,9 @@ ROADMAP_LINKS = {
 }
 def _rm_links(p):
     if p.get("strategy_track_record"):
-        return {**ROADMAP_LINKS, "Strategy Track Record": "css:trk"}   # after Pricing Strategy's link
+        # the track record lives in the CST Pricing Strategy guide section,
+        # retitled "CST Strategy and Track Record"
+        return {"CST Strategy and Track Record": "CST Pricing Strategy", **ROADMAP_LINKS}
     return ROADMAP_LINKS
 
 
@@ -427,6 +433,10 @@ def roadmap_guide(p, s_dir):
     # top of roadmap, then under it the track record you were using at the
     # bottom of the emails showing homes selling over list" -- "just show on
     # Sample". Opt in with "strategy_track_record": true.
+    # Casey, 25 Nov 2026: CST Pricing Strategy and the Strategy Track Record
+    # are one guide section -- the strategy, then right under it, same
+    # section, "CST Strategy Track Record" (track record comparison, then CST
+    # homes sold over list). One guide link on the Roadmap.
     if p.get("strategy_track_record") and sh.get("_trk"):
         try:
             from build_portal import over_list_table_html as _olt
@@ -437,12 +447,17 @@ def roadmap_guide(p, s_dir):
         _img = (f'<img src="data:image/png;base64,{_b64.b64encode(sh["_trk"]).decode()}" '
                 'alt="CST track record vs the market" style="width:100%;max-width:980px;display:block;'
                 'margin:10px auto 18px;border:1px solid #E4DCC8;border-radius:10px;">')
-        secs.insert(1, (("HTML", _img + '<div style="max-width:820px;margin:0 auto;">' + _tbl + "</div>"),
-                        "Strategy Track Record", "The strategy works &mdash; here is the proof",
-                        ["The top of your Roadmap compares The Casey Samson Team&rsquo;s verified MLS Bright "
-                         "results with the rest of your market over the last 90 days.",
-                         "Under it: CST homes that sold over list price. The Pricing Strategy in your Roadmap "
-                         "is the same one that produced every sale on this list."]))
+        _x = ('<h3 style="margin:28px 0 4px;text-align:center;font:700 24px \'Playfair Display\',Georgia,serif;'
+              'color:#1F2A44;border-top:1px solid #E4DCC8;padding-top:24px;">CST Strategy Track Record</h3>'
+              '<p style="text-align:center;margin:0 0 6px;color:#5A5446;">The strategy works &mdash; '
+              'here is the proof: CST&rsquo;s verified MLS Bright results against the rest of the market, '
+              'then CST homes that sold over list price.</p>'
+              + _img + '<div style="max-width:820px;margin:0 auto;">' + _tbl + "</div>")
+        for _k, _sec in enumerate(secs):
+            if _sec[0] and _sec[1] == "CST Pricing Strategy":
+                # Casey, 25 Nov 2026: "Title should be CST Strategy and Track record"
+                secs[_k] = (_sec[0], "CST Strategy and Track Record") + tuple(_sec[2:4]) + (_x,)
+                break
     rec = notes.get("recovery")
     if rec:
         secs = _recovery_roadmap_secs(p, page, secs, rec)
@@ -982,6 +997,11 @@ def build(p, which=("roadmap", "mss", "moveup", "buyer")):
         (s_dir / f"{pre}_Roadmap_Guide.html").write_text(h.replace("__BACK__", rm.name), encoding="utf-8")
         made.append("roadmap")
         inject_links(rm, f"{pre}_Roadmap_Guide.html", _rm_links(p))
+        if p.get("strategy_track_record"):
+            _t = rm.read_text(encoding="utf-8").replace(
+                "Guide to Understanding CST Pricing Strategy &rarr;",
+                "Guide to Understanding CST Strategy and Track Record &rarr;")
+            rm.write_text(_t, encoding="utf-8")
     if "roadmap" in which or "buyer" in which:
         try:
             buyer_preview_to_roadmap(p, s_dir, b_dir)
