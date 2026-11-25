@@ -2321,6 +2321,8 @@ def build(p, out):
     _ba = bool(b.get("buyer_analysis"))
     press = "" if _ba else city_press_section(p, b)
     prod = production_section(p, b)
+    import zillow_compare as _zc
+    prod = _zc.buyer_section(p, b) + prod
 
     # ---- documents ------------------------------------------------------
     docs = ""

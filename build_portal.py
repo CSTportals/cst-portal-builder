@@ -5490,6 +5490,8 @@ def build_roadmap(p, s, out):
     # Casey, 25 Nov 2026: "Copy maps (dimensions, plats etc) and put them on
     # Roadmap under Moving the Needle" -- the Buyer Portal's Lot section
     # (satellite, street names, house location plat, lot dimensions).
+    import zillow_compare as _zc
+    _zc_seller = _zc.seller_section(p)
     rm_lot = ""
     _bpl = (p.get("buyer_portal") or {})
     if (_bpl.get("lot") or {}).get("polygon"):
@@ -6075,7 +6077,7 @@ def build_roadmap(p, s, out):
 {comp_at_end}
 <!--SEC:comp-end-->
 {_rm_bp_section}
-
+{_zc_seller}
 
 <section>
   <div class="wrap team-section">
