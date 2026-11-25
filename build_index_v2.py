@@ -791,11 +791,17 @@ def build_index_v2(p, s, out, filename="index.html"):
     # CST Roadmap vs Zillow vs Compass PDF (make_comparison_pdf.py) is copied
     # into the site and linked under the guides, on homes with zillow_compare.
     cmp_html = ""
+    # The PDF goes into every seller site: the seller email links to it.
+    try:
+        import shutil, make_comparison_pdf as _mcp
+        if not getattr(_mcp, "_built", False):
+            _mcp.build()   # fresh each run, so the PDF matches zillow_compare.py
+            _mcp._built = True
+        shutil.copy(_mcp.OUT, out / "CST_Roadmap_vs_Zillow_vs_Compass.pdf")
+    except Exception as e:
+        print("  comparison PDF not copied:", e)
     if p.get("zillow_compare"):
         try:
-            import os, shutil, make_comparison_pdf as _mcp
-            _mcp.build()   # always fresh, so the PDF matches zillow_compare.py
-            shutil.copy(_mcp.OUT, out / "CST_Roadmap_vs_Zillow_vs_Compass.pdf")
             cmp_html = ('<section class="cmp"><div class="wrap">'
                         '<a class="cmp-box" href="CST_Roadmap_vs_Zillow_vs_Compass.pdf" target="_blank" rel="noopener">'
                         '<span>PDF &middot; Comparison</span>CST Roadmap vs Zillow vs Compass'

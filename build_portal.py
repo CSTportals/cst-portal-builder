@@ -8679,7 +8679,7 @@ that may not show up on appraisers&rsquo; searches and analysis of market condit
 REALTOR&reg; &middot; Samson Properties<br>
 {ag.get("phone") or "703-508-2535"}</p>
 
-{_zc.email_html(p)}
+{_zc.email_html(p, root)}
 </body></html>
 """
     # One line per paragraph, so the plain-text copy does not wrap mid-sentence.

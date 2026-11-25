@@ -108,6 +108,7 @@ def _table(rows, us="CST"):
             f'<tbody>{body}</tbody></table></div><p class="zc-foot">{FOOT}</p>')
 
 
+PRINT_PDF = "CST_Roadmap_vs_Zillow_vs_Compass.pdf"   # copied into every seller site
 OFF_MKT = 7.01   # zillow.com/zestimate, nationwide median error, off-market homes
 ON_MKT = 1.83    # same page, on-market homes
 
@@ -173,7 +174,12 @@ def seller_section(p):
     return (f'<style>{CSS}</style><section><div class="wrap">'
             '<h2 class="section-title">CST Roadmap vs Zillow vs Compass</h2>'
             '<p class="needle-lede" style="text-align:center">What sellers get from us, from Zillow, and from Compass.</p>'
-            f'{error_callout(p)}{_table(_applies(SELLER_ROWS, p), "CST Roadmap")}</div></section>\n')
+            f'{error_callout(p)}{_table(_applies(SELLER_ROWS, p), "CST Roadmap")}'
+            # Casey, 25 Nov 2026: "add link to the bottom so people can print Comparison"
+            f'<p style="text-align:center;margin:14px 0 0;"><a href="{PRINT_PDF}" target="_blank" rel="noopener" '
+            'style="font:700 15px Georgia,serif;color:#1F2A44;text-decoration:none;border-bottom:2px solid #B8902F;'
+            'padding-bottom:2px;">Print the Comparison (PDF) &rarr;</a></p>'
+            '</div></section>\n')
 
 
 def buyer_section(p, b):
@@ -185,7 +191,7 @@ def buyer_section(p, b):
             f'{_table(_applies(BUYER_ROWS, p, buyer=True), "CST Buyer Portal")}</div></section>\n')
 
 
-def email_html(p):
+def email_html(p, root=None):
     """Casey, 25 Nov 2026: the potential seller email ends with "CST vs Zillow
     vs Compass at bottom instead of track record". Inline styles only, so it
     survives mail clients; the plain-text copy reads it row by row."""
@@ -215,4 +221,5 @@ def email_html(p):
             '<table style="border-collapse:collapse;width:100%;font-size:14px;font-family:inherit;">'
             f"<tr><th {th0}>What You Get</th><th {th}>CST Roadmap</th><th {th}>Zillow</th><th {th}>Compass</th></tr>"
             f"{body}</table>\n"
-            f'<p style="font-size:11px;color:#71695A;">{FOOT}</p>\n')
+            f'<p style="font-size:11px;color:#71695A;">{FOOT}</p>\n'
+            + (f'<p><a href="{root.rstrip("/")}/{PRINT_PDF}">Print the Comparison (PDF)</a></p>\n' if root else ""))
