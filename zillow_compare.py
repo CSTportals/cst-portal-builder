@@ -19,7 +19,13 @@ list is more persuasive than a rigged one.
 SELLER_ROWS = [
     # Casey, 25 Nov 2026: "add Verified Track record of Strategy" -- first item.
     ("Verified Track Record of Strategy", False, False),
-    ("Listed on Zillow and MLS", True, True),
+    # Casey, 25 Nov 2026: split -- Zillow is the rub with Compass. Zillow
+    # will not display listings first hidden in a private network (a Compass
+    # Private Exclusive), so the row is worded "from day one" (checked
+    # 25 Nov 2026: Compass dropped its suit in March 2026; Zillow's standards
+    # still exclude listings previously hidden from the public).
+    ("On Zillow from day one", True, False),
+    ("Listed on the MLS", True, True),
     ("Pricing Engine, not agent opinions", False, False),
     # Casey, 25 Nov 2026: replaces "Customary and Premium Values" and
     # "Predictive Analysis sets the price". The 4th value is CST's own box:
