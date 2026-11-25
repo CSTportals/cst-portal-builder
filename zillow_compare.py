@@ -21,7 +21,11 @@ SELLER_ROWS = [
     ("Pricing Engine, not agent opinions", False, False),
     ("Customary and Premium Values", False, False),
     ("Price changes set in advance", False, False),
-    ("Preview and Coming Soon test", False, True),
+    # Casey, 25 Nov 2026: split the test row. Our Preview goes to the
+    # entire market (Zillow shows it too); a Compass Private Exclusive is
+    # held inside Compass's own network. Coming Soon: all three.
+    ("Preview to Entire Market", True, False),
+    ("Coming Soon", True, True),
     ("Moving the Needle improvement plan", False, True),
     ("Market Snapshot for your segment", False, False),
     ("Competing homes mapped and measured", False, False),
@@ -47,7 +51,7 @@ FOOT = ("Zillow: a standard listing page and Zestimate. Compass: its 3-Phased "
 CSS = """
 .zc{max-width:640px;margin:22px auto 0;background:#fff;border:1px solid #E5DDC9;border-radius:10px;overflow:hidden}
 .zc table{width:100%;min-width:0!important;border-collapse:collapse;font-family:Georgia,serif;table-layout:auto}
-.zc th{background:#1F2A44;color:#fff;font:700 12px Georgia,serif;letter-spacing:.14em;text-transform:uppercase;padding:12px 10px}
+.zc th{line-height:1.3;background:#1F2A44;color:#fff;font:700 12px Georgia,serif;letter-spacing:.14em;text-transform:uppercase;padding:12px 10px}
 .zc th:first-child{text-align:left;padding-left:20px}
 .zc th.cst{color:#E9C77B}
 .zc td{padding:11px 10px;border-top:1px solid #EFE9DA;font-size:15.5px;color:#1F2A44}
@@ -67,14 +71,14 @@ CSS = """
 """
 
 
-def _table(rows):
+def _table(rows, us="CST"):
     y = '<span class="y">&#10003;</span>'
     n = '<span class="n">&ndash;</span>'
     body = "".join(f'<tr><td>{t}</td><td class="c">{y}</td><td class="c">{y if z else n}</td>'
                    f'<td class="c">{y if c else n}</td></tr>'
                    for t, z, c in rows)
     return ('<div class="zc"><table><thead><tr><th>What You Get</th>'
-            '<th class="cst">CST</th><th>Zillow</th><th>Compass</th></tr></thead>'
+            f'<th class="cst">{us}</th><th>Zillow</th><th>Compass</th></tr></thead>'
             f'<tbody>{body}</tbody></table></div><p class="zc-foot">{FOOT}</p>')
 
 
@@ -119,15 +123,15 @@ def seller_section(p):
     if not enabled(p):
         return ""
     return (f'<style>{CSS}</style><section><div class="wrap">'
-            '<h2 class="section-title">CST vs Zillow vs Compass</h2>'
+            '<h2 class="section-title">CST Roadmap vs Zillow vs Compass</h2>'
             '<p class="needle-lede" style="text-align:center">What sellers get from us, from Zillow, and from Compass.</p>'
-            f'{error_callout(p)}{_table(SELLER_ROWS)}</div></section>\n')
+            f'{error_callout(p)}{_table(SELLER_ROWS, "CST Roadmap")}</div></section>\n')
 
 
 def buyer_section(p, b):
     if not enabled(p, b):
         return ""
     return (f'<style>{CSS}</style><section><div class="wrap">'
-            '<h2 class="st">CST vs Zillow vs Compass</h2>'
+            '<h2 class="st">CST Buyer Portal vs Zillow vs Compass</h2>'
             '<p class="ss">What buyers get from this portal, from Zillow, and from Compass.</p>'
-            f'{_table(BUYER_ROWS)}</div></section>\n')
+            f'{_table(BUYER_ROWS, "CST Buyer Portal")}</div></section>\n')
