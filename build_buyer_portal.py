@@ -1176,7 +1176,7 @@ def lot_map(b, addr):
             sides.append([(a[0] + c[0]) / 2, (a[1] + c[1]) / 2, ft])
     area = lot.get("area_sf")
     note = (f'County parcel {lot["pin"]}' if lot.get("pin") else "County parcel") + (
-        f', about {area:,} square feet' if area else "") + (
+        f', about {int(round(float(area))):,} square feet' if area else "") + (
         ". Lot lines and dimensions are approximate, from the county parcel map; "
         "the recorded plat is the official boundary.")
     D = _j.dumps({"lot": poly, "sides": sides, "label": addr})

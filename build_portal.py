@@ -5481,6 +5481,29 @@ def build_roadmap(p, s, out):
             _facts.append((money(_vv0["customary"]), "Customary Value"))
             _facts.append((money(_vv0.get("premium_top") or _vv0["premium"]), "Premium Value"))
     rm_facts = ""
+    # Casey, 25 Nov 2026: "Copy maps (dimensions, plats etc) and put them on
+    # Roadmap under Moving the Needle" -- the Buyer Portal's Lot section
+    # (satellite, street names, house location plat, lot dimensions).
+    rm_lot = ""
+    _bpl = (p.get("buyer_portal") or {})
+    if (_bpl.get("lot") or {}).get("polygon"):
+        try:
+            import build_buyer_portal as _bbp
+            rm_lot = _bbp.lot_map(_bpl, _bpl.get("display_address") or p["address"])
+            # Roadmap headings: same title style as Moving the Needle.
+            rm_lot = (rm_lot.replace('<h2 class="st">', '<h2 class="section-title">', 1)
+                      .replace('<p class="ss">', '<p class="needle-lede">', 1))
+            _tpl = HERE / "templates"
+            for _lf in ("leaflet.js", "leaflet.css"):
+                if (_tpl / _lf).exists() and not (out / _lf).exists():
+                    shutil.copy(_tpl / _lf, out / _lf)
+            for _pf in [x for x in (_bpl["lot"].get("plat"), _bpl["lot"].get("plat_view")) if x]:
+                for _d in (_bpl.get("asset_dir"), p.get("asset_dir")):
+                    if _d and (HERE / _d / _pf).exists():
+                        shutil.copy(HERE / _d / _pf, out / _pf)
+                        break
+        except Exception as _e:
+            note(f"Roadmap: lot maps skipped -- {_e}")
     rm_subject = ""
     if True:
         # Casey, 24 Nov 2026: the navy band carries the three steps from the
@@ -6024,6 +6047,7 @@ def build_roadmap(p, s, out):
     recovered.</p>
   </div>
 </section>
+{rm_lot}
 {comp_in_bg}
 {pricing_section}
 
