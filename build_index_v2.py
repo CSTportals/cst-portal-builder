@@ -787,6 +787,21 @@ def build_index_v2(p, s, out, filename="index.html"):
         '<div class="guide-row">' + "".join(
             f'<a class="guide-box" href="{h}" target="_blank" rel="noopener"><span>Guide</span>{t}</a>'
             for h, t in _g) + "</div></div></section>\n")
+    # Casey, 25 Nov 2026: "Add Comparison pdf to seller portal". The
+    # CST Roadmap vs Zillow vs Compass PDF (make_comparison_pdf.py) is copied
+    # into the site and linked under the guides, on homes with zillow_compare.
+    cmp_html = ""
+    if p.get("zillow_compare"):
+        try:
+            import os, shutil, make_comparison_pdf as _mcp
+            _mcp.build()   # always fresh, so the PDF matches zillow_compare.py
+            shutil.copy(_mcp.OUT, out / "CST_Roadmap_vs_Zillow_vs_Compass.pdf")
+            cmp_html = ('<section class="cmp"><div class="wrap">'
+                        '<a class="cmp-box" href="CST_Roadmap_vs_Zillow_vs_Compass.pdf" target="_blank" rel="noopener">'
+                        '<span>PDF &middot; Comparison</span>CST Roadmap vs Zillow vs Compass'
+                        '<em>AI Can Not Price Your Home &rarr;</em></a></div></section>\n')
+        except Exception as e:
+            print("  comparison PDF not added:", e)
     html = f"""<!-- SELLER PORTAL (private) — {addr}. Deploy to {p.get("portal_url", "(portal_url not set)")} -->
 <!DOCTYPE html>
 <html lang="en">
@@ -806,6 +821,13 @@ def build_index_v2(p, s, out, filename="index.html"):
   text-transform:uppercase;color:#C9D2E0;margin-bottom:6px;}}
 .guide-box:hover{{transform:translateY(-2px);background:#26355A;}}
 @media (max-width:760px){{.guide-row{{grid-template-columns:repeat(2,1fr);}}}}
+.cmp{{padding:16px 0 4px;}}
+.cmp-box{{display:block;max-width:640px;margin:0 auto;background:#fff;border:2px solid #C9A961;border-radius:10px;
+  text-align:center;text-decoration:none;color:#1F2A44;padding:18px 16px;font:700 21px 'Playfair Display',Georgia,serif;
+  box-shadow:0 6px 16px rgba(31,42,68,.10);transition:transform .15s;}}
+.cmp-box span{{display:block;font:700 10.5px 'Lora',Georgia,serif;letter-spacing:.22em;text-transform:uppercase;color:#8A6A2E;margin-bottom:6px;}}
+.cmp-box em{{display:block;font:italic 600 14px 'Lora',Georgia,serif;color:#B3261E;margin-top:6px;}}
+.cmp-box:hover{{transform:translateY(-2px);}}
 </style>
 </head>
 <body>
@@ -824,7 +846,7 @@ def build_index_v2(p, s, out, filename="index.html"):
 </div>
 
 {band}{facts_html}
-{guides_html}
+{guides_html}{cmp_html}
 <section>
   <div class="wrap">
     {"".join(main)}
