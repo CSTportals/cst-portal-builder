@@ -77,7 +77,18 @@
     1776866,
     2256104
    ]
-  ]
+  ],
+  "dom": {
+   "701 Meadow Ln SW": 4,
+   "204 Battle St SW": 4,
+   "913 Hillcrest Dr SW": 11
+  },
+  "orig_list": {
+   "701 Meadow Ln SW": 2345000,
+   "204 Battle St SW": 2349000,
+   "913 Hillcrest Dr SW": 2325000
+  },
+  "dom_source": "25 Nov 2026 web listing records: 701 Meadow (Homes.com 4 DOM, pending at $2,345,000 per RE/MAX), 204 Battle (Homes.com 4 DOM, listed $2,349,000), 913 Hillcrest (listed 3/29/2026 at $2,325,000, pending at 11 DOM). 121 Tapawingo: listed $2,250,000, DOM not found."
  },
  "market": {
   "name": "Vienna Luxury Market",
@@ -284,21 +295,30 @@
     "sale": 2433625,
     "status": "Sold",
     "lat": 38.8888802,
-    "lng": -77.2689394
+    "lng": -77.2689394,
+    "dom": 4,
+    "orig_list": 2345000,
+    "list": 2345000
    },
    {
     "address": "204 Battle St SW",
     "sale": 2349000,
     "status": "Sold",
     "lat": 38.8958897,
-    "lng": -77.2627631
+    "lng": -77.2627631,
+    "dom": 4,
+    "orig_list": 2349000,
+    "list": 2349000
    },
    {
     "address": "913 Hillcrest Dr SW",
     "sale": 2325000,
     "status": "Sold",
     "lat": 38.8891091,
-    "lng": -77.2599581
+    "lng": -77.2599581,
+    "dom": 11,
+    "orig_list": 2325000,
+    "list": 2325000
    },
    {
     "address": "121 Tapawingo Rd SW",
