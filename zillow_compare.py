@@ -17,6 +17,8 @@ list is more persuasive than a rigged one.
 # choosing the services -- both get Compass checks. Its pricing is "validated"
 # by agent feedback across its network, not a pricing engine.
 SELLER_ROWS = [
+    # Casey, 25 Nov 2026: "add Verified Track record of Strategy" -- first item.
+    ("Verified Track Record of Strategy", False, False),
     ("Listed on Zillow and MLS", True, True),
     ("Pricing Engine, not agent opinions", False, False),
     # Casey, 25 Nov 2026: replaces "Customary and Premium Values" and

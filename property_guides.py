@@ -427,8 +427,6 @@ def roadmap_guide(p, s_dir):
         try:
             from build_portal import over_list_table_html as _olt
             _tbl = _olt(p=p)
-            # Casey, 25 Nov 2026: "add Verified Track record of Strategy" -- "on top of list".
-            _tbl = re.sub(r"(<h3[^>]*>)CST Track Record[^<]*(</h3>)", r"\1Verified Track Record of Strategy\2", _tbl, count=1)
         except Exception:
             _tbl = ""
         import base64 as _b64
