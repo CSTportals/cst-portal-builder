@@ -1,0 +1,516 @@
+{
+ "address": "21054 View Glass Ter",
+ "city": "Sterling",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "20164",
+ "county": "Loudoun County",
+ "prefix": "21054_View_Glass",
+ "report_date": "Wednesday, November 25, 2026",
+ "listing_url": "21054ViewGlass.com",
+ "portal_url": "https://21054viewglass.netlify.app",
+ "include_tracker": true,
+ "listing_status": "new",
+ "property_type": "townhome",
+ "asset_dir": "assets/21054_View_Glass",
+ "hero_photo": "21054_View_Glass_front.jpg",
+ "photos": [
+  "21054_View_Glass_front.jpg"
+ ],
+ "subject": {
+  "built": 1991,
+  "sf": 1618,
+  "lot": 3902,
+  "assessment": 578000
+ },
+ "values": {
+  "dated": 527130,
+  "customary": 585700,
+  "customary_list": null,
+  "premium": 632556,
+  "upgrades": 0,
+  "preview_override": 550000,
+  "coming_soon_override": 525000,
+  "fallback_override": 495000,
+  "deep_override": 450000,
+  "worksheet_note": "25 Nov 2026 worksheet (town home): Functional Issues $60,000; Preview $550,000, Coming Soon $525,000, Fall Back $495,000, 0 Showings $450,000. Comps: Age & Size 5 sales, Price Range 4. 46784 Manchester Ter (closed, list $550,000, Customary $602,047) shown on the worksheet below the comps, not used as a comp. 46183 Cecil Ter lot obscured by the Draft watermark."
+ },
+ "engine": {
+  "10": "Functional issues: the CST Pricing Team identified $60,000 in functional issues, reflected in the price strategy below Customary Value.",
+  "10_firing": true
+ },
+ "comps": {
+  "rows": [
+   [
+    "46790 Manchester Ter",
+    1999,
+    1788,
+    2178,
+    630490,
+    668000
+   ],
+   [
+    "46676 Paragon Ter",
+    1989,
+    1692,
+    1742,
+    563420,
+    590000
+   ],
+   [
+    "46606 Silhouette Sq",
+    1992,
+    1684,
+    1742,
+    554630,
+    565000
+   ],
+   [
+    "46362 Pryor Sq",
+    2000,
+    1734,
+    0,
+    482210,
+    550000
+   ],
+   [
+    "46183 Cecil Ter",
+    2001,
+    1800,
+    0,
+    523120,
+    524000
+   ]
+  ],
+  "dom": {
+   "46790 Manchester Ter": 5,
+   "46676 Paragon Ter": 6,
+   "46606 Silhouette Sq": 2,
+   "46362 Pryor Sq": 18,
+   "46183 Cecil Ter": 24
+  },
+  "list": {
+   "46790 Manchester Ter": 665000,
+   "46676 Paragon Ter": 610000,
+   "46606 Silhouette Sq": 575000,
+   "46362 Pryor Sq": 550000,
+   "46183 Cecil Ter": 529990
+  },
+  "orig_list": {
+   "46790 Manchester Ter": 665000,
+   "46676 Paragon Ter": 610000,
+   "46606 Silhouette Sq": 575000,
+   "46362 Pryor Sq": 550000,
+   "46183 Cecil Ter": 529990
+  },
+  "customary": {
+   "46790 Manchester Ter": 623130,
+   "46676 Paragon Ter": 554030,
+   "46606 Silhouette Sq": 557172,
+   "46362 Pryor Sq": 544697,
+   "46183 Cecil Ter": 573144
+  },
+  "summary": [
+   [
+    "Age &amp; Size &mdash; 5 sales",
+    1996,
+    1722,
+    1307,
+    544862,
+    551800
+   ],
+   [
+    "Price Range &mdash; 4 sales",
+    1996,
+    1728,
+    1198,
+    530845,
+    557250
+   ]
+  ],
+  "summary_ppsf": {
+   "Age &amp; Size &mdash; 5 sales": {
+    "ppsf": 355
+   },
+   "Price Range &mdash; 4 sales": {
+    "ppsf": 369
+   }
+  },
+  "subject_value": 585700
+ },
+ "market": {
+  "name": "Sterling Family Town Home Market",
+  "slug": "TH_Sterling_Family_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "20933 Sandstone Sq",
+   "dom": 136,
+   "built": 1990,
+   "sf": 1932,
+   "lot": 1742,
+   "assessment": 626980,
+   "list": 654990
+  },
+  {
+   "status": "Active",
+   "address": "14 Simeon Ln",
+   "dom": 101,
+   "built": 1974,
+   "sf": 1540,
+   "lot": 3049,
+   "assessment": 469210,
+   "list": 505000
+  },
+  {
+   "status": "Active",
+   "address": "20591 Banbury Sq",
+   "dom": 20,
+   "built": 1994,
+   "sf": 1636,
+   "lot": 1742,
+   "assessment": 602020,
+   "list": 617990
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "46571 Riverwood Ter",
+   "dom": 21,
+   "built": 1993,
+   "sf": 1904,
+   "lot": 1742,
+   "assessment": 580940,
+   "list": 600000
+  },
+  {
+   "status": "Temp Off",
+   "address": "20864 Cosworth Ter",
+   "dom": 80,
+   "built": 2000,
+   "sf": 1800,
+   "lot": 1307,
+   "assessment": 518300,
+   "list": 550000
+  }
+ ],
+ "model_unsold": [
+  {
+   "status": "EXP",
+   "address": "14 Simeon Ln",
+   "dom": 101,
+   "list": 510000
+  },
+  {
+   "status": "EXP",
+   "address": "46601 Carriage Ct",
+   "dom": 69,
+   "list": 579999
+  },
+  {
+   "status": "CNL",
+   "address": "20933 Sandstone Sq",
+   "dom": 136,
+   "list": 659900
+  }
+ ],
+ "notes": [],
+ "agent": {
+  "lookup": "Casey Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "casey@caseysamson.com"
+ },
+ "zillow_compare": true,
+ "schools": {
+  "elementary": "Sugarland Elementary School",
+  "middle": "Seneca Ridge Middle School",
+  "high": "Dominion High School"
+ },
+ "schools_source": "MLS school fields on neighboring 21056 and 21060 View Glass Ter (Loudoun County Public Schools)",
+ "school_ratings": {
+  "Sugarland Elementary School": 3,
+  "Seneca Ridge Middle School": 5,
+  "Dominion High School": 6
+ },
+ "school_ratings_year": 2026,
+ "school_ratings_source": "greatschools.org school pages (checked 25 Nov 2026)",
+ "market_map": {
+  "subject": [
+   39.0329826,
+   -77.3859623
+  ],
+  "subject_dir": "left",
+  "subject_dir_solds": "right",
+  "solds": [
+   {
+    "address": "46790 Manchester Ter",
+    "sale": 668000,
+    "list": 665000,
+    "orig_list": 665000,
+    "dom": 5,
+    "status": "Sold",
+    "lat": 39.04676,
+    "lng": -77.3840012
+   },
+   {
+    "address": "46676 Paragon Ter",
+    "sale": 590000,
+    "list": 610000,
+    "orig_list": 610000,
+    "dom": 6,
+    "status": "Sold",
+    "lat": 39.032039,
+    "lng": -77.3847392
+   },
+   {
+    "address": "46606 Silhouette Sq",
+    "sale": 565000,
+    "list": 575000,
+    "orig_list": 575000,
+    "dom": 2,
+    "status": "Sold",
+    "lat": 39.0329945,
+    "lng": -77.3868189
+   },
+   {
+    "address": "46362 Pryor Sq",
+    "sale": 550000,
+    "list": 550000,
+    "orig_list": 550000,
+    "dom": 18,
+    "status": "Sold",
+    "lat": 39.029945,
+    "lng": -77.395351
+   },
+   {
+    "address": "46183 Cecil Ter",
+    "sale": 524000,
+    "list": 529990,
+    "orig_list": 529990,
+    "dom": 24,
+    "status": "Sold",
+    "lat": 39.037595,
+    "lng": -77.401673
+   }
+  ],
+  "listings": [
+   {
+    "address": "20933 Sandstone Sq",
+    "status": "Active",
+    "list": 654990,
+    "dom": 136,
+    "customary": 602638,
+    "lat": 39.036381,
+    "lng": -77.3953676
+   },
+   {
+    "address": "14 Simeon Ln",
+    "status": "Active",
+    "list": 505000,
+    "dom": 101,
+    "customary": 453953,
+    "lat": 39.0378415,
+    "lng": -77.3739547
+   },
+   {
+    "address": "20591 Banbury Sq",
+    "status": "Active",
+    "list": 617990,
+    "dom": 20,
+    "customary": 584152,
+    "lat": 39.0456186,
+    "lng": -77.3824214
+   },
+   {
+    "address": "46571 Riverwood Ter",
+    "status": "Active Under Contract",
+    "list": 600000,
+    "dom": 21,
+    "customary": 585979,
+    "lat": 39.0348249,
+    "lng": -77.3882141
+   },
+   {
+    "address": "20864 Cosworth Ter",
+    "status": "Temp Off",
+    "list": 550000,
+    "dom": 80,
+    "customary": 567784,
+    "lat": 39.038248,
+    "lng": -77.401383
+   }
+  ]
+ },
+ "buyer_portal": {
+  "live": true,
+  "display_address": "21054 View Glass Ter",
+  "asset_dir": "assets/21054_View_Glass/buyer",
+  "hero_photo": "21054_View_Glass_front.jpg",
+  "pricing_pdf": "21054_View_Glass_Buyer_Report.pdf",
+  "facts": [
+   [
+    "1991",
+    "Year built"
+   ],
+   [
+    "1,618",
+    "Above grade SF"
+   ],
+   [
+    "2-car",
+    "Garage"
+   ],
+   [
+    "Sterling",
+    "Loudoun County"
+   ]
+  ],
+  "url": "https://buyviewglass.netlify.app",
+  "deploy_to": "https://buyviewglass.netlify.app",
+  "list_price": 550000,
+  "status_line": "Coming Soon",
+  "contacts": {
+   "names": "Casey Samson",
+   "team": "The Casey Samson Team &middot; Samson Properties",
+   "lines": [
+    [
+     "Casey Samson",
+     "703-508-2535",
+     "Casey@caseysamson.com"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Sterling, with Potomac Run Plaza and Claude Moore Park minutes away, and Dulles Town Center, One Loudoun and Dulles Airport a short drive. The arrows point to everything past the edge of the map.",
+   "center": {
+    "lat": 39.0329826,
+    "lng": -77.3859623,
+    "label": "21054 View Glass Ter"
+   },
+   "pins": [
+    {
+     "name": "Potomac Run Plaza",
+     "sub": "Target, Total Wine, dining",
+     "lat": 39.0263092,
+     "lng": -77.3992423
+    },
+    {
+     "name": "Claude Moore Park",
+     "sub": "Trails and ponds",
+     "lat": 39.0197255,
+     "lng": -77.4063206
+    }
+   ],
+   "arrows": [
+    [
+     268.8,
+     [
+      "Dulles Town Center",
+      "Shopping &middot; 6 min"
+     ]
+    ],
+    [
+     289.6,
+     [
+      "One Loudoun",
+      "Dining and shops &middot; 9 min"
+     ]
+    ],
+    [
+     214.7,
+     [
+      "Dulles Airport",
+      "IAD &middot; 15 min"
+     ]
+    ],
+    [
+     18.1,
+     [
+      "Algonkian Regional Park",
+      "Potomac River &middot; 6 min"
+     ]
+    ],
+    [
+     165.6,
+     [
+      "Reston Town Center",
+      "Dining and shops &middot; 12 min"
+     ]
+    ]
+   ]
+  },
+  "amenities_lede": "Route 7 and the Fairfax County Parkway for the commute, Dulles Airport and the Ashburn Metro for travel, and Potomac Run Plaza, Dulles Town Center and One Loudoun for shopping and dining.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Dulles Airport",
+      "IAD",
+      8.82
+     ],
+     [
+      "Ashburn Metro",
+      "Silver Line",
+      7.71
+     ]
+    ]
+   },
+   {
+    "title": "Dining",
+    "items": [
+     [
+      "One Loudoun",
+      "Restaurants and shops",
+      5.04
+     ],
+     [
+      "Reston Town Center",
+      "Restaurants and shops",
+      6.87
+     ]
+    ]
+   },
+   {
+    "title": "Shopping",
+    "items": [
+     [
+      "Potomac Run Plaza",
+      "Target, Total Wine, HomeGoods",
+      1.1
+     ],
+     [
+      "Dulles Town Center",
+      "Mall",
+      2.65
+     ],
+     [
+      "Wegmans",
+      "Dulles",
+      4.47
+     ]
+    ]
+   },
+   {
+    "title": "Parks and Recreation",
+    "items": [
+     [
+      "Claude Moore Park",
+      "Trails and ponds",
+      1.85
+     ],
+     [
+      "Algonkian Regional Park",
+      "Potomac River",
+      2.45
+     ]
+    ]
+   }
+  ]
+ }
+}

@@ -1862,6 +1862,15 @@ def values_section(p, b):
                 "$300 million in MLS-documented production over a 365-day period. 50% of CST "
                 "listings sell in the first week, with 74% selling over list price.")
         # (Casey, 24 Nov 2026: 50% first week, 74% over list.)
+        # Casey, Nov 2026: on a town home, the town home line instead.
+        try:
+            from build_portal import is_townhome as _ith
+            if _ith(p):
+                _abn = ("The Casey Samson Team (CST) is a seven-agent real estate team with over "
+                        "$300 million in MLS-documented production over a 365-day period. 93% of "
+                        "our town homes sell over list price in an average of 5 days.")
+        except Exception:
+            pass
     if _abn:
         _abl += (f'<p class="auth-note" style="text-align:center;max-width:760px;margin:0 auto 14px;'
                  f'font-size:14.5px;line-height:1.55;color:var(--ink);">{_abn}</p>')

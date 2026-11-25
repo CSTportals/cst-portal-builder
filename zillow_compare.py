@@ -137,13 +137,35 @@ def enabled(p, b=None):
     return bool(p.get("zillow_compare") or (b or {}).get("zillow_compare"))
 
 
+def _applies(rows, p, buyer=False):
+    """Drop rows this home cannot back up (Casey's rule: the checklist must be
+    true for the page it sits on): no plat on file -> no plat row; on the
+    Buyer Portal, schools hidden (all under 7, or none) -> no GreatSchools row."""
+    b = p.get("buyer_portal") or {}
+    has_plat = bool((b.get("lot") or {}).get("plat") or (p.get("lot") or {}).get("plat"))
+    out = []
+    for r in rows:
+        t = r[0].lower()
+        if "plat" in t and not has_plat:
+            continue
+        if buyer and "greatschools" in t:
+            try:
+                import schools as _s
+                if not _s.row_html(p, buyer=True):
+                    continue
+            except Exception:
+                pass
+        out.append(r)
+    return out
+
+
 def seller_section(p):
     if not enabled(p):
         return ""
     return (f'<style>{CSS}</style><section><div class="wrap">'
             '<h2 class="section-title">CST Roadmap vs Zillow vs Compass</h2>'
             '<p class="needle-lede" style="text-align:center">What sellers get from us, from Zillow, and from Compass.</p>'
-            f'{error_callout(p)}{_table(SELLER_ROWS, "CST Roadmap")}</div></section>\n')
+            f'{error_callout(p)}{_table(_applies(SELLER_ROWS, p), "CST Roadmap")}</div></section>\n')
 
 
 def buyer_section(p, b):
@@ -152,4 +174,4 @@ def buyer_section(p, b):
     return (f'<style>{CSS}</style><section><div class="wrap">'
             '<h2 class="st">CST Buyer Portal vs Zillow vs Compass</h2>'
             '<p class="ss">What buyers get from this portal, from Zillow, and from Compass.</p>'
-            f'{_table(BUYER_ROWS, "CST Buyer Portal")}</div></section>\n')
+            f'{_table(_applies(BUYER_ROWS, p, buyer=True), "CST Buyer Portal")}</div></section>\n')
