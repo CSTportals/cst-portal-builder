@@ -23,6 +23,7 @@ SELLER_ROWS = [
     # "Predictive Analysis sets the price". The 4th value is CST's own box:
     # CST does NOT use computer-generated pricing.
     ("Authenticated Values by Professionals", False, False),
+    ("Premium Values", False, False),
     ("Computer-generated pricing", True, True, False),
     ("Price changes set in advance", False, False),
     # Casey, 25 Nov 2026: split the test row. Our Preview goes to the
@@ -46,6 +47,7 @@ BUYER_ROWS = [
     ("Photos, price and listing details", True, True),
     ("GreatSchools ratings for each school", True, True),
     ("Authenticated Values by Professionals", False, False),
+    ("Premium Values", False, False),
     ("Computer-generated pricing", True, True, False),
     ("Comps colored by over/under list", False, False),
     ("Competing homes mapped and measured", False, False),
