@@ -20,6 +20,7 @@ SELLER_ROWS = [
     ("Listed on Zillow and MLS", True, True),
     ("Pricing Engine, not agent opinions", False, False),
     ("Customary and Premium Values", False, False),
+    ("Predictive Analysis sets the price", False, False),
     ("Price changes set in advance", False, False),
     # Casey, 25 Nov 2026: split the test row. Our Preview goes to the
     # entire market (Zillow shows it too); a Compass Private Exclusive is
@@ -28,7 +29,12 @@ SELLER_ROWS = [
     ("Coming Soon", True, True),
     ("Moving the Needle improvement plan", False, True),
     ("Market Snapshot for your segment", False, False),
+    ("Market Momentum", False, False),
+    ("Guide to Understanding Indexes", False, False),
     ("Competing homes mapped and measured", False, False),
+    ("Neighborhood amenities", False, False),
+    ("Distances to transportation hubs", False, False),
+    ("Buyer Showcase", False, False),
     ("County plat and lot dimensions", False, False),
     ("A private website for your home", False, False),
 ]
@@ -40,8 +46,9 @@ BUYER_ROWS = [
     ("Comps colored by over/under list", False, False),
     ("Competing homes mapped and measured", False, False),
     ("Market strength for this segment", False, False),
+    ("Neighborhood amenities", False, False),
+    ("Distances to transportation hubs", False, False),
     ("County plat and lot dimensions", False, False),
-    ("Drive times to key amenities", False, False),
 ]
 
 FOOT = ("Zillow: a standard listing page and Zestimate. Compass: its 3-Phased "
