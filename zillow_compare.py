@@ -40,7 +40,7 @@ SELLER_ROWS = [
     ("Distances to transportation hubs", False, False),
     ("Buyer Showcase", False, False),
     ("County plat and lot dimensions", False, False),
-    ("A private website for your home", False, False),
+    ("Custom website for your home", False, False),
 ]
 
 BUYER_ROWS = [
