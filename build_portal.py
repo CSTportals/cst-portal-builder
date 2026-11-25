@@ -105,6 +105,7 @@ def show_luxury(p):
 # further notice buystreetname.netlify.app is the default buyer portal" — the
 # example is a buyer portal like any other, so it follows the same rule
 # rather than being the one link on the page that still needs a redirect.
+SAMPLE_PORTAL_EMAIL = "https://samplebuyerportal.netlify.app/"   # Casey, 25 Nov 2026, potential seller email
 EXAMPLE_BUYER_PORTAL = "https://buymacarthur.netlify.app"   # Casey, 23 Nov 2026: buyer portals live at buy<street>.netlify.app
 EXAMPLE_BUYER_HOME = "502 MacArthur"
 # Casey, 12 Oct 2026: "Seller portals need a button on the Buyer Example to
@@ -8613,9 +8614,13 @@ def build_inquiry_email(p, s, out):
         note("Potential seller email: the home is not in Vienna, so the "
              "\"over $150M per year in Vienna\" sentence is left out.")
     issue = (cfg.get("issue") or "").strip()
+    # Casey, 25 Nov 2026 -- the email as he wrote it for Zunera and Allen:
+    # Buyer Portal and Sample Portal as bullets, no Market Snapshot line, and
+    # "CST vs Zillow vs Compass at bottom instead of track record".
+    sample_url = cfg.get("sample_url") or SAMPLE_PORTAL_EMAIL
     sample = "" if buyer_portal_ready(p) else (
-        f'<br>\n{a(EXAMPLE_BUYER_PORTAL + "/", "Sample Buyer Portal")} &mdash; what yours will '
-        "look like when we have all of the pictures and features")
+        f'  <li>{a(sample_url, "Sample Portal")} when we have all of the pictures and features</li>\n')
+    import zillow_compare as _zc
     html = f"""<!DOCTYPE html>
 <html><head><meta charset="UTF-8">
 <title>{addr} — potential seller email</title></head>
@@ -8628,9 +8633,7 @@ def build_inquiry_email(p, s, out):
 <p>The Casey Samson Team, Virginia&rsquo;s #1 Luxury Team, is based out of Vienna.{" We do over $150M per year in Vienna, mostly over $1.5M." if vienna else ""}</p>
 
 <p>The Standard for the Casey Samson Team is to sell in an average of 6 days, at highest and best
-offers with no contingencies. The Pricing and Selling Strategy, outlined in our
-{a(roadmap, "Seller Roadmap&trade;")}, makes that happen regardless of market conditions. You can
-review it before we meet.</p>
+offers with no contingencies. The Pricing and Selling Strategy, outlined in our {a(roadmap, "Seller Roadmap&trade;")} make that happen regardless of market conditions. You can review before we meet.</p>
 
 <p><b>Note:</b> Pricing in the Roadmap is based on appraisal quality comps of similar size, age,
 location and time. This is only Preliminary Pricing. Final Pricing will be determined after an
@@ -8639,11 +8642,13 @@ that may not show up on appraisers&rsquo; searches and analysis of market condit
 {f"<p>{issue}</p>" if issue else ""}
 <p>We can review when we meet.</p>
 
-<p>Our Buyer Portal does a great job of Authenticating Values:</p>
+<p>Our Buyer Portal does a great job of Authenticating Values</p>
 
-<p style="margin-left:16px;">{a(bp + "/" if bp else None, "Buyer Portal")} for {addr}{sample}</p>
-{f"<p>Current conditions in your market, updated every week: {a(mkt, (mk_name + ' Market Snapshot') if mk_name else 'Market Snapshot')}</p>" if mkt else ""}
-<p>Let me know some good days and times to meet.</p>
+<ul>
+  <li>{a(bp + "/" if bp else None, "Buyer Portal")} for {addr}</li>
+{sample}</ul>
+
+<p>Let me know what some good days and times to meet</p>
 
 <p>{(ag.get("display") or ag.get("lookup") or "Casey").split()[0]}</p>
 
@@ -8651,7 +8656,7 @@ that may not show up on appraisers&rsquo; searches and analysis of market condit
 REALTOR&reg; &middot; Samson Properties<br>
 {ag.get("phone") or "703-508-2535"}</p>
 
-{over_list_table_html(p=p)}
+{_zc.email_html(p)}
 </body></html>
 """
     # One line per paragraph, so the plain-text copy does not wrap mid-sentence.

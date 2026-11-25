@@ -175,3 +175,36 @@ def buyer_section(p, b):
             '<h2 class="st">CST Buyer Portal vs Zillow vs Compass</h2>'
             '<p class="ss">What buyers get from this portal, from Zillow, and from Compass.</p>'
             f'{_table(_applies(BUYER_ROWS, p, buyer=True), "CST Buyer Portal")}</div></section>\n')
+
+
+def email_html(p):
+    """Casey, 25 Nov 2026: the potential seller email ends with "CST vs Zillow
+    vs Compass at bottom instead of track record". Inline styles only, so it
+    survives mail clients; the plain-text copy reads it row by row."""
+    cv = _customary(p)
+    usd = ""
+    if cv:
+        miss = round(cv * OFF_MKT / 100 / 1000) * 1000
+        usd = f" On a ${round(cv, -4):,.0f} home, that is ${miss:,.0f} too high or too low."
+    th = 'style="padding:7px 8px;background:#1F2A44;color:#fff;font-size:12px;letter-spacing:.06em;text-align:center;"'
+    th0 = 'style="padding:7px 8px;background:#1F2A44;color:#fff;font-size:12px;letter-spacing:.06em;text-align:left;"'
+    td = 'style="padding:5px 8px;border-bottom:1px solid #E5DDC9;"'
+    tc = 'style="padding:5px 8px;border-bottom:1px solid #E5DDC9;text-align:center;font-weight:700;"'
+    def mark(on, bad=False):
+        if not on:
+            return '<span style="color:#B5AD9A;">&ndash;</span>'
+        return f'<span style="color:{"#B3261E" if bad else "#8A6A2E"};">&#10003;</span>'
+    body = ""
+    for r in _applies(SELLER_ROWS, p):
+        t, z, c = r[:3]
+        us = r[3] if len(r) > 3 else True
+        bad = r[4] if len(r) > 4 else False
+        body += (f"<tr><td {td}>{t}</td><td {tc}>{mark(us, bad)}</td>"
+                 f"<td {tc}>{mark(z, bad)}</td><td {tc}>{mark(c, bad)}</td></tr>")
+    return (f'<h3 style="margin:28px 0 6px;">CST Roadmap vs Zillow vs Compass</h3>\n'
+            f'<p style="margin:0 0 10px;"><b style="color:#B3261E;">AI Can Not Price Your Home.</b> '
+            f"Zillow&rsquo;s own median Zestimate error for homes not on the market is {OFF_MKT:.2f}%.{usd}</p>\n"
+            '<table style="border-collapse:collapse;width:100%;font-size:14px;font-family:inherit;">'
+            f"<tr><th {th0}>What You Get</th><th {th}>CST Roadmap</th><th {th}>Zillow</th><th {th}>Compass</th></tr>"
+            f"{body}</table>\n"
+            f'<p style="font-size:11px;color:#71695A;">{FOOT}</p>\n')
