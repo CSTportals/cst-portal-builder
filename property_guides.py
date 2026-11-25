@@ -133,7 +133,7 @@ ROADMAP_LINKS = {
 }
 def _rm_links(p):
     if p.get("strategy_track_record"):
-        return {"Strategy Track Record": "css:trk", **ROADMAP_LINKS}
+        return {"Verified Track Record": "css:trk", **ROADMAP_LINKS}
     return ROADMAP_LINKS
 
 
@@ -189,7 +189,7 @@ def inject_links(page, guide_href, links):
             if not m:
                 continue
             name = {"pitch": "the Headlines", "values-grid": "Authenticated Values",
-                    "trk": "Strategy Track Record"}.get(cls, cls.title())
+                    "trk": "the Verified Track Record of Strategy"}.get(cls, cls.title())
             tag = m.group(0)
             new = tag if " id=" in tag else tag[:-1] + f' id="s-{sg}">'
             link = GLINK.format(s=sg, href=guide_href, name=name).replace(
@@ -434,7 +434,7 @@ def roadmap_guide(p, s_dir):
                 'alt="CST track record vs the market" style="width:100%;max-width:980px;display:block;'
                 'margin:10px auto 18px;border:1px solid #E4DCC8;border-radius:10px;">')
         secs.insert(1, (("HTML", _img + '<div style="max-width:820px;margin:0 auto;">' + _tbl + "</div>"),
-                        "Strategy Track Record", "The strategy works &mdash; here is the proof",
+                        "Verified Track Record of Strategy", "The strategy works &mdash; here is the proof",
                         ["The top of your Roadmap compares The Casey Samson Team&rsquo;s verified MLS Bright "
                          "results with the rest of your market over the last 90 days.",
                          "Under it: CST homes that sold over list price. The Pricing Strategy in your Roadmap "
