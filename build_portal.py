@@ -7874,6 +7874,19 @@ both relaunch prices, with our track record on the back.</p>
         _write_eml(out, f"{pre}_Seller_Email", _seller, _subj, p)
         return
 
+    # Casey, 25 Nov 2026: "I need the standard emails to sellers to be like
+    # the one I just sent" -- the Zunera and Allen email (inquiry_email_html):
+    # his wording, Buyer Portal / Sample Portal bullets and the CST Roadmap vs
+    # Zillow vs Compass checklist at the bottom instead of the track record.
+    # The older standard email below is no longer written.
+    html = inquiry_email_html(p)
+    _subj = ((p.get("seller_email") or {}).get("subject")
+             or (p.get("inquiry_email") or {}).get("subject")
+             or f'{p["address"]} — Your Seller Roadmap')
+    (out / f"{pre}_Seller_Email.html").write_text(html, encoding="utf-8")
+    _write_eml(out, f"{pre}_Seller_Email", html, _subj, p)
+    return
+
     # Casey, 10 Oct 2026: "just say greetings... just have key links... Make
     # this look very short without a lot of bells and whistles. And put each
     # portal link on one line with a brief explanation."
@@ -8585,6 +8598,16 @@ discount.</p>
 
 
 def build_inquiry_email(p, s, out):
+    html = inquiry_email_html(p)
+    cfg = p.get("inquiry_email") or {}
+    pre = p["prefix"]
+    stem = f"{pre}_Potential_Seller_Email"
+    subj = cfg.get("subject") or f"{p['address']} — Your Seller Roadmap"
+    (out / f"{stem}.html").write_text(html, encoding="utf-8")
+    _write_eml(out, stem, html, subj, p, to=cfg.get("to") or "")
+
+
+def inquiry_email_html(p):
     """Potential seller email -- the reply to a seller inquiry (Casey, 24 Nov
     2026, on 2159 Bonaventure for Zunera and Allen). The first of the three
     seller emails: potential seller (inquiry) -> pre-meeting
@@ -8613,7 +8636,7 @@ def build_inquiry_email(p, s, out):
     if not vienna:
         note("Potential seller email: the home is not in Vienna, so the "
              "\"over $150M per year in Vienna\" sentence is left out.")
-    issue = (cfg.get("issue") or "").strip()
+    issue = (cfg.get("issue") or (p.get("seller_email") or {}).get("issue") or "").strip()
     # Casey, 25 Nov 2026 -- the email as he wrote it for Zunera and Allen:
     # Buyer Portal and Sample Portal as bullets, no Market Snapshot line, and
     # "CST vs Zillow vs Compass at bottom instead of track record".
@@ -8660,11 +8683,7 @@ REALTOR&reg; &middot; Samson Properties<br>
 </body></html>
 """
     # One line per paragraph, so the plain-text copy does not wrap mid-sentence.
-    html = re.sub(r"(?<=[^>\n])\n(?=[^<\n])", " ", html)
-    stem = f"{pre}_Potential_Seller_Email"
-    subj = cfg.get("subject") or f"{addr} — Your Seller Roadmap"
-    (out / f"{stem}.html").write_text(html, encoding="utf-8")
-    _write_eml(out, stem, html, subj, p, to=cfg.get("to") or "")
+    return re.sub(r"(?<=[^>\n])\n(?=[^<\n])", " ", html)
 
 
 def build_withdrawn_email(p, s, out):
