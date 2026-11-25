@@ -5525,6 +5525,11 @@ def build_roadmap(p, s, out):
                     + "</div></div></div>")
         _subj4 = _facts[:4]
         import schools as _sch
+        # Casey, 25 Nov 2026: "when we do a home, bring in schools in the
+        # seller roadmap and buyer portal."
+        if not _sch.schools_of(p):
+            note("Schools: none on file -- add buyer_portal.schools "
+                 "[elementary, middle, high] so they show on the Roadmap and Buyer Portal.")
         if _subj4:
             rm_subject = ('<section class="rm-subj"><div class="wrap"><div class="rm-subj-card">'
                           '<div class="rm-subj-t">Subject</div><div class="rm-subj-row">'

@@ -507,7 +507,13 @@
    "plat": "2159_Bonaventure_plat.jpg",
    "plat_source": "Location of improvements, Lot 16, Marshall Estates &middot; Gallifant, Hawes &amp; Jeffers, 1999 &middot; Fairfax County zoning file",
    "plat_url": "https://www.fairfaxcounty.gov/gisapps/SitePlanRecords/public/7641783"
-  }
+  },
+  "schools": [
+   "Louise Archer Elementary School",
+   "Thoreau Middle School",
+   "Madison High School"
+  ],
+  "schools_source": "MLS (Bright): 2159 Bonaventure 2020 sale (Thoreau, Madison); 2144/2156/2160 Bonaventure (Louise Archer, Thoreau, Madison). FCPS: Thoreau feeds Madison HS."
  },
  "inquiry_email": {
   "seller_names": "Zunera and Allen",
