@@ -19,8 +19,11 @@ list is more persuasive than a rigged one.
 SELLER_ROWS = [
     ("Listed on Zillow and MLS", True, True),
     ("Pricing Engine, not agent opinions", False, False),
-    ("Customary and Premium Values", False, False),
-    ("Predictive Analysis sets the price", False, False),
+    # Casey, 25 Nov 2026: replaces "Customary and Premium Values" and
+    # "Predictive Analysis sets the price". The 4th value is CST's own box:
+    # CST does NOT use computer-generated pricing.
+    ("Authenticated Values by Professionals", False, False),
+    ("Computer-generated pricing", True, True, False),
     ("Price changes set in advance", False, False),
     # Casey, 25 Nov 2026: split the test row. Our Preview goes to the
     # entire market (Zillow shows it too); a Compass Private Exclusive is
@@ -42,7 +45,8 @@ SELLER_ROWS = [
 BUYER_ROWS = [
     ("Photos, price and listing details", True, True),
     ("GreatSchools ratings for each school", True, True),
-    ("Customary and Premium Values", False, False),
+    ("Authenticated Values by Professionals", False, False),
+    ("Computer-generated pricing", True, True, False),
     ("Comps colored by over/under list", False, False),
     ("Competing homes mapped and measured", False, False),
     ("Market strength for this segment", False, False),
@@ -81,9 +85,10 @@ CSS = """
 def _table(rows, us="CST"):
     y = '<span class="y">&#10003;</span>'
     n = '<span class="n">&ndash;</span>'
-    body = "".join(f'<tr><td>{t}</td><td class="c">{y}</td><td class="c">{y if z else n}</td>'
-                   f'<td class="c">{y if c else n}</td></tr>'
-                   for t, z, c in rows)
+    def _row(t, z, c, us=True):
+        return (f'<tr><td>{t}</td><td class="c">{y if us else n}</td><td class="c">{y if z else n}</td>'
+                f'<td class="c">{y if c else n}</td></tr>')
+    body = "".join(_row(*r) for r in rows)
     return ('<div class="zc"><table><thead><tr><th>What You Get</th>'
             f'<th class="cst">{us}</th><th>Zillow</th><th>Compass</th></tr></thead>'
             f'<tbody>{body}</tbody></table></div><p class="zc-foot">{FOOT}</p>')
