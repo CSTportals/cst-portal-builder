@@ -10,42 +10,49 @@ Portal. Rows Zillow also delivers are checked for Zillow too -- an honest
 list is more persuasive than a rigged one.
 """
 
+# (row, Zillow has it, Compass has it). CST has every row.
+# Compass (25 Nov 2026, compass.com/sell, /concierge, Compass One): its
+# 3-Phased Marketing Strategy (Private Exclusive -> Coming Soon -> public) is a
+# pre-market price test, and Concierge fronts improvement costs with the agent
+# choosing the services -- both get Compass checks. Its pricing is "validated"
+# by agent feedback across its network, not a pricing engine.
 SELLER_ROWS = [
-    ("Listed on Zillow and MLS", True),
-    ("Price authenticated by pricing team", False),
-    ("Customary and Premium Values", False),
-    ("Price changes set in advance", False),
-    ("Preview and Coming Soon test", False),
-    ("Market Snapshot for your segment", False),
-    ("Competing homes mapped and measured", False),
-    ("Moving the Needle improvement plan", False),
-    ("County plat and lot dimensions", False),
-    ("A private website for your home", False),
+    ("Listed on Zillow and MLS", True, True),
+    ("Pricing Engine, not agent opinions", False, False),
+    ("Customary and Premium Values", False, False),
+    ("Price changes set in advance", False, False),
+    ("Preview and Coming Soon test", False, True),
+    ("Moving the Needle improvement plan", False, True),
+    ("Market Snapshot for your segment", False, False),
+    ("Competing homes mapped and measured", False, False),
+    ("County plat and lot dimensions", False, False),
+    ("A private website for your home", False, False),
 ]
 
 BUYER_ROWS = [
-    ("Photos, price and listing details", True),
-    ("GreatSchools ratings for each school", True),
-    ("Customary and Premium Values", False),
-    ("Comps colored by over/under list", False),
-    ("Competing homes mapped and measured", False),
-    ("Market strength for this segment", False),
-    ("County plat and lot dimensions", False),
-    ("Drive times to key amenities", False),
+    ("Photos, price and listing details", True, True),
+    ("GreatSchools ratings for each school", True, True),
+    ("Customary and Premium Values", False, False),
+    ("Comps colored by over/under list", False, False),
+    ("Competing homes mapped and measured", False, False),
+    ("Market strength for this segment", False, False),
+    ("County plat and lot dimensions", False, False),
+    ("Drive times to key amenities", False, False),
 ]
 
-FOOT = ("Zillow column reflects a standard Zillow listing page and Zestimate. "
+FOOT = ("Zillow: a standard listing page and Zestimate. Compass: its 3-Phased "
+        "Marketing Strategy, Concierge and Compass One, as published on compass.com. "
         "Zestimate error rates: zillow.com/zestimate, nationwide medians.")
 
 CSS = """
 .zc{max-width:640px;margin:22px auto 0;background:#fff;border:1px solid #E5DDC9;border-radius:10px;overflow:hidden}
-.zc table{width:100%;border-collapse:collapse;font-family:Georgia,serif}
+.zc table{width:100%;min-width:0!important;border-collapse:collapse;font-family:Georgia,serif;table-layout:auto}
 .zc th{background:#1F2A44;color:#fff;font:700 12px Georgia,serif;letter-spacing:.14em;text-transform:uppercase;padding:12px 10px}
 .zc th:first-child{text-align:left;padding-left:20px}
 .zc th.cst{color:#E9C77B}
 .zc td{padding:11px 10px;border-top:1px solid #EFE9DA;font-size:15.5px;color:#1F2A44}
 .zc td:first-child{padding-left:20px;text-align:left}
-.zc td.c{text-align:center;width:96px}
+.zc td.c{text-align:center;width:86px}
 .zc tr:nth-child(even) td{background:#FBF8F1}
 .zc .y{display:inline-block;width:22px;height:22px;border-radius:4px;background:#8A6A2E;color:#fff;font:700 15px/22px Arial,sans-serif}
 .zc .n{display:inline-block;width:22px;height:22px;border-radius:4px;border:1.5px solid #C9C1AE;color:#B5AD9A;font:400 14px/19px Arial,sans-serif}
@@ -56,17 +63,18 @@ CSS = """
 .zx .usd{font:700 19px Georgia,serif;color:#E9C77B;margin-top:10px}
 .zx .why{font:italic 13.5px/1.5 Georgia,serif;color:#C9C3B4;margin-top:12px}
 .zc-foot{max-width:640px;margin:10px auto 0;text-align:center;font:italic 11.5px Georgia,serif;color:#71695A}
-@media(max-width:560px){.zc td{font-size:14px}.zc td.c{width:64px}.zc th{font-size:10.5px;letter-spacing:.08em}}
+@media(max-width:560px){.zc td{font-size:13.5px;padding:10px 6px}.zc td:first-child{padding-left:12px}.zc th:first-child{padding-left:12px}.zc th{padding:10px 4px}.zc td.c{width:52px;padding-left:4px;padding-right:4px}.zc th{font-size:10.5px;letter-spacing:.08em}}
 """
 
 
 def _table(rows):
     y = '<span class="y">&#10003;</span>'
     n = '<span class="n">&ndash;</span>'
-    body = "".join(f'<tr><td>{t}</td><td class="c">{y}</td><td class="c">{y if z else n}</td></tr>'
-                   for t, z in rows)
+    body = "".join(f'<tr><td>{t}</td><td class="c">{y}</td><td class="c">{y if z else n}</td>'
+                   f'<td class="c">{y if c else n}</td></tr>'
+                   for t, z, c in rows)
     return ('<div class="zc"><table><thead><tr><th>What You Get</th>'
-            '<th class="cst">CST</th><th>Zillow</th></tr></thead>'
+            '<th class="cst">CST</th><th>Zillow</th><th>Compass</th></tr></thead>'
             f'<tbody>{body}</tbody></table></div><p class="zc-foot">{FOOT}</p>')
 
 
@@ -111,8 +119,8 @@ def seller_section(p):
     if not enabled(p):
         return ""
     return (f'<style>{CSS}</style><section><div class="wrap">'
-            '<h2 class="section-title">CST vs Zillow</h2>'
-            '<p class="needle-lede" style="text-align:center">What sellers get from us, and what they get from Zillow.</p>'
+            '<h2 class="section-title">CST vs Zillow vs Compass</h2>'
+            '<p class="needle-lede" style="text-align:center">What sellers get from us, from Zillow, and from Compass.</p>'
             f'{error_callout(p)}{_table(SELLER_ROWS)}</div></section>\n')
 
 
@@ -120,6 +128,6 @@ def buyer_section(p, b):
     if not enabled(p, b):
         return ""
     return (f'<style>{CSS}</style><section><div class="wrap">'
-            '<h2 class="st">CST vs Zillow</h2>'
-            '<p class="ss">What buyers get from this portal, and what they get from Zillow.</p>'
+            '<h2 class="st">CST vs Zillow vs Compass</h2>'
+            '<p class="ss">What buyers get from this portal, from Zillow, and from Compass.</p>'
             f'{_table(BUYER_ROWS)}</div></section>\n')
