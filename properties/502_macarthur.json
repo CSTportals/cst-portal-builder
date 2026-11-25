@@ -790,7 +790,14 @@
     ]
    ]
   },
-  "zillow_compare": true
+  "zillow_compare": true,
+  "school_ratings": {
+   "Wolf Trap Elementary School": 10,
+   "Kilmer Middle School": 9,
+   "Madison High School": 9
+  },
+  "school_ratings_year": 2026,
+  "school_ratings_source": "greatschools.org school pages, GreatSchools Rating 2026 (checked 25 Nov 2026)"
  },
  "local_snapshot": {
   "pull": "market_pulls/502_MacArthur.txt",

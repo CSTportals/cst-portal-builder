@@ -400,5 +400,18 @@
   ],
   "note": "Casey, 23 Nov 2026: Sample maps; subject pinned at 502 MacArthur (the Sample's photo). Comp DOM/list not on file, so sold pins use the plain Sold color."
  },
- "zillow_compare": true
+ "zillow_compare": true,
+ "schools": {
+  "elementary": "Wolf Trap Elementary School",
+  "middle": "Kilmer Middle School",
+  "high": "Madison High School"
+ },
+ "schools_source": "Same home as the Sample buyer site (502 MacArthur Ave NE, buymacarthur)",
+ "school_ratings": {
+  "Wolf Trap Elementary School": 10,
+  "Kilmer Middle School": 9,
+  "Madison High School": 9
+ },
+ "school_ratings_year": 2026,
+ "school_ratings_source": "greatschools.org school pages, GreatSchools Rating 2026 (checked 25 Nov 2026)"
 }

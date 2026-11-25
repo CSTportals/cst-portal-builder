@@ -36,7 +36,8 @@ def schools_of(p):
 def ratings_of(p):
     """Casey, 25 Nov 2026: GreatSchools ratings, from GreatSchools itself.
     buyer_portal.school_ratings: {"<school name as listed>": 10, ...}."""
-    return (p.get("buyer_portal") or {}).get("school_ratings") or {}
+    return ((p.get("buyer_portal") or {}).get("school_ratings")
+            or p.get("school_ratings") or {})
 
 
 BUYER_MIN = 7
@@ -62,7 +63,7 @@ def row_html(p, cls="sch-row", buyer=False):
                     for lab, n in s)
     src = ""
     if r:
-        yr = (p.get("buyer_portal") or {}).get("school_ratings_year") or ""
+        yr = (p.get("buyer_portal") or {}).get("school_ratings_year") or p.get("school_ratings_year") or ""
         src = f'<div class="sch-src">GreatSchools ratings{(" &middot; " + str(yr)) if yr else ""}</div>'
     return f'<div class="{cls}">{cells}{src}</div>'
 
