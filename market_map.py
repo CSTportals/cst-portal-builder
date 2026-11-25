@@ -47,6 +47,42 @@ def sold_grade(dom, sale, lp):
     return min(g_dom, g_pct)
 
 
+def comp_grade(p, addr):
+    """Casey, 25 Nov 2026: "Comps need to be rated green yellow red." Same
+    rule as the comps map (sold_grade). DOM and original list come from
+    comps.dom / comps.orig_list (or comps.list), else the map's sold pin.
+    None when the home has no DOM or original list on file."""
+    c = p.get("comps") or {}
+    pin = next((x for x in (p.get("market_map") or {}).get("solds", [])
+                if x.get("address") == addr), {})
+    dom = (c.get("dom") or {}).get(addr, pin.get("dom"))
+    olp = ((c.get("orig_list") or {}).get(addr) or (c.get("list") or {}).get(addr)
+           or pin.get("orig_list") or pin.get("list"))
+    sale = next((r[5] for r in c.get("rows", []) if r[0] == addr), None) or pin.get("sale")
+    if dom is None or not olp or not sale:
+        return None
+    return sold_grade(dom, sale, olp)
+
+
+def grade_dot(p, addr):
+    g = comp_grade(p, addr)
+    if g is None:
+        return ""
+    name, color, why = SOLD_GRADE[g]
+    return (f'<span title="{name.title()}: {why}" style="display:inline-block;width:12px;height:12px;'
+            f'border-radius:50%;background:{color};margin-right:8px;vertical-align:-1px;"></span>')
+
+
+def grade_legend(p):
+    if not any(comp_grade(p, r[0]) is not None for r in (p.get("comps") or {}).get("rows", [])):
+        return ""
+    items = "".join(f'<span style="white-space:nowrap;margin:0 10px;"><span style="display:inline-block;width:11px;height:11px;'
+                    f'border-radius:50%;background:{c};margin-right:6px;vertical-align:-1px;"></span>'
+                    f'<b>{n.title()}</b> &middot; {w}</span>' for n, c, w in reversed(SOLD_GRADE))
+    return (f'<p class="comp-legend" style="text-align:center;font-size:12.5px;color:#5A5446;'
+            f'margin:10px 0 0;line-height:2;">{items}</p>')
+
+
 def list_grade(status, dom):
     """Current-market pin color. Casey, 22 Nov 2026: "Green is Coming Soon or
     homes that meet the standard, under 7 days Pending (no contingencies).

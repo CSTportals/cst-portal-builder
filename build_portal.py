@@ -1010,7 +1010,7 @@ def size_cell(v):
     return "&mdash;" if v in (0, None, "", "&mdash;") else sf(v)
 
 
-def comp_rows(rows, cls="", extra=None):
+def comp_rows(rows, cls="", extra=None, p=None):
     """A comp row may carry an optional 7th element: a URL. When present the
     address becomes a link. Supply real URLs — nothing here builds or guesses
     them, because a comp pointing at the wrong house is worse than no link.
@@ -1025,6 +1025,10 @@ def comp_rows(rows, cls="", extra=None):
     for r in rows:
         addr, built, size, lot, assessment, sale = r[:6]
         url = r[6] if len(r) > 6 else None
+        _dot = ""
+        if p is not None and not cls:   # comps only -- not the subject or averages
+            import market_map as _mm
+            _dot = _mm.grade_dot(p, addr)
         if url:
             addr = (f'<a href="{url}" target="_blank" rel="noopener" '
                     f'style="color:inherit;">{addr}</a>')
@@ -1033,7 +1037,7 @@ def comp_rows(rows, cls="", extra=None):
             sale_cell = sale_cell.replace("<b>", "").replace("</b>", "")
         c = f' class="{cls}"' if cls else ""
         out.append(
-            f'          <tr{c}><td class="addr-cell">{addr}</td><td>{built}</td>'
+            f'          <tr{c}><td class="addr-cell">{_dot}{addr}</td><td>{built}</td>'
             f"<td>{size_cell(size)}</td><td>{lot_cell(lot)}</td><td>{money(assessment)}</td>"
             f"<td>{sale_cell}</td>"
             + (_extra_cells(r, extra) if extra is not None else "") + "</tr>")
@@ -4806,10 +4810,11 @@ def build_roadmap(p, s, out):
 {comp_rows([[addr, subj["built"], subj["sf"], subj["lot"], subj["assessment"], p["comps"].get("subject_sale") or p["comps"].get("subject_value")]], cls="total-row", extra={} if p["comps"].get("subject_sale") else {addr: p["comps"].get("subject_value") or p["values"]["customary"]})}
 <!-- Casey, 29 Oct 2026: averages move up under the subject. -->
 {comp_rows(p["comps"]["summary"], cls="total-row", extra=p["comps"].get("summary_ppsf") or {})}
-{comp_rows(p["comps"]["rows"], extra=p["comps"].get("adjusted") or {})}
+{comp_rows(p["comps"]["rows"], extra=p["comps"].get("adjusted") or {}, p=p)}
         </tbody>
       </table>
     </div>
+{__import__("market_map").grade_legend(p)}
 {comp_gallery(p["comps"]["rows"])}  </div>
 </section>
 """
@@ -6319,11 +6324,12 @@ def build_buyer_report(p, s, out, stats=True, balance=False, cover=True, loves=0
         <thead><tr><th>Property</th><th>Built</th><th>Finished SF</th><th>Lot</th><th>Assessment</th><th>Sales Price</th></tr></thead>
         <tbody>
 {comp_rows([[addr, subj["built"], subj["sf"], subj["lot"], subj["assessment"], None]], cls="total-row")}
-{comp_rows(p["comps"]["rows"][:p.get("br_max_comps", 8)])}
+{comp_rows(p["comps"]["rows"][:p.get("br_max_comps", 8)], p=p)}
 {comp_rows(p["comps"]["summary"], cls="total-row")}
         </tbody>
       </table>
     </div>
+{__import__("market_map").grade_legend(p)}
 {comp_gallery(p["comps"]["rows"][:p.get("br_max_comps", 8)])}  </div>
 </section>
 """

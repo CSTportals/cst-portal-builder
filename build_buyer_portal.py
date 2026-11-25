@@ -1728,7 +1728,8 @@ def values_section(p, b):
         _cap = b.get("max_comps", 8)
         for r in comps["rows"][:_cap]:
             addr, built, sf, lot, assess, sale = (list(r) + [None] * 6)[:6]
-            body.append(f'<tr><td class="addr-cell">{addr}</td><td>{built}</td>'
+            import market_map as _mm
+            body.append(f'<tr><td class="addr-cell">{_mm.grade_dot(p, addr)}{addr}</td><td>{built}</td>'
                         f"<td>{_sf(sf)}</td><td>{_lot(lot)}</td>"
                         f"<td>{money(assess) if assess else '&mdash;'}</td>"
                         f"<td><b>{money(sale) if sale else '&mdash;'}</b></td></tr>")
@@ -1739,7 +1740,8 @@ def values_section(p, b):
                         f"<td>{money(assess) if assess else '&mdash;'}</td>"
                         f"<td>{money(sale) if sale else '&mdash;'}</td></tr>")
         table = (f'<div class="tablewrap"><table class="comps">{head}'
-                 f'<tbody>{"".join(body)}</tbody></table></div>')
+                 f'<tbody>{"".join(body)}</tbody></table></div>'
+                 + __import__("market_map").grade_legend(p))
     else:
         note("Comparable table OMITTED from Authenticated Values — no comps on file.")
 
