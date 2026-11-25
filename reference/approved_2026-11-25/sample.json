@@ -1,0 +1,438 @@
+{
+ "address": "Sample",
+ "city": "Vienna",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "22180",
+ "county": "Town of Vienna, Fairfax County",
+ "congestion_fees": true,
+ "report_date": "Thursday, August 27, 2026",
+ "prefix": "Sample",
+ "listing_url": "SampleListing.com",
+ "include_tracker": true,
+ "asset_dir": "assets/Sample",
+ "hero_photo": "Sample_front.jpg",
+ "photos": [
+  "Sample_front.jpg"
+ ],
+ "agent": {
+  "lookup": "Casey C Samson",
+  "display": "Casey Samson",
+  "phone": "703-508-2535",
+  "email": "Casey@caseysamson.com"
+ },
+ "subject": {
+  "built": 2008,
+  "sf": 3066,
+  "lot": 14500,
+  "assessment": 1797000
+ },
+ "values": {
+  "dated": 1944924,
+  "customary": 2161027,
+  "customary_list": 2161027,
+  "premium": 2333909
+ },
+ "comps": {
+  "rows": [
+   [
+    "701 Meadow Ln SW",
+    2021,
+    4565,
+    15418,
+    552000,
+    2433625
+   ],
+   [
+    "204 Battle St SW",
+    2018,
+    3687,
+    10792,
+    1900270,
+    2349000
+   ],
+   [
+    "913 Hillcrest Dr SW",
+    2024,
+    4568,
+    15575,
+    2344650,
+    2325000
+   ],
+   [
+    "121 Tapawingo Rd SW",
+    2016,
+    3740,
+    10150,
+    1822380,
+    2275000
+   ]
+  ],
+  "summary": [
+   [
+    "Average",
+    2016,
+    4365,
+    23216,
+    1776866,
+    2256104
+   ]
+  ],
+  "dom": {
+   "701 Meadow Ln SW": 4,
+   "204 Battle St SW": 4,
+   "913 Hillcrest Dr SW": 11
+  },
+  "orig_list": {
+   "701 Meadow Ln SW": 2345000,
+   "204 Battle St SW": 2349000,
+   "913 Hillcrest Dr SW": 2325000
+  },
+  "dom_source": "25 Nov 2026 web listing records: 701 Meadow (Homes.com 4 DOM, pending at $2,345,000 per RE/MAX), 204 Battle (Homes.com 4 DOM, listed $2,349,000), 913 Hillcrest (listed 3/29/2026 at $2,325,000, pending at 11 DOM). 121 Tapawingo: listed $2,250,000, DOM not found."
+ },
+ "market": {
+  "name": "Vienna Luxury Market",
+  "slug": "Vienna_Luxury_Market_Snapshot",
+  "subhead": "Vienna's inventory continues to build while sales pull back, with the 25% under-contract rate keeping this market solidly in Buyer's territory.",
+  "stats": {
+   "market": "Vienna",
+   "inventory": "24%",
+   "contracts": "-9%",
+   "under_contract": "25%",
+   "uc_14": "23%",
+   "control": "Buyer's"
+  },
+  "absorption": {
+   "rate": "23%",
+   "zone": "Slow Go Zone",
+   "note": "Last 14 days, buyers are back. Sellers with well-priced homes in proper condition are good to go."
+  }
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "609 Kingsley Rd SW",
+   "dom": 176,
+   "built": 2017,
+   "sf": 4980,
+   "lot": 12948,
+   "list": 2300000
+  },
+  {
+   "status": "Active",
+   "address": "513 John Marshall Dr NE",
+   "dom": 51,
+   "built": 2007,
+   "sf": 4312,
+   "lot": 15776,
+   "list": 2250000
+  },
+  {
+   "status": "Active",
+   "address": "9311 Talisman Dr",
+   "dom": 77,
+   "built": 2014,
+   "sf": 4162,
+   "lot": 10890,
+   "list": 2175000
+  },
+  {
+   "status": "Active",
+   "address": "605 Meadow Ln SW",
+   "dom": 38,
+   "built": 2019,
+   "sf": 3609,
+   "lot": 14519,
+   "list": 2099900
+  },
+  {
+   "status": "Active",
+   "address": "10900 Hunter Station Rd",
+   "dom": 319,
+   "built": 1985,
+   "sf": 5935,
+   "lot": 80376,
+   "list": 2099900
+  },
+  {
+   "status": "Active",
+   "address": "1489 Broadstone Pl",
+   "dom": 100,
+   "built": 2001,
+   "sf": 4049,
+   "lot": 15200,
+   "list": 2074000
+  },
+  {
+   "status": "Active",
+   "address": "2755 Oakton Plantation Ln",
+   "dom": 1,
+   "built": 1998,
+   "sf": 3585,
+   "lot": 16210,
+   "list": 2000000
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "10301 Forest Maple Rd",
+   "dom": 8,
+   "built": 1997,
+   "sf": 5716,
+   "lot": 76370,
+   "list": 2200000
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "1950 Limb Tree Ln",
+   "dom": 12,
+   "built": 1982,
+   "sf": 3801,
+   "lot": 48234,
+   "list": 2000000
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "8263 Trailwood Ct",
+   "dom": 19,
+   "built": 2003,
+   "sf": 4586,
+   "lot": 6874,
+   "list": 1995000
+  },
+  {
+   "status": "Pending",
+   "address": "9932 Clearfield Ave",
+   "dom": 7,
+   "built": 2021,
+   "sf": 3543,
+   "lot": 21782,
+   "list": 2149900
+  }
+ ],
+ "notes": [],
+ "premium_rating": [
+  [
+   {
+    "label": "Top Features",
+    "items": [
+     "Custom bungalow nestled in one of Vienna's premier streets",
+     "5 bedrooms and 5 full bathrooms on 3 levels",
+     "2-car garage",
+     "Custom closets and woodwork throughout",
+     "Beautiful flat, fenced-in yard",
+     "Walking distance to everything in Vienna"
+    ]
+   },
+   {
+    "label": "Property Details",
+    "items": [
+     "4,842 finished square feet",
+     "0.33-acre lot",
+     "Public sewer, public water"
+    ]
+   },
+   {
+    "label": "Schools",
+    "items": [
+     "Vienna Elementary School",
+     "Thoreau Middle School",
+     "Madison High School"
+    ]
+   },
+   {
+    "label": "Features",
+    "items": [
+     "No HOA",
+     "Vienna Woods Swim &amp; Tennis Club membership conveys &mdash; currently a 10-year waiting list",
+     "Full access to pools, courts, and all events, including swim teams",
+     "$835 annual dues, or $175 annual dues for non-use (club rents out the summer pool membership; owners decide each year whether to pay full dues or rent out the membership)"
+    ]
+   }
+  ],
+  [
+   {
+    "label": "Recent Updates",
+    "items": [
+     "Entire back deck newly painted (2026)",
+     "New HVAC upstairs (2024)",
+     "Front exterior, porch, and shingles repainted (2023)",
+     "Full interior repainted on all 3 levels (2022)",
+     "Roof inspection completed (2022)",
+     "Two sump pumps inspected (2022)",
+     "New refrigerator, oven, microwave, and dishwasher (2022)",
+     "New water heater (2022)",
+     "New washer/dryer with pedestals (2022)",
+     "Master bedroom closet and bedroom built-in cabinetry (2022)",
+     "Pantry built-in cabinetry (2022)",
+     "Basement bedroom LVP flooring (2022)",
+     "Family room and basement custom TV arms (2022)",
+     "ADT custom alarm system (2022)",
+     "Quiet-flush system for basement bathroom (2022)",
+     "Furnace (2008), meticulously maintained with professional servicing twice yearly and regular filter changes"
+    ]
+   }
+  ]
+ ],
+ "storage_key": "cst-sample-tracker-v1",
+ "tracker_source": "templates/sample_tracker.html",
+ "tracker_replace": {
+  "cst-sample-tracker-v1": "cst-sample-tracker-v1"
+ },
+ "portal_url": "https://sample.netlify.app",
+ "net_proceeds": true,
+ "sold_for": 2300000,
+ "hero_note": "Casey, 23 Nov 2026: the Sample shows 502 MacArthur's front photo (the Sample is MacArthur, sold for $2,300,000).",
+ "market_map": {
+  "subject": [
+   38.9137624,
+   -77.2666062
+  ],
+  "subject_dir": "left",
+  "subject_dir_solds": "right",
+  "solds": [
+   {
+    "address": "701 Meadow Ln SW",
+    "sale": 2433625,
+    "status": "Sold",
+    "lat": 38.8888802,
+    "lng": -77.2689394,
+    "dom": 4,
+    "orig_list": 2345000,
+    "list": 2345000
+   },
+   {
+    "address": "204 Battle St SW",
+    "sale": 2349000,
+    "status": "Sold",
+    "lat": 38.8958897,
+    "lng": -77.2627631,
+    "dom": 4,
+    "orig_list": 2349000,
+    "list": 2349000
+   },
+   {
+    "address": "913 Hillcrest Dr SW",
+    "sale": 2325000,
+    "status": "Sold",
+    "lat": 38.8891091,
+    "lng": -77.2599581,
+    "dom": 11,
+    "orig_list": 2325000,
+    "list": 2325000
+   },
+   {
+    "address": "121 Tapawingo Rd SW",
+    "sale": 2275000,
+    "status": "Sold",
+    "lat": 38.8927905,
+    "lng": -77.2572186
+   }
+  ],
+  "listings": [
+   {
+    "address": "609 Kingsley Rd SW",
+    "status": "Active",
+    "list": 2300000,
+    "dom": 176,
+    "lat": 38.8855146,
+    "lng": -77.2649415
+   },
+   {
+    "address": "513 John Marshall Dr NE",
+    "status": "Active",
+    "list": 2250000,
+    "dom": 51,
+    "lat": 38.9146834,
+    "lng": -77.2670014
+   },
+   {
+    "address": "605 Meadow Ln SW",
+    "status": "Active",
+    "list": 2099900,
+    "dom": 38,
+    "lat": 38.8900975,
+    "lng": -77.2691064
+   },
+   {
+    "address": "10900 Hunter Station Rd",
+    "status": "Active",
+    "list": 2099900,
+    "dom": 319,
+    "lat": 38.9262195,
+    "lng": -77.3218526
+   },
+   {
+    "address": "1489 Broadstone Pl",
+    "status": "Active",
+    "list": 2074000,
+    "dom": 100,
+    "lat": 38.9357379,
+    "lng": -77.249925
+   },
+   {
+    "address": "2755 Oakton Plantation Ln",
+    "status": "Active",
+    "list": 2000000,
+    "dom": 1,
+    "lat": 38.8818607,
+    "lng": -77.2911233
+   },
+   {
+    "address": "10301 Forest Maple Rd",
+    "status": "Active Under Contract",
+    "list": 2200000,
+    "dom": 8,
+    "lat": 38.9494337,
+    "lng": -77.3012093
+   },
+   {
+    "address": "1950 Limb Tree Ln",
+    "status": "Active Under Contract",
+    "list": 2000000,
+    "dom": 12,
+    "lat": 38.9280595,
+    "lng": -77.3000592
+   },
+   {
+    "address": "9932 Clearfield Ave",
+    "status": "Pending",
+    "list": 2149900,
+    "dom": 7,
+    "lat": 38.8932745,
+    "lng": -77.2897573
+   },
+   {
+    "address": "9311 Talisman Dr",
+    "status": "Active",
+    "list": 2175000,
+    "dom": 77,
+    "lat": 38.9176479,
+    "lng": -77.2680437
+   },
+   {
+    "address": "8263 Trailwood Ct",
+    "status": "Active Under Contract",
+    "list": 1995000,
+    "dom": 19,
+    "lat": 38.9088842,
+    "lng": -77.2299258
+   }
+  ],
+  "note": "Casey, 23 Nov 2026: Sample maps; subject pinned at 502 MacArthur (the Sample's photo). Comp DOM/list not on file, so sold pins use the plain Sold color."
+ },
+ "zillow_compare": true,
+ "schools": {
+  "elementary": "Wolf Trap Elementary School",
+  "middle": "Kilmer Middle School",
+  "high": "Madison High School"
+ },
+ "schools_source": "Same home as the Sample buyer site (502 MacArthur Ave NE, buymacarthur)",
+ "school_ratings": {
+  "Wolf Trap Elementary School": 10,
+  "Kilmer Middle School": 9,
+  "Madison High School": 9
+ },
+ "school_ratings_year": 2026,
+ "school_ratings_source": "greatschools.org school pages, GreatSchools Rating 2026 (checked 25 Nov 2026)",
+ "strategy_track_record": true
+}
