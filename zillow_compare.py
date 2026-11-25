@@ -24,7 +24,7 @@ SELLER_ROWS = [
     # CST does NOT use computer-generated pricing.
     ("Authenticated Values by Professionals", False, False),
     ("Premium Values", False, False),
-    ("Computer-generated pricing", True, True, False),
+    ("Computer-generated pricing", True, True, False, True),   # 5th: a negative -- checks in red
     ("Price changes set in advance", False, False),
     # Casey, 25 Nov 2026: split the test row. Our Preview goes to the
     # entire market (Zillow shows it too); a Compass Private Exclusive is
@@ -48,7 +48,7 @@ BUYER_ROWS = [
     ("GreatSchools ratings for each school", True, True),
     ("Authenticated Values by Professionals", False, False),
     ("Premium Values", False, False),
-    ("Computer-generated pricing", True, True, False),
+    ("Computer-generated pricing", True, True, False, True),   # 5th: a negative -- checks in red
     ("Comps colored by over/under list", False, False),
     ("Competing homes mapped and measured", False, False),
     ("Market strength for this segment", False, False),
@@ -72,6 +72,7 @@ CSS = """
 .zc td.c{text-align:center;width:86px}
 .zc tr:nth-child(even) td{background:#FBF8F1}
 .zc .y{display:inline-block;width:22px;height:22px;border-radius:4px;background:#8A6A2E;color:#fff;font:700 15px/22px Arial,sans-serif}
+.zc .y.bad{background:#B3261E}
 .zc .n{display:inline-block;width:22px;height:22px;border-radius:4px;border:1.5px solid #C9C1AE;color:#B5AD9A;font:400 14px/19px Arial,sans-serif}
 .zx{max-width:640px;margin:18px auto 0;background:#1F2A44;color:#fff;border-radius:10px;padding:22px 26px;text-align:center}
 .zx .k{font:700 11px Georgia,serif;letter-spacing:.18em;text-transform:uppercase;color:#E9C77B}
@@ -87,9 +88,12 @@ CSS = """
 def _table(rows, us="CST"):
     y = '<span class="y">&#10003;</span>'
     n = '<span class="n">&ndash;</span>'
-    def _row(t, z, c, us=True):
-        return (f'<tr><td>{t}</td><td class="c">{y if us else n}</td><td class="c">{y if z else n}</td>'
-                f'<td class="c">{y if c else n}</td></tr>')
+    r = '<span class="y bad">&#10003;</span>'
+    def _row(t, z, c, us=True, bad=False):
+        # Casey, 25 Nov 2026: "mark computer generated pricing boxes with red"
+        k = r if bad else y
+        return (f'<tr><td>{t}</td><td class="c">{k if us else n}</td><td class="c">{k if z else n}</td>'
+                f'<td class="c">{k if c else n}</td></tr>')
     body = "".join(_row(*r) for r in rows)
     return ('<div class="zc"><table><thead><tr><th>What You Get</th>'
             f'<th class="cst">{us}</th><th>Zillow</th><th>Compass</th></tr></thead>'

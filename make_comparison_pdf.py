@@ -1,4 +1,6 @@
-"""Standalone CST vs Zillow vs Compass comparison PDF.
+"""Standalone CST vs Zillow vs Compass comparison PDF (seller page only:
+Casey, 25 Nov 2026 "just do seller portal PDF"; the buyer page is still built
+by buyer_page() for when it is wanted).
 
 Casey, 25 Nov 2026: "Creat comparison PDF alone". Page 1: the seller
 checklist with the 7.01% off-market Zestimate callout; page 2: the buyer
@@ -49,7 +51,7 @@ h1{font:700 23px Georgia,serif;text-align:center;margin:10px 0 2px}
 .zc{margin-top:10px}.zc td{padding:4px 10px;font-size:13px}.zc .y,.zc .n{width:18px;height:18px;line-height:18px;font-size:12px}.zc .n{line-height:15px}.zc th{padding:7px 8px;font-size:10.5px}.zc-foot{font-size:10px;margin-top:6px}
 footer{position:absolute;bottom:.35in;left:0;right:0;text-align:center;font:11px Georgia,serif;color:#71695A}
 """
-    html = f'<!DOCTYPE html><html><head><meta charset="utf-8"><style>{css}</style></head><body>{seller}{buyer}</body></html>'
+    html = f'<!DOCTYPE html><html><head><meta charset="utf-8"><style>{css}</style></head><body>{seller}</body></html>'
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
         b = p.chromium.launch()
