@@ -10,6 +10,6 @@ Casey, 25 Nov 2026: "This is the perfect roadmap and guides. Please save so we d
 - CST_Roadmap_vs_Zillow_vs_Compass_APPROVED.pdf — the one-page comparison.
 - sample.json — the property file that builds it.
 
-The builder code that produces it is git tag `approved-roadmap-2026-11-25`.
+The builder code that produces it is saved as the branch `approved-roadmap-2026-11-25` on GitHub (commit e1a7413).
 To restore: `git checkout approved-roadmap-2026-11-25`, then
 `python3 build_portal.py properties/sample.json`.
