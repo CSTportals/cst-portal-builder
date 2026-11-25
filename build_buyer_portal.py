@@ -2142,12 +2142,34 @@ def build(p, out):
     band = (f'<div class="band"><div class="wrap"><div class="cols">\n'
             + "\n".join(cols) + "\n</div></div></div>\n") if cols else ""
 
+    # Casey, 25 Nov 2026: "At the top of new portal, put visible link to
+    # completed buyer portal once information has been gathered." Until this
+    # home's portal has its photos and features, a bar at the top links to a
+    # finished one (the Sample).
+    wip_bar = ""
+    try:
+        from build_portal import buyer_portal_ready as _bpr, EXAMPLE_BUYER_PORTAL as _ex
+        _own = (b.get("url") or "").rstrip("/")
+        if not (_bpr(p) or b.get("finished")) and _own.rstrip("/") != _ex.rstrip("/"):
+            wip_bar = ('<div style="background:#1F2A44;color:#F3EBD8;text-align:center;padding:12px 16px;'
+                       'font:15px/1.45 Georgia,serif;border-bottom:3px solid #B8902F">'
+                       'This Buyer Portal is being built &mdash; photos and features are added as the home is prepared. '
+                       f'<a href="{_ex}" target="_blank" rel="noopener" style="color:#E8C77A;font-weight:700;'
+                       'text-decoration:underline;text-underline-offset:3px;white-space:nowrap">'
+                       'See a completed Buyer Portal &rarr;</a></div>')
+    except Exception:
+        pass
+
     # ---- quick facts ----------------------------------------------------
     facts = ""
     if b.get("facts"):
         cells = "".join(f'<div class="fact"><span class="n">{n}</span>'
                         f'<div class="l">{l}</div></div>' for n, l in b["facts"])
-        facts = f'<div class="wrap"><div class="facts">{cells}</div></div>\n'
+        import schools as _sch
+        _sr = _sch.row_html(p)
+        facts = (f'<div class="wrap"><div class="facts">{cells}'
+                 + (f'<style>{_sch.CSS}.facts .sch-row{{flex:1 1 100%;margin:8px 10px 0}}</style>{_sr}' if _sr else "")
+                 + '</div></div>\n')
 
     # ---- description ----------------------------------------------------
     # One line that sells, then the handful of things worth saying out loud.
@@ -2463,6 +2485,7 @@ def build(p, out):
 <body>
 
 {site_head}
+{wip_bar}
 <div class="hero{' noshot' if not hero_img.strip() else ''}">
 {hero_img}
   <div class="hero-shade"></div>

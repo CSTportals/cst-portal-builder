@@ -2627,6 +2627,10 @@ RM_BADGE_CSS = """
   .rm-steps .rm-col .s{font-size:15px;color:#C9D2E0;margin-top:6px;line-height:1.4;}
   @media (max-width:760px){ .rm-steps .rm-cols{flex-direction:column;} .rm-steps .rm-col + .rm-col{border-left:none;border-top:1px solid rgba(255,255,255,.15);} }
   .rm-subj{padding:26px 0 0;border-top:none!important;}
+  .sch-row{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 0;margin-top:10px;padding-top:10px;border-top:1px solid #E4DCC8}
+  .sch-row .sch{flex:1 1 160px;text-align:center;padding:2px 8px}
+  .sch-row .sl{display:block;font:700 10.5px Georgia,serif;letter-spacing:.14em;text-transform:uppercase;color:#8A6A2E}
+  .sch-row .sn{display:block;font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#1F2A44}
   .rm-subj-card{max-width:820px;margin:0 auto;background:#fff;border:1px solid var(--rule,#E4DCC8);border-radius:10px;padding:14px 18px;}
   .rm-subj-t{text-align:center;font:700 12px Georgia,serif;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep,#8A6A2E);margin-bottom:8px;}
   .rm-subj-row{display:flex;flex-wrap:wrap;justify-content:center;}
@@ -5520,12 +5524,13 @@ def build_roadmap(p, s, out):
                               f'<div class="s">{c}</div></div>' for b, c in _steps)
                     + "</div></div></div>")
         _subj4 = _facts[:4]
+        import schools as _sch
         if _subj4:
             rm_subject = ('<section class="rm-subj"><div class="wrap"><div class="rm-subj-card">'
                           '<div class="rm-subj-t">Subject</div><div class="rm-subj-row">'
                           + "".join(f'<div class="rm-subj-f"><span class="n">{n}</span>'
                                     f'<span class="l">{l}</span></div>' for n, l in _subj4)
-                          + "</div></div></div></section>\n")
+                          + "</div>" + _sch.row_html(p) + "</div></div></section>\n")
         _facts = []
     if _facts:
         # Casey, 23 Nov 2026: "Give it the same look" as the Seller Portal --

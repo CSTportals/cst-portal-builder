@@ -830,7 +830,10 @@ def buyer_preview_to_roadmap(p, s_dir, b_dir):
     # Casey, 23 Nov 2026: "Remove options ... to go to Subject or sample.
     # Completeness of report dictates." One picture: the Sample until this
     # home's portal is finished, then this home's portal.
-    done = _bp_finished(p) and home.exists()
+    # Casey, 25 Nov 2026: "At the bottom on roadmap is the property buyer
+    # portal (what there is of it)" -- this home's portal whenever it exists.
+    done = home.exists()
+    unfinished = not _bp_finished(p)
     sample = ROOT / "output" / SAMPLE_BUYER[0] / "index.html"
     if not done and not sample.exists():
         if not home.exists():
@@ -842,7 +845,10 @@ def buyer_preview_to_roadmap(p, s_dir, b_dir):
         _portal_top(home, s_dir / "bp_preview_home.jpg")
         shot = (f'<a class="bpv-shot on" href="{url}" target="_blank" rel="noopener">'
                 '<img src="bp_preview_home.jpg" alt="This home&rsquo;s Buyer Portal"></a>')
-        cap = '<p class="bpv-cap">This home&rsquo;s Buyer Portal &mdash; tap to open it.</p>'
+        cap = ('<p class="bpv-cap">This home&rsquo;s Buyer Portal so far &mdash; photos and features are added '
+               f'as the home is prepared. Tap to open it, or <a href="{SAMPLE_BUYER[1]}" target="_blank" rel="noopener">'
+               'see a completed Buyer Portal</a>.</p>' if unfinished else
+               '<p class="bpv-cap">This home&rsquo;s Buyer Portal &mdash; tap to open it.</p>')
     else:
         _portal_top(sample, s_dir / "bp_preview_sample.jpg")
         shot = (f'<a class="bpv-shot on" href="{SAMPLE_BUYER[1]}" target="_blank" rel="noopener">'
