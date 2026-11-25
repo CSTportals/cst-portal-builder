@@ -131,6 +131,12 @@ ROADMAP_LINKS = {
     "Our 4-Step": "Our 4-Step",
     "4. Adjust Price": "4. Adjust Price",
 }
+def _rm_links(p):
+    if p.get("strategy_track_record"):
+        return {"Strategy Track Record": "css:trk", **ROADMAP_LINKS}
+    return ROADMAP_LINKS
+
+
 BR_LINKS = {
     "Comparable Property Analysis": "Comparable Property Analysis",
     "Authenticated Values": "Authenticated Values",
@@ -182,13 +188,20 @@ def inject_links(page, guide_href, links):
             m = re.search(r'<(?:section|div) class="' + cls + r'[^"]*"[^>]*>', h)
             if not m:
                 continue
-            name = {"pitch": "the Headlines", "values-grid": "Authenticated Values"}.get(cls, cls.title())
+            name = {"pitch": "the Headlines", "values-grid": "Authenticated Values",
+                    "trk": "Strategy Track Record"}.get(cls, cls.title())
             tag = m.group(0)
             new = tag if " id=" in tag else tag[:-1] + f' id="s-{sg}">'
             link = GLINK.format(s=sg, href=guide_href, name=name).replace(
                 'style="text-align:center;margin:4px 0 16px;"', 'style="text-align:center;margin:0 0 14px;"')
             if cls == "pitch":
                 h = h[:m.start()] + new + link + h[m.end():]
+            elif cls == "trk":   # under the track record band
+                h = h[:m.start()] + new + h[m.end():]
+                k = h.find('<p class="facts-note">', m.start())
+                k = h.find("</p>", k) + 4 if k > 0 else -1
+                if k > 3:
+                    h = h[:k] + link.replace("margin:0 0 14px;", "margin:12px 0 0;") + h[k:]
             else:   # the link sits just above the block it explains
                 h = h[:m.start()] + link + new + h[m.end():]
         else:
@@ -262,6 +275,9 @@ def _shots(page_url, wanted, viewport=(1280, 900), before=None, max_h=1500, hide
             out[name] = pg.screenshot(full_page=True, clip={"x": 0, "y": max(0, y0 - 40),
                                                             "width": viewport[0], "height": y1 - y0 + 30})
         out["_top"] = pg.screenshot()
+        el = pg.query_selector("section.trk .facts")
+        if el:
+            out["_trk"] = el.screenshot()
         el = pg.query_selector("section.pitch")
         if el:
             out["_headlines"] = el.screenshot()
@@ -402,12 +418,33 @@ def roadmap_guide(p, s_dir):
           "Every price is established in advance. We let buyer activity dictate our next move, eliminating "
           "surprises and protecting momentum."]),
     ]
+    # Casey, 25 Nov 2026: "The strategy should have a section in Guide that
+    # says Strategy Track Record (arrow). Show the track record comparison at
+    # top of roadmap, then under it the track record you were using at the
+    # bottom of the emails showing homes selling over list" -- "just show on
+    # Sample". Opt in with "strategy_track_record": true.
+    if p.get("strategy_track_record") and sh.get("_trk"):
+        try:
+            from build_portal import over_list_table_html as _olt
+            _tbl = _olt(p=p)
+        except Exception:
+            _tbl = ""
+        import base64 as _b64
+        _img = (f'<img src="data:image/png;base64,{_b64.b64encode(sh["_trk"]).decode()}" '
+                'alt="CST track record vs the market" style="width:100%;max-width:980px;display:block;'
+                'margin:10px auto 18px;border:1px solid #E4DCC8;border-radius:10px;">')
+        secs.insert(1, (("HTML", _img + '<div style="max-width:820px;margin:0 auto;">' + _tbl + "</div>"),
+                        "Strategy Track Record", "The strategy works &mdash; here is the proof",
+                        ["The top of your Roadmap compares The Casey Samson Team&rsquo;s verified MLS Bright "
+                         "results with the rest of your market over the last 90 days.",
+                         "Under it: CST homes that sold over list price. The Pricing Strategy in your Roadmap "
+                         "is the same one that produced every sale on this list."]))
     rec = notes.get("recovery")
     if rec:
         secs = _recovery_roadmap_secs(p, page, secs, rec)
     return _page("Your Seller Roadmap Guide",
                  f"{addr} &mdash; what each part of your Gold Standard Seller Roadmap&trade; shows you.",
-                 secs, _brand(p), links=ROADMAP_LINKS, back="Roadmap")
+                 secs, _brand(p), links=_rm_links(p), back="Roadmap")
 
 
 def _recovery_roadmap_secs(p, page, secs, rec):
@@ -933,12 +970,14 @@ def build(p, which=("roadmap", "mss", "moveup", "buyer")):
     b_dir = ROOT / "output" / f"{pre}_Buyer"
     made = []
     rm = s_dir / f"{pre}_Roadmap.html"
+    # The track record card goes onto the Roadmap first, so the guide can
+    # show it and link from it (Strategy Track Record, 25 Nov 2026).
+    if "roadmap" in which:
+        track_record_to_roadmap(s_dir / "index.html", rm)
     if "roadmap" in which and (h := roadmap_guide(p, s_dir)):
         (s_dir / f"{pre}_Roadmap_Guide.html").write_text(h.replace("__BACK__", rm.name), encoding="utf-8")
         made.append("roadmap")
-        inject_links(rm, f"{pre}_Roadmap_Guide.html", ROADMAP_LINKS)
-    if "roadmap" in which:
-        track_record_to_roadmap(s_dir / "index.html", rm)
+        inject_links(rm, f"{pre}_Roadmap_Guide.html", _rm_links(p))
     if "roadmap" in which or "buyer" in which:
         try:
             buyer_preview_to_roadmap(p, s_dir, b_dir)
