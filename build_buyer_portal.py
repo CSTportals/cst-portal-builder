@@ -2166,7 +2166,7 @@ def build(p, out):
         cells = "".join(f'<div class="fact"><span class="n">{n}</span>'
                         f'<div class="l">{l}</div></div>' for n, l in b["facts"])
         import schools as _sch
-        _sr = _sch.row_html(p)
+        _sr = _sch.row_html(p, buyer=True)
         facts = (f'<div class="wrap"><div class="facts">{cells}'
                  + (f'<style>{_sch.CSS}.facts .sch-row{{flex:1 1 100%;margin:8px 10px 0}}</style>{_sr}' if _sr else "")
                  + '</div></div>\n')

@@ -39,11 +39,22 @@ def ratings_of(p):
     return (p.get("buyer_portal") or {}).get("school_ratings") or {}
 
 
-def row_html(p, cls="sch-row"):
+BUYER_MIN = 7
+
+
+def row_html(p, cls="sch-row", buyer=False):
+    """buyer=True: Casey, 25 Nov 2026 -- "Do not show any of the schools
+    under 7 on the buyer page ... Show all on seller." A school with a
+    GreatSchools rating below 7 is left off the Buyer Portal (a school with no
+    rating on file still shows); the Seller Roadmap always shows all three."""
     s = schools_of(p)
+    r = ratings_of(p)
+    if buyer:
+        s = [(lab, n) for lab, n in s
+             if not isinstance(r.get(n) or r.get(_short(n)), (int, float))
+             or (r.get(n) or r.get(_short(n))) >= BUYER_MIN]
     if not s:
         return ""
-    r = ratings_of(p)
     def _rt(n):
         v = r.get(n) or r.get(_short(n))
         return f'<span class="sr">GreatSchools {v}/10</span>' if v else ""
