@@ -133,7 +133,7 @@ ROADMAP_LINKS = {
 }
 def _rm_links(p):
     if p.get("strategy_track_record"):
-        return {"Strategy Track Record": "css:trk", **ROADMAP_LINKS}
+        return {**ROADMAP_LINKS, "Strategy Track Record": "css:trk"}   # after Pricing Strategy's link
     return ROADMAP_LINKS
 
 
@@ -196,12 +196,16 @@ def inject_links(page, guide_href, links):
                 'style="text-align:center;margin:4px 0 16px;"', 'style="text-align:center;margin:0 0 14px;"')
             if cls == "pitch":
                 h = h[:m.start()] + new + link + h[m.end():]
-            elif cls == "trk":   # under the track record band
-                h = h[:m.start()] + new + h[m.end():]
-                k = h.find('<p class="facts-note">', m.start())
-                k = h.find("</p>", k) + 4 if k > 0 else -1
-                if k > 3:
-                    h = h[:k] + link.replace("margin:0 0 14px;", "margin:12px 0 0;") + h[k:]
+            elif cls == "trk":
+                # Casey, 25 Nov 2026: the Strategy Track Record link sits
+                # "down at CST Pricing Strategy" -- right under that section's
+                # own guide link; the guide's Back link lands there too.
+                k = h.find('data-glink="cst-pricing-strategy"')
+                if k < 0:
+                    continue
+                k = h.find("</div>", k) + 6
+                h = (h[:k] + f'<a id="s-{sg}" style="position:relative;top:-70px;"></a>'
+                     + link.replace("margin:0 0 14px;", "margin:-6px 0 16px;") + h[k:])
             else:   # the link sits just above the block it explains
                 h = h[:m.start()] + link + new + h[m.end():]
         else:
