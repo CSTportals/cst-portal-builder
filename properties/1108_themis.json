@@ -484,7 +484,34 @@
      ]
     ]
    }
-  ]
+  ],
+  "lot": {
+   "pin": "273300117000",
+   "area_sf": 8176,
+   "source": "Loudoun County GIS parcels (MCPI 273300117000, lot 103, Meadowbrook; 26 Nov 2026)",
+   "polygon": [
+    [
+     39.09234954,
+     -77.57983598
+    ],
+    [
+     39.09217795,
+     -77.5799689
+    ],
+    [
+     39.09233687,
+     -77.58030672
+    ],
+    [
+     39.09250846,
+     -77.5801738
+    ],
+    [
+     39.09234954,
+     -77.57983598
+    ]
+   ]
+  }
  },
  "listing_agent_name": "Ferris",
  "listing_agent_email": "feways01@yahoo.com"
