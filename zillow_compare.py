@@ -113,6 +113,7 @@ def _table(rows, us="CST", head="What You Get"):
 
 
 PRINT_PDF = "CST_Roadmap_vs_Zillow_vs_Compass.pdf"   # copied into every seller site
+DESCRIPTION = "The CST Roadmap is the Gold Standard for Listing Strategy Preparation and Launch Protocols"   # official, Casey 26 Nov 2026 -- the comparison's header
 OFF_MKT = 7.01   # zillow.com/zestimate, nationwide median error, off-market homes
 ON_MKT = 1.83    # same page, on-market homes
 
@@ -141,9 +142,7 @@ def error_callout(p):
             f'<div class="big">{OFF_MKT:.2f}%</div>'
             '<div class="sub">Zillow&rsquo;s own median Zestimate error for homes not on the market</div>'
             f'{usd}'
-            # Casey, 26 Nov 2026: in place of the Zillow on-market note.
-            '<div class="why">The CST Roadmap is the Gold Standard for Listing Strategy '
-            'Preparation and Launch Protocols.</div></div>')
+            '</div>')
 
 
 def enabled(p, b=None):
@@ -178,6 +177,7 @@ def seller_section(p):
     if not enabled(p):
         return ""
     return (f'<style>{CSS}</style><section><div class="wrap">'
+            f'<h2 class="section-title" style="max-width:820px;margin-left:auto;margin-right:auto">{DESCRIPTION}</h2>'
             f'{error_callout(p)}{_table(_applies(SELLER_ROWS, p), "CST Roadmap", "CST Roadmap Features")}'
             # Casey, 25 Nov 2026: "add link to the bottom so people can print Comparison"
             f'<p style="text-align:center;margin:14px 0 0;"><a href="{PRINT_PDF}" target="_blank" rel="noopener" '
@@ -219,10 +219,10 @@ def email_html(p, root=None):
         bad = r[4] if len(r) > 4 else False
         body += (f"<tr><td {td}>{t}</td><td {tc}>{mark(us, bad)}</td>"
                  f"<td {tc}>{mark(z, bad)}</td><td {tc}>{mark(c, bad)}</td></tr>")
-    return (
+    return (f'<h3 style="margin:28px 0 8px;">{DESCRIPTION}</h3>\n'
             f'<p style="margin:0 0 10px;"><b style="color:#B3261E;">AI Can Not Price Your Home.</b> '
             f"Zillow&rsquo;s own median Zestimate error for homes not on the market is {OFF_MKT:.2f}%.{usd}</p>\n"
-            '<p style="margin:0 0 10px;"><b>The CST Roadmap is the Gold Standard for Listing Strategy Preparation and Launch Protocols.</b></p>\n'
+
             '<table style="border-collapse:collapse;width:100%;font-size:14px;font-family:inherit;">'
             f"<tr><th {th0}>CST Roadmap Features</th><th {th}>CST Roadmap</th><th {th}>Zillow</th><th {th}>Compass</th></tr>"
             f"{body}</table>\n"

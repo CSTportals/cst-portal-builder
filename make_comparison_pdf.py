@@ -30,7 +30,7 @@ def page(title, sub, inner):
 
 def build():
     callout = zc.error_callout({"values": {"customary": EXAMPLE_HOME}})
-    seller = page("", "",
+    seller = page(zc.DESCRIPTION, "",
                   callout + zc._table(zc.SELLER_ROWS, "CST Roadmap", "CST Roadmap Features"))
     buyer = page("CST Buyer Portal vs Zillow vs Compass",
                  "What buyers get from our Buyer Portal, from Zillow, and from Compass.",
