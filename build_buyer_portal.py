@@ -2226,13 +2226,11 @@ def build(p, out):
             f'</video><div class="cap">{v["label"]}</div></div>'
             for v in b["videos"])
         cta = ""
-        if b.get("listing_page_url"):
+        if False and b.get("listing_page_url"):   # Casey, 26 Nov 2026: Full Listing link is redundant
             cta = (f'<div class="site-cta"><a href="{b["listing_page_url"]}" target="_blank" '
                    f'rel="noopener">View the Full Listing &rarr;</a>'
                    f'<div class="sub">Full gallery, details and floor plans on '
                    f'caseysamson.com</div></div>')
-        else:
-            note("Full Listing link OMITTED — no listing_page_url in the buyer_portal block.")
         video = (f'<section><div class="wrap"><h2 class="st">See the Home</h2>'
                  f'<p class="ss">Take the tour, then come see it in person.</p>'
                  f'<div class="videos">{vs}</div>{cta}</div></section>\n')
@@ -2240,15 +2238,9 @@ def build(p, out):
         note("Video tour OMITTED — no videos on file.")
         # No video does not mean no "See the Home": the custom website link
         # lives in this section and has to survive on its own.
-        if b.get("listing_page_url"):
-            video = (f'<section><div class="wrap"><h2 class="st">See the Home</h2>'
-                     f'<p class="ss">The full gallery, details and floor plans are on our '
-                     f'site.</p><div class="site-cta">'
-                     f'<a href="{b["listing_page_url"]}" target="_blank" rel="noopener">'
-                     f'View the Full Listing &rarr;</a>'
-                     f'<div class="sub">caseysamson.com</div></div></div></section>\n')
-        else:
-            note("Full Listing link OMITTED — no listing_page_url in the buyer_portal block.")
+        # Casey, 26 Nov 2026: "This is redundant. take out see the Home
+        # section" -- the listing site is already linked in the header.
+        video = ""
 
     # ---- gallery --------------------------------------------------------
     gallery = ""
