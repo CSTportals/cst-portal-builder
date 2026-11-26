@@ -2161,13 +2161,21 @@ def build(p, out):
     try:
         from build_portal import buyer_portal_ready as _bpr, EXAMPLE_BUYER_PORTAL as _ex
         _own = (b.get("url") or "").rstrip("/")
+        # Casey, 26 Nov 2026: on the Featured brand -- "This Featured Home (or
+        # Estate) is under construction ... See a completed Featured Estate"
+        # (the completed example, MacArthur, is an Estate).
+        import featured_brand as _fbw
+        if _fbw.enabled(b):
+            _wip_name, _wip_link = f"Featured {_fbw.tier(b)}", "See CST Featured Estate"   # Casey, 26 Nov 2026
+        else:
+            _wip_name, _wip_link = "Buyer Portal", "See a completed Buyer Portal"
         if not (_bpr(p) or b.get("finished")) and _own.rstrip("/") != _ex.rstrip("/"):
             wip_bar = ('<div style="background:#1F2A44;color:#F3EBD8;text-align:center;padding:12px 16px;'
                        'font:15px/1.45 Georgia,serif;border-bottom:3px solid #B8902F">'
-                       'This Buyer Portal is under construction waiting for photos and features. '   # Casey, 26 Nov 2026
+                       f'This {_wip_name} is under construction waiting for photos and features. '   # Casey, 26 Nov 2026
                        f'<a href="{_ex}" target="_blank" rel="noopener" style="color:#E8C77A;font-weight:700;'
                        'text-decoration:underline;text-underline-offset:3px;white-space:nowrap">'
-                       'See a completed Buyer Portal &rarr;</a></div>')
+                       f'{_wip_link} &rarr;</a></div>')
     except Exception:
         pass
 
