@@ -1,0 +1,454 @@
+{
+ "address": "15095 Valhalla Ct",
+ "city": "Haymarket",
+ "state": "Virginia",
+ "state_abbr": "VA",
+ "zip": "20169",
+ "county": "Prince William",
+ "congestion_fees": false,
+ "report_date": "Thursday, November 26, 2026",
+ "prefix": "15095_Valhalla",
+ "listing_url": "15095Valhalla.com",
+ "portal_url": "https://15095valhalla.netlify.app",
+ "include_tracker": true,
+ "listing_status": "new",
+ "private_label": "john_grzejka_gteam",
+ "agent": {
+  "lookup": "John E Grzejka",
+  "display": "John Grzejka",
+  "phone": "703-926-8412",
+  "email": "john@novahomesales.net"
+ },
+ "agent_page": "john-e-grzejka.html",
+ "asset_dir": "assets/15095_Valhalla",
+ "hero_photo": "15095_Valhalla_front.jpg",
+ "photos": [
+  "15095_Valhalla_front.jpg"
+ ],
+ "subject": {
+  "built": 2014,
+  "sf": 3628,
+  "lot": 10000,
+  "assessment": 1078000
+ },
+ "values": {
+  "dated": 1098240,
+  "customary": 1220267,
+  "customary_list": null,
+  "premium": 1317888,
+  "upgrades": 0,
+  "preview_override": 1199999,
+  "coming_soon_override": 1199999,
+  "fallback_override": 1149999,
+  "deep_override": 1099999,
+  "worksheet_note": "Rebuilt 26 Nov 2026 from the live Roadmap (dated 2 Nov 2026) at 15095valhalla.netlify.app; comp/competition Customary Values derived from the page's 'vs. Customary' figures (rounded to $1K)."
+ },
+ "comps": {
+  "rows": [
+   [
+    "5356 Mortons Ford Way",
+    2008,
+    3629,
+    18438,
+    1087300,
+    1230000
+   ],
+   [
+    "14562 Stoney Creek Ct",
+    2008,
+    3736,
+    20542,
+    1092500,
+    1150000
+   ],
+   [
+    "15043 Gaines Mill Cir",
+    2006,
+    3247,
+    9644,
+    954100,
+    1155000
+   ],
+   [
+    "5252 Jacobs Creek Pl",
+    2005,
+    3953,
+    16256,
+    1088200,
+    1150000
+   ],
+   [
+    "5809 Seven Pines Ct",
+    2005,
+    3361,
+    0,
+    966200,
+    1125000
+   ]
+  ],
+  "customary": {
+   "5356 Mortons Ford Way": 1195000,
+   "14562 Stoney Creek Ct": 1204000,
+   "15043 Gaines Mill Cir": 1081000,
+   "5252 Jacobs Creek Pl": 1195000,
+   "5809 Seven Pines Ct": 1092000
+  },
+  "summary": [
+   [
+    "Age &amp; Size &mdash; 5 sales",
+    2007,
+    3559,
+    16288,
+    1030600,
+    1126135
+   ],
+   [
+    "Price Range &mdash; 4 sales",
+    2006,
+    3574,
+    16004,
+    1025250,
+    1145000
+   ]
+  ],
+  "summary_ppsf": {
+   "Age &amp; Size &mdash; 5 sales": {
+    "ppsf": 332
+   },
+   "Price Range &mdash; 4 sales": {
+    "ppsf": 340
+   }
+  },
+  "subject_value": 1220267
+ },
+ "market": {
+  "name": "Haymarket Luxury Market",
+  "slug": "Haymarket_Luxury_Market_Snapshot",
+  "stats": null,
+  "absorption": null
+ },
+ "competition": [
+  {
+   "status": "Active",
+   "address": "5404 Emmys Mill Ct",
+   "dom": 54,
+   "built": 2006,
+   "sf": 3915,
+   "lot": 0,
+   "assessment": 1120600,
+   "list": 1250000
+  },
+  {
+   "status": "Active",
+   "address": "5022 Burnside Farm Pl",
+   "dom": 209,
+   "built": 2006,
+   "sf": 3990,
+   "lot": 0,
+   "assessment": 1010700,
+   "list": 1075000
+  },
+  {
+   "status": "Active Under Contract",
+   "address": "15792 Ryder Cup Dr",
+   "dom": 116,
+   "built": 2005,
+   "sf": 4140,
+   "lot": 0,
+   "assessment": 1089100,
+   "list": 1199000
+  }
+ ],
+ "notes": [],
+ "zillow_compare": true,
+ "schools": {
+  "elementary": "J.W. Alvey Elementary School",
+  "middle": "Ronald Wilson Reagan Middle School",
+  "high": "Battlefield High School"
+ },
+ "schools_source": "MLS school fields for 15095 Valhalla Ct (sold Aug 2024): Alvey / Ronald Wilson Reagan / Battlefield",
+ "school_ratings": {
+  "J.W. Alvey Elementary School": 10,
+  "Ronald Wilson Reagan Middle School": 8,
+  "Battlefield High School": 9
+ },
+ "school_ratings_year": 2026,
+ "school_ratings_source": "greatschools.org school pages (checked 26 Nov 2026)",
+ "market_map": {
+  "subject": [
+   38.8385541,
+   -77.6397842
+  ],
+  "subject_dir": "left",
+  "subject_dir_solds": "right",
+  "solds": [
+   {
+    "address": "5356 Mortons Ford Way",
+    "sale": 1230000,
+    "status": "Sold",
+    "lat": 38.840271,
+    "lng": -77.6267217
+   },
+   {
+    "address": "14562 Stoney Creek Ct",
+    "sale": 1150000,
+    "status": "Sold",
+    "lat": 38.8381618,
+    "lng": -77.6236843
+   },
+   {
+    "address": "15043 Gaines Mill Cir",
+    "sale": 1155000,
+    "status": "Sold",
+    "lat": 38.8400138,
+    "lng": -77.6342087
+   },
+   {
+    "address": "5252 Jacobs Creek Pl",
+    "sale": 1150000,
+    "status": "Sold",
+    "lat": 38.8465196,
+    "lng": -77.6572814
+   },
+   {
+    "address": "5809 Seven Pines Ct",
+    "sale": 1125000,
+    "status": "Sold",
+    "lat": 38.8316133,
+    "lng": -77.6609612
+   }
+  ],
+  "listings": [
+   {
+    "address": "5404 Emmys Mill Ct",
+    "status": "Active",
+    "list": 1250000,
+    "dom": 54,
+    "customary": 1217000,
+    "lat": 38.8382458,
+    "lng": -77.6283558
+   },
+   {
+    "address": "5022 Burnside Farm Pl",
+    "status": "Active",
+    "list": 1075000,
+    "dom": 209,
+    "customary": 1159000,
+    "lat": 38.8487366,
+    "lng": -77.6356823
+   },
+   {
+    "address": "15792 Ryder Cup Dr",
+    "status": "Active Under Contract",
+    "list": 1199000,
+    "dom": 116,
+    "customary": 1202000,
+    "lat": 38.8328527,
+    "lng": -77.6632031
+   }
+  ]
+ },
+ "buyer_portal": {
+  "live": true,
+  "display_address": "15095 Valhalla Court",
+  "asset_dir": "assets/15095_Valhalla/buyer",
+  "hero_photo": "15095_Valhalla_front.jpg",
+  "pricing_pdf": "15095_Valhalla_Buyer_Report.pdf",
+  "facts": [
+   [
+    "2014",
+    "Year Built"
+   ],
+   [
+    "3,628",
+    "Above grade SF"
+   ],
+   [
+    "10,000",
+    "SF lot"
+   ],
+   [
+    "Haymarket",
+    "Prince William"
+   ]
+  ],
+  "url": "https://buyvalhalla.netlify.app",
+  "deploy_to": "https://buyvalhalla.netlify.app",
+  "list_price": 1199999,
+  "status_line": "Coming Soon",
+  "featured_brand": true,
+  "contacts": {
+   "names": "John Grzejka",
+   "team": "G-TEAM Realty Group &middot; Samson Properties",
+   "lines": [
+    [
+     "John Grzejka",
+     "703-926-8412",
+     "john@novahomesales.net"
+    ]
+   ],
+   "office": "Samson Properties &middot; Northern Virginia"
+  },
+  "locator_map": {
+   "title": "The Neighborhood",
+   "lede": "Dominion Valley Country Club is around the corner and the Town of Haymarket a few minutes south, with Wegmans and Virginia Gateway just past it. The arrows point to everything past the edge of the map.",
+   "center": {
+    "lat": 38.8385541,
+    "lng": -77.6397842,
+    "label": "15095 Valhalla Ct"
+   },
+   "pins": [
+    {
+     "name": "Dominion Valley Country Club",
+     "sub": "Arnold Palmer golf, pool and fitness",
+     "lat": 38.840535,
+     "lng": -77.6419155
+    },
+    {
+     "name": "Haymarket Iceplex",
+     "sub": "Two rinks, Washington St",
+     "lat": 38.8125705,
+     "lng": -77.6400865
+    },
+    {
+     "name": "Giuseppe&rsquo;s",
+     "sub": "Family &middot; Italian, Washington St",
+     "lat": 38.813343,
+     "lng": -77.6381454
+    },
+    {
+     "name": "Hidden Julles",
+     "sub": "Family &middot; brunch and caf&eacute;",
+     "lat": 38.8121559,
+     "lng": -77.6358834
+    },
+    {
+     "name": "Bull Run Mountains Preserve",
+     "sub": "Trails and streams",
+     "lat": 38.8250633,
+     "lng": -77.6985289
+    }
+   ],
+   "arrows": [
+    [
+     191.0,
+     [
+      "Wegmans",
+      "Gainesville &middot; 12 min"
+     ]
+    ],
+    [
+     149.5,
+     [
+      "Virginia Gateway",
+      "Shops, dining, cinema &middot; 11 min"
+     ]
+    ],
+    [
+     104.1,
+     [
+      "Manassas Battlefield",
+      "National park &middot; 13 min"
+     ]
+    ],
+    [
+     51.2,
+     [
+      "Dulles International",
+      "IAD &middot; 28 min"
+     ]
+    ],
+    [
+     83.0,
+     [
+      "Washington, DC",
+      "Union Station &middot; 59 min"
+     ]
+    ]
+   ]
+  },
+  "amenities_lede": "The country club around the corner, the Town of Haymarket a few minutes away, and I-66 and Route 29 for the drive east.",
+  "amenities": [
+   {
+    "title": "Getting Around",
+    "items": [
+     [
+      "Dulles International",
+      "IAD",
+      16.31
+     ],
+     [
+      "Reagan National",
+      "DCA",
+      42.03
+     ],
+     [
+      "Washington, DC",
+      "Union Station",
+      44.62
+     ]
+    ]
+   },
+   {
+    "title": "Family Dining",
+    "items": [
+     [
+      "Giuseppe&rsquo;s",
+      "Family &middot; Italian, Washington St",
+      2.27
+     ],
+     [
+      "Hidden Julles",
+      "Family &middot; brunch and caf&eacute;",
+      2.39
+     ],
+     [
+      "Ghosted Concepts",
+      "Chicken sandwiches, Washington St",
+      2.67
+     ]
+    ]
+   },
+   {
+    "title": "Shopping",
+    "items": [
+     [
+      "Virginia Gateway",
+      "Shops, dining and cinema",
+      4.56
+     ],
+     [
+      "Wegmans",
+      "Stonewall Shops, Gainesville",
+      4.96
+     ]
+    ]
+   },
+   {
+    "title": "Parks and Recreation",
+    "items": [
+     [
+      "Dominion Valley Country Club",
+      "Arnold Palmer golf, pool and fitness",
+      "5 min walk"
+     ],
+     [
+      "Haymarket Iceplex",
+      "Two rinks, Washington St",
+      2.33
+     ],
+     [
+      "Bull Run Mountains Preserve",
+      "Trails and streams",
+      4.29
+     ],
+     [
+      "Manassas National Battlefield",
+      "Trails and history",
+      7.38
+     ]
+    ]
+   }
+  ]
+ }
+}
