@@ -170,7 +170,7 @@ GLINK_STYLE = ("font:700 15px Georgia,serif;color:#1F2A44;text-decoration:none;"
                "border-bottom:2px solid #B8902F;padding-bottom:2px;")
 GLINK = ('<div class="glink-row" data-glink="{s}" style="text-align:center;margin:4px 0 16px;">'
          '<a href="{href}#g-{s}" target="_blank" rel="noopener" style="' + GLINK_STYLE + '">'
-         'Guide to Understanding {name} &rarr;</a></div>')
+         'Understanding {name} &rarr;</a></div>')   # Casey, 26 Nov 2026: drop "Guide to" on Roadmap and Buyer Portal
 
 
 def inject_links(page, guide_href, links):
@@ -999,8 +999,8 @@ def build(p, which=("roadmap", "mss", "moveup", "buyer")):
         inject_links(rm, f"{pre}_Roadmap_Guide.html", _rm_links(p))
         if p.get("strategy_track_record"):
             _t = rm.read_text(encoding="utf-8").replace(
-                "Guide to Understanding CST Pricing Strategy &rarr;",
-                "Guide to Understanding CST Strategy and Track Record &rarr;")
+                "Understanding CST Pricing Strategy &rarr;",
+                "Understanding CST Strategy and Track Record &rarr;")
             rm.write_text(_t, encoding="utf-8")
     if "roadmap" in which or "buyer" in which:
         try:
