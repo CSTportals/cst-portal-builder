@@ -2191,7 +2191,7 @@ def build(p, out):
         _sr = _sch.row_html(p, buyer=True)
         facts = (f'<div class="wrap"><div class="facts">{cells}'
                  + (f'<style>{_sch.CSS}.facts .sch-row{{flex:1 1 100%;margin:8px 10px 0}}</style>{_sr}' if _sr else "")
-                 + '</div></div>\n')
+                 + '</div>' + __import__("utilities").card(b) + '</div>\n')
 
     # ---- description ----------------------------------------------------
     # One line that sells, then the handful of things worth saying out loud.
