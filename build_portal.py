@@ -6005,7 +6005,7 @@ def build_roadmap(p, s, out):
     <img class="seal" src="Gold_Standard_Logo.png" alt="Gold Standard Listing">
 {_rm_brandline}
     {('<p class="lbl rts"><span class="rts-1">The Casey Samson Team</span>'
-      f'<span class="rts-2">{"Recovery Roadmap to Success" if _is_recovery else "Seller Roadmap to Success"}</span></p>')}
+      f'<span class="rts-2">{"Recovery Roadmap to Success" if _is_recovery else (p.get("roadmap_title") or "Seller Roadmap to Success")}</span></p>')}
     <h1>{"Address" if is_example_home(p) or p.get("address") == "Sample" else addr}</h1>
     <p class="city">{city_state}</p>
 {rm_tag}
