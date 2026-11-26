@@ -2482,17 +2482,21 @@ def build(p, out):
         if len(b.get("gallery") or []) < 4:
             gallery = ""
 
+    import featured_brand as _fb
+    if _fb.enabled(b):
+        _fb.copy_fonts(out)
     html = f"""<!-- BUYER PORTAL (public) — {addr}. Deploy to {b.get("url", "(url not set)")} -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{addr}, {city} &mdash; The Casey Samson Team</title>
+<title>{(_fb.short_name(b) + " &mdash; ") if _fb.enabled(b) else ""}{addr}, {city} &mdash; The Casey Samson Team</title>
 <meta name="description" content="{addr}, {city}, {state}. {''.join(f'{n} bedrooms, ' for n, l in (b.get('facts') or []) if 'bed' in str(l).lower())[:40]}offered by The Casey Samson Team.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 {CSS}
+{(_fb.FONT + _fb.CSS) if _fb.enabled(b) else ""}
 </style>
 </head>
 <body>
@@ -2503,8 +2507,7 @@ def build(p, out):
 {hero_img}
   <div class="hero-shade"></div>
   <div class="hero-inner">
-    <img class="seal" src="Gold_Standard_Logo.png" alt="The Casey Samson Team">
-    <div class="brandline">The Casey Samson Team</div>
+    {_fb.block(b) if _fb.enabled(b) else '<img class="seal" src="Gold_Standard_Logo.png" alt="The Casey Samson Team"><div class="brandline">The Casey Samson Team</div>'}
     <h1>{addr}</h1>
     <p class="city">{city}, {state}</p>
     {price}
