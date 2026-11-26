@@ -2164,7 +2164,7 @@ def build(p, out):
         if not (_bpr(p) or b.get("finished")) and _own.rstrip("/") != _ex.rstrip("/"):
             wip_bar = ('<div style="background:#1F2A44;color:#F3EBD8;text-align:center;padding:12px 16px;'
                        'font:15px/1.45 Georgia,serif;border-bottom:3px solid #B8902F">'
-                       'This Buyer Portal is being built &mdash; photos and features are added as the home is prepared. '
+                       'This Buyer Portal is under construction waiting for photos and features. '   # Casey, 26 Nov 2026
                        f'<a href="{_ex}" target="_blank" rel="noopener" style="color:#E8C77A;font-weight:700;'
                        'text-decoration:underline;text-underline-offset:3px;white-space:nowrap">'
                        'See a completed Buyer Portal &rarr;</a></div>')
