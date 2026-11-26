@@ -1329,7 +1329,11 @@ def locator_map(b):
         '</div>'
         f'<ol class="locmap-key">{legend}</ol>'
         '<p class="locmap-note">Walking times on foot. Drive times in normal '
-        'traffic.</p></div></section>\n'
+        'traffic.</p>'
+        # Casey, 26 Nov 2026: utilities are "not a sales feature so bring it
+        # under the Neighborhood".
+        + __import__("utilities").card(b) +
+        '</div></section>\n'
         '<link rel="stylesheet" href="leaflet.css">\n'
         '<script src="leaflet.js"></script>\n'
         '<script>\n'
@@ -2191,7 +2195,7 @@ def build(p, out):
         _sr = _sch.row_html(p, buyer=True)
         facts = (f'<div class="wrap"><div class="facts">{cells}'
                  + (f'<style>{_sch.CSS}.facts .sch-row{{flex:1 1 100%;margin:8px 10px 0}}</style>{_sr}' if _sr else "")
-                 + '</div>' + __import__("utilities").card(b) + '</div>\n')
+                 + '</div></div>\n')
 
     # ---- description ----------------------------------------------------
     # One line that sells, then the handful of things worth saying out loud.
