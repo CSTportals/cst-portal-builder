@@ -2005,6 +2005,9 @@ def build_disclosures(p, b, out):
 
 def build(p, out):
     b = p.get("buyer_portal")
+    # Featured brand tier for homes not yet listed: the Preview price.
+    _vv = p.get("values") or {}
+    b.setdefault("_tier_price", _vv.get("preview_override") or _vv.get("coming_soon_override") or 0)
     if not b:
         sys.exit('This property has no "buyer_portal" block — nothing to build.')
 

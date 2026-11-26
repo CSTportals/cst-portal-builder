@@ -33,7 +33,9 @@ def enabled(b):
 
 
 def tier(b):
-    lp = (b or {}).get("list_price") or 0
+    # list price; homes not yet listed fall back to the Preview price
+    # (set by build_buyer_portal as _tier_price).
+    lp = (b or {}).get("list_price") or (b or {}).get("_tier_price") or 0
     return "Estate" if lp > ESTATE_OVER else "Home"
 
 

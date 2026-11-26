@@ -156,7 +156,9 @@ def _ask_paras(v):
             f"<b>{b}</b> (the first buyer threshold under Premium Value). If you want <b>{b}</b>, "
             f"ask <b>{a}</b>.",
             "<b>Highest Value can only be achieved from finding the largest buyer pool for the property.</b> "
-            "The highest price offered in the first week is the highest value of the home at that time."]
+            "The highest price offered in the first week is the highest value of the home at that time.",
+            # Casey, 26 Nov 2026
+            "If a seller wants to test a price, <b>Preview</b> offers that opportunity."]
 
 
 def _rm_links(p):

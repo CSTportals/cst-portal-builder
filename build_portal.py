@@ -6329,7 +6329,6 @@ def build_buyer_report(p, s, out, stats=True, balance=False, cover=True, loves=0
         </tbody>
       </table>
     </div>
-{__import__("market_map").grade_legend(p)}
 {comp_gallery(p["comps"]["rows"][:p.get("br_max_comps", 8)])}  </div>
 </section>
 """
