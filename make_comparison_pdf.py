@@ -15,7 +15,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "output", "CST_vs_Zillow_vs_Compass.pdf")
 LOGO = os.path.join(HERE, "output", "Sample", "Gold_Standard_Logo.png")
 EXAMPLE_HOME = 2_000_000
-HEADER_LINE = "The Gold Standard of Listing Strategy, Preparation and Launch Protocols."
+HEADER_LINE = zc.HEADER_LINE
 
 
 def page(title, sub, inner):
