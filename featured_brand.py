@@ -66,8 +66,18 @@ CSS = """
 """
 
 
-def block(b):
+def block(b, p=None):
     t = tier(b)
-    return (f'<div class="fb {t.lower()}"><div class="t">CASEY SAMSON TEAM</div>'
+    # Private label: the agent's brand on the top line (Gold Standard stays).
+    top = "CASEY SAMSON TEAM"
+    pl = (p or {}).get("private_label")
+    if pl:
+        try:
+            import private_label as _pl
+            _pl.resolve(p)
+            top = _pl._brand(p["private_label"]).upper()
+        except Exception:
+            pass
+    return (f'<div class="fb {t.lower()}"><div class="t">{top}</div>'
             f'<div class="g">GOLD STANDARD</div><div class="f">FEATURED {t.upper()}</div>'
             '<hr><div class="l">The Home. The Lifestyle. The Value.</div></div>')

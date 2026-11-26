@@ -2510,7 +2510,7 @@ def build(p, out):
 {hero_img}
   <div class="hero-shade"></div>
   <div class="hero-inner">
-    {_fb.block(b) if _fb.enabled(b) else '<img class="seal" src="Gold_Standard_Logo.png" alt="The Casey Samson Team"><div class="brandline">The Casey Samson Team</div>'}
+    {_fb.block(b, p) if _fb.enabled(b) else '<img class="seal" src="Gold_Standard_Logo.png" alt="The Casey Samson Team"><div class="brandline">The Casey Samson Team</div>'}
     <h1>{addr}</h1>
     <p class="city">{city}, {state}</p>
     {price}
