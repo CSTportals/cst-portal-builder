@@ -143,8 +143,8 @@ def error_callout(p):
             f'<div class="big">{OFF_MKT:.2f}%</div>'
             '<div class="sub">Zillow&rsquo;s own median Zestimate error for homes not on the market</div>'
             f'{usd}'
-            # Casey, 26 Nov 2026: the full official description, larger, inside the box.
-            f'<div class="why">{DESCRIPTION}</div></div>')
+            # Casey, 26 Nov 2026: "Take any reference out of AI can't price box".
+            '</div>')
 
 
 def enabled(p, b=None):

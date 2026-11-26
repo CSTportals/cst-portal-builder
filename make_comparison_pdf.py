@@ -15,6 +15,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "output", "CST_vs_Zillow_vs_Compass.pdf")
 LOGO = os.path.join(HERE, "output", "Sample", "Gold_Standard_Logo.png")
 EXAMPLE_HOME = 2_000_000
+HEADER_LINE = "The Gold Standard of Listing Strategy, Preparation and Launch Protocols."
 
 
 def page(title, sub, inner):
@@ -22,8 +23,12 @@ def page(title, sub, inner):
     if os.path.exists(LOGO):
         logo = ('<img class="logo" src="data:image/png;base64,'
                 + base64.b64encode(open(LOGO, "rb").read()).decode() + '">')
-    return (f'<div class="pg"><header>{logo}<div class="team">THE CASEY SAMSON TEAM</div>'
-            '<div class="tag">The Gold Standard of Pricing Strategy</div></header>'
+    # Casey, 26 Nov 2026: four rows -- logo, The CASEY SAMSON Team,
+    # CST Seller Roadmap, The Gold Standard of Listing Strategy, Preparation
+    # and Launch Protocols.
+    return (f'<div class="pg"><header>{logo}<div class="team">The CASEY SAMSON Team</div>'
+            '<div class="prod">CST Seller Roadmap</div>'
+            f'<div class="tag">{HEADER_LINE}</div></header>'
             + (f'<h1>{title}</h1>' if title else "") + (f'<p class="sub">{sub}</p>' if sub else "") + inner +
             '<footer>The Casey Samson Team &middot; Samson Properties &middot; 703.508.2535 &middot; Casey@caseysamson.com</footer></div>')
 
@@ -41,9 +46,10 @@ body{margin:0;background:#FAF7F0;font-family:Georgia,serif;color:#1F2A44}
 .pg{width:8.5in;height:11in;box-sizing:border-box;padding:.35in .7in .55in;position:relative;page-break-after:always;background:#FAF7F0}
 .pg:last-child{page-break-after:auto}
 header{text-align:center;border-bottom:1.5px solid #C9A961;padding-bottom:10px}
-.logo{height:40px;display:block;margin:0 auto 4px}
-.team{font:700 15px Georgia,serif;letter-spacing:.28em;color:#1F2A44}
-.tag{font:italic 12.5px Georgia,serif;color:#8A6A2E;margin-top:2px}
+.logo{height:46px;display:block;margin:0 auto 6px}
+.team{font:700 16px Georgia,serif;letter-spacing:.14em;color:#1F2A44}
+.prod{font:700 24px Georgia,serif;color:#1F2A44;margin-top:4px}
+.tag{font:italic 600 15px Georgia,serif;color:#8A6A2E;margin-top:3px}
 h1{font:700 23px Georgia,serif;text-align:center;margin:10px 0 2px}
 .sub{text-align:center;font-size:13.5px;color:#5A5446;margin:0}
 .zx{margin-top:10px;padding:10px 20px}.zx .big{font-size:32px;margin:4px 0 0}.zx .sub{font-size:13.5px}.zx .usd{font-size:15.5px;margin-top:5px}.zx .why{font-size:15px;margin-top:7px;max-width:none}
