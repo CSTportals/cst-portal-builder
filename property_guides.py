@@ -425,7 +425,10 @@ def roadmap_guide(p, s_dir):
          ["With hundreds of thousands of dollars at risk, strategic improvements are critical&mdash;and a "
           "Casey Samson Team specialty.",
           "The right cosmetic improvements can deliver a substantial increase in perceived value at a "
-          "fraction of the cost."]),
+          "fraction of the cost.",
+          # Casey, 26 Nov 2026: at the end of Moving the Needle.
+          "Historically, current paint, hardware and lighting return 7 times the investment by making the "
+          "home look transitional."]),
         (sh.get(names[3]), "Current Competition", "Who you are up against",
          ["Understanding the competition is only half the equation. We measure Market Strength, Buyer "
           "Demand, and Market Momentum to determine whether buyers are actively purchasing homes&mdash;and, "
