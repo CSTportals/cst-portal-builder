@@ -91,7 +91,8 @@ CSS = """
 .zx .big{font:700 46px/1.1 'Playfair Display',Georgia,serif;color:#fff;margin:8px 0 2px}
 .zx .sub{font:16px Georgia,serif;color:#E8E2D3}
 .zx .usd{font:700 19px Georgia,serif;color:#E9C77B;margin-top:10px}
-.zx .why{font:600 15px/1.5 Georgia,serif;color:#E9C77B;margin-top:12px}
+.zx .why{font:700 22px/1.35 Georgia,serif;color:#E9C77B;margin:16px auto 0;max-width:640px}
+@media(max-width:600px){.zx .why{font-size:18px}}
 .zc-foot{max-width:640px;margin:10px auto 0;text-align:center;font:italic 11.5px Georgia,serif;color:#71695A}
 @media(max-width:560px){.zc td{font-size:13.5px;padding:10px 6px}.zc td:first-child{padding-left:12px}.zc th:first-child{padding-left:12px}.zc th{padding:10px 4px}.zc td.c{width:52px;padding-left:4px;padding-right:4px}.zc th{font-size:10.5px;letter-spacing:.08em}}
 """
@@ -113,7 +114,7 @@ def _table(rows, us="CST", head="What You Get"):
 
 
 PRINT_PDF = "CST_Roadmap_vs_Zillow_vs_Compass.pdf"   # copied into every seller site
-DESCRIPTION = "The CST Roadmap is the Gold Standard for Listing Strategy Preparation and Launch Protocols"   # official, Casey 26 Nov 2026 -- the comparison's header
+DESCRIPTION = "The CST Roadmap is the Gold Standard for Listing Strategy Preparation and Launch Protocols"   # official, Casey 26 Nov 2026 -- shown large inside the AI box
 OFF_MKT = 7.01   # zillow.com/zestimate, nationwide median error, off-market homes
 ON_MKT = 1.83    # same page, on-market homes
 
@@ -142,7 +143,8 @@ def error_callout(p):
             f'<div class="big">{OFF_MKT:.2f}%</div>'
             '<div class="sub">Zillow&rsquo;s own median Zestimate error for homes not on the market</div>'
             f'{usd}'
-            '</div>')
+            # Casey, 26 Nov 2026: the full official description, larger, inside the box.
+            f'<div class="why">{DESCRIPTION}</div></div>')
 
 
 def enabled(p, b=None):
@@ -177,7 +179,6 @@ def seller_section(p):
     if not enabled(p):
         return ""
     return (f'<style>{CSS}</style><section><div class="wrap">'
-            f'<h2 class="section-title" style="max-width:820px;margin-left:auto;margin-right:auto">{DESCRIPTION}</h2>'
             f'{error_callout(p)}{_table(_applies(SELLER_ROWS, p), "CST Roadmap", "CST Roadmap Features")}'
             # Casey, 25 Nov 2026: "add link to the bottom so people can print Comparison"
             f'<p style="text-align:center;margin:14px 0 0;"><a href="{PRINT_PDF}" target="_blank" rel="noopener" '
@@ -219,10 +220,10 @@ def email_html(p, root=None):
         bad = r[4] if len(r) > 4 else False
         body += (f"<tr><td {td}>{t}</td><td {tc}>{mark(us, bad)}</td>"
                  f"<td {tc}>{mark(z, bad)}</td><td {tc}>{mark(c, bad)}</td></tr>")
-    return (f'<h3 style="margin:28px 0 8px;">{DESCRIPTION}</h3>\n'
+    return (
             f'<p style="margin:0 0 10px;"><b style="color:#B3261E;">AI Can Not Price Your Home.</b> '
             f"Zillow&rsquo;s own median Zestimate error for homes not on the market is {OFF_MKT:.2f}%.{usd}</p>\n"
-
+            f'<p style="margin:0 0 12px;font-size:18px;"><b>{DESCRIPTION}</b></p>\n'
             '<table style="border-collapse:collapse;width:100%;font-size:14px;font-family:inherit;">'
             f"<tr><th {th0}>CST Roadmap Features</th><th {th}>CST Roadmap</th><th {th}>Zillow</th><th {th}>Compass</th></tr>"
             f"{body}</table>\n"
