@@ -91,13 +91,13 @@ CSS = """
 .zx .big{font:700 46px/1.1 'Playfair Display',Georgia,serif;color:#fff;margin:8px 0 2px}
 .zx .sub{font:16px Georgia,serif;color:#E8E2D3}
 .zx .usd{font:700 19px Georgia,serif;color:#E9C77B;margin-top:10px}
-.zx .why{font:italic 13.5px/1.5 Georgia,serif;color:#C9C3B4;margin-top:12px}
+.zx .why{font:600 15px/1.5 Georgia,serif;color:#E9C77B;margin-top:12px}
 .zc-foot{max-width:640px;margin:10px auto 0;text-align:center;font:italic 11.5px Georgia,serif;color:#71695A}
 @media(max-width:560px){.zc td{font-size:13.5px;padding:10px 6px}.zc td:first-child{padding-left:12px}.zc th:first-child{padding-left:12px}.zc th{padding:10px 4px}.zc td.c{width:52px;padding-left:4px;padding-right:4px}.zc th{font-size:10.5px;letter-spacing:.08em}}
 """
 
 
-def _table(rows, us="CST"):
+def _table(rows, us="CST", head="What You Get"):
     y = '<span class="y">&#10003;</span>'
     n = '<span class="n">&ndash;</span>'
     r = '<span class="y bad">&#10003;</span>'
@@ -107,7 +107,7 @@ def _table(rows, us="CST"):
         return (f'<tr><td>{t}</td><td class="c">{k if us else n}</td><td class="c">{k if z else n}</td>'
                 f'<td class="c">{k if c else n}</td></tr>')
     body = "".join(_row(*r) for r in rows)
-    return ('<div class="zc"><table><thead><tr><th>What You Get</th>'
+    return (f'<div class="zc"><table><thead><tr><th>{head}</th>'
             f'<th class="cst">{us}</th><th>Zillow</th><th>Compass</th></tr></thead>'
             f'<tbody>{body}</tbody></table></div><p class="zc-foot">{FOOT}</p>')
 
@@ -141,9 +141,9 @@ def error_callout(p):
             f'<div class="big">{OFF_MKT:.2f}%</div>'
             '<div class="sub">Zillow&rsquo;s own median Zestimate error for homes not on the market</div>'
             f'{usd}'
-            f'<div class="why">Zillow advertises {ON_MKT:.2f}% for listed homes &mdash; because once a home is listed, '
-            'the Zestimate leans on the list price. The list price is the decision you are making. '
-            'That is what we authenticate.</div></div>')
+            # Casey, 26 Nov 2026: in place of the Zillow on-market note.
+            '<div class="why">The CST Roadmap is the Gold Standard for Listing Strategy, '
+            'Preparation and Launch Protocols.</div></div>')
 
 
 def enabled(p, b=None):
@@ -178,8 +178,7 @@ def seller_section(p):
     if not enabled(p):
         return ""
     return (f'<style>{CSS}</style><section><div class="wrap">'
-            '<h2 class="section-title">CST Roadmap Features</h2>'   # Casey, 26 Nov 2026: title only
-            f'{error_callout(p)}{_table(_applies(SELLER_ROWS, p), "CST Roadmap")}'
+            f'{error_callout(p)}{_table(_applies(SELLER_ROWS, p), "CST Roadmap", "CST Roadmap Features")}'
             # Casey, 25 Nov 2026: "add link to the bottom so people can print Comparison"
             f'<p style="text-align:center;margin:14px 0 0;"><a href="{PRINT_PDF}" target="_blank" rel="noopener" '
             'style="font:700 15px Georgia,serif;color:#1F2A44;text-decoration:none;border-bottom:2px solid #B8902F;'
@@ -220,11 +219,12 @@ def email_html(p, root=None):
         bad = r[4] if len(r) > 4 else False
         body += (f"<tr><td {td}>{t}</td><td {tc}>{mark(us, bad)}</td>"
                  f"<td {tc}>{mark(z, bad)}</td><td {tc}>{mark(c, bad)}</td></tr>")
-    return (f'<h3 style="margin:28px 0 6px;">CST Roadmap Features</h3>\n'
+    return (
             f'<p style="margin:0 0 10px;"><b style="color:#B3261E;">AI Can Not Price Your Home.</b> '
             f"Zillow&rsquo;s own median Zestimate error for homes not on the market is {OFF_MKT:.2f}%.{usd}</p>\n"
+            '<p style="margin:0 0 10px;"><b>The CST Roadmap is the Gold Standard for Listing Strategy, Preparation and Launch Protocols.</b></p>\n'
             '<table style="border-collapse:collapse;width:100%;font-size:14px;font-family:inherit;">'
-            f"<tr><th {th0}>What You Get</th><th {th}>CST Roadmap</th><th {th}>Zillow</th><th {th}>Compass</th></tr>"
+            f"<tr><th {th0}>CST Roadmap Features</th><th {th}>CST Roadmap</th><th {th}>Zillow</th><th {th}>Compass</th></tr>"
             f"{body}</table>\n"
             f'<p style="font-size:11px;color:#71695A;">{FOOT}</p>\n'
             + (f'<p><a href="{root.rstrip("/")}/{PRINT_PDF}">Print the Comparison (PDF)</a></p>\n' if root else ""))

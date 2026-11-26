@@ -24,14 +24,14 @@ def page(title, sub, inner):
                 + base64.b64encode(open(LOGO, "rb").read()).decode() + '">')
     return (f'<div class="pg"><header>{logo}<div class="team">THE CASEY SAMSON TEAM</div>'
             '<div class="tag">The Gold Standard of Pricing Strategy</div></header>'
-            f'<h1>{title}</h1>' + (f'<p class="sub">{sub}</p>' if sub else "") + inner +
+            + (f'<h1>{title}</h1>' if title else "") + (f'<p class="sub">{sub}</p>' if sub else "") + inner +
             '<footer>The Casey Samson Team &middot; Samson Properties &middot; 703.508.2535 &middot; Casey@caseysamson.com</footer></div>')
 
 
 def build():
     callout = zc.error_callout({"values": {"customary": EXAMPLE_HOME}})
-    seller = page("CST Roadmap Features", "",
-                  callout + zc._table(zc.SELLER_ROWS, "CST Roadmap"))
+    seller = page("", "",
+                  callout + zc._table(zc.SELLER_ROWS, "CST Roadmap", "CST Roadmap Features"))
     buyer = page("CST Buyer Portal vs Zillow vs Compass",
                  "What buyers get from our Buyer Portal, from Zillow, and from Compass.",
                  zc._table(zc.BUYER_ROWS, "CST Buyer Portal"))
