@@ -9335,3 +9335,12 @@ if __name__ == "__main__":
                 print(f"  Town home MSS: links pointed at {_th.TH_SITE} in {len(set(_fx))} file(s)")
     except Exception as _e:
         print("  Town home MSS: skipped --", _e)
+
+    # Casey, 26 Nov 2026: every home is saved to GitHub after each build.
+    try:
+        import save_to_github as _sg
+        _a = [x for x in sys.argv[1:] if x.endswith(".json")]
+        if _a:
+            _sg.save(_a[0], "seller build")
+    except Exception as _e:
+        print("  !!! GitHub save skipped --", _e)
