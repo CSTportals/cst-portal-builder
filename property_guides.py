@@ -135,6 +135,30 @@ ROADMAP_LINKS = {
     "Our 4-Step": "Our 4-Step",
     "4. Adjust Price": "4. Adjust Price",
 }
+def _ask_paras(v):
+    """Casey, 26 Nov 2026, for the Pricing Strategy guide: "If you want $1.8
+    (first threshold under customary) then ask $1.95 (first threshold under
+    premium Value). If you want $1.95 (first threshold under premium), ask
+    (first threshold under customary) $1.8. Highest Value can only be achieved
+    from finding the largest buyer pool for the property. The highest price
+    offered in the first week, is the highest value of the home at that time."
+    Thresholds are the plain buyer grid ($50K steps; $25K under $500K)."""
+    import pricing as _P
+    c, pr = v.get("customary"), v.get("premium")
+    if not c or not pr:
+        return []
+    tc = _P.grid_line_at_or_below(c, _P.increment_for(c))
+    tp = _P.grid_line_at_or_below(pr, _P.increment_for(pr))
+    if tp <= tc:
+        return []
+    a, b = _P.abbrev(tc), _P.abbrev(tp)
+    return [f"If you want <b>{a}</b> (the first buyer threshold under Customary Value), then ask "
+            f"<b>{b}</b> (the first buyer threshold under Premium Value). If you want <b>{b}</b>, "
+            f"ask <b>{a}</b>.",
+            "<b>Highest Value can only be achieved from finding the largest buyer pool for the property.</b> "
+            "The highest price offered in the first week is the highest value of the home at that time."]
+
+
 def _rm_links(p):
     if p.get("strategy_track_record"):
         # the track record lives in the CST Pricing Strategy guide section,
@@ -410,7 +434,8 @@ def roadmap_guide(p, s_dir):
           "launch.</b>"] + ([notes["uc30"]] if notes.get("uc30") else [])),
         (sh.get(names[4]), "CST Pricing Strategy", "Where the price goes, and why",
          [f"The strategy places the home at the first buyer threshold under its Customary Value of "
-          f"{money(v['customary'])}, so it shows up for every buyer searching that range."]),
+          f"{money(v['customary'])}, so it shows up for every buyer searching that range."]
+         + _ask_paras(v)),
         (sh.get(names[5]), "Preview", "The home goes public before it goes live",
          ["Within two days of a signed Listing Agreement the home is posted on Preview with photographs and "
           "property information on Zillow, Homes.com, Samson Properties and more."]),
