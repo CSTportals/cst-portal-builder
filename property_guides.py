@@ -375,7 +375,9 @@ def roadmap_guide(p, s_dir):
           "original list.</li></ul>"
           "The black star is your home."]),
         (sh.get(names[1]), "Price Authenticated by the CST Pricing Team", "The pricing engine",
-         ["Cylinders 1&ndash;6 run on every home: age and size, price range, price per square foot, "
+         [# Casey, 26 Nov 2026: opens with the engine sentence.
+          "The Casey Samson Team Pricing Engine has 10 Cylinders, or models. " 
+          "Cylinders 1&ndash;6 run on every home: age and size, price range, price per square foot, "
           "assessment, market anomalies and inflation. Cylinders 7&ndash;10 fire only when they apply:",
           # Casey, 23 Nov 2026: each of (7) (8) (9) (10) on its own line.
           "<b>Neighborhood (7)</b> analyzes neighborhood sales over the past 5 years.",
@@ -632,6 +634,7 @@ def buyer_guide(p, b_dir):
         (_engine_png(), "Price Authenticated by the CST Pricing Team", "The pricing engine",
          ["The value of this home was not pulled from an online estimate. The CST Pricing Team authenticates it "
           "by hand, through ten tests.",
+          "The Casey Samson Team Pricing Engine has 10 Cylinders, or models. " 
           "Cylinders 1&ndash;6 run on every home: age and size, price range, price per square foot, assessment, "
           "market anomalies and inflation. Cylinders 7&ndash;10 fire only when they apply:",
           "<b>Neighborhood (7)</b> analyzes neighborhood sales over the past 5 years. "
