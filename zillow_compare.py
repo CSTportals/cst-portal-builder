@@ -178,8 +178,7 @@ def seller_section(p):
     if not enabled(p):
         return ""
     return (f'<style>{CSS}</style><section><div class="wrap">'
-            '<h2 class="section-title">CST Roadmap vs Zillow vs Compass</h2>'
-            '<p class="needle-lede" style="text-align:center">What sellers get from us, from Zillow, and from Compass.</p>'
+            '<h2 class="section-title">CST Roadmap Features</h2>'   # Casey, 26 Nov 2026: title only
             f'{error_callout(p)}{_table(_applies(SELLER_ROWS, p), "CST Roadmap")}'
             # Casey, 25 Nov 2026: "add link to the bottom so people can print Comparison"
             f'<p style="text-align:center;margin:14px 0 0;"><a href="{PRINT_PDF}" target="_blank" rel="noopener" '
@@ -221,7 +220,7 @@ def email_html(p, root=None):
         bad = r[4] if len(r) > 4 else False
         body += (f"<tr><td {td}>{t}</td><td {tc}>{mark(us, bad)}</td>"
                  f"<td {tc}>{mark(z, bad)}</td><td {tc}>{mark(c, bad)}</td></tr>")
-    return (f'<h3 style="margin:28px 0 6px;">CST Roadmap vs Zillow vs Compass</h3>\n'
+    return (f'<h3 style="margin:28px 0 6px;">CST Roadmap Features</h3>\n'
             f'<p style="margin:0 0 10px;"><b style="color:#B3261E;">AI Can Not Price Your Home.</b> '
             f"Zillow&rsquo;s own median Zestimate error for homes not on the market is {OFF_MKT:.2f}%.{usd}</p>\n"
             '<table style="border-collapse:collapse;width:100%;font-size:14px;font-family:inherit;">'

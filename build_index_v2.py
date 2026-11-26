@@ -804,7 +804,7 @@ def build_index_v2(p, s, out, filename="index.html"):
         try:
             cmp_html = ('<section class="cmp"><div class="wrap">'
                         '<a class="cmp-box" href="CST_Roadmap_vs_Zillow_vs_Compass.pdf" target="_blank" rel="noopener">'
-                        '<span>PDF &middot; Comparison</span>CST Roadmap vs Zillow vs Compass'
+                        '<span>PDF &middot; Print</span>CST Roadmap Features'
                         '<em>AI Can Not Price Your Home &rarr;</em></a></div></section>\n')
         except Exception as e:
             print("  comparison PDF not added:", e)
