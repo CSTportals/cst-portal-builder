@@ -46,6 +46,7 @@ SELLER_ROWS = [
     ("Competing homes mapped and measured", False, False),
     ("Neighborhood amenities", False, False),
     ("Distances to transportation hubs", False, False),
+    ("Utility providers and phone numbers", False, False),   # Casey, 26 Nov 2026
     ("Buyer Showcase", False, False),
     ("County plat and lot dimensions", False, False),
     ("Custom website for your home", False, False),
