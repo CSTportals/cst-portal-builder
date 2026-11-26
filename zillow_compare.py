@@ -62,6 +62,9 @@ BUYER_ROWS = [
     ("Market strength for this segment", False, False),
     ("Neighborhood amenities", False, False),
     ("Distances to transportation hubs", False, False),
+    # Casey, 26 Nov 2026: Zillow and Compass show MLS utility types (gas
+    # heat, public sewer), not the providers or how to reach them.
+    ("Utility providers and phone numbers", False, False),
     ("County plat and lot dimensions", False, False),
 ]
 
@@ -156,6 +159,8 @@ def _applies(rows, p, buyer=False):
     for r in rows:
         t = r[0].lower()
         if "plat" in t and not has_plat:
+            continue
+        if buyer and "utility" in t and not b.get("utilities"):
             continue
         if buyer and "greatschools" in t:
             try:
