@@ -336,7 +336,38 @@
    "Madison High School"
   ],
   "hoa_includes": "No HOA &mdash; no dues and no covenants.",
-  "utilities": "Public water and public sewer.",
+  "utilities": [
+   [
+    "Electric",
+    "Dominion Energy",
+    "866-366-4357",
+    "confirm"
+   ],
+   [
+    "Natural gas",
+    "Washington Gas",
+    "703-750-1000",
+    "heat &amp; hot water"
+   ],
+   [
+    "Water &amp; sewer",
+    "Town of Vienna",
+    "703-255-6385",
+    "public"
+   ],
+   [
+    "Trash &amp; recycling",
+    "Town of Vienna",
+    "703-255-6380",
+    ""
+   ],
+   [
+    "Internet &amp; TV",
+    "Cox or Verizon Fios",
+    "",
+    "confirm"
+   ]
+  ],
   "documents": [
    [
     "MC_Brochure.pdf",
@@ -798,7 +829,8 @@
   },
   "school_ratings_year": 2026,
   "school_ratings_source": "greatschools.org school pages, GreatSchools Rating 2026 (checked 25 Nov 2026)",
-  "featured_brand": true
+  "featured_brand": true,
+  "utilities_source": "Gas heat and hot water, public water and sewer per the listing record; providers by service area. Confirm with the seller before closing."
  },
  "local_snapshot": {
   "pull": "market_pulls/502_MacArthur.txt",
