@@ -142,7 +142,7 @@ def error_callout(p):
             '<div class="sub">Zillow&rsquo;s own median Zestimate error for homes not on the market</div>'
             f'{usd}'
             # Casey, 26 Nov 2026: in place of the Zillow on-market note.
-            '<div class="why">The CST Roadmap is the Gold Standard for Listing Strategy, '
+            '<div class="why">The CST Roadmap is the Gold Standard for Listing Strategy '
             'Preparation and Launch Protocols.</div></div>')
 
 
@@ -222,7 +222,7 @@ def email_html(p, root=None):
     return (
             f'<p style="margin:0 0 10px;"><b style="color:#B3261E;">AI Can Not Price Your Home.</b> '
             f"Zillow&rsquo;s own median Zestimate error for homes not on the market is {OFF_MKT:.2f}%.{usd}</p>\n"
-            '<p style="margin:0 0 10px;"><b>The CST Roadmap is the Gold Standard for Listing Strategy, Preparation and Launch Protocols.</b></p>\n'
+            '<p style="margin:0 0 10px;"><b>The CST Roadmap is the Gold Standard for Listing Strategy Preparation and Launch Protocols.</b></p>\n'
             '<table style="border-collapse:collapse;width:100%;font-size:14px;font-family:inherit;">'
             f"<tr><th {th0}>CST Roadmap Features</th><th {th}>CST Roadmap</th><th {th}>Zillow</th><th {th}>Compass</th></tr>"
             f"{body}</table>\n"
