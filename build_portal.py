@@ -5500,6 +5500,11 @@ def build_roadmap(p, s, out):
     _zc_seller = _zc.seller_section(p)
     rm_lot = ""
     _bpl = (p.get("buyer_portal") or {})
+    # A Roadmap with no Buyer Portal of its own (the Sample) can carry the lot
+    # as roadmap_lot -- Casey, 26 Nov 2026: "it's not in sample".
+    if not (_bpl.get("lot") or {}).get("polygon") and (p.get("roadmap_lot") or {}).get("polygon"):
+        _bpl = {"lot": p["roadmap_lot"], "display_address": p.get("roadmap_lot_address") or p["address"],
+                "asset_dir": p.get("asset_dir")}
     if (_bpl.get("lot") or {}).get("polygon"):
         try:
             import build_buyer_portal as _bbp
