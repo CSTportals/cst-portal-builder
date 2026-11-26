@@ -435,5 +435,33 @@
  "school_ratings_year": 2026,
  "school_ratings_source": "greatschools.org school pages, GreatSchools Rating 2026 (checked 25 Nov 2026)",
  "strategy_track_record": true,
- "roadmap_title": "Gold Standard Seller Roadmap"
+ "roadmap_title": "Gold Standard Seller Roadmap",
+ "roadmap_lot": {
+  "pin": "0382 03 0003",
+  "area_sf": 13270,
+  "source": "Fairfax County GIS parcels (23 Nov 2026)",
+  "polygon": [
+   [
+    38.9137554394728,
+    -77.2663475138964
+   ],
+   [
+    38.9135722031474,
+    -77.2665770716774
+   ],
+   [
+    38.9137405993935,
+    -77.2668860502473
+   ],
+   [
+    38.9137729408127,
+    -77.266945396153
+   ],
+   [
+    38.914002804323,
+    -77.26664730028
+   ]
+  ]
+ },
+ "roadmap_lot_address": "502 MacArthur Ave NE"
 }
