@@ -87,8 +87,8 @@ def _address_clash(p):
 ROADMAP_ORDER = [
     "Appraisal-Quality Comparable Analysis",
     "Price Authenticated by CST Pricing Team",
-    "Moving the Needle&trade;",
-    "Current Competition",
+    "Condition Filter",
+    "Market Filter",
     "CST Pricing Strategy",
     "The Test",
     "Preview",
@@ -104,8 +104,8 @@ ROADMAP_ORDER = [
 RECOVERY_ROADMAP_ORDER = [
     "Appraisal-Quality Comparable Analysis",
     "Price Authenticated by CST Pricing Team",
-    "Moving the Needle&trade;",
-    "Current Competition",
+    "Condition Filter",
+    "Market Filter",
     "CST Pricing Strategy",
     "Reconciling Value and Price",
     "The Test",          # Casey, 24 Nov 2026: was "Recovery Strategy"

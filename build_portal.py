@@ -5571,7 +5571,9 @@ def build_roadmap(p, s, out):
             import build_buyer_portal as _bbp
             rm_lot = _bbp.lot_map(_bpl, _bpl.get("display_address") or p["address"])
             # Roadmap headings: same title style as Moving the Needle.
-            rm_lot = (rm_lot.replace('<h2 class="st">', '<h2 class="section-title">', 1)
+            # Casey, 27 Nov 2026: "The Lot Filter".
+            rm_lot = (rm_lot.replace('<h2 class="st">The Lot</h2>', '<h2 class="st">Lot Filter</h2>', 1)
+                      .replace('<h2 class="st">', '<h2 class="section-title">', 1)
                       .replace('<p class="ss">', '<p class="needle-lede">', 1))
             _tpl = HERE / "templates"
             for _lf in ("leaflet.js", "leaflet.css"):
@@ -6055,7 +6057,8 @@ def build_roadmap(p, s, out):
                         and _mmp.get("listings_map", True) is not False)
     comp_section = f"""<section{upgrade_break}>
   <div class="wrap">
-    <h2 class="section-title">Current Competition</h2>
+    <h2 class="section-title">Market Filter</h2>
+    <p class="section-sub" style="margin-top:-4px;">Current Market Conditions</p>
 {market_block(p["market"], compact=True)}
 <!--RMMl-anchor-->
     {f"""<div class="table-wrap">
@@ -6104,7 +6107,7 @@ def build_roadmap(p, s, out):
 {auth_section}
 <section>
   <div class="wrap">
-    <h2 class="section-title">Moving the Needle&trade;</h2>
+    <h2 class="section-title">Condition Filter</h2>
     <p class="needle-lede">Strategic improvements return 7 times the investment.</p>
     <p class="section-sub" style="margin-top:-14px;">Buyers do not pay top dollar for dated or DIY homes.</p>
     <div class="needle-frame">

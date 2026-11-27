@@ -309,7 +309,9 @@ def add_to_roadmap(p, out, note=print):
         # Casey, 22 Nov 2026: "three index ... then Map, then properties
         # table" -- the map sits above the competition table when the
         # Roadmap carries the anchor.
-        i = h.find("Current Competition</h2>")
+        i = h.find("Market Filter</h2>")
+        if i < 0:
+            i = h.find("Current Competition</h2>")
         a = h.find("<!--RMMl-anchor-->", i)
         if a > 0:
             j = a + len("<!--RMMl-anchor-->")

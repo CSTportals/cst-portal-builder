@@ -125,8 +125,10 @@ ROADMAP_LINKS = {
     "Appraisal-Quality": "Appraisal-Quality Comparable Analysis",
     "Price Authenticated": "Price Authenticated",
     "Authenticated Values": "css:values-grid",
-    "Moving the Needle": "Moving the Needle",
-    "Current Competition": "Current Competition",
+    # Casey, 27 Nov 2026: Roadmap headings are now Condition Filter and
+    # Market Filter; the guide titles stay.
+    "Moving the Needle": "Condition Filter",
+    "Current Competition": "Market Filter",
     "CST Pricing Strategy": "CST Pricing Strategy",
     "Preview": "Preview",
     "Coming Soon": "Coming Soon",
@@ -203,8 +205,8 @@ GLINK = ('<div class="glink-row" data-glink="{s}" style="text-align:center;margi
 # short names.
 SHORT_LINK = {"Appraisal-Quality Comparable Analysis": "Comparable Analysis",
               "Price Authenticated by CST Pricing Team": "CST Pricing",
-              "Moving the Needle": "Home Preparation",
-              "CST Pricing Strategy": "CST Pricing Strategy"}
+              "Condition Filter": "Home Preparation",
+              "CST Pricing Strategy": "CST Pricing Strategy and Filters"}
 
 
 def inject_links(page, guide_href, links):
@@ -346,8 +348,8 @@ def roadmap_guide(p, s_dir):
     page = s_dir / f"{pre}_Roadmap.html"
     if not page.exists():
         return None
-    names = ["Appraisal-Quality Comparable Analysis", "Price Authenticated", "Moving the Needle",
-             "Current Competition", "CST Pricing Strategy", "Preview", "Coming Soon", "Predictive Analysis"]
+    names = ["Appraisal-Quality Comparable Analysis", "Price Authenticated", "Condition Filter",
+             "Market Filter", "CST Pricing Strategy", "Preview", "Coming Soon", "Predictive Analysis"]
     sh = _shots(page.as_uri(), names, max_h=2600)
     _nf = s_dir / "_guide_notes.json"
     notes = json.loads(_nf.read_text()) if _nf.exists() else {}
