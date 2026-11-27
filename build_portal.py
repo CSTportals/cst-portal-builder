@@ -5081,28 +5081,56 @@ def build_roadmap(p, s, out):
     _deep_major = max([t for t in _MTH if t <= _deep + 1], default=0)
     _deep_word = (f"Go under {abbrev(_deep_major)}" if _deep_major and _deep + 1 == _deep_major
                   else f"Drop to {abbrev(_deep)}")
-    def _pcol(head, move, price):
-        return (f'        <div class="needle-col"><h4>{head}</h4>'
-                f'<p class="pred-move">{move}</p>'
-                f'<div class="price-card"><div class="rec-label">Active List Price</div>'
-                f'<div class="rec-price">{money(price)}</div></div></div>\n')
+    # Casey, 27 Nov 2026: "If customary has two paths conservative and
+    # aggressive, Fall backs need to have 2 as well." The market's own path
+    # uses the page's figures (overrides included); the other path follows
+    # the same rule from its own Coming Soon: hold at 6+, drop $50K at 2-5,
+    # go under the next major threshold with low or no showings.
+    from pricing import preview_over_customary as _poc2, increment_for as _inc2, \
+        grid_line_at_or_below as _glb2
+    def _ladder(cs0):
+        fb0 = cs0 - 50_000
+        mj = max([t for t in _MTH if t <= fb0], default=0)
+        return cs0, fb0, (mj - 1 if mj else fb0 - 50_000)
+    _cv2 = int(p["values"]["customary"])
+    _mine = (_launch, _fb, _deep)
+    if strategy_figures(p, s)["posture"] == "conservative":
+        _paths = [("Conservative", _mine, True),
+                  ("Aggressive", _ladder(_poc2(_cv2) - 1), False)]
+    else:
+        _paths = [("Conservative", _ladder(_glb2(_cv2, _inc2(_cv2)) - 1), False),
+                  ("Aggressive", _mine, True)]
+    def _move_under(fb0, dp0):
+        mj = dp0 + 1
+        return f"Go under {abbrev(mj)}" if mj in _MTH else f"Drop to {abbrev(dp0)}"
+    def _path(name, lad, on):
+        l0, f0, d0 = lad
+        rows = [(f"{SHOWINGS_FALLBACK_AT + 1} or more showings", "Hold position", l0),
+                (f"2&ndash;{SHOWINGS_FALLBACK_AT} showings", f"Drop {abbrev(l0 - f0)}", f0),
+                ("Low or no showings", _move_under(f0, d0), d0)]
+        return (f'<div class="pp{" on" if on else ""}"><div class="pp-h">{name}</div>'
+                + "".join(f'<div class="pp-r"><div class="pp-k">{k}</div><div class="pp-m">{m}</div>'
+                          f'<div class="pp-v">{money(v)}</div></div>' for k, m, v in rows)
+                + ('<div class="cs-pick">This market</div>' if on else "") + '</div>')
+    _major_line = (f"{abbrev(_launch + 1)} is a major threshold."
+                   if (_launch + 1) in _MTH else "")
     predictive_block = f"""<section class="pred-sec">
   <div class="wrap">
     <h2 class="test-head">The Launch</h2>
     <h2 class="section-title">Predictive Analysis</h2>
     <p class="section-sub">{_major_line} First-week showings set the next move.</p>
-    <div class="needle-table">
-      <div class="needle-cols three">
-{_pcol(f"{SHOWINGS_FALLBACK_AT + 1} or more showings", "Hold position", _launch)}\
-{_pcol(f"2&ndash;{SHOWINGS_FALLBACK_AT} showings", f"Drop {abbrev(_launch - _fb)}", _fb)}\
-{_pcol("Low or no showings", _deep_word, _deep)}\
-      </div>
-    </div>
+    <div class="pp-wrap">{"".join(_path(n, l, o) for n, l, o in _paths)}</div>
     <p class="section-sub" style="margin-top:14px;">{expected}</p>
   </div>
 </section>
-<style>.pred-move{{font:700 17px Georgia,serif;color:#1F2A44;margin:4px 0 8px;text-align:center}}
-.pred-sec .needle-col h4{{text-align:center}}</style>"""
+<style>.pp-wrap{{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}}
+.pp{{flex:1 1 300px;max-width:400px;background:#fff;border:1px solid #E4DCC8;border-radius:10px;padding:16px 18px;opacity:.55;text-align:center}}
+.pp.on{{opacity:1;border:2px solid #B8902F}}
+.pp-h{{font:700 12px Georgia,serif;letter-spacing:.18em;text-transform:uppercase;color:#71695A;margin-bottom:6px}}
+.pp-r{{padding:10px 0;border-top:1px solid #EFE8D8}}
+.pp-k{{font:700 11px Georgia,serif;letter-spacing:.12em;text-transform:uppercase;color:#8A6A2E}}
+.pp-m{{font:700 15px Georgia,serif;color:#1F2A44;margin:3px 0}}
+.pp-v{{font:700 26px 'Playfair Display',Georgia,serif;color:#8A6A2E}}</style>"""
 
     # ---- Recovery ---------------------------------------------------------
     # A home that has been sitting. The 14 days off market are the test, and
