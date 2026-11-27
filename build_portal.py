@@ -373,7 +373,7 @@ def record_band_title(p=None):
     # Casey, 16 Nov 2026: "THE CASEY SAMSON TEAM — The Gold Standard of
     # Pricing Strategy" on all portals (replaces "It's about Strategy, not
     # Price", which replaced the record heading on 15 Nov).
-    return "The Casey Samson Team &mdash; The Gold Standard of Pricing Strategy"
+    return "The Casey Samson Team &mdash; The Gold Standard of Listing Strategies"
 
 
 def track_record_file(p):

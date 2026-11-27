@@ -272,7 +272,7 @@ run();
 
 def standalone_page():
     """The stand-alone buyer Move Up Calculator -- no property, no values."""
-    brand = "The Casey Samson Team &mdash; The Gold Standard of Pricing Strategy"
+    brand = "The Casey Samson Team &mdash; The Gold Standard of Listing Strategies"
     return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Move Up Calculator &mdash; The Casey Samson Team</title>
@@ -287,7 +287,7 @@ def page(p):
     _pl.resolve(p)
     pl = p.get("private_label") or {}
     brand = (f'{_h.escape(pl.get("team_name") or pl.get("name", ""))} &middot; Powered by CST Pricing'
-             if pl else "The Casey Samson Team &mdash; The Gold Standard of Pricing Strategy")
+             if pl else "The Casey Samson Team &mdash; The Gold Standard of Listing Strategies")
     return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Move Up (or Down) Calculator &mdash; {_h.escape(p.get('address', ''))}</title>

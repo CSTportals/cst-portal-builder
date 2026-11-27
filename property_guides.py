@@ -834,7 +834,7 @@ def _brand(p):
     pl = p.get("private_label") or {}
     if pl:
         return f"{pl.get('team_name') or pl.get('name')} &middot; Powered by CST Pricing"
-    return "The Casey Samson Team &mdash; The Gold Standard of Pricing Strategy"
+    return "The Casey Samson Team &mdash; The Gold Standard of Listing Strategies"
 
 
 def track_record_to_roadmap(index, rm):

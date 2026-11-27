@@ -84,8 +84,8 @@ def apply(html, pl, fname=""):
         # CST-labeled items on the agent's pages
         for a, b in [
             # the track-record band title stays CST's (Casey, 15 Nov 2026)
-            ("The Casey Samson Team &mdash; The Gold Standard of Pricing Strategy",
-             f"{CST} &mdash; The Gold Standard of Pricing Strategy"),
+            ("The Casey Samson Team &mdash; The Gold Standard of Listing Strategies",
+             f"{CST} &mdash; The Gold Standard of Listing Strategies"),
             ("The Casey Samson Team &mdash; $1.5 million", f"{CST} Results &mdash; $1.5 million"),
             ("The Casey Samson Team &mdash; Track Record", f"{CST} &mdash; Track Record"),
             ("Casey Samson Team &mdash; Track Record", f"{CST} &mdash; Track Record"),

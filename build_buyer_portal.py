@@ -1576,7 +1576,7 @@ def production_section(p, b):
                     f'<div class="l">{l}</div></div>' for n, l in rows)
     return ('<section><div class="wrap">'
             '<h2 class="st">The Casey Samson Team</h2>'
-            '<p class="ss">The Gold Standard of Pricing Strategy. Source: MLS Bright.</p>'
+            '<p class="ss">The Gold Standard of Listing Strategies. Source: MLS Bright.</p>'
             f'<div class="pr-grid">{tiles}</div>'
             '</div></section>\n')
 

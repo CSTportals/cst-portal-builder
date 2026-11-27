@@ -40,7 +40,7 @@ def page(title, lede, sections, footer):
                   f'<figure><img src="data:image/jpeg;base64,{emb(img)}" alt="{t}"></figure></section>\n')
     head = HEAD.replace("<title>", "<title>").split("<title>")[0] + f"<title>{title} &mdash; The Casey Samson Team</title>" + HEAD.split("</title>", 1)[1]
     return (head + "</style></head><body>\n"
-            '<header><div class="k">The Casey Samson Team &mdash; The Gold Standard of Pricing Strategy</div>'
+            '<header><div class="k">The Casey Samson Team &mdash; The Gold Standard of Listing Strategies</div>'
             f"<h1>{title}</h1><p>{lede}</p></header>\n<main>\n{cards}</main>\n"
             f"<footer><b>Questions?</b>{footer}</footer>\n</body></html>")
 
