@@ -1330,9 +1330,8 @@ def locator_map(b):
         f'<ol class="locmap-key">{legend}</ol>'
         '<p class="locmap-note">Walking times on foot. Drive times in normal '
         'traffic.</p>'
-        # Casey, 26 Nov 2026: utilities are "not a sales feature so bring it
-        # under the Neighborhood".
-        + __import__("utilities").card(b) +
+        # Casey, 27 Nov 2026: the utilities table moved to replace the
+        # Schools / HOA / Utilities cards (see "loves" below).
         '</div></section>\n'
         '<link rel="stylesheet" href="leaflet.css">\n'
         '<script src="leaflet.js"></script>\n'
@@ -2299,25 +2298,11 @@ def build(p, out):
     loves = ""
     if b.get("loves"):
         li = "".join(f"<li>{x}</li>" for x in b["loves"])
-        sub = []
-        if b.get("schools"):
-            sub.append('<div><h3>Schools</h3><p>' + "<br>".join(b["schools"]) + "</p></div>")
-        if b.get("hoa_includes"):
-            sub.append(f'<div><h3>HOA Includes</h3><p>{b["hoa_includes"]}</p></div>')
-        if b.get("utilities"):
-            # Casey, 27 Nov 2026: schools and utilities matter on the Buyer
-            # Portal -- the list as readable lines, not the raw data.
-            _u = b["utilities"]
-            if isinstance(_u, list):
-                _lines = []
-                for r in _u:
-                    _ph = r[2] if len(r) > 2 else ""
-                    _tel = "".join(ch for ch in _ph if ch.isdigit())
-                    _lines.append(f"<b>{r[0]}</b>: {r[1]}"
-                                  + (f' &middot; <a href="tel:{_tel}" style="white-space:nowrap;color:#8A6A2E;">{_ph}</a>' if _tel else ""))
-                _u = "<br>".join(_lines)
-            sub.append(f'<div><h3>Utilities</h3><p>{_u}</p></div>')
-        subgrid = f'<div class="subgrid">{"".join(sub)}</div>' if sub else ""
+        # Casey, 27 Nov 2026: "remove Schools (they are above) HOA and have a
+        # table of utilities company and numbers."
+        _ut = b.get("utilities")
+        subgrid = (__import__("utilities").card(b) if isinstance(_ut, list)
+                   else (f'<div class="subgrid"><div><h3>Utilities</h3><p>{_ut}</p></div></div>' if _ut else ""))
         loves = (f'<section><div class="wrap"><h2 class="st">What the Owners Love</h2>'
                  f'<p class="ss">In their own words.</p>'
                  f'<div class="one"><ul>{li}</ul></div>'
