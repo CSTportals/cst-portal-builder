@@ -2305,7 +2305,18 @@ def build(p, out):
         if b.get("hoa_includes"):
             sub.append(f'<div><h3>HOA Includes</h3><p>{b["hoa_includes"]}</p></div>')
         if b.get("utilities"):
-            sub.append(f'<div><h3>Utilities</h3><p>{b["utilities"]}</p></div>')
+            # Casey, 27 Nov 2026: schools and utilities matter on the Buyer
+            # Portal -- the list as readable lines, not the raw data.
+            _u = b["utilities"]
+            if isinstance(_u, list):
+                _lines = []
+                for r in _u:
+                    _ph = r[2] if len(r) > 2 else ""
+                    _tel = "".join(ch for ch in _ph if ch.isdigit())
+                    _lines.append(f"<b>{r[0]}</b>: {r[1]}"
+                                  + (f' &middot; <a href="tel:{_tel}" style="white-space:nowrap;color:#8A6A2E;">{_ph}</a>' if _tel else ""))
+                _u = "<br>".join(_lines)
+            sub.append(f'<div><h3>Utilities</h3><p>{_u}</p></div>')
         subgrid = f'<div class="subgrid">{"".join(sub)}</div>' if sub else ""
         loves = (f'<section><div class="wrap"><h2 class="st">What the Owners Love</h2>'
                  f'<p class="ss">In their own words.</p>'
