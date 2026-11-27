@@ -685,11 +685,17 @@
   @media (max-width:760px){ .lms-photo{display:none;} }
 
   /* The Market Intelligence masthead: kicker, verdict capsule, headline. */
-  .lms-eyebrow{font-family:'Playfair Display',Georgia,serif; font-size:13px;
+  /* Casey, 27 Nov 2026: "More space between CST Market Intelligence
+     (make it larger), Large space between red flag headline." The
+     kicker names the whole instrument, so at 13px it was reading as
+     a caption on the line below it rather than as the banner over
+     the band. Larger, with room above and below, and the flag pushed
+     well clear of the headline it verdicts. */
+  .lms-eyebrow{font-family:'Playfair Display',Georgia,serif; font-size:18px;
     font-weight:700; letter-spacing:.3em; text-transform:uppercase;
-    color:var(--gold-deep); text-align:center; margin-bottom:5px;
-    display:flex; align-items:center; justify-content:center; gap:16px;}
-  .lms-eyebrow:before, .lms-eyebrow:after{content:""; height:1px; width:66px;
+    color:var(--gold-deep); text-align:center; margin:10px 0 20px;
+    display:flex; align-items:center; justify-content:center; gap:20px;}
+  .lms-eyebrow:before, .lms-eyebrow:after{content:""; height:1px; width:76px;
     background:var(--gold-line);}
   .lms-sub2{font-size:12.5px; font-weight:700; letter-spacing:.22em;
     text-transform:uppercase; color:var(--muted); margin-bottom:12px;}
@@ -726,7 +732,7 @@
     padding:7px 20px; border-radius:22px; margin:0 auto 14px;
     font-size:13px; font-weight:700; letter-spacing:.11em;
     -webkit-print-color-adjust:exact; print-color-adjust:exact;}
-  .lms-capwrap{text-align:center;}
+  .lms-capwrap{text-align:center; margin-top:26px;}
   .lms-cap .flagset{display:inline-flex; gap:2px;}
   .lms-cap.red{background:#FBE9E7; color:#B3261E;}
   .lms-cap.yellow{background:#F7EFD6; color:#8A6A2E;}
@@ -743,7 +749,10 @@
   .lms-cmi .cmi-wrap .cmi-row{max-width:none;}
   @media (max-width:980px){ .lms-cmi .cmi-wrap{grid-template-columns:1fr;
     max-width:560px; gap:18px;} }
-  @media (max-width:640px){ .lms-eyebrow{letter-spacing:.2em; font-size:11px;}
+  @media (max-width:640px){ .lms-eyebrow{letter-spacing:.2em; font-size:14px;
+      gap:12px; margin:6px 0 16px;}
+    .lms-eyebrow:before, .lms-eyebrow:after{width:38px;}
+    .lms-capwrap{margin-top:20px;}
     .lms-cap{font-size:11px; letter-spacing:.07em; padding:6px 14px;} }
 
   @media (max-width:560px){
@@ -933,6 +942,114 @@
   /* end mss-homemap */
 
   .umap-wrap{max-width:1060px; margin:0 auto; padding:0 20px;}
+
+  /* Everything that explains or drives the map sits UNDER it.
+     Casey, 27 Nov 2026, with a screenshot of the stack above the map
+     - the three group tabs, the three view pills and the red-flag
+     headline: "To busy, move under map."
+
+     Above the map now: the brand line, Family / Luxury, and the week
+     strip. Below it: the headline, the reason line, the key, the
+     note, and the controls.
+
+     Done with flex order rather than by moving the markup, because
+     the group bar and the view pills are ONE set shared by both
+     segment panels and the script binds to them globally - moving
+     them inside a panel would mean two copies of every control and
+     two of every handler. Order changes what the reader sees and
+     leaves the script's view of the page exactly as it was. */
+  /* Casey, 27 Nov 2026: "Family/luxury then headlines then map",
+     and the track record last.
+
+     An unlisted child of a flex container gets order 0, which puts it
+     BEFORE everything given an order - so the first version of this,
+     which named the strategy banner by the wrong class, swept the
+     team's track record from the foot of the page to the top of it.
+     Both containers therefore start by sending everything to the
+     back, and only the pieces named below come forward. Forgetting
+     one now costs a late position, not a page the reader meets
+     upside down. */
+  /* Every control row carries its label, left aligned, the way
+     Casey drew it on 27 Nov 2026 - in the site's own colours, which
+     is the part of the mockup he asked to keep as it is. */
+  /* Casey, 27 Nov 2026: "center everything." The mockup had the
+     labels and rows ranged left; on the page, with the masthead and
+     the headline centred above and below them, four left-ranged rows
+     read as a column that had come loose from the rest. */
+  .umap-lab{font:700 11px/1.3 system-ui,sans-serif; letter-spacing:.18em;
+    text-transform:uppercase; color:#9A8E79; margin:16px 0 7px;
+    text-align:center;}
+  .umap-wrap > .umap-tabs, .umap-wrap > .umap-groups,
+  .umap-wrap > .umap-metrics{justify-content:center;}
+  .umap-wrap > .umap-brand{margin-top:28px;
+    border-top:1px solid #E6DCC6; padding-top:22px;}
+  .umap-wrap{display:flex; flex-direction:column;}
+  .umap-wrap > *{order:20;}
+  .umap-wrap > .umap-lab-seg{order:1;}
+  .umap-wrap > .umap-tabs{order:2;}
+  .umap-wrap > .umap-lab-period{order:3;}
+  .umap-wrap > .umap-lab-metric{order:5;}
+  .umap-wrap > .umap-brand{order:7;}
+  /* Casey, 27 Nov 2026, with the order drawn out: the group tabs and
+     the view pills go back above the map. They were moved below it
+     this morning ("To busy, move under map"), but what was crowding
+     the top was the headline stack and the MARKET MOMENTUM rule, and
+     both of those are dealt with now - so the controls can sit with
+     the thing they control instead of under the key and the note. */
+  .umap-wrap > .umap-groups{order:4;}
+  .umap-wrap > .umap-metrics{order:6;}
+  .umap-wrap > [data-panel]{order:8;}
+  /* apply_cst_footer replaces the strategy block with its own card,
+     so name both: .umap-strategy before that pass has run, .cstf
+     after it. Casey, 27 Nov 2026: "Move our track record to bottom." */
+  .umap-wrap > .umap-strategy, .umap-wrap > .cstf{order:9;}
+  .umap-wrap > [data-panel]{display:flex; flex-direction:column;}
+  /* A flex display would override the hidden attribute, and the
+     panel that is not on screen would appear under the one that is. */
+  .umap-wrap > [data-panel][hidden]{display:none;}
+  [data-panel] > *{order:10;}
+  [data-panel] > .umap-head{order:1;}
+  [data-panel] > .umap-why{order:2;}
+  [data-panel] > .umap-momentum{order:3;}
+  [data-panel] > .umap-when{order:4;}
+  [data-panel] > .umap-stage{order:5;}
+  [data-panel] > .umap-offline{order:6;}
+  [data-panel] > .umap-key{order:7;}
+  [data-panel] > .umap-note{order:8;}
+  [data-panel] > .table-wrap{order:9;}
+  [data-panel] > .umap-head{margin:4px 0 3px;}
+  /* One treatment for all four rows of controls, the way Casey drew
+     them - pills in the site's gold rather than two rows of pills and
+     two of underlined text. The selected one is filled the same way
+     the week pill and the property switch are. */
+  /* Casey, 27 Nov 2026: "All of the levels should look the same ...
+     next level same size ... All levels look the same." One rule for
+     every pill on the page, including the property-type row, which
+     add_nav_switch writes and which matches this exactly. A level is
+     a level whatever it is choosing between. */
+  .umap-wrap > .umap-tabs, .umap-wrap > .umap-groups,
+  .umap-wrap > .umap-metrics{gap:10px; margin:0 0 4px;}
+  .umap-wrap > .umap-tabs button, .umap-wrap > .umap-groups button,
+  .umap-wrap > .umap-metrics button{
+    border:1px solid rgba(165,129,59,.45); border-radius:999px;
+    background:rgba(255,253,247,.7); color:#8A6A2E;
+    padding:8px 20px; font-family:'Playfair Display',Georgia,serif;
+    font-size:14px; font-weight:600; letter-spacing:.12em;
+    /* The property row is anchors and these are buttons; without the
+       same line height the two sit three pixels apart in height and
+       "all levels look the same" fails by exactly that much. */
+    line-height:1.3;
+    text-transform:uppercase; cursor:pointer; white-space:nowrap;}
+  .umap-wrap > .umap-tabs button[aria-selected="true"],
+  .umap-wrap > .umap-groups button[aria-selected="true"],
+  .umap-wrap > .umap-metrics button[aria-selected="true"]{
+    background:linear-gradient(180deg,#A5813B,#7C5E26); color:#FFFDF7;
+    border-color:#7C5E26;}
+  /* The underline these rows used to mark the choice with would now
+     sit under a filled pill. */
+  .umap-wrap > .umap-tabs button:after,
+  .umap-wrap > .umap-groups button:after{display:none;}
+  .umap-wrap > .umap-strategy, .umap-wrap > .cstf{margin-top:26px;}
   .umap-brand{text-align:center; margin:0 0 7px;}
   .umap-tabs{display:flex; justify-content:center; gap:14px; margin:0 0 18px;
     font-size:11.5px; font-weight:700; letter-spacing:.17em;
@@ -2596,28 +2713,16 @@ svg.leaflet-image-layer.leaflet-interactive path {
   <section><div class="umap-wrap">
     <div class="eyebrow umap-brand">CST Market
       Intelligence<em>&trade;</em></div>
+    <div class="umap-lab umap-lab-seg">Market Segment</div>
     <div class="umap-tabs" role="tablist">
       <button data-seg="Family" aria-selected="false">Family Homes</button>
       <button data-seg="Luxury" aria-selected="true">Luxury Homes</button>
     </div>
-    <div class="umap-groups" role="tablist">
-        <button data-group="0" aria-selected="true">Current Market Conditions</button>
-        <button data-group="1" aria-selected="false">Momentum</button>
-        <button data-group="2" aria-selected="false">Year to Date</button>
-    </div>
+    <div class="umap-lab umap-lab-metric">Market Metric</div>
     <div class="umap-metrics" data-group="0" role="tablist">
         <button data-metric="uc" aria-selected="true">% Under Contract</button>
         <button data-metric="dom" aria-selected="false">Days on Market</button>
         <button data-metric="success" aria-selected="false">Success Rate</button>
-    </div>
-    <div class="umap-metrics" data-group="1" hidden role="tablist">
-        <button data-metric="p30" aria-selected="false">30-Day</button>
-        <button data-metric="p14" aria-selected="false">14-Day</button>
-    </div>
-    <div class="umap-metrics" data-group="2" hidden role="tablist">
-        <button data-metric="ytd_inv" aria-selected="false">YTD Inv</button>
-        <button data-metric="ytd_sales" aria-selected="false">YTD Sales</button>
-        <button data-metric="ytd_sr" aria-selected="false">YTD Success</button>
     </div>
 
 
@@ -2625,8 +2730,15 @@ svg.leaflet-image-layer.leaflet-interactive path {
       <h2 class="umap-head"><span class="umap-flag"></span><span
         class="umap-headtext">% of Homes Under Contract</span></h2>
       <p class="umap-why"></p>
-      <div class="umap-momentum"><span>Market Momentum</span></div>
-      <div class="umap-when"></div>
+      <!-- The "MARKET MOMENTUM" rule that sat here is gone, 27 Nov
+           2026: four dates and a button marked Momentum do not need a
+           heading telling the reader they are about momentum, and it
+           was the third place that word appeared inside sixty pixels.
+           One row of page back for nothing lost. -->
+      <!-- The week strip and its Momentum button are gone, 27 Nov
+           2026: "Remove Momentum No 3-Nov 25". buildBar and setBar
+           both return early when this element is absent, so the
+           playback machinery simply never has a bar to draw. -->
       <div class="umap-stage">
         <div id="map-Family" class="umap-map"></div>
         <div class="umap-title">% of Homes Under Contract</div>
@@ -2644,8 +2756,15 @@ svg.leaflet-image-layer.leaflet-interactive path {
       <h2 class="umap-head"><span class="umap-flag"></span><span
         class="umap-headtext">% of Homes Under Contract</span></h2>
       <p class="umap-why"></p>
-      <div class="umap-momentum"><span>Market Momentum</span></div>
-      <div class="umap-when"></div>
+      <!-- The "MARKET MOMENTUM" rule that sat here is gone, 27 Nov
+           2026: four dates and a button marked Momentum do not need a
+           heading telling the reader they are about momentum, and it
+           was the third place that word appeared inside sixty pixels.
+           One row of page back for nothing lost. -->
+      <!-- The week strip and its Momentum button are gone, 27 Nov
+           2026: "Remove Momentum No 3-Nov 25". buildBar and setBar
+           both return early when this element is absent, so the
+           playback machinery simply never has a bar to draw. -->
       <div class="umap-stage">
         <div id="map-Luxury" class="umap-map"></div>
         <div class="umap-title">% of Homes Under Contract</div>
@@ -3274,4 +3393,4 @@ svg.leaflet-image-layer.leaflet-interactive path {
      font-size:10px; letter-spacing:.18em; color:#C9BFAE;}
   .mss-build-wrap{text-align:center; padding:0 0 14px;}
   @media print{.mss-build,.mss-build-wrap{display:none;}}
-/* end mss-build */</style><span class="mss-build">BUILD c8fd1d</span></div></body></html>
+/* end mss-build */</style><span class="mss-build">BUILD 217b3b</span></div></body></html>

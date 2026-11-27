@@ -39,7 +39,7 @@
     ]
    ],
    "capsule": "BUYER\u2019S MARKET \u2014 RED FLAG",
-   "read": "33% of the homes listed in the last 30 days went under contract, and 19% of the listings here went under contract in the last 14 days.",
+   "read": "100% of the homes listed in the last 30 days went under contract, and 19% of the listings here went under contract in the last 14 days.",
    "meta": "ALDIE \u00b7 FAMILY HOMES \u00b7 AS OF NOVEMBER 25, 2026",
    "update": "34% of Aldie family listings are under contract and the homes on the market have been listed an average of 46 days. 40% of the homes listed over the last 30 days went under contract, and 30% went under contract in the last 14 days.",
    "strength": "3.4",
@@ -58,7 +58,7 @@
    "uc_30": "47%",
    "under_contract": "46%",
    "avg_dom": "41",
-   "uc_14": "15%",
+   "uc_14": "21%",
    "success_rate": "81%",
    "control": "Neutral"
   },
@@ -111,7 +111,7 @@
    "uc_30": "9%",
    "under_contract": "23%",
    "avg_dom": "100",
-   "uc_14": "5%",
+   "uc_14": "7%",
    "success_rate": "47%",
    "control": "Buyer's"
   },
@@ -140,12 +140,12 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "5%",
+     "7%",
      "Of all listings, under contract in 14 days"
     ]
    ],
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "0% of the homes listed in the last 30 days went under contract, and 5% of the listings here went under contract in the last 14 days.",
+   "read": "9% of the homes listed in the last 30 days went under contract, and 7% of the listings here went under contract in the last 14 days.",
    "meta": "MCLEAN \u00b7 LUXURY HOMES \u00b7 AS OF NOVEMBER 25, 2026",
    "update": "14% of McLean luxury listings are under contract and the homes on the market have been listed an average of 47 days. 13% of the homes listed over the last 30 days went under contract, and 1% went under contract in the last 14 days.",
    "strength": "1.4",
@@ -164,7 +164,7 @@
    "uc_30": "55%",
    "under_contract": "43%",
    "avg_dom": "41",
-   "uc_14": "20%",
+   "uc_14": "18%",
    "success_rate": "70%",
    "control": "Neutral"
   },
@@ -251,7 +251,7 @@
     ]
    ],
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "29% of the homes listed in the last 30 days went under contract, and 4% of the listings here went under contract in the last 14 days.",
+   "read": "25% of the homes listed in the last 30 days went under contract, and 4% of the listings here went under contract in the last 14 days.",
    "meta": "VIENNA \u00b7 LUXURY HOMES \u00b7 AS OF NOVEMBER 25, 2026",
    "update": "25% of Vienna luxury listings are under contract and the homes on the market have been listed an average of 42 days. 40% of the homes listed over the last 30 days went under contract, and 7% went under contract in the last 14 days.",
    "strength": "2.6",
@@ -270,48 +270,48 @@
    "uc_30": "50%",
    "under_contract": "53%",
    "avg_dom": "65",
-   "uc_14": "12%",
+   "uc_14": "7%",
    "success_rate": "44%",
-   "control": "Neutral"
+   "control": "Buyer's"
   },
   "conditions": {
-   "flags": 1,
+   "flags": 2,
    "flag_color": "yellow",
    "flag_hex": "#F2C117",
-   "headline": "Neither Side Controls the Fairfax Luxury Market",
+   "headline": "Buyers Control the Fairfax Luxury Market",
    "headline_figure": "20%",
    "sub": "20% of Fairfax luxury listings are under contract and the homes on the market have been listed an average of 24 days. 44% of the homes listed over the last 30 days went under contract, and 5% went under contract in the last 14 days.",
    "stats": [
     [
-     "70%",
+     "44%",
      "Success rate"
     ],
     [
-     "20%",
+     "53%",
      "Under contract"
     ],
     [
-     "24",
+     "65",
      "Days on market, active and pending"
     ],
     [
-     "44%",
+     "50%",
      "Under contract on homes listed 30 days"
     ],
     [
-     "5%",
+     "7%",
      "Of all listings, under contract in 14 days"
     ]
    ],
-   "capsule": "NEUTRAL MARKET \u2014 YELLOW FLAG",
-   "read": "44% of the homes listed in the last 30 days went under contract, and 5% of the listings here went under contract in the last 14 days.",
-   "meta": "FAIRFAX \u00b7 LUXURY HOMES \u00b7 AS OF OCTOBER 12, 2026",
+   "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
+   "read": "50% of the homes listed in the last 30 days went under contract, and 7% of the listings here went under contract in the last 14 days.",
+   "meta": "FAIRFAX \u00b7 LUXURY HOMES \u00b7 AS OF NOVEMBER 25, 2026",
    "update": "20% of Fairfax luxury listings are under contract and the homes on the market have been listed an average of 24 days. 44% of the homes listed over the last 30 days went under contract, and 5% went under contract in the last 14 days.",
    "strength": "4.0",
    "momentum": null
   },
   "absorption": null,
-  "headline": "Neither Side Controls the Fairfax Luxury Market",
+  "headline": "Buyers Control the Fairfax Luxury Market",
   "subheadline": "20% of Fairfax luxury listings are under contract and the homes on the market have been listed an average of 24 days. 44% of the homes listed over the last 30 days went under contract, and 5% went under contract in the last 14 days.",
   "keystats": "Neutral Market",
   "week_of": "As of October 12, 2026",
@@ -323,7 +323,7 @@
    "uc_30": "37%",
    "under_contract": "42%",
    "avg_dom": "38",
-   "uc_14": "8%",
+   "uc_14": "26%",
    "success_rate": "70%",
    "control": "Buyer's"
   },
@@ -418,7 +418,7 @@
    "uc_30": "57%",
    "under_contract": "36%",
    "avg_dom": "78",
-   "uc_14": "11%",
+   "uc_14": "9%",
    "success_rate": "53%",
    "control": "Buyer's"
   },
@@ -447,12 +447,12 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "11%",
+     "9%",
      "Of all listings, under contract in 14 days"
     ]
    ],
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "50% of the homes listed in the last 30 days went under contract, and 11% of the listings here went under contract in the last 14 days.",
+   "read": "57% of the homes listed in the last 30 days went under contract, and 9% of the listings here went under contract in the last 14 days.",
    "meta": "LEESBURG \u00b7 LUXURY HOMES \u00b7 AS OF NOVEMBER 25, 2026",
    "update": "21% of Leesburg* luxury listings are under contract and the homes on the market have been listed an average of 36 days. 29% of the homes listed over the last 30 days went under contract, and 7% went under contract in the last 14 days.",
    "strength": "3.0",
@@ -471,7 +471,7 @@
    "uc_30": "50%",
    "under_contract": "40%",
    "avg_dom": "119",
-   "uc_14": "8%",
+   "uc_14": "20%",
    "success_rate": "69%",
    "control": "Buyer's"
   },
@@ -498,10 +498,14 @@
     [
      "50%",
      "Under contract on homes listed 30 days"
+    ],
+    [
+     "20%",
+     "Of all listings, under contract in 14 days"
     ]
    ],
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "40% of the homes listed in the last 30 days went under contract, and none of the listings here went under contract in the last 14 days.",
+   "read": "50% of the homes listed in the last 30 days went under contract, and 20% of the listings here went under contract in the last 14 days.",
    "meta": "OAKTON \u00b7 LUXURY HOMES \u00b7 AS OF NOVEMBER 25, 2026",
    "update": "18% of Oakton luxury listings are under contract and the homes on the market have been listed an average of 51 days. 33% of the homes listed over the last 30 days went under contract, and 15% went under contract in the last 14 days.",
    "strength": "2.2",
@@ -520,7 +524,7 @@
    "inventory": "9%",
    "contracts": "-11%",
    "under_contract": "21%",
-   "uc_14": "7%",
+   "uc_14": "5%",
    "success_rate": "52%",
    "control": "Buyer's",
    "uc_30": "60%",
@@ -538,7 +542,7 @@
   "conditions": {
    "headline": "Buyers Control the Great Falls Luxury Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "67% of the homes listed in the last 30 days went under contract, and none of the listings here went under contract in the last 14 days.",
+   "read": "60% of the homes listed in the last 30 days went under contract, and 5% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -556,6 +560,10 @@
     [
      "60%",
      "Under contract on homes listed 30 days"
+    ],
+    [
+     "5%",
+     "Of all listings, under contract in 14 days"
     ]
    ],
    "flags": 2
@@ -598,7 +606,7 @@
     ]
    ],
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "50% of the homes listed in the last 30 days went under contract, and none of the listings here went under contract in the last 14 days.",
+   "read": "0% of the homes listed in the last 30 days went under contract, and none of the listings here went under contract in the last 14 days.",
    "meta": "CENTREVILLE \u00b7 LUXURY HOMES \u00b7 AS OF NOVEMBER 25, 2026",
    "update": "34% of Centreville luxury listings are under contract and the homes on the market have been listed an average of 19 days. 33% of the homes listed over the last 30 days went under contract, and none went under contract in the last 14 days.",
    "strength": "3.4",
@@ -651,7 +659,7 @@
     ]
    ],
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "36% of the homes listed in the last 30 days went under contract, and 11% of the listings here went under contract in the last 14 days.",
+   "read": "33% of the homes listed in the last 30 days went under contract, and 11% of the listings here went under contract in the last 14 days.",
    "meta": "WINCHESTER \u00b7 FAMILY HOMES \u00b7 AS OF NOVEMBER 25, 2026",
    "update": "17% of Winchester family listings are under contract and the homes on the market have been listed an average of 38 days. 29% of the homes listed over the last 30 days went under contract, and 10% went under contract in the last 14 days.",
    "strength": "2.9",
@@ -670,7 +678,7 @@
    "uc_30": "25%",
    "under_contract": "23%",
    "avg_dom": "63",
-   "uc_14": "4%",
+   "uc_14": "5%",
    "success_rate": "55%",
    "control": "Buyer's"
   },
@@ -699,12 +707,12 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "4%",
+     "5%",
      "Of all listings, under contract in 14 days"
     ]
    ],
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "25% of the homes listed in the last 30 days went under contract, and 4% of the listings here went under contract in the last 14 days.",
+   "read": "25% of the homes listed in the last 30 days went under contract, and 5% of the listings here went under contract in the last 14 days.",
    "meta": "HAYMARKET \u00b7 LUXURY HOMES \u00b7 AS OF NOVEMBER 25, 2026",
    "update": "24% of Haymarket luxury listings are under contract and the homes on the market have been listed an average of 33 days. 45% of the homes listed over the last 30 days went under contract, and 15% went under contract in the last 14 days.",
    "strength": "2.8",
@@ -723,7 +731,7 @@
    "uc_30": "21%",
    "under_contract": "22%",
    "avg_dom": "67",
-   "uc_14": "8%",
+   "uc_14": "16%",
    "success_rate": "58%",
    "control": "Buyer's"
   },
@@ -752,12 +760,12 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "8%",
+     "16%",
      "Of all listings, under contract in 14 days"
     ]
    ],
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "7% of the homes listed in the last 30 days went under contract, and 8% of the listings here went under contract in the last 14 days.",
+   "read": "21% of the homes listed in the last 30 days went under contract, and 16% of the listings here went under contract in the last 14 days.",
    "meta": "HAYMARKET \u00b7 FAMILY HOMES \u00b7 AS OF NOVEMBER 25, 2026",
    "update": "14% of Haymarket family listings are under contract and the homes on the market have been listed an average of 32 days. 39% of the homes listed over the last 30 days went under contract, and 3% went under contract in the last 14 days.",
    "strength": "3.2",
@@ -863,7 +871,7 @@
     ]
    ],
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "33% of the homes listed in the last 30 days went under contract, and 16% of the listings here went under contract in the last 14 days.",
+   "read": "38% of the homes listed in the last 30 days went under contract, and 16% of the listings here went under contract in the last 14 days.",
    "meta": "LEESBURG \u00b7 FAMILY HOMES \u00b7 AS OF NOVEMBER 25, 2026",
    "update": "20% of Leesburg* family listings are under contract and the homes on the market have been listed an average of 25 days. 28% of the homes listed over the last 30 days went under contract, and 12% went under contract in the last 14 days.",
    "strength": "3.8",
@@ -949,9 +957,40 @@
    "uc_30": "41%",
    "avg_dom": "55",
    "success_rate": "69%",
-   "uc_14": "10%"
+   "uc_14": "19%",
+   "control": "Buyer's"
   },
-  "refreshed_from": "mss_pages (NOVEMBER 25, 2026)"
+  "refreshed_from": "mss_pages (NOVEMBER 25, 2026)",
+  "headline": "Buyers Control the Arlington Family Market",
+  "conditions": {
+   "headline": "Buyers Control the Arlington Family Market",
+   "capsule": "BUYER\u2019S MARKET \u2014 RED FLAG",
+   "read": "41% of the homes listed in the last 30 days went under contract, and 19% of the listings here went under contract in the last 14 days.",
+   "meta": "AS OF NOVEMBER 25, 2026",
+   "stats": [
+    [
+     "69%",
+     "Success rate"
+    ],
+    [
+     "37%",
+     "Under contract"
+    ],
+    [
+     "55",
+     "Days on market, active and pending"
+    ],
+    [
+     "41%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "19%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "flags": 1
+  }
  },
  "Arlington_Luxury_Market_Snapshot": {
   "stats": {
@@ -966,7 +1005,7 @@
   "conditions": {
    "headline": "Buyers Control the Arlington Luxury Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "20% of the homes listed in the last 30 days went under contract, and 4% of the listings here went under contract in the last 14 days.",
+   "read": "25% of the homes listed in the last 30 days went under contract, and none of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -984,10 +1023,6 @@
     [
      "25%",
      "Under contract on homes listed 30 days"
-    ],
-    [
-     "4%",
-     "Of all listings, under contract in 14 days"
     ]
    ],
    "flags": 2
@@ -1009,9 +1044,40 @@
    "uc_30": "13%",
    "avg_dom": "77",
    "success_rate": "24%",
-   "uc_14": "10%"
+   "uc_14": "19%",
+   "control": "Buyer's"
   },
-  "refreshed_from": "mss_pages (NOVEMBER 25, 2026)"
+  "refreshed_from": "mss_pages (NOVEMBER 25, 2026)",
+  "headline": "Buyers Control the Arlington New Homes Market",
+  "conditions": {
+   "headline": "Buyers Control the Arlington New Homes Market",
+   "capsule": "BUYER\u2019S MARKET \u2014 RED FLAG",
+   "read": "41% of the homes listed in the last 30 days went under contract, and 19% of the listings here went under contract in the last 14 days.",
+   "meta": "AS OF NOVEMBER 25, 2026",
+   "stats": [
+    [
+     "",
+     "Success rate"
+    ],
+    [
+     "30%",
+     "Under contract"
+    ],
+    [
+     "77",
+     "Days on market, active and pending"
+    ],
+    [
+     "13%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "19%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "flags": 1
+  }
  },
  "Ashburn_Family_Market_Snapshot": {
   "stats": {
@@ -1019,7 +1085,7 @@
    "uc_30": "56%",
    "avg_dom": "36",
    "success_rate": "71%",
-   "uc_14": "19%"
+   "uc_14": "16%"
   },
   "refreshed_from": "mss_pages (NOVEMBER 25, 2026)"
  },
@@ -1036,7 +1102,7 @@
   "conditions": {
    "headline": "Buyers Control the Ashburn* Luxury Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "67% of the homes listed in the last 30 days went under contract, and 14% of the listings here went under contract in the last 14 days.",
+   "read": "80% of the homes listed in the last 30 days went under contract, and 14% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -1088,7 +1154,7 @@
    "uc_30": "50%",
    "avg_dom": "42",
    "success_rate": "78%",
-   "uc_14": "17%"
+   "uc_14": "21%"
   },
   "refreshed_from": "mss_pages (NOVEMBER 25, 2026)"
  },
@@ -1098,7 +1164,7 @@
    "uc_30": "67%",
    "avg_dom": "24",
    "success_rate": "70%",
-   "uc_14": "14%",
+   "uc_14": "25%",
    "control": "Seller's"
   },
   "headline": "Sellers Control the Chantilly Luxury Market",
@@ -1148,7 +1214,7 @@
    "uc_30": "61%",
    "avg_dom": "40",
    "success_rate": "78%",
-   "uc_14": "16%"
+   "uc_14": "27%"
   },
   "refreshed_from": "mss_pages (NOVEMBER 25, 2026)"
  },
@@ -1176,14 +1242,14 @@
    "uc_30": "57%",
    "avg_dom": "23",
    "success_rate": "80%",
-   "uc_14": "40%",
+   "uc_14": "31%",
    "control": "Seller's"
   },
   "headline": "Sellers Control the Fairfax Station Family Market",
   "conditions": {
    "headline": "Sellers Control the Fairfax Station Family Market",
    "capsule": "SELLER\u2019S MARKET \u2014 GREEN FLAG",
-   "read": "71% of the homes listed in the last 30 days went under contract, and 40% of the listings here went under contract in the last 14 days.",
+   "read": "57% of the homes listed in the last 30 days went under contract, and 31% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -1203,7 +1269,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "40%",
+     "31%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -1217,15 +1283,15 @@
    "uc_30": "50%",
    "avg_dom": "68",
    "success_rate": "64%",
-   "uc_14": "11%",
+   "uc_14": "25%",
    "control": "Buyer's"
   },
   "refreshed_from": "mss_pages (NOVEMBER 25, 2026)",
   "headline": "Buyers Control the Fairfax Station Luxury Market",
   "conditions": {
    "headline": "Buyers Control the Fairfax Station Luxury Market",
-   "capsule": "BUYER\u2019S MARKET \u2014 RED FLAG",
-   "read": "50% of the homes listed in the last 30 days went under contract, and 11% of the listings here went under contract in the last 14 days.",
+   "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
+   "read": "50% of the homes listed in the last 30 days went under contract, and 25% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -1245,11 +1311,11 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "11%",
+     "25%",
      "Of all listings, under contract in 14 days"
     ]
    ],
-   "flags": 1
+   "flags": 2
   }
  },
  "Fairfax_Station_Market_Snapshot": {
@@ -1267,7 +1333,7 @@
    "uc_30": "41%",
    "avg_dom": "42",
    "success_rate": "68%",
-   "uc_14": "9%",
+   "uc_14": "18%",
    "control": "Buyer's"
   },
   "refreshed_from": "mss_pages (NOVEMBER 25, 2026)",
@@ -1275,7 +1341,7 @@
   "conditions": {
    "headline": "Buyers Control the Falls Church Family Market",
    "capsule": "BUYER\u2019S MARKET \u2014 RED FLAG",
-   "read": "42% of the homes listed in the last 30 days went under contract, and 9% of the listings here went under contract in the last 14 days.",
+   "read": "41% of the homes listed in the last 30 days went under contract, and 18% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -1295,7 +1361,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "9%",
+     "18%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -1308,14 +1374,14 @@
    "uc_30": "25%",
    "avg_dom": "66",
    "success_rate": "39%",
-   "uc_14": "14%",
+   "uc_14": "6%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the Falls Church Luxury Market",
   "conditions": {
    "headline": "Buyers Control the Falls Church Luxury Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "20% of the homes listed in the last 30 days went under contract, and 14% of the listings here went under contract in the last 14 days.",
+   "read": "25% of the homes listed in the last 30 days went under contract, and 6% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -1335,7 +1401,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "14%",
+     "6%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -1367,14 +1433,14 @@
    "uc_30": "38%",
    "avg_dom": "39",
    "success_rate": "55%",
-   "uc_14": "21%",
+   "uc_14": "10%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the Great Falls Family Market",
   "conditions": {
    "headline": "Buyers Control the Great Falls Family Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "46% of the homes listed in the last 30 days went under contract, and 21% of the listings here went under contract in the last 14 days.",
+   "read": "38% of the homes listed in the last 30 days went under contract, and 10% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -1394,7 +1460,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "21%",
+     "10%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -1526,14 +1592,14 @@
    "uc_30": "19%",
    "avg_dom": "51",
    "success_rate": "62%",
-   "uc_14": "21%",
+   "uc_14": "12%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the McLean Family Market",
   "conditions": {
    "headline": "Buyers Control the McLean Family Market",
-   "capsule": "BUYER\u2019S MARKET \u2014 RED FLAG",
-   "read": "28% of the homes listed in the last 30 days went under contract, and 21% of the listings here went under contract in the last 14 days.",
+   "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
+   "read": "19% of the homes listed in the last 30 days went under contract, and 12% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -1553,11 +1619,11 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "21%",
+     "12%",
      "Of all listings, under contract in 14 days"
     ]
    ],
-   "flags": 1
+   "flags": 2
   },
   "refreshed_from": "mss_pages (NOVEMBER 25, 2026)"
  },
@@ -1576,14 +1642,14 @@
    "uc_30": "25%",
    "avg_dom": "93",
    "success_rate": "26%",
-   "uc_14": "21%",
+   "uc_14": "12%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the McLean New Homes Market",
   "conditions": {
    "headline": "Buyers Control the McLean New Homes Market",
-   "capsule": "BUYER\u2019S MARKET \u2014 RED FLAG",
-   "read": "28% of the homes listed in the last 30 days went under contract, and 21% of the listings here went under contract in the last 14 days.",
+   "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
+   "read": "19% of the homes listed in the last 30 days went under contract, and 12% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -1603,11 +1669,11 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "21%",
+     "12%",
      "Of all listings, under contract in 14 days"
     ]
    ],
-   "flags": 1
+   "flags": 2
   },
   "refreshed_from": "mss_pages (NOVEMBER 25, 2026)"
  },
@@ -1617,7 +1683,7 @@
    "uc_30": "25%",
    "avg_dom": "45",
    "success_rate": "88%",
-   "uc_14": "33%"
+   "uc_14": "17%"
   },
   "refreshed_from": "mss_pages (NOVEMBER 25, 2026)"
  },
@@ -1654,14 +1720,14 @@
    "uc_30": "44%",
    "avg_dom": "53",
    "success_rate": "79%",
-   "uc_14": "11%",
+   "uc_14": "6%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the Purcellville Family Market",
   "conditions": {
    "headline": "Buyers Control the Purcellville Family Market",
-   "capsule": "BUYER\u2019S MARKET \u2014 YELLOW FLAG",
-   "read": "44% of the homes listed in the last 30 days went under contract, and 11% of the listings here went under contract in the last 14 days.",
+   "capsule": "BUYER\u2019S MARKET \u2014 RED FLAG",
+   "read": "44% of the homes listed in the last 30 days went under contract, and 6% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -1681,7 +1747,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "11%",
+     "6%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -1695,14 +1761,14 @@
    "uc_30": "67%",
    "avg_dom": "80",
    "success_rate": "67%",
-   "uc_14": "31%",
+   "uc_14": "23%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the Purcellville Luxury Market",
   "conditions": {
    "headline": "Buyers Control the Purcellville Luxury Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "50% of the homes listed in the last 30 days went under contract, and 31% of the listings here went under contract in the last 14 days.",
+   "read": "67% of the homes listed in the last 30 days went under contract, and 23% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -1722,7 +1788,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "31%",
+     "23%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -1838,7 +1904,7 @@
   "conditions": {
    "headline": "Buyers Control the Round Hill Luxury Market",
    "capsule": "BUYER\u2019S MARKET \u2014 RED FLAG",
-   "read": "100% of the homes listed in the last 30 days went under contract, and 25% of the listings here went under contract in the last 14 days.",
+   "read": "100% of the homes listed in the last 30 days went under contract, and none of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -1856,10 +1922,6 @@
     [
      "100%",
      "Under contract on homes listed 30 days"
-    ],
-    [
-     "25%",
-     "Of all listings, under contract in 14 days"
     ]
    ],
    "flags": 1
@@ -1881,9 +1943,40 @@
    "uc_30": "34%",
    "avg_dom": "39",
    "success_rate": "73%",
-   "uc_14": "10%"
+   "uc_14": "11%",
+   "control": "Buyer's"
   },
-  "refreshed_from": "mss_pages (NOVEMBER 25, 2026)"
+  "refreshed_from": "mss_pages (NOVEMBER 25, 2026)",
+  "headline": "Buyers Control the Sterling Family Market",
+  "conditions": {
+   "headline": "Buyers Control the Sterling Family Market",
+   "capsule": "BUYER\u2019S MARKET \u2014 YELLOW FLAG",
+   "read": "34% of the homes listed in the last 30 days went under contract, and 11% of the listings here went under contract in the last 14 days.",
+   "meta": "AS OF NOVEMBER 25, 2026",
+   "stats": [
+    [
+     "73%",
+     "Success rate"
+    ],
+    [
+     "26%",
+     "Under contract"
+    ],
+    [
+     "39",
+     "Days on market, active and pending"
+    ],
+    [
+     "34%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "11%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "flags": 1
+  }
  },
  "Sterling_Luxury_Market_Snapshot": {
   "stats": {
@@ -1977,7 +2070,7 @@
    "uc_30": "50%",
    "avg_dom": "46",
    "success_rate": "71%",
-   "uc_14": "20%"
+   "uc_14": "18%"
   },
   "refreshed_from": "mss_pages (NOVEMBER 25, 2026)"
  },
@@ -2003,7 +2096,7 @@
   "conditions": {
    "headline": "Buyers Control the Warrenton Luxury Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "60% of the homes listed in the last 30 days went under contract, and 17% of the listings here went under contract in the last 14 days.",
+   "read": "67% of the homes listed in the last 30 days went under contract, and none of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2021,10 +2114,6 @@
     [
      "67%",
      "Under contract on homes listed 30 days"
-    ],
-    [
-     "17%",
-     "Of all listings, under contract in 14 days"
     ]
    ],
    "flags": 2
@@ -2055,14 +2144,14 @@
    "uc_30": "0%",
    "avg_dom": "89",
    "success_rate": "47%",
-   "uc_14": "10%",
+   "uc_14": "5%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the Winchester Luxury Market",
   "conditions": {
    "headline": "Buyers Control the Winchester Luxury Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "17% of the homes listed in the last 30 days went under contract, and 10% of the listings here went under contract in the last 14 days.",
+   "read": "0% of the homes listed in the last 30 days went under contract, and 5% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2082,7 +2171,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "10%",
+     "5%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -2112,7 +2201,7 @@
   "conditions": {
    "headline": "Buyers Control the Aldie Family Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 RED FLAG",
-   "read": "33% of the homes listed in the last 30 days went under contract, and 19% of the listings here went under contract in the last 14 days.",
+   "read": "100% of the homes listed in the last 30 days went under contract, and 19% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2174,9 +2263,40 @@
    "uc_30": "46%",
    "avg_dom": "57",
    "success_rate": "61%",
-   "uc_14": "10%"
+   "uc_14": "19%",
+   "control": "Buyer's"
   },
-  "refreshed_from": "mss_pages_townhome (NOVEMBER 25, 2026)"
+  "refreshed_from": "mss_pages_townhome (NOVEMBER 25, 2026)",
+  "headline": "Buyers Control the Arlington Family Town Home Market",
+  "conditions": {
+   "headline": "Buyers Control the Arlington Family Town Home Market",
+   "capsule": "BUYER\u2019S MARKET \u2014 RED FLAG",
+   "read": "41% of the homes listed in the last 30 days went under contract, and 19% of the listings here went under contract in the last 14 days.",
+   "meta": "AS OF NOVEMBER 25, 2026",
+   "stats": [
+    [
+     "61%",
+     "Success rate"
+    ],
+    [
+     "29%",
+     "Under contract"
+    ],
+    [
+     "57",
+     "Days on market, active and pending"
+    ],
+    [
+     "46%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "19%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "flags": 1
+  }
  },
  "TH_Arlington_Luxury_Market_Snapshot": {
   "stats": {
@@ -2191,7 +2311,7 @@
   "conditions": {
    "headline": "Buyers Control the Arlington Luxury Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "20% of the homes listed in the last 30 days went under contract, and 4% of the listings here went under contract in the last 14 days.",
+   "read": "25% of the homes listed in the last 30 days went under contract, and none of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2209,10 +2329,6 @@
     [
      "50%",
      "Under contract on homes listed 30 days"
-    ],
-    [
-     "4%",
-     "Of all listings, under contract in 14 days"
     ]
    ],
    "flags": 2
@@ -2234,7 +2350,7 @@
    "uc_30": "33%",
    "avg_dom": "48",
    "success_rate": "49%",
-   "uc_14": "19%"
+   "uc_14": "16%"
   },
   "refreshed_from": "mss_pages_townhome (NOVEMBER 25, 2026)"
  },
@@ -2251,7 +2367,7 @@
   "conditions": {
    "headline": "Buyers Control the Ashburn* Luxury Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "67% of the homes listed in the last 30 days went under contract, and 14% of the listings here went under contract in the last 14 days.",
+   "read": "80% of the homes listed in the last 30 days went under contract, and 14% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2294,7 +2410,7 @@
    "uc_30": "31%",
    "avg_dom": "44",
    "success_rate": "72%",
-   "uc_14": "15%"
+   "uc_14": "21%"
   },
   "refreshed_from": "mss_pages_townhome (NOVEMBER 25, 2026)"
  },
@@ -2310,7 +2426,7 @@
   "conditions": {
    "headline": "Buyers Control the Centreville Luxury Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "50% of the homes listed in the last 30 days went under contract, and none of the listings here went under contract in the last 14 days.",
+   "read": "0% of the homes listed in the last 30 days went under contract, and none of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2349,7 +2465,7 @@
    "uc_30": "33%",
    "avg_dom": "66",
    "success_rate": "55%",
-   "uc_14": "17%"
+   "uc_14": "21%"
   },
   "refreshed_from": "mss_pages_townhome (NOVEMBER 25, 2026)"
  },
@@ -2358,7 +2474,8 @@
    "under_contract": "60%",
    "uc_30": "50%",
    "avg_dom": "32",
-   "success_rate": "67%"
+   "success_rate": "67%",
+   "uc_14": "25%"
   },
   "refreshed_from": "mss_pages_townhome (NOVEMBER 25, 2026)"
  },
@@ -2377,7 +2494,7 @@
    "uc_30": "37%",
    "avg_dom": "77",
    "success_rate": "51%",
-   "uc_14": "16%"
+   "uc_14": "27%"
   },
   "refreshed_from": "mss_pages_townhome (NOVEMBER 25, 2026)"
  },
@@ -2387,9 +2504,40 @@
    "uc_30": "25%",
    "avg_dom": "71",
    "success_rate": "68%",
-   "uc_14": "12%"
+   "uc_14": "7%",
+   "control": "Buyer's"
   },
-  "refreshed_from": "mss_pages_townhome (NOVEMBER 25, 2026)"
+  "refreshed_from": "mss_pages_townhome (NOVEMBER 25, 2026)",
+  "headline": "Buyers Control the Fairfax Luxury Town Home Market",
+  "conditions": {
+   "headline": "Buyers Control the Fairfax Luxury Town Home Market",
+   "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
+   "read": "50% of the homes listed in the last 30 days went under contract, and 7% of the listings here went under contract in the last 14 days.",
+   "meta": "AS OF NOVEMBER 25, 2026",
+   "stats": [
+    [
+     "68%",
+     "Success rate"
+    ],
+    [
+     "14%",
+     "Under contract"
+    ],
+    [
+     "71",
+     "Days on market, active and pending"
+    ],
+    [
+     "25%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "7%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "flags": 2
+  }
  },
  "TH_Fairfax_City_Market_Snapshot": {
   "stats": {
@@ -2415,14 +2563,14 @@
    "uc_30": "40%",
    "avg_dom": "64",
    "success_rate": "62%",
-   "uc_14": "9%",
+   "uc_14": "18%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the Falls Church Family Town Home Market",
   "conditions": {
    "headline": "Buyers Control the Falls Church Family Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 RED FLAG",
-   "read": "42% of the homes listed in the last 30 days went under contract, and 9% of the listings here went under contract in the last 14 days.",
+   "read": "41% of the homes listed in the last 30 days went under contract, and 18% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2442,7 +2590,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "9%",
+     "18%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -2456,14 +2604,14 @@
    "uc_30": "100%",
    "avg_dom": "149",
    "success_rate": "50%",
-   "uc_14": "14%",
+   "uc_14": "6%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the Falls Church Luxury Town Home Market",
   "conditions": {
    "headline": "Buyers Control the Falls Church Luxury Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "20% of the homes listed in the last 30 days went under contract, and 14% of the listings here went under contract in the last 14 days.",
+   "read": "25% of the homes listed in the last 30 days went under contract, and 6% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2483,7 +2631,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "14%",
+     "6%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -2515,14 +2663,14 @@
    "uc_30": "29%",
    "avg_dom": "52",
    "success_rate": "57%",
-   "uc_14": "8%",
+   "uc_14": "16%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the Haymarket Family Town Home Market",
   "conditions": {
    "headline": "Buyers Control the Haymarket Family Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "7% of the homes listed in the last 30 days went under contract, and 8% of the listings here went under contract in the last 14 days.",
+   "read": "21% of the homes listed in the last 30 days went under contract, and 16% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2542,7 +2690,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "8%",
+     "16%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -2555,14 +2703,14 @@
    "under_contract": "0%",
    "avg_dom": "23",
    "success_rate": "62%",
-   "uc_14": "4%",
+   "uc_14": "5%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the Haymarket Luxury Town Home Market",
   "conditions": {
    "headline": "Buyers Control the Haymarket Luxury Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "25% of the homes listed in the last 30 days went under contract, and 4% of the listings here went under contract in the last 14 days.",
+   "read": "25% of the homes listed in the last 30 days went under contract, and 5% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2582,7 +2730,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "4%",
+     "5%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -2612,7 +2760,7 @@
   "conditions": {
    "headline": "Buyers Control the Leesburg* Family Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "33% of the homes listed in the last 30 days went under contract, and 16% of the listings here went under contract in the last 14 days.",
+   "read": "38% of the homes listed in the last 30 days went under contract, and 16% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2646,14 +2794,14 @@
    "uc_30": "31%",
    "avg_dom": "61",
    "success_rate": "59%",
-   "uc_14": "11%",
+   "uc_14": "9%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the Leesburg* Luxury Town Home Market",
   "conditions": {
    "headline": "Buyers Control the Leesburg* Luxury Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "50% of the homes listed in the last 30 days went under contract, and 11% of the listings here went under contract in the last 14 days.",
+   "read": "57% of the homes listed in the last 30 days went under contract, and 9% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2673,7 +2821,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "11%",
+     "9%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -2705,14 +2853,14 @@
    "uc_30": "0%",
    "avg_dom": "74",
    "success_rate": "52%",
-   "uc_14": "21%",
+   "uc_14": "12%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the McLean Family Town Home Market",
   "conditions": {
    "headline": "Buyers Control the McLean Family Town Home Market",
-   "capsule": "BUYER\u2019S MARKET \u2014 RED FLAG",
-   "read": "28% of the homes listed in the last 30 days went under contract, and 21% of the listings here went under contract in the last 14 days.",
+   "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
+   "read": "19% of the homes listed in the last 30 days went under contract, and 12% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2732,11 +2880,11 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "21%",
+     "12%",
      "Of all listings, under contract in 14 days"
     ]
    ],
-   "flags": 1
+   "flags": 2
   },
   "refreshed_from": "mss_pages_townhome (NOVEMBER 25, 2026)"
  },
@@ -2746,14 +2894,14 @@
    "uc_30": "50%",
    "avg_dom": "135",
    "success_rate": "62%",
-   "uc_14": "5%",
+   "uc_14": "7%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the McLean Luxury Town Home Market",
   "conditions": {
    "headline": "Buyers Control the McLean Luxury Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "0% of the homes listed in the last 30 days went under contract, and 5% of the listings here went under contract in the last 14 days.",
+   "read": "9% of the homes listed in the last 30 days went under contract, and 7% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2773,7 +2921,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "5%",
+     "7%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -2796,7 +2944,7 @@
    "uc_30": "67%",
    "avg_dom": "45",
    "success_rate": "89%",
-   "uc_14": "33%"
+   "uc_14": "17%"
   },
   "refreshed_from": "mss_pages_townhome (NOVEMBER 25, 2026)"
  },
@@ -2806,13 +2954,14 @@
    "uc_30": "0%",
    "avg_dom": "34",
    "success_rate": "70%",
-   "control": "Buyer's"
+   "control": "Buyer's",
+   "uc_14": "20%"
   },
   "headline": "Buyers Control the Oakton Luxury Town Home Market",
   "conditions": {
    "headline": "Buyers Control the Oakton Luxury Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "40% of the homes listed in the last 30 days went under contract, and none of the listings here went under contract in the last 14 days.",
+   "read": "50% of the homes listed in the last 30 days went under contract, and 20% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2830,6 +2979,10 @@
     [
      "0%",
      "Under contract on homes listed 30 days"
+    ],
+    [
+     "20%",
+     "Of all listings, under contract in 14 days"
     ]
    ],
    "flags": 2
@@ -2860,14 +3013,14 @@
    "uc_30": "0%",
    "avg_dom": "45",
    "success_rate": "62%",
-   "uc_14": "11%",
+   "uc_14": "6%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the Purcellville Family Town Home Market",
   "conditions": {
    "headline": "Buyers Control the Purcellville Family Town Home Market",
-   "capsule": "BUYER\u2019S MARKET \u2014 YELLOW FLAG",
-   "read": "44% of the homes listed in the last 30 days went under contract, and 11% of the listings here went under contract in the last 14 days.",
+   "capsule": "BUYER\u2019S MARKET \u2014 RED FLAG",
+   "read": "44% of the homes listed in the last 30 days went under contract, and 6% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2887,7 +3040,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "11%",
+     "6%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -2901,14 +3054,14 @@
    "uc_30": "50%",
    "avg_dom": "26",
    "success_rate": "40%",
-   "uc_14": "31%",
+   "uc_14": "23%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the Purcellville Luxury Town Home Market",
   "conditions": {
    "headline": "Buyers Control the Purcellville Luxury Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "50% of the homes listed in the last 30 days went under contract, and 31% of the listings here went under contract in the last 14 days.",
+   "read": "67% of the homes listed in the last 30 days went under contract, and 23% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -2928,7 +3081,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "31%",
+     "23%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -2951,7 +3104,7 @@
    "uc_30": "30%",
    "avg_dom": "54",
    "success_rate": "67%",
-   "uc_14": "8%",
+   "uc_14": "26%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the Reston Family Town Home Market",
@@ -3087,9 +3240,40 @@
    "uc_30": "33%",
    "avg_dom": "48",
    "success_rate": "50%",
-   "uc_14": "10%"
+   "uc_14": "11%",
+   "control": "Buyer's"
   },
-  "refreshed_from": "mss_pages_townhome (NOVEMBER 25, 2026)"
+  "refreshed_from": "mss_pages_townhome (NOVEMBER 25, 2026)",
+  "headline": "Buyers Control the Sterling Family Town Home Market",
+  "conditions": {
+   "headline": "Buyers Control the Sterling Family Town Home Market",
+   "capsule": "BUYER\u2019S MARKET \u2014 YELLOW FLAG",
+   "read": "34% of the homes listed in the last 30 days went under contract, and 11% of the listings here went under contract in the last 14 days.",
+   "meta": "AS OF NOVEMBER 25, 2026",
+   "stats": [
+    [
+     "50%",
+     "Success rate"
+    ],
+    [
+     "28%",
+     "Under contract"
+    ],
+    [
+     "48",
+     "Days on market, active and pending"
+    ],
+    [
+     "33%",
+     "Under contract on homes listed 30 days"
+    ],
+    [
+     "11%",
+     "Of all listings, under contract in 14 days"
+    ]
+   ],
+   "flags": 1
+  }
  },
  "TH_Sterling_Luxury_Market_Snapshot": {
   "stats": {
@@ -3147,7 +3331,7 @@
    "uc_30": "83%",
    "avg_dom": "66",
    "success_rate": "72%",
-   "uc_14": "20%"
+   "uc_14": "18%"
   },
   "refreshed_from": "mss_pages_townhome (NOVEMBER 25, 2026)"
  },
@@ -3164,7 +3348,7 @@
   "conditions": {
    "headline": "Buyers Control the Vienna Luxury Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "29% of the homes listed in the last 30 days went under contract, and 4% of the listings here went under contract in the last 14 days.",
+   "read": "25% of the homes listed in the last 30 days went under contract, and 4% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -3223,7 +3407,7 @@
   "conditions": {
    "headline": "Buyers Control the Winchester Family Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "36% of the homes listed in the last 30 days went under contract, and 11% of the listings here went under contract in the last 14 days.",
+   "read": "33% of the homes listed in the last 30 days went under contract, and 11% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -3273,14 +3457,14 @@
    "uc_30": "32%",
    "avg_dom": "62",
    "success_rate": "64%",
-   "uc_14": "17%",
+   "uc_14": "4%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the Warrenton Family Market",
   "conditions": {
    "headline": "Buyers Control the Warrenton Family Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "60% of the homes listed in the last 30 days went under contract, and 17% of the listings here went under contract in the last 14 days.",
+   "read": "32% of the homes listed in the last 30 days went under contract, and 4% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -3300,7 +3484,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "17%",
+     "4%",
      "Of all listings, under contract in 14 days"
     ]
    ],
@@ -3314,14 +3498,14 @@
    "uc_30": "67%",
    "avg_dom": "68",
    "success_rate": "73%",
-   "uc_14": "17%",
+   "uc_14": "4%",
    "control": "Buyer's"
   },
   "headline": "Buyers Control the Warrenton Family Town Home Market",
   "conditions": {
    "headline": "Buyers Control the Warrenton Family Town Home Market",
    "capsule": "BUYER\u2019S MARKET \u2014 DOUBLE RED FLAG",
-   "read": "60% of the homes listed in the last 30 days went under contract, and 17% of the listings here went under contract in the last 14 days.",
+   "read": "32% of the homes listed in the last 30 days went under contract, and 4% of the listings here went under contract in the last 14 days.",
    "meta": "AS OF NOVEMBER 25, 2026",
    "stats": [
     [
@@ -3341,7 +3525,7 @@
      "Under contract on homes listed 30 days"
     ],
     [
-     "17%",
+     "4%",
      "Of all listings, under contract in 14 days"
     ]
    ],

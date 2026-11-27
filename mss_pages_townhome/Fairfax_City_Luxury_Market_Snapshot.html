@@ -685,11 +685,17 @@
   @media (max-width:760px){ .lms-photo{display:none;} }
 
   /* The Market Intelligence masthead: kicker, verdict capsule, headline. */
-  .lms-eyebrow{font-family:'Playfair Display',Georgia,serif; font-size:13px;
+  /* Casey, 27 Nov 2026: "More space between CST Market Intelligence
+     (make it larger), Large space between red flag headline." The
+     kicker names the whole instrument, so at 13px it was reading as
+     a caption on the line below it rather than as the banner over
+     the band. Larger, with room above and below, and the flag pushed
+     well clear of the headline it verdicts. */
+  .lms-eyebrow{font-family:'Playfair Display',Georgia,serif; font-size:18px;
     font-weight:700; letter-spacing:.3em; text-transform:uppercase;
-    color:var(--gold-deep); text-align:center; margin-bottom:5px;
-    display:flex; align-items:center; justify-content:center; gap:16px;}
-  .lms-eyebrow:before, .lms-eyebrow:after{content:""; height:1px; width:66px;
+    color:var(--gold-deep); text-align:center; margin:10px 0 20px;
+    display:flex; align-items:center; justify-content:center; gap:20px;}
+  .lms-eyebrow:before, .lms-eyebrow:after{content:""; height:1px; width:76px;
     background:var(--gold-line);}
   .lms-sub2{font-size:12.5px; font-weight:700; letter-spacing:.22em;
     text-transform:uppercase; color:var(--muted); margin-bottom:12px;}
@@ -726,7 +732,7 @@
     padding:7px 20px; border-radius:22px; margin:0 auto 14px;
     font-size:13px; font-weight:700; letter-spacing:.11em;
     -webkit-print-color-adjust:exact; print-color-adjust:exact;}
-  .lms-capwrap{text-align:center;}
+  .lms-capwrap{text-align:center; margin-top:26px;}
   .lms-cap .flagset{display:inline-flex; gap:2px;}
   .lms-cap.red{background:#FBE9E7; color:#B3261E;}
   .lms-cap.yellow{background:#F7EFD6; color:#8A6A2E;}
@@ -743,7 +749,10 @@
   .lms-cmi .cmi-wrap .cmi-row{max-width:none;}
   @media (max-width:980px){ .lms-cmi .cmi-wrap{grid-template-columns:1fr;
     max-width:560px; gap:18px;} }
-  @media (max-width:640px){ .lms-eyebrow{letter-spacing:.2em; font-size:11px;}
+  @media (max-width:640px){ .lms-eyebrow{letter-spacing:.2em; font-size:14px;
+      gap:12px; margin:6px 0 16px;}
+    .lms-eyebrow:before, .lms-eyebrow:after{width:38px;}
+    .lms-capwrap{margin-top:20px;}
     .lms-cap{font-size:11px; letter-spacing:.07em; padding:6px 14px;} }
 
   @media (max-width:560px){
@@ -1608,16 +1617,16 @@ svg.leaflet-image-layer.leaflet-interactive path {
 </head>
 <body>
 
-<nav class="crumbbar"><a href="https://cstmarketupdate.netlify.app/#townhomes">&larr; Market Snapshot Navigator</a><span class="crumb-sep">&rsaquo;</span><a data-crumb="mid" href="https://cstmarketupdate.netlify.app/#townhomes">Fairfax</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Luxury</span></nav>
+<nav class="crumbbar"><a href="https://cstmarketupdate.netlify.app/#townhomes">&larr; Market Snapshot</a><span class="crumb-sep">&rsaquo;</span><a data-crumb="mid" href="https://cstmarketupdate.netlify.app/#townhomes">Fairfax</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Luxury</span></nav>
 
 <!-- cmi-band -->
 <div class="lms-band"><div class="ch-art" aria-hidden="true"><div class="ch-scene"></div><div class="ch-veil"></div></div>
   <div class="lms-bandinner">
     <div class="lms-eyebrow"><span>CST Market Intelligence<em>&trade;</em></span></div>
     <div class="lms-sub2">Current Market Conditions</div>
-    <h2 class="lms-head"><span class="lms-who">Neither Side</span> Controls the Fairfax Luxury Town Home Market</h2>
-<div class="lms-capwrap"><div class="lms-cap red"><span class="flagset"><svg width="12" height="16" viewBox="0 0 21 27" aria-hidden="true" style="display:block"><rect x="1.5" y="0" width="1.8" height="27" rx=".9" fill="#5E5345"/><path d="M3.3 1.6 C8 0.2 13 3.4 18.6 1.8 L18.6 11.4 C13 13 8 9.8 3.3 11.2 Z" fill="#D42A21"/></svg><svg width="12" height="16" viewBox="0 0 21 27" aria-hidden="true" style="display:block"><rect x="1.5" y="0" width="1.8" height="27" rx=".9" fill="#5E5345"/><path d="M3.3 1.6 C8 0.2 13 3.4 18.6 1.8 L18.6 11.4 C13 13 8 9.8 3.3 11.2 Z" fill="#D42A21"/></svg></span><span>NEUTRAL MARKET &mdash; DOUBLE RED FLAG</span></div></div>
-    <p class="lms-read">55% of the homes listed in the last 30 days went under contract, and 12% of the listings here went under contract in the last 14 days.</p>
+    <h2 class="lms-head"><span class="lms-who">Buyers</span> Control the Fairfax Luxury Town Home Market</h2>
+<div class="lms-capwrap"><div class="lms-cap red"><span class="flagset"><svg width="12" height="16" viewBox="0 0 21 27" aria-hidden="true" style="display:block"><rect x="1.5" y="0" width="1.8" height="27" rx=".9" fill="#5E5345"/><path d="M3.3 1.6 C8 0.2 13 3.4 18.6 1.8 L18.6 11.4 C13 13 8 9.8 3.3 11.2 Z" fill="#D42A21"/></svg><svg width="12" height="16" viewBox="0 0 21 27" aria-hidden="true" style="display:block"><rect x="1.5" y="0" width="1.8" height="27" rx=".9" fill="#5E5345"/><path d="M3.3 1.6 C8 0.2 13 3.4 18.6 1.8 L18.6 11.4 C13 13 8 9.8 3.3 11.2 Z" fill="#D42A21"/></svg></span><span>BUYER’S MARKET &mdash; DOUBLE RED FLAG</span></div></div>
+    <p class="lms-read">50% of the homes listed in the last 30 days went under contract, and 7% of the listings here went under contract in the last 14 days.</p>
     <p class="lms-meta">FAIRFAX &middot; LUXURY TOWN HOMES &middot; AS OF NOVEMBER 25, 2026</p>
   </div>
 </div>
@@ -1656,7 +1665,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <!-- end mss-city-gauges --><!-- end cmi-band -->
 <footer>
   <div class="wrap">
-    <!--CSTF--><div class="cstf"><p class="cstf-head">Market Conditions Change. Winning Strategies Don&rsquo;t.<em>&trade;</em></p><div class="cstf-card"><p class="cstf-title">The Casey Samson Team Advantage!</p><div class="cstf-row"><div class="cstf-c"><span class="n">$22.9M</span><span class="l">CST Town Home Volume</span></div><div class="cstf-c"><span class="n">100%</span><span class="l">Success rate</span></div><div class="cstf-c"><span class="n">9</span><span class="l">Avg days on market</span></div><div class="cstf-c"><span class="n">102.8%</span><span class="l">Of original list price</span></div><div class="cstf-c"><span class="n">86%</span><span class="l">% Sold in first 10 days</span></div><div class="cstf-c"><span class="n">89%</span><span class="l">Sold above list price</span></div></div><div class="cstf-row mkt"><div class="cstf-c lab">Rest of Fairfax City Luxury Town Home Market</div><div class="cstf-c"><span class="n">68%</span><span class="l">Success rate</span></div><div class="cstf-c"><span class="n">55</span><span class="l">Avg days on market</span></div><div class="cstf-c"><span class="n">100%</span><span class="l">Of list price</span></div><div class="cstf-c"><span class="n">32%</span><span class="l">% Sold in first 10 days</span></div><div class="cstf-c"><span class="n">23%</span><span class="l">Sold above list price</span></div></div></div><a class="cstf-one" href="https://502macarthur.netlify.app/502_macarthur_roadmap" target="_blank" rel="noopener">Seller Roadmaps&trade; are the Key to Success</a></div><style>
+    <!--CSTF--><div class="cstf"><p class="cstf-head">Market Conditions Change. Winning Strategies Don&rsquo;t.<em>&trade;</em></p><div class="cstf-card"><p class="cstf-title">The Casey Samson Team Advantage!</p><div class="cstf-row"><div class="cstf-c"><span class="n">$22.9M</span><span class="l">CST Town Home Volume</span></div><div class="cstf-c"><span class="n">100%</span><span class="l">Success rate</span></div><div class="cstf-c"><span class="n">9</span><span class="l">Avg days on market</span></div><div class="cstf-c"><span class="n">102.8%</span><span class="l">Of original list price</span></div><div class="cstf-c"><span class="n">86%</span><span class="l">% Sold in first 10 days</span></div><div class="cstf-c"><span class="n">89%</span><span class="l">Sold above list price</span></div></div><div class="cstf-row mkt"><div class="cstf-c lab">Rest of Fairfax City Luxury Town Home Market</div><div class="cstf-c"><span class="n">68%</span><span class="l">Success rate</span></div><div class="cstf-c"><span class="n">55</span><span class="l">Avg days on market</span></div><div class="cstf-c"><span class="n">100%</span><span class="l">Of list price</span></div><div class="cstf-c"><span class="n">32%</span><span class="l">% Sold in first 10 days</span></div><div class="cstf-c"><span class="n">23%</span><span class="l">Sold above list price</span></div></div></div><a class="cstf-one" href="https://samplesellerportal.netlify.app" target="_blank" rel="noopener">Seller Roadmaps&trade; are the Key to Success</a></div><style>
 .cstf{max-width:980px;margin:0 auto 18px;padding:16px 18px 14px;background:#fff;border:1px solid #D8C58F;border-radius:12px;text-align:center;}
 .cstf-head{font-family:'Playfair Display',Georgia,serif;font-size:clamp(18px,2.2vw,23px);font-weight:700;color:#1C1A16;margin:0 0 10px;}
 .cstf-head em{font-style:normal;font-size:.6em;vertical-align:super;}
@@ -1692,7 +1701,7 @@ a.cstf-one:hover{background:#26304B;}
      font-size:10px; letter-spacing:.18em; color:#C9BFAE;}
   .mss-build-wrap{text-align:center; padding:0 0 14px;}
   @media print{.mss-build,.mss-build-wrap{display:none;}}
-/* end mss-build */</style><span class="mss-build">BUILD c8fd1d</span><div class="produced">Produced by The Casey Samson Team</div>
+/* end mss-build */</style><span class="mss-build">BUILD 217b3b</span><div class="produced">Produced by The Casey Samson Team</div>
     <div class="mss-call-line">To find out what your home is really worth, call Casey&hellip;</div>
     <div class="contact-line">Casey Samson<span class="sep">|</span>703-508-2535<span class="sep">|</span><a href="mailto:Casey@caseysamson.com">Casey@caseysamson.com</a></div>
     <div class="copy">© 2026 The Casey Samson Team LLC. All Rights Reserved.‌​‌​​‌​​‌​‌​​​​‌‌‌​​​‌‌​​‌‌‌‌‌​‌</div>
