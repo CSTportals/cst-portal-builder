@@ -433,7 +433,7 @@ def roadmap_guide(p, s_dir):
           'real value. Strategic, cost-effective cosmetic improvements can significantly increase a home&rsquo;s '
           'market value, generating returns far greater than the investment.</p>'),
          "Authenticated Values&trade;", "Dated, Customary and Premium &mdash; what each one means",
-         ["Three values, one for each condition a home can be in. Final values are set after a trained "
+         ["Three values, one for each condition a home can be in. Final values are set after a CST trained "
           "Realtor inspects the home&rsquo;s condition, upgrades and lot premium or discount."]),
         (sh.get(names[2]), "Moving the Needle&trade; Guide", "What raises the price, and what lowers it",
          ["With hundreds of thousands of dollars at risk, strategic improvements are critical&mdash;and a "

@@ -6021,7 +6021,7 @@ def build_roadmap(p, s, out):
   <div class="wrap">
     <h2 class="section-title">Price Authenticated by CST Pricing Team</h2>
     <p class="section-sub">{auth_stats}</p>
-{_engine_html}    <p class="values-label" style="text-align:center;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:15px;color:var(--gold-deep,#8A6A2E);margin:6px auto 14px;max-width:760px;line-height:1.45;">Final Values are determined after inspection by a Trained Realtor of property condition, upgrades and lot premium/discount.</p>
+{_engine_html}    <p class="values-label" style="text-align:center;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:15px;color:var(--gold-deep,#8A6A2E);margin:6px auto 14px;max-width:760px;line-height:1.45;">Final Values are determined after inspection by a CST Trained Realtor of property condition, upgrades and lot premium/discount.</p>
     <div class="values-grid"{grid_style}>
 {chr(10).join(cards)}
     </div>
@@ -6173,6 +6173,7 @@ def build_roadmap(p, s, out):
 <section>
   <div class="wrap team-section">
     <h2 class="section-title" style="margin-bottom:20px;">Virginia's #1 Luxury Real Estate Team</h2>
+    {__import__("roadmap_sections").team_photo(p, out)}
     <h3>Home To</h3>
     <ul>
       <li>4 of the Top 7 Listing Agents at Samson Properties &mdash; out of 6,500 agents</li>
