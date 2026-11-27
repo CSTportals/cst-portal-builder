@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- CST-FP 2026-11-11 38fd0de7 (c) The Casey Samson Team LLC -->
+<!-- CST-FP 2026-11-25 c5d20856 (c) The Casey Samson Team LLC -->
 <head>
-<meta name="cst-fp" content="2026-11-11.38fd0de7">
+<meta name="cst-fp" content="2026-11-25.c5d20856">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sterling Luxury Market Snapshot™ — The Casey Samson Team</title>
@@ -446,7 +446,341 @@
   .asof-note{margin:10px 0 0; font-size:13px; font-weight:600;
     color:#8A6D1F; background:#FDF6E0; border-left:3px solid var(--gold-deep);
     padding:8px 12px; border-radius:4px;}
-  /* end mss-asof *//* seg-switch-css */
+  /* end mss-asof *//* cmi-css */
+
+  /* CST Market Gauge: one bar, three proportional bands, a black pointer.
+     Widths and positions are percentages of the bar, so every gauge is the
+     same size whatever its scale. */
+  /* The four labels wrap to different line counts, so the cards are set
+     as columns and the gauge is pushed to the bottom -- four bars on one
+     line read as a row of gauges, four at different heights do not. */
+  .mc-stat, .ps-tile{display:flex; flex-direction:column;}
+  .gauge{margin:9px auto 0; max-width:168px; width:100%; align-self:center;}
+  .mc-stat .gauge, .ps-tile .gauge{margin-top:auto; padding-top:9px;}
+  .gauge-bar{position:relative; height:8px; border-radius:4px;
+    background:#E8E1D1; overflow:hidden;
+    box-shadow:inset 0 1px 2px rgba(60,45,10,.18);}
+  .gauge-bar .g-fill{position:absolute; inset:0;}
+  .gauge-ptr{position:relative; height:7px;}
+  .gauge-ptr i{position:absolute; top:0; width:0; height:0;
+    transform:translateX(-50%); border-left:5px solid transparent;
+    border-right:5px solid transparent; border-top:7px solid #141009;}
+  .gauge-ticks{position:relative; height:12px; margin-top:3px;}
+  .gauge-ticks span{position:absolute; top:0; transform:translateX(-50%);
+    font-size:8.5px; letter-spacing:.04em; color:#8A8071; white-space:nowrap;
+    font-family:'Lora',Georgia,serif;}
+  /* The classification as a capsule rather than a line of text: it is a
+     verdict, and a verdict should look pinned on. */
+  .gauge-cls{margin-top:3px; text-align:center;}
+  .gauge-cls span{display:inline-block; font-size:8px; font-weight:700;
+    letter-spacing:.1em; text-transform:uppercase; border-radius:999px;
+    padding:2px 8px; border:1px solid transparent;}
+  .gauge-cls .red{color:#9E2118; background:#FBE9E7; border-color:#F0C8C3;}
+  .gauge-cls .yel{color:#8A6C08; background:#FBF2D8; border-color:#EEDFAE;}
+  .gauge-cls .grn{color:#136B34; background:#E6F4EA; border-color:#BFE0C9;}
+
+  /* ---- CST Market Intelligence(TM): the full card -------------------
+     Four equal cards on one row, thin gold rule, rounded, cream. Inside:
+     a gold mark and the measure's name, the figure, what it is of, the
+     instrument, and the verdict. */
+  /* Stacked two by two: strength above, momentum below. */
+  .cmi-wrap{display:grid; grid-template-columns:1fr; gap:16px;
+    max-width:720px; margin:14px auto 0;}
+  .cmi-group{display:flex; flex-direction:column;}
+  .cmi-glabel{display:flex; align-items:center; justify-content:center;
+    gap:9px; padding-bottom:6px; margin-bottom:9px;
+    border-bottom:1px solid var(--gold-line);}
+  .cmi-gt{font-size:10px; font-weight:700; letter-spacing:.17em;
+    text-transform:uppercase; color:var(--gold-deep);}
+  .cmi-gmark{display:inline-flex; align-items:center; gap:2px;}
+  .cmi-flag{width:11px; height:14px;}
+  .cmi-arw{width:15px; height:15px;}
+  .cmi-arw.up{color:#1B9E4B;} .cmi-arw.down{color:#D42A21;}
+  .cmi-arw.flat{color:#E0A800;}
+  .cmi-gscore{font-family:'Playfair Display',Georgia,serif; font-size:14px;
+    font-weight:700; color:var(--ink); display:inline-flex;
+    align-items:baseline; gap:6px;}
+  .cmi-gscore em{font-family:'Lora',Georgia,serif; font-style:normal;
+    font-size:8.5px; font-weight:700; letter-spacing:.1em;
+    text-transform:uppercase;}
+  .cmi-gscore.up em{color:#16823E;} .cmi-gscore.down em{color:#B3261E;}
+  .cmi-gscore.flat em{color:#9A7A0C;}
+  /* Both rows the same width: the strength pair was sizing to its own
+     content and coming out 70px narrower than the momentum pair under it. */
+  .cmi-wrap .cmi-row{margin:0 auto; width:100%; max-width:520px;}
+  /* screen only: a printed page is 816px wide, so a bare max-width rule
+     here stacks the two groups on paper as well as on a phone. */
+  @media screen and (max-width:860px){
+    .cmi-wrap{grid-template-columns:1fr !important;} }
+  @media print{ .cmi-wrap{gap:9px; margin-top:7px; max-width:620px;}
+    .cmi-glabel{gap:7px; padding-bottom:3px; margin-bottom:5px;}
+    .cmi-gt{font-size:8px; letter-spacing:.13em;}
+    .cmi-flag{width:9px; height:12px;} .cmi-arw{width:12px; height:12px;}
+    .cmi-gscore{font-size:12px; gap:5px;}
+    .cmi-gscore em{font-size:7px;} }
+  .cmi-row.n3{grid-template-columns:repeat(3,1fr); max-width:760px;}
+  .cmi-row.n2{grid-template-columns:repeat(2,1fr); max-width:520px;}
+  .cmi-row.n1{grid-template-columns:1fr; max-width:270px;}
+  .cmi-row{display:grid; grid-template-columns:repeat(4,1fr); gap:12px;
+    max-width:1000px; margin:14px auto 0;}
+  /* Casey, 16 Oct 2026: "Make %UC and DOM larger boxes like 30 day and 14
+     day." A one-line description made those two cards shallower than the
+     pair beneath them; every card is one height now. */
+  .cmi-card{background:#FFFDF8; border:1px solid var(--gold-line);
+    border-radius:11px; padding:13px 12px 11px; text-align:center;
+    display:flex; flex-direction:column; min-height:232px;
+    box-shadow:0 1px 4px rgba(60,45,10,.05);}
+  /* Casey, 15 Oct 2026: "LINES IN CURRENT MARKET SHOULD BE ON SAME LINE."
+     One title runs to one line and the next to two, so every row below
+     them used to start at a different height and the four bars stepped
+     down the row. The two text rows are fixed, so the figure, the bar and
+     the verdict all sit on one line across the four cards. */
+  .cmi-head{display:flex; align-items:center; justify-content:center;
+    gap:7px; height:30px;}
+  .cmi-ico{width:16px; height:16px; color:var(--gold-deep); flex:none;}
+  /* Capped so every title breaks to two lines rather than one card's
+     heading sitting a row shallower than its neighbours. */
+  .cmi-t{font-size:9.5px; font-weight:700; letter-spacing:.1em;
+    text-transform:uppercase; color:#4A4034; line-height:1.3;
+    max-width:168px;}
+  .cmi-n{font-family:'Playfair Display',Georgia,serif; font-size:34px;
+    font-weight:700; color:var(--gold-deep); line-height:1.05;
+    margin-top:5px;}
+  .cmi-d{font-size:10.5px; color:var(--muted); line-height:1.4;
+    margin-top:5px; height:30px; display:flex; align-items:center;
+    justify-content:center;}
+  .cmi-g{margin-top:9px;}
+  .cmi-ptr{position:relative; height:17px;}
+  .cmi-ptr i{position:absolute; bottom:0; transform:translateX(-50%);}
+  .cmi-ptr i b{display:block; font-family:'Lora',Georgia,serif;
+    font-size:9px; font-weight:700; color:#2B2318; margin-bottom:2px;
+    white-space:nowrap;}
+  .cmi-ptr i::after{content:""; display:block; margin:0 auto; width:0;
+    height:0; border-left:5px solid transparent;
+    border-right:5px solid transparent; border-top:7px solid #141009;}
+  .cmi-bar{position:relative; height:9px; border-radius:5px;
+    overflow:hidden; background:#E8E1D1;
+    box-shadow:inset 0 1px 2px rgba(60,45,10,.2);}
+  .cmi-bar .g-fill{position:absolute; inset:0;}
+  .cmi-scale{position:relative; height:11px; margin-top:4px;}
+  .cmi-scale span{position:absolute; top:0; transform:translateX(-50%);
+    font-size:7.5px; letter-spacing:.03em; color:#8A8071; white-space:nowrap;
+    font-family:'Lora',Georgia,serif;}
+  .cmi-scale .e.l{left:0; transform:none;}
+  .cmi-scale .e.r{right:0; left:auto; transform:none;}
+  .cmi-bands{position:relative; height:21px; margin-top:2px;}
+  .cmi-bands{height:12px;}
+  .cmi-bands span{position:absolute; top:0; font-size:8px; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; line-height:1.2;
+    white-space:nowrap;}
+  .cmi-bands .e.l{left:0;} .cmi-bands .e.r{right:0;}
+  .cmi-bands .red{color:#B3261E;} .cmi-bands .yel{color:#9A7A0C;}
+  .cmi-bands .grn{color:#16823E;}
+  .cmi-verdict{margin-top:auto; padding-top:9px;}
+  .cmi-verdict::before{content:attr(data-v);}
+  .cmi-verdict{font-size:8.5px; font-weight:700; letter-spacing:.09em;
+    text-transform:uppercase; border-radius:999px; padding:6px 8px;
+    border:1px solid transparent;}
+  .cmi-verdict.red{color:#9E2118; background:#FBE9E7; border-color:#F0C8C3;}
+  .cmi-verdict.yel{color:#8A6C08; background:#FBF2D8; border-color:#EEDFAE;}
+  .cmi-verdict.grn{color:#136B34; background:#E6F4EA; border-color:#BFE0C9;}
+  .cmi-plain .cmi-n{margin-top:0;}
+
+  /* Casey, 2 Nov 2026: "this is too crowded." Three things were fighting
+     for the same room on the city pages. The capsule is gone (see
+     cmi_card), and these two go with it.
+
+     The title was capped at 168px, which on a card 300px wide broke
+     "AVERAGE DAYS ON MARKET (ACTIVE & PENDING)" into four lines inside a
+     30px box - so it spilled over the figure underneath and the two
+     printed on top of each other. The cap exists to stop one card's
+     heading sitting a row shallower than its neighbours; a fixed
+     two-line head does that job without the overflow, and at full width
+     every title fits those two lines.
+
+     The card then loses the capsule's height, so it is shorter rather
+     than carrying 40px of blank. */
+  .cmi-card.cmi-nv{min-height:166px; padding-bottom:13px;}
+  .cmi-nv .cmi-head{height:34px;}
+  .cmi-nv .cmi-t{max-width:none;}
+  .cmi-nv .cmi-g{margin-bottom:0;}
+  @media print{ .cmi-card.cmi-nv{min-height:0;} }
+
+  /* The one long scale, the key to every gauge above it. Same three
+     colours in the same order as the bars, blended on the same 2% so it
+     reads as the same instrument drawn wide. The thresholds move from
+     gauge to gauge, so this one carries none of them - just the
+     direction, said once instead of ten times. */
+  .cmi-legend{max-width:1000px; margin:30px auto 0; padding:0 2px;}
+  .cmi-legend-bar{height:11px; border-radius:6px;
+    box-shadow:inset 0 1px 2px rgba(60,45,10,.2);
+    background:linear-gradient(90deg,#C62828 0%,#C62828 31%,#E8B931 35%,
+      #E8B931 63%,#2E9B52 67%,#2E9B52 100%);}
+  .cmi-legend-ends{display:flex; justify-content:space-between;
+    margin-top:7px; font-size:11px; font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase;}
+  .cmi-legend-ends .red{color:#B3261E;}
+  .cmi-legend-ends .mid{color:#9A7A0C;}
+  .cmi-legend-ends .grn{color:#16823E;}
+  @media (max-width:720px){
+    .cmi-legend{margin-top:16px;}
+    .cmi-legend-ends{font-size:9px; letter-spacing:.1em;} }
+
+  /* The one line that joins the market read to the pricing call. */
+  .ps-posture{max-width:760px; margin:0 auto 20px; text-align:center;
+    font-size:15.5px; line-height:1.55; color:var(--ink);}
+  .ps-posture b{color:var(--gold-deep);}
+  @media print{ .ps-posture{font-size:12.5px; margin-bottom:12px;} }
+  @media screen and (max-width:860px){ .cmi-row{grid-template-columns:repeat(2,1fr);} }
+  @media screen and (max-width:480px){ .cmi-row{grid-template-columns:1fr;} }
+  @media print{
+    /* A footer alone on a last page is the one break this document should
+       never take: it reads as a mistake. */
+    footer{break-before:avoid-page; page-break-before:avoid;}
+    .cmi-row{grid-template-columns:repeat(4,1fr) !important; gap:8px;
+      margin-top:8px;}
+    .cmi-row.n3{grid-template-columns:repeat(3,1fr) !important;}
+    .cmi-row.n2{grid-template-columns:repeat(2,1fr) !important;}
+    .cmi-card{padding:8px 7px 7px; border-radius:9px; box-shadow:none;
+      min-height:168px;}
+    .cmi-head{height:23px; gap:5px;}
+    .cmi-ico{width:13px; height:13px;}
+    .cmi-t{font-size:8px; letter-spacing:.07em; max-width:142px;}
+    .cmi-n{font-size:25px; margin-top:3px;}
+    .cmi-d{font-size:8.5px; margin-top:3px; height:23px;}
+    .cmi-g{margin-top:6px;}
+    .cmi-ptr{height:14px;} .cmi-ptr i b{font-size:7.5px; margin-bottom:1px;}
+    .cmi-bar{height:7px;}
+    .cmi-scale{height:9px; margin-top:3px;}
+    .cmi-scale span{font-size:6.5px;}
+    .cmi-bands{height:10px;} .cmi-bands span{font-size:6.8px;}
+    .cmi-verdict{font-size:7px; padding:4px 6px; padding-top:4px;}
+    .cmi-verdict{margin-top:auto;}
+  }
+  @media (max-width:640px){ .gauge{max-width:100%;} }
+  @media print{
+    .gauge{margin-top:2px !important; max-width:148px;}
+    .mc-stat .gauge, .ps-tile .gauge{padding-top:2px !important;}
+    .gauge-bar{height:6px;}
+    .gauge-ptr{height:6px;}
+    .gauge-ptr i{border-left-width:4px; border-right-width:4px;
+      border-top-width:6px;}
+    .gauge-ticks{height:8px; margin-top:1px;}
+    .gauge-ticks span{font-size:6.5px;}
+    .gauge-cls{margin-top:1px;}
+    .gauge-cls span{font-size:6.5px; padding:1px 6px; letter-spacing:.07em;}
+    .mc-stats .mc-stat{padding:8px 7px 7px;}
+    .cmi-ico{width:11px; height:11px; margin-right:4px;} }
+
+  /* ---- the Market Update band -------------------------------------- */
+  .lms-band{position:relative; overflow:hidden; background:var(--cream,#F7F2E7);
+    border-bottom:1px solid var(--gold-line); padding:26px 0 22px;}
+  .lms-photo{position:absolute; top:0; right:0; height:100%; width:24%;
+    object-fit:cover; opacity:.45; pointer-events:none;
+    -webkit-mask-image:linear-gradient(to left,#000 30%,transparent 100%);
+    mask-image:linear-gradient(to left,#000 30%,transparent 100%);}
+  .lms-bandinner{position:relative; max-width:760px; margin:0 auto;
+    padding:0 20px; text-align:center;}
+  .lms-meta{font-size:11.5px; font-weight:700; letter-spacing:.17em;
+    text-transform:uppercase; color:var(--muted); margin:16px 0 0;}
+  .lms-read{font-family:Georgia,serif; font-style:italic; font-size:17px;
+    line-height:1.55; color:var(--muted); max-width:640px;
+    margin:14px auto 0;}
+  @media (max-width:760px){ .lms-photo{display:none;} }
+
+  /* The Market Intelligence masthead: kicker, verdict capsule, headline. */
+  .lms-eyebrow{font-family:'Playfair Display',Georgia,serif; font-size:13px;
+    font-weight:700; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--gold-deep); text-align:center; margin-bottom:5px;
+    display:flex; align-items:center; justify-content:center; gap:16px;}
+  .lms-eyebrow:before, .lms-eyebrow:after{content:""; height:1px; width:66px;
+    background:var(--gold-line);}
+  .lms-sub2{font-size:12.5px; font-weight:700; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--muted); margin-bottom:12px;}
+  .lms-head{font-family:'Playfair Display',Georgia,serif; font-size:35px;
+    font-weight:700; line-height:1.18; color:var(--ink); margin:0 0 13px;}
+  /* Group headings, Casey's reference: a circled mark, the name, and the
+     question the pair of cards answers. */
+  .lms-cmi .cmi-glabel{gap:13px;}
+  .lms-cmi .cmi-gring{display:inline-flex; align-items:center;
+    justify-content:center; width:40px; height:40px; border-radius:50%;
+    border:1px solid var(--gold-line); color:var(--gold-deep); flex:none;}
+  .lms-cmi .cmi-gi{width:19px; height:19px;}
+  .lms-cmi .cmi-gtw{display:flex; flex-direction:column; align-items:center;
+    gap:2px;}
+  .lms-cmi .cmi-gt{font-size:13px; letter-spacing:.14em;}
+  .lms-cmi .cmi-gq{font-family:Georgia,serif; font-style:italic;
+    font-size:12.5px; letter-spacing:0; text-transform:none;
+    color:var(--muted); white-space:nowrap;}
+  .lms-cmi .cmi-glabel{justify-content:center;}
+  .lms-cmi .cmi-gscore{margin-left:2px;}
+  /* Three names under one bar only work if they are allowed to wrap --
+     "BUYER'S MARKET" on one line is wider than a third of the bar. */
+  .lms-cmi .cmi-bands.wide{height:auto; display:flex;
+    justify-content:space-between; margin-top:4px;}
+  .lms-cmi .cmi-bands.wide span{position:static; font-size:9px;
+    line-height:1.3; white-space:normal; width:32%; text-align:center;}
+  .lms-cmi .cmi-bands.wide span:first-child{text-align:left;}
+  .lms-cmi .cmi-bands.wide span:last-child{text-align:right;}
+  .lms-cmi .cmi-bands .yel{color:#9A7A0C;}
+  .lms-eyebrow em{font-style:normal; font-size:.62em; vertical-align:.55em;
+    letter-spacing:0;}
+  .lms-head .lms-who{color:var(--gold-deep);}
+  .lms-cap{display:inline-flex; align-items:center; gap:9px;
+    padding:7px 20px; border-radius:22px; margin:0 auto 14px;
+    font-size:13px; font-weight:700; letter-spacing:.11em;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  .lms-capwrap{text-align:center;}
+  .lms-cap .flagset{display:inline-flex; gap:2px;}
+  .lms-cap.red{background:#FBE9E7; color:#B3261E;}
+  .lms-cap.yellow{background:#F7EFD6; color:#8A6A2E;}
+  .lms-cap.green{background:#E8F1E8; color:#1B7A3D;}
+  /* The snapshot is read on a screen, not folded into a print sheet, so
+     the two groups sit side by side the way Casey's reference shows them
+     and fall back to the Roadmap's stacked 2x2 on a narrow window. */
+  /* The dashboard sits outside the page's text column: four cards need
+     more room than a column of reading width. */
+  .lms-dash{max-width:1160px; margin:0 auto; padding:0 24px;}
+  .lms-cmi{margin-bottom:28px;}
+  .lms-cmi .cmi-wrap{grid-template-columns:1fr 1fr; max-width:1120px;
+    gap:40px;}
+  .lms-cmi .cmi-wrap .cmi-row{max-width:none;}
+  @media (max-width:980px){ .lms-cmi .cmi-wrap{grid-template-columns:1fr;
+    max-width:560px; gap:18px;} }
+  @media (max-width:640px){ .lms-eyebrow{letter-spacing:.2em; font-size:11px;}
+    .lms-cap{font-size:11px; letter-spacing:.07em; padding:6px 14px;} }
+
+  @media (max-width:560px){
+    .lms-dash{padding-left:16px; padding-right:16px;
+      box-sizing:border-box;}
+    .lms-dash *{max-width:100%;}
+  }
+  .cmi-bands, .cmi-verdict{display:none !important;}
+  .lms-dash{--cmi-w:1000px;}
+  .lms-dash .cmi-wrap{grid-template-columns:1fr !important;
+    max-width:var(--cmi-w);}
+  .lms-dash .cmi-wrap .cmi-row{max-width:var(--cmi-w);}
+  .lms-dash .cmi-gscore{display:none !important;}
+  .cmi-card{min-height:0 !important;}
+  .lms-dash .cmi-legend{margin:20px auto 0; padding:0;
+    max-width:var(--cmi-w); box-sizing:border-box;}
+  .cmi-legend-bar{height:7px; border-radius:4px;
+    overflow:hidden; background:linear-gradient(90deg,
+      #C62828 0%, #C62828 38%, #E8B931 42%, #E8B931 58%,
+      #2E9B52 62%, #2E9B52 100%);}
+  .cmi-legend-lbl{display:flex;
+    justify-content:space-between; margin-top:7px;
+    font-family:'Lora',Georgia,serif; font-size:11.5px;
+    font-weight:700; letter-spacing:.1em;
+    text-transform:uppercase;}
+  .cmi-legend-lbl span{flex:1;}
+  .cmi-legend-lbl .red{text-align:left; color:#C62828;}
+  .cmi-legend-lbl .yel{text-align:center; color:#8A6A2E;}
+  .cmi-legend-lbl .grn{text-align:right; color:#2E9B52;}
+  @media (max-width:560px){
+    .cmi-legend-lbl{font-size:9.5px; letter-spacing:.05em;}
+  }
+  /* end cmi-css *//* seg-switch-css */
   .seg-switch{display:flex; gap:8px; justify-content:center;
     max-width:780px; margin:22px auto 0; padding:0 16px;}
   .seg-switch a{flex:1; max-width:220px; text-align:center;
@@ -600,7 +934,11 @@
   .fl-row .sep{opacity:.5; padding:0 8px;}
   @media print{.fl-row{display:none;}}
   /* end mss-flier-css */
-</style>
+</style><style>/* mss-call-line */
+  .mss-call-line{text-align:center; font-family:'Playfair Display',Georgia,serif;
+     font-size:17px; font-weight:700; color:#8A6B2F; margin:0 0 4px;}
+  @media (max-width:560px){.mss-call-line{font-size:15px;}}
+/* end mss-call-line */</style></style></style></style></style></style>
 <!-- mss-homemap-leaflet -->
 <style>/* required styles */
 
@@ -1276,54 +1614,52 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 <nav class="crumbbar"><a href="https://cstmarketupdate.netlify.app/#">&larr; Market Snapshot Navigator</a><span class="crumb-sep">&rsaquo;</span><a data-crumb="mid" href="https://cstmarketupdate.netlify.app/#keymarkets/Loudoun/Sterling">Sterling</a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current">Luxury</span></nav>
 
-<header class="masthead"><div class="ch-art" aria-hidden="true"><div class="ch-scene"></div><div class="ch-veil"></div></div>
-  <div class="wrap">
-    <div class="seal" aria-hidden="true">
-      <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
-        <circle cx="32" cy="32" r="30" stroke="#A5813B" stroke-width="1.4"/>
-        <circle cx="32" cy="32" r="25" stroke="#D3B978" stroke-width="1"/>
-        <path d="M32 44c-6-5-9-11-9-17 3 1 6 3 9 7 3-4 6-6 9-7 0 6-3 12-9 17z" fill="#A5813B"/>
-      </svg>
-    </div>
-    <div class="brandline">The Casey Samson Team</div>
-    <h1 class="title">Sterling Luxury Market Snapshot™</h1>
-    <p class="subtitle">Luxury Homes</p>
-    <span class="weekof">Week of November 11, 2026</span>
+<!-- cmi-band -->
+<div class="lms-band"><div class="ch-art" aria-hidden="true"><div class="ch-scene"></div><div class="ch-veil"></div></div>
+  <div class="lms-bandinner">
+    <div class="lms-eyebrow"><span>CST Market Intelligence<em>&trade;</em></span></div>
+    <div class="lms-sub2">Current Market Conditions</div>
+    <h2 class="lms-head"><span class="lms-who">Buyers</span> Control the Sterling Luxury Market</h2>
+<div class="lms-capwrap"><div class="lms-cap red"><span class="flagset"><svg width="12" height="16" viewBox="0 0 21 27" aria-hidden="true" style="display:block"><rect x="1.5" y="0" width="1.8" height="27" rx=".9" fill="#5E5345"/><path d="M3.3 1.6 C8 0.2 13 3.4 18.6 1.8 L18.6 11.4 C13 13 8 9.8 3.3 11.2 Z" fill="#D42A21"/></svg><svg width="12" height="16" viewBox="0 0 21 27" aria-hidden="true" style="display:block"><rect x="1.5" y="0" width="1.8" height="27" rx=".9" fill="#5E5345"/><path d="M3.3 1.6 C8 0.2 13 3.4 18.6 1.8 L18.6 11.4 C13 13 8 9.8 3.3 11.2 Z" fill="#D42A21"/></svg></span><span>BUYER’S MARKET &mdash; DOUBLE RED FLAG</span></div></div>
+    <p class="lms-read">100% of the homes listed in the last 30 days went under contract, and 33% of the listings here went under contract in the last 14 days.</p>
+    <p class="lms-meta">STERLING &middot; LUXURY HOMES &middot; AS OF NOVEMBER 25, 2026</p>
   </div>
-</header>
+</div>
 <!-- seg-switch -->
 <div class="seg-switch" role="navigation" aria-label="Segment"><a href="https://cstmarketupdate.netlify.app/sterling_family_market_snapshot">Family</a><a href="https://cstmarketupdate.netlify.app/sterling_luxury_market_snapshot" aria-current="page">Luxury</a></div>
 <!-- end seg-switch -->
 <!-- mss-city-gauges -->
 <section class="wrap city-gauges">
-<div class="cmi-wrap"><div class="cmi-group"><div class="cmi-glabel"><span class="cmi-gmark"></span><span class="cmi-gt">Sold or Withdrawn in the Last 90 Days</span></div><h2 class="gauge-head"><span class="gauge-flag red"><svg viewBox="0 0 21 27" width="14" height="18" aria-hidden="true" style="display:block"><rect x="1.5" y="0" width="1.8" height="27" rx=".9" fill="#5E5345"/><path d="M3.3 1.6 C8 0.2 13 3.4 18.6 1.8 L18.6 11.4 C13 13 8 9.8 3.3 11.2 Z" fill="currentColor"/></svg></span><span>Market is Neutral, with 43% selling and 57% withdrawing unsold, avg DOM 46 and SP is 99.2% of LP.</span></h2><div class="cmi-row n3"><div class="cmi-card cmi-nv"><div class="cmi-head"><svg class="cmi-ico" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 1.9l5.9 2.4v4.4c0 3.4-2.4 6-5.9 7.4-3.5-1.4-5.9-4-5.9-7.4V4.3z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M6.4 8.9l1.9 1.9 3.5-3.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cmi-t">Success Rate</span></div><div class="cmi-n">43%</div><div class="cmi-d">57% of the homes withdrew unsold</div><div class="cmi-g"><div class="cmi-ptr"><i style="left:43%"><b>43%</b></i></div><div class="cmi-bar"><span class="g-fill" style="background:linear-gradient(90deg,#C62828 0%, #C62828 58%, #E8B931 62%, #E8B931 78%, #2E9B52 82%, #2E9B52 100%)"></span></div><div class="cmi-scale"><span class="e l">0%</span><span class="e r">100%</span><span style="left:60%">60%</span><span style="left:80%">80%</span></div></div></div><div class="cmi-card cmi-nv"><div class="cmi-head"><svg class="cmi-ico" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="6.8" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M9 4.8V9l3 1.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cmi-t">Days on Market, Sold &amp; Withdrawn</span></div><div class="cmi-n">46</div><div class="cmi-d">Days taken by the homes that came off the market, last 90 days</div><div class="cmi-g"><div class="cmi-ptr"><i style="left:61.67%"><b>46</b></i></div><div class="cmi-bar"><span class="g-fill" style="background:linear-gradient(90deg,#C62828 0%, #C62828 48%, #E8B931 52%, #E8B931 73%, #2E9B52 77%, #2E9B52 100%)"></span></div><div class="cmi-scale"><span class="e l">120+</span><span class="e r">0</span><span style="left:50%">60</span><span style="left:75%">30</span></div></div></div><div class="cmi-card cmi-nv"><div class="cmi-head"><svg class="cmi-ico" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 1.9l5.9 2.4v4.4c0 3.4-2.4 6-5.9 7.4-3.5-1.4-5.9-4-5.9-7.4V4.3z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M6.4 8.9l1.9 1.9 3.5-3.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cmi-t">Sale Price to List Price</span></div><div class="cmi-n">99.2%</div><div class="cmi-d">Of list price, closed sales, last 90 days</div><div class="cmi-g"><div class="cmi-ptr"><i style="left:52%"><b>99.2%</b></i></div><div class="cmi-bar"><span class="g-fill" style="background:linear-gradient(90deg,#C62828 0%, #C62828 38%, #E8B931 42%, #E8B931 58%, #2E9B52 62%, #2E9B52 100%)"></span></div><div class="cmi-scale"><span class="e l">94%</span><span class="e r">104%</span><span style="left:40%">98%</span><span style="left:60%">100%</span></div></div></div></div></div></div>
+<div class="cmi-wrap"><div class="cmi-group"><div class="cmi-glabel"><span class="cmi-gmark"></span><span class="cmi-gt">Sold or Withdrawn in the Last 90 Days</span></div><h2 class="gauge-head"><span class="gauge-flag red"><svg viewBox="0 0 21 27" width="14" height="18" aria-hidden="true" style="display:block"><rect x="1.5" y="0" width="1.8" height="27" rx=".9" fill="#5E5345"/><path d="M3.3 1.6 C8 0.2 13 3.4 18.6 1.8 L18.6 11.4 C13 13 8 9.8 3.3 11.2 Z" fill="currentColor"/></svg></span><span>Market is Neutral, with 33% selling and 67% withdrawing unsold and avg DOM 51.</span></h2><div class="cmi-row n2"><div class="cmi-card cmi-nv"><div class="cmi-head"><svg class="cmi-ico" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 1.9l5.9 2.4v4.4c0 3.4-2.4 6-5.9 7.4-3.5-1.4-5.9-4-5.9-7.4V4.3z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M6.4 8.9l1.9 1.9 3.5-3.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cmi-t">Success Rate</span></div><div class="cmi-n">33%</div><div class="cmi-d">2 sales, 4 withdrawn</div><div class="cmi-g"><div class="cmi-ptr"><i style="left:33%"><b>33%</b></i></div><div class="cmi-bar"><span class="g-fill" style="background:linear-gradient(90deg,#C62828 0%, #C62828 58%, #E8B931 62%, #E8B931 78%, #2E9B52 82%, #2E9B52 100%)"></span></div><div class="cmi-scale"><span class="e l">0%</span><span class="e r">100%</span><span style="left:60%">60%</span><span style="left:80%">80%</span></div></div></div><div class="cmi-card cmi-nv"><div class="cmi-head"><svg class="cmi-ico" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="6.8" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M9 4.8V9l3 1.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cmi-t">Avg. Days on Market</span></div><div class="cmi-n">51</div><div class="cmi-d">Average days on market across every listing, last 90 days</div><div class="cmi-g"><div class="cmi-ptr"><i style="left:57.5%"><b>51</b></i></div><div class="cmi-bar"><span class="g-fill" style="background:linear-gradient(90deg,#C62828 0%, #C62828 48%, #E8B931 52%, #E8B931 73%, #2E9B52 77%, #2E9B52 100%)"></span></div><div class="cmi-scale"><span class="e l">120+</span><span class="e r">0</span><span style="left:50%">60</span><span style="left:75%">30</span></div></div></div></div></div></div>
 <!-- end-group:sold-or-withdrawn-in-the-last-90-days -->
 <!-- mss-sold-map -->
 <section class="wrap hm-wrap">
   <div class="hm-head">Sold or Withdrawn in the Last 90 Days</div>
     <div id="mss-sold-map-map" class="hm-map"></div>
   <div class="hm-legend"><span><i class="red"></i>Came off unsold</span><span><i class="yel"></i>Sold after 11+ days</span><span><i class="grn"></i>Sold in the first 10 days</span></div>
-  <div class="hm-keys"><div class="hm-key" data-map="mss-sold-map-map" data-n="1"><span class="hm-num grn">1</span><div><div class="hm-addr">20262 Redrose Dr</div><div class="hm-a">$1,800,000 &middot; 100% of list</div><div class="hm-b">5 days on market &middot; 4,115 sq ft</div></div></div><div class="hm-key" data-map="mss-sold-map-map" data-n="2"><span class="hm-num yel">2</span><div><div class="hm-addr">11329 Stonehouse Pl</div><div class="hm-a">$1,800,000 &middot; 99% of list</div><div class="hm-b">63 days on market &middot; 4,429 sq ft</div></div></div><div class="hm-key" data-map="mss-sold-map-map" data-n="3"><span class="hm-num yel">3</span><div><div class="hm-addr">43618 Parisville Ct</div><div class="hm-a">$1,375,000 &middot; 99% of list</div><div class="hm-b">17 days on market &middot; 4,897 sq ft</div></div></div><div class="hm-key" data-map="mss-sold-map-map" data-n="4"><span class="hm-num red">4</span><div><div class="hm-addr">22827 Oakgrove Rd</div><div class="hm-a">$1,149,000 &middot; Withdrawn</div><div class="hm-b">102 days on market &middot; 3,754 sq ft</div></div></div><div class="hm-key" data-map="mss-sold-map-map" data-n="5"><span class="hm-num red">5</span><div><div class="hm-addr">47404 Middle Bluff Pl</div><div class="hm-a">$1,199,000 &middot; Expired</div><div class="hm-b">31 days on market &middot; 4,024 sq ft</div></div></div><div class="hm-key" data-map="mss-sold-map-map" data-n="6"><span class="hm-num red">6</span><div><div class="hm-addr">129 Sinegar Pl</div><div class="hm-a">$2,195,000 &middot; Withdrawn</div><div class="hm-b">45 days on market &middot; 5,805 sq ft</div></div></div><div class="hm-key" data-map="mss-sold-map-map" data-n="7"><span class="hm-num red">7</span><div><div class="hm-addr">47404 Middle Bluff Pl</div><div class="hm-a">$1,274,740 &middot; Expired</div><div class="hm-b">62 days on market &middot; 4,024 sq ft</div></div></div></div>
+  <div class="hm-keys"><div class="hm-key" data-map="mss-sold-map-map" data-n="1"><span class="hm-num grn">1</span><div><div class="hm-addr">20262 Redrose Dr</div><div class="hm-a">$1,800,000 &middot; 100% of list</div><div class="hm-b">5 days on market &middot; 4,115 sq ft</div></div></div><div class="hm-key" data-map="mss-sold-map-map" data-n="2"><span class="hm-num yel">2</span><div><div class="hm-addr">11329 Stonehouse Pl</div><div class="hm-a">$1,800,000 &middot; 99% of list</div><div class="hm-b">63 days on market &middot; 4,429 sq ft</div></div></div><div class="hm-key" data-map="mss-sold-map-map" data-n="3"><span class="hm-num red">3</span><div><div class="hm-addr">22827 Oakgrove Rd</div><div class="hm-a">$1,149,000 &middot; Withdrawn</div><div class="hm-b">102 days on market &middot; 3,754 sq ft</div></div></div><div class="hm-key" data-map="mss-sold-map-map" data-n="4"><span class="hm-num red">4</span><div><div class="hm-addr">47404 Middle Bluff Pl</div><div class="hm-a">$1,199,000 &middot; Expired</div><div class="hm-b">31 days on market &middot; 4,024 sq ft</div></div></div><div class="hm-key" data-map="mss-sold-map-map" data-n="5"><span class="hm-num red">5</span><div><div class="hm-addr">129 Sinegar Pl</div><div class="hm-a">$2,195,000 &middot; Withdrawn</div><div class="hm-b">45 days on market &middot; 5,805 sq ft</div></div></div><div class="hm-key" data-map="mss-sold-map-map" data-n="6"><span class="hm-num red">6</span><div><div class="hm-addr">47404 Middle Bluff Pl</div><div class="hm-a">$1,274,740 &middot; Expired</div><div class="hm-b">62 days on market &middot; 4,024 sq ft</div></div></div></div>
   
-  <script>(window.__mss_maps=window.__mss_maps||[]).push({id:"mss-sold-map-map",pts:[{"lat":39.054809,"lon":-77.4266973,"n":1,"cls":"grn","addr":"20262 Redrose Dr","a":"$1,800,000 &middot; 100% of list","b":"5 days on market &middot; 4,115 sq ft","w":"s"},{"lat":39.0504351,"lon":-77.3392957,"n":2,"cls":"yel","addr":"11329 Stonehouse Pl","a":"$1,800,000 &middot; 99% of list","b":"63 days on market &middot; 4,429 sq ft","w":"s"},{"lat":38.9752037,"lon":-77.4927719,"n":3,"cls":"yel","addr":"43618 Parisville Ct","a":"$1,375,000 &middot; 99% of list","b":"17 days on market &middot; 4,897 sq ft","w":"s"},{"lat":38.9851943,"lon":-77.4065517,"n":4,"cls":"red","addr":"22827 Oakgrove Rd","a":"$1,149,000 &middot; Withdrawn","b":"102 days on market &middot; 3,754 sq ft","w":"n"},{"lat":39.050477,"lon":-77.357507,"n":5,"cls":"red","addr":"47404 Middle Bluff Pl","a":"$1,199,000 &middot; Expired","b":"31 days on market &middot; 4,024 sq ft","w":"s"},{"lat":39.051204,"lon":-77.337479,"n":6,"cls":"red","addr":"129 Sinegar Pl","a":"$2,195,000 &middot; Withdrawn","b":"45 days on market &middot; 5,805 sq ft","w":"s"},{"lat":39.050477,"lon":-77.357507,"n":7,"cls":"red","addr":"47404 Middle Bluff Pl","a":"$1,274,740 &middot; Expired","b":"62 days on market &middot; 4,024 sq ft","w":"s"}],play:1,hist:1});</script>
+  <script>(window.__mss_maps=window.__mss_maps||[]).push({id:"mss-sold-map-map",pts:[{"lat":39.054809,"lon":-77.4266973,"n":1,"cls":"grn","addr":"20262 Redrose Dr","a":"$1,800,000 &middot; 100% of list","b":"5 days on market &middot; 4,115 sq ft","w":"s"},{"lat":39.0504351,"lon":-77.3392957,"n":2,"cls":"yel","addr":"11329 Stonehouse Pl","a":"$1,800,000 &middot; 99% of list","b":"63 days on market &middot; 4,429 sq ft","w":"s"},{"lat":38.9851943,"lon":-77.4065517,"n":3,"cls":"red","addr":"22827 Oakgrove Rd","a":"$1,149,000 &middot; Withdrawn","b":"102 days on market &middot; 3,754 sq ft","w":"s"},{"lat":39.050477,"lon":-77.357507,"n":4,"cls":"red","addr":"47404 Middle Bluff Pl","a":"$1,199,000 &middot; Expired","b":"31 days on market &middot; 4,024 sq ft","w":"s"},{"lat":39.051204,"lon":-77.337479,"n":5,"cls":"red","addr":"129 Sinegar Pl","a":"$2,195,000 &middot; Withdrawn","b":"45 days on market &middot; 5,805 sq ft","w":"s"},{"lat":39.050477,"lon":-77.357507,"n":6,"cls":"red","addr":"47404 Middle Bluff Pl","a":"$1,274,740 &middot; Expired","b":"62 days on market &middot; 4,024 sq ft","w":"s"},{"lat":38.9752037,"lon":-77.4927719,"n":0,"cls":"yel","addr":"43618 Parisville Ct","a":"On the map last week","b":"","w":"g"}],play:1,hist:1});</script>
 </section>
 <!-- end mss-sold-map -->
-<div class="cmi-wrap"><div class="cmi-group"><div class="cmi-glabel"><span class="cmi-gmark"></span><span class="cmi-gt">Current Market Conditions</span></div><h2 class="gauge-head"><span class="gauge-flag red"><svg viewBox="0 0 21 27" width="14" height="18" aria-hidden="true" style="display:block"><rect x="1.5" y="0" width="1.8" height="27" rx=".9" fill="#5E5345"/><path d="M3.3 1.6 C8 0.2 13 3.4 18.6 1.8 L18.6 11.4 C13 13 8 9.8 3.3 11.2 Z" fill="currentColor"/></svg></span><span>Momentum is Neutral, with 0% of the market under contract and avg DOM 39.</span></h2><div class="cmi-row n2"><div class="cmi-card cmi-nv"><div class="cmi-head"><svg class="cmi-ico" viewBox="0 0 18 18" aria-hidden="true"><path d="M2.6 8.2L9 2.6l6.4 5.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.4 9.4v6h9.2v-6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cmi-t">Total Homes Under Contract</span></div><div class="cmi-n">0%</div><div class="cmi-d">Of listings under contract</div><div class="cmi-g"><div class="cmi-ptr"><i style="left:3%"><b>0%</b></i></div><div class="cmi-bar"><span class="g-fill" style="background:linear-gradient(90deg,#C62828 0%, #C62828 38%, #E8B931 42%, #E8B931 58%, #2E9B52 62%, #2E9B52 100%)"></span></div><div class="cmi-scale"><span class="e l">0%</span><span class="e r">100%</span><span style="left:40%">40%</span><span style="left:60%">60%</span></div></div></div><div class="cmi-card cmi-nv"><div class="cmi-head"><svg class="cmi-ico" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="6.8" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M9 4.8V9l3 1.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cmi-t">Days on Market, Active &amp; Under Contract</span></div><div class="cmi-n">39</div><div class="cmi-d">Days the homes still on the market have been listed</div><div class="cmi-g"><div class="cmi-ptr"><i style="left:67.5%"><b>39</b></i></div><div class="cmi-bar"><span class="g-fill" style="background:linear-gradient(90deg,#C62828 0%, #C62828 48%, #E8B931 52%, #E8B931 73%, #2E9B52 77%, #2E9B52 100%)"></span></div><div class="cmi-scale"><span class="e l">120+</span><span class="e r">0</span><span style="left:50%">60</span><span style="left:75%">30</span></div></div></div></div></div></div>
+<div class="cmi-wrap"><div class="cmi-group"><div class="cmi-glabel"><span class="cmi-gmark"></span><span class="cmi-gt">Current Market Conditions</span></div><h2 class="gauge-head"><span class="gauge-flag red"><svg viewBox="0 0 21 27" width="14" height="18" aria-hidden="true" style="display:block"><rect x="1.5" y="0" width="1.8" height="27" rx=".9" fill="#5E5345"/><path d="M3.3 1.6 C8 0.2 13 3.4 18.6 1.8 L18.6 11.4 C13 13 8 9.8 3.3 11.2 Z" fill="currentColor"/></svg></span><span>Momentum is Neutral, with 33% of the market under contract, 100% of the last 30 days&rsquo; listings have gone under contract and avg DOM 50.</span></h2><div class="cmi-row n3"><div class="cmi-card cmi-nv"><div class="cmi-head"><svg class="cmi-ico" viewBox="0 0 18 18" aria-hidden="true"><path d="M2.6 8.2L9 2.6l6.4 5.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.4 9.4v6h9.2v-6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cmi-t">Total Homes Under Contract</span></div><div class="cmi-n">33%</div><div class="cmi-d">1 out of 3 homes under contract</div><div class="cmi-g"><div class="cmi-ptr"><i style="left:33%"><b>33%</b></i></div><div class="cmi-bar"><span class="g-fill" style="background:linear-gradient(90deg,#C62828 0%, #C62828 38%, #E8B931 42%, #E8B931 58%, #2E9B52 62%, #2E9B52 100%)"></span></div><div class="cmi-scale"><span class="e l">0%</span><span class="e r">100%</span><span style="left:40%">40%</span><span style="left:60%">60%</span></div></div></div><div class="cmi-card cmi-nv"><div class="cmi-head"><svg class="cmi-ico" viewBox="0 0 18 18" aria-hidden="true"><rect x="2.4" y="3.2" width="13.2" height="11.6" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M2.4 7h13.2M6 1.6v3M12 1.6v3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg><span class="cmi-t">Under Contract (Last 30 Days)</span></div><div class="cmi-n">100%</div><div class="cmi-d">Of homes listed in the last 30 days went under contract</div><div class="cmi-g"><div class="cmi-ptr"><i style="left:97%"><b>100%</b></i></div><div class="cmi-bar"><span class="g-fill" style="background:linear-gradient(90deg,#C62828 0%, #C62828 33.71%, #E8B931 37.71%, #E8B931 55.14%, #2E9B52 59.14%, #2E9B52 100%)"></span></div><div class="cmi-scale"><span class="e l">0%</span><span class="e r">70%+</span><span style="left:35.71%">25%</span><span style="left:57.14%">40%</span></div></div></div><div class="cmi-card cmi-nv"><div class="cmi-head"><svg class="cmi-ico" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="6.8" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M9 4.8V9l3 1.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cmi-t">Days on Market, Active &amp; Under Contract</span></div><div class="cmi-n">50</div><div class="cmi-d">Days the homes still on the market have been listed</div><div class="cmi-g"><div class="cmi-ptr"><i style="left:58.33%"><b>50</b></i></div><div class="cmi-bar"><span class="g-fill" style="background:linear-gradient(90deg,#C62828 0%, #C62828 48%, #E8B931 52%, #E8B931 73%, #2E9B52 77%, #2E9B52 100%)"></span></div><div class="cmi-scale"><span class="e l">120+</span><span class="e r">0</span><span style="left:50%">60</span><span style="left:75%">30</span></div></div></div></div></div></div>
 <!-- end-group:current-market-conditions -->
 <!-- mss-uc-map -->
 <section class="wrap hm-wrap">
-  <div class="hm-head">Homes Listed Oct 3 &ndash; Nov 3</div>
-  <p class="hm-cap">No homes came on the market in Sterling between Oct 3 and Nov 3.</p>  <div id="mss-uc-map-map" class="hm-map"></div>
+  <div class="hm-head">Active and Under Contract</div>
+    <div id="mss-uc-map-map" class="hm-map"></div>
+  <div class="hm-legend"><span><i class="red"></i>Active, no contract</span><span><i class="yel"></i>Contingent or 30+ days</span><span><i class="grn"></i>Pending in 30 days or less</span></div>
+  <div class="hm-keys"><div class="hm-key" data-map="mss-uc-map-map" data-n="1"><span class="hm-num yel">1</span><div><div class="hm-addr">47404 Middle Bluff Pl</div><div class="hm-a">$1,185,000 &middot; Contingent</div><div class="hm-b">10 days to contract &middot; 4,024 sq ft</div></div></div><div class="hm-key" data-map="mss-uc-map-map" data-n="2"><span class="hm-num red">2</span><div><div class="hm-addr">43446 Freeport</div><div class="hm-a">$1,434,900 &middot; Active</div><div class="hm-b">64 days on market &middot; 3,636 sq ft</div></div></div><div class="hm-key" data-map="mss-uc-map-map" data-n="3"><span class="hm-num red">3</span><div><div class="hm-addr">45449 Persimmon Ln</div><div class="hm-a">$1,850,000 &middot; Active</div><div class="hm-b">76 days on market &middot; 5,428 sq ft</div></div></div></div>
   
-  <script>(window.__mss_maps=window.__mss_maps||[]).push({id:"mss-uc-map-map",pts:[],home:[39.0067,-77.4291],play:1,hist:1});</script>
+  <script>(window.__mss_maps=window.__mss_maps||[]).push({id:"mss-uc-map-map",pts:[{"lat":39.050477,"lon":-77.357507,"n":1,"cls":"yel","addr":"47404 Middle Bluff Pl","a":"$1,185,000 &middot; Contingent","b":"10 days to contract &middot; 4,024 sq ft","w":"s"},{"lat":38.9759192,"lon":-77.5002518,"n":2,"cls":"red","addr":"43446 Freeport","a":"$1,434,900 &middot; Active","b":"64 days on market &middot; 3,636 sq ft","w":"n"},{"lat":39.0537385,"lon":-77.4274817,"n":3,"cls":"red","addr":"45449 Persimmon Ln","a":"$1,850,000 &middot; Active","b":"76 days on market &middot; 5,428 sq ft","w":"n"}],home:[39.0067,-77.4291],play:1,hist:1});</script>
 </section>
 <!-- end mss-uc-map -->
-<!-- mss-closed-sales {"cs_lp": "99.2%"} -->
+<!-- mss-closed-sales {} -->
 <div class="cmi-legend"><div class="cmi-legend-bar"></div><div class="cmi-legend-ends"><span class="red">Buyers</span><span class="mid">Neutral</span><span class="grn">Sellers</span></div></div>
 </section>
-<!-- end mss-city-gauges --><footer>
+<!-- end mss-city-gauges --><!-- end cmi-band --><footer>
   <div class="wrap">
-    <!--CSTF--><div class="cstf"><p class="cstf-head">Market Conditions Change. Winning Strategies Don&rsquo;t.<em>&trade;</em></p><div class="cstf-card"><p class="cstf-title">The Casey Samson Team Advantage!</p><div class="cstf-row"><div class="cstf-c"><span class="n">$296.9M</span><span class="l">CST 1 Year Volume</span></div><div class="cstf-c"><span class="n">97%</span><span class="l">Success rate</span></div><div class="cstf-c"><span class="n">6</span><span class="l">Avg days on market</span></div><div class="cstf-c"><span class="n">102.4%</span><span class="l">Of original list price</span></div><div class="cstf-c"><span class="n">78%</span><span class="l">% Sold in first 10 days</span></div><div class="cstf-c"><span class="n">74%</span><span class="l">Sold above list price</span></div></div><div class="cstf-row mkt"><div class="cstf-c lab">Rest of Sterling Luxury Market</div><div class="cstf-c"><span class="n">43%</span><span class="l">Success rate</span></div><div class="cstf-c"><span class="n">46</span><span class="l">Avg days on market</span></div><div class="cstf-c"><span class="n">99.2%</span><span class="l">Of list price</span></div><div class="cstf-c"><span class="n">&mdash;</span><span class="l">% Sold in first 10 days</span></div><div class="cstf-c"><span class="n">&mdash;</span><span class="l">Sold above list price</span></div></div></div><div class="cstf-boxes"><span class="cstf-sauce">Our Secret Sauce</span><a class="cstf-box" href="https://502macarthur.netlify.app/502_macarthur_roadmap" target="_blank" rel="noopener">Seller Roadmap&trade;</a><a class="cstf-box" href="https://buymacarthur.netlify.app/" target="_blank" rel="noopener">Buyer Portals&trade;</a><a class="cstf-box" href="https://cstmarketupdate.netlify.app/#" target="_blank" rel="noopener">Market Stats</a></div></div><style>
+    <!--CSTF--><div class="cstf"><p class="cstf-head">Market Conditions Change. Winning Strategies Don&rsquo;t.<em>&trade;</em></p><div class="cstf-card"><p class="cstf-title">The Casey Samson Team Advantage!</p><div class="cstf-row"><div class="cstf-c"><span class="n">$296.9M</span><span class="l">CST 1 Year Volume</span></div><div class="cstf-c"><span class="n">97%</span><span class="l">Success rate</span></div><div class="cstf-c"><span class="n">6</span><span class="l">Avg days on market</span></div><div class="cstf-c"><span class="n">102.4%</span><span class="l">Of original list price</span></div><div class="cstf-c"><span class="n">78%</span><span class="l">% Sold in first 10 days</span></div><div class="cstf-c"><span class="n">74%</span><span class="l">Sold above list price</span></div></div><div class="cstf-row mkt"><div class="cstf-c lab">Rest of Sterling Luxury Market</div><div class="cstf-c"><span class="n">33%</span><span class="l">Success rate</span></div><div class="cstf-c"><span class="n">51</span><span class="l">Avg days on market</span></div><div class="cstf-c"><span class="n">&mdash;</span><span class="l">Of list price</span></div><div class="cstf-c"><span class="n">&mdash;</span><span class="l">% Sold in first 10 days</span></div><div class="cstf-c"><span class="n">&mdash;</span><span class="l">Sold above list price</span></div></div></div><a class="cstf-one" href="https://502macarthur.netlify.app/502_macarthur_roadmap" target="_blank" rel="noopener">Seller Roadmaps&trade; are the Key to Success</a></div><style>
 .cstf{max-width:980px;margin:0 auto 18px;padding:16px 18px 14px;background:#fff;border:1px solid #D8C58F;border-radius:12px;text-align:center;}
 .cstf-head{font-family:'Playfair Display',Georgia,serif;font-size:clamp(18px,2.2vw,23px);font-weight:700;color:#1C1A16;margin:0 0 10px;}
 .cstf-head em{font-style:normal;font-size:.6em;vertical-align:super;}
@@ -1349,6 +1685,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .cstf-sauce{font-family:'Playfair Display',Georgia,serif;font-size:16px;font-weight:700;color:#1C1A16;}
 a.cstf-box{display:block;background:#1B2236;border-radius:6px;padding:9px 10px;text-decoration:none;font-family:'Playfair Display',Georgia,serif;font-size:15px;font-weight:700;color:#E2C37A;}
 a.cstf-box:hover{background:#26304B;}
+a.cstf-one{display:block;margin:14px auto 0;max-width:720px;padding:15px 18px;text-align:center;background:#1B2236;border-radius:8px;text-decoration:none;font-family:'Playfair Display',Georgia,serif;font-size:16px;font-weight:700;color:#E2C37A;}
+a.cstf-one:hover{background:#26304B;}
 @media (max-width:760px){.cstf-row{grid-template-columns:repeat(2,1fr);}.cstf-c.lab{grid-column:span 2;justify-content:center;padding-left:0;}.cstf-boxes{grid-template-columns:1fr;}}
 @media print{.cstf{break-inside:avoid;}}
 </style><!--/CSTF-->
@@ -1357,13 +1695,14 @@ a.cstf-box:hover{background:#26304B;}
      font-size:10px; letter-spacing:.18em; color:#C9BFAE;}
   .mss-build-wrap{text-align:center; padding:0 0 14px;}
   @media print{.mss-build,.mss-build-wrap{display:none;}}
-/* end mss-build */</style><span class="mss-build">BUILD 59d298</span><div class="produced">Produced by The Casey Samson Team</div>
+/* end mss-build */</style><span class="mss-build">BUILD c8fd1d</span><div class="produced">Produced by The Casey Samson Team</div>
+    <div class="mss-call-line">To find out what your home is really worth, call Casey&hellip;</div>
     <div class="contact-line">Casey Samson<span class="sep">|</span>703-508-2535<span class="sep">|</span><a href="mailto:Casey@caseysamson.com">Casey@caseysamson.com</a></div>
-    <div class="copy">© 2026 The Casey Samson Team LLC. All Rights Reserved.​​‌‌‌​​​‌‌‌‌‌‌​‌​​​​‌‌​‌‌‌‌​​‌‌‌</div>
+    <div class="copy">© 2026 The Casey Samson Team LLC. All Rights Reserved.‌‌​​​‌​‌‌‌​‌​​‌​​​​​‌​​​​‌​‌​‌‌​</div>
   </div><!-- mss-flier-link --><div class="fl-row">Printable two-page flier: <a href="https://cstmarketupdate.netlify.app/sterling_family_flier">Sterling Family Homes</a><span class="sep">&middot;</span><a href="https://cstmarketupdate.netlify.app/sterling_luxury_flier">Sterling Luxury Homes</a></div><!-- end mss-flier-link --></footer>
 <script>/* mss-homemap-js */
 (function(){
-  var LAST_WEEK = 'November 3', THIS_WEEK = 'November 11';
+  var LAST_WEEK = 'November 18', THIS_WEEK = 'November 25';
 
   function draw(id, pts, home, hist, canPlay){
     pts = pts || [];
