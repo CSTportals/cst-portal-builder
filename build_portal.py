@@ -4023,8 +4023,14 @@ def build_strategy_summary(p, s, out):
 
 """
     # Institutional rule, 16 Oct 2026: under Customary Value, always.
+    # Casey, 27 Nov 2026: "Pricing Summary should reflect the strategy based
+    # on Market -- Coming Soon - Conservative based on Market Conditions."
+    _path = "Conservative" if _cons else "Aggressive"
+    _ctl = (mk.get("control") or "").replace("&rsquo;", "\u2019")
     _cs_why = ("Set for this home." if f["coming_soon_set"]
-               else "The first threshold under Customary Value.")
+               else f"Market dictates strategy{(': ' + _ctl + ' Market') if _ctl else ''}, so the "
+                    f"strategy is <b>{_path.lower()}</b> &mdash; the first threshold "
+                    f"{'under' if _cons else 'over'} Customary Value.")
     # Casey, 25 Oct 2026, on 2838 Cedar: "$1.15-$1.2 depending on preview
     # traffic and market conditions. The fall back minimum is $1.1." A
     # Coming Soon range is values.coming_soon_low_override (the low end) with
@@ -4065,8 +4071,8 @@ def build_strategy_summary(p, s, out):
     <p class="ps-body"><b>If no contracts, Coming Soon pricing.</b> Live on
     the MLS with full photography and marketing. {_cs_why}</p>
     <table class="ps-rows"><tbody>
-{price_row("Coming Soon Price", _cs_show,
-           "Depending on Preview traffic and market conditions" if _cs_low else "")}    </tbody></table>
+{price_row(f"Coming Soon &mdash; {_path}", _cs_show,
+           "Depending on Preview traffic and market conditions" if _cs_low else "Based on market conditions")}    </tbody></table>
   </div>
 
 """
