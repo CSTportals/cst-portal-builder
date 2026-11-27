@@ -17,8 +17,9 @@ MARKETING = {
               "unique features and attract the largest qualified buyer pool.",
               "We use the Coming Soon period to build excitement and drive buyers to your home&rsquo;s "
               "website in four ways:"],
-    "items": [("Targeted Social Media", "reaches qualified buyers locally, nationally, and internationally "
-               "based on demographics, interests, and online behavior."),
+    # Casey, 27 Nov 2026: geofencing in place of the demographics line.
+    "items": [("Targeted Social Media", "using geofencing allows us to target buyers looking in more "
+               "expensive markets who see your home as a bargain and bid the highest."),
               ("MLS Exposure", "instantly notifies Realtors and buyers with saved searches, directing them "
                "to your home&rsquo;s custom website."),
               ("Targeted Local Marketing", "reaches renters, corporate housing communities, and buyers "
