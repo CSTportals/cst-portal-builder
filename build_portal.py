@@ -4047,11 +4047,12 @@ def build_strategy_summary(p, s, out):
                + price_row("2&ndash;5 showings", money(_fb),
                            "Minimum &mdash; no further reduction" if _at_floor
                            else "Presentation and marketing" if f["no_room"]
-                           else "Move to the next buyer pool")
+                           else f"Drop {abbrev(f['launch'] - _fb)}")
                + ("" if _at_floor else
                   price_row("Low or no showings", money(_deep),
                             "Condition and reach" if f["no_room"]
-                            else "A further adjustment")))
+                            else (f"Go under {abbrev(_deep + 1)}" if (_deep + 1) in __import__("pricing").MAJOR_THRESHOLDS
+                                  else "A further adjustment"))))
 
     # Casey, 15 Oct 2026: "seller road map has flags headlines subheadlines
     # and 4 key stats. pricing strategy summary has just 4 key stats." So the
