@@ -199,6 +199,14 @@ GLINK = ('<div class="glink-row" data-glink="{s}" style="text-align:center;margi
          'Understanding {name} &rarr;</a></div>')   # Casey, 26 Nov 2026: drop "Guide to" on Roadmap and Buyer Portal
 
 
+# Casey, 27 Nov 2026: "Start abbreviating" -- the Roadmap's guide links use
+# short names.
+SHORT_LINK = {"Appraisal-Quality Comparable Analysis": "Comparable Analysis",
+              "Price Authenticated by CST Pricing Team": "CST Pricing",
+              "Moving the Needle": "Home Preparation",
+              "CST Pricing Strategy": "CST Pricing Strategy"}
+
+
 def inject_links(page, guide_href, links):
     """Casey, 23 Nov 2026: every portal section the guide explains links to
     its guide section, and gets the id the guide's "Back to" link lands on.
@@ -262,6 +270,7 @@ def inject_links(page, guide_href, links):
                 continue
             name = _h.unescape(re.sub("<[^>]+>", "", hit.group(2))).strip()
             name = re.sub(r"[\u2122\u00ae]", "", name).strip()
+            name = SHORT_LINK.get(name, name)
             # The guide's own id is keyed to the guide section's target
             link = GLINK.format(s=sg, href=guide_href, name=_h.escape(name))
             h = h[:hit.start()] + head + link + h[hit.end():]
@@ -391,7 +400,10 @@ def roadmap_guide(p, s_dir):
           f"Your values: <b>Dated {money(v['dated'])}</b>, <b>Customary {money(v['customary'])}</b>, "
           f"<b>Premium {money(v['premium'])}</b>. CST listings are listed at the first threshold under "
           "Customary Value, and historically sell between Customary and Premium Values (sometimes more) "
-          "within 6 days."]),
+          "within 6 days."],
+         # Casey, 27 Nov 2026: the cylinder explanations for this home, moved
+         # here from the Roadmap.
+         notes.get("engine_cards", "")),
         # Casey, 23 Nov 2026: "another section for Authenticated Value breaking
         # down definitions for each, with cross links".
         # Casey, 23 Nov 2026: the three values across, each definition next to
@@ -1030,11 +1042,8 @@ def build(p, which=("roadmap", "mss", "moveup", "buyer")):
         (s_dir / f"{pre}_Roadmap_Guide.html").write_text(h.replace("__BACK__", rm.name), encoding="utf-8")
         made.append("roadmap")
         inject_links(rm, f"{pre}_Roadmap_Guide.html", _rm_links(p))
-        if p.get("strategy_track_record"):
-            _t = rm.read_text(encoding="utf-8").replace(
-                "Understanding CST Pricing Strategy &rarr;",
-                "Understanding CST Strategy and Track Record &rarr;")
-            rm.write_text(_t, encoding="utf-8")
+        # Casey, 27 Nov 2026: the link stays "Understanding CST Pricing
+        # Strategy" -- they find the track record in the Guide.
     if "roadmap" in which or "buyer" in which:
         try:
             buyer_preview_to_roadmap(p, s_dir, b_dir)

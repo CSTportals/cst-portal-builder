@@ -184,8 +184,8 @@ def _map(p, mid, title, items, kind):
         legend = "".join(f'<span><i style="background:{SOLD_GRADE[g][1]}"></i>{LIST_GRADE[g]}</span>'
                          for g in (2, 1, 0) if any(a.get("_grade") == g for a in items))
     if kind == "sold" and any("_grade" in a for a in items):
-        legend = "".join(f'<span><i style="background:{SOLD_GRADE[g][1]}"></i>{SOLD_GRADE[g][2]}</span>'
-                         for g in (2, 1, 0) if any(a.get("_grade") == g for a in items))
+        legend = "".join(f'<span><i style="background:{SOLD_GRADE[g][1]}"></i><b>{SOLD_GRADE[g][0].title()}</b>&nbsp;&middot; {SOLD_GRADE[g][2]}</span>'
+                         for g in (2, 1, 0))
     key = "".join(f'<li><span class="rmm-kn" style="background:{q["c"]}">{q["n"]}</span><span>{q["t"]}</span></li>' for q in pins)
     data = {"s": [lat, lng], "sl": p["address"], "sv": f"Customary Value ${cv:,}", "pins": pins,
             "sdir": mm.get("subject_dir_solds" if kind == "sold" else "subject_dir", "left")}
@@ -243,6 +243,7 @@ STYLE = """<link rel="stylesheet" href="leaflet.css">
 .rmm-leg{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;margin-top:10px;font-size:12.5px;color:#71695A;}
 .rmm-leg i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
 .rmm-note{font-style:italic;}
+.sold-g{margin:26px 0 4px;}.sold-g-h{text-align:center;font:700 12px Georgia,serif;letter-spacing:.16em;text-transform:uppercase;color:#8A6A2E;margin-bottom:10px;}
 .rmm-map .leaflet-tooltip-pane{z-index:590;}  /* pins sit on top of labels, never under them */
 .rmm-key{list-style:none;padding:0;margin:12px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px 16px;font-size:12.5px;line-height:1.35;}
 .rmm-key li{display:flex;gap:8px;align-items:flex-start;}
@@ -283,8 +284,11 @@ def add_to_roadmap(p, out, note=print):
         j = h.find("</table>", i)
         j = h.find("</div>", j) + len("</div>") if j > 0 else -1
         if i > 0 and j > 0:
-            blk = "<!--RMMs-->" + _map(p, "rmmSold", "Comparable Sales", [dict(a, status="Sold") for a in mm["solds"]], "sold") + "<!--/RMMs-->\n"
+            blk = "<!--RMMs-->" + (p.get("_sold_gauges") or "") + _map(p, "rmmSold", "Comparable Sales", [dict(a, status="Sold") for a in mm["solds"]], "sold") + "<!--/RMMs-->\n"
             h = h[:j] + "\n" + blk + h[j:]
+            # Casey, 27 Nov 2026: "take out redundancies" -- the map's own
+            # legend carries green, yellow and red, so the second legend goes.
+            h = re.sub(r'<p class="comp-legend"[^>]*>.*?</p>\n?', "", h, count=1, flags=re.S)
             done.append(f'{len(mm["solds"])} solds under the comps')
     # Listings: under the Current Competition table (Casey, 31 Oct 2026:
     # "Move current market map under table").
@@ -303,7 +307,13 @@ def add_to_roadmap(p, out, note=print):
             j = h.find("</table>", i)
             j = h.find("</div>", j) + len("</div>") if j > 0 else -1
         if i > 0 and j > 0:
-            blk = "<!--RMMl-->" + _map(p, "rmmList", "The Current Market", mm["listings"], "list") + "<!--/RMMl-->\n"
+            # Casey, 27 Nov 2026: only 12 homes -- the ones in the table.
+            _ls = mm["listings"]
+            if len(_ls) > 12:
+                _tbl = {c.get("address") for c in __import__("__main__").cap_twelve(p.get("competition") or [], p)} \
+                    if hasattr(__import__("__main__"), "cap_twelve") else set()
+                _ls = [a for a in _ls if a["address"] in _tbl][:12] or _ls[:12]
+            blk = "<!--RMMl-->" + _map(p, "rmmList", "The Current Market", _ls, "list") + "<!--/RMMl-->\n"
             h = h[:j] + "\n" + blk + h[j:]
             done.append(f'{len(mm["listings"])} listings under the Current Competition table')
     if done:

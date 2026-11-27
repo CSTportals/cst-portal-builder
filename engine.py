@@ -222,7 +222,7 @@ CSS = """
 """
 
 
-def panel(p, coming_soon=0, conservative=True, stats=None, relaunch=0):
+def panel(p, coming_soon=0, conservative=True, stats=None, relaunch=0, cards=True, image=True):
     if not enabled(p):
         return ""
     cyl, (mkt, thr) = cylinders(p, coming_soon, conservative, stats, relaunch)
@@ -247,8 +247,14 @@ def panel(p, coming_soon=0, conservative=True, stats=None, relaunch=0):
         f'<div class="eng-dx"><div class="eng-dx-h"><span class="eng-n">{k}</span>'
         f'Pricing Engine Diagnosis &middot; Cylinder {k}, {NAMES[int(k)-1]}</div>'
         f'<p>{v}</p></div>' for k, v in sorted(diag.items(), key=lambda kv: int(kv[0])))
+    img = f'<img class="eng-img" src="{IMG}" alt="The CST Ten Cylinder Pricing Engine">' if image else ""
+    # Casey, 27 Nov 2026: "Take the explanations of cylinders over to Guide"
+    # -- the Roadmap keeps the engine picture (and any diagnosis); the ten
+    # cylinder cards and the two filters live in the Roadmap Guide.
+    if not cards:
+        return f'<style>{CSS}</style><div class="eng">{img}{dx}</div>\n'
     return (f'<style>{CSS}</style><div class="eng">'
-            f'<img class="eng-img" src="{IMG}" alt="The CST Ten Cylinder Pricing Engine">'
+            f'{img}'
             f'<p class="eng-lede">Cylinders 1&ndash;6 are the standard, performed on every home; '
             f'cylinders 7&ndash;10 are used when applicable. Two filters then turn the '
             f'authenticated value into the price.</p>'

@@ -1063,6 +1063,16 @@ def _extra_cells(r, extra):
     return f"<td>{ppsf}</td><td>{pct}</td>"
 
 
+def cap_twelve(rows, p=None, s=None, key="list"):
+    if len(rows) <= 12:
+        return rows
+    ref = (getattr(s, "coming_soon", 0) if s is not None else 0) or \
+          ((p or {}).get("values") or {}).get("customary") or 0
+    keep = sorted(rows, key=lambda c: abs((c.get(key) or 0) - ref))[:12]
+    ids = {id(c) for c in keep}
+    return [c for c in rows if id(c) in ids]
+
+
 def competition_block(comp, p=None, s=None):
     """Competition table + stat line. PMA standard: Active, A/C and Pending only.
 
@@ -1097,6 +1107,9 @@ def competition_block(comp, p=None, s=None):
                  "Pending — it is listed but left out of the counts.")
 
     rows = sorted(comp, key=lambda c: (order.get(c["status"], 9), -c.get("list", 0)))
+    # Casey, 27 Nov 2026: "Only 12 homes listed under Current market map" --
+    # the 12 priced closest to this home's Coming Soon price.
+    rows = cap_twelve(rows, p, s)
     counts = {k: sum(1 for c in rows if c["status"] == k) for k in order}
     stat = "<span class=\"sep\">|</span>".join(
         f"{counts[k]} {k}" for k in order)
@@ -1205,7 +1218,8 @@ CMI_SPECS = {
                      # Contract so it will be on two lines and line up with
                      # everyone else." The one-line title left that card's
                      # heading a row shallower than its neighbours.
-                     title="Total Homes Under Contract",
+                     # Casey, 27 Nov 2026: "the title say % of homes under contract".
+                     title="% of Homes Under Contract",
                      vnames=("Buyer&rsquo;s Market", "Neutral Market",
                              "Seller&rsquo;s Market"),
                      desc="Of listings under contract",
@@ -1257,8 +1271,40 @@ CMI_SPECS = {
                      desc="Average days on market",
                      names=("Buyer&rsquo;s Market", "Neutral",
                             "Seller&rsquo;s Market")),
+    # Casey, 27 Nov 2026: the MSS "Sold or Withdrawn in the Last 90 Days"
+    # headline gauges above the Comparable Sales map -- same scales as the MSS.
+    "sold_dom": dict(lo=120, hi=0, red=60, green=30, unit="", icon="clock",
+                     ends=("Buyers", "Sellers"), open_lo=True,
+                     title="Avg. Days on Market",
+                     desc="Sold and withdrawn, last 90 days",
+                     names=("Buyer&rsquo;s Market", "Neutral", "Seller&rsquo;s Market")),
+    "sp_lp": dict(lo=94, hi=104, red=98, green=100, unit="%", icon="shield",
+                  ends=("Buyers", "Sellers"),
+                  title="Sale Price to List Price",
+                  desc="Of list price, closed sales, last 90 days",
+                  names=("Buyer&rsquo;s Market", "Neutral", "Seller&rsquo;s Market")),
 }
 GAUGE_SPECS = CMI_SPECS          # the name the first cut used
+
+
+def sold_gauges(p):
+    """Casey, 27 Nov 2026: "Above Comp sales chart should be headline gauges
+    of Success Rate, Avg DOM, % of LP" -- the market's sold-or-withdrawn
+    figures for the last 90 days, read off the MSS page (market_local)."""
+    ml = p.get("market_local") or {}
+    cells = {l.lower(): n for n, l in ml.get("cells") or []}
+    sr = next((n for l, n in cells.items() if "success" in l), None)
+    dm = next((n for l, n in cells.items() if "days" in l), None)
+    lp = next((n for l, n in cells.items() if "list price" in l and "above" not in l), None)
+    picks = [(k, n) for k, n in (("success_rate", sr), ("sold_dom", dm), ("sp_lp", lp)) if n]
+    if len(picks) < 3:
+        return ""
+    cards = "".join(cmi_card(k, n, shared=True) for k, n in picks)
+    lab = re.sub(r"^Rest of (the )?", "", ml.get("label") or "the market")
+    return ('<div class="sold-g"><div class="sold-g-h">' + lab
+            + ' &middot; Sold or withdrawn in the last 90 days</div>'
+            '<div class="cmi-wrap cmi-three"><div class="cmi-group">'
+            f'<div class="cmi-row n3">{cards}</div></div></div>' + CMI_SCALE + '</div>')
 
 # One small gold mark per statistic, set beside the figure rather than
 # above it so the card gains a signal and no height.
@@ -1859,7 +1905,11 @@ def cmi_card(key, raw, fallback_label="", wide=False, shared=False):
     # reading on its own. The source puts them on the label; the card moves
     # them under the figure where the seller reads them.
     _counts = re.search(r"\((\d+ of \d+)\)\s*$", str(fallback_label or ""))
-    if _counts:
+    if _counts and key == "uc_total":
+        # Casey, 27 Nov 2026: "11 out of 17 homes under contract".
+        _a, _b = _counts.group(1).split(" of ")
+        desc = f"{_a} out of {_b} homes under contract"
+    elif _counts:
         desc = f"{desc} &mdash; {_counts.group(1)}"
     return ('<div class="cmi-card">'
             f'<div class="cmi-head">{stat_icon(key)}'
@@ -1920,10 +1970,12 @@ def canonical_stats(market, cond):
     if market.get("avg_dom") and not flat.get("avg_dom"):
         flat["avg_dom"] = f'{round(float(market["avg_dom"]))}'
     out, missing = [], []
+    # Keep the report's own label where it carries counts ("(4 of 11)").
+    _own = {gauge_key(l): l for _, l in (cond.get("stats") or []) if re.search(r"\(\d+ of \d+\)", str(l))}
     for key, label in CMI_FOUR:
         v = flat.get(key)
         if v:
-            out.append((str(v), label))
+            out.append((str(v), _own.get(gauge_key(label), label)))
         else:
             missing.append(label)
     if not out:
@@ -5539,6 +5591,10 @@ def build_roadmap(p, s, out):
                               f'<div class="s">{c}</div></div>' for b, c in _steps)
                     + "</div></div></div>")
         _subj4 = _facts[:4]
+        # Casey, 27 Nov 2026: "Add 5th index bring up Money at Risk" -- the
+        # Subject card ends with it; the box under Net Proceeds is gone.
+        if _subj4:
+            _subj4 = _subj4 + [(mar_value, mar_label)]
         import schools as _sch
         # Casey, 25 Nov 2026: "when we do a home, bring in schools in the
         # seller roadmap and buyer portal."
@@ -5909,11 +5965,13 @@ def build_roadmap(p, s, out):
         pass
     if not _mp.get("control"):
         _mp = market_posture(p)
-    _engine_html = _eng.panel(
-        p, coming_soon=(_cs if coming_soon_section else 0),
-        conservative=_cons, stats=_mp,
-        relaunch=(recovery_prices(p).get("soft", 0)
-                  if is_recovery(p) and p.get("current_list") else 0))
+    _eng_kw = dict(coming_soon=(_cs if coming_soon_section else 0),
+                   conservative=_cons, stats=_mp,
+                   relaunch=(recovery_prices(p).get("soft", 0)
+                             if is_recovery(p) and p.get("current_list") else 0))
+    # Casey, 27 Nov 2026: the cylinder explanations move to the Guide.
+    _engine_html = _eng.panel(p, cards=False, **_eng_kw)
+    GUIDE_NOTES["engine_cards"] = _eng.panel(p, image=False, **_eng_kw)
     # Casey, 18 Nov 2026: "add sold for $2.3M over authenticated values". A
     # closed sale ("sold_for") is stamped above the three value cards.
     _sold_html = ""
@@ -5945,12 +6003,7 @@ def build_roadmap(p, s, out):
     <div class="values-grid"{grid_style}>
 {chr(10).join(cards)}
     </div>
-{_sold_html}{net_proceeds_html(p, tiers)}{value_story_html(p)}    <div class="money-at-risk">
-      <div class="lbl">{mar_label}</div>
-      <div class="num">{mar_value}</div>
-      <div class="mar-note">Loss of value can occur with over pricing or poor preparation.</div>
-    </div>
-  </div>
+{_sold_html}{net_proceeds_html(p, tiers)}{value_story_html(p)}  </div>
 </section>"""
     pricing_section = f"""<section>
   <div class="wrap">
@@ -9106,6 +9159,7 @@ def main():
     if p.get("market_map"):
         # Casey, 31 Oct 2026: maps on the Roadmap, not the portal page.
         import market_map as _mm
+        p["_sold_gauges"] = sold_gauges(p)
         _mm.add_to_roadmap(p, out, note=note)
     if p.get("contract_analytics") and p.get("contract_analytics_on_portal", True):
         import contract_analytics as _ca

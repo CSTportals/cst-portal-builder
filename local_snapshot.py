@@ -1085,7 +1085,7 @@ def conditions_from_figures(f, nflags, colour):
     plain = re.sub(r"<[^>]+>", "", headline(f, ""))
     fig = "%d%%" % f["uc_w"]
     if not f.get("model"):
-        stats = [(fig, "Under contract"),
+        stats = [(fig, "Under contract (%d of %d)" % (f["uc"], f["n"])),
                  ("%d%%" % f["p30"], "Under contract on homes listed 30 days"),
                  ("%d%%" % f["p14"], "Under contract, last 14 days")]
     else:
@@ -1106,7 +1106,9 @@ def conditions_from_figures(f, nflags, colour):
         if f.get("sold") is not None and (f["sold"] + f["unsold"]):
             stats.append(("%d%%" % round(f["sold"] / (f["sold"] + f["unsold"])
                                          * 100), "Success rate"))
-        stats += [(fig, "Under contract"),
+        # Casey, 27 Nov 2026: under the % the actual numbers -- "11 out of
+        # 17 homes under contract".
+        stats += [(fig, "Under contract (%d of %d)" % (f["uc"], f["n"])),
                   ("%.0f" % f["act_dom"], "Days on market, active and pending")]
         if f["cohort"]:
             # Casey, 18 Oct 2026: "New rule for local -- add number of homes
