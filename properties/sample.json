@@ -31,7 +31,8 @@
   "dated": 1944924,
   "customary": 2161027,
   "customary_list": 2161027,
-  "premium": 2333909
+  "premium": 2333909,
+  "deep_override": 1999999
  },
  "comps": {
   "rows": [
