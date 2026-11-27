@@ -27,6 +27,8 @@ SELLER_ROWS = [
     ("On Zillow from day one", True, False),
     ("Listed on the MLS", True, True),
     ("Pricing Engine, not agent opinions", False, False),
+    # Casey, 27 Nov 2026
+    ("Condition, upgrade, lot and market filters", False, False),
     # Casey, 25 Nov 2026: replaces "Customary and Premium Values" and
     # "Predictive Analysis sets the price". The 4th value is CST's own box:
     # CST does NOT use computer-generated pricing.
