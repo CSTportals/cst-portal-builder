@@ -997,7 +997,21 @@ def roadmap_first(p, s_dir):
     if not portal.exists():
         return False
     root = (p.get("portal_url") or "").rstrip("/")
+    # Casey, 27 Nov 2026: "Seller portals should disappear. Roadmap is our new
+    # starting point for sellers, Buyer Portal for buyers." portal.html is
+    # removed and every link that meant it now opens the Roadmap.
+    # "seller_portal": true on a property keeps the old hub.
+    drop = not p.get("seller_portal")
     def fix(t):
+        if drop:
+            n = re.sub(r'href="portal\.html(#[^"]*)?"', 'href="index.html"', t)
+            n = n.replace("Back to Seller Portal", "Back to Roadmap")
+            if root:
+                n = n.replace(f'href="{root}/portal.html"', f'href="{root}/"')
+            # the Roadmap's own "Back to <address>" would point at itself
+            n = re.sub(r'<a class="back" href="index\.html">&larr; Back to [^<]*</a>\s*', "", n) \
+                if 'class="rm-hero"' in n else n
+            return n
         n = t.replace('href="index.html', 'href="portal.html')
         if root:
             n = n.replace(f'href="{root}/"', f'href="{root}/portal.html"').replace(
@@ -1025,6 +1039,8 @@ def roadmap_first(p, s_dir):
         if changed:
             f.write_bytes(msg.as_bytes(policy=policy.default))
     idx.write_text(rm.read_text(encoding="utf-8"), encoding="utf-8")
+    if drop:
+        portal.unlink(missing_ok=True)
     return True
 
 

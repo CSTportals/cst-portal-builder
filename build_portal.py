@@ -6062,10 +6062,28 @@ def build_roadmap(p, s, out):
     _mmp = p.get("market_map") or {}
     _list_map_on = bool(_mmp.get("subject") and _mmp.get("listings")
                         and _mmp.get("listings_map", True) is not False)
+    # Casey, 27 Nov 2026: with the Seller Portal gone, the Market Snapshot is
+    # a link from Market Conditions and the Move Up Calculator sits at the
+    # very bottom of the Roadmap.
+    _mslug = (p.get("market") or {}).get("slug")
+    _mss_link = (f'    <p style="text-align:center;margin:0 0 14px;"><a href="https://cstmarketupdate.netlify.app/{_mslug}.html" '
+                 'target="_blank" rel="noopener" style="font:700 15px Georgia,serif;color:#1F2A44;text-decoration:none;'
+                 f'border-bottom:2px solid #B8902F;padding-bottom:2px;">See the {(p.get("market") or {}).get("name") or "Market"} '
+                 'Snapshot &rarr;</a></p>\n') if _mslug else ""
+    # Casey, 27 Nov 2026: "There is so much on seller roadmap make move up
+    # calc a link."
+    _rm_moveup = ""
+    if not p.get("seller_portal") and p.get("move_up") is not False:
+        _rm_moveup = ('<section style="padding:22px 0 26px;"><div class="wrap" style="text-align:center;">'
+                      f'<a href="{p["prefix"]}_Move_Up.html" target="_blank" rel="noopener" '
+                      'style="font:700 16px Georgia,serif;color:#1F2A44;text-decoration:none;'
+                      'border-bottom:2px solid #B8902F;padding-bottom:2px;">Move Up Calculator &rarr;</a>'
+                      '</div></section>')
     comp_section = f"""<section{upgrade_break}>
   <div class="wrap">
     <h2 class="section-title">Market Filter</h2>
     <p class="section-sub" style="margin-top:-4px;">Current Market Conditions</p>
+{_mss_link}
 {market_block(p["market"], compact=True)}
 <!--RMMl-anchor-->
     {f"""<div class="table-wrap">
@@ -6199,7 +6217,7 @@ def build_roadmap(p, s, out):
     <p class="tagline-close">Results Count&trade;</p>
   </div>
 </section>
-
+{_rm_moveup}
 {footer(p)}
 </body>
 </html>
