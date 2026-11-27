@@ -167,7 +167,17 @@ def _map(p, mid, title, items, kind):
             _w = "original list" if a.get("orig_list") else "list"
             vs = (f'<br>{a["dom"]} day{"s" if a["dom"] != 1 else ""} &middot; '
                   f'{price / _base * 100:.1f}% of {_w} ${_base:,}') + vs
-        pins.append({"lat": a["lat"], "lng": a["lng"], "n": i + 1, "c": col,
+        # Casey, 27 Nov 2026: size and age on each listed home.
+        if kind != "sold":
+            _c = next((c for c in p.get("competition") or [] if c.get("address") == a["address"]), {})
+            _sf, _yb = a.get("sf") or _c.get("sf"), a.get("built") or _c.get("built")
+            _xk = ""
+            if _sf or _yb:
+                _xk = "<br>" + " &middot; ".join(x for x in (
+                    f"{int(_sf):,} SF" if _sf else "", f"Built {_yb}" if _yb else "") if x)
+        else:
+            _xk = ""
+        pins.append({"lat": a["lat"], "lng": a["lng"], "n": i + 1, "c": col, "x": _xk,
                      "t": f'<b>{a["address"]}</b><br>{(LIST_WORD if kind != "sold" else SHORT).get(st, st)} &middot; ${price:,}{vs}',
                      "dir": a.get("dir", ["right", "left", "top", "bottom"][i % 4]),
                      "off": a.get("off")})
@@ -186,7 +196,7 @@ def _map(p, mid, title, items, kind):
     if kind == "sold" and any("_grade" in a for a in items):
         legend = "".join(f'<span><i style="background:{SOLD_GRADE[g][1]}"></i><b>{SOLD_GRADE[g][0].title()}</b>&nbsp;&middot; {SOLD_GRADE[g][2]}</span>'
                          for g in (2, 1, 0))
-    key = "".join(f'<li><span class="rmm-kn" style="background:{q["c"]}">{q["n"]}</span><span>{q["t"]}</span></li>' for q in pins)
+    key = "".join(f'<li><span class="rmm-kn" style="background:{q["c"]}">{q["n"]}</span><span>{q["t"]}{q.get("x", "")}</span></li>' for q in pins)
     data = {"s": [lat, lng], "sl": p["address"], "sv": f"Customary Value ${cv:,}", "pins": pins,
             "sdir": mm.get("subject_dir_solds" if kind == "sold" else "subject_dir", "left")}
     return f"""<div class="rmm"><div class="rmm-h">{title}</div>

@@ -3494,6 +3494,10 @@ def strategy_figures(p, s):
     _cust = v.get("customary")
     if v.get("preview_override"):
         pv = int(v["preview_override"])
+    elif prem and not p.get("preview_legacy"):
+        # Casey, 27 Nov 2026: "Preview is the first threshold under Premium
+        # Value" -- the seller's chance to test higher values.
+        pv = _pvp(int(prem)) - 1
     elif _cust and posture == "aggressive":
         pv = _pvoc(int(_cust))
         # An aggressive market puts Coming Soon ABOVE Customary, on the same
@@ -4033,15 +4037,15 @@ def build_strategy_summary(p, s, out):
                 if _cs_low and int(_cs_low) < _cs else money(_cs))
     _floor_v = v.get("price_floor")
     _at_floor = bool(_floor_v) and _deep <= _fb == int(_floor_v)
-    _launch = (price_row("5 or more showings",
+    _launch = (price_row("6 or more showings",
                          _cs_show if (_cs_low and f["launch"] == _cs) else money(f["launch"]),
                          "Hold position")
-               + price_row("Fewer than 5", money(_fb),
+               + price_row("2&ndash;5 showings", money(_fb),
                            "Minimum &mdash; no further reduction" if _at_floor
                            else "Presentation and marketing" if f["no_room"]
                            else "Move to the next buyer pool")
                + ("" if _at_floor else
-                  price_row("Pulling the Rip Cord &mdash; 0 showings", money(_deep),
+                  price_row("Low or no showings", money(_deep),
                             "Condition and reach" if f["no_room"]
                             else "A further adjustment")))
 
@@ -4619,10 +4623,10 @@ def build_strategy_email(p, s, out):
         # instead of a one-line minimum.
         pa += "</p>\n"
         pa_extra = table("Showings in week one", "Price", [
-            ("5 or more &mdash; hold position", money(s.coming_soon)),
-            ("Fewer than 5 &mdash; move to the next buyer pool",
+            ("6 or more &mdash; hold position", money(s.coming_soon)),
+            ("2&ndash;5 &mdash; drop to the next buyer pool",
              money(f["fallback"])),
-            ("Pulling the Rip Cord &mdash; 0 showings, a further adjustment",
+            ("Low or no showings &mdash; a further adjustment",
              money(f["deep"])),
         ])
         note("Pricing Summary email: no price_floor, so Predictive Analysis "
@@ -5070,61 +5074,37 @@ def build_roadmap(p, s, out):
                      f"            <li>A further <b>{money(_fb - _deep)}</b> "
                      "adjustment may be due.</li>\n")
 
+    # Casey, 27 Nov 2026: "$2.15 is a major threshold. Drop $50k if 2-5
+    # showings, go under $2M if low or no showings. This is too much writing
+    # so throw it out." The detail lives in the Guide.
+    from pricing import MAJOR_THRESHOLDS as _MTH
+    _major_line = (f"{abbrev(_launch + 1)} is a major threshold."
+                   if (_launch + 1) in _MTH else "")
+    _deep_major = max([t for t in _MTH if t <= _deep + 1], default=0)
+    _deep_word = (f"Go under {abbrev(_deep_major)}" if _deep_major and _deep + 1 == _deep_major
+                  else f"Drop to {abbrev(_deep)}")
+    def _pcol(head, move, price):
+        return (f'        <div class="needle-col"><h4>{head}</h4>'
+                f'<p class="pred-move">{move}</p>'
+                f'<div class="price-card"><div class="rec-label">Active List Price</div>'
+                f'<div class="rec-price">{money(price)}</div></div></div>\n')
     predictive_block = f"""<section class="pred-sec">
   <div class="wrap">
     <h2 class="test-head">The Launch</h2>
     <h2 class="section-title">Predictive Analysis</h2>
-    <p class="section-sub">The first week is the test. Three readings decide the next
-    move: the showings the home actually draws, how it presents once buyers are
-    inside, and what the market is doing underneath both.</p>
-
+    <p class="section-sub">{_major_line} First-week showings set the next move.</p>
     <div class="needle-table">
       <div class="needle-cols three">
-        <div class="needle-col">
-          <h4>{SHOWINGS_FALLBACK_AT} or more showings</h4>
-          <ul>
-            <li>The price is reaching buyers and the home is being seen.</li>
-            <li>Hold position and let the first week finish.</li>
-            <li>Traffic without an offer is a <b>condition</b> question, not a price one.</li>
-          </ul>
-          <div class="price-card">
-            <div class="rec-label">Recommended Active List Price</div>
-            <div class="rec-price">{money(_launch)}</div>
-            <div class="rec-expected">{expected}</div>
-          </div>
-        </div>
-        <div class="needle-col">
-          <h4>Fewer than {SHOWINGS_FALLBACK_AT} showings</h4>
-          <ul>
-{_col2_pts}          </ul>
-          <div class="price-card">
-            <div class="rec-label">Recommended Active List Price</div>
-            <div class="rec-price">{money(_fb)}</div>
-            <div class="rec-expected">{expected}</div>
-          </div>
-        </div>
-        <div class="needle-col">
-          <h4>Pulling the Rip Cord &mdash; 0 showings</h4>
-          <ul>
-{_col3_pts}          </ul>
-          <div class="price-card">
-            <div class="rec-label">Recommended Active List Price</div>
-            <div class="rec-price">{money(_deep)}</div>
-            <div class="rec-expected">{expected}</div>
-          </div>
-        </div>
+{_pcol(f"{SHOWINGS_FALLBACK_AT + 1} or more showings", "Hold position", _launch)}\
+{_pcol(f"2&ndash;{SHOWINGS_FALLBACK_AT} showings", f"Drop {abbrev(_launch - _fb)}", _fb)}\
+{_pcol("Low or no showings", _deep_word, _deep)}\
       </div>
     </div>
-
-    <p class="price-para" style="margin-top:20px;">{pa_para}</p>
-    <p class="price-para" style="margin-top:14px;"><b>Condition.</b> Showings measure
-    whether the price is reaching buyers; condition decides what happens once they
-    are through the door. If the traffic is there and no offer follows, the home is
-    being out-presented rather than out-priced, and preparation is the cheaper fix
-    &mdash; see Moving the Needle above.</p>
-    <p class="price-para" style="margin-top:14px;"><b>Market.</b> {_third_note}</p>
+    <p class="section-sub" style="margin-top:14px;">{expected}</p>
   </div>
-</section>"""
+</section>
+<style>.pred-move{{font:700 17px Georgia,serif;color:#1F2A44;margin:4px 0 8px;text-align:center}}
+.pred-sec .needle-col h4{{text-align:center}}</style>"""
 
     # ---- Recovery ---------------------------------------------------------
     # A home that has been sitting. The 14 days off market are the test, and
@@ -5406,6 +5386,9 @@ def build_roadmap(p, s, out):
              "(listing_status = relaunch).")
     else:
         next_step_section = predictive_block
+        # Casey, 27 Nov 2026: Marketing and Contract Negotiating follow The Launch.
+        import roadmap_sections as _rs
+        next_step_section += "\n" + _rs.html(p)
     # With Extraordinary Upgrades, Authenticated Values starts on a new page
     # and Current Competition on the page after it.
     # The price header moved off the Seller Portal nav page and onto the
@@ -5882,17 +5865,16 @@ def build_roadmap(p, s, out):
                                 "threshold just over Customary Value &mdash; high "
                                 "enough to set expectations, and the figure buyers "
                                 "carry with them when the home goes active.")
+            # Casey, 27 Nov 2026: one line, then the price.
+            _pv_basis = ("Set for this property" if _pv_override else
+                         f"First threshold under the Premium Value of {abbrev(int(_prem_for_preview))}"
+                         if _prem_for_preview else _pv_basis)
             preview_section = f"""<section class="preview-sec">
   <div class="wrap">
     <h2 class="test-head">The Test</h2>
     <h2 class="section-title">Preview</h2>
-    <p class="section-sub">The home goes public before it goes live.</p>
-    <p class="price-para">The home is posted on Preview <b>within two days of a
-    signed Listing Agreement</b>. Photographs, descriptions and property
-    information go up on Zillow, Homes.com, Samson Properties and the rest,
-    letting the public know the home is coming to market before it is available
-    to show.</p>
-    <p class="price-para">{_pv_para}</p>
+    <p class="price-para">This is the seller&rsquo;s opportunity to <b>test higher
+    values</b> without hurting the marketability of the home.</p>
     <div class="price-card">
       <div class="rec-label">Preview Price</div>
       <div class="rec-price">{money(_pv)}</div>
@@ -5920,19 +5902,33 @@ def build_roadmap(p, s, out):
         _cs_basis = ("Set for this property" if _f["coming_soon_set"] else
                      f"First threshold {'under' if _cons else 'over'} the "
                      f'Customary Value of {abbrev(p["values"]["customary"])}')
+        # Casey, 27 Nov 2026: two tags -- Conservative, the first threshold
+        # under Customary; Aggressive, the first threshold over. Market
+        # dictates strategy; the market's pick is the one marked.
+        from pricing import preview_over_customary as _poc, increment_for as _incf, \
+            grid_line_at_or_below as _glb
+        _cv = int(p["values"]["customary"])
+        _cons_p = _cs if _cons else _glb(_cv, _incf(_cv)) - 1
+        _agg_p = _cs if not _cons else _poc(_cv) - 1
+        def _tag(name, price, rule, on):
+            return (f'<div class="cs-card{" on" if on else ""}"><div class="rec-label">{name}</div>'
+                    f'<div class="rec-price">{money(price)}</div>'
+                    f'<div class="rec-expected">{rule}</div>'
+                    + ('<div class="cs-pick">This market</div>' if on else "") + '</div>')
         coming_soon_section = f"""<section class="cs-sec">
   <div class="wrap">
     <h2 class="section-title">Coming Soon</h2>
-    <p class="price-para">The home is placed on the MLS with full photography,
-    descriptions and marketing. The strategy is to test the first threshold
-    {"under" if _cons else "over"} Customary Value.</p>
-    <div class="cs-cards">
-      <div class="cs-card"><div class="rec-label">Coming Soon Price</div>
-        <div class="rec-price">{money(_cs)}</div>
-        <div class="rec-expected">{_cs_basis}</div></div>
+    <p class="price-para"><b>Market dictates strategy.</b></p>
+    <div class="cs-cards two">
+      {_tag("Conservative", _cons_p, f"First threshold under the Customary Value of {abbrev(_cv)}", _cons)}
+      {_tag("Aggressive", _agg_p, f"First threshold over the Customary Value of {abbrev(_cv)}", not _cons)}
     </div>
   </div>
 </section>
+<style>.cs-cards.two{{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}}
+.cs-cards.two .cs-card{{flex:1 1 260px;max-width:340px;opacity:.55;background:#fff;border:1px solid #E4DCC8;border-radius:10px;padding:18px 16px;text-align:center}}
+.cs-cards.two .cs-card.on{{opacity:1;border:2px solid #B8902F}}
+.cs-pick{{margin-top:8px;font:700 11px Georgia,serif;letter-spacing:.14em;text-transform:uppercase;color:#8A6A2E}}</style>
 """
 
     _privacy_note = (
@@ -6026,6 +6022,11 @@ def build_roadmap(p, s, out):
     </a>
   </div>
 </section>"""
+    # Casey, 27 Nov 2026: "add size and age to listed homes and remove
+    # table" -- the numbered list under The Current Market map carries them.
+    _mmp = p.get("market_map") or {}
+    _list_map_on = bool(_mmp.get("subject") and _mmp.get("listings")
+                        and _mmp.get("listings_map", True) is not False)
     comp_section = f"""<section{upgrade_break}>
   <div class="wrap">
     <h2 class="section-title">Current Competition</h2>
@@ -6038,7 +6039,7 @@ def build_roadmap(p, s, out):
 {comp_body}
         </tbody>
       </table>
-    </div>""" if comp_body else ''}
+    </div>""" if (comp_body and not _list_map_on) else ''}
   </div>
 </section>"""
     # Casey, 22 Nov 2026: recovery Roadmaps follow the standard order --
