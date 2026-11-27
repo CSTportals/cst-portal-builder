@@ -9069,12 +9069,21 @@ def net_proceeds_html(p, tiers):
         return ""
     mid = cols[len(cols) // 2]
     price = mid[1]
+    # Casey, 27 Nov 2026: "Once we give Sales Price or contract price insert
+    # that into seller net sheet." A sale beats a contract beats the estimate.
+    _lead = f"Estimated at the {mid[0]}. Once a contract comes in, enter the contract price and the net recalculates."
+    if p.get("sold_for"):
+        price = int(p["sold_for"])
+        _lead = f"At the sales price of {money(price)}."
+    elif p.get("contract_price"):
+        price = int(p["contract_price"])
+        _lead = f"At the contract price of {money(price)}."
     comm, tax = price * (lp + bp) / 100, price * 0.003
     # Casey, 21 Nov 2026: "the quick buttons are immaterial once contracts
     # come in. They are estimates, contract prices are certain." No buttons.
     return f"""    <div class="net-proceeds" style="margin:26px auto 6px;max-width:640px;">
       <h3 style="text-align:center;font-family:'Playfair Display',Georgia,serif;font-size:22px;margin:0 0 4px;">Estimated Seller Net Proceeds</h3>
-      <p style="text-align:center;font-size:14px;color:#6b6252;margin:0 0 12px;">Estimated at the {mid[0]}. Once a contract comes in, enter the contract price and the net recalculates.</p>
+      <p style="text-align:center;font-size:14px;color:#6b6252;margin:0 0 12px;">{_lead}</p>
       <div class="table-wrap"><table>
         <tbody>
 <tr><td class="k">Sales Price</td><td class="r"><input type="text" inputmode="numeric" id="npIn" value="{money(price)}" aria-label="Sales price" style="width:9.5em;text-align:right;font:inherit;font-weight:700;padding:6px 10px;border:1px solid #cdb98a;border-radius:6px;background:#fffdf6;color:#1d1a14;"></td></tr>
