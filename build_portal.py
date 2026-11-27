@@ -4011,10 +4011,8 @@ def build_strategy_summary(p, s, out):
     preview_sec = ""
     if _pv:
         _pv_why = ("Set for this home." if f["preview_set"]
-                   else "The threshold over Customary Value."
-                   if f["posture"] == "aggressive"
-                   else "Buyers control this market, so the home previews at "
-                   "the same threshold under Customary Value it goes live at.")
+                   else "The first threshold under Premium Value &mdash; the "
+                   "seller&rsquo;s chance to test higher values.")
         preview_sec = f"""  <div class="ps-sec ps-mid">
     <h2 class="ps-head">Preview</h2>
     <p class="ps-body">Public within two days of signing &mdash; Zillow,
