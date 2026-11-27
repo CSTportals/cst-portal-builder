@@ -53,7 +53,7 @@ header{text-align:center;border-bottom:1.5px solid #C9A961;padding-bottom:10px}
 h1{font:700 23px Georgia,serif;text-align:center;margin:10px 0 2px}
 .sub{text-align:center;font-size:13.5px;color:#5A5446;margin:0}
 .zx{margin-top:10px;padding:10px 20px}.zx .big{font-size:32px;margin:4px 0 0}.zx .sub{font-size:13.5px}.zx .usd{font-size:15.5px;margin-top:5px}.zx .why{font-size:15px;margin-top:7px;max-width:none}
-.zc{margin-top:10px}.zc td{padding:4px 10px;font-size:13px}.zc .y,.zc .n{width:18px;height:18px;line-height:18px;font-size:12px}.zc .n{line-height:15px}.zc th{padding:7px 8px;font-size:10.5px}.zc-foot{font-size:10px;margin-top:6px}
+.zc{margin-top:10px}.zc td{padding:3px 10px;font-size:13px}.zc .y,.zc .n{width:18px;height:18px;line-height:18px;font-size:12px}.zc .n{line-height:15px}.zc th{padding:7px 8px;font-size:10.5px}.zc-foot{font-size:10px;margin-top:6px}
 footer{position:absolute;bottom:.35in;left:0;right:0;text-align:center;font:11px Georgia,serif;color:#71695A}
 """
     html = f'<!DOCTYPE html><html><head><meta charset="utf-8"><style>{css}</style></head><body>{seller}</body></html>'
