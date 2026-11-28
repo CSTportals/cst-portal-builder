@@ -6218,6 +6218,7 @@ def build_roadmap(p, s, out):
   </div>
 </section>
 {_rm_moveup}
+{motto_block()}
 {footer(p)}
 </body>
 </html>
@@ -6292,6 +6293,17 @@ def buyer_qr_corner(p, on_photo=False):
     cls = "br-qr-corner on-photo" if on_photo else "br-qr-corner"
     return (f'  <div class="{cls}">\n    <div class="bqc-tile">{svg}</div>\n'
             '    <div class="bqc-cap">Scan to View</div>\n  </div>\n')
+
+
+# Casey, 27 Nov 2026: the statement at the bottom of every page.
+MOTTO = "Market Conditions Change. Winning Strategies Don&rsquo;t.&trade;"
+
+
+def motto_block(label="Seller Roadmap"):
+    return ('<div class="motto" style="text-align:center;padding:26px 0 18px;border-top:1px solid #E4DCC8;">'
+            f'<div style="font:italic 700 22px Georgia,serif;color:#8A6A2E;">{MOTTO}</div>'
+            '<div style="font:700 12px Georgia,serif;letter-spacing:.18em;text-transform:uppercase;color:#1F2A44;margin-top:8px;">'
+            f'The Casey Samson Team &middot; {label} &middot; The Gold Standard of Listing Strategies</div></div>')
 
 
 def footer(p, produced="Produced by The Casey Samson Team", buyer_facing=False):
